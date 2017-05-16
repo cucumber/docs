@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/css/cucumber.css">
 </head>
 
-<body class="layout-documentation page-overview">
+<body>
   <div class="container">
     <nav class="nav">
       <div class="nav-left">
@@ -49,8 +49,29 @@
 
   <section class="section">
     <div class="container">
-      <div class="content">
-        {{ .Content }}
+      <div class="columns">
+        <div class="column is-3">
+          <aside class="menu">
+            <p class="menu-label">
+              Tutorials
+            </p>
+            <ul class="menu-list">
+              <li><a href="/tutorials/5-minute-tutorial">5 minute tutorial</a></li>
+            </ul>
+            <p class="menu-label">
+              Reference
+            </p>
+            <ul class="menu-list">
+              <li><a href="/reference/gherkin">Gherkin</a></li>
+              <li><a href="/reference/step-definitions">Step Definitions</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="column">
+          <div class="content">
+            {{ .Content }}
+          </div>
+        </div>
       </div>
     </div>
   </section>
