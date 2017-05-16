@@ -8,7 +8,7 @@ This is the Cucumber Documentation website.
 
 ## Start the server
 
-    hugo server --theme=cucumber-hugo --buildDrafts
+    hugo server --buildDrafts
 
 ## Toolchain / components
 
