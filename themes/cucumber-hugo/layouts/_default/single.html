@@ -51,19 +51,28 @@
     <div class="container">
       <div class="columns">
         <div class="column is-3">
+
           <aside class="menu">
             <p class="menu-label">
-              Contents
+              Content
             </p>
             <ul class="menu-list">
-              {{ range first 5 .Site.Pages }}
-              <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-              {{ end }}
+              {{ $currentPage := . }}
+              {{ range .Site.Menus.main }}
+                <li>
+                  <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                  </a>
+                </li>
+              {{end}}
             </ul>
           </aside>
+
         </div>
         <div class="column">
           <div class="content">
+            <h1>{{ .Title }}</h1>
             {{ .Content }}
           </div>
         </div>
