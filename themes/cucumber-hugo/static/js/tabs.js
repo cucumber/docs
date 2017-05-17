@@ -44,12 +44,20 @@ ready(function() {
       var li = element('<li><a>' + title + '</a></li>');
       ul.appendChild(li)
       li.addEventListener('click', function() {
-        each(ul, 'li', function(inactive) { removeClass(inactive, 'is-active') })
-        addClass(li, 'is-active')
-
-        each(tabs, '.tab-pane', function(hidden) { addClass(hidden, 'is-hidden') })
-        removeClass(tabPane, 'is-hidden')
+        activate(li, tabPane)
       })
     })
+
+    function activate(li, tabPane) {
+      each(ul, 'li', function(inactive) { removeClass(inactive, 'is-active') })
+      addClass(li, 'is-active')
+
+      each(tabs, '.tab-pane', function(hidden) { addClass(hidden, 'is-hidden') })
+      removeClass(tabPane, 'is-hidden')
+    }
+
+    var firstLi = ul.querySelector('li')
+    var firstTabPane = tabsContainer.querySelector('.tab-pane')
+    activate(firstLi, firstTabPane)
   })
 })
