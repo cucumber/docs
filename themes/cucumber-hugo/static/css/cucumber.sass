@@ -10,5 +10,10 @@ $primary: $green
 
 @import "../../node_modules/bulma/bulma"
 
+// Override Bulma's content.sass style to ensure tabs render properly
+.content
+  li + li
+    margin-top: 0
+
 is-hidden
   display: none
