@@ -14,3 +14,11 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Menu", name: "menu", widget: "hidden", default: "main"}
+  - name: "tutorial"
+    label: "Tutorial"
+    folder: "content/tutorial"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Menu", name: "menu", widget: "hidden", default: "main"}
