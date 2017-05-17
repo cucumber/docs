@@ -11,24 +11,20 @@ familiar with Behaviour-driven  Development
 
 You will need the following:
 
-·        
-Java SE *<link
+* Java SE *<link
 to download>*
 
-·        
-Maven *<link
+* Maven *<link
 to download>*
 
 ·        
 Cucumber-JVM *<link
 to download>*
 
-·        
-An IDE editor, for example IntelliJ  IDEA (which will be used in this
+* An IDE editor, for example IntelliJ  IDEA (which will be used in this
 introduction) *<link to download> *
 
-·        
-*(cucumber
+* *(cucumber
 plug-in for every IDE?)*
 
 # Concepts
@@ -148,3 +144,4 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
