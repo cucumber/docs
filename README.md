@@ -43,6 +43,18 @@ Simply edit Markdown files under `content`.
 
 Whenever you make a change to the content, the server will automatically rebuild the site (in a few milliseconds) and tell the browser to reload (using a WebSocket).
 
+### Modify theme
+
+Edit files under `themes/cucumber-hugo`. Changes to the CSS should be made in
+`themes/cucumber-hugo/static/css/cucumber.sass`.
+
+If you make changes to the `sass`, it will be rebuilt if you run the following:
+
+    yarn        # install dependencies
+    yarn watch  # rebuild cucumber.css
+
+A rebuild of the CSS will trigger a reload of the browser, just like with content.
+
 ## Architecture
 
 The site is built with [Hugo](https://gohugo.io), a fast static site generator.
