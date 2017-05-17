@@ -29,22 +29,23 @@ function removeClass(el, className) {
 
 ////// Show/hide content
 
-function showOnly(text) {
+function showOnly(language) {
   each(document, '.tabs li', function(a) { removeClass(a, 'is-active') })
-  var tab = document.querySelector('[data-type="' + text + '"]')
+  var tab = document.querySelector('[data-language="' + language + '"]')
   addClass(tab, 'is-active')
   each(document, ".only", function(only) { addClass(only, 'is-hidden') })
-  each(document, ".only-" + text, function(only) { removeClass(only, 'is-hidden') })
+  each(document, ".only-" + language, function(only) { removeClass(only, 'is-hidden') })
 }
 
 ready(function() {
-  each(document, '.tabs li a', function(a) {
-    var text = a.innerHTML
-    a.addEventListener('click', function () {
-      showOnly(text)
+  each(document, '.tabs li', function(li) {
+    var language = li.getAttribute('data-language')
+    console.log(language)
+    li.addEventListener('click', function () {
+      showOnly(language)
     })
   })
 
-  var firstText = document.querySelector('.tabs li a')
-  if(firstText) showOnly(firstText.innerHTML)
+  var firstLi = document.querySelector('.tabs li')
+  if(firstLi) showOnly(firstLi.getAttribute('data-language'))
 })
