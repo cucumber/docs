@@ -1,84 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+{{ partial "header.html" . }}
+{{ partial "nav.html" . }}
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{.Hugo.Generator}}
-  <title>Cucumber</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/cucumber.css">
-</head>
-
-<body>
+<section class="section">
   <div class="container">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item is-brand" href="https://docs.cucumber.io">
-          <img src="/img/cucumber-logo.png" alt="Cucumber">
-        </a>
+    <div class="columns">
+      <div class="column is-3">
+        {{ partial "menu.html" . }}
       </div>
-
-      <div class="nav-center">
-        <a class="nav-item" href="https://github.com/cucumber/cucumber">
-          <span class="icon">
-            <i class="fa fa-github"></i>
-          </span>
-        </a>
-        <a class="nav-item" href="https://twitter.com/cucumberbdd">
-          <span class="icon">
-            <i class="fa fa-twitter"></i>
-          </span>
-        </a>
-      </div>
-
-      <span id="nav-toggle" class="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-
-      <div id="nav-menu" class="nav-right nav-menu">
-        <a class="nav-item " href="https://cucumber.io/blog">
-          Blog
-        </a>
-      </div>
-    </nav>
-  </div>
-
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-3">
-
-          <aside class="menu">
-            <p class="menu-label">
-              Content
-            </p>
-            <ul class="menu-list">
-              {{ $currentPage := . }}
-              {{ range .Site.Menus.main }}
-                <li>
-                  <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
-                    {{ .Pre }}
-                    <span>{{ .Name }}</span>
-                  </a>
-                </li>
-              {{end}}
-            </ul>
-          </aside>
-
-        </div>
-        <div class="column">
-          <div class="content">
-            <h1>{{ .Title }}</h1>
-            {{ .Content }}
-          </div>
+      <div class="column">
+        <div class="content">
+          <h1>{{ .Title }}</h1>
+          {{ .Content }}
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-</body>
-</html>
+{{ partial "footer.html" . }}
