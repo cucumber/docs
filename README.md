@@ -1,8 +1,8 @@
 # Cucumber Documentation
 
-This is the Cucumber Documentation website. It is currently live at
-[https://cucumber.netlify.com](https://cucumber.netlify.com), and the plan
-is to move it to [https://docs.cucumber.io](https://docs.cucumber.io) once
+This repository contains the source code for the Cucumber Documentation website.
+It is currently live at [https://cucumber.netlify.com](https://cucumber.netlify.com),
+and the plan is to move it to [https://docs.cucumber.io](https://docs.cucumber.io) once
 the documentation on that site has been migrated.
 
 ## Contributing Content
