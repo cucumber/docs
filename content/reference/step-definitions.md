@@ -3,26 +3,18 @@ title = "Step Definitions"
 menu = "main"
 +++
 
-
-Cucumber doesn't know how to execute your scenarios out-of-the-box. It needs _step definitions_
-to translate plain text Gherkin steps into actions that will interact with the system.
-
-When Cucumber executes a [Step](#steps) in a [Scenario](/#scenario) it will look for a matching _step definition_ to execute.
+When Cucumber executes a step in a scenario it will look for a matching _step definition_ to execute.
 
 A step definition is
-{{% text "java" %}}an annotated method with a regular expression{{% /text %}}{{% text "ruby" %}}a regular expression and a block of code{{% /text %}}{{% text "javascript" %}}a cucumber expression and a function{{% /text %}}.
-
-The pattern is used to link the step definition to all the matching [Steps](#steps),
-and the _code_ is what Cucumber will execute when it sees a Gherkin Step.
-
-To understand how Step Definitions work, consider the following Scenario:
+{{% text "java" %}}a method with a regular expression{{% /text %}}{{% text "ruby" %}}a block of code with a regular expression{{% /text %}}{{% text "javascript" %}}a function with a cucumber expression{{% /text %}}
+ attached to it. To illustrate how it works, look at the following Gherkin scenario:
 
 ```gherkin
 Scenario: Some cukes
   Given I have 48 cukes in my belly
 ```
 
-The `I have 48 cukes in my belly` part of the step (the text following the `Given` keyword) will match the Step Definition below:
+The `I have 48 cukes in my belly` part of the step (the text following the `Given` keyword) will match the step definition below:
 
 {{% block "java" %}}
 ```java
