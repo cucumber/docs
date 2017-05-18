@@ -29,18 +29,31 @@ function removeClass(el, className) {
 
 ////// Show/hide content
 
+var showHideCodeSelectors = ['code.language-java', 'code.language-javascript', 'code.language-ruby']
+
 function showOnly(language) {
+  // Activate tab for language
   each(document, '.tabs li', function(a) { removeClass(a, 'is-active') })
   var tab = document.querySelector('[data-language="' + language + '"]')
   addClass(tab, 'is-active')
-  each(document, ".only", function(only) { addClass(only, 'is-hidden') })
-  each(document, ".only-" + language, function(only) { removeClass(only, 'is-hidden') })
+
+  // Hide all code elements
+  for(var i=0; i<showHideCodeSelectors.length; i++) {
+    var selector = showHideCodeSelectors[i]
+    each(document, selector, function(codeElement) {
+      addClass(codeElement, 'is-hidden')
+      addClass(codeElement.parentElement, 'is-hidden')
+    })
+  }
+  each(document, "code.language-" + language, function(codeElement) {
+    removeClass(codeElement, 'is-hidden')
+    removeClass(codeElement.parentElement, 'is-hidden')
+  })
 }
 
 ready(function() {
   each(document, '.tabs li', function(li) {
     var language = li.getAttribute('data-language')
-    console.log(language)
     li.addEventListener('click', function () {
       showOnly(language)
     })

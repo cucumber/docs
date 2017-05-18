@@ -16,25 +16,19 @@ Scenario: Some cukes
 
 The `I have 48 cukes in my belly` part of the step (the text following the `Given` keyword) will match the step definition below:
 
-{{% block "java" %}}
 ```java
 @Given("I have (\\d+) cukes in my belly")
 public void I_have_cukes_in_my_belly(int cukes) {
     System.out.format("Cukes: %n\n", cukes);
 }
 ```
-{{% /block %}}
-{{% block "ruby" %}}
 ```ruby
 Given(/I have (\d+) cukes in my belly/) do |cukes|
   puts "Cukes: #{cukes}"
 end
 ```
-{{% /block %}}
-{{% block "javascript" %}}
 ```javascript
 Given(/^I have (\d+) cukes in my belly$/, function (cukes) {
   console.log("Cukes: " + cukes);
 });
 ```
-{{% /block %}}
