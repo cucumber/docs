@@ -22,13 +22,27 @@ public void I_have_cukes_in_my_belly(int cukes) {
     System.out.format("Cukes: %n\n", cukes);
 }
 ```
+
 ```ruby
 Given(/I have (\d+) cukes in my belly/) do |cukes|
   puts "Cukes: #{cukes}"
 end
 ```
+
 ```javascript
 Given(/^I have (\d+) cukes in my belly$/, function (cukes) {
-  console.log("Cukes: " + cukes);
+  console.log(`Cukes: ${cukes}`);
 });
 ```
+
+{{% block "javascript" %}}
+Please note that if you use arrow functions you won't be able
+to share state between steps.
+
+```javascript
+// Don't do this
+Given(/^I have (\d+) cukes in my belly$/, cukes => {
+  console.log(`Cukes: ${cukes}`);
+});
+```
+{{% /block %}}
