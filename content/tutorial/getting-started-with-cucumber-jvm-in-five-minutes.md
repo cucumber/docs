@@ -42,7 +42,7 @@ The following diagram illustrates the structure when using Cucumber:
 
 # Creating a Project
 
-You can use the shouty project, [which is available from GitHub](https://slack-redir.net/link?url=http%3A%2F%2Fgithub.com%2Fcucumber-ltd%2Fshouty.java&v=3). 
+For this introductions, we will use the shouty project, [which is available from GitHub](https://slack-redir.net/link?url=http%3A%2F%2Fgithub.com%2Fcucumber-ltd%2Fshouty.java&v=3). 
 
 ## Project Structure
 
@@ -149,6 +149,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
