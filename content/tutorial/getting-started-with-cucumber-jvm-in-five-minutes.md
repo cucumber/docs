@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Cucumber-JVM in Five Minutes
+title: Getting Started with Cucumber-JVM
 menu: main
 ---
 This page provides a brief introduction to get you started with Cucumber-JVM.
@@ -149,6 +149,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
