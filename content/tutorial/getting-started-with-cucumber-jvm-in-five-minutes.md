@@ -2,12 +2,7 @@
 title: Getting Started with Cucumber-JVM in Five Minutes
 menu: main
 ---
-This page provides a brief introduction to get you started
-with Cucumber-JVM.
-
-It assumes that you have installed Cucumber-JVM and are
-familiar with Behaviour-driven  Development
-\(BDD) and Java programming.
+This page provides a brief introduction to get you started with Cucumber-JVM.
 
 You will need the following:
 
@@ -17,8 +12,7 @@ to download>*
 * Maven *<link
 to download>*
 
-·        
-Cucumber-JVM *<link
+* Cucumber-JVM *<link
 to download>*
 
 * An IDE editor, for example IntelliJ  IDEA (which will be used in this
@@ -29,10 +23,9 @@ plug-in for every IDE?)*
 
 # Concepts
 
-This will introduce concepts (features, scenarios, Gherkin, steps,
-ubiquitous language, glue code, etc)
+Cucumber helps you define what your product should do, not how it should do it.
 
-Ask what should it do, not how should it do it
+Definitions for terms can be found under the Reference section.
 
 # Creating a Project (IDE)
 
@@ -144,4 +137,5 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
