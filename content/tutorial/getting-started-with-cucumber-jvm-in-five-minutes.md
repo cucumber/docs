@@ -27,10 +27,22 @@ Cucumber helps you define what your product should do, not how it should do it.
 
 Definitions for terms can be found under the Reference section.
 
-# Creating a Project (IDE)
+#Overview
 
-This will describe how to start and set up a new Maven project
-for Cucumber
+The following diagram illustrates the structure when using Cucumber:
+
+*<Alsak's illustration of 
+* Maven
+* JUnit
+* Cucumber
+* Feature files
+* Step definitions
+* The application>*
+
+
+# Creating a Project
+
+
 
 ## Project Structure
 
@@ -137,5 +149,6 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
