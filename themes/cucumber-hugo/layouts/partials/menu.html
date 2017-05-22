@@ -10,6 +10,10 @@
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
+
+        {{if $currentPage.IsMenuCurrent "main" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
       </li>
     {{end}}
   </ul>
