@@ -131,17 +131,60 @@ If your versions do not agree with the defaults in the skeleton POM file, update
 
 ### Adding Dependencies
 
-This will describe adding dependencies to your package
+The default POM contains definitions for the following dependencies:
+
+* Cucumber Java
+* Cucumber JUnit
+* JUnit
+
+We'll have to add a dependency for Cucumber core, as follows:
+
+```
+ <dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-core</artifactId>
+    <version>${cucumber.version}</version>
+    <scope>test</scope>
+ </dependency>
+```
+
+Save the updated POM file.
 
 # Testing the Setup (Maven)
 
-This will describe running mvn clean test to ensure the structure
-is valid 
+Time to make sure everything is hanging together correctly.
+
+Open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`. 
+
+You should see something like the following:
+
+```
+Running _<project>_.RunCuckesTest
+No features found at [classpath:_<project>_]
+
+0 Scenarios
+0 Steps
+_<time>_s
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: _<time>_ secs
+results:
+
+Tests run: 0, Failures: 0, Errors 0, Skipped: 0
+
+[INFO] ---------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ---------------------------------------------------------------------
+[INFO] Total time: _<time>_ s
+[INFO] Finished at: _<date> <time>_
+[INFO] Final Memory: _<X>_M/_<Y>_M
+[INFO] ---------------------------------------------------------------------
+```
+
+You have a correctly built project, but nothing can be tested as you have not specified any behaviour to test against.
 
 # Creating a Clean Build
 
-This will describe how to create a clean build from which to
-start
+To create a clean build, enter `mvn clean install` at the command prompt.
 
 # Specifying Behaviour (Cucumber-JVM)
 
@@ -220,6 +263,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
