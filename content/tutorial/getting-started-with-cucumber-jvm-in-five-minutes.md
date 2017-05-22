@@ -29,7 +29,7 @@ Definitions for terms can be found under the Reference section.
 
 The following diagram illustrates the structure when using Cucumber:
 
-  __<insert Alsak's illustration of how everything fits together>__
+_<insert Alsak's illustration of how everything fits together>_
 
 Maven a software project management and comprehension tool, based on the concept of a project object model (POM). Maven can manage a project's build, reporting and documentation from a central piece of information.
 
@@ -198,6 +198,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
