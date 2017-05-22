@@ -76,7 +76,7 @@ Now we'll look a bit closer at the following parts of the structure and tidy up 
 
   You'll see a single file, called _belly.feature_. 
 
-  Delete the -belly.feature_ file.
+  Delete the _belly.feature_ file.
 
 * Navigate to _src\test\java\skeleton_
 
@@ -116,7 +116,7 @@ Take a look at the Maven [POM Reference](https://maven.apache.org/pom.html#Intro
 
 Open the POM file in your preferred editor and we'll check that the defined versions agree with our installed stack and add dependencies for the shouty project.
 
-###Check the Versions
+### Check the Versions
 
 The default file defines the following versions:
 
@@ -220,6 +220,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
