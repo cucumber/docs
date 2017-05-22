@@ -47,7 +47,7 @@ For this introduction, we will use the skeleton project, [which is available fro
 
 Let's take a quick look at the project structure:
 
-```project structure  
+```  
    gradle  
    src  
    .cucumberproignore  
@@ -91,7 +91,7 @@ Change the `<groupId>`, `<artifactId>` and `<name>`.
 
 # Creating a Project
 
-For this introductions, we will use the shouty project, [which is available from GitHub](https://slack-redir.net/link?url=http%3A%2F%2Fgithub.com%2Fcucumber-ltd%2Fshouty.java&v=3). 
+For this introduction, we will use the skeleton project, [which is available from GitHub](https://github.com/cucumber/cucumber-java-skeleton). 
 
 ## Project Structure
 
@@ -198,6 +198,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
