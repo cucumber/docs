@@ -33,7 +33,7 @@ The following diagram illustrates the structure when using Cucumber:
 
 Maven a software project management and comprehension tool, based on the concept of a project object model (POM). Maven can manage a project's build, reporting and documentation from a central piece of information.
 
-JUnit is a simple framework for writing repeatable tests. Cucmber is executed as a JUnit test using a JUnit runner. This means that Cucumber runs seamlessly with Maven.
+JUnit is a simple framework for writing repeatable tests. Cucumber is executed as a JUnit test using a JUnit runner. This means that Cucumber runs seamlessly with Maven.
 
 Cucumber uses feature files to define the features that you require in your system. It also uses step definitions to define what needs to be done to test the feature.
 
@@ -198,6 +198,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
