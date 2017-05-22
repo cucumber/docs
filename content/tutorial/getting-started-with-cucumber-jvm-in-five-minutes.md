@@ -47,7 +47,7 @@ For this introduction, we will use the skeleton project, [which is available fro
 
 Let's take a quick look at the project structure:
 
-'''project structure  
+```project structure  
    gradle  
    src  
    .cucumberproignore  
@@ -59,7 +59,7 @@ Let's take a quick look at the project structure:
    pom.xml  
    README.md  
    shouty.iml  
-'''
+```
 
 Now we'll look a bit closer at the following parts of the structure and tidy up a bit:
 
@@ -79,15 +79,15 @@ Now, you have a clean project, but before we start let's rename the application.
 
 Open the _POM.XML_ file in a text editor. At the top of the file, you will see the following:
 
-'''
+```
 <groupId>cucumber</groupId>
     <artifactId>cucumber-java-skeleton</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>Cucumber-Java Skeleton</name>
-'''
+```
 
-Change the '<groupId>', '<artifactId>' and '<name>'.
+Change the `<groupId>`, `<artifactId>` and `<name>`.
 
 # Creating a Project
 
@@ -198,6 +198,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
