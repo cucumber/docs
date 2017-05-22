@@ -29,9 +29,9 @@ Definitions for terms can be found under the Reference section.
 
 The following diagram illustrates the structure when using Cucumber:
 
-_<insert Alsak's illustration of how everything fits together>_
+  PLACEHOLDER _<insert Aslak's illustration of how everything fits together>_
 
-Maven a software project management and comprehension tool, based on the concept of a project object model (POM). Maven can manage a project's build, reporting and documentation from a central piece of information.
+Maven is a software project management and comprehension tool, based on the concept of a project object model (POM). Maven can manage a project's build, reporting and documentation from a central piece of information.
 
 JUnit is a simple framework for writing repeatable tests. Cucumber is executed as a JUnit test using a JUnit runner. This means that Cucumber runs seamlessly with Maven.
 
@@ -64,15 +64,24 @@ Let's take a quick look at the project structure:
 Now we'll look a bit closer at the following parts of the structure and tidy up a bit:
 
 * In the shouty directory, you'll see a _POM.XML_ file 
+
   This Project Object Model (POM) defines the project and its configuration in a manner that is understood by Maven.
+
 * Navigate to _src\main\java\skeleton_
+
   You'll see a single file called _Belly.java_.
   Delete the _Belly.java_ file
+
 * Navigate to _src\test\resources\skeleton_
+
   You'll see a single file, called _belly.feature_. 
+
   Delete the -belly.feature_ file.
+
 * Navigate to _src\test\java\skeleton_
+
   You'll see the _RunCukesTest.java_ file. This file is used to run the tests. 
+
   There is also a file called _Stepdefs.java_; delete this file.
   
 Now, you have a clean project, but before we start let's rename the application.
@@ -89,23 +98,36 @@ Open the _POM.XML_ file in a text editor. At the top of the file, you will see t
 
 Change the `<groupId>`, `<artifactId>` and `<name>`.
 
-# Creating a Project
-
-For this introduction, we will use the skeleton project, [which is available from GitHub](https://github.com/cucumber/cucumber-java-skeleton). 
-
-## Project Structure
-
-This will describe the structure of the project 
-
 ## Creating a Package
 
-This will describe how to create the package for your first
-Cucumber files
+Now, you need to create a package. 
+ 
+To do this, right-click on the _src\test\java_ folder and select __New > Package__ from the context menu.
+ 
+Enter a name for your new package. We'll call it shouty.
 
 ### Using POM.XML
 
-This will describe the project object model (POM) and how to
-edit the POM.XML file
+The project object model (POM) file is an XML representation of a Maven project. It defines the project settings, dependencies and plug-ins.
+
+You can edit the _POM.XML_ file in any text editor or in the IDE.
+
+Take a look at the Maven [POM Reference](https://maven.apache.org/pom.html#Introduction) if you want to learn more.
+
+Open the POM file in your preferred editor and we'll check that the defined versions agree with our installed stack and add dependencies for the shouty project.
+
+###Check the Versions
+
+The default file defines the following versions:
+
+* Java 1.7
+* Junit 4.12
+* Cucumber 1.2.5
+* Maven 3.3
+
+To check the versions you have installed, open a command prompt and enter `mvn --version`. 
+
+If your versions do not agree with the defaults in the skeleton POM file, update the properties accordingly and save the updated POM file.
 
 ### Adding Dependencies
 
@@ -198,6 +220,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
