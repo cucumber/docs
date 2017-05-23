@@ -63,7 +63,7 @@ Let's take a quick look at the project structure:
 
 Now we'll look a bit closer at the following parts of the structure and tidy up a bit:
 
-* In the shouty directory, you'll see a _POM.XML_ file 
+* In the skeleton directory, you'll see a _POM.XML_ file 
 
   This Project Object Model (POM) defines the project and its configuration in a manner that is understood by Maven.
 
@@ -186,54 +186,146 @@ You have a correctly built project, but nothing can be tested as you have not sp
 
 To create a clean build, enter `mvn clean install` at the command prompt.
 
-# Specifying Behaviour (Cucumber-JVM)
+# Specifying Behaviour
 
-This will introduce the location, hierarchy and structure of
-the feature file
+How do you specify behaviour? By defining features and their scenarios. 
+
+We'll do that now.
 
 ## Defining the Feature Directory
 
-This will describe the feature directory and its creation
+Features are defined in feature files, which are stored in the feature directory.
+
+As we saw in the project structure, the _belly.feature_ file was stored under _src\test\resources\skeleton_; that's your feature directory.
+
+We'll bring it into line with the new project name and rename the _skeleton_ folder to _shouty_, so now your feature directory is _src\test\resources\shouty_.
+
+While we're doing this, we'll bring the other _skeleton_ folders - the ones under _src\test\java_ and _src\main\java\_ - into line too. Rename both _skeleton_ folders to _shouty_.
 
 ## Creating a Feature
 
-This will describe how to write a feature 
+To create a feature file:
 
-*<if required, can
-include information on adding Background, but I suggest that is left for the
-next stage>*
+1. Open your project in your chosen IDE if necessary and right-click on the _src\test\resources\shouty_ folder
+
+2. Select __New > File__
+
+3. Enter a name for your feature file, ensuring that you use the _.feature_ extension. For example, _hear/_shout.feature_
+
+Files in this folder with an extension of _.feature_ are automatically recognised as feature files. Each feature file describes a single feature.
+
+We are going to create tests for a new social networking application, shouty, especially good for marketing a small business. The basic idea is that someone "shouts" (or sends) their message and anyone in a specified distance will "hear" (or receive) their message.
+
+Now, let's add some content to this file to define the feature. Open the feature file in your IDE and add the name of the feature. We'll add _`Feature: Hear Shout`_.
+
+We don't want anyone with the application to hear the shout, only those within 1000m, so we'll add another line to the feature file with this rule. Add _Shouts have a range of approximately 1000m_.
+
+Now we need to think of a way of testing against this rule. We do that using scenarios. 
 
 ## Creating a Scenario
 
-This will describe how to write a scenario
+Scenarios are added to the feature file. They define the conditions to test the feature. For our feature, there are two things we need to check; do people within 1000m hear the shout and do those outside 1000m not hear the shout.
 
-*<if required, can
-include information on adding code before and after a scenario or using
-scenario outlines, but I suggest that is left for the next stage>*
+We'll concentrate on the first of these conditions. Add the following to the feature file (don't worry, we'll walk through it in a minute):
+
+```
+ Scenario: Listener is within range
+  Given Lucy is located 15m from Sean
+  When Sean shouts “free bagels at Sean’s”
+  Then Lucy hears Sean’s message
+```
 
 ## Running a Feature
 
-This will describe how to run the feature file using mvn clean
-test and what to expect
+Time to see what difference adding the feature and scenario makes.
+
+Open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`. 
+
+That's a lot of output, we'll take it bit by bit starting at the top of the output. 
+
+Scroll to the start of the output, you should see something like the following:
+
+```
+[INFO] Scanning for projects...
+[INFO] ---------------------------------------------------------------------
+[INFO] BUILDING <project> <version>
+[INFO] ---------------------------------------------------------------------
+
+<progress messages....>
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running <project>.RunCukesTest
+Feature: Hear Shout
+
+  Scenario: Listener is within range    
+    Given Lucy is located 15m from Sean
+    When Sean shouts "free bagels at Sean's"
+    Then Lucy hears Sean's message
+
+1 Scenarios (1 undefined)
+3 Steps (3 undefined)
+<time>s
+```
+
+Ignore the rest of the output for now, we'll work through it.
+
+You can see that we have one undefined Scenario and three undefined Steps.
+
+To define the Scenario, you have to define all of the related steps. In our case, this is all three steps.
 
 ## Defining Steps
 
-This will describe how to add steps from the three amigo discussions,
-user stories or acceptance criteria
+The steps you need to define to check that people within 1000m hear the shout are defined in the following lines:
+
+* Given Lucy is located 15m from Sean
+* When Sean shouts "free bagels at Sean's"
+* Then Lucy hears Sean's message
+
+These all have a keyword (Given, When and Then) followed by a step. The step is then matched to a _step definition_.
+
+[Step deinitions](https://cucumber.netlify.com/reference/step-definitions/) define the plain text step in code.
 
 ### Given/When/Then
 
-This will describe the definition of each step and ensuring
-correct coverage
+The plain text steps are defined in the Gherkin language.
 
-*<if required, can
-include information on using data tables, expressions and tags, but I suggest
-that is left for the next stage>*
+[Gherkin](https://cucumber.netlify.com/reference/gherkin/) allows technical and non-technical staff to describe and share the expected behaviour of the application. It does not describe the implementation.
 
-## Running the Tests (Maven)
+The feature file contains the Gherkin source. In our feature, we use only the Given, When and Then keywords - there are others; you can read more on the [Wiki page](https://github.com/cucumber/cucumber/wiki/Gherkin).
 
-This will describe how to run the Cucumber project in Maven
-and explain the possible results, issues and resolutions
+The Given, When, Then structure is used in Agile developments to help when writing acceptance criteria or user stories.
+
+The Given keyword precedes text defining the context. Our Scenario is that the listener is under 1000m from the shouter, we are using an example of a listener within this limit (15m) to set the context.
+
+The When keyword precedes text defining an action.  Our action is that the shouter sends a message. 
+
+The Then keyword precedes text defining the result of the action on the context. Our result is that the listener who is 15m away hears the shout.
+
+## Running the Tests
+
+You can keep amending your scenario and re-testing.
+
+Running the test is always the same: open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`. 
+
+The end of the output includes a summary of the results; it'll look something like the following:
+
+```
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.656 sec
+
+Results :
+
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 4
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.688 s
+[INFO] Finished at: 2017-05-22T15:43:29+01:00
+[INFO] Final Memory: 15M/142M
+[INFO] ------------------------------------------------------------------------
+```
 
 ### Passed Tests
 
@@ -263,6 +355,7 @@ pending tests and how to use them
 *<if required, can
 include information on writing glue code, but I suggest that is left for the
 next stage>*
+
 
 
 
