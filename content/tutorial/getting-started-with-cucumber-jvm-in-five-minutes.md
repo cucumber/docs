@@ -329,33 +329,69 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 4
 
 ### Passed Tests
 
-This will describe what it means if tests pass and what to
-do next
+Your tests pass? Well done! Now, go write the code for this part of the application.
+
+_Note:__ Passing these tests does not guarantee the implementation will be correct, just that the behaviour is as expected. You will need to test your code and your feature.
 
 ### Failed Tests
 
-This will describe what it means if tests fail and what to
-do next
+Tests fail if the behaviour is not as expected. If Lucy does not hear Sean's shout despite being within 1000m, the test will fail.
+
+You need to re-examine your step definition. Once you have made changes, re-run the test.
+
+You need to work round the define-test-redefine-retest loop until the test passes before you move onto coding.
 
 ### Pending Tests
 
-This will describe what it means if tests are not run and
-what to do next
+Tests are pending when they are incomplete.
+
+It is good practice to give unfinished step definitions a status of pending and to throw a 'PendingException' when run. This will be replaced when the step definition is completed.
+
+You shouldn't be surprised by any tests that are pending. After you have completed the step definition, a previously pending test should be passed or failed.
 
 ### Skipped Tests
 
-This will describe when tests will be skipped and what to do
-next
+Any tests following a test that was deemed to be Failed or Pending will be skipped.
+
+The only way to run a Skipped test is to ensure all tests before it are deemed to be Passed.
 
 ### Snippets for Missing Steps
 
-This will describe the snippets produced by cucumber for
-pending tests and how to use them
+In our last test, we had one underfined Scenario and three undefined Steps, luckily, Cucumber has given us examples, or snippets, that we can use to define the steps.
 
-*<if required, can
-include information on writing glue code, but I suggest that is left for the
-next stage>*
+Check the output from your clean test, it'll look something like the following:
 
+```
+You can implement missing steps with the snippets below:
+
+@Given("^Lucy is located (\\d+)m from Sean$")
+public void lucy_is_located_m_from_Sean(int arg1) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+
+@When("^Sean shouts "free bagels at Sean's"$")
+public void sean_shouts_free_bagels_at_Sean_s() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+
+@Then("^Lucy hears Sean's message$")
+public void lucy_hears_Sean_s_message() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+```
+
+In your chosen IDE, navigate to the _src\test\java\<project>_ folder and right-click to display the context menu. Select __New > Java Class__. Give the class a name and paste in the snippets.
+
+IntelliJ will not recognise those symbols, so we'll need to add import statements. Put your curson on _@Given_ and press __ALT__ + __ENTER__, then select __Import class__, do the same for the other symbols (shown in red).
+
+__Note:__ If this does not work, select __Run > Edit Configurations__, select __Cucumber java__ from the __defaults__ drop-down and add the project name to the __Glue__ field on the __Configuration__ tab.
+
+Now, run the tests again.
+
+This time, your step definitions will be found, and the first will be run. However, as we have defined a `PendingException`, it will skip the other steps.
 
 
 
