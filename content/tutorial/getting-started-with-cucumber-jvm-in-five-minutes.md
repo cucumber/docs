@@ -331,7 +331,7 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 4
 
 Your tests pass? Well done! Now, go write the code for this part of the application.
 
-_Note:__ Passing these tests does not guarantee the implementation will be correct, just that the behaviour is as expected. You will need to test your code and your feature.
+__Note:__ Passing these tests does not guarantee the implementation will be correct, just that the behaviour is as expected. You will need to test your code and your feature.
 
 ### Failed Tests
 
@@ -385,13 +385,14 @@ public void lucy_hears_Sean_s_message() throws Throwable {
 
 In your chosen IDE, navigate to the _src\test\java\<project>_ folder and right-click to display the context menu. Select __New > Java Class__. Give the class a name and paste in the snippets.
 
-IntelliJ will not recognise those symbols, so we'll need to add import statements. Put your curson on the _@Given_ symbol and press __ALT__ + __ENTER__, then select __Import class__, do the same for the other symbols (shown in red).
+IntelliJ will not recognise those symbols, so we'll need to add import statements. Put your cursor on the _@Given_ symbol and press __ALT__ + __ENTER__, then select __Import class__, do the same for the other symbols (shown in red).
 
-__Note:__ If this does not work, select __Run > Edit Configurations__, select __Cucumber java__ from the __defaults__ drop-down and add the project name to the __Glue__ field on the __Configuration__ tab.
+__Note:__ If this does not work, select __Run > Edit Configurations__, select __Cucumber java__ from the __Defaults__ drop-down and add the project name to the __Glue__ field on the __Configuration__ tab.
 
 Now, run the tests again.
 
 This time, your step definitions will be found, and the first will be run. However, as we have defined a `PendingException`, it will skip the other steps.
+
 
 
 
