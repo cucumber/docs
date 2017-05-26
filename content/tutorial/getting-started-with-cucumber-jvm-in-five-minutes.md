@@ -159,14 +159,14 @@ Open a command prompt, navigate to your project directory (the one containing th
 You should see something like the following:
 
 ```
-Running _<project>_.RunCuckesTest
-No features found at [classpath:_<project>_]
+Running <project>.RunCuckesTest
+No features found at [classpath:<project>]
 
 0 Scenarios
 0 Steps
-_<time>_s
+<time>s
 
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: _<time>_ secs
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: <time> secs
 results:
 
 Tests run: 0, Failures: 0, Errors 0, Skipped: 0
@@ -174,9 +174,9 @@ Tests run: 0, Failures: 0, Errors 0, Skipped: 0
 [INFO] ---------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ---------------------------------------------------------------------
-[INFO] Total time: _<time>_ s
-[INFO] Finished at: _<date> <time>_
-[INFO] Final Memory: _<X>_M/_<Y>_M
+[INFO] Total time: <time> s
+[INFO] Finished at: <date> <time>
+[INFO] Final Memory: <X>M/<Y>M
 [INFO] ---------------------------------------------------------------------
 ```
 
@@ -200,7 +200,7 @@ As we saw in the project structure, the _belly.feature_ file was stored under _s
 
 We'll bring it into line with the new project name and rename the _skeleton_ folder to _shouty_, so now your feature directory is _src\test\resources\shouty_.
 
-While we're doing this, we'll bring the other _skeleton_ folders - the ones under _src\test\java_ and _src\main\java\_ - into line too. Rename both _skeleton_ folders to _shouty_.
+While we're doing this, we'll bring the other _skeleton_ folders - the ones under _src\test\java_ and _src\main\java_ - into line too. Rename both _skeleton_ folders to _shouty_.
 
 ## Creating a Feature
 
@@ -210,7 +210,7 @@ To create a feature file:
 
 2. Select __New > File__
 
-3. Enter a name for your feature file, ensuring that you use the _.feature_ extension. For example, _hear/_shout.feature_
+3. Enter a name for your feature file, ensuring that you use the _.feature_ extension. For example, _hear_shout.feature_
 
 Files in this folder with an extension of _.feature_ are automatically recognised as feature files. Each feature file describes a single feature.
 
@@ -285,7 +285,7 @@ The steps you need to define to check that people within 1000m hear the shout ar
 
 These all have a keyword (Given, When and Then) followed by a step. The step is then matched to a _step definition_.
 
-[Step deinitions](https://cucumber.netlify.com/reference/step-definitions/) define the plain text step in code.
+[Step definitions](https://cucumber.netlify.com/reference/step-definitions/) define the plain text step in code.
 
 ### Given/When/Then
 
@@ -345,7 +345,7 @@ You need to work round the define-test-redefine-retest loop until the test passe
 
 Tests are pending when they are incomplete.
 
-It is good practice to give unfinished step definitions a status of pending and to throw a 'PendingException' when run. This will be replaced when the step definition is completed.
+It is good practice to give unfinished step definitions a status of pending and to throw a `PendingException` when run. This will be replaced when the step definition is completed.
 
 You shouldn't be surprised by any tests that are pending. After you have completed the step definition, a previously pending test should be passed or failed.
 
@@ -383,7 +383,7 @@ public void lucy_hears_Sean_s_message() throws Throwable {
 }
 ```
 
-In your chosen IDE, navigate to the _src\test\java\<project>_ folder and right-click to display the context menu. Select __New > Java Class__. Give the class a name and paste in the snippets.
+In your chosen IDE, navigate to the _src\test\java\\<project>_ folder and right-click to display the context menu. Select __New > Java Class__. Give the class a name and paste in the snippets.
 
 IntelliJ will not recognise those symbols, so we'll need to add import statements. Put your cursor on the _@Given_ symbol and press __ALT__ + __ENTER__, then select __Import class__, do the same for the other symbols (shown in red).
 
@@ -392,6 +392,7 @@ __Note:__ If this does not work, select __Run > Edit Configurations__, select __
 Now, run the tests again.
 
 This time, your step definitions will be found, and the first will be run. However, as we have defined a `PendingException`, it will skip the other steps.
+
 
 
 
