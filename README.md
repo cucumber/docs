@@ -50,6 +50,7 @@ Edit files under `themes/cucumber-hugo`. Changes to the CSS should be made in
 
 If you make changes to the `sass`, it will be rebuilt if you run the following:
 
+    cd themes/cucumber-hugo
     yarn        # install dependencies
     yarn watch  # rebuild cucumber.css
 
