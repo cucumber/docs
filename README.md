@@ -3,7 +3,29 @@
 This repository contains the source code for the Cucumber Documentation website.
 It is currently live at [https://cucumber.netlify.com](https://cucumber.netlify.com),
 and the plan is to move it to [https://docs.cucumber.io](https://docs.cucumber.io) once
-the documentation on that site has been migrated.
+it is good enough to replace the existing documentation.
+
+## Old documentation
+
+For various reasons, old Cucumber documentation is scattered around different places:
+
+* 2008 onwards: [Cucumber wiki (primarily Ruby)](https://github.com/cucumber/cucumber/wiki)
+* 2008 onwards: Misc README files for different implementations:
+  * https://github.com/cucumber/cucumber-ruby
+  * https://github.com/cucumber/cucumber-jvm
+  * https://github.com/cucumber/cucumber-js
+* 2015 onwards: [https://cucumber.io/docs](https://cucumber.io/docs)
+  * Based on our own website app (Jekyll-like)
+  * [source](https://github.com/cucumber/website/tree/master/apps/dynamic/views/docs)
+* 2016 onwards: [https://docs.cucumber.io/](https://docs.cucumber.io/)
+  * Based on GitBook
+  * [source](https://github.com/cucumber/cucumber)
+  * See [SUMMARY.md](https://github.com/cucumber/cucumber/blob/master/SUMMARY.md) for the outline
+
+The goal is to move the documentation to this repo.
+
+When the new website is ready to go live, we should replace contents on old pages
+with a link and/or redirect to the new location, so that external links to the old documentation remain useful.
 
 ## Contributing Content
 
