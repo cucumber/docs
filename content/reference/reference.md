@@ -1,6 +1,9 @@
 ---
 title: Reference
 nav: docs
+menu:
+  reference:
+    weight: 10
 renderer: Cucumber::Website::Reference
 ---
 

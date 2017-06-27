@@ -1,7 +1,9 @@
 ---
 title: Android
 nav: docs
-menu: reference
+menu:
+  reference:
+    weight: 5
 renderer: Cucumber::Website::Reference
 ---
 
