@@ -18,3 +18,66 @@
     {{end}}
   </ul>
 </aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    Wiki
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.wiki }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "main" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    Reference
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.reference }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "main" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    Tools and Integrations
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.tools }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "main" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
