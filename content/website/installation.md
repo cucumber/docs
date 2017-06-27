@@ -1,3 +1,10 @@
+---
+title: Installation
+menu: website
+source: https://docs.cucumber.io/
+---
+
+
 # Installation
 
 Cucumber exists for different platforms such as Java, JavaScript, Ruby etc. Cucumber is a command-line tool, and how you install it depends on your platform.
@@ -53,7 +60,7 @@ Add these dependencies to your project:
         <version>1.2.4</version>
         <scope>test</scope>
     </dependency>
-    
+
     <dependency>
         <groupId>info.cukes</groupId>
         <artifactId>cucumber-junit</artifactId>
