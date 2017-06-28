@@ -1,7 +1,7 @@
 +++
 title = "Contributing"
 origin = "https://github.com/cucumber/cucumber/wiki/File"
-menu = ["all", "wiki"]
+menu = ["all", "wiki", "meta"]
 +++
 
 Please follow these guidelines if you want to contribute to Cucumber or help the cucumber team reproduce a problem.

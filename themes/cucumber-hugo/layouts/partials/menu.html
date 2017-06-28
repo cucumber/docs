@@ -125,3 +125,24 @@
     {{end}}
   </ul>
 </aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    About us
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.meta }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "meta" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "meta" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
