@@ -1,6 +1,6 @@
 +++
 title = "Continuous Integration"
-source = "https://github.com/cucumber/cucumber/wiki/Continuous-Integration/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

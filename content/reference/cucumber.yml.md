@@ -1,6 +1,6 @@
 +++
 title = "cucumber.yml"
-source = "https://github.com/cucumber/cucumber/wiki/cucumber.yml/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki", "reference"]
 +++
 

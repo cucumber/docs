@@ -1,6 +1,6 @@
 +++
 title = "Gherkin"
-source = "https://github.com/cucumber/cucumber/wiki/Gherkin/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

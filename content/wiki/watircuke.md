@@ -1,6 +1,6 @@
 +++
 title = "watircuke"
-source = "https://github.com/cucumber/cucumber/wiki/watircuke/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

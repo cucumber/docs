@@ -1,6 +1,6 @@
 +++
 title = "Setting up Selenium"
-source = "https://github.com/cucumber/cucumber/wiki/Setting-up-Selenium/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

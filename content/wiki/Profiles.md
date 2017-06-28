@@ -1,6 +1,6 @@
 +++
 title = "Profiles"
-source = "https://github.com/cucumber/cucumber/wiki/Profiles/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

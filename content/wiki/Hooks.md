@@ -1,6 +1,6 @@
 +++
 title = "Hooks"
-source = "https://github.com/cucumber/cucumber/wiki/Hooks/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

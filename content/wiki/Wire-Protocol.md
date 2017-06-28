@@ -1,6 +1,6 @@
 +++
 title = "Wire Protocol"
-source = "https://github.com/cucumber/cucumber/wiki/Wire-Protocol/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

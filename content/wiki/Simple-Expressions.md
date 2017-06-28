@@ -1,6 +1,6 @@
 +++
 title = "Simple Expressions"
-source = "https://github.com/cucumber/cucumber/wiki/Simple-Expressions/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

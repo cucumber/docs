@@ -1,6 +1,6 @@
 +++
 title = "Step Organization"
-source = "https://github.com/cucumber/cucumber/wiki/Step-Organization/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

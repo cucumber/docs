@@ -1,6 +1,6 @@
 +++
 title = "Perl"
-source = "https://github.com/cucumber/cucumber/wiki/perl/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki", "implementations"]
 +++
 

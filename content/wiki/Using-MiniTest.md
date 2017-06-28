@@ -1,6 +1,6 @@
 +++
 title = "Using MiniTest"
-source = "https://github.com/cucumber/cucumber/wiki/Using-MiniTest/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

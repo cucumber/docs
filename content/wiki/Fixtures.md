@@ -1,6 +1,6 @@
 +++
 title = "Fixtures"
-source = "https://github.com/cucumber/cucumber/wiki/Fixtures/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

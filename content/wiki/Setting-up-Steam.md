@@ -1,6 +1,6 @@
 +++
 title = "Setting up Steam"
-source = "https://github.com/cucumber/cucumber/wiki/Setting-up-Steam/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

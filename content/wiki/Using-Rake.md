@@ -1,6 +1,6 @@
 +++
 title = "Using Rake"
-source = "https://github.com/cucumber/cucumber/wiki/Using-Rake/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

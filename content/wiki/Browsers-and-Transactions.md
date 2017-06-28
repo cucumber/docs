@@ -1,6 +1,6 @@
 +++
 title = "Browsers and Transactions"
-source = "https://github.com/cucumber/cucumber/wiki/Browsers-and-Transactions/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Scenario Outlines"
-source = "https://github.com/cucumber/cucumber/wiki/Scenario-Outlines/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

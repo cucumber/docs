@@ -1,6 +1,6 @@
 +++
 title = "Tutorials and Related Blog Posts"
-source = "https://github.com/cucumber/cucumber/wiki/Tutorials-and-Related-Blog-Posts/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

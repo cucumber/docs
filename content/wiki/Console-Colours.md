@@ -1,6 +1,6 @@
 +++
 title = "Console Colours"
-source = "https://github.com/cucumber/cucumber/wiki/Console-Colours/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

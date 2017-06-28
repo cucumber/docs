@@ -1,6 +1,6 @@
 +++
 title = "FunFX and Flex"
-source = "https://github.com/cucumber/cucumber/wiki/FunFX-and-Flex/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

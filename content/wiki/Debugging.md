@@ -1,6 +1,6 @@
 +++
 title = "Debugging"
-source = "https://github.com/cucumber/cucumber/wiki/Debugging/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

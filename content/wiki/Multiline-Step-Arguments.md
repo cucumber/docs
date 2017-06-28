@@ -1,6 +1,6 @@
 +++
 title = "Multiline Step Arguments"
-source = "https://github.com/cucumber/cucumber/wiki/Multiline-Step-Arguments/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

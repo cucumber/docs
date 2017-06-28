@@ -1,6 +1,6 @@
 +++
 title = "Watircraft"
-source = "https://github.com/cucumber/cucumber/wiki/Watircraft/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

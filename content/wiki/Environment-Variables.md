@@ -1,6 +1,6 @@
 +++
 title = "Environment Variables"
-source = "https://github.com/cucumber/cucumber/wiki/Environment-Variables/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

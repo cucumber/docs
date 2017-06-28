@@ -1,6 +1,6 @@
 +++
 title = "Get in touch"
-source = "https://github.com/cucumber/cucumber/wiki/Get-in-touch/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki", "meta"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Feature Coupled Step Definitions (Antipattern)"
-source = "https://github.com/cucumber/cucumber/wiki/Feature-Coupled-Step-Definitions-(Antipattern)/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

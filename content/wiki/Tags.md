@@ -1,6 +1,6 @@
 +++
 title = "Tags"
-source = "https://github.com/cucumber/cucumber/wiki/Tags/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

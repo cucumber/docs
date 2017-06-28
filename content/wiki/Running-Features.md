@@ -1,6 +1,6 @@
 +++
 title = "Running Features"
-source = "https://github.com/cucumber/cucumber/wiki/Running-Features/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

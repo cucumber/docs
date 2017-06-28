@@ -1,6 +1,6 @@
 +++
 title = "Spoken languages"
-source = "https://github.com/cucumber/cucumber/wiki/Spoken-languages/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

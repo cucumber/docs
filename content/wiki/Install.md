@@ -1,6 +1,6 @@
 +++
 title = "Install"
-source = "https://github.com/cucumber/cucumber/wiki/Install/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

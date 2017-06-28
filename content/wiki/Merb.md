@@ -1,6 +1,6 @@
 +++
 title = "Merb"
-source = "https://github.com/cucumber/cucumber/wiki/Merb/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Ruby on Rails"
-source = "https://github.com/cucumber/cucumber/wiki/ruby-on-rails/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

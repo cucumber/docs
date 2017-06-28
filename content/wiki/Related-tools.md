@@ -1,6 +1,6 @@
 +++
 title = "Related tools"
-source = "https://github.com/cucumber/cucumber/wiki/Related-tools/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 

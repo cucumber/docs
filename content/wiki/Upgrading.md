@@ -1,6 +1,6 @@
 +++
 title = "Upgrading"
-source = "https://github.com/cucumber/cucumber/wiki/Upgrading/
+origin = "https://github.com/cucumber/cucumber/wiki/File"
 menu = ["all", "wiki"]
 +++
 
