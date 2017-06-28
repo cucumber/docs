@@ -5,5 +5,5 @@ theme = "cucumber-hugo"
 
 # This lets us add multiple links to subsections
 [[menu.implementations]]
-    name = "Closure"
+    name = "Clojure"
     url = "/implementations/jvm/#clojure"
