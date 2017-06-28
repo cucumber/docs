@@ -1,7 +1,9 @@
 ---
 title: C++
 nav: docs
-menu: reference
+menu:
+  - reference
+  - implementations
 renderer: Cucumber::Website::Reference
 ---
 

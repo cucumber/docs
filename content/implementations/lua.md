@@ -1,7 +1,9 @@
 ---
 title: Lua
 nav: docs
-menu: reference
+menu:
+  - reference
+  - implementations
 renderer: Cucumber::Website::Reference
 ---
 

@@ -21,6 +21,27 @@
 
 <aside class="menu">
   <p class="menu-label">
+    Implementations
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.implementations }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "implementations" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "implementations" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+<aside class="menu">
+  <p class="menu-label">
     Old menu
   </p>
   <ul class="menu-list">
@@ -98,27 +119,6 @@
         </a>
 
         {{if $currentPage.IsMenuCurrent "reference" . }}
-          {{ $currentPage.TableOfContents }}
-        {{end}}
-      </li>
-    {{end}}
-  </ul>
-</aside>
-
-<aside class="menu">
-  <p class="menu-label">
-    Tools and Integrations
-  </p>
-  <ul class="menu-list">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.tools }}
-      <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "tools" . }} class="is-active"{{end}}>
-          {{ .Pre }}
-          <span>{{ .Name }}</span>
-        </a>
-
-        {{if $currentPage.IsMenuCurrent "tools" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>

@@ -1,7 +1,9 @@
 ---
 title: JavaScript
 nav: docs
-menu: reference
+menu:
+  - reference
+  - implementations
 renderer: Cucumber::Website::Reference
 ---
 
@@ -27,3 +29,7 @@ Install as a development dependency of your application with:
 ```
 npm install --save-dev cucumber
 ```
+
+## See Also
+
+[documentation](https://github.com/cucumber/cucumber-js#documentation) for more information.
