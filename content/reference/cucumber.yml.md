@@ -1,7 +1,7 @@
 +++
 title = "cucumber.yml"
 origin = "https://github.com/cucumber/cucumber/wiki/File"
-menu = ["all", "wiki"]
+menu = ["all", "wiki", "reference"]
 +++
 
 Cucumber lets you store and reuse commonly used cucumber command line arguments for a project in a <code>cucumber.yml</code> or <code>cucumber.yaml</code> file. This file must be in a <code>.config</code> subdirectory or <code>config</code> subdirectory of your current working directory.
