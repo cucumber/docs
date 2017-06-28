@@ -1,6 +1,10 @@
 ---
 title: Getting Started with Cucumber-JVM
-menu: old
+menu:
+  - old
+  main:
+    weight 25
+
 ---
 This page provides a brief introduction to get you started with Cucumber-JVM.
 
