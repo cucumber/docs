@@ -1,6 +1,0 @@
-+++
-title = ".textile"
-menu = ["main", "all", "wiki"]
-origin = "https://github.com/cucumber/cucumber/wiki/.textile"
-+++
-
