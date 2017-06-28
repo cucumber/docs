@@ -13,11 +13,12 @@ Behat is the official Cucumber implementation for PHP.
 
 The docs are currently at [behat.org](http://behat.org).
 
-According to http://docs.behat.org/en/v3.0/
-bq. Since v3.0, Behat is considered an official Cucumber implementation in PHP and is part of one big family of BDD tools.
+According to http://docs.behat.org/en/v3.0/ bq. Since v3.0, Behat is considered
+an official Cucumber implementation in PHP and is part of one big family of BDD
+tools.
 
-Directly testing PHP code
--------------------------
+## Directly testing PHP code
+
 
 To directly test PHP code using step definitions written in PHP, please see the [Cuke4Php](https://github.com/olbrich/cuke4php) project.
 
@@ -34,7 +35,8 @@ Here is how to do it:
       Scenario: Install cucumber
         Given I am running Ubuntu
         And I have not yet installed cucumber
-        When I run "apt-get install ruby ruby1.8-dev rdoc1.8 irb libxml2-dev libxslt1-dev libc6-dev-i386 libopenssl-ruby"
+        When I run "apt-get install ruby ruby1.8-dev rdoc1.8 irb libxml2-dev \
+          libxslt1-dev libc6-dev-i386 libopenssl-ruby"
         # We install rubygems by hand because the apt version uses strange paths
         And I run "wget http://rubyforge.org/frs/download.php/60718/rubygems-1.3.5.tgz"
         And I run "tar xvf rubygems-1.3.5.tgz"
@@ -82,15 +84,26 @@ Here is how to do it:
 
 A few other gotchas:
 
-The mechanize configuration for webrat seems to use response\_body instead of response.body. I am not sure what is going on there, but when using the webrat step definitions from: http://github.com/brynary/webrat required a few substitutions to make it work right.
+The mechanize configuration for webrat seems to use response\_body instead of
+response.body. I am not sure what is going on there, but when using the webrat
+step definitions from: http://github.com/brynary/webrat required a few
+substitutions to make it work right.
 
-If you want your test data to be the same every time your run it, you need a few things. First, you need a separate database that has a known and controlled set of data in it. Secondly, if your data is different every time you test, then your tests probably are not repeatable.
+If you want your test data to be the same every time your run it, you need a few
+things. First, you need a separate database that has a known and controlled set
+of data in it. Secondly, if your data is different every time you test, then
+your tests probably are not repeatable.
 
-To get around this you can hack in database dumps and table dumps to happen before and after scenarios. You can save database state before all of the tests and reload it at the end so that next time it will be the same, or you can do it on a per feature level and per database table level. I have so far found the second approach to be the quickest and most flexible.
+To get around this you can hack in database dumps and table dumps to happen
+before and after scenarios. You can save database state before all of the tests
+and reload it at the end so that next time it will be the same, or you can do it
+on a per feature level and per database table level. I have so far found the
+second approach to be the quickest and most flexible.
 
-The per feature and per table approach can be accomplished using \[\[hooks\]\]. Here are is the code that I currently have in 'support/hooks.rb'
+The per feature and per table approach can be accomplished using \[\[hooks\]\].
+Here are is the code that I currently have in 'support/hooks.rb'
 
-    <code>
+```
     Before ('@reset_users') do
       # Save user table data
       save_table("game_user")
@@ -102,16 +115,19 @@ The per feature and per table approach can be accomplished using \[\[hooks\]\]. 
     end
 
     def save_table(table_name)
-      run "mysqldump -u #{@@test_database_username} --password=#{@@test_database_password} #{@@test_database_name} #{table_name}> /tmp/#{table_name}"
+      run "mysqldump -u #{@@test_database_username} --password=#{@@test_database_password} \
+        #{@@test_database_name} #{table_name}> /tmp/#{table_name}"
 
     end
 
     def load_table(table_name)
-      run "mysql -u #{@@test_database_username} --password=#{@@test_database_password} #{@@test_database_name} < /tmp/#{table_name}"
+      run "mysql -u #{@@test_database_username} --password=#{@@test_database_password} \
+        #{@@test_database_name} < /tmp/#{table_name}"
     end
-    </code>
+```
 
-Then you can just put the @reset\_users tag in before the scenario that does stuff with your user table, and it will reset it after it completes:
+Then you can just put the @reset\_users tag in before the scenario that does
+stuff with your user table, and it will reset it after it completes:
 
     <code>
       @reset_users
@@ -119,5 +135,7 @@ Then you can just put the @reset\_users tag in before the scenario that does stu
         Given ...
     </code>
 
-A full cucumber env.rb for PHP can be found [here](http://gist.github.com/188166)
-Also check out the features directory in [chits](http://github.com/mikeymckay/chits) to see cucumber testing a real PHP app.
+A full cucumber env.rb for PHP can be found
+[here](http://gist.github.com/188166) Also check out the features directory in
+[chits](http://github.com/mikeymckay/chits) to see cucumber testing a real PHP
+app.
