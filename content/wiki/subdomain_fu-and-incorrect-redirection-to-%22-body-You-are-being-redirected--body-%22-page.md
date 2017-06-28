@@ -1,6 +1,6 @@
 +++
 title = "subdomain_fu and incorrect redirection to %22 body You are being redirected  body %22 page"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/subdomain_fu-and-incorrect-redirection-to-%22-body-You-are-being-redirected--body-%22-page/
 menu = ["all", "wiki"]
 +++
 

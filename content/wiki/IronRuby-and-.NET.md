@@ -1,6 +1,6 @@
 +++
 title = "IronRuby and .NET"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/IronRuby-and-.NET/
 menu = ["all", "wiki"]
 +++
 

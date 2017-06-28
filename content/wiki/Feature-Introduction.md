@@ -1,6 +1,6 @@
 +++
 title = "Feature Introduction"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Feature-Introduction/
 menu = ["all", "wiki"]
 +++
 

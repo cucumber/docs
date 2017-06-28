@@ -1,6 +1,6 @@
 +++
 title = "Cucumber Backgrounder"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder/
 menu = ["all", "wiki"]
 +++
 

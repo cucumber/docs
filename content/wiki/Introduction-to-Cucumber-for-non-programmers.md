@@ -1,6 +1,6 @@
 +++
 title = "Introduction to Cucumber for non programmers"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Introduction-to-Cucumber-for-non-programmers/
 menu = ["all", "wiki"]
 +++
 

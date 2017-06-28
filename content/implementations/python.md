@@ -1,6 +1,6 @@
 +++
 title = "Python"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/python/
 menu = ["all", "wiki", "implementations"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Contributing"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Contributing/
 menu = ["all", "wiki", "meta"]
 +++
 

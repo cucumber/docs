@@ -1,6 +1,6 @@
 +++
 title = "Using RCov with Cucumber and Rails"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Using-RCov-with-Cucumber-and-Rails/
 menu = ["all", "wiki"]
 +++
 

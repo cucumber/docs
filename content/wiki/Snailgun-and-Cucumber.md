@@ -1,6 +1,6 @@
 +++
 title = "Snailgun and Cucumber"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Snailgun-and-Cucumber/
 menu = ["all", "wiki"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Step Argument Transforms"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Step-Argument-Transforms/
 menu = ["all", "wiki"]
 +++
 

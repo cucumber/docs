@@ -1,6 +1,6 @@
 +++
 title = "Autotest Integration"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Autotest-Integration/
 menu = ["all", "wiki"]
 +++
 

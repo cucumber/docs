@@ -1,6 +1,6 @@
 +++
 title = "Conjunction Steps (Antipattern)"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Conjunction-Steps-(Antipattern)/
 menu = ["all", "wiki"]
 +++
 
