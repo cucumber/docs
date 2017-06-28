@@ -2,3 +2,8 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Cucumber Documentation"
 theme = "cucumber-hugo"
+
+# This lets us add multiple links to subsections
+[[menu.implementations]]
+    name = "Closure"
+    url = "/implementations/jvm/#clojure"

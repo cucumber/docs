@@ -5,6 +5,7 @@ menu:
   - reference
   - implementations
 renderer: Cucumber::Website::Reference
+# also linked from config.toml as Closure, for example
 ---
 
 # Cucumber-JVM
