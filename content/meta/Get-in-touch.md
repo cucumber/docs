@@ -1,7 +1,7 @@
 +++
 title = "Get in touch"
 origin = "https://github.com/cucumber/cucumber/wiki/File"
-menu = ["all", "wiki"]
+menu = ["all", "wiki", "meta"]
 +++
 
 Got questions? Here is where you can get in touch:
