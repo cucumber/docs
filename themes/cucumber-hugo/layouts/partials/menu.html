@@ -27,12 +27,12 @@
     {{ $currentPage := . }}
     {{ range .Site.Menus.old }}
       <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "old" . }} class="is-active"{{end}}>
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
 
-        {{if $currentPage.IsMenuCurrent "main" . }}
+        {{if $currentPage.IsMenuCurrent "old" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>
@@ -48,12 +48,12 @@
     {{ $currentPage := . }}
     {{ range .Site.Menus.website }}
       <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "website" . }} class="is-active"{{end}}>
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
 
-        {{if $currentPage.IsMenuCurrent "main" . }}
+        {{if $currentPage.IsMenuCurrent "website" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>
@@ -71,12 +71,12 @@
     {{ $currentPage := . }}
     {{ range .Site.Menus.wiki }}
       <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "wiki" . }} class="is-active"{{end}}>
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
 
-        {{if $currentPage.IsMenuCurrent "main" . }}
+        {{if $currentPage.IsMenuCurrent "wiki" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>
@@ -92,12 +92,12 @@
     {{ $currentPage := . }}
     {{ range .Site.Menus.reference }}
       <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "reference" . }} class="is-active"{{end}}>
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
 
-        {{if $currentPage.IsMenuCurrent "main" . }}
+        {{if $currentPage.IsMenuCurrent "reference" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>
@@ -113,12 +113,12 @@
     {{ $currentPage := . }}
     {{ range .Site.Menus.tools }}
       <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "main" . }} class="is-active"{{end}}>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "tools" . }} class="is-active"{{end}}>
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
 
-        {{if $currentPage.IsMenuCurrent "main" . }}
+        {{if $currentPage.IsMenuCurrent "tools" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>
