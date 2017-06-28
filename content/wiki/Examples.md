@@ -1,6 +1,6 @@
 +++
 title = "Examples"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Examples/"
 menu = ["all", "wiki"]
 +++
 

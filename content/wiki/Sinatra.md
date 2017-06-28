@@ -1,6 +1,6 @@
 +++
 title = "Sinatra"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Sinatra/"
 menu = ["all", "wiki"]
 +++
 

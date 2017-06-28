@@ -1,6 +1,6 @@
 +++
 title = "Step Definitions"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Step-Definitions/"
 menu = ["all", "wiki"]
 +++
 

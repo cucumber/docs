@@ -1,6 +1,6 @@
 +++
 title = "Given When Then"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Given-When-Then/"
 menu = ["all", "wiki"]
 +++
 

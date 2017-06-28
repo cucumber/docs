@@ -1,6 +1,6 @@
 +++
 title = "RSpec Expectations"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/RSpec-Expectations/"
 menu = ["all", "wiki"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "IronRuby and Mono"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/IronRuby-and-Mono/"
 menu = ["all", "wiki"]
 +++
 

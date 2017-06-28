@@ -1,6 +1,6 @@
 +++
 title = "SAP Enterprise Portal Behavior Testing"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/SAP-Enterprise-Portal-Behavior-Testing/"
 menu = ["all", "wiki"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "RDoc"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/RDoc/"
 menu = ["all", "wiki"]
 +++
 

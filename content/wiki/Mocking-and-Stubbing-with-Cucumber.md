@@ -1,6 +1,6 @@
 +++
 title = "Mocking and Stubbing with Cucumber"
-origin = "https://github.com/cucumber/cucumber/wiki/File"
+source = "https://github.com/cucumber/cucumber/wiki/Mocking-and-Stubbing-with-Cucumber/"
 menu = ["all", "wiki"]
 +++
 
