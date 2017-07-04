@@ -1,7 +1,7 @@
 +++
 title = "Python"
 source = "https://github.com/cucumber/cucumber/wiki/python/"
-menu = ["all", "wiki", "implementations"]
+menu = ["implementations"]
 +++
 
 ## Cucumber in Python

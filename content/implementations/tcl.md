@@ -2,9 +2,7 @@
 title: Tcl
 nav: docs
 menu:
- - reference
  - implementations
-renderer: Cucumber::Website::Reference
 ---
 
 # Tcl

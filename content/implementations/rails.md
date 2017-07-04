@@ -2,9 +2,7 @@
 title: Ruby on Rails
 nav: docs
 menu:
-  - reference
   - implementations
-renderer: Cucumber::Website::Reference
 ---
 
 # Ruby on Rails

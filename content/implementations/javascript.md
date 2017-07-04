@@ -2,9 +2,7 @@
 title: JavaScript
 nav: docs
 menu:
-  - reference
   - implementations
-renderer: Cucumber::Website::Reference
 ---
 
 # JavaScript

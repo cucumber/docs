@@ -1,9 +1,7 @@
 ---
 title: PHP using Behat
 nav: docs
-renderer: Cucumber::Website::Reference
 menu:
-  - reference
   - implementations
 ---
 

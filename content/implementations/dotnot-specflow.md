@@ -1,8 +1,7 @@
 ---
 title: .NET (SpecFlow)
 nav: docs
-menu: reference
-renderer: Cucumber::Website::Reference
+menu: implementations
 ---
 
 # SpecFlow

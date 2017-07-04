@@ -1,7 +1,7 @@
 +++
 title = "Perl"
 source = "https://github.com/cucumber/cucumber/wiki/perl/"
-menu = ["all", "wiki", "implementations"]
+menu = ["implementations"]
 +++
 
 Writing Cucumber Tests in Perl rather than ruby

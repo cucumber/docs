@@ -1,7 +1,7 @@
 +++
 title = "Ruby on Rails"
 source = "https://github.com/cucumber/cucumber/wiki/ruby-on-rails/"
-menu = ["all", "wiki"]
+menu = ["implementations"]
 +++
 
 [Cucumber-Rails](http://github.com/cucumber/cucumber-rails) lets you use Cucumber with Ruby on Rails.
@@ -146,11 +146,11 @@ In the .feature, use a phrase similar to <code>Given a user is logged in as "mar
       )
 
       # :create syntax for restful_authentication w/ aasm. Tweak as needed.
-      # @current_user.activate! 
+      # @current_user.activate!
 
-      visit "/login" 
-      fill_in("login", :with => login) 
-      fill_in("password", :with => 'generic') 
+      visit "/login"
+      fill_in("login", :with => login)
+      fill_in("password", :with => 'generic')
       click_button("Log in")
       response.body.should =~ /Logged/m  
     end
