@@ -1,7 +1,7 @@
 +++
 title = "Using AE"
 source = "https://github.com/cucumber/cucumber/wiki/Using-AE/"
-menu = ["all", "wiki"]
+menu = ["implementations"]
 +++
 
 Simple load the `ae` library.
