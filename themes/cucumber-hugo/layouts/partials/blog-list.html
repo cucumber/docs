@@ -1,0 +1,20 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-quarter">
+        {{ partial "menu.html" . }}
+      </div>
+      <div class="column is-three-quarters">
+        <div class="content">
+          <h1>{{ .Title }}</h1>
+
+          {{ range $.Page.Site.Data.posts }}
+            <li>{{ .Post }}</li>
+          {{ end }}
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
