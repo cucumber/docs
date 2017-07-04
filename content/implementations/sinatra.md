@@ -1,7 +1,7 @@
 +++
 title = "Sinatra"
 source = "https://github.com/cucumber/cucumber/wiki/Sinatra/"
-menu = ["all", "wiki"]
+menu = ["implementations"]
 +++
 
 Cucumber-Sinatra Generator

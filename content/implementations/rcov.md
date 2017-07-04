@@ -1,7 +1,7 @@
 +++
 title = "Using RCov with Cucumber and Rails"
 source = "https://github.com/cucumber/cucumber/wiki/Using-RCov-with-Cucumber-and-Rails/"
-menu = ["all", "wiki"]
+menu = ["implementations"]
 +++
 
 How to use RCov with Cucumber and Rails
@@ -70,7 +70,7 @@ It is important to note that Cucumber's default RCov options are set to %w{--rai
 
 When retro-fitting features to legacy code, it's good to be able to focus the coverage from your scenarios on just one class at a time. You can so this by calling rcov and cucumber directly from the command line:
 
-    rcov -t -x \.rb -i app/controllers/my_legacy_controller.rb ./vendor/plugins/cucumber/bin/cucumber -- features/visitor/see_my_shiny_page.feature features/user/see_my_shiny_page.feature 
+    rcov -t -x \.rb -i app/controllers/my_legacy_controller.rb ./vendor/plugins/cucumber/bin/cucumber -- features/visitor/see_my_shiny_page.feature features/user/see_my_shiny_page.feature
 
 What do these options mean?
 

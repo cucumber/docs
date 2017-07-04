@@ -5,6 +5,7 @@ menu = ["all", "wiki"]
 +++
 
 Adding the following as the contents of `features/support/debugging.rb` can be helpful in debugging failing steps:
+
 ```ruby
 # rubocop:disable Lint/Debugger
 class CucumberCounters
