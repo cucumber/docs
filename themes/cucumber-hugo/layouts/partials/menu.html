@@ -42,18 +42,18 @@
 
 <aside class="menu">
   <p class="menu-label">
-    Old menu
+    Gherkin
   </p>
   <ul class="menu-list">
     {{ $currentPage := . }}
-    {{ range .Site.Menus.old }}
+    {{ range .Site.Menus.gherkin }}
       <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "old" . }} class="is-active"{{end}}>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "gherkin" . }} class="is-active"{{end}}>
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
 
-        {{if $currentPage.IsMenuCurrent "old" . }}
+        {{if $currentPage.IsMenuCurrent "gherkin" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>

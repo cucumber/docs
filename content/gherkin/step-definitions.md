@@ -1,6 +1,6 @@
 +++
 title = "Step Definitions Orig"
-menu = "old"
+menu = "gherkin"
 +++
 
 When Cucumber executes a step in a scenario it will look for a matching _step definition_ to execute.

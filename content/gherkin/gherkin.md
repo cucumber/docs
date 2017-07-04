@@ -1,8 +1,6 @@
 ---
 title: Gherkin Reference
 menu:
-  reference:
-    weight: 10
   main:
 ---
 

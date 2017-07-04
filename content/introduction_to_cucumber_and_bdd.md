@@ -7,6 +7,26 @@ menu:
 
 # What is Gherkin
 
+Gherkin is the language that Cucumber understands. It is a [Business Readable,
+Domain Specific
+Language](http://martinfowler.com/bliki/BusinessReadableDSL.html) that lets you
+describe software's behaviour without detailing how that behaviour is
+implemented.
+
+Gherkin serves two purposes — documentation and automated tests. The third is a
+bonus feature — when it yells in red it's talking to you, telling you what code
+you should write.
+
+Gherkin's grammar is defined in the Treetop grammar that is part of the Cucumber
+codebase. The grammar exists in different flavours for many spoken
+languages (60 at the time of writing), so that your team can use the
+keywords in your own language.
+
+There are a few conventions.
+
+-   Single Gherkin source file contains a description of a single feature.
+-   Source files have `.feature` extension.
+
 # What is Cucumber?
 
 Cucumber is a [command-line tool](https://en.wikipedia.org/wiki/Command-line_interface). When you run it, it reads in your specifications from plain-language text files called features, examines them for scenarios to test, and runs the scenarios against your system. Each scenario is a list of steps for Cucumber to work through. So that Cucumber can understand these feature files, they must follow some basic syntax rules. The name for this set of rules is [Gherkin](docs/gherkin.md).
