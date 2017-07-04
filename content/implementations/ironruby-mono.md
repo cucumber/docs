@@ -1,7 +1,7 @@
 +++
 title = "IronRuby and Mono"
 source = "https://github.com/cucumber/cucumber/wiki/IronRuby-and-Mono/"
-menu = ["all", "wiki"]
+menu = ["implementations"]
 +++
 
 Cucumber loves Mono.

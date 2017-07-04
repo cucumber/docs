@@ -1,7 +1,7 @@
 +++
 title = "IronRuby and .NET"
 source = "https://github.com/cucumber/cucumber/wiki/IronRuby-and-.NET/"
-menu = ["all", "wiki"]
+menu = ["implementations"]
 +++
 
 **<span style="color: red;">This guide is outdated</span>**. See The most recent IronRuby articles in \[\[Tutorials and related blog posts\]\].
@@ -28,7 +28,7 @@ above all of the other require statements - the beginning of the file should loo
 
     require 'rubygems'
     require 'cucumber/rspec_neuter'
-    require 'cucumber/cli/main' 
+    require 'cucumber/cli/main'
 
 Run the following command to see if everything is working properly:
 
@@ -87,7 +87,7 @@ On my system <code>icucumber.bat</code> looks like this (You may have to change 
     <code>@ECHO OFF
     REM This is to tell IronRuby where to find gems.
     SET GEM_PATH=c:\ruby\lib\ruby\gems\1.8
-    @"C:\ironruby\build\debug\ir.exe" "c:\ruby\bin\cucumber" %* 
+    @"C:\ironruby\build\debug\ir.exe" "c:\ruby\bin\cucumber" %*
     </code>
 
 Tip: C:\\ruby\\... is just the path to your Ruby installation, if you've chosen to install it elsewhere, change that part of the script. Also C:\\ironruby\\... is just the path to your IronRuby installation, so again, if you've chosen to install it elsewhere (like C:\\Languages\\IronRuby), you should update the script.
