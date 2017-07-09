@@ -63,7 +63,7 @@ Let's take a quick look at the project structure:
 
 Now we'll look a bit closer at the following parts of the structure and tidy up a bit:
 
-* In the skeleton directory, you'll see a _POM.XML_ file 
+* In the skeleton directory, you'll see a _pom.xml_ file 
 
   This Project Object Model (POM) defines the project and its configuration in a manner that is understood by Maven.
 
@@ -89,7 +89,7 @@ Now, you have a clean project, but before we start let's rename the application.
 Open the _POM.XML_ file in a text editor. At the top of the file, you will see the following:
 
 ```
-<groupId>cucumber</groupId>
+    <groupId>cucumber</groupId>
     <artifactId>cucumber-java-skeleton</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
@@ -106,11 +106,11 @@ To do this, right-click on the _src\test\java_ folder and select __New > Package
  
 Enter a name for your new package. We'll call it shouty.
 
-### Using POM.XML
+### Using pom.xml
 
 The project object model (POM) file is an XML representation of a Maven project. It defines the project settings, dependencies and plug-ins.
 
-You can edit the _POM.XML_ file in any text editor or in the IDE.
+You can edit the _pom.xml_ file in any text editor or in the IDE.
 
 Take a look at the Maven [POM Reference](https://maven.apache.org/pom.html#Introduction) if you want to learn more.
 
@@ -229,10 +229,10 @@ Scenarios are added to the feature file. They define the conditions to test the 
 We'll concentrate on the first of these conditions. Add the following to the feature file (don't worry, we'll walk through it in a minute):
 
 ```
- Scenario: Listener is within range
-  Given Lucy is located 15m from Sean
-  When Sean shouts “free bagels at Sean’s”
-  Then Lucy hears Sean’s message
+  Scenario: Listener is within range
+    Given Lucy is located 15m from Sean
+    When Sean shouts “free bagels at Sean’s”
+    Then Lucy hears Sean’s message
 ```
 
 ## Running a Feature
