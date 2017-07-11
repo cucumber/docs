@@ -1,8 +1,8 @@
 ---
-title: Installing Cucumber
 menu:
   main:
     weight: 20
+title: Installing Cucumber
 ---
 
 # Installation

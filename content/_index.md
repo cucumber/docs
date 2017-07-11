@@ -1,5 +1,5 @@
-+++
-title = "Cucumber Documentation"
-+++
+---
+title: Cucumber Documentation
+---
 
 Welcome to Cucumber. Bla bla bla

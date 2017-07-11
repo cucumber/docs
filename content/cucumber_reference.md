@@ -1,8 +1,8 @@
 ---
-title: Cucumber Reference
 menu:
   main:
-    weight:  27
+    weight: 27
+title: Cucumber Reference
 ---
 
 # Reference

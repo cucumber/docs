@@ -1,8 +1,8 @@
 ---
-title: Introduction to Cucumber and BDD
 menu:
   main:
     weight: 10
+title: Introduction to Cucumber and BDD
 ---
 
 # What is Gherkin
