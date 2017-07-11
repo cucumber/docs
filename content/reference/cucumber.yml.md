@@ -19,7 +19,7 @@ Cucumber lets you store and reuse commonly used cucumber command line arguments 
    bvt: --tags @bvt
    \`\`\`
 
-Defining a template requires a name and then the command-line options that you want to execute with this profile. The example above generates two profiles: the first, named <code>html_report</code>, with a list of command-line options that specify new output formats and a second, named <code>bvt</code> which executes all features and scenarios \[\[tagged|Tags]] with @bvt.
+Defining a template requires a name and then the command-line options that you want to execute with this profile. The example above generates two profiles: the first, named <code>html_report</code>, with a list of command-line options that specify new output formats and a second, named <code>bvt</code> which executes all features and scenarios [[tagged|Tags]] with @bvt.
 
 ## Executing Profiles
 
@@ -79,7 +79,7 @@ The cucumber.yml file is preprocessed by ERb; this allows you to use ruby code t
 
 ## Environment Variables
 
-\[\[Environment Variables]] can be used in the profile argument list for a profile as you would normally specify one on the command-line.
+[[Environment Variables]] can be used in the profile argument list for a profile as you would normally specify one on the command-line.
 
 \`\`\`yaml
 
@@ -94,4 +94,4 @@ The cucumber.yml file is preprocessed by ERb; this allows you to use ruby code t
 
 ## Autotest Profiles
 
-\[\[Integration with Autotest|Autotest-Integration]] uses two profiles <code>autotest</code> and <code>autotest-all</code>. These profiles should be reserved for that service.
+[[Integration with Autotest|Autotest-Integration]] uses two profiles <code>autotest</code> and <code>autotest-all</code>. These profiles should be reserved for that service.

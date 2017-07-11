@@ -6,7 +6,7 @@ source: https://github.com/cucumber/cucumber/wiki/Calling-Steps-from-Step-Defini
 title: Calling Steps from Step Definitions
 ---
 
-It is possible to call steps from \[\[Step Definitions]]:
+It is possible to call steps from [[Step Definitions]]:
 
 ```
 # ruby
@@ -58,7 +58,7 @@ Scenario: View last incidents
 
 ## Calling steps with multiline step arguments
 
-Sometimes you want to call a step that has been designed to take \[\[Multiline Step Arguments]], for example:
+Sometimes you want to call a step that has been designed to take [[Multiline Step Arguments]], for example:
 
 ### Tables
 

@@ -39,7 +39,7 @@ If you're running Cucumber thru JRuby, all you have to do is save your feature f
 
 When you run Cucumber with Selenium or a similar solution two processes are required: one for use by Cucumber/features and another one that's used by Selenium (the server process.) By default in Rails, all operations on the database are wrapped within a transaction, that is rolled back after running each scenario.
 
-This feature, of using transactions, is only enabled when you have<code>Cucumber::Rails::World.use_transactional_fixtures</code> option in your <code>env.rb</code> file. To solve this problem, you need to comment out this option and handle table cleanup yourself, for example using the <code>Before</code> block. Please read \[\[Hooks]] to get an idea how to use it. You may also want to check out [DatabaseCleaner](http://github.com/bmabey/database_cleaner/tree/master) for cleaning the database when using Selenium.
+This feature, of using transactions, is only enabled when you have<code>Cucumber::Rails::World.use_transactional_fixtures</code> option in your <code>env.rb</code> file. To solve this problem, you need to comment out this option and handle table cleanup yourself, for example using the <code>Before</code> block. Please read [[Hooks]] to get an idea how to use it. You may also want to check out [DatabaseCleaner](http://github.com/bmabey/database_cleaner/tree/master) for cleaning the database when using Selenium.
 
 ## Sqlite adapter throws SQLite3::BusyException when using Cucumber with Selenium
 

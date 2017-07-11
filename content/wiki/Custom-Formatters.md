@@ -80,7 +80,7 @@ module Silly
 end
 ```
 
-Now you can run your features by passing <code>-~~format Silly::TwitterFormatter</code> to the <code>cucumber</code> command line, Rake task or even in <code>cucumber.yml</code>~~ see \[\[Running Features]] for all the options. You have more methods available than the ones used in this awesome example (but you only need to implement the ones you care about). Look at the sources for some of Cucumber's built-in formatters to discover more methods.
+Now you can run your features by passing <code>-~~format Silly::TwitterFormatter</code> to the <code>cucumber</code> command line, Rake task or even in <code>cucumber.yml</code>~~ see [[Running Features]] for all the options. You have more methods available than the ones used in this awesome example (but you only need to implement the ones you care about). Look at the sources for some of Cucumber's built-in formatters to discover more methods.
 
 ## If your formatter can't be found
 

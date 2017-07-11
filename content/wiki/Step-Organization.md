@@ -6,7 +6,7 @@ source: https://github.com/cucumber/cucumber/wiki/Step-Organization/
 title: Step Organization
 ---
 
-How do you name step definition files? What to put in each step definition? What **not** to put in step definitions? Here are some guidelines that will lead to better scenarios. If you are new to steps and the general syntax, please read \[\[Feature Introduction]] first.
+How do you name step definition files? What to put in each step definition? What **not** to put in step definitions? Here are some guidelines that will lead to better scenarios. If you are new to steps and the general syntax, please read [[Feature Introduction]] first.
 
 ## Grouping
 
@@ -19,9 +19,9 @@ We recommend creating a steps.rb file for each domain concept. For example, a go
 - experience_steps.rb
 - authentication_steps.rb
 
-The first three would define all the \[\[Given-When-Then]] step definitions related to creating, reading, updating and deleting the various models. The last one would define step definitions related to logging in and out.
+The first three would define all the [[Given-When-Then]] step definitions related to creating, reading, updating and deleting the various models. The last one would define step definitions related to logging in and out.
 
-If you follow this pattern you also avoid the \[\[Feature-Coupled Step Definitions (Antipattern)]] antipattern.
+If you follow this pattern you also avoid the [[Feature-Coupled Step Definitions (Antipattern)]] antipattern.
 
 ## Step state
 

@@ -80,7 +80,7 @@ First, setup a directory structure like the following:
 
 </code>
 
-Create a \[\[cucumber.yml]] file in the root directory of your project (yes, this is cluttered). In it, create these 2 profiles:
+Create a [[cucumber.yml]] file in the root directory of your project (yes, this is cluttered). In it, create these 2 profiles:
 
 ```
 <code>default: -r features/support/env.rb -r features/support/plain.rb -r features/step_definitions features/plain

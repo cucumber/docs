@@ -6,7 +6,7 @@ source: https://github.com/cucumber/cucumber/wiki/Running-Features/
 title: Running Features
 ---
 
-There are several ways to run your features. This page lists the most common ones. Any of these techniques also lets you define common command line options in a \[\[cucumber.yml]] file.
+There are several ways to run your features. This page lists the most common ones. Any of these techniques also lets you define common command line options in a [[cucumber.yml]] file.
 
 ## Using the Gem's 'cucumber' Command
 
@@ -36,7 +36,7 @@ For example
 
 ...will run authenticate_user feature. Any feature that is located inside a sub-directory of features directory must require features. Note: you can also add this to your cucumber.yml.
 
-You can also use \[\[tags]] to specify what to run, or pass \[\[Environment Variables]] to Cucumber.
+You can also use [[tags]] to specify what to run, or pass \[\[Environment Variables]] to Cucumber.
 
 ## Using Rake
 
@@ -58,7 +58,7 @@ end
 </code>
 ```
 
-If you are using \[\[Ruby on Rails]] this task is defined for you already. For more information please see the [detailed page about using rake.](http://wiki.github.com/cucumber/cucumber/using-rake)
+If you are using [[Ruby on Rails]] this task is defined for you already. For more information please see the [detailed page about using rake.](http://wiki.github.com/cucumber/cucumber/using-rake)
 
 ## Using TextMate
 
@@ -70,4 +70,4 @@ See the [Cucumber.tmbundle](http://github.com/cucumber/cucumber-tmbundle) docume
 
 ## Using other build tools
 
-Maven and Ant are described in \[\[JRuby and Java]]. MSBuild and Nant should be under \[\[IronRuby and .NET]]. Anything else - please contribute to this wiki!
+Maven and Ant are described in [[JRuby and Java]]. MSBuild and Nant should be under \[\[IronRuby and .NET]]. Anything else - please contribute to this wiki!

@@ -82,7 +82,7 @@ Cucumber-Rails needs to add a few files to your project:
 <code>ruby script/generate cucumber</code>
 ```
 
-If you're on an OS that supports fork we recommend you use \[\[Spork and --drb]] as this lets you start cucumber faster:
+If you're on an OS that supports fork we recommend you use [[Spork and --drb]] as this lets you start cucumber faster:
 
 ```
 <code>ruby script/generate cucumber --spork</code>
@@ -167,7 +167,7 @@ default: --format pretty
 html: --format html --out features.html</code>
 ```
 
-Remember that you need AUTOFEATURE=true for autospec to include cucumber features. See \[\[Running Features]] and \[\[Autotest Integration]] for more info.
+Remember that you need AUTOFEATURE=true for autospec to include cucumber features. See [[Running Features]] and \[\[Autotest Integration]] for more info.
 
 For autospec, change autotest in the above block to autospec:
 
@@ -180,11 +180,11 @@ html: --format html --out features.html</code>
 
 ### Special tags
 
-There are two special \[\[tags]] you can use to change how Cucumber runs your scenarios
+There are two special [[tags]] you can use to change how Cucumber runs your scenarios
 
 #### @no-txn
 
-By default all scenarios will run within a database transaction that is rolled back at the end. However, scenarios tagged with <code>@no-txn</code> will run **without** a transaction. This can be useful when you have to deal with \[\[Browsers and Transactions]]. Beware that this will leave data in your database after that scenario, which can lead to hard-to-debug failures in subsequent scenarios. If you use this, we recommend you create a Before block that will explicitly put your database in a known state, for example using [DatabaseCleaner](http://github.com/bmabey/database_cleaner)
+By default all scenarios will run within a database transaction that is rolled back at the end. However, scenarios tagged with <code>@no-txn</code> will run **without** a transaction. This can be useful when you have to deal with [[Browsers and Transactions]]. Beware that this will leave data in your database after that scenario, which can lead to hard-to-debug failures in subsequent scenarios. If you use this, we recommend you create a Before block that will explicitly put your database in a known state, for example using [DatabaseCleaner](http://github.com/bmabey/database_cleaner)
 
 #### @allow-rescue
 

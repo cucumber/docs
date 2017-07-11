@@ -14,7 +14,7 @@ Cucumber is a tool that implements a [Behaviour Driven Design (BDD)](https://en.
 
 You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided..
 
-Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading \[\[Ruby on Rails]]. To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database. The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
+Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading [[Ruby on Rails]]. To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database. The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
 
 Note that in this document I often use the terms <em>testing</em> and <em>test</em> where [BDD practitioners](http://dannorth.net/introducing-bdd) prefer the terms <em>behaviour</em> and <em>expectation</em>. When I use the word test in a BDD context I am in fact discussing expressing and verifying expected behaviour.
 
@@ -114,7 +114,7 @@ Once the features directory structure is in place then we are ready to begin tes
 
 Cucumber divides testing into two parts, the outward facing feature <em>scenario steps</em> and the inward facing <em>step definitions</em>. Features are descriptions of desired outcomes (<strong>Then</strong>) following upon specific events (<strong>When</strong>) under predefined conditions (<strong>Given</strong>). They are typically used in conjunction with end-user input and, in some cases, may be entirely under end-user (in the form of a domain expert) control. Feature files are given the extension <code>.feature</code>.
 
-\[\[Step definitions]], or <em>stepdefs</em>, are keyed by their snippets of text from the feature scenario statements and invoke blocks of Ruby and Rails code that usually contain api methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.). Given that Cucumber originally evolved out of RSpec stories it is unsurprising that the Cucumber-Rails generator once assumed that RSpec was available. This has long since ceased to be the case. What the generator does now is detect if the RSpec gems are installed. If so then the rails generator builds the environment files to suit and if not then it ignores RSpec and configures for test-unit instead. In fact, the availability of options is increasing over time. To see what is available in the version of Cucumber-Rails that you have installed use the command: <code>rails g cucumber:install --help</code> or <code>script/generate cucumber --help</code>.
+[[Step definitions]], or <em>stepdefs</em>, are keyed by their snippets of text from the feature scenario statements and invoke blocks of Ruby and Rails code that usually contain api methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.). Given that Cucumber originally evolved out of RSpec stories it is unsurprising that the Cucumber-Rails generator once assumed that RSpec was available. This has long since ceased to be the case. What the generator does now is detect if the RSpec gems are installed. If so then the rails generator builds the environment files to suit and if not then it ignores RSpec and configures for test-unit instead. In fact, the availability of options is increasing over time. To see what is available in the version of Cucumber-Rails that you have installed use the command: <code>rails g cucumber:install --help</code> or <code>script/generate cucumber --help</code>.
 
 A particular source of potential confusion is that the term <em><strong>steps</strong></em>, when used loosely, has two (closely related but vitally distinct) meanings, depending on context.
 
@@ -246,7 +246,7 @@ This might have been the <em>easiest</em> thing to do, but it was never the <em>
 
 In any case the whole point of BDD is that it is vitally important to write each test/feature scenario <em><strong>one stepdef at a time, preferably with a domain expert, and in plain language</strong></em>. In the BDD world there is no point to feature scaffolding generators to begin with. This fact eventually led to the feature generator's removal from cucumber-rails. Now, like step definitions, you have to write your own code ( <em>or steal somebody else's</em> ) from the outset.
 
-[The use of plain language in the feature file is crucial to successful use of Cucumber](http://elabs.se/blog/15-you-re-cuking-it-wrong). What does “plain language” mean? Basically, it comes down to stating the result that you wish to obtain while avoiding specifying how you expect to get it. Detailed discussion of feature writing and step construction are provided elsewhere (see \[\[Given-When-Then]] and [Telling a Good Story](http://blog.josephwilk.net/ruby/telling-a-good-story-rspec-stories-from-the-trenches.html)).
+[The use of plain language in the feature file is crucial to successful use of Cucumber](http://elabs.se/blog/15-you-re-cuking-it-wrong). What does “plain language” mean? Basically, it comes down to stating the result that you wish to obtain while avoiding specifying how you expect to get it. Detailed discussion of feature writing and step construction are provided elsewhere (see [[Given-When-Then]] and [Telling a Good Story](http://blog.josephwilk.net/ruby/telling-a-good-story-rspec-stories-from-the-trenches.html)).
 
 For example, for an authentication scenario you should write:
 
@@ -361,7 +361,7 @@ For Cucumber features, the keywords used here are <strong>Feature</strong>, <str
 
 To date ( <time datetime="2015-06-03">2015 Jun 05</time> ) the <code>Feature</code> statement and its descriptive text block are not parsed by Cucumber other than as an identifier and documentation. Nonetheless, the <code>Feature</code> statement arguably contains the most important piece of information contained in a feature file. It is here that you answer the question of just why this work is being done. And if you do not have a very good, defensible, reason that can be elucidated in a few sentences then you probably should not be expending any effort on this feature at all. First and foremost, <strong>BDD</strong> absolutely <strong>must</strong> have some concrete business value whose realization can be measured before you write a single line of code. <em>"(see popping the why? stack)":<http://www.mattblodgett.com/2009/01/pop-stack.html></em>
 
-As with <code>Feature</code>, <code>Scenario</code> is used only for identification when reporting failures and to document a piece of the work. The clauses ( <em>steps</em> ) that make up a Scenario each begin with one of: Given, When, Then, And and But ( <em> and sometimes <strong>\*</strong></em> ). These are all \[\[Gherkin]] keywords / Cucumber methods that take as their argument the string that follows. They are the steps that Cucumber will report as passing, failing or pending based on the results of the corresponding step matchers in the step_definitions.rb files. The five keywords ( <em> and <strong>\*</strong></em> ) are all equivalent to one another and completely interchangeable.
+As with <code>Feature</code>, <code>Scenario</code> is used only for identification when reporting failures and to document a piece of the work. The clauses ( <em>steps</em> ) that make up a Scenario each begin with one of: Given, When, Then, And and But ( <em> and sometimes <strong>\*</strong></em> ). These are all [[Gherkin]] keywords / Cucumber methods that take as their argument the string that follows. They are the steps that Cucumber will report as passing, failing or pending based on the results of the corresponding step matchers in the step_definitions.rb files. The five keywords ( <em> and <strong>\*</strong></em> ) are all equivalent to one another and completely interchangeable.
 
 ### What are Step Definitions?
 
@@ -495,7 +495,7 @@ end
 </code>
 ```
 
-Always keep in mind that Cucumber is simply a DSL wrapper around the Ruby language whose full expressiveness remains available to you in the step definition files (<em>but not in the feature files</em>). On the other hand, do not lose sight that every step called as such in a step definition file is first parsed by \[\[Gherkin]] and therefore must conform to the same syntax as used in feature files.
+Always keep in mind that Cucumber is simply a DSL wrapper around the Ruby language whose full expressiveness remains available to you in the step definition files (<em>but not in the feature files</em>). On the other hand, do not lose sight that every step called as such in a step definition file is first parsed by [[Gherkin]] and therefore must conform to the same syntax as used in feature files.
 
 Returning to our example of "Bob" the user, one could define things in the <code>step_definitions</code> file like this:
 
@@ -718,7 +718,7 @@ $ cucumber --profile=my_profile --tags=@authent features/login
 $ cucumber --profile=my_profile --tags=@init 
 ```
 
-However, the following will not work, unless you \[\[build a custom rake task|Using-Rake]] for it:
+However, the following will not work, unless you [[build a custom rake task|Using-Rake]] for it:
 
 ```
 $ rake cucumber:authent

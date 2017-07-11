@@ -43,4 +43,4 @@ So when you ask a question, please tell us:
 - What the output, error message and full backtrace was: Feed cucumber with <code>--backtrace --verbose</code> and rake with <code>--trace</code>.
 - What output you had expected.
 - What relevant code you have. Don't *describe* your code in twelve furlongs of prose, just show it. Please don't paste code in emails, use: <http://gist.github.com/>
-- And finally, tell us how to reproduce the error, as described on the \[\[Contributing]] page.
+- And finally, tell us how to reproduce the error, as described on the [[Contributing]] page.

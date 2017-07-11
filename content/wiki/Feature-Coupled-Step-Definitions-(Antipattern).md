@@ -45,8 +45,8 @@ end
 
 ## How to fix
 
-\## Organise steps by domain concept. See \[\[Step Organization]].
+\## Organise steps by domain concept. See [[Step Organization]].
 
 \## Rename step.rb files to a domain-related name (rather than feature/scenario-related name).
 
-\## Break up \[\[Conjunction Steps (Antipattern)]] steps into individual steps.
+\## Break up [[Conjunction Steps (Antipattern)]] steps into individual steps.

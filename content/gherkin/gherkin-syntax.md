@@ -46,5 +46,5 @@ describe the business value of this feature. Line 6 starts a scenario. Lines
 
 Read more
 
-- \[\[Feature Introduction]] - general structure of a feature
-- \[\[Given-When-Then]] - steps
+- [[Feature Introduction]] - general structure of a feature
+- [[Given-When-Then]] - steps

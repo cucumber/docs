@@ -5,11 +5,11 @@ source: https://github.com/cucumber/cucumber/wiki/IronRuby-and-.NET/
 title: IronRuby and .NET
 ---
 
-**<span style="color: red;">This guide is outdated</span>**. See The most recent IronRuby articles in \[\[Tutorials and related blog posts]].
+**<span style="color: red;">This guide is outdated</span>**. See The most recent IronRuby articles in [[Tutorials and related blog posts]].
 
 Developing in .NET? You can use Cucumber with IronRuby. You need both IronRuby and MRI (Matz Ruby Interpreter).
 
-(Mono users - see \[\[IronRuby and Mono]])
+(Mono users - see [[IronRuby and Mono]])
 
 ## Installing Cucumber with IronRuby 0.9.2
 

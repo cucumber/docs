@@ -42,7 +42,7 @@ cucumber --tags @billing --tags @important    # Runs the first scenario (Scenari
 cucumber --tags @billing,@important           # Runs both scenarios (Scenarios with @important OR @billing)
 ```
 
-(Another way to "filter" what you want to run is to use the <code>file.feature:line</code> pattern or the <code>--scenario</code> option as described in \[\[Running Features]]).
+(Another way to "filter" what you want to run is to use the <code>file.feature:line</code> pattern or the <code>--scenario</code> option as described in [[Running Features]]).
 
 Tags are also a great way to "link" your Cucumber features to other documents. For example, if you have to deal with old school requirements in a different system (Word, Excel, a wiki) you can refer to numbers:
 
@@ -58,7 +58,7 @@ Another creative way to use tags is to keep track of where in the development pr
 Feature: Index projects
 \`\`\`
 
-Tags are also used in Tagged \[\[Hooks]], which let you use tags to define what <code>Before</code> and <code>After</code> blocks get run for what scenarios.
+Tags are also used in Tagged [[Hooks]], which let you use tags to define what <code>Before</code> and <code>After</code> blocks get run for what scenarios.
 
 ## Logically ANDing and ORing Tags
 
@@ -94,7 +94,7 @@ Example: Skipping both `todo and`wip tags
 <code>cucumber --tags ~@todo --tags ~@wip</code>
 ```
 
-You can use this tag logic in your \[\[Hooks]] as well.
+You can use this tag logic in your [[Hooks]] as well.
 
 *This feature was originally added in version 0.4.3. The logical behaviour of tags was later reversed in version 0.6.0.*
 
@@ -130,4 +130,4 @@ Used in conjunction with the <code>--wip</code> switch you can set up your proje
 
 **@javascript**: Uses a javascript-aware system to process web requests (e.g., Selenium) instead of the default (non-javascript-aware) webrat browser.
 
-**@no-txn**: Turns off transactions. See \[\[Browsers and Transactions]].
+**@no-txn**: Turns off transactions. See [[Browsers and Transactions]].

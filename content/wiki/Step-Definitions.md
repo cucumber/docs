@@ -34,13 +34,13 @@ Given I have 93 cucumbers in my belly
 
 A step is analogous to a method or function *invocation*. In this example, you're "calling" the step definition above with one argument — the string "93". Cucumber matches the Step against the Step Definition's Regexp and takes all of the captures from that match and passes them to the Proc.
 
-Step Definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**Given**, **When**, **Then**, **And**, **But**), and can be expressed in any of Cucumber's supported \[\[Spoken languages]]. All Step definitions are loaded (and defined) before Cucumber starts to execute the plain text.
+Step Definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**Given**, **When**, **Then**, **And**, **But**), and can be expressed in any of Cucumber's supported [[Spoken languages]]. All Step definitions are loaded (and defined) before Cucumber starts to execute the plain text.
 
 When Cucumber executes the plain text, it will for each step look for a registered Step Definition with a matching Regexp. If it finds one it will execute its Proc, passing all groups from the Regexp match as arguments to the Proc.
 
 The preposition/adverb has **no** significance when Cucumber is registering or looking for Step Definitions.
 
-Also check out \[\[Multiline Step Arguments]] for more info on how to pass entire tables or bigger strings to your step definitions.
+Also check out [[Multiline Step Arguments]] for more info on how to pass entire tables or bigger strings to your step definitions.
 
 ## Successful steps
 
