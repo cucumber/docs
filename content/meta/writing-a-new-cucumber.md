@@ -41,9 +41,9 @@ Step Definitions and Hooks.
 
 Every Step Definition has 3 elements:
 
-* A keyword (`Given `, `When `, `Then `, `And `, `But `)
-* A pattern
-* A block of code
+- A keyword (`Given`, `When`, `Then`, `And`, `But`)
+- A pattern
+- A block of code
 
 Here is an example in Ruby:
 
@@ -66,7 +66,7 @@ public void i_have_n_cukes(int n) {
 
 Here is how it's done:
 
-* [JavaScript](1d75ca2123ae44154e9e80f40b4746c87bfc0486)
+- [JavaScript](1d75ca2123ae44154e9e80f40b4746c87bfc0486)
 
 ## Load and run your step definition
 
@@ -81,7 +81,7 @@ immediately (with the value 100) and manually verify that an error is thrown.
 
 Here is how it's done:
 
-* [JavaScript](8b296ef98d0a6b90beb7e2b23cab7802fd4f6df4): `node lib/cucumber/cli/main.js`
+- [JavaScript](8b296ef98d0a6b90beb7e2b23cab7802fd4f6df4): `node lib/cucumber/cli/main.js`
 
 ## Print arguments from a Gherkin scenario
 
@@ -93,4 +93,4 @@ match it against our step definition and print the argument.
 
 Here is how it's done:
 
-* [JavaScript](a183114b026fd30db22aaf7f73421f32e169a0cd)
+- [JavaScript](a183114b026fd30db22aaf7f73421f32e169a0cd)

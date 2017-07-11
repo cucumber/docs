@@ -17,12 +17,12 @@ state between Step Definitions.
 
 The available Dependency Injection modules are:
 
-* [PicoContainer](#picocontainer) (The recommended one if your app doesn't use another DI container)
-* [Spring](#spring)
-* [Guice](#guice)
-* [OpenEJB](#openejb)
-* [Weld](#weld)
-* [Needle](#needle)
+- [PicoContainer](#picocontainer) (The recommended one if your app doesn't use another DI container)
+- [Spring](#spring)
+- [Guice](#guice)
+- [OpenEJB](#openejb)
+- [Weld](#weld)
+- [Needle](#needle)
 
 ## PicoContainer
 

@@ -32,21 +32,25 @@ A `# language:` header on the first line of a feature file tells Cucumber what s
 
 ## Listing the available languages
 
-    cucumber --i18n help
+```
+cucumber --i18n help
+```
 
 ## Listing the keywords of a particular language
 
 For example Russian:
 
-    cucumber --i18n ru
+```
+cucumber --i18n ru
+```
 
 ## Adding a new language
 
 It's easy! 
 
-* Make a [fork](https://help.github.com/articles/fork-a-repo/) of [Gherkin3](http://github.com/cucumber/gherkin3)
-* Add your language's keywords to [gherkin-languages.json](https://github.com/cucumber/cucumber/blob/master/gherkin/gherkin-languages.json)
-* Commit and push your changes - then send a [pull request](https://help.github.com/articles/using-pull-requests/).
+- Make a [fork](https://help.github.com/articles/fork-a-repo/) of [Gherkin3](http://github.com/cucumber/gherkin3)
+- Add your language's keywords to [gherkin-languages.json](https://github.com/cucumber/cucumber/blob/master/gherkin/gherkin-languages.json)
+- Commit and push your changes - then send a [pull request](https://help.github.com/articles/using-pull-requests/).
 
 That's it! When a new release of gherkin is made you can specify in a <code># language: xx</code> header in your feature files.
 

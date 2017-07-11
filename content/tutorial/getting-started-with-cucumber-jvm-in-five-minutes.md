@@ -10,18 +10,18 @@ This page provides a brief introduction to get you started with Cucumber-JVM.
 
 You will need the following:
 
-* [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
 
-* [Maven](https://maven.apache.org/index.html)
+- [Maven](https://maven.apache.org/index.html)
 
-* Cucumber-JVM
+- Cucumber-JVM
 
-* An IDE editor, for example [IntelliJ  IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
-introduction)
+- An IDE editor, for example [IntelliJ  IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
+  introduction)
 
-* Cucumber plug-in for your chosen IDE
+- Cucumber plug-in for your chosen IDE
 
-* A text editor
+- A text editor
 
 # Concepts
 
@@ -33,7 +33,7 @@ Definitions for terms can be found under the Reference section.
 
 The following diagram illustrates the structure when using Cucumber:
 
-  PLACEHOLDER _<insert Aslak's illustration of how everything fits together>_
+  PLACEHOLDER *&lt;insert Aslak's illustration of how everything fits together>*
 
 Maven is a software project management and comprehension tool, based on the concept of a project object model (POM). Maven can manage a project's build, reporting and documentation from a central piece of information.
 
@@ -51,7 +51,7 @@ For this introduction, we will use the skeleton project, [which is available fro
 
 Let's take a quick look at the project structure:
 
-```  
+```
    gradle  
    src  
    .cucumberproignore  
@@ -67,30 +67,30 @@ Let's take a quick look at the project structure:
 
 Now we'll look a bit closer at the following parts of the structure and tidy up a bit:
 
-* In the skeleton directory, you'll see a _POM.XML_ file
+- In the skeleton directory, you'll see a *POM.XML* file
 
   This Project Object Model (POM) defines the project and its configuration in a manner that is understood by Maven.
 
-* Navigate to _src\main\java\skeleton_
+- Navigate to *src\\main\\java\\skeleton*
 
-  You'll see a single file called _Belly.java_.
-  Delete the _Belly.java_ file
+  You'll see a single file called *Belly.java*.
+  Delete the *Belly.java* file
 
-* Navigate to _src\test\resources\skeleton_
+- Navigate to *src\\test\\resources\\skeleton*
 
-  You'll see a single file, called _belly.feature_.
+  You'll see a single file, called *belly.feature*.
 
-  Delete the _belly.feature_ file.
+  Delete the *belly.feature* file.
 
-* Navigate to _src\test\java\skeleton_
+- Navigate to *src\\test\\java\\skeleton*
 
-  You'll see the _RunCukesTest.java_ file. This file is used to run the tests.
+  You'll see the *RunCukesTest.java* file. This file is used to run the tests.
 
-  There is also a file called _Stepdefs.java_; delete this file.
+  There is also a file called *Stepdefs.java*; delete this file.
 
 Now, you have a clean project, but before we start let's rename the application.
 
-Open the _POM.XML_ file in a text editor. At the top of the file, you will see the following:
+Open the *POM.XML* file in a text editor. At the top of the file, you will see the following:
 
 ```
 <groupId>cucumber</groupId>
@@ -106,7 +106,7 @@ Change the `<groupId>`, `<artifactId>` and `<name>`.
 
 Now, you need to create a package.
 
-To do this, right-click on the _src\test\java_ folder and select __New > Package__ from the context menu.
+To do this, right-click on the *src\\test\\java* folder and select **New > Package** from the context menu.
 
 Enter a name for your new package. We'll call it shouty.
 
@@ -114,7 +114,7 @@ Enter a name for your new package. We'll call it shouty.
 
 The project object model (POM) file is an XML representation of a Maven project. It defines the project settings, dependencies and plug-ins.
 
-You can edit the _POM.XML_ file in any text editor or in the IDE.
+You can edit the *POM.XML* file in any text editor or in the IDE.
 
 Take a look at the Maven [POM Reference](https://maven.apache.org/pom.html#Introduction) if you want to learn more.
 
@@ -124,10 +124,10 @@ Open the POM file in your preferred editor and we'll check that the defined vers
 
 The default file defines the following versions:
 
-* Java 1.7
-* Junit 4.12
-* Cucumber 1.2.5
-* Maven 3.3
+- Java 1.7
+- Junit 4.12
+- Cucumber 1.2.5
+- Maven 3.3
 
 To check the versions you have installed, open a command prompt and enter `mvn --version`.
 
@@ -137,9 +137,9 @@ If your versions do not agree with the defaults in the skeleton POM file, update
 
 The default POM contains definitions for the following dependencies:
 
-* Cucumber Java
-* Cucumber JUnit
-* JUnit
+- Cucumber Java
+- Cucumber JUnit
+- JUnit
 
 We'll have to add a dependency for Cucumber core, as follows:
 
@@ -200,29 +200,29 @@ We'll do that now.
 
 Features are defined in feature files, which are stored in the feature directory.
 
-As we saw in the project structure, the _belly.feature_ file was stored under _src\test\resources\skeleton_; that's your feature directory.
+As we saw in the project structure, the *belly.feature* file was stored under *src\\test\\resources\\skeleton*; that's your feature directory.
 
-We'll bring it into line with the new project name and rename the _skeleton_ folder to _shouty_, so now your feature directory is _src\test\resources\shouty_.
+We'll bring it into line with the new project name and rename the *skeleton* folder to *shouty*, so now your feature directory is *src\\test\\resources\\shouty*.
 
-While we're doing this, we'll bring the other _skeleton_ folders - the ones under _src\test\java_ and _src\main\java_ - into line too. Rename both _skeleton_ folders to _shouty_.
+While we're doing this, we'll bring the other *skeleton* folders - the ones under *src\\test\\java* and *src\\main\\java* - into line too. Rename both *skeleton* folders to *shouty*.
 
 ## Creating a Feature
 
 To create a feature file:
 
-1. Open your project in your chosen IDE if necessary and right-click on the _src\test\resources\shouty_ folder
+1. Open your project in your chosen IDE if necessary and right-click on the *src\\test\\resources\\shouty* folder
 
-2. Select __New > File__
+2. Select **New > File**
 
-3. Enter a name for your feature file, ensuring that you use the _.feature_ extension. For example, _hear_shout.feature_
+3. Enter a name for your feature file, ensuring that you use the *.feature* extension. For example, *hear_shout.feature*
 
-Files in this folder with an extension of _.feature_ are automatically recognised as feature files. Each feature file describes a single feature.
+Files in this folder with an extension of *.feature* are automatically recognised as feature files. Each feature file describes a single feature.
 
 We are going to create tests for a new social networking application, shouty, especially good for marketing a small business. The basic idea is that someone "shouts" (or sends) their message and anyone in a specified distance will "hear" (or receive) their message.
 
-Now, let's add some content to this file to define the feature. Open the feature file in your IDE and add the name of the feature. We'll add _`Feature: Hear Shout`_.
+Now, let's add some content to this file to define the feature. Open the feature file in your IDE and add the name of the feature. We'll add *`Feature: Hear Shout`*.
 
-We don't want anyone with the application to hear the shout, only those within 1000m, so we'll add another line to the feature file with this rule. Add _Shouts have a range of approximately 1000m_.
+We don't want anyone with the application to hear the shout, only those within 1000m, so we'll add another line to the feature file with this rule. Add *Shouts have a range of approximately 1000m*.
 
 Now we need to think of a way of testing against this rule. We do that using scenarios.
 
@@ -283,11 +283,11 @@ To define the Scenario, you have to define all of the related steps. In our case
 
 The steps you need to define to check that people within 1000m hear the shout are defined in the following lines:
 
-* Given Lucy is located 15m from Sean
-* When Sean shouts "free bagels at Sean's"
-* Then Lucy hears Sean's message
+- Given Lucy is located 15m from Sean
+- When Sean shouts "free bagels at Sean's"
+- Then Lucy hears Sean's message
 
-These all have a keyword (Given, When and Then) followed by a step. The step is then matched to a _step definition_.
+These all have a keyword (Given, When and Then) followed by a step. The step is then matched to a *step definition*.
 
 [Step definitions](https://cucumber.netlify.com/reference/step-definitions/) define the plain text step in code.
 
@@ -335,7 +335,7 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 4
 
 Your tests pass? Well done! Now, go write the code for this part of the application.
 
-__Note:__ Passing these tests does not guarantee the implementation will be correct, just that the behaviour is as expected. You will need to test your code and your feature.
+**Note:** Passing these tests does not guarantee the implementation will be correct, just that the behaviour is as expected. You will need to test your code and your feature.
 
 ### Failed Tests
 
@@ -387,11 +387,11 @@ public void lucy_hears_Sean_s_message() throws Throwable {
 }
 ```
 
-In your chosen IDE, navigate to the _src\test\java_*\\<project>* folder and right-click to display the context menu. Select __New > Java Class__. Give the class a name and paste in the snippets.
+In your chosen IDE, navigate to the *src\\test\\java**\\<project>* folder and right-click to display the context menu. Select **New > Java Class**. Give the class a name and paste in the snippets.
 
-IntelliJ will not recognise those symbols, so we'll need to add import statements. Put your cursor on the _@Given_ symbol and press __ALT__ + __ENTER__, then select __Import class__, do the same for the other symbols (shown in red).
+IntelliJ will not recognise those symbols, so we'll need to add import statements. Put your cursor on the *@Given* symbol and press **ALT** + **ENTER**, then select **Import class**, do the same for the other symbols (shown in red).
 
-__Note:__ If this does not work, select __Run > Edit Configurations__, select __Cucumber java__ from the __Defaults__ drop-down and add the project name to the __Glue__ field on the __Configuration__ tab.
+**Note:** If this does not work, select **Run > Edit Configurations**, select **Cucumber java** from the **Defaults** drop-down and add the project name to the **Glue** field on the **Configuration** tab.
 
 Now, run the tests again.
 

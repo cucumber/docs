@@ -7,12 +7,12 @@ title: subdomain_fu and incorrect redirection to %22 body You are being redirect
   %22 page
 ---
 
-This is related to problem described in this [ticket](https://webrat.lighthouseapp.com/projects/10503/tickets/168-redirects-in-rails-23-not-being-followed-by-webrat). We faced this problem in webrat <b>0.7</b> while using with subdomain\_fu.
+This is related to problem described in this [ticket](https://webrat.lighthouseapp.com/projects/10503/tickets/168-redirects-in-rails-23-not-being-followed-by-webrat). We faced this problem in webrat <b>0.7</b> while using with subdomain_fu.
 <b>Solution.</b>
-Defining tld\_sizes for subdomain\_fu solved this problem.
-Create a file called subdomain\_fu.rb under config/initializers with following content.
-SubdomainFu.tld\_sizes = {
-:development =&gt; 0, :test =&gt; 1, :production =&gt; 1, :cucumber =&gt; 1
+Defining tld_sizes for subdomain_fu solved this problem.
+Create a file called subdomain_fu.rb under config/initializers with following content.
+SubdomainFu.tld_sizes = {
+:development => 0, :test => 1, :production => 1, :cucumber => 1
 }
 
 Another error <b>You have a nil object when you didn't expect it! </b> when using subdomain with mail url.

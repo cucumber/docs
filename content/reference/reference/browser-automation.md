@@ -9,10 +9,10 @@ title: Browser Automation
 Cucumber is not a Browser Automation tool, but it works well with Browser
 Automation tools such as:
 
-* [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/)
-* [Capybara](https://jnicklas.github.io/capybara/)
-* [Watir](http://watir.com/)
-* [Serenity](http://serenity-bdd.info/)
+- [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/)
+- [Capybara](https://jnicklas.github.io/capybara/)
+- [Watir](http://watir.com/)
+- [Serenity](http://serenity-bdd.info/)
 
 ## Selenium WebDriver
 
@@ -198,6 +198,7 @@ public class WebDriverFactory {
     }
 }
 ```
+
 [/carousel]
 
 Then, simply define the browser property when you run Cucumber:
@@ -236,5 +237,5 @@ See the [Report Attachments / Screenshots](/docs/reference#screenshots).
 
 ### Example Projects
 
-* [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
-* [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)
+- [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
+- [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)

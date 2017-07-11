@@ -12,10 +12,10 @@ the METADATA format.
 In addition to this format, a Cucumber implementation MAY provide additional plugins
 for other result formats:
 
-* `json` - METADATA format
-* `progress` - PROGRESS format
-* `pretty` - PRETTY format
-* `tap` - TAP format
+- `json` - METADATA format
+- `progress` - PROGRESS format
+- `pretty` - PRETTY format
+- `tap` - TAP format
 
 ## Specifying formats
 
@@ -69,7 +69,6 @@ format:
 ```
 CUCUMBER PATH:LINE # SCENARIO TITLE
   STACK_TRACE
-
 ```
 
 This may repeat some of the information printed by formatter plugins (such as

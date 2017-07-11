@@ -24,8 +24,8 @@ keywords in your own language.
 
 There are a few conventions.
 
--   Single Gherkin source file contains a description of a single feature.
--   Source files have `.feature` extension.
+- Single Gherkin source file contains a description of a single feature.
+- Source files have `.feature` extension.
 
 # What is Cucumber?
 
@@ -83,7 +83,7 @@ programming code.
 
 Here is an example of a Cucumber Feature:
 
- ```gherkin
+```gherkin
 Feature: Sign up Sign up should be quick and friendly**
 
 Scenario: Successful sign up.  New users should get a confirmation email and greeted personally by the site once signed in.
@@ -101,8 +101,7 @@ Given I have chosen to sign up
 But I specify an email address that has already registered
 Then I should be told that the email is already registered
 And I should be offered the option to recover my password
-
- ```
+```
 
 Anyone from the team can go through the Feature file an can understand what is
 the system for, And how it works(functionality).This helps in analyzing the
@@ -139,9 +138,9 @@ the team no longer have their own personal versions of the truth.
 The Three Amigos is a meeting that takes user stories and turns them into clean
 and thorough Gherkin scenarios. It involves three voices (at least):
 
-+ **The product owner** - This person is most concerned with the scope of the application. This involves translating user stories into a series of features. As the tester comes up with edge cases, the product owner is responsible for deciding what is within scope.
-+ **The tester** - This person will be generating lots of scenarios, and lots of edge cases. How will the application break? What user stories have we not accounted for within these features?
-+ **The developer** - This person will add many of the steps to the scenarios, and think of the details that go into each requirement. How will this application execute? What are some of the roadblocks or requirements behind the scenes?
+- **The product owner** - This person is most concerned with the scope of the application. This involves translating user stories into a series of features. As the tester comes up with edge cases, the product owner is responsible for deciding what is within scope.
+- **The tester** - This person will be generating lots of scenarios, and lots of edge cases. How will the application break? What user stories have we not accounted for within these features?
+- **The developer** - This person will add many of the steps to the scenarios, and think of the details that go into each requirement. How will this application execute? What are some of the roadblocks or requirements behind the scenes?
 
 These conversations can produce great tests because each amigo is able to see
 the product from a different angle. If the tests are being developed before the
@@ -186,12 +185,12 @@ The `Feature` line names the feature. This should be a short label.
 general, this should match to one of the project’s core purposes or “business
 values” such as:
 
-* Protect revenue
-* Increase revenue
-* Manage cost
-* Increase brand value
-* Make the product remarkable
-* Provide more value to your customers
+- Protect revenue
+- Increase revenue
+- Manage cost
+- Increase brand value
+- Make the product remarkable
+- Provide more value to your customers
 
 `As a` describes the role of the people/users being served by the feature.
 
@@ -240,7 +239,9 @@ different ways — say it the same way every time. For example:
 ```Gherkin
 	Given I am logged in
 ```
+
 and
+
 ```Gherkin
 	Given I have logged in to the site
 ```

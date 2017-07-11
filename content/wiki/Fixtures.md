@@ -55,7 +55,7 @@ fixtures = Dir[File.join(fixtures_folder, '*.yml')].map {|f| File.basename(f, '.
 Fixtures.create_fixtures(fixtures_folder, fixtures)
 ```
 
-For Rails 3.1 just replace ```Fixtures``` with ```ActiveRecord::Fixtures``` and ```RAILS_ROOT``` with ```Rails.root```
+For Rails 3.1 just replace `Fixtures` with `ActiveRecord::Fixtures` and `RAILS_ROOT` with `Rails.root`
 
 ## Usage
 
@@ -99,6 +99,7 @@ module FixtureAccess
 
 end
 ```
+
 and then
 
 ```ruby
@@ -107,6 +108,6 @@ World(FixtureAccess)
 
 For Rails 4.x rename any incidence of `Fixtures` above with `ActiveRecord::FixtureSet`.
 
-Rails 2.x/3.x instructions work for Cucumber *0.2.3.2* and later. For older versions, view "forum post":http://www.ruby-forum.com/topic/187427#822479
+Rails 2.x/3.x instructions work for Cucumber *0.2.3.2* and later. For older versions, view "forum post":<http://www.ruby-forum.com/topic/187427#822479>
 
 Rails 4.x instructions tested with Cucumber 1.3.17.

@@ -9,7 +9,7 @@ title: Jenkins integration
 A Jenkins Plugin is available that produces beautiful cucumber reports.
 
 Follow the install instructions here: 
-https://github.com/jenkinsci/cucumber-reports-plugin
+<https://github.com/jenkinsci/cucumber-reports-plugin>
 
 Overview Page:
 

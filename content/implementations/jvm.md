@@ -18,14 +18,14 @@ common to all Cucumber implementations.
 
 Cucumber-JVM supports the following JVM languages:
 
-* [Java](#java)
-* [Groovy](#groovy)
-* [Scala](#scala)
-* [Clojure](#clojure)
-* [Jython](#jythin)
-* [JRuby](#jruby)
-* [Rhino JavaScript](#rhino-javascript)
-* [Gosu](#gosu)
+- [Java](#java)
+- [Groovy](#groovy)
+- [Scala](#scala)
+- [Clojure](#clojure)
+- [Jython](#jythin)
+- [JRuby](#jruby)
+- [Rhino JavaScript](#rhino-javascript)
+- [Gosu](#gosu)
 
 ## Installation
 
@@ -68,10 +68,10 @@ You can find the current snapshot version number [here](https://github.com/cucum
 
 There are several ways to run scenarios with Cucumber-JVM:
 
-* [JUnit Runner](#junit-runner)
-* [CLI Runner](#cli-runner)
-* [Android Runner](/docs/reference/android#runner)
-* [Third party runners](#third-party-runners)
+- [JUnit Runner](#junit-runner)
+- [CLI Runner](#cli-runner)
+- [Android Runner](/docs/reference/android#runner)
+- [Third party runners](#third-party-runners)
 
 ### JUnit Runner
 
@@ -130,8 +130,8 @@ java cucumber.api.cli.Main --help
 
 IntelliJ IDEA and Eclipse have plugins that can run scenarios from within an IDE:
 
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
-* [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
+- [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
 
 Please refer to the documentation for the third party runner for details about how
 to pass configuration options to Cucumber.
