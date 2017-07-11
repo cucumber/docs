@@ -1,4 +1,4 @@
-[cli]
+[md]
 bears = MarkdownBear
 default_actions = *: ApplyPatchAction
 files = content/**/*.md
