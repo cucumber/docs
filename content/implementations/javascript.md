@@ -1,8 +1,8 @@
 ---
-title: JavaScript
-nav: docs
 menu:
-  - implementations
+- implementations
+nav: docs
+title: JavaScript
 ---
 
 # JavaScript

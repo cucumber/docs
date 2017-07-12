@@ -1,15 +1,16 @@
-+++
-title = "Hooks"
-source = "https://github.com/cucumber/cucumber/wiki/Hooks/"
-menu = ["all", "wiki"]
-+++
+---
+menu:
+- all
+- wiki
+source: https://github.com/cucumber/cucumber/wiki/Hooks/
+title: Hooks
+---
 
 Cucumber provides a number of hooks which allow us to run blocks at various points in the Cucumber test cycle. You can put them in your <code>support/env.rb</code> file or any other file under the <code>support</code> directory, for example in a file called <code>support/hooks.rb</code>. There is no association between where the hook is defined and which scenario/step it is run for, but you can use tagged hooks (see below) if you want more fine grained control.
 
 All defined hooks are run whenever the relevant event occurs.
 
-Scenario hooks
---------------
+## Scenario hooks
 
 <code>Before</code> hooks will be run before the first step of each scenario. They will run in the same order of which they are registered.
 
@@ -67,8 +68,7 @@ end
 
 You may want to take a look at [SystemTimer](http://ph7spot.com/musings/system-timer) if you want a more reliable <code>timeout</code>.
 
-Step hooks
-----------
+## Step hooks
 
 **Warning: AfterStep hook does not work with scenarios which have backgrounds (cucumber 0.3.11)**
 
@@ -78,8 +78,7 @@ AfterStep do |scenario|
 end
 ```
 
-Tagged hooks
-------------
+## Tagged hooks
 
 Sometimes you may want a certain hook to run only for certain scenarios. This can be achieved by associating a <code>Before</code>, <code>After</code>, <code>Around</code> or <code>AfterStep</code> hook with one or more [tags](tags). You can OR and AND tags in much the same way as you can when running Cucumber from the command line. Examples: 
 
@@ -121,8 +120,7 @@ end
 
 Think twice before you use this feature, as whatever happens in hooks is invisible to people who only read the features. You should consider using [background](background) as a more explicit alternative if the setup should be readable by non-technical people. 
 
-Global hooks
-------------
+## Global hooks
 
 If you want something to happen once before any scenario is run - just put that code at the top-level in your <code>env.rb</code> file (or any other file in your <code>features/support</code> directory. Use <code>Kernel#at_exit</code> for global teardown. Example:
 
@@ -135,8 +133,7 @@ at_exit do
 end
 ```
 
-Running a Before hook only once
--------------------------------
+## Running a Before hook only once
 
 If you have a hook you only want to run once, use a global variable:
 
@@ -149,8 +146,7 @@ Before do
 end 
 ```
 
-AfterConfiguration
-------------------
+## AfterConfiguration
 
 You may also provide an <code>AfterConfiguration</code> hook that will be run after Cucumber has been configured. The block you provide will be passed the cucumber configuration (an instance of <code>Cucumber::Cli::Configuration</code>). Example:
 

@@ -1,8 +1,9 @@
-+++
-title = "Using MiniTest"
-source = "https://github.com/cucumber/cucumber/wiki/Using-MiniTest/"
-menu = ["implementations"]
-+++
+---
+menu:
+- implementations
+source: https://github.com/cucumber/cucumber/wiki/Using-MiniTest/
+title: Using MiniTest
+---
 
 You can also use [minitest](https://github.com/seattlerb/minitest) <code>assert</code> methods by defining your own [World](a-whole-new-world) block:
 

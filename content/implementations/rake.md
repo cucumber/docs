@@ -1,8 +1,9 @@
-+++
-title = "Using Rake"
-source = "https://github.com/cucumber/cucumber/wiki/Using-Rake/"
-menu = ["implementations"]
-+++
+---
+menu:
+- implementations
+source: https://github.com/cucumber/cucumber/wiki/Using-Rake/
+title: Using Rake
+---
 
 Cucumber ships with a rake task that you can easily extend to fit your needs.  Please keep in mind that rake will add some additional startup time when running your features.  For that reason, it is recommended that you use the Cucumber binary directly and reserve the Cucumber rake task for use in CI builds and other automated needs.  (The Cucumber task is basically a thin wrapper for the Cucumber binary.)  To use Cucumber's rake task you simply need to require the task file and define a task with it.  Below is a basic rake task that will run all the features with the pretty formatter:
 

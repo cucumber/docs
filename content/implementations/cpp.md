@@ -1,8 +1,8 @@
 ---
-title: C++
-nav: docs
 menu:
-  - implementations
+- implementations
+nav: docs
+title: C++
 ---
 
 # C++

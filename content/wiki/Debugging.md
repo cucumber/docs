@@ -1,8 +1,10 @@
-+++
-title = "Debugging"
-source = "https://github.com/cucumber/cucumber/wiki/Debugging/"
-menu = ["all", "wiki"]
-+++
+---
+menu:
+- all
+- wiki
+source: https://github.com/cucumber/cucumber/wiki/Debugging/
+title: Debugging
+---
 
 Adding the following as the contents of `features/support/debugging.rb` can be helpful in debugging failing steps:
 
@@ -118,4 +120,5 @@ def loop_until_jquery_inactive
   end
 end
 ```
+
 By setting an environment variable, you can cause Cucumber to use various debugging tools, and you can combine them by setting multiple environment variables.

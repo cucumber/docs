@@ -1,9 +1,8 @@
 ---
-title: Metadata
 menu: website
 source: https://docs.cucumber.io/
+title: Metadata
 ---
-
 
 # Metadata
 
@@ -26,11 +25,11 @@ properties.
 Metadata is represented in JSON and is a list of objects with the following
 properties:
 
-* `path` (Path to the document)
-* `line` (1-indexed)
-* `column` (1-indexed, optional)
-* `timestamp` (When was the metadata created. Milliseconds since Epoch)
-* `mimetype` (What kind of metadata is this)
+- `path` (Path to the document)
+- `line` (1-indexed)
+- `column` (1-indexed, optional)
+- `timestamp` (When was the metadata created. Milliseconds since Epoch)
+- `mimetype` (What kind of metadata is this)
 
 Additional `mimetype`-specific properties MUST be added in order to provide the actual
 metadata.
@@ -42,9 +41,9 @@ process them accordingly.
 
 Cucumber defines the following Mime types:
 
-* application/json+cucumber-step-definition
-* text/plain+cucumber-stack-trace
-* text/plain+cucumber-logging
+- application/json+cucumber-step-definition
+- text/plain+cucumber-stack-trace
+- text/plain+cucumber-logging
 
 ## Format
 

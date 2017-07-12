@@ -1,9 +1,9 @@
-+++
-title = "Step Definitions Orig"
-menu = "gherkin"
-+++
+---
+menu: gherkin
+title: Step Definitions Orig
+---
 
-When Cucumber executes a step in a scenario it will look for a matching _step definition_ to execute.
+When Cucumber executes a step in a scenario it will look for a matching *step definition* to execute.
 
 A step definition is
 {{% text "java" %}}a method with a regular expression{{% /text %}}{{% text "ruby" %}}a block of code with a regular expression{{% /text %}}{{% text "javascript" %}}a function with a cucumber expression{{% /text %}}
@@ -45,4 +45,5 @@ Given(/^I have (\d+) cukes in my belly$/, cukes => {
   console.log(`Cukes: ${cukes}`);
 });
 ```
+
 {{% /block %}}

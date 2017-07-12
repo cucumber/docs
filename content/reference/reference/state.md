@@ -1,8 +1,8 @@
 ---
-title: State
-nav: docs
 menu: reference
+nav: docs
 renderer: Cucumber::Website::Reference
+title: State
 ---
 
 # State
@@ -26,7 +26,7 @@ An alternative approach is to use database transactions.
 
 ## Transactions
 
-You can wrap a transaction (if your database supports it) _around_ each Scenario.
+You can wrap a transaction (if your database supports it) *around* each Scenario.
 
 (This might lead to faster scenarios, but it comes at a cost. You won't be able
 to perform a post-mortem, and you won't be able to use [browser automation](#browsers-beware)).

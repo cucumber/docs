@@ -1,6 +1,6 @@
 ---
-title: Cucumber Integrations
 menu:
   main:
-    weight:  40
+    weight: 40
+title: Cucumber Integrations
 ---

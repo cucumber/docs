@@ -1,8 +1,10 @@
-+++
-title = "RSpec Expectations"
-source = "https://github.com/cucumber/cucumber/wiki/RSpec-Expectations/"
-menu = ["all", "wiki"]
-+++
+---
+menu:
+- all
+- wiki
+source: https://github.com/cucumber/cucumber/wiki/RSpec-Expectations/
+title: RSpec Expectations
+---
 
 If you're using bundler, add the `rspec-expectations` gem to your Gemfile. Cucumber will automatically load RSpec's matchers and expectation methods to be available in your step definitions.
 

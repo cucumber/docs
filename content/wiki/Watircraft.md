@@ -1,8 +1,10 @@
-+++
-title = "Watircraft"
-source = "https://github.com/cucumber/cucumber/wiki/Watircraft/"
-menu = ["all", "wiki"]
-+++
+---
+menu:
+- all
+- wiki
+source: https://github.com/cucumber/cucumber/wiki/Watircraft/
+title: Watircraft
+---
 
 [WatirCraft](http://wiki.github.com/bret/watircraft) is a testing framework that
 builds on Watir. It allows tests to be expressed as Rspec or Cucumber tests and

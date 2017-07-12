@@ -1,8 +1,9 @@
-+++
-title = "Using TestUnit"
-source = "https://github.com/cucumber/cucumber/wiki/Using-TestUnit/"
-menu = ["implementations"]
-+++
+---
+menu:
+- implementations
+source: https://github.com/cucumber/cucumber/wiki/Using-TestUnit/
+title: Using TestUnit
+---
 
 Don't like RSpec's `should` methods for assertions? No problem, we won't force you to. You can use the familiar Test::Unit `assert` methods by mixing it into your [World](a-whole-new-world).
 

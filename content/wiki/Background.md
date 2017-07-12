@@ -1,10 +1,12 @@
-+++
-title = "Background"
-source = "https://github.com/cucumber/cucumber/wiki/Background/"
-menu = ["all", "wiki"]
-+++
+---
+menu:
+- all
+- wiki
+source: https://github.com/cucumber/cucumber/wiki/Background/
+title: Background
+---
 
-Background allows you to add some context to the scenarios in a single feature. A Background is much like a scenario containing a number of steps. The difference is when it is run. The background is run before each of your scenarios but after any of your Before \[\[Hooks\]\].
+Background allows you to add some context to the scenarios in a single feature. A Background is much like a scenario containing a number of steps. The difference is when it is run. The background is run before each of your scenarios but after any of your Before [[Hooks]].
 
 Example:
 
@@ -36,10 +38,9 @@ When I try to post to "Expensive Therapy"
 Then I should see "Your article was published."
 \`\`\`
 
-For a less explicit alternative to background, check out Tagged \[\[Hooks\]\].
+For a less explicit alternative to background, check out Tagged [[Hooks]].
 
-Good practices for using Background
------------------------------------
+## Good practices for using Background
 
 ### Don't use "Background" to set up **complicated state** unless that state is actually something the client needs to know.
 
@@ -47,7 +48,7 @@ For example, if the user and site names don't matter to the client, you should u
 
 ### Keep your "Background" section **short**.
 
-You're expecting the user to actually remember this stuff when reading your scenarios. If the background is more than 4 lines long, can you move some of the irrelevant details into high-level steps? See \[\[Calling Steps from Step Definitions\]\].
+You're expecting the user to actually remember this stuff when reading your scenarios. If the background is more than 4 lines long, can you move some of the irrelevant details into high-level steps? See [[Calling Steps from Step Definitions]].
 
 ### Make your "Background" section **vivid**.
 

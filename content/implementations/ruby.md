@@ -1,8 +1,8 @@
 ---
-title: Ruby/JRuby
-nav: docs
 menu:
-  - implementations
+- implementations
+nav: docs
+title: Ruby/JRuby
 ---
 
 # Ruby/JRuby

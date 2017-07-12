@@ -1,8 +1,8 @@
 ---
-title: Lua
-nav: docs
 menu:
-  - implementations
+- implementations
+nav: docs
+title: Lua
 ---
 
 # Lua

@@ -1,9 +1,8 @@
 ---
-title: Architecture
 menu: website
 source: https://docs.cucumber.io/
+title: Architecture
 ---
-
 
 # Execution
 
@@ -14,18 +13,18 @@ When Cucumber runs, different things happen at different times:
 The first thing that happens is to create a configuration for Cucumber.
 This can come from a variety of sources:
 
-* Command-line arguments
-* Configuration files (JSON, YAML or TOML)
-* Configuration code
+- Command-line arguments
+- Configuration files (JSON, YAML or TOML)
+- Configuration code
 
 The configuration is a set of parameters telling Cucumber how it should
 behave, such as:
 
-* What plugins to load (such as formatter plugins)
-* What features and scenarios to run (using file paths, tags or line numbers)
-* What step definitions to use
-* Whether or not undefined and pending steps are reported as errors
-* Test plan strategy (randomise order, distribute scenarios across threads or processes)
+- What plugins to load (such as formatter plugins)
+- What features and scenarios to run (using file paths, tags or line numbers)
+- What step definitions to use
+- Whether or not undefined and pending steps are reported as errors
+- Test plan strategy (randomise order, distribute scenarios across threads or processes)
 
 ## Load glue code (Step Definitions and Hooks)
 

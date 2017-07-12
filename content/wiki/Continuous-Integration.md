@@ -1,8 +1,10 @@
-+++
-title = "Continuous Integration"
-source = "https://github.com/cucumber/cucumber/wiki/Continuous-Integration/"
-menu = ["all", "wiki"]
-+++
+---
+menu:
+- all
+- wiki
+source: https://github.com/cucumber/cucumber/wiki/Continuous-Integration/
+title: Continuous Integration
+---
 
 Using Cucumber in a [Continuous Integration](http://martinfowler.com/articles/continuousIntegration.html) (CI) environment is relatively straightforward.
 
@@ -10,13 +12,11 @@ The <code>cucumber</code> executable will exit with an [exit status](http://en.w
 
 First, you have to make sure your CI server executes cucumber. Most CI setups invoke some kind of build tool, typically [Rake](http://rake.rubyforge.org/), [Ant](http://ant.apache.org/) or [Maven](http://maven.apache.org/) and we recommend you execute cucumber from one of these.
 
-Rake
-----
+## Rake
 
-If your CI server is \[\[using Rake\]\], just make sure it executes your cucumber task.
+If your CI server is [[using Rake]], just make sure it executes your cucumber task.
 
-Ant, Maven and JUnit output
----------------------------
+## Ant, Maven and JUnit output
 
 Many CI servers can interpret XML files produced by the [Ant JUnit task](https://ant.apache.org/manual/Tasks/junit.html) and display them as HTML. Some can even create reports over time.
 

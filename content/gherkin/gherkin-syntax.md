@@ -1,11 +1,11 @@
-+++
-title = "Gherkin syntax"
-source = "https://github.com/cucumber/cucumber/wiki/Gherkin/"
-menu = ["gherkin"]
-+++
+---
+menu:
+- gherkin
+source: https://github.com/cucumber/cucumber/wiki/Gherkin/
+title: Gherkin syntax
+---
 
-Gherkin Syntax
---------------
+## Gherkin Syntax
 
 Like Python and YAML, Gherkin is a line-oriented language that uses indentation
 to define structure. Line endings terminate statements (eg, steps). Either
@@ -46,5 +46,5 @@ describe the business value of this feature. Line 6 starts a scenario. Lines
 
 Read more
 
--   \[\[Feature Introduction\]\] - general structure of a feature
--   \[\[Given-When-Then\]\] - steps
+- [[Feature Introduction]] - general structure of a feature
+- [[Given-When-Then]] - steps
