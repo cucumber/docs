@@ -1,10 +1,12 @@
 ---
 menu:
-- all
-- wiki
+- junkyard
 source: https://github.com/cucumber/cucumber/wiki/A-Whole-New-World/
 title: A Whole New World
 ---
+
+> TODO: Review, ruby specific
+
 
 Cucumber runs scenarios in a <code>World</code>. By default, the <code>World</code> is just an instance of <code>Object</code>.
 

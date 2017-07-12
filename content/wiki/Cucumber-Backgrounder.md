@@ -1,16 +1,17 @@
 ---
 menu:
-- all
-- wiki
+- junkyard
 source: https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder/
 title: Cucumber Backgrounder
 ---
+
+> TODO: Blog post intro or some such
 
 ## Or: How I Learned to Stop Worrying and <strike>Love Testing</strike> Start Behaving
 
 ### Introduction
 
-Cucumber is a tool that implements a [Behaviour Driven Design (BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development) [workflow](http://en.wikipedia.org/wiki/Workflow). This document deals principally with initial set up and first use of the <strong><em> Cucumber-Rails</em></strong> and <strong><em>Cucumber</em></strong> [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as its background the Ruby on Rails (RoR) [web application framework](http://en.wikipedia.org/wiki/Web_application_framework). Detailed discussion of [Behaviour Driven](http://en.wikipedia.org/wiki/Behavior_driven_development) (BDD), [Test Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and [Panic Driven Development](http://en.wikipedia.org/wiki/SNAFU) (SNAFU aka [Cowboy Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/)) can be found elsewhere. Of course, there are still some [skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html) on this whole Agile thing; not to mention [heretics](http://pragdave.me/blog/2014/03/04/time-to-kill-agile/). But, if you are reading this then you probably are not one of them.
+Cucumber is a tool that implements a [Behaviour Driven Development (BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development) [workflow](http://en.wikipedia.org/wiki/Workflow). This document deals principally with initial set up and first use of the <strong><em> Cucumber-Rails</em></strong> and <strong><em>Cucumber</em></strong> [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as its background the Ruby on Rails (RoR) [web application framework](http://en.wikipedia.org/wiki/Web_application_framework). Detailed discussion of [Behaviour Driven](http://en.wikipedia.org/wiki/Behavior_driven_development) (BDD), [Test Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and [Panic Driven Development](http://en.wikipedia.org/wiki/SNAFU) (SNAFU aka [Cowboy Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/)) can be found elsewhere. Of course, there are still some [skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html) on this whole Agile thing; not to mention [heretics](http://pragdave.me/blog/2014/03/04/time-to-kill-agile/). But, if you are reading this then you probably are not one of them.
 
 You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided..
 
@@ -26,7 +27,7 @@ Before anything else make sure that you have the <em>[cucumber-rails](https://gi
 <code>
 Feature: Design and Build a Ruby on Rails web app using Behaviour Driven Development (BDD)
 In order to reduce rework and produce a web app at low cost and high speed
-A developer 
+A developer
 Should employ a BDD methodology and agile tools
 
 Scenario: Cucumber should be installed and configured
@@ -58,7 +59,7 @@ Instead, a feature should look more like this:
 <code>
 Feature: Design and Build a Ruby on Rails web app using Behaviour Driven Development (BDD)
 In order to produce a web app at low cost and high speed
-A developer 
+A developer
 Should employ Ruby on Rails with Cucumber BDD tools
 
 Scenario: Cucumber-Rails should be installed and configured
@@ -394,7 +395,7 @@ In the feature example provided above we had the scenario statement: <code>And s
 ```
 <code>Given /some other action/ do
 Then "some other action" do
-When /some other Action/i do 
+When /some other Action/i do
 When /some other (Action)/i do |action|
 Then /(\w+) other action/i do |prefix_phrase|
 Given /(\w+) other (\w+)/i do |first_word,second_word|
@@ -488,7 +489,7 @@ However, with the steps method, the Gherkin keywords deprecated in simple nested
 <code>
 When /my matcher named (.*)/ do |match|
   steps %Q{
-    Then step my other matcher named "#{match}" 
+    Then step my other matcher named "#{match}"
      And the next matcher with value "{match}"
   }
 end
@@ -654,7 +655,7 @@ My template for a step definition presently looks like this:
 When /statement identifier( not)? expectation "([^\"]+)"/i do |boolean, value|
   actual = expectation( value )
   expected = !boolean           # this works because in ruby nil == false and !nil == true
-  message = "expectation failed for #{value}" 
+  message = "expectation failed for #{value}"
   assert( actual == expected, message )
 end
 </code>
@@ -665,7 +666,7 @@ For example ( admittedly contrived ):
 ```
 <code>
 When /product ([^\"]+) should( not)? belong to category ([^\"]+)/i do |product, boolean, category|
-  actual = ( Product.find_by_stock_number!( product )category ) == category 
+  actual = ( Product.find_by_stock_number!( product )category ) == category
   expected = !boolean
   message = "Product '#{product}' should#{boolean} belong to category '#{category}'"
   assert( actual == expected, message )
@@ -715,7 +716,7 @@ Given that the forgoing is contained in a file called <code>features/login/login
 $ rake cucumber:wip
 $ cucumber --profile=my_profile --tags=@wip features
 $ cucumber --profile=my_profile --tags=@authent features/login
-$ cucumber --profile=my_profile --tags=@init 
+$ cucumber --profile=my_profile --tags=@init
 ```
 
 However, the following will not work, unless you [[build a custom rake task|Using-Rake]] for it:

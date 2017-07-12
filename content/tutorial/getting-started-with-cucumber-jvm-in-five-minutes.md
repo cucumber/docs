@@ -1,6 +1,6 @@
 ---
 menu:
-  main:
+  junkyard:
     weight: 25
   old: null
 title: Getting Started with Cucumber-JVM

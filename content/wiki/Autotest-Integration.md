@@ -1,10 +1,11 @@
 ---
 menu:
-- all
-- wiki
+- junkyard
 source: https://github.com/cucumber/cucumber/wiki/Autotest-Integration/
 title: Autotest Integration
 ---
+
+> TODO: Keep it or delete it? 
 
 **<span style="color:red;">Warning: autotest plugin seems to not work with --drb (spork). See [lighthouse ticket](https://rspec.lighthouseapp.com/projects/16211-cucumber/tickets/365-cucumber-out-option-does-not-worj-with-drb) for details.</span>**
 
@@ -126,7 +127,7 @@ Autotest is geared toward the Red~~<span style="text-align:right;">Green</span>~
 Some people have reported problems running autotest. One known issue is an error similar to this:
 
 ```
-<code>$ AUTOFEATURE=true autotest 
+<code>$ AUTOFEATURE=true autotest
 > loading autotest/cucumber_rails
 > Autotest style autotest/cucumber_rails doesn't seem to exist.
 > Aborting. </code>
