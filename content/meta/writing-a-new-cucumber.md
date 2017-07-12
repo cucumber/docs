@@ -1,6 +1,5 @@
 ---
 menu:
-- website
 - meta
 source: https://docs.cucumber.io/
 title: Writing an implementation

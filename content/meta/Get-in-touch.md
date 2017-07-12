@@ -1,7 +1,5 @@
 ---
 menu:
-- all
-- wiki
 - meta
 source: https://github.com/cucumber/cucumber/wiki/Get-in-touch/
 title: Get in touch
