@@ -3,7 +3,4 @@ sudo: false
 dist: trusty
 before_install:
   - go get -v github.com/spf13/hugo
-  # - sudo apt-add-repository ppa:brightbox/ruby-ng
-  # - sudo apt-get update
-  # - sudo apt-get install ruby2.4 ruby2.4-dev
 script: make
