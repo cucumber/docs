@@ -1,6 +1,0 @@
-language: go
-sudo: false
-dist: trusty
-before_install:
-  - go get -v github.com/spf13/hugo
-script: make

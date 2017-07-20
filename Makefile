@@ -10,8 +10,6 @@ htmlproofer: build Gemfile.lock
 .PHONY: htmlproofer
 
 Gemfile.lock: Gemfile
-	ruby --version
-	gem list
 	bundle
 
 clean:
