@@ -1,6 +1,7 @@
 ---
 menu: gherkin
 title: Step Definitions Orig
+polyglot: true
 ---
 
 When Cucumber executes a step in a scenario it will look for a matching *step definition* to execute.
