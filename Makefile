@@ -15,5 +15,5 @@ Gemfile.lock: Gemfile
 	bundle
 
 clean:
-	rm -rf public
+	git clean -dfx
 .PHONY: build
