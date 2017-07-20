@@ -93,3 +93,7 @@ using the GitHub API.
 
 We might experiment with [other CMS systems](https://headlesscms.org/) if Netlify
 CMS doesn't fit with our workflow.
+
+## Deployment
+
+The site is published on every `git push` thanks to a [webhook](https://github.com/cucumber/docs.cucumber.io/settings/hooks)

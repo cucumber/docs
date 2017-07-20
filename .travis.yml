@@ -1,4 +1,4 @@
 language: go
 install: go get -v github.com/spf13/hugo
 script:
-  - make build
+  - make
