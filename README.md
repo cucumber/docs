@@ -102,3 +102,6 @@ Netlify will then build the site
 [deploy](https://app.netlify.com/sites/cucumber/deploys) it if the build is successful.
 
 The build will check for broken links and other problems.
+
+Build notifications are sent to the `#cucumber-docs-bots` Slack channel. See
+https://cucumber.io/support for details on how to access Slack.
