@@ -14,7 +14,7 @@ First, you have to make sure your CI server executes cucumber. Most CI setups in
 
 ## Rake
 
-If your CI server is [[using Rake]], just make sure it executes your cucumber task.
+If your CI server is [using Rake](/implementations/ruby/rake), just make sure it executes your cucumber task.
 
 ## Ant, Maven and JUnit output
 

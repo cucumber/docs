@@ -11,7 +11,7 @@ Cucumber-JVM is a Cucumber implementation for the most popular JVM languages.
 
 This document is the reference for features that are specific to Cucumber-JVM.
 
-Please see the [general reference](/docs/reference) for features that are
+Please see the [[general reference]] for features that are
 common to all Cucumber implementations.
 
 ## Languages
@@ -22,7 +22,7 @@ Cucumber-JVM supports the following JVM languages:
 - [Groovy](#groovy)
 - [Scala](#scala)
 - [Clojure](#clojure)
-- [Jython](#jythin)
+- [Jython](#jython)
 - [JRuby](#jruby)
 - [Rhino JavaScript](#rhino-javascript)
 - [Gosu](#gosu)
@@ -33,7 +33,7 @@ Cucumber-JVM consists of several modules (jars) that you can download from the [
 There is no "setup" program for Cucumber-JVM---just jar files.
 
 What jar files to add to your project classpath depends on what programming language you are using. If you
-are using Java, you may want to add one of the jars for [dependency injection](/docs/reference/java-di) as well.
+are using Java, you may want to add one of the jars for [dependency injection](/implementations/jvm/java-di/) as well.
 
 ### Snapshot releases
 
@@ -70,7 +70,7 @@ There are several ways to run scenarios with Cucumber-JVM:
 
 - [JUnit Runner](#junit-runner)
 - [CLI Runner](#cli-runner)
-- [Android Runner](/docs/reference/android#runner)
+- [[Android Runner]]
 - [Third party runners](#third-party-runners)
 
 ### JUnit Runner
@@ -119,7 +119,7 @@ can be run from the command-line, or from any build tool such as Gradle or Ant.
 java cucumber.api.cli.Main
 ```
 
-This behaves similarly to the `cucumber` command from [Cucumber-Ruby](/docs/reference/ruby). Run it with `--help`
+This behaves similarly to the `cucumber` command from [Cucumber-Ruby](/implementations/ruby/ruby/). Run it with `--help`
 to see what the options are:
 
 ```
@@ -146,7 +146,7 @@ For example:
 java cucumber.api.cli.Main --version
 ```
 
-The [JUnit Runner](#junit-runner) and [Android Runner](#android-runner) can also pick
+The [JUnit Runner](#junit-runner) and [[Android Runner]] can also pick
 up configuration options defined via the `@CucumberOptions` annotation. For example, if
  you want to tell Cucumber to use the two formatter plugins `pretty`
 and `html`, you would specify it like this:
@@ -255,8 +255,8 @@ Otherwise, to write them using annotated methods, you need:
 ```
 
 While it's not required, we strongly recommend you include one of the
-[Dependency Injection](/docs/reference/java-di) modules as well. This allows
-you to share state between [Step Definitions](/docs/reference#step-definitions)
+[Dependency Injection](/implementations/jvm/java-di/) modules as well. This allows
+you to share state between [Step Definitions](/cucumber/step-definitions/)
 without resorting to static variables (a common source of flickering scenarios).
 
 ### Step Definitions
@@ -267,7 +267,7 @@ method annotations:
 
 #### Lambda Expressions (Java 8)
 
-If you use the `cucumber-java8` module, you can write the [Step Definitions](/docs/reference#step-definitions)
+If you use the `cucumber-java8` module, you can write the [Step Definitions](/cucumber/step-definitions/)
 using lambdas:
 
 ```java
@@ -317,7 +317,7 @@ public void the_following_animals(List<String> animals) {
 
 See the [@Delimiter](#) annotation for details about how to define a delimiter different than `,`.
 
-If you prefer to use a [Data Table](/docs/reference#data-table) to define a list you can do that too:
+If you prefer to use a [[Data Table]] to define a list you can do that too:
 
 ```gherkin
 Given the following animals:

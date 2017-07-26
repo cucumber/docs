@@ -2,13 +2,13 @@
 menu:
   main: null
 title: Gherkin Reference
-status
+
 ---
 
 # Reference
 
 This is the general reference for all Cucumber implementations. Please refer to
-the [documentation overview](/docs) for links to platform-specific documentation.
+the [[documentation overview]] for links to platform-specific documentation.
 
 ## Gherkin
 
@@ -77,7 +77,7 @@ Feature: Refund item
 ```
 
 In addition to a *name* and a *description*, features contain a list of [Scenarios](#scenario)
-or [Scenario Outlines](#scenario-outline), and an optional [Background](#background).
+or [Scenario Outlines](#scenario-outlines), and an optional [Background](#background).
 
 ### Descriptions
 
@@ -133,7 +133,7 @@ add more it's usually a sign that you should split the scenario up in multiple s
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
-The [step definition](#step-definitions) of a `Then` step should use an *assertion* to
+The [step definition](/cucumber/step-definitions/) of a `Then` step should use an *assertion* to
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
@@ -192,7 +192,7 @@ Given <I'm a placeholder and I'm ok>
 
 The placeholders indicate that when the Examples row is run they should be substituted with real values from the `Examples` table. If a placeholder name is the same as a column title in the `Examples` table then this is the value that will replace it.
 
-You can also use placeholders in [Multiline Step Arguments](docs/gherkin.md#doc-strings).
+You can also use placeholders in [[Multiline Step Arguments]].
 
 **IMPORTANT:** *Your step definitions will never have to match a placeholder. They will need to match the values that will replace the placeholder*
 

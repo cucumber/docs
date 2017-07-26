@@ -6,7 +6,7 @@ source: https://github.com/cucumber/cucumber/wiki/Given-When-Then/
 title: Given When Then
 ---
 
-[[Cucumber scenarios|Feature-Introduction]] consist of steps, also known as Givens, Whens and Thens.
+[Cucumber scenarios](/gherkin/feature-introduction/) consist of steps, also known as Givens, Whens and Thens.
 
 Cucumber doesn't technically distinguish between these three kind of steps. However, we strongly recommend that you do! These words have been carefully selected for their purpose, and you should know what the purpose is to get into the BDD mindset.
 

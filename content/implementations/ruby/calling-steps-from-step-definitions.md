@@ -6,9 +6,9 @@ source: https://github.com/cucumber/cucumber/wiki/Calling-Steps-from-Step-Defini
 title: Calling Steps from Step Definitions
 ---
 
-> TODO: Deprecated feature? 
+> TODO: Deprecated feature?
 
-It is possible to call steps from [[Step Definitions]]:
+It is possible to call steps from [Step Definitions](/cucumber/step-definitions/):
 
 ```
 # ruby

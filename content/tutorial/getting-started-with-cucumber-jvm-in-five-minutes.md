@@ -289,13 +289,13 @@ The steps you need to define to check that people within 1000m hear the shout ar
 
 These all have a keyword (Given, When and Then) followed by a step. The step is then matched to a *step definition*.
 
-[Step definitions](https://cucumber.netlify.com/reference/step-definitions/) define the plain text step in code.
+[Step definitions](/cucumber/step-definitions/) define the plain text step in code.
 
 ### Given/When/Then
 
 The plain text steps are defined in the Gherkin language.
 
-[Gherkin](https://cucumber.netlify.com/reference/gherkin/) allows technical and non-technical staff to describe and share the expected behaviour of the application. It does not describe the implementation.
+[Gherkin](/gherkin/gherkin-intro/) allows technical and non-technical staff to describe and share the expected behaviour of the application. It does not describe the implementation.
 
 The feature file contains the Gherkin source. In our feature, we use only the Given, When and Then keywords - there are others; you can read more on the [Wiki page](https://github.com/cucumber/cucumber/wiki/Gherkin).
 

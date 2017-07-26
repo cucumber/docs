@@ -36,7 +36,7 @@ end
 
 Don't like RSpec's `should` methods for assertions? No problem, we won't force
 you to. You can use the familiar Test::Unit `assert` methods by mixing it into
-your [World](a-whole-new-world).
+your [World](/wiki/a-whole-new-world).
 
 ```ruby
 require 'test/unit/assertions'

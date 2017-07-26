@@ -8,7 +8,7 @@ title: Dependency Injection
 # Dependency Injection
 
 If your programming language is Java you will be writing glue code
-([Step Definitions](/docs/reference#step-definitions) and [Hooks](/docs/reference#step-definitions)) in plain old Java classes.
+([Step Definitions](/cucumber/step-definitions/) and [Hooks](/cucumber/hooks/)) in plain old Java classes.
 
 Cucumber will create a new instance of each of your glue code classes before each Scenario.
 If all of your glue code classes have an empty constructor you don’t need anything else.

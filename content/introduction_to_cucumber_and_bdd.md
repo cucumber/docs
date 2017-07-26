@@ -35,16 +35,16 @@ reads in your specifications from plain-language text files called features,
 examines them for scenarios to test, and runs the scenarios against your system.
 Each scenario is a list of steps for Cucumber to work through. So that Cucumber
 can understand these feature files, they must follow some basic syntax rules.
-The name for this set of rules is [Gherkin](docs/gherkin.md).
+The name for this set of rules is [Gherkin](/gherkin/gherkin-intro/).
 
 Along with the features, you give Cucumber a set of step definitions. These
 files map each business-readable language step into programming code to carry
-out what action shoule be performed by the step. In a mature test suite, the
+out what action should be performed by the step. In a mature test suite, the
 step definition itself will probably just be one or two lines of code that
 delegate to a library of support code, specific to the domain of your
 application.
 
-Software teams work best when the developers and business stakeholdersare
+Software teams work best when the developers and business stakeholders are
 communicating clearly with one another. A great way to do that is to
 collaboratively specify the work that’s about to be done using automated
 acceptance tests.
@@ -61,7 +61,7 @@ them avoid misunderstandings.
 
 This is the most typical question for every enthusiastic personality would get.
 What makes Cucumber to stand out from the crowd of other communication and
-collaboration tools ?
+collaboration tools?
 
 Cucumber has designed specifically to ensure the acceptance tests can easily be
 read and written by anyone on the team. This reveals the true value of
@@ -104,7 +104,7 @@ And I should be offered the option to recover my password
 ```
 
 Anyone from the team can go through the Feature file an can understand what is
-the system for, And how it works(functionality).This helps in analyzing the
+the system for, and how it works (functionality). This helps in analyzing the
 functionality of the system and come up with more scenarios where the
 system/software can be tested thoroughly.
 
@@ -112,7 +112,7 @@ In this way, we say that the story functions as a living document. As the
 behavior of the system evolves over time, the team is forced to evolve the
 documentation in parallel.
 
-Acceptance tests written in this style become more than just tests,they are
+Acceptance tests written in this style become more than just tests, they are
 executable specifications along with living documentation.
 
 # Living Documentation
@@ -250,7 +250,7 @@ have identical meaning, so it’s better to pick one and use the same line in
 every scenario where you need to be logged in.
 
 There are more details to writing and testing Cucumber features
-([Cucumber-Backgrounder](Cucumber-Backgrounder)), but this basically covers what
+([Cucumber Backgrounder](/wiki/cucumber-backgrounder/)), but this basically covers what
 a non-programmer needs to know.
 
 ## Writing Features

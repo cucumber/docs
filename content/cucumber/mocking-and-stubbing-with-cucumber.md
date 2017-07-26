@@ -8,7 +8,7 @@ title: Mocking and Stubbing with Cucumber
 
 > TODO: Generalize and update
 
-Mocking is usually discouraged when using Cucumber. You **can** set up mocks with expectations in your [[Step Definitions]], but ideally you would exercise as much of your stack as possible. If you have a dependency on an external system we recommend using [stubs instead of mocks](http://martinfowler.com/articles/mocksArentStubs.html).
+Mocking is usually discouraged when using Cucumber. You **can** set up mocks with expectations in your [Step Definitions](/cucumber/step-definitions/), but ideally you would exercise as much of your stack as possible. If you have a dependency on an external system we recommend using [stubs instead of mocks](http://martinfowler.com/articles/mocksArentStubs.html).
 
 ## RSpec 2.x
 

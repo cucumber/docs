@@ -5,7 +5,7 @@ source: https://github.com/cucumber/cucumber/wiki/Autotest-Integration/
 title: Autotest Integration
 ---
 
-> TODO: Keep it or delete it? 
+> TODO: Keep it or delete it?
 
 **<span style="color:red;">Warning: autotest plugin seems to not work with --drb (spork). See [lighthouse ticket](https://rspec.lighthouseapp.com/projects/16211-cucumber/tickets/365-cucumber-out-option-does-not-worj-with-drb) for details.</span>**
 
@@ -37,19 +37,19 @@ Windows command shell:
 
 If AUTOFEATURE is not set you will get the warning: <code>(Not running features. To run features in autotest, set AUTOFEATURE=true.)</code>. Set AUTOFEATURE=false to silence this warning.
 
-Options are declared in the [[cucumber.yml]] file (<strong>which must be present</strong> and have a default or autotest profile). To change the way the features are run with autotest create two profiles in your \[\[cucumber.yml]]:
+Options are declared in the [cucumber.yml](/cucumber/cucumber.yml/) file (<strong>which must be present</strong> and have a default or autotest profile). To change the way the features are run with autotest create two profiles in your cucumber.yml:
 
 - <code>autotest</code> : Used when Autotest wants to run only the failing scenarios.
 - <code>autotest-all</code> : Used when Autotest wants to run all the scenarios (after a red->green transition).
 
-For example, to turn color on when features are run, you would add the following to your [[cucumber.yml]] file:
+For example, to turn color on when features are run, you would add the following to your cucumber.yml file:
 
 ```
 <code>autotest: --color
 autotest-all: --color</code>
 ```
 
-Please see [[Running Features]] for more information about profiles, and the \[\[Ruby on Rails]] page for extra help when running in that context.
+Please see [Running Features](/cucumber/running-features/) for more information about profiles, and the [Ruby on Rails](/implementations/ruby/ruby-on-rails/) page for extra help when running in that context.
 
 If you get an error like <code>When using several—format options only one of them can be without a file (RuntimeError)</code> when running features with autospec, you are probably accidentally requiring 'spec'. Read about the solution on [[Troubleshooting]].
 
@@ -99,7 +99,7 @@ If you like to write out lots of features at the beginning, you may want to keep
 
 ### Customizing Autotest Behavior
 
-When autotest runs your features, it looks for an `autotest` profile in your [[cucumber.yml]]. If it finds one, it uses that profile when running your features. It's useful to use the Pretty formatter in autotest to see exactly what's going on as your scenarios fail. However, the Pretty formatter may be too much information when autotest does its final run-through of all of your features. If you define an `autotest-all` profile, autotest will use this profile instead when it runs all of your features. You may want to use the Progress formatter for `autotest-all`. For more information on defining profiles, see \[\[Running Features]].
+When autotest runs your features, it looks for an `autotest` profile in your [cucumber.yml](/cucumber/cucumber.yml/). If it finds one, it uses that profile when running your features. It's useful to use the Pretty formatter in autotest to see exactly what's going on as your scenarios fail. However, the Pretty formatter may be too much information when autotest does its final run-through of all of your features. If you define an `autotest-all` profile, autotest will use this profile instead when it runs all of your features. You may want to use the Progress formatter for `autotest-all`. For more information on defining profiles, see [Running Features](/cucumber/running-features/).
 
 You can also customize a number of elements of autotest itself by adding a `.autotest` file to the root of your project and/or your home directory. Most of these features are more useful for customizing the way unit tests run; for instance, you can customize the mapping between code files and the tests which test them.
 

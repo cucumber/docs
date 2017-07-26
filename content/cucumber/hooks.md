@@ -47,7 +47,7 @@ After do |scenario|
 end
 ```
 
-Here is another example, where we exit at the first failure (could be useful in some rare cases like [Continuous Integration](Continuous-Integration) when fast feedback is important).
+Here is another example, where we exit at the first failure (could be useful in some rare cases like [Continuous Integration](/cucumber/continuous-integration/) when fast feedback is important).
 
 ```ruby
 After do |s|
@@ -82,7 +82,7 @@ end
 
 ## Tagged hooks
 
-Sometimes you may want a certain hook to run only for certain scenarios. This can be achieved by associating a <code>Before</code>, <code>After</code>, <code>Around</code> or <code>AfterStep</code> hook with one or more [tags](tags). You can OR and AND tags in much the same way as you can when running Cucumber from the command line. Examples:
+Sometimes you may want a certain hook to run only for certain scenarios. This can be achieved by associating a <code>Before</code>, <code>After</code>, <code>Around</code> or <code>AfterStep</code> hook with one or more [tags](/cucumber/tags/). You can OR and AND tags in much the same way as you can when running Cucumber from the command line. Examples:
 
 For OR tags, pass the tags in a single string comma separated:
 
@@ -120,7 +120,7 @@ AfterStep('@cucumis', '@sativus') do
 end
 ```
 
-Think twice before you use this feature, as whatever happens in hooks is invisible to people who only read the features. You should consider using [background](background) as a more explicit alternative if the setup should be readable by non-technical people.
+Think twice before you use this feature, as whatever happens in hooks is invisible to people who only read the features. You should consider using [background](/gherkin/background/) as a more explicit alternative if the setup should be readable by non-technical people.
 
 ## Global hooks
 
@@ -158,4 +158,4 @@ AfterConfiguration do |config|
 end
 ```
 
-This hook will run only once; after support has been loaded but before features are loaded. You can use this hook to extend Cucumber, for example you could affect how features are loaded or register [custom formatters](custom-formatters) programatically.
+This hook will run only once; after support has been loaded but before features are loaded. You can use this hook to extend Cucumber, for example you could affect how features are loaded or register [custom formatters](/implementations/ruby/custom-formatters/) programatically.

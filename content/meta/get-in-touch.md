@@ -31,7 +31,7 @@ Use [troubleshooting](http://wiki.github.com/cucumber/cucumber/troubleshooting) 
 
 It's impossible to give a meaningful answer to "Cucumber doesn't work - what's wrong?" -style questions. You have to tell us more.
 
-Most people use Cucumber in more or less complex environments where a lot of other code is involved. Various web frameworks, many different ruby gems and your own code. There are many different ways you can [run features](running-features) and many things that can go wrong - and quite often it has nothing to do with Cucumber at all.
+Most people use Cucumber in more or less complex environments where a lot of other code is involved. Various web frameworks, many different ruby gems and your own code. There are many different ways you can [run features](/cucumber/running-features/) and many things that can go wrong - and quite often it has nothing to do with Cucumber at all.
 
 So when you ask a question, please tell us:
 

@@ -13,15 +13,15 @@ title: Cucumber Backgrounder
 
 Cucumber is a tool that implements a [Behaviour Driven Development (BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development) [workflow](http://en.wikipedia.org/wiki/Workflow). This document deals principally with initial set up and first use of the <strong><em> Cucumber-Rails</em></strong> and <strong><em>Cucumber</em></strong> [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as its background the Ruby on Rails (RoR) [web application framework](http://en.wikipedia.org/wiki/Web_application_framework). Detailed discussion of [Behaviour Driven](http://en.wikipedia.org/wiki/Behavior_driven_development) (BDD), [Test Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and [Panic Driven Development](http://en.wikipedia.org/wiki/SNAFU) (SNAFU aka [Cowboy Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/)) can be found elsewhere. Of course, there are still some [skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html) on this whole Agile thing; not to mention [heretics](http://pragdave.me/blog/2014/03/04/time-to-kill-agile/). But, if you are reading this then you probably are not one of them.
 
-You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided..
+You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided.
 
-Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading [[Ruby on Rails]]. To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database. The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
+Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading [Ruby on Rails](/implementations/ruby/ruby-on-rails/). To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database. The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
 
 Note that in this document I often use the terms <em>testing</em> and <em>test</em> where [BDD practitioners](http://dannorth.net/introducing-bdd) prefer the terms <em>behaviour</em> and <em>expectation</em>. When I use the word test in a BDD context I am in fact discussing expressing and verifying expected behaviour.
 
 ### Where to Start?
 
-Before anything else make sure that you have the <em>[cucumber-rails](https://github.com/cucumber/cucumber-rails</em>) installed properly into your RoR project. Now we can really get started.
+Before anything else make sure that you have the [cucumber-rails](https://github.com/cucumber/cucumber-rails) installed properly into your RoR project. Now we can really get started.
 
 ```
 <code>
@@ -115,7 +115,7 @@ Once the features directory structure is in place then we are ready to begin tes
 
 Cucumber divides testing into two parts, the outward facing feature <em>scenario steps</em> and the inward facing <em>step definitions</em>. Features are descriptions of desired outcomes (<strong>Then</strong>) following upon specific events (<strong>When</strong>) under predefined conditions (<strong>Given</strong>). They are typically used in conjunction with end-user input and, in some cases, may be entirely under end-user (in the form of a domain expert) control. Feature files are given the extension <code>.feature</code>.
 
-[[Step definitions]], or <em>stepdefs</em>, are keyed by their snippets of text from the feature scenario statements and invoke blocks of Ruby and Rails code that usually contain api methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.). Given that Cucumber originally evolved out of RSpec stories it is unsurprising that the Cucumber-Rails generator once assumed that RSpec was available. This has long since ceased to be the case. What the generator does now is detect if the RSpec gems are installed. If so then the rails generator builds the environment files to suit and if not then it ignores RSpec and configures for test-unit instead. In fact, the availability of options is increasing over time. To see what is available in the version of Cucumber-Rails that you have installed use the command: <code>rails g cucumber:install --help</code> or <code>script/generate cucumber --help</code>.
+[Step definitions](/cucumber/step-definitions/), or <em>stepdefs</em>, are keyed by their snippets of text from the feature scenario statements and invoke blocks of Ruby and Rails code that usually contain api methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.). Given that Cucumber originally evolved out of RSpec stories it is unsurprising that the Cucumber-Rails generator once assumed that RSpec was available. This has long since ceased to be the case. What the generator does now is detect if the RSpec gems are installed. If so then the rails generator builds the environment files to suit and if not then it ignores RSpec and configures for test-unit instead. In fact, the availability of options is increasing over time. To see what is available in the version of Cucumber-Rails that you have installed use the command: <code>rails g cucumber:install --help</code> or <code>script/generate cucumber --help</code>.
 
 A particular source of potential confusion is that the term <em><strong>steps</strong></em>, when used loosely, has two (closely related but vitally distinct) meanings, depending on context.
 
@@ -247,7 +247,7 @@ This might have been the <em>easiest</em> thing to do, but it was never the <em>
 
 In any case the whole point of BDD is that it is vitally important to write each test/feature scenario <em><strong>one stepdef at a time, preferably with a domain expert, and in plain language</strong></em>. In the BDD world there is no point to feature scaffolding generators to begin with. This fact eventually led to the feature generator's removal from cucumber-rails. Now, like step definitions, you have to write your own code ( <em>or steal somebody else's</em> ) from the outset.
 
-[The use of plain language in the feature file is crucial to successful use of Cucumber](http://elabs.se/blog/15-you-re-cuking-it-wrong). What does “plain language” mean? Basically, it comes down to stating the result that you wish to obtain while avoiding specifying how you expect to get it. Detailed discussion of feature writing and step construction are provided elsewhere (see [[Given-When-Then]] and [Telling a Good Story](http://blog.josephwilk.net/ruby/telling-a-good-story-rspec-stories-from-the-trenches.html)).
+[The use of plain language in the feature file is crucial to successful use of Cucumber](http://elabs.se/blog/15-you-re-cuking-it-wrong). What does “plain language” mean? Basically, it comes down to stating the result that you wish to obtain while avoiding specifying how you expect to get it. Detailed discussion of feature writing and step construction are provided elsewhere (see [Given-When-Then](/gherkin/given-when-then/) and [Telling a Good Story](http://blog.josephwilk.net/ruby/telling-a-good-story-rspec-stories-from-the-trenches.html)).
 
 For example, for an authentication scenario you should write:
 
@@ -719,7 +719,7 @@ $ cucumber --profile=my_profile --tags=@authent features/login
 $ cucumber --profile=my_profile --tags=@init
 ```
 
-However, the following will not work, unless you [[build a custom rake task|Using-Rake]] for it:
+However, the following will not work, unless you [build a custom rake task](/implementations/ruby/rake/) for it:
 
 ```
 $ rake cucumber:authent

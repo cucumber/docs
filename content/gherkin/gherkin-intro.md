@@ -18,7 +18,7 @@ spaces, followed by a hash sign (`#`) and some amount of text.
 
 The parser divides the input into features, scenarios and steps. When you run
 the feature the trailing portion (after the keyword) of each step is matched to
-a Ruby code block called [Step Definitions](/gherkin/step-definitions/).
+a Ruby code block called [Step Definitions](/cucumber/step-definitions/).
 
 A Gherkin source file usually looks like this
 
@@ -47,5 +47,5 @@ describe the business value of this feature. Line 6 starts a scenario. Lines
 
 Read more
 
-- [[Feature Introduction]] - general structure of a feature
-- [[Given-When-Then]] - steps
+- [Feature Introduction](/gherkin/feature-introduction/) - general structure of a feature
+- [Given-When-Then](/gherkin/given-when-then/) - steps
