@@ -10,7 +10,7 @@ You will need the following:
 
 * [Maven](https://maven.apache.org/index.html)
 
-* Cucumber-JVM 
+* [Cucumber-JVM] (https://github.com/cucumber/cucumber-jvm)
 
 * An IDE editor, for example [IntelliJ  IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
 introduction)
