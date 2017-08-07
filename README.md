@@ -42,7 +42,9 @@ install some software.
 
 ### Get the source code
 
-    git clone https://github.com/cucumber/docs.cucumber.io.git
+Fork this repo to your own account and clone it to your local machine.
+
+    git clone https://github.com/<your username here>/docs.cucumber.io.git
     cd docs.cucumber.io
 
 ### Install the software (Mac)
@@ -77,6 +79,10 @@ If you make changes to the `sass`, it will be rebuilt if you run the following:
     yarn watch  # rebuild cucumber.css
 
 A rebuild of the CSS will trigger a reload of the browser, just like with content.
+
+### Create pull request for your changes
+Create a pull request for your changes on your remote repo to the master/origin repo
+
 
 ## Architecture
 
