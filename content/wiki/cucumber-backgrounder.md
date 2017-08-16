@@ -25,9 +25,8 @@ Driven Development](http://en.wikipedia.org/wiki/SNAFU) (SNAFU aka [Cowboy
 Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/))
 can be found elsewhere. Of course, there are still some
 [skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html)
-on this whole Agile thing; not to mention
-[heretics](https://pragdave.me/blog/2014/03/04/time-to-kill-agile/). But, if you
-are reading this then you probably are not one of them.
+on this whole Agile thing. But, if you are reading this then you probably are
+not one of them.
 
 You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided.
 
@@ -65,7 +64,15 @@ Then I should create the directory ./features
   .  .  .
 ```
 
-The foregoing gives a sample of the form that feature files often take ( *sadly* ). These lines, called feature or scenario *steps* or *statements*, are the user interface to Cucumber testing. Those given above are written in the [Imperative Style](http://www.benmabey.com/2008/05/19/imperative-vs-declarative-scenarios-in-user-stories/) simply for illustrative purposes. **Never put statements that look anything like these in a feature file** ( *but you will* ). In practice, all those Then/And statements should be subsumed into one simple Declarative Style statement. For example: `I should create the Cucumber environment`. The messy details of just what comprises a Cucumber environment are placed in the step definition files.
+The foregoing gives a sample of the form that feature files often take ( *sadly* ).
+These lines, called feature or scenario *steps* or *statements*, are the user
+interface to Cucumber testing. Those given above are written in the imperative
+style simply for illustrative purposes. **Never put statements that look
+anything like these in a feature file** ( *but you will* ). In practice, all
+those Then/And statements should be subsumed into one simple Declarative Style
+statement. For example: `I should create the Cucumber environment`. The messy
+details of just what comprises a Cucumber environment are placed in the step
+definition files.
 
 Instead, a feature should look more like this:
 
@@ -793,7 +800,7 @@ Cucumber is still evolving, although the pace has slowed (*thankfully*). Origina
 
 Because of this consideration it is not be wise to use any of the examples from this article as a recipe. Nevertheless, the essentials of this article remain applicable throughout all recent versions of Cucumber and Cucumber-Rails even where the implementation details may have changed since this review.
 
-Cucumber supports tables in feature files. These are roughly analogous to [Framework for Integrated Test](http://fit.c2.com/) (FIT) tables. You can use these when you are specifying behaviour that changes at some data threshold or as a substitute for data fixtures. I tend to avoid using tables in feature files altogether and use them sparingly in step definition files. I do not have any explicit reason for this avoidance but, tables and feature statements just do not seem to go together in my head. Cucumber also provides for scenario outlines using an Example block to cut down on repetitive scenarios. You should also research the use of [transforms](http://www.engineyard.com/blog/2009/cucumber-step-argument-transforms/) in Cucumber.
+Cucumber supports tables in feature files. These are roughly analogous to [Framework for Integrated Test](http://fit.c2.com/) (FIT) tables. You can use these when you are specifying behaviour that changes at some data threshold or as a substitute for data fixtures. I tend to avoid using tables in feature files altogether and use them sparingly in step definition files. I do not have any explicit reason for this avoidance but, tables and feature statements just do not seem to go together in my head. Cucumber also provides for scenario outlines using an Example block to cut down on repetitive scenarios. You should also research the use of transforms in Cucumber.
 
 If you are testing with intent then you should be using something similar to the [debugger gem](http://rubygems.org/gems/debugger/). Projects using Ruby-2.0+ can use the **[ByeBug](https://rubygems.org/gems/byebug/)** gem instead.
 
@@ -873,12 +880,12 @@ features, is at variance with the intent and defeats the major benefit of the
 tool. Requirement expression in features should remain as self evident to the
 non-technical reader and be as self contained as possible. Resist the temptation
 to *program* the features themselves using esoteric aspects of the DSL.
-[Features should remain patent statements of
-intent](https://mislav.uniqpath.com/2010/09/cuking-it-right/). If you feel the
-need to "`program`" a scenario in order to simplify writing a feature then you
-are likely doing something considerably at odds with the fundamental intent of
-BDD methodology. In such circumstances mentally step back and reconsider your
-approach to the problem.
+
+Features should remain patent statements of. If you feel the need to "program"
+a scenario in order to simplify writing a feature then you are likely doing
+something considerably at odds with the fundamental intent of BDD methodology.
+In such circumstances mentally step back and reconsider your approach to the
+problem.
 
 Remind yourself, frequently, that some years hence somebody else is going to
 have to understand what you write today and that in all likelihood you will not

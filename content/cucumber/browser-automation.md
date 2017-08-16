@@ -16,7 +16,9 @@ Automation tools such as:
 
 ## Selenium WebDriver
 
-Let's convert the [Selenium-Webdriver by Example tutorial](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example) to use Cucumber.
+Let's convert the [Selenium-Webdriver by Example
+tutorial](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example)
+to use Cucumber.
 
 We can express the example as the following Scenario:
 
@@ -83,7 +85,12 @@ TODO
 
 ## Serenity BDD
 
-Serenity BDD is an open source reporting library that helps you write better structured, more maintainable automated acceptance criteria, and also produces rich meaningful test reports (or "living documentation") that not only report on the test results, but also what features have been tested. A detailed tutorial on using Cucumber-JVM with Serenity can be found [here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html)
+Serenity BDD is an open source reporting library that helps you write better
+structured, more maintainable automated acceptance criteria, and also produces
+rich meaningful test reports (or "living documentation") that not only report on
+the test results, but also what features have been tested. A detailed tutorial
+on using Cucumber-JVM with Serenity can be found
+[here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html)
 
 The step definitions for the scenario above writing using Serenity might look like this:
 
@@ -230,10 +237,6 @@ mvn test -Ddriver=chrome
 Closing and re-opening the browser window between your scenarios will slow them down.
 
 To re-use them you can use the [SharedDriver](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java) wrapper rather than calling WebDriver directly.
-
-### Embedding Screenshots
-
-See the [Report Attachments / Screenshots](/docs/reference#screenshots).
 
 ### Example Projects
 

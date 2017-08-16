@@ -315,7 +315,7 @@ public void the_following_animals(List<String> animals) {
 }
 ```
 
-See the [@Delimiter](#) annotation for details about how to define a delimiter different than `,`.
+See the @Delimiter annotation for details about how to define a delimiter different than `,`.
 
 If you prefer to use a [[Data Table]] to define a list you can do that too:
 

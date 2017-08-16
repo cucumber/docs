@@ -81,7 +81,7 @@ end
 
 ## Rack-Test
 
-You can also use Cucumber with [Sinatra](https://github.com/sinatra/sinatra) using Bryan Helkamp's [rack-test](http://www.github.com/brynary/rack-test) and [Webrat](http://www.github.com/brynary/webrat). You can check out the rspec examples in the [hancock application](https://github.com/atmos/hancock). Something like the following should be setup in your `features/support/env.rb`.
+You can also use Cucumber with [Sinatra](https://github.com/sinatra/sinatra) using Bryan Helkamp's [rack-test](https://github.com/brynary/rack-test) and [Webrat](https://github.com/brynary/webrat). You can check out the rspec examples in the [hancock application](https://github.com/atmos/hancock). Something like the following should be setup in your `features/support/env.rb`.
 
 ```
 require File.expand_path(File.dirname(__FILE__)+'/../../spec_helper')

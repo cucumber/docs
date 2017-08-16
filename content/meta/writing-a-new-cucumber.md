@@ -9,9 +9,9 @@ title: Writing an implementation
 
 If you plan to write a new Cucumber implementation for a new language - start
 here. Please give us a heads up on the [Cucumber mailing
-list](cukes@googlegroups.com) before you start. We might want to join you, and
-we'd love to include your implementation in the growing family of official
-implementations!
+list](mailto:cukes@googlegroups.com) before you start. We might want to join
+you, and we'd love to include your implementation in the growing family of
+official implementations!
 
 This guide takes you through a series of baby steps to write a new Cucumber
 implementation from scratch.
