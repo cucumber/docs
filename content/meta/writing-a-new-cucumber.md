@@ -7,16 +7,19 @@ title: Writing an implementation
 
 # Writing a new cucumber
 
-If you plan to write a new Cucumber implementation for a new language - start here. Please give us a heads up on the [Cucumber mailing list](cukes@googlegroups.com) before you start. We might want to join you,
-and we'd love to include your implementation in the growing family
-of official implementations!
+If you plan to write a new Cucumber implementation for a new language - start
+here. Please give us a heads up on the [Cucumber mailing
+list](cukes@googlegroups.com) before you start. We might want to join you, and
+we'd love to include your implementation in the growing family of official
+implementations!
 
 This guide takes you through a series of baby steps to write a new Cucumber
 implementation from scratch.
 
 We'll build a functional prototype in less than an hour - a
-[skateboard](http://www.cantabilesoftware.com/blog/posts/12/Minimally-Viable-Cantabile-3). Then we'll gradually improve it to be more functional and
-follow the architecture specification more closely.
+[skateboard](http://www.cantabilesoftware.com/blog/posts/12/Minimally-Viable-Cantabile-3).
+Then we'll gradually improve it to be more functional and follow the
+architecture specification more closely.
 
 You'll be able to follow the incremental development by looking at
 a JavaScript implementation we're writing from scratch.
@@ -65,7 +68,7 @@ public void i_have_n_cukes(int n) {
 
 Here is how it's done:
 
-- [JavaScript](1d75ca2123ae44154e9e80f40b4746c87bfc0486)
+<!-- TODO: - [JavaScript](1d75ca2123ae44154e9e80f40b4746c87bfc0486) -->
 
 ## Load and run your step definition
 
@@ -80,7 +83,7 @@ immediately (with the value 100) and manually verify that an error is thrown.
 
 Here is how it's done:
 
-- [JavaScript](8b296ef98d0a6b90beb7e2b23cab7802fd4f6df4): `node lib/cucumber/cli/main.js`
+<!-- TODO: - [JavaScript](8b296ef98d0a6b90beb7e2b23cab7802fd4f6df4): `node lib/cucumber/cli/main.js` -->
 
 ## Print arguments from a Gherkin scenario
 
@@ -92,4 +95,4 @@ match it against our step definition and print the argument.
 
 Here is how it's done:
 
-- [JavaScript](a183114b026fd30db22aaf7f73421f32e169a0cd)
+<!-- TODO: - [JavaScript](a183114b026fd30db22aaf7f73421f32e169a0cd) -->

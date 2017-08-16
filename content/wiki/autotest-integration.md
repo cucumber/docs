@@ -9,7 +9,10 @@ title: Autotest Integration
 
 **Warning: autotest plugin seems to not work with --drb (spork). See [lighthouse ticket](https://rspec.lighthouseapp.com/projects/16211-cucumber/tickets/365-cucumber-out-option-does-not-worj-with-drb) for details.**
 
-Cucumber comes with an autotest plugin that will hook into the regular autotest cycle to run the features after the tests/specs. The plugin is disabled by default but can be turned on by setting the AUTOFEATURE environment variable to 'true'. For example:
+Cucumber comes with an autotest plugin that will hook into the regular autotest
+cycle to run the features after the tests/specs. The plugin is disabled by
+default but can be turned on by setting the AUTOFEATURE environment variable to
+'true'. For example:
 
 ```
 $ AUTOFEATURE=true autospec
@@ -112,19 +115,31 @@ Autotest.add_hook :initialize do |at|
 end
 ```
 
-If you find that autotest runs your features continuously, your features may be changing a file which autotest is monitoring as they run. Use a setting like this to ignore such files. You'll likely need to set autotest to ignore "rerun.txt" as well.
-
-For more information on configuring autotest, see the [ZenTest Documentation](http://zentest.rubyforge.org/ZenTest/).
+If you find that autotest runs your features continuously, your features may be
+changing a file which autotest is monitoring as they run. Use a setting like
+this to ignore such files. You'll likely need to set autotest to ignore
+"rerun.txt" as well.
 
 ### Why is it disabled by default?
 
-Autotest is geared toward the Red~~Green~~>Refactor cycle on an object level (unit tests). These object level specs/tests are generally highly focused and isolated per object so breaks can be detected on a very detailed level. The suites are meant to run extremely fast to give the developer quick feedback. Cucumber on the other hand provides end-to-end application level testing. By executing the entire stack features can help find integration failures between objects and provide large coverage to prevent regressions. A side effect of this is that features are generally much slower than object level specs. Due to their relative slowness and non-focused nature they may not be realistic to run along side the object-level suite. Of course every project is different and every developer has different workflow preferences.
+Autotest is geared toward the Red~~Green~~>Refactor cycle on an object level
+(unit tests). These object level specs/tests are generally highly focused and
+isolated per object so breaks can be detected on a very detailed level. The
+suites are meant to run extremely fast to give the developer quick feedback.
+Cucumber on the other hand provides end-to-end application level testing. By
+executing the entire stack features can help find integration failures between
+objects and provide large coverage to prevent regressions. A side effect of this
+is that features are generally much slower than object level specs. Due to their
+relative slowness and non-focused nature they may not be realistic to run along
+side the object-level suite. Of course every project is different and every
+developer has different workflow preferences.
 
 ### Troubleshooting
 
 #### Missing autotest-rails gem
 
-Some people have reported problems running autotest. One known issue is an error similar to this:
+Some people have reported problems running autotest. One known issue is an error
+similar to this:
 
 ```
 $ AUTOFEATURE=true autotest
@@ -133,13 +148,15 @@ $ AUTOFEATURE=true autotest
 > Aborting.
 ```
 
-The error can occur because of a recent split of autotest code so that it misses a required library. Try
+The error can occur because of a recent split of autotest code so that it misses
+a required library. Try
 
 ```
 $ sudo gem install autotest-rails
 ```
 
-Sometimes having multiple versions of supporting gems might also cause this issue. Running the autotest within the bundle will solve this problem
+Sometimes having multiple versions of supporting gems might also cause this
+issue. Running the autotest within the bundle will solve this problem
 
 ```
 $ bundle exec autotest

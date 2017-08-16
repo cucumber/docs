@@ -173,7 +173,7 @@ end
    user.should be_kind_of(User)
    user.friends.should == count.to_i
    end
-   ```
+```
 
 Without a transform you would have likely only wanted to match the value in the single-quotes. However, matching only the name would likely open our transform up to a large number of arguments and we wouldn't be assured that we were getting a user. So in your step definitions use additional contextual information in your matches and let your Transforms filter the data further.
 
@@ -184,7 +184,3 @@ The best strategy is to define your transforms in the same file that they are us
 **5. The order that Transforms are loaded matter as they will take precedence over previously defined transforms.**
 
 To avoid overly confusing dependencies, a step argument may only be transformed once. The Transform defined last gets matching order precedence over previously defined transforms, giving you the ability to “override” previous transforms. As a rule of thumb, define general transforms first and get more specific last.
-
-## Further Examples
-
-[Larry Diehl at Engine Yard](http://www.engineyard.com/blog/2009/cucumber-step-argument-transforms/)

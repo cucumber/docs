@@ -8,10 +8,10 @@ title: Get in touch
 Got questions? Here is where you can get in touch:
 
 - [IRC](irc://irc.freenode.net/cucumber) ([log](http://irclogger.com/cucumber/))
-- [Mailing list (Google Groups)](http://groups.google.com/group/cukes)
+- [Mailing list (Google Groups)](https://groups.google.com/group/cukes)
 - [Github Issues](https://github.com/cucumber/cucumber/issues/) (Bug reports, feature requests, patches)
-- [Twitter](http://search.twitter.com/search?q=%23cucumber)
-- [stackoverflow](http://stackoverflow.com/questions/tagged/cucumber)
+- [Twitter](https://search.twitter.com/search?q=%23cucumber)
+- [stackoverflow](https://stackoverflow.com/questions/tagged/cucumber)
 
 If you file a Github issue without following the "Before you ask" guidelines below, your ticket may be closed as invalid. If that happens, just comment on the ticket with the missing information to have it reopened.
 

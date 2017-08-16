@@ -5,9 +5,7 @@ source: https://github.com/cucumber/cucumber/wiki/Projects-Using-Cucumber/
 title: Projects Using Cucumber
 ---
 
-Here is a list of projects using Cucumber. I find reading them to be a great learning experience.
-
-In alphabetical order:
+Here is a list of projects using Cucumber:
 
 - [BehatMage](https://github.com/MageTest/BehatMage)
 - [Broth](https://github.com/fourbeansoup/broth)
@@ -23,7 +21,6 @@ In alphabetical order:
 - [GitLab](https://github.com/gitlabhq/gitlabhq)
 - [Jekyll](https://github.com/jekyll/jekyll)
 - [Jeweler](https://github.com/technicalpickles/jeweler)
-- [Libra Open Access](https://github.com/uvalib/libra-oa)
 - [OERPScenario (linked to OpenERP)](https://github.com/camptocamp/oerpscenario)
 - [One Click Orgs](https://github.com/oneclickorgs/one-click-orgs)
 - [PHP Sasl](https://github.com/fabiang/sasl)

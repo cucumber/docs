@@ -11,7 +11,23 @@ title: Cucumber Backgrounder
 
 ### Introduction
 
-Cucumber is a tool that implements a [Behaviour Driven Development (BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development) [workflow](http://en.wikipedia.org/wiki/Workflow). This document deals principally with initial set up and first use of the ***Cucumber-Rails*** and ***Cucumber*** [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as its background the Ruby on Rails (RoR) [web application framework](http://en.wikipedia.org/wiki/Web_application_framework). Detailed discussion of [Behaviour Driven](http://en.wikipedia.org/wiki/Behavior_driven_development) (BDD), [Test Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and [Panic Driven Development](http://en.wikipedia.org/wiki/SNAFU) (SNAFU aka [Cowboy Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/)) can be found elsewhere. Of course, there are still some [skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html) on this whole Agile thing; not to mention [heretics](http://pragdave.me/blog/2014/03/04/time-to-kill-agile/). But, if you are reading this then you probably are not one of them.
+Cucumber is a tool that implements a [Behaviour Driven Development
+(BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development)
+[workflow](http://en.wikipedia.org/wiki/Workflow). This document deals
+principally with initial set up and first use of the ***Cucumber-Rails*** and
+***Cucumber*** [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as
+its background the Ruby on Rails (RoR) [web application
+framework](http://en.wikipedia.org/wiki/Web_application_framework). Detailed
+discussion of [Behaviour
+Driven](http://en.wikipedia.org/wiki/Behavior_driven_development) (BDD), [Test
+Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and [Panic
+Driven Development](http://en.wikipedia.org/wiki/SNAFU) (SNAFU aka [Cowboy
+Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/))
+can be found elsewhere. Of course, there are still some
+[skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html)
+on this whole Agile thing; not to mention
+[heretics](https://pragdave.me/blog/2014/03/04/time-to-kill-agile/). But, if you
+are reading this then you probably are not one of them.
 
 You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided.
 
@@ -851,11 +867,41 @@ This requirement may no longer be case in releases of cucumber-rails v0.5.1 and 
 
 ### Postscript
 
-A caution, Cucumber is meant to facilitate expressing required behaviours. Indirection and excessive adherence to the principle of DRY, particularly in features, is at variance with the intent and defeats the major benefit of the tool. Requirement expression in features should remain as self evident to the non-technical reader and be as self contained as possible. Resist the temptation to *program* the features themselves using esoteric aspects of the DSL. [Features should remain patent statements of intent](http://mislav.uniqpath.com/2010/09/cuking-it-right/). If you feel the need to "`program`" a scenario in order to simplify writing a feature then you are likely doing something considerably at odds with the fundamental intent of BDD methodology. In such circumstances mentally step back and reconsider your approach to the problem.
+A caution, Cucumber is meant to facilitate expressing required behaviours.
+Indirection and excessive adherence to the principle of DRY, particularly in
+features, is at variance with the intent and defeats the major benefit of the
+tool. Requirement expression in features should remain as self evident to the
+non-technical reader and be as self contained as possible. Resist the temptation
+to *program* the features themselves using esoteric aspects of the DSL.
+[Features should remain patent statements of
+intent](https://mislav.uniqpath.com/2010/09/cuking-it-right/). If you feel the
+need to "`program`" a scenario in order to simplify writing a feature then you
+are likely doing something considerably at odds with the fundamental intent of
+BDD methodology. In such circumstances mentally step back and reconsider your
+approach to the problem.
 
-Remind yourself, frequently, that some years hence somebody else is going to have to understand what you write today and that in all likelihood you will not be around to explain it ( *assuming that you still could* ). Do not be overly clever or needlessly terse either in Feature files or in Step Definition files. Recall that while brevity may the the soul of wit it is certainly the source of much misunderstanding. Save the [coding-fu](https://english.stackexchange.com/questions/3306/what-does-the-suffix-fu-mean) for the the code and leave your tests plain, unadorned, and easy to understand.
+Remind yourself, frequently, that some years hence somebody else is going to
+have to understand what you write today and that in all likelihood you will not
+be around to explain it ( *assuming that you still could* ). Do not be overly
+clever or needlessly terse either in Feature files or in Step Definition files.
+Recall that while brevity may the the soul of wit it is certainly the source of
+much misunderstanding. Save the
+[coding-fu](https://english.stackexchange.com/questions/3306/what-does-the-suffix-fu-mean)
+for the the code and leave your tests plain, unadorned, and easy to understand.
 
-Since the original version of this article appeared, Cucumber has undergone repeated revisions and [re-factorings](http://en.wikipedia.org/wiki/Code_refactoring). Among these was the sensible decision to move portions of the implementation specific to particular programming frameworks into their own gems. Consequently, installing Cucumber for a framework now frequently starts with installing the specific framework Cucumber gem, which in turn pulls in the core Cucumber gem as a dependency. Cucumber provides support for a wide range of Ruby VMs such as JRuby, alternative application frameworks such as Sinatra, other programming languages such as Python, test environments such as Capybara, and provides i18n language support for feature and step files. Obtaining some of these features requires the installation of additional gems such as [cucumber-sinatra](http://rubygems.org/gems/cucumber-sinatra).
+Since the original version of this article appeared, Cucumber has undergone
+repeated revisions and
+[re-factorings](http://en.wikipedia.org/wiki/Code_refactoring). Among these was
+the sensible decision to move portions of the implementation specific to
+particular programming frameworks into their own gems. Consequently, installing
+Cucumber for a framework now frequently starts with installing the specific
+framework Cucumber gem, which in turn pulls in the core Cucumber gem as a
+dependency. Cucumber provides support for a wide range of Ruby VMs such as
+JRuby, alternative application frameworks such as Sinatra, other programming
+languages such as Python, test environments such as Capybara, and provides i18n
+language support for feature and step files. Obtaining some of these features
+requires the installation of additional gems such as
+[cucumber-sinatra](http://rubygems.org/gems/cucumber-sinatra).
 
 Readers should always consider that the information contained herein may be out of date and therefore incomplete or erroneous in some respects. However, any such defects will usually be confined to specific implementation details and should not detract greatly from the validity of the overall presentation. Nonetheless please make a note whenever you see code like `script/generate blah` in the examples and notes below that the Rails generator syntax has changed to `rails g blah` since RoR v.3.0. Also bear in mind that with post RoR-2 projects **`bundle exec`** generally must preface most, if not all, of the command line examples given.
 
