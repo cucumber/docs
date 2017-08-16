@@ -66,10 +66,6 @@ If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/) this task
 
 See the [Cucumber.tmbundle](https://github.com/cucumber/cucumber-tmbundle) documentation
 
-## Using RCov
-
-[How to use Cucumber with RCov](/implementations/ruby/rake/)
-
 ## Using other build tools
 
 Maven and Ant are described in [[JRuby and Java]]. MSBuild and Nant should be under [[IronRuby and .NET]]. Anything else - please contribute to this wiki!

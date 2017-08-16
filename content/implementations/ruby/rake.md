@@ -39,10 +39,6 @@ namespace :features do
 end
 ```
 
-## Using RCov
-
-Please see the wiki page [Using RCov](http://wiki.github.com/cucumber/cucumber/using-rcov-with-cucumber-and-rails).
-
 ## Guarding Your Production Boxes From Cucumber
 
 Since rake tasks are used on development and productions systems it is generally a good idea to place a guard around your cucumber task so your productions boxes don't need to install cucumber.  Below is an example of how to do this.  This example is the rake task that Cucumber generates for Rails projects, but the same idea applies to any project using Cucumber and Rake:
