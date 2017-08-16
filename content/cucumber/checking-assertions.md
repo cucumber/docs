@@ -44,4 +44,4 @@ require 'test/unit/assertions'
 World(Test::Unit::Assertions)
 ```
 
-You can see a full example under the [examples](http://github.com/cucumber/cucumber/tree/master/examples%2Ftest_unit)
+<!-- TODO: You can see a full example under the [examples](https://github.com/cucumber/cucumber/tree/master/examples%2Ftest_unit) -->

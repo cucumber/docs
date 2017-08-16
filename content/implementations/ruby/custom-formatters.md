@@ -20,11 +20,11 @@ https://app.cucumber.pro/projects/cucumber-ruby/documents/master/features/docs/e
 1. TeamCity - prints cucumber results in a format for interpretation by a [TeamCity](http://www.jetbrains.com/teamcity/index.html) build agent.
    1. [teamcity_formatter](https://github.com/kevinrood/teamcity_formatter) - Compatible with Cucumber 2.
    2. [cucumber_teamcity](https://github.com/ankurcha/cucumber_teamcity/) - Tested with Cucumber 1.3.18 and TeamCity 8.x.
-2. [TextmateFormatter](http://github.com/raldred/cucumber_textmate/) prints cucumber results as HTML with enhanced styling and Javascript for Textmate (Included in the cucumber core since 0.4.5)
-3. [SlowHandCuke](http://github.com/moredip/SlowHandCuke) - Simple tweak to the Pretty formatter to display the currently running step as it is running
+2. [TextmateFormatter](https://github.com/raldred/cucumber_textmate/) prints cucumber results as HTML with enhanced styling and Javascript for Textmate (Included in the cucumber core since 0.4.5)
+3. [SlowHandCuke](https://github.com/moredip/SlowHandCuke) - Simple tweak to the Pretty formatter to display the currently running step as it is running
 4. [timestamped-scenarios](https://github.com/moredip/timestamped-scenarios) - Append test run timestamps to each scenario name as it is being output.
 5. [Fivemat](https://github.com/tpope/fivemat) - Cucumber formatter that gives each test file its own line of dots.
-6. [Fuubar](http://github.com/martinciu/fuubar-cucumber) - The instafailing progress bar formatter
+6. [Fuubar](https://github.com/martinciu/fuubar-cucumber) - The instafailing progress bar formatter
 7. [Viewcumber](https://github.com/versapay/viewcumber) - Cucumber formatter which generates an HTML website to browse your scenarios and view screen capture of every single step.
 8. [cucumber_timing_presenter](https://github.com/distributedlife/cucumber_timing_presenter) - formatter that calculates timing metrics as well as two graphs showing impact of step time on overall build time.
 9. [Bilgerat](https://github.com/mdsol/bilgerat) - formatter that sends failure messages to [HipChat](https://www.hipchat.com/) rooms.

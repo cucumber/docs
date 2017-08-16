@@ -147,7 +147,7 @@ $ bundle exec autotest
 
 #### Dirty database
 
-If you use fixtures for your specs, rspec/rails will leave the fixture data in the database after your specs run. If you depend on a clean database for your features, you can use [DatabaseCleaner](http://github.com/bmabey/database_cleaner/tree/master) to wipe your DB before running any features by placing the following in your env.rb:
+If you use fixtures for your specs, rspec/rails will leave the fixture data in the database after your specs run. If you depend on a clean database for your features, you can use [DatabaseCleaner](https://github.com/bmabey/database_cleaner/tree/master) to wipe your DB before running any features by placing the following in your env.rb:
 
 ```
 require 'database_cleaner'

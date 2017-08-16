@@ -68,8 +68,6 @@ Around('@fast') do |scenario, block|
 end
 ```
 
-You may want to take a look at [SystemTimer](http://ph7spot.com/musings/system-timer) if you want a more reliable `timeout`.
-
 ## Step hooks
 
 **Warning: AfterStep hook does not work with scenarios which have backgrounds (cucumber 0.3.11)**

@@ -112,7 +112,7 @@ This will generate a simple plain text feature with associated steps. Don't get 
 generator - you're better off writing these by hand in the long run.
 
 **Important**: The generated feature will fail unless you have set up a layout in your app. This is because Webrat fails to parse HTML
-that isn't well formed (i.e. has a single `<html>` root node). [Here is a simple layout](http://github.com/aslakhellesoy/cucumber-rails-test/raw/master/app/views/layouts/application.html.erb) you can use, but I hope you have a better one yourself.
+that isn't well formed (i.e. has a single `<html>` root node). [Here is a simple layout](https://github.com/aslakhellesoy/cucumber-rails-test/raw/master/app/views/layouts/application.html.erb) you can use, but I hope you have a better one yourself.
 
 ### Run features
 
@@ -177,7 +177,7 @@ There are two special [[tags]] you can use to change how Cucumber runs your scen
 
 #### @no-txn
 
-By default all scenarios will run within a database transaction that is rolled back at the end. However, scenarios tagged with `@no-txn` will run **without** a transaction. This can be useful when you have to deal with [[Browsers and Transactions]]. Beware that this will leave data in your database after that scenario, which can lead to hard-to-debug failures in subsequent scenarios. If you use this, we recommend you create a Before block that will explicitly put your database in a known state, for example using [DatabaseCleaner](http://github.com/bmabey/database_cleaner)
+By default all scenarios will run within a database transaction that is rolled back at the end. However, scenarios tagged with `@no-txn` will run **without** a transaction. This can be useful when you have to deal with [[Browsers and Transactions]]. Beware that this will leave data in your database after that scenario, which can lead to hard-to-debug failures in subsequent scenarios. If you use this, we recommend you create a Before block that will explicitly put your database in a known state, for example using [DatabaseCleaner](https://github.com/bmabey/database_cleaner)
 
 #### @allow-rescue
 

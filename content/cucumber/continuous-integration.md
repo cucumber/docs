@@ -10,7 +10,7 @@ Using Cucumber in a [Continuous Integration](http://martinfowler.com/articles/co
 
 The `cucumber` executable will exit with an [exit status](http://en.wikipedia.org/wiki/Exit_status) different from 0 if one or more scenarios are failing, and this is all your CI server needs to know.
 
-First, you have to make sure your CI server executes cucumber. Most CI setups invoke some kind of build tool, typically [Rake](http://rake.rubyforge.org/), [Ant](http://ant.apache.org/) or [Maven](http://maven.apache.org/) and we recommend you execute cucumber from one of these.
+First, you have to make sure your CI server executes cucumber. Most CI setups invoke some kind of build tool, typically [Rake](https://github.com/ruby/rake), [Ant](http://ant.apache.org/) or [Maven](http://maven.apache.org/) and we recommend you execute cucumber from one of these.
 
 ## Rake
 
@@ -27,7 +27,7 @@ If you're using such a CI server we recommend you use Cucumber with the `junit` 
 > 'Publish JUnit test result report', and enter `\*.xml` in the 'Test report XMLs' field.
 > Save and run. (Later improve by using a rake task and placing your output in a subfolder).
 
-If you're using Ant, you can run cucumber with the [exec](http://ant.apache.org/manual/CoreTasks/exec.html) task.
+If you're using Ant, you can run cucumber with the [exec](https://ant.apache.org/manual/Tasks/exec.html) task.
 
 ## Jenkins
 

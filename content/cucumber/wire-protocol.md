@@ -21,11 +21,11 @@ Please feel free to suggest enhancements to the protocol, or ask for help on the
 
 ## Implementations
 
-- [Clucumber](http://github.com/antifuchs/clucumber) (Common Lisp)
+- [Clucumber](https://github.com/antifuchs/clucumber) (Common Lisp)
 - [Cuke4AS3](https://github.com/flashquartermaster/Cuke4AS3) (ActionScript / Flash)
 - [Cucumber-CPP](https://github.com/cucumber/cucumber-cpp) (C++)
 - [Cucumber-Lua](https://github.com/cucumber/cucumber-lua) (Lua)
-- [OCCukes](https://github.com/OCCukes/OCCukes) (Objective-C)
+- [OCCukes](https://github.com/royratcliffe/OCCukes) (Objective-C)
 - [Unencumbered](https://github.com/atilaneves/unencumbered) (D)
 
 ## References

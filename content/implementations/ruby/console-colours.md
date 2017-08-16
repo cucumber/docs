@@ -13,8 +13,7 @@ The console output for Cucumber colours steps according to how execution went. I
 <pre><span style="color:green">Given I have</span> <span style="color:green;font-weight:bold">487</span> <span style="color:green">cucumbers in my belly</span> <span style="color:grey"># features/vegetable_features.feature:49&</span>
 </pre>
 
-You can tweak the colours by defining a `$CUCUMBER_COLORS` variable in your shell, very much like you can tweak the colours of the familiar POSIX command `ls` with
-[$LSCOLORS or $LS_COLORS](http://mipsisrisc.com/rambling/2008/06/27/lscolorsls_colors-now-with-linux-support/).
+You can tweak the colours by defining a `$CUCUMBER_COLORS` variable in your shell.
 
 **Don't attempt to set it in your `support/env.rb` file or any other Ruby file. It must be defined *before* Cucumber starts. You can do it in your Rakefile with** `ENV\['CUCUMBER_COLORS'] = '...'`
 

@@ -7,13 +7,13 @@ title: Sinatra
 
 ## Cucumber-Sinatra Generator
 
-The [Cucumber-Sinatra](http://github.com/bernd/cucumber-sinatra) gem will generate a `features` directory structure and `features/support/env.rb` in your Sinatra project pre-configured for testing with Cucumber, [RSpec](http://github.com/dchelimsky/rspec), and [Capybara](http://github.com/jnicklas/capybara).
+The [Cucumber-Sinatra](https://github.com/bernd/cucumber-sinatra) gem will generate a `features` directory structure and `features/support/env.rb` in your Sinatra project pre-configured for testing with Cucumber, [RSpec](https://github.com/dchelimsky/rspec), and [Capybara](https://github.com/jnicklas/capybara).
 
-This gem is inspired by the [Cucumber-Rails](http://github.com/cucumber/cucumber-rails) generator.
+This gem is inspired by the [Cucumber-Rails](https://github.com/cucumber/cucumber-rails) generator.
 
 ## Webrat
 
-You can use Cucumber with [Sinatra](http://github.com/sinatra/sinatra) and [Webrat](http://github.com/brynary/webrat/tree/master)!
+You can use Cucumber with [Sinatra](https://github.com/sinatra/sinatra) and [Webrat](https://github.com/brynary/webrat/tree/master)!
 
 Just make sure you have a `features/support/env.rb` file with the following:
 
@@ -58,7 +58,7 @@ end
 
 ## Sinatra/Test
 
-You can also use Cucumber with [Sinatra](http://github.com/sinatra/sinatra) using Sinatra's built-in [testing setup](http://www.sinatrarb.com/testing.html) and [Test Harness](http://www.sinatrarb.com/testing.html#using_). Make sure you have something like the the following, [tailored](http://www.sinatrarb.com/testing.html#frameworks) to Test::Unit, RSpec, Bacon or Test::Spec, in your `features/support/env.rb`.
+You can also use Cucumber with [Sinatra](https://github.com/sinatra/sinatra) using Sinatra's built-in [testing setup](http://www.sinatrarb.com/testing.html) and [Test Harness](http://www.sinatrarb.com/testing.html#using_). Make sure you have something like the the following, [tailored](http://www.sinatrarb.com/testing.html#frameworks) to Test::Unit, RSpec, Bacon or Test::Spec, in your `features/support/env.rb`.
 
 ```
 require File.dirname(__FILE__) + "/../../your_sinatra_app"
@@ -81,7 +81,7 @@ end
 
 ## Rack-Test
 
-You can also use Cucumber with [Sinatra](http://github.com/sinatra/sinatra) using Bryan Helkamp's [rack-test](http://www.github.com/brynary/rack-test) and [Webrat](http://www.github.com/brynary/webrat). You can check out the rspec examples in the [hancock application](http://github.com/atmos/hancock). Something like the following should be setup in your `features/support/env.rb`.
+You can also use Cucumber with [Sinatra](https://github.com/sinatra/sinatra) using Bryan Helkamp's [rack-test](http://www.github.com/brynary/rack-test) and [Webrat](http://www.github.com/brynary/webrat). You can check out the rspec examples in the [hancock application](https://github.com/atmos/hancock). Something like the following should be setup in your `features/support/env.rb`.
 
 ```
 require File.expand_path(File.dirname(__FILE__)+'/../../spec_helper')

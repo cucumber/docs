@@ -21,7 +21,7 @@ To directly test PHP code using step definitions written in PHP, please see the 
 
 ## Testing against PHP web applications
 
-Most people seem to use cucumber for rails and most of the howtos and documents on the web reflect this. But cucumber is a great tool for testing any kind of web application, no matter what language it was built in. We could use Selenium, and there are good [how-to's](http://wiki.github.com/cucumber/cucumber/setting-up-selenium) for that - but Selenium is slow and clunky to setup, and should only be used if you need to test JavaScript. What if I want to write BDD stories and test a PHP app with cucumber?
+Most people seem to use cucumber for rails and most of the howtos and documents on the web reflect this. But cucumber is a great tool for testing any kind of web application, no matter what language it was built in. We could use Selenium, and there are good [how-to's](/cucumber/browser-automation/#selenium-webdriver) for that - but Selenium is slow and clunky to setup, and should only be used if you need to test JavaScript. What if I want to write BDD stories and test a PHP app with cucumber?
 
 Turns out it is easier than I expected. Webrat has options for interfacing with a web application using rails, selenium or mechanize. All we have to do is tell webrat to use mechanize and most things will work exactly the same as in any other cucumber setup.
 
@@ -78,7 +78,7 @@ A few other gotchas:
 
 The mechanize configuration for webrat seems to use response_body instead of
 response.body. I am not sure what is going on there, but when using the webrat
-step definitions from: <http://github.com/brynary/webrat> required a few
+step definitions from: <https://github.com/brynary/webrat> required a few
 substitutions to make it work right.
 
 If you want your test data to be the same every time your run it, you need a few
@@ -128,6 +128,6 @@ stuff with your user table, and it will reset it after it completes:
 ```
 
 A full cucumber env.rb for PHP can be found
-[here](http://gist.github.com/188166) Also check out the features directory in
-[chits](http://github.com/mikeymckay/chits) to see cucumber testing a real PHP
+[here](https://gist.github.com/188166) Also check out the features directory in
+[chits](https://github.com/mikeymckay/chits) to see cucumber testing a real PHP
 app.

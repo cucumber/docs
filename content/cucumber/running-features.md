@@ -64,11 +64,11 @@ If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/) this task
 
 ## Using TextMate
 
-See the [Cucumber.tmbundle](http://github.com/cucumber/cucumber-tmbundle) documentation
+See the [Cucumber.tmbundle](https://github.com/cucumber/cucumber-tmbundle) documentation
 
 ## Using RCov
 
-[How to use Cucumber with RCov](http://github.com/cucumber/cucumber/wikis/using-rcov-with-cucumber-and-rails)
+[How to use Cucumber with RCov](/implementations/ruby/rake/)
 
 ## Using other build tools
 
