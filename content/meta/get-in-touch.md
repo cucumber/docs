@@ -24,8 +24,6 @@ Try the latest released gem:
 gem update cucumber
 ```
 
-Use [troubleshooting](http://wiki.github.com/cucumber/cucumber/troubleshooting) tips
-
 ## Before you ask
 
 It's impossible to give a meaningful answer to "Cucumber doesn't work - what's wrong?" -style questions. You have to tell us more.
