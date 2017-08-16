@@ -27,4 +27,4 @@ If you follow this pattern you also avoid the [Feature-Coupled Step Definitions 
 
 ## Step state
 
-It's possible to keep object state in <code>`variables</code> inside your step definitions. Be careful about this as it might make your steps more tightly coupled and harder to reuse. There is no absolute rule here - sometimes it's ok to use <code>`variables</code>. You can follow a longer discussion [here](http://www.mail-archive.com/rspec-users@rubyforge.org/msg06268.html).
+It's possible to keep object state in `variables` inside your step definitions. Be careful about this as it might make your steps more tightly coupled and harder to reuse. There is no absolute rule here - sometimes it's ok to use `variables`. You can follow a longer discussion [here](http://www.mail-archive.com/rspec-users@rubyforge.org/msg06268.html).

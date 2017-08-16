@@ -12,7 +12,7 @@ Mocking is usually discouraged when using Cucumber. You **can** set up mocks wit
 
 ## RSpec 2.x
 
-Starting with Cucumber 0.8.4 you can use all of RSpec's supported mocking frameworks (RSpec, Mocha, RR, Flexmock). Just <code>require 'cucumber/rspec/doubles'</code> ([Test-Double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
+Starting with Cucumber 0.8.4 you can use all of RSpec's supported mocking frameworks (RSpec, Mocha, RR, Flexmock). Just `require 'cucumber/rspec/doubles'` ([Test-Double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
 
 Perhaps place your stub action within a block as below:
 

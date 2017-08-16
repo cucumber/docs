@@ -28,7 +28,6 @@ Turns out it is easier than I expected. Webrat has options for interfacing with 
 Here is how to do it:
 
 ```
-<code>
   Scenario: Install cucumber
     Given I am running Ubuntu
     And I have not yet installed cucumber
@@ -51,9 +50,7 @@ Here is how to do it:
     And I create a "features/support" directory
     And I create a "features/step_definitions" directory
     And I put the following in "features/support/env.rb"
-</code>
 
-<code>
 # RSpec
 require 'rspec/expectations'
 
@@ -73,11 +70,8 @@ World do
   session.extend(Webrat::Matchers)
   session
 end
-</code>
 
-<code>
     Then I can write cucumber tests and execute them
-</code>
 ```
 
 A few other gotchas:
@@ -128,11 +122,9 @@ Then you can just put the @reset_users tag in before the scenario that does
 stuff with your user table, and it will reset it after it completes:
 
 ```
-<code>
   @reset_users
   Scenario: Create a user
     Given ...
-</code>
 ```
 
 A full cucumber env.rb for PHP can be found

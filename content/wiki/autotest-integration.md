@@ -7,18 +7,18 @@ title: Autotest Integration
 
 > TODO: Keep it or delete it?
 
-**<span style="color:red;">Warning: autotest plugin seems to not work with --drb (spork). See [lighthouse ticket](https://rspec.lighthouseapp.com/projects/16211-cucumber/tickets/365-cucumber-out-option-does-not-worj-with-drb) for details.</span>**
+**Warning: autotest plugin seems to not work with --drb (spork). See [lighthouse ticket](https://rspec.lighthouseapp.com/projects/16211-cucumber/tickets/365-cucumber-out-option-does-not-worj-with-drb) for details.**
 
 Cucumber comes with an autotest plugin that will hook into the regular autotest cycle to run the features after the tests/specs. The plugin is disabled by default but can be turned on by setting the AUTOFEATURE environment variable to 'true'. For example:
 
 ```
-<code>$ AUTOFEATURE=true autospec</code>
+$ AUTOFEATURE=true autospec
 ```
 
 or if you are not using RSpec or using RSpec 2:
 
 ```
-<code>$ AUTOFEATURE=true autotest</code>
+$ AUTOFEATURE=true autotest
 ```
 
 If you always want to have the plugin run then you can export the variable in your .bash_profile or other shell file like so:
@@ -26,32 +26,32 @@ If you always want to have the plugin run then you can export the variable in yo
 POSIX shell:
 
 ```
-<code>$ export AUTOFEATURE=true</code>
+$ export AUTOFEATURE=true
 ```
 
 Windows command shell:
 
 ```
-<code>> set AUTOFEATURE=true</code>
+> set AUTOFEATURE=true
 ```
 
-If AUTOFEATURE is not set you will get the warning: <code>(Not running features. To run features in autotest, set AUTOFEATURE=true.)</code>. Set AUTOFEATURE=false to silence this warning.
+If AUTOFEATURE is not set you will get the warning: `(Not running features. To run features in autotest, set AUTOFEATURE=true.)`. Set AUTOFEATURE=false to silence this warning.
 
-Options are declared in the [cucumber.yml](/cucumber/cucumber.yml/) file (<strong>which must be present</strong> and have a default or autotest profile). To change the way the features are run with autotest create two profiles in your cucumber.yml:
+Options are declared in the [cucumber.yml](/cucumber/cucumber.yml/) file (**which must be present** and have a default or autotest profile). To change the way the features are run with autotest create two profiles in your cucumber.yml:
 
-- <code>autotest</code> : Used when Autotest wants to run only the failing scenarios.
-- <code>autotest-all</code> : Used when Autotest wants to run all the scenarios (after a red->green transition).
+- `autotest` : Used when Autotest wants to run only the failing scenarios.
+- `autotest-all` : Used when Autotest wants to run all the scenarios (after a red->green transition).
 
 For example, to turn color on when features are run, you would add the following to your cucumber.yml file:
 
 ```
-<code>autotest: --color
-autotest-all: --color</code>
+autotest: --color
+autotest-all: --color
 ```
 
 Please see [Running Features](/cucumber/running-features/) for more information about profiles, and the [Ruby on Rails](/implementations/ruby/ruby-on-rails/) page for extra help when running in that context.
 
-If you get an error like <code>When using several—format options only one of them can be without a file (RuntimeError)</code> when running features with autospec, you are probably accidentally requiring 'spec'. Read about the solution on [[Troubleshooting]].
+If you get an error like `When using several—format options only one of them can be without a file (RuntimeError)` when running features with autospec, you are probably accidentally requiring 'spec'. Read about the solution on [[Troubleshooting]].
 
 ### What does it do?
 
@@ -118,7 +118,7 @@ For more information on configuring autotest, see the [ZenTest Documentation](ht
 
 ### Why is it disabled by default?
 
-Autotest is geared toward the Red~~<span style="text-align:right;">Green</span>~~>Refactor cycle on an object level (unit tests). These object level specs/tests are generally highly focused and isolated per object so breaks can be detected on a very detailed level. The suites are meant to run extremely fast to give the developer quick feedback. Cucumber on the other hand provides end-to-end application level testing. By executing the entire stack features can help find integration failures between objects and provide large coverage to prevent regressions. A side effect of this is that features are generally much slower than object level specs. Due to their relative slowness and non-focused nature they may not be realistic to run along side the object-level suite. Of course every project is different and every developer has different workflow preferences.
+Autotest is geared toward the Red~~Green~~>Refactor cycle on an object level (unit tests). These object level specs/tests are generally highly focused and isolated per object so breaks can be detected on a very detailed level. The suites are meant to run extremely fast to give the developer quick feedback. Cucumber on the other hand provides end-to-end application level testing. By executing the entire stack features can help find integration failures between objects and provide large coverage to prevent regressions. A side effect of this is that features are generally much slower than object level specs. Due to their relative slowness and non-focused nature they may not be realistic to run along side the object-level suite. Of course every project is different and every developer has different workflow preferences.
 
 ### Troubleshooting
 
@@ -127,24 +127,22 @@ Autotest is geared toward the Red~~<span style="text-align:right;">Green</span>~
 Some people have reported problems running autotest. One known issue is an error similar to this:
 
 ```
-<code>$ AUTOFEATURE=true autotest
+$ AUTOFEATURE=true autotest
 > loading autotest/cucumber_rails
 > Autotest style autotest/cucumber_rails doesn't seem to exist.
-> Aborting. </code>
+> Aborting.
 ```
 
 The error can occur because of a recent split of autotest code so that it misses a required library. Try
 
 ```
-<code>$ sudo gem install autotest-rails
-</code>
+$ sudo gem install autotest-rails
 ```
 
 Sometimes having multiple versions of supporting gems might also cause this issue. Running the autotest within the bundle will solve this problem
 
 ```
-<code>$ bundle exec autotest
-</code>
+$ bundle exec autotest
 ```
 
 #### Dirty database
@@ -152,10 +150,10 @@ Sometimes having multiple versions of supporting gems might also cause this issu
 If you use fixtures for your specs, rspec/rails will leave the fixture data in the database after your specs run. If you depend on a clean database for your features, you can use [DatabaseCleaner](http://github.com/bmabey/database_cleaner/tree/master) to wipe your DB before running any features by placing the following in your env.rb:
 
 ```
-<code>require 'database_cleaner'
+require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
 
-DatabaseCleaner.clean</code>
+DatabaseCleaner.clean
 ```
 
 Note that this must be after your environment is loaded, so DatabaseCleaner can find your database adapter.

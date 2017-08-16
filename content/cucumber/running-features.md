@@ -15,25 +15,25 @@ There are several ways to run your features. This page lists the most common one
 Assuming you've installed cucumber as a gem, run this at a command prompt to see the options for running features:
 
 ```
-<code>cucumber --help</code>
+cucumber --help
 ```
 
 For example
 
 ```
-<code>cucumber features/authenticate_user.feature:44 --format html > features.html</code>
+cucumber features/authenticate_user.feature:44 --format html > features.html
 ```
 
 ...will run the scenario defined at line 44 of the authenticate_user feature, format it as HTML and pipe it to the features.html file for viewing in a browser.
 
 ```
-<code>cucumber features --name "Failed login"</code>
+cucumber features --name "Failed login"
 ```
 
 ...will run the scenario(s) named "Failed login"
 
 ```
-<code>cucumber --require features features/authentication/authenticate_user.feature</code>
+cucumber --require features features/authentication/authenticate_user.feature
 ```
 
 ...will run authenticate_user feature. Any feature that is located inside a sub-directory of features directory must require features. Note: you can also add this to your cucumber.yml.
@@ -45,19 +45,19 @@ You can also use [tags](/cucumber/tags/) to specify what to run, or pass [Enviro
 From the command line:
 
 ```
-<code>rake features</code>
+rake features
 ```
 
 This requires a Rakefile with a Cucumber task definition. For example:
 
 ```
-<code>require 'rubygems'
+require 'rubygems'
 require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new(:features) do |t|
   t.cucumber_opts = "--format pretty" # Any valid command line option can go here.
 end
-</code>
+
 ```
 
 If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/) this task is defined for you already. For more information please see the [detailed page about using rake.](/implementations/ruby/rake/)

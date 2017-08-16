@@ -19,8 +19,6 @@ end
 
 Note, how we use the `cucumber_opts` accessor to define our arguments passed to the cucumber binary.
 
-<a name="profiles"></a>
-
 ## Using Profiles in Rake Tasks
 
 For complex feature runs that you do often it is nice to save the command line arguments as [cucumber profiles](/cucumber/cucumber.yml/). Once you have some profiles defined you can use it in your rake tasks like so:

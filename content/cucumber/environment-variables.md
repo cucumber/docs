@@ -16,7 +16,7 @@ You can easily do this on the command line:
 cucumber FOO=BAR --format progress features
 ```
 
-You can now pick up <code>ENV\['FOO']</code> in ruby (for example in env.rb or a step definition) and take actions according to the value.
+You can now pick up `ENV\['FOO']` in ruby (for example in env.rb or a step definition) and take actions according to the value.
 
 You can also do this in [cucumber.yml](/cucumber/cucumber.yml/). For example, this sets up a profile that runs a tag and sets an environment variable
 

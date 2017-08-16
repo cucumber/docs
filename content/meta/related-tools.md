@@ -68,7 +68,7 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="odd">
 <td>&quot;Cucumber-cpp&quot;:https://github.com/cucumber/cucumber-cpp</td>
-<td>Cucumber for C<em></em></td>
+<td>Cucumber for C</td>
 </tr>
 <tr class="even">
 <td>&quot;Cucumber.el&quot;:http://github.com/michaelklishin/cucumber.el</td>
@@ -83,7 +83,7 @@ It's always a good sign for a tool when other people huddle around and write too
 <td>Help to manage with big amount of features in project, &quot;demo&quot;:http://demo.cucumber.fm/</td>
 </tr>
 <tr class="odd">
-<td>&quot;Cucumber Growler <strong>fixed</strong>&quot;:http://github.com/jeanmartin/cucumber_growler</td>
+<td>&quot;Cucumber Growler **fixed**&quot;:http://github.com/jeanmartin/cucumber_growler</td>
 <td><a href="http://growl.info/">Growl</a> notifications for Cucumber &gt;= 0.2</td>
 </tr>
 <tr class="even">
@@ -108,7 +108,7 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="odd">
 <td>&quot;CukeBins&quot;:http://github.com/paoloambrosio/cukebins</td>
-<td>Support for writing Cucumber step definitions in C<em></em>, testing C<em></em> code.</td>
+<td>Support for writing Cucumber step definitions in C, testing C code.</td>
 </tr>
 <tr class="even">
 <td>&quot;Clucumber&quot;:http://github.com/antifuchs/clucumber</td>
@@ -257,7 +257,7 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;NewGem&quot;:http://newgem.rubyforge.org/</td>
-<td>Use <code>newgem -i cucumber</code> to generate a bunch of helpful scenario steps for gem development</td>
+<td>Use `newgem -i cucumber` to generate a bunch of helpful scenario steps for gem development</td>
 </tr>
 <tr class="odd">
 <td>&quot;OCCukes&quot;:https://github.com/OCCukes/OCCukes</td>
@@ -285,7 +285,7 @@ Emacs packages</td>
 </tr>
 <tr class="odd">
 <td>&quot;RSpec&quot;:http://rspec.info</td>
-<td>Use RSpec's <code>Object.should</code> and <code>Object.should_not</code> to compare values in your step definitions</td>
+<td>Use RSpec's `Object.should` and `Object.should_not` to compare values in your step definitions</td>
 </tr>
 <tr class="even">
 <td>&quot;rSquery&quot;:http://injecting.by2.be/blog/2009/05/rsquery.html</td>

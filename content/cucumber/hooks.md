@@ -8,13 +8,13 @@ title: Hooks
 
 > TODO: Important. Generalize.
 
-Cucumber provides a number of hooks which allow us to run blocks at various points in the Cucumber test cycle. You can put them in your <code>support/env.rb</code> file or any other file under the <code>support</code> directory, for example in a file called <code>support/hooks.rb</code>. There is no association between where the hook is defined and which scenario/step it is run for, but you can use tagged hooks (see below) if you want more fine grained control.
+Cucumber provides a number of hooks which allow us to run blocks at various points in the Cucumber test cycle. You can put them in your `support/env.rb` file or any other file under the `support` directory, for example in a file called `support/hooks.rb`. There is no association between where the hook is defined and which scenario/step it is run for, but you can use tagged hooks (see below) if you want more fine grained control.
 
 All defined hooks are run whenever the relevant event occurs.
 
 ## Scenario hooks
 
-<code>Before</code> hooks will be run before the first step of each scenario. They will run in the same order of which they are registered.
+`Before` hooks will be run before the first step of each scenario. They will run in the same order of which they are registered.
 
 ```ruby
 Before do
@@ -31,7 +31,7 @@ Before do |scenario|
 end
 ```
 
-<code>After</code> hooks will be run after the last step of each scenario, even when there are failing, undefined, pending or skipped steps. They will run in the *opposite* order of which they are registered.
+`After` hooks will be run after the last step of each scenario, even when there are failing, undefined, pending or skipped steps. They will run in the *opposite* order of which they are registered.
 
 ```ruby
 After do |scenario|
@@ -56,9 +56,9 @@ After do |s|
 end
 ```
 
-<code>Around</code> hooks will run "around" a scenario. This can be used to wrap the execution of a scenario in a block. The Around hook receives a scenario object and a block (Proc) object. The scenario will be executed when you invoke <code>block.call</code>.
+`Around` hooks will run "around" a scenario. This can be used to wrap the execution of a scenario in a block. The Around hook receives a scenario object and a block (Proc) object. The scenario will be executed when you invoke `block.call`.
 
-The following example will cause scenarios tagged with <code>@fast</code> to fail if the execution takes longer than 0.5 seconds:
+The following example will cause scenarios tagged with `@fast` to fail if the execution takes longer than 0.5 seconds:
 
 ```ruby
 Around('@fast') do |scenario, block|
@@ -68,7 +68,7 @@ Around('@fast') do |scenario, block|
 end
 ```
 
-You may want to take a look at [SystemTimer](http://ph7spot.com/musings/system-timer) if you want a more reliable <code>timeout</code>.
+You may want to take a look at [SystemTimer](http://ph7spot.com/musings/system-timer) if you want a more reliable `timeout`.
 
 ## Step hooks
 
@@ -82,7 +82,7 @@ end
 
 ## Tagged hooks
 
-Sometimes you may want a certain hook to run only for certain scenarios. This can be achieved by associating a <code>Before</code>, <code>After</code>, <code>Around</code> or <code>AfterStep</code> hook with one or more [tags](/cucumber/tags/). You can OR and AND tags in much the same way as you can when running Cucumber from the command line. Examples:
+Sometimes you may want a certain hook to run only for certain scenarios. This can be achieved by associating a `Before`, `After`, `Around` or `AfterStep` hook with one or more [tags](/cucumber/tags/). You can OR and AND tags in much the same way as you can when running Cucumber from the command line. Examples:
 
 For OR tags, pass the tags in a single string comma separated:
 
@@ -124,7 +124,7 @@ Think twice before you use this feature, as whatever happens in hooks is invisib
 
 ## Global hooks
 
-If you want something to happen once before any scenario is run - just put that code at the top-level in your <code>env.rb</code> file (or any other file in your <code>features/support</code> directory. Use <code>Kernel#at_exit</code> for global teardown. Example:
+If you want something to happen once before any scenario is run - just put that code at the top-level in your `env.rb` file (or any other file in your `features/support` directory. Use `Kernel#at_exit` for global teardown. Example:
 
 ```ruby
 my_heavy_object = HeavyObject.new
@@ -150,7 +150,7 @@ end
 
 ## AfterConfiguration
 
-You may also provide an <code>AfterConfiguration</code> hook that will be run after Cucumber has been configured. The block you provide will be passed the cucumber configuration (an instance of <code>Cucumber::Cli::Configuration</code>). Example:
+You may also provide an `AfterConfiguration` hook that will be run after Cucumber has been configured. The block you provide will be passed the cucumber configuration (an instance of `Cucumber::Cli::Configuration`). Example:
 
 ```ruby
 AfterConfiguration do |config|

@@ -35,10 +35,10 @@ Most people use Cucumber in more or less complex environments where a lot of oth
 
 So when you ask a question, please tell us:
 
-- What cucumber version you're using: <code>cucumber --version</code>
-- What other gems and versions you're using: <code>gem list</code>
+- What cucumber version you're using: `cucumber --version`
+- What other gems and versions you're using: `gem list`
 - What command you ran
-- What the output, error message and full backtrace was: Feed cucumber with <code>--backtrace --verbose</code> and rake with <code>--trace</code>.
+- What the output, error message and full backtrace was: Feed cucumber with `--backtrace --verbose` and rake with `--trace`.
 - What output you had expected.
 - What relevant code you have. Don't *describe* your code in twelve furlongs of prose, just show it. Please don't paste code in emails, use: <http://gist.github.com/>
 - And finally, tell us how to reproduce the error, as described on the [[Contributing]] page.

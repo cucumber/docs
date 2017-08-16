@@ -51,7 +51,7 @@ It's easy!
 - Add your language's keywords to [gherkin-languages.json](https://github.com/cucumber/cucumber/blob/master/gherkin/gherkin-languages.json)
 - Commit and push your changes - then send a [pull request](https://help.github.com/articles/using-pull-requests/).
 
-That's it! When a new release of gherkin is made you can specify in a <code># language: xx</code> header in your feature files.
+That's it! When a new release of gherkin is made you can specify in a `# language: xx` header in your feature files.
 
 ## Adding examples for a new language
 

@@ -29,11 +29,11 @@ Feature: Verify billing
 
 ## Tag Inheritance
 
-Any tag that exists on a <code>Feature</code> will be inherited by <code>Scenario</code>, <code>Scenario Outline</code> or <code>Examples</code>.
+Any tag that exists on a `Feature` will be inherited by `Scenario`, `Scenario Outline` or `Examples`.
 
 ## Running a subset of scenarios
 
-You can use the <code>--tags</code> option to tell Cucumber that you only want to run features or scenarios that have (or don't have) certain tags. Examples:
+You can use the `--tags` option to tell Cucumber that you only want to run features or scenarios that have (or don't have) certain tags. Examples:
 
 ```
 cucumber --tags @billing            # Runs both scenarios
@@ -44,7 +44,7 @@ cucumber --tags @billing --tags @important    # Runs the first scenario (Scenari
 cucumber --tags @billing,@important           # Runs both scenarios (Scenarios with @important OR @billing)
 ```
 
-(Another way to "filter" what you want to run is to use the <code>file.feature:line</code> pattern or the <code>--scenario</code> option as described in [Running Features](/cucumber/running-features/)).
+(Another way to "filter" what you want to run is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running Features](/cucumber/running-features/)).
 
 Tags are also a great way to "link" your Cucumber features to other documents. For example, if you have to deal with old school requirements in a different system (Word, Excel, a wiki) you can refer to numbers:
 
@@ -60,7 +60,7 @@ Another creative way to use tags is to keep track of where in the development pr
 Feature: Index projects
 ```
 
-Tags are also used in Tagged [Hooks](/cucumber/hooks/), which let you use tags to define what <code>Before</code> and <code>After</code> blocks get run for what scenarios.
+Tags are also used in Tagged [Hooks](/cucumber/hooks/), which let you use tags to define what `Before` and `After` blocks get run for what scenarios.
 
 ## Logically ANDing and ORing Tags
 
@@ -71,7 +71,7 @@ Tags which are comma separated are ORed:
 Example: Running scenarios which match `important OR`billing
 
 ```
-<code>cucumber --tags @billing,@important</code>
+cucumber --tags @billing,@important
 ```
 
 Tags which are passed in separate --tags are ANDed
@@ -79,7 +79,7 @@ Tags which are passed in separate --tags are ANDed
 Example: Running scenarios which match `important AND`billing
 
 ```
-<code>cucumber --tags @billing --tags @important</code>
+cucumber --tags @billing --tags @important
 ```
 
 You can combine these two methods to create powerful selection criteria:
@@ -87,13 +87,13 @@ You can combine these two methods to create powerful selection criteria:
 Example: Running scenarios which match: (`billing OR`WIP) AND @important
 
 ```
-<code>cucumber --tags @billing,@wip --tags @important</code>
+cucumber --tags @billing,@wip --tags @important
 ```
 
 Example: Skipping both `todo and`wip tags
 
 ```
-<code>cucumber --tags ~@todo --tags ~@wip</code>
+cucumber --tags ~@todo --tags ~@wip
 ```
 
 You can use this tag logic in your [Hooks](/cucumber/hooks/) as well.
@@ -106,7 +106,7 @@ It is currently not possible to override the tag filters from a profile.
 
 The default profile, for example, includes a &lt;code>--tags ~@wip&lt;/code> filter. But what if you want to use everything from the default profile *except* the &lt;code>--tags ~@wip&lt;/code> portion?
 
-You might think you could just append something like this to the command line to "undo" the <code>--tags</code> from the profile: &lt;code>--tags @wip,~@wip&lt;/code> (anything either **tagged** with `wip or *not* tagged with`wip)
+You might think you could just append something like this to the command line to "undo" the `--tags` from the profile: &lt;code>--tags @wip,~@wip&lt;/code> (anything either **tagged** with `wip or *not* tagged with`wip)
 
 But because that is effectively doing an "and" between &lt;code>--tags ~@wip&lt;/code> and &lt;code>--tags @wip,~@wip&lt;/code>, it doesn't match any scenarios.
 
@@ -122,9 +122,9 @@ Cucumber can enforce this using tag limits. Here is an example:
 cucumber --tags @dev:2,@qa:3
 ```
 
-This will make cucumber fail if you have more than 2 <code>`dev</code> tags or more than 3 <code>`qa</code> tags, even if each of your scenarios pass individually.
+This will make cucumber fail if you have more than 2 `dev` tags or more than 3 `qa` tags, even if each of your scenarios pass individually.
 
-Used in conjunction with the <code>--wip</code> switch you can set up your project to enforce the WIP limits of your team.
+Used in conjunction with the `--wip` switch you can set up your project to enforce the WIP limits of your team.
 
 ## Special Tags
 
