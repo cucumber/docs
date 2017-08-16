@@ -4,6 +4,7 @@ menu:
 - wiki
 source: https://github.com/cucumber/cucumber/wiki/Step-Definitions/
 title: Step Definitions
+polyglot: true
 ---
 
 Step definitions are defined in ruby files under `features/step_definitions/\*\_steps.rb`. Here is a simple example:

@@ -2,7 +2,6 @@
 menu:
   main: null
 title: Gherkin Reference
-
 ---
 
 # Reference
