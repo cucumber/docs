@@ -8,6 +8,7 @@ title: Gherkin Reference
 
 This is the general reference for all Cucumber implementations. Please refer to
 the [[documentation overview]] for links to platform-specific documentation.
+> TODO: add link 'documentation overview'(?)
 
 ## Gherkin
 
@@ -135,6 +136,10 @@ add more it's usually a sign that you should split the scenario up in multiple s
 The [step definition](/cucumber/step-definitions/) of a `Then` step should use an *assertion* to
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
+
+### Step Definitions
+
+> TODO (added to make the link work)
 
 ### Background
 
