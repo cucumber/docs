@@ -8,6 +8,7 @@ title: Gherkin Reference
 
 This is the general reference for all Cucumber implementations. Please refer to
 the [[documentation overview]] for links to platform-specific documentation.
+> TODO: add link 'documentation overview'(?)
 
 ## Gherkin
 
@@ -136,6 +137,10 @@ The [step definition](/cucumber/step-definitions/) of a `Then` step should use a
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
+### Step Definitions
+
+> TODO (added to make the link work)
+
 ### Background
 
 Occasionally you'll find yourself repeating the same `Given` steps in all of the scenarios
@@ -191,7 +196,11 @@ Given <I'm a placeholder and I'm ok>
 
 The placeholders indicate that when the Examples row is run they should be substituted with real values from the `Examples` table. If a placeholder name is the same as a column title in the `Examples` table then this is the value that will replace it.
 
+<<<<<<< HEAD
 You can also use placeholders in [[Multiline Step Arguments]].
+=======
+You can also use placeholders in [Multiline Step Arguments](docs/gherkin.md#doc-strings). TODO: fix link (folder and file don't exist)
+>>>>>>> Fix typos and fix / tag broken link
 
 **IMPORTANT:** *Your step definitions will never have to match a placeholder. They will need to match the values that will replace the placeholder*
 

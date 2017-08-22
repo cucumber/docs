@@ -79,7 +79,7 @@ syntax rules—known as Gherkin—so that Cucumber can read them. Under the hood
 step definitions translate from the business-facing language of steps into
 programming code.
 
- <!-- ![Cucumber-stack](docs/images/Cucumber_Stack.png) -->
+ <!-- ![Cucumber-stack](docs/images/Cucumber_Stack.png) TODO: this link won't work as there's no 'docs folder'-->
 
 Here is an example of a Cucumber Feature:
 
@@ -252,6 +252,7 @@ every scenario where you need to be logged in.
 There are more details to writing and testing Cucumber features
 ([Cucumber Backgrounder](/wiki/cucumber-backgrounder/)), but this basically covers what
 a non-programmer needs to know.
+> TODO: fix link to Backgrounder (it's in folder 'wiki', but link doesn't work?)
 
 ## Writing Features
 
