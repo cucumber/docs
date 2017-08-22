@@ -6,6 +6,7 @@ title: Cucumber Backgrounder
 ---
 
 > TODO: Blog post intro or some such
+> TODO: Make generic (non-Ruby specific) -OR- create versions per language(?)
 
 ## Or: How I Learned to Stop Worrying and ~~Love Testing~~ Start Behaving
 
