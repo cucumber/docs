@@ -5,6 +5,17 @@ It is currently live at [https://cucumber.netlify.com](https://cucumber.netlify.
 and the plan is to move it to [https://docs.cucumber.io](https://docs.cucumber.io) once
 it is good enough to replace the existing documentation.
 
+Please make ALL contributions to the documentation in this repo.
+
+## Current status
+We are working to add and update all of the old documentation (see below) to this repo. 
+
+All *relevant* documentation from the old documentation has been added to this project.
+Some files have been deleted; this does not necessarily mean that those files should not exist, 
+just that there was not enough info there to justify leaving them.
+
+This work is currently being done on branch `sw-reorg` and will be merged to master soon.
+
 ## Old documentation
 
 For various reasons, old Cucumber documentation is scattered around different places:
