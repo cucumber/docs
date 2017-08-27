@@ -18,3 +18,131 @@
     {{end}}
   </ul>
 </aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    Implementations
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.implementations }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "implementations" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "implementations" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    Gherkin
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.gherkin }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "gherkin" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "gherkin" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    Website menu
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.website }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "website" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "website" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+
+
+<aside class="menu">
+  <p class="menu-label">
+    Wiki
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.wiki }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "wiki" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "wiki" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    Reference
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.reference }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "reference" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "reference" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    About us
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.meta }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "meta" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "meta" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>

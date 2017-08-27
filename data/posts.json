@@ -1,0 +1,672 @@
+[
+ {
+   "Post": "“Getting Started with Cucumber and CircleCI”:https://circleci.com/blog/getting-started-with-cucumber-on-circleci/",
+   "Description": "Behavior Driven Deployment and Continuous Integration",
+   "Posting Date": "March 17 2017"
+ },
+ {
+   "Post": "“Cucumber Anti-Patterns”:http://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns",
+   "Description": "Ant-pattern commonly found when using Cucumber",
+   "Posting Date": "June 22 2016"
+ },
+ {
+   "Post": "“Gradle and Cucumber-JVM”:http://www.thinkcode.se/blog/2015/12/26/gradle-and-cucumberjvm",
+   "Description": "Running Cucumber-JVM with Gradle",
+   "Posting Date": "December 26 2015"
+ },
+ {
+   "Post": "“Cucumber-JVM Hello world with Gradle!”:http://www.thinkcode.se/blog/2014/08/24/cucumberjvm-hello-world-with-gradle",
+   "Description": "Running Cucumber-JVM with Gradle",
+   "Posting Date": "August 24 2014"
+ },
+ {
+   "Post": "“TuteCumber”:http://github.com/denford/TuteCumber",
+   "Description": "An intro-level Cucumber.js Tutorial and example project which uses Cucumber.js (obviously) in a Node.js environment and explores BDD in general",
+   "Posting Date": "July 17 2014"
+ },
+ {
+   "Post": "“Cucumber-JVM Hello world!”:http://www.thinkcode.se/blog/2014/05/29/cucumberjvm-hello-world",
+   "Description": "A Cucumber-JVM Hello World example as presented at I T.A.K.E. Unconference 2014, Bucharest, Romania",
+   "Posting Date": "May 30 2014"
+ },
+ {
+   "Post": "“Cucumber: An Introduction for Non-Rubyists”:http://blog.codecentric.de/en/2013/08/cucumber-setup-basics/",
+   "Description": "Setup of Cucumber and basics of Cucumber and Gherkin, written for people with no or only little Ruby experience",
+   "Posting Date": "August 2 2013"
+ },
+ {
+   "Post": "“Testing Web Applications With Cucumber, Capybara, Poltergeist and PhantomJS”:http://blog.codecentric.de/en/2013/08/cucumber-capybara-poltergeist/",
+   "Description": "Writing beautiful acceptance tests with Cucumber and Capybara",
+   "Posting Date": "August 2 2013"
+ },
+ {
+   "Post": "“Parallel Cross Browser Testing”:https://github.com/verdi327/parallel_test_tutorial",
+   "Description": "Go from a blank rails app to using Cucumber, Capybara, and SauceLabs to achieve parallel cross browser tests",
+   "Posting Date": "June 1 2013"
+ },
+ {
+   "Post": "“Top 5 Cucumber best practices”:http://blog.codeship.io/2013/05/21/Testing-Tuesday-6-Top-5-Cucumber-best-practices.html",
+   "Description": "Screncast about 5 basic practices to make your cucumber features more readable and reusable",
+   "Posting Date": "May 21 2013"
+ },
+ {
+   "Post": "“Continuous Integration and Deployment with Cucumber”:http://blog.codeship.io/2013/05/07/Testing-Tuesday-4-Continuous-Integration-and-Deployment-with-Cucumber.html",
+   "Description": "Screencast about setting up Continuous Integration with Cucumber and Codeship and deploying automatically to Heroku on every change",
+   "Posting Date": "May 7 2013"
+ },
+ {
+   "Post": "“Behavior-Driven Development with Cucumber”:http://blog.codeship.io/2013/04/30/BDD-With-Cucumber.html",
+   "Description": "Screencast introducing Cucumber basics with Ruby on Rails",
+   "Posting Date": "April 30 2013"
+ },
+ {
+   "Post": "“Cucumber for Perl”:/wiki/Cucumber-for-Perl",
+   "Description": "Cucumber Tests Written in Native Perl",
+   "Posting Date": "December 17 2012"
+ },
+ {
+   "Post": "“Cucumber-JVM – not just for testing GUIs”:http://www.thinkcode.se/blog/2012/11/01/cucumberjvm-not-just-for-testing-guis",
+   "Description": "Implementing same functionality six different ways to show that Cucumber-JVM can drive any testing tool, not just Selenium WebDriver",
+   "Posting Date": "November 1 2012"
+ },
+ {
+   "Post": "“Test drive an implementation using an Executable Specification”:http://www.thinkcode.se/blog/2012/09/28/test-drive-an-implementation-using-an-executable-specification-revisited",
+   "Description": "Getting started with Cucumber-jvm as presented at Agile Cambridge 2012 by Thomas Sundberg",
+   "Posting Date": "September 28 2012"
+ },
+ {
+   "Post": "“I18n testing with Cucumber”:http://hackers.mylookout.com/2012/09/multilingual-pickles",
+   "Description": "Best practices and code for testing localized Ruby/Rails applications with Cucumber",
+   "Posting Date": "September 21st 2012"
+ },
+ {
+   "Post": "“How to use System Properties and Maven profiles to change Cucumber-JVM’s behaviour”:http://www.weblogism.com/item/337/cucumber-jvm-and-maven-ii",
+   "Description": "Example of how system properties can be used to alter Cucumber-JVM runtime parameters, such as report format, tags, etc.",
+   "Posting Date": "September 7th 2012"
+ },
+ {
+   "Post": "“Acceptance Testing C** with Cucumber and the Wire Protocol”:http://spin.atomicobject.com/2012/05/23/acceptance-testing-c-with-cucumber-and-the-wire-protocol/",
+   "Description": "Overview of using cucumber-cpp for testing C** applications by Atomic Object (Greg Williams)",
+   "Posting Date": "May 23 2012"
+ },
+ {
+   "Post": "“Integration Tests with Cucumber-JVM, Selenium and Maven”:http://www.weblogism.com/item/334/integration-tests-with-cucumber-jvm-selenium-and-maven",
+   "Description": "Example of use of Cucumber-JVM using Maven profiles to run the integration tests.",
+   "Posting Date": "April 30th 2012"
+ },
+ {
+   "Post": "“Testing a C** application with Cucumber”:http://petriconi.net/?p=46",
+   "Description": "Felix Petriconi describes how one could pass the gap from the Cucumber/Ruby step definitions to a C** application",
+   "Posting Date": "December 21 2011"
+ },
+ {
+   "Post": "“Testing Mule 3.2 with Cucumber”:http://ricston.com/blog/?p=1984/",
+   "Description": "Leveraging Cucumber’s specifications to describe Mule tests",
+   "Posting Date": "November 15 2011"
+ },
+ {
+   "Post": "“Modern Cucumber and Rails: No More Training Wheels”:http://blog.carbonfive.com/2011/11/07/modern-cucumber-and-rails-no-more-training-wheels/",
+   "Description": "Follow-up to Aslak’s “The training wheels came off” article",
+   "Posting Date": "November 7 2011"
+ },
+ {
+   "Post": "“Testing a web application with Selenium 2”:http://www.thinkcode.se/blog/2011/10/18/testing-a-web-application-with-selenium-2",
+   "Description": "Thomas Sundberg presenting “Automated web testing with Selenium” at Scandev on tour 2012",
+   "Posting Date": "October 18 2011"
+ },
+ {
+   "Post": "“The training wheels came off”:http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off",
+   "Description": "Aslak explains why web_steps.rb is bad",
+   "Posting Date": "October 05 2011"
+ },
+ {
+   "Post": "“Test drive an implementation using an Executable Specification”:http://www.thinkcode.se/blog/2011/09/16/test-drive-an-implementation-using-an-executable-specification",
+   "Description": "Thomas Sundberg presenting “Executable Specifications” at Agile By Example 2011",
+   "Posting Date": "September 16 2011"
+ },
+ {
+   "Post": "“Running Cucumber/Watir-WebDriver tests on Jenkins in the cloud, for free”:http://watirmelon.com/2011/08/29/running-your-watir-webdriver-tests-in-the-cloud-for-free",
+   "Description": "Alister Scott on how to see up a free EC2 micro instance to run Cucumber automated web tests in Ruby",
+   "Posting Date": "August 29 2011"
+ },
+ {
+   "Post": "“Step-by-step example of BDD’ing a WPF app with Cucumber, RSpec, IronRuby and Bewildr”:http://www.natontesting.com/2011/08/27/step-by-step-example-of-bdding-a-wpf-app-with-cucumber-rspec-ironruby-and-bewildr/",
+   "Description": "Nat Ritmeyer goes through a step-by-step example of outside-in development of an MS WPF app with cucumber, rspec, ironruby and bewildr",
+   "Posting Date": "August 27 2011"
+ },
+ {
+   "Post": "“Cucumber Regular Expressions Cheat Sheet”:http://www.richardlawrence.info/2011/08/23/cucumber-regular-expressions-cheat-sheet/",
+   "Description": "Richard Lawrence on the important bits of regular expressions for Cucumber users",
+   "Posting Date": "August 23 2011"
+ },
+ {
+   "Post": "“Getting Started with Ruby, Cucumber, and Capybara on Windows”:http://www.richardlawrence.info/2011/08/20/getting-started-with-ruby-cucumber-and-capybara-on-windows/",
+   "Description": "Richard Lawrence on how to use Cucumber and Capybara on Windows (without Rails)",
+   "Posting Date": "August 20 2011"
+ },
+ {
+   "Post": "“Capturing page performance times using Watir-WebDriver & Cucumber”:http://watirmelon.com/2011/08/10/capturing-page-performance-times-with-my-watirmeloncucumber-framework",
+   "Description": "Alister Scott on how to use Watir-WebDriver & Cucumber to record web page performance response times",
+   "Posting Date": "August 10 2011"
+ },
+ {
+   "Post": "“Making your cucumber step definitions more readable with RSpec binary matchers”:http://watirmelon.com/2011/08/08/making-your-cucumber-step-definitions-more-readable-with-rspec-binary-matchers",
+   "Description": "Alister Scott on how to use the inbuilt RSpec matchers to improve step readability",
+   "Posting Date": "August 8 2011"
+ },
+ {
+   "Post": "“Keeping the browser open when you’re developing a new cucumber test”:http://watirmelon.com/2011/08/07/keeping-the-browser-open-when-youre-writing-a-cucumber-test/",
+   "Description": "Alister Scott on Cucumber Hooks to keep the browser open",
+   "Posting Date": "August 7 2011"
+ },
+ {
+   "Post": "“Capturing screenshots in Watir-WebDriver and Cucumber”:http://watirmelon.com/2011/08/04/capturing-screenshots-in-watir-webdriver-cucumber",
+   "Description": "Alister Scott on how to capture screenshots using Watir-WebDriver and embed them into Cucumber HTML results",
+   "Posting Date": "August 4 2011"
+ },
+ {
+   "Post": "“Composable Features”:http://pages.andrew.premdas.org/2011/06/27/composable-features.html",
+   "Description": "Andrew Premdas talks about applying the composed method technique to features",
+   "Posting Date": "June 27 2011"
+ },
+ {
+   "Post": "“Composable Features and Tables”:http://pages.andrew.premdas.org/2011/06/27/composable-features-and-tables.html",
+   "Description": "Andrew Premdas talks about the problems with tables, and why he thinks any table in a cucumber feature is probably a smell!",
+   "Posting Date": "June 27 2011"
+ },
+ {
+   "Post": "“Specification by Example: a Love Story”:http://watirmelon.com/2011/05/18/specification-by-example-a-love-story",
+   "Description": "Alister Scott on the process of introducing Acceptance Test Driven Development and Specification by Example, using a tool like Cucumber",
+   "Posting Date": "May 18 2011"
+ },
+ {
+   "Post": "“Designing Cucumber scenarios for manual verification”:http://andywaite.com/2011/4/24/designing-cucumber-scenarios-for-manual-verification",
+   "Description": "Andy Waite on why you should write Cucumber scenarios with manual execution in mind",
+   "Posting Date": "April 24 2011"
+ },
+ {
+   "Post": "“top 3 ways to mess-up a cucumber functional test suite”:http://vinayvinay.posterous.com/top-3-ways-to-mess-up-a-cucumber-functional-t",
+   "Description": "Vinay Patel shares lessons learnt while working on a huge cucumber test suite",
+   "Posting Date": "April 21, 2011"
+ },
+ {
+   "Post": "“Automate your Feature and Acceptance Tests in Four Easy Steps”:http://blog.houseofsoft.org/2011/04/05/automate-your-feature-tests/",
+   "Description": "“Dmitriy “DK” Korobskiy”:http://about.me/d.k on how to get started with Cucumber, Watir, Watir-WebDriver and Hudson/Jenkins",
+   "Posting Date": "April 5, 2011"
+ },
+ {
+   "Post": "“Naming and structuring acceptance criteria”:http://andywaite.com/2011/3/31/naming-and-structuring-acceptance-criteria",
+   "Description": "Andy Waite on tips on keeping your feature suite habitable",
+   "Posting Date": "March 31 2011"
+ },
+ {
+   "Post": "“Reducing step explosion by decoupling Cucumber steps from your GUI”:http://watirmelon.com/2011/01/23/reducing-step-explosion-by-decoupling-cucumber-steps-from-your-gui/",
+   "Description": "Alister Scott on why page object patterns are important",
+   "Posting Date": "Jan 23 2011"
+ },
+ {
+   "Post": "“Simple Cucumber + Watir Page Object Pattern Framework”:http://watirmelon.com/2011/01/21/my-simple-cucumber-watir-page-object-pattern-framework/",
+   "Description": "Alister Scott on Setting up Cucumber with Watir/Watir-WebDriver/Celerity for maintainability",
+   "Posting Date": "Jan 21 2011"
+ },
+ {
+   "Post": "“Organizing and classifying Cucumber features: Testing with Vision”:http://watirmelon.com/2011/07/04/use-cucumber-feature-folders-for-functional-organization-tags-for-non-functional-classification/",
+   "Description": "Alister Scott on organizing and categorizing features by using tags and directories",
+   "Posting Date": "Jan 6 2011"
+ },
+ {
+   "Post": "“The elements of cucumber style”:http://watirmelon.com/2011/07/04/the-elements-of-cucumber-style/",
+   "Description": "Alister Scott on style guidelines for writing Cucumber features.",
+   "Posting Date": "Jan 4 2011"
+ },
+ {
+   "Post": "“workflow: bdd of a blog part 1”:http://oembot.tumblr.com/post/2346069125/bdd-of-a-simple-rails-app-with-cucumber-and-rspec",
+   "Description": "behaviour driven development of a simple blog with rails3, cucumber and rspec",
+   "Posting Date": "Dec 17 2010"
+ },
+ {
+   "Post": "“Cucumber + Cuke4Duke + Selenium (WebDriver) = Enlightenment”:http://terminalvelocity-socal.blogspot.com/2010/11/cucumber-cuke4duke-selenium-webdriver.html",
+   "Description": "Nice little intro to Cuke4Duke",
+   "Posting Date": "Nov 30 2010"
+ },
+ {
+   "Post": "”@cheezy UI Tests series part IV”:http://www.cheezyworld.com/2010/11/21/ui-tests-default-dat/",
+   "Description": "Default Data",
+   "Posting Date": "Nov 21, 2010"
+ },
+ {
+   "Post": "”@cheezy UI Tests series part III”:http://www.cheezyworld.com/2010/11/19/ui-tests-introducing-a-simple-dsl/",
+   "Description": "Using a simple DSL",
+   "Posting Date": "Nov 19, 2010"
+ },
+ {
+   "Post": "”@cheezy UI Tests series part II”:http://www.cheezyworld.com/2010/11/13/ui-tests-part-two/",
+   "Description": "Advanced Page Objects",
+   "Posting Date": "Nov 13, 2010"
+ },
+ {
+   "Post": "”@cheezy UI Tests series part I”:http://www.cheezyworld.com/2010/11/09/ui-tests-not-brittle/",
+   "Description": "Avoid brittleness",
+   "Posting Date": "Nov 9, 2010"
+ },
+ {
+   "Post": "“An Introduction to Outside-in Development”:http://rubylearning.com/blog/2010/10/05/outside-in-development/",
+   "Description": "Thoughtbotter Harold Gimenez walks you through Outside In on Rails3",
+   "Posting Date": "Oct 05, 2010"
+ },
+ {
+   "Post": "“Cucumber Sauce”:http://saucelabs.com/blog/index.php/2010/09/cucumber-sauce-cross-browser-testing-in-parallel/",
+   "Description": "Run Cucumber tests cross-browsers in parallel via Selenium (“Repo”:http://github.com/sgrove/cucumber_sauce)",
+   "Posting Date": "Sept 20, 2010"
+ },
+ {
+   "Post": "“Practical Cucumber: Organization”:http://collectiveidea.com/blog/archives/2010/09/13/practical-cucumber-organization/",
+   "Description": "Advice for organizing steps and features",
+   "Posting Date": "Sept 13, 2010"
+ },
+ {
+   "Post": "“Practical Cucumber: Factory Girl steps”:http://collectiveidea.com/blog/archives/2010/09/09/practical-cucumber-factory-girl-steps/",
+   "Description": "Although they’ve been around for a while, very few people know that factory_girl comes with some really useful cucumber steps.",
+   "Posting Date": "Sept 9, 2010"
+ },
+ {
+   "Post": "“Practical Cucumber: Scenario-specific steps”:http://collectiveidea.com/blog/archives/2010/09/08/practical-cucumber-scenario-specific-steps/",
+   "Description": "Cucumber steps are meant to be reused.",
+   "Posting Date": "Sept 8, 2010"
+ },
+ {
+   "Post": "”(My) Cucumber best practices and tips”:http://eggsonbread.com/2010/09/06/my-cucumber-best-practices-and-tips/",
+   "Description": "Organize, clarify and DRY your cucumber scenarios.",
+   "Posting Date": "Sept 5, 2010"
+ },
+ {
+   "Post": "“Testing custom headers and ssl with Cucumber and Capybara”:http://aflatter.de/2010/06/testing-headers-and-ssl-with-cucumber-and-capybara/",
+   "Description": "A little capybara hack for modifying the request environment to test custom headers",
+   "Posting Date": "June 23 2010"
+ },
+ {
+   "Post": "“Outside-In BDD: How?!”:http://www.sarahmei.com/blog/2010/05/29/outside-in-bdd/",
+   "Description": "Sarah Mei gives an excellent explanation of the Outside-In workflow.",
+   "Posting Date": "May 29 2010"
+ },
+ {
+   "Post": "“Testing Javascript with Cucumber in Javascript”:http://blog.josephwilk.net/ruby/testing-javascript-with-cucumber-in-javascript.html",
+   "Description": "Joseph Wilk presents the new Javascript adapter in Cucumber to write step definitions in Javascript",
+   "Posting Date": "May 22 2010"
+ },
+ {
+   "Post": "“Testing a WPF UI using Ruby, Cucumber and WiPFlash.dll”:http://codebetter.com/blogs/benhall/archive/2010/03/16/testing-a-wpf-ui-using-ruby-cucumber-and-wipflash-dll.aspx",
+   "Description": "by Ben Hall",
+   "Posting Date": "Mar 16 2010"
+ },
+ {
+   "Post": "“Testing Excel with Cucumber”:http://adomokos.blogspot.com/2010/03/testing-excel-with-cucumber.html",
+   "Description": "Attila Domokos shows us how to use Cucumber to verify your Excel forumlas.",
+   "Posting Date": "Mar 14 2010"
+ },
+ {
+   "Post": "Java Skeleton Web App + Cuke [Be wary, this site seems to host a trojan]",
+   "Description": "Java Cucumber (cuke4duke) Spring 3 and Selenium Test - Jump Start Web Application. Cucumber is used to drive the WebDriver Browser based tests + more",
+   "Posting Date": "Mar 7 2010"
+ },
+ {
+   "Post": "“Custom User-Agent with Mechanize”:http://otaqui.com/blog/541/custom-user-agent-with-cucumber-tests-and-webrat-in-mechanize-mode/",
+   "Description": "Pete Otaqui explains how to pretend you’re a Palm Pre and other devices",
+   "Posting Date": "Mar 8 2010"
+ },
+ {
+   "Post": "“Pairwise testing with Cucumber”:http://blog.josephwilk.net/ruby/pairwise-testing-with-cucumber.html",
+   "Description": "Joseph Wilk examines how pairwise testing can help handle combinatorial problems in Cucumber",
+   "Posting Date": "Jan 9th 2010"
+ },
+ {
+   "Post": "“BDD in .NET with Cucumber, Cuke4Nuke and TeamCity”:http://gojko.net/2010/01/01/bdd-in-net-with-cucumber-cuke4nuke-and-teamcity/",
+   "Description": "Gojko Adzic gives a great introduction to Cucumber on .NET",
+   "Posting Date": "Jan 1 2010"
+ },
+ {
+   "Post": "“Yes Mum, I’ll Behave: Beginning Behaviour Driven Infrastructure”:http://www.kartar.net/2009/12/yes-mum-ill-behave-beginning-behaviour-driven-infrastructure/",
+   "Description": "James Turnbull has a long piece on Cucumber and Nagios",
+   "Posting Date": "Dec 21 2009"
+ },
+ {
+   "Post": "“Given, When, Then and how not to do it”:http://www.jroller.com/perryn/entry/given_when_then_and_how",
+   "Description": "Perryn Fowler explains some antipatterns",
+   "Posting Date": "Nov 24 2009"
+ },
+ {
+   "Post": "“GLSEC 2009 Talk - Driving Behaviour w/Cucumber”:http://speakerdeck.com/u/zdennis/p/driving-behaviour-with-cucumber",
+   "Description": "Zach Dennis’ beautiful slides give a thorough coverage of BDD, Cucumber, Cuke4Duke and Cuke4Nuke",
+   "Posting Date": "Nov 23 2009"
+ },
+ {
+   "Post": "“InfoQ Interview with Aslak Hellesøy on Cucumber For .NET”:http://www.infoq.com/news/2009/11/interview-cucumber-for-dotnet",
+   "Description": "Aslak compares Cucumber to Fitnesse and explains how Cucumber works on .NET",
+   "Posting Date": "Nov 12 2009"
+ },
+ {
+   "Post": "“Cucumber = plain text + Ruby”:http://blogs.msdn.com/tim_lamey/archive/2009/11/11/cucumber-plain-text-ruby.aspx",
+   "Description": "A short writeup from the Øredev conference and Aslak’s live cucumber cocktail mixing",
+   "Posting Date": "Nov 11 2009"
+ },
+ {
+   "Post": "“Test Driven Deployment - mcollective, puppet, cucumber”:http://www.devco.net/archives/2009/11/06/test_driven_deployment_-_mcollective_puppet_cucumber.php",
+   "Description": "R.I.Pienaar demos driving his system orchestration tool mcollective with Cucumber features",
+   "Posting Date": "Nov 6 2009"
+ },
+ {
+   "Post": "“Behavior Driven Infrastructure”:http://blogs.oracle.com/martin/entry/behavior_driven_infrastructure",
+   "Description": "Martin Englund experiments with Cucumber to verify configuration management sets up machines correctly",
+   "Posting Date": "Nov 6 2009"
+ },
+ {
+   "Post": "“Using Cucumber with Sketchup”:http://www.cfcl.com/rdm/weblog/archives/001714.html",
+   "Description": "Rich Morin explores designing 3D models with Cucumber",
+   "Posting Date": "Nov 03 2009"
+ },
+ {
+   "Post": "“BDD com Rails e Cucumber”:http://pindureta.wordpress.com/2009/11/03/bdd-com-rails-e-cucumber",
+   "Description": "Post about Cucumber basics in portuguese",
+   "Posting Date": "Nov 03 2009"
+ },
+ {
+   "Post": "“Using Cucumber as a scripting language”:http://holmwood.id.au/~lindsay/2009/11/01/using-cucumber-as-a-scripting-language/",
+   "Description": "Lindsay Holmwood explores using Cucumber for general sysadmin scripting tasks",
+   "Posting Date": "Nov 1 2009"
+ },
+ {
+   "Post": "“Testing Couchapps with Cucumber and Culerity”:http://upstream-berlin.com/2009/10/25/testing-couchapps-with-cucumber-and-culerity/",
+   "Description": "CouchDB and CouchApp goodness",
+   "Posting Date": "Oct 25 2009"
+ },
+ {
+   "Post": "“How-to: Use Cucumber with .NET and C# under IronRuby”:http://blog.webintellix.com/2009/10/how-to-use-cucumber-with-net-and-c.html",
+   "Description": "A short introduction",
+   "Posting Date": "Oct 14 2009"
+ },
+ {
+   "Post": "“Getting started with Cucumber, RSpec, Webrat and multiruby”:http://blog.jcoglan.com/2009/10/03/getting-started-with-cucumber-rspec-webrat-and-multiruby/",
+   "Description": "Nice step-by step introduction to Cucumber using Google and Webrat+Mechanize by James Coglan",
+   "Posting Date": "Oct 3 2009"
+ },
+ {
+   "Post": "“Features, Specs and Maps”:http://pages.andrew.premdas.org/2009/08/31/features-specs-and-maps.html",
+   "Description": "Andrew Premdas explains what can be gained by thinking about features and specs as different sorts of maps to the territory that is the application",
+   "Posting Date": "August 31, 2009"
+ },
+ {
+   "Post": "“Rails: RSpec, Cucumber, Authlogic, and factory_girl”:http://jjinux.blogspot.com/2009/07/rails-rspec-cucumber-authlogic-and.html",
+   "Description": "Shannon -jj Behrens explains how to get RSpec, Cucumber, Authlogic, and factory_girl to all play nicely together",
+   "Posting Date": "July 17 2009"
+ },
+ {
+   "Post": "“Rails: Cucumber, Authlogic, and Machinist”:http://hasmanyfollows.com/2009/09/06/getting-cucumber-authlogic-and-machinist-to-play-together/",
+   "Description": "How to get Cucumber, Authlogic, and Machinist to work together",
+   "Posting Date": "Sept 6 2009"
+ },
+ {
+   "Post": "“15 Expert Tips for Using Cucumber”:http://www.engineyard.com/blog/2009/15-expert-tips-for-using-cucumber/",
+   "Description": "BDD/TDD guru Dave Astels shares great Cucumber practices",
+   "Posting Date": "Aug 5 2009"
+ },
+ {
+   "Post": "“Rails: Dynamic 404s, authlogic, Cucumber, and rescue_from”:http://jjinux.blogspot.com/2009/08/rails-dynamic-404s-authlogic-cucumber.html",
+   "Description": "Shannon -jj Berens explains how to get dynamic 404s, authlogic, Cucumber, and rescue_from to all play nicely together",
+   "Posting Date": "Aug 13 2009"
+ },
+ {
+   "Post": "“Slides: Cucumber meets iPhone”:http://en.oreilly.com/oscon2009/public/schedule/detail/8073",
+   "Description": "Ian Dees is at OSCON showing off a kick-ass way to test iPhone apps",
+   "Posting Date": "Jul 22 2009"
+ },
+ {
+   "Post": "“TwitterAuth Integration Testing”:http://blog.zerosum.org/2009/7/13/twitter-auth-integration-testing",
+   "Description": "Nick Plante explains how to test integration with Twitter’s OAuth using Cucumber",
+   "Posting Date": "Jul 13 2009"
+ },
+ {
+   "Post": "“Slides: Cucumbered”:http://blog.josephwilk.net/ruby/futureruby-talk-cucumbered.html",
+   "Description": "Joseph Wilk talking about Cucumber at FutureRubywith an IPhone example",
+   "Posting Date": "Jul 12 2009"
+ },
+ {
+   "Post": "“Screencast: Testing Flex Apps with Cucumber”:http://onrails.org/articles/2009/07/08/screencast-testing-flex-apps-with-cucumber",
+   "Description": "Get your hands dirty with Flex, FunFX and Cucumber",
+   "Posting Date": "Jul 08 2009"
+ },
+ {
+   "Post": "“Integration test with Cucumber and Webrat”:http://www.slideshare.net/gugod/integration-test-with-cucumber-and-webrat",
+   "Description": "Presentation in Chinese by Kang-min Liu",
+   "Posting Date": "Jul 1 2009"
+ },
+ {
+   "Post": "“Introduction to BDD with Cucumber”:http://www.engineyard.com/blog/2009/cucumber-introduction/",
+   "Description": "Great little introduction",
+   "Posting Date": "Jun 23 2009"
+ },
+ {
+   "Post": "“Cucumber and Celerity”:http://drogomir.com/blog/2009/6/16/cucumber-and-celerity-testing-unobtrusive-javascript",
+   "Description": "Testing unobtrusive Javascript",
+   "Posting Date": "Jun 16 2009"
+ },
+ {
+   "Post": "“Adding XHTML output validation to Cucumber stories”:http://swedishcampground.com/adding-xhtml-output-validation-to-cucumber-stories",
+   "Description": "Use Easy Markup Validation with Cucumber",
+   "Posting Date": "Jun 16 2009"
+ },
+ {
+   "Post": "“Cucumber and IronRuby: It runs!”:http://hotgazpacho.org/2009/06/cucumber-and-ironruby-it-runs/",
+   "Description": "William Green shares updated adventures with Cucumber on .NET",
+   "Posting Date": "Jun 14 2009"
+ },
+ {
+   "Post": "“The return of the Cucumber”:http://www.pathf.com/blogs/2009/06/the-return-of-the-cucumber/",
+   "Description": "Noel Rappin shares some thoughts on style",
+   "Posting Date": "Jun 12 2009"
+ },
+ {
+   "Post": "“Webrat: Automated Acceptance Testing with RSpec or Cucumber”:http://www.agileweboperations.com/webrat-automated-acceptance-testing-with-rspec-or-cucumber/",
+   "Description": "Side by side comparison of Cucumber and RSpec (in RedMine!)",
+   "Posting Date": "Jun 11 2009"
+ },
+ {
+   "Post": "“Cucumber Rocks - But it’s not a replacement for unit tests”:http://www.pathf.com/blogs/2009/06/cucumber-rocks-but-its-not-a-replacement-for-unit-tests/",
+   "Description": "Don’t put all your eggs in the Cucumber basket!",
+   "Posting Date": "Jun 10 2009"
+ },
+ {
+   "Post": "“Cucumber, Webrat … Who Names These Things?”:http://blog.geekdaily.org/2009/06/cucumber-webrat-who-names-these-things.html",
+   "Description": "Nice little diagram explaining how Cucumber relates to RSpec, Webrat and Selenium",
+   "Posting Date": "Jun 10 2009"
+ },
+ {
+   "Post": "“Cucumber scenarios that depend on Sphinx”:http://opensoul.org/2009/6/1/cucumber-scenarios-that-depend-on-sphinx",
+   "Description": "How to use Cucumber with “ThinkingSphinx”:http://freelancing-god.github.com/ts/en/",
+   "Posting Date": "Jun 01 2009"
+ },
+ {
+   "Post": "“Mind the gap”:http://content.yudu.com/Library/A15ltd/TestMarch2009/resources/28.htm",
+   "Description": "Joseph Wilk’s article in European Software Tester magazine",
+   "Posting Date": "May 21 2009"
+ },
+ {
+   "Post": "“What’s Mining: Cucumber support”:http://blogs.jetbrains.com/ruby/2009/05/what’s-mining-cucumber-support",
+   "Description": "The JetBrains RubyMine team is working on Cucumber support",
+   "Posting Date": "May 13 2009"
+ },
+ {
+   "Post": "“Rails Test Prescriptions”:http://www.railsprescriptions.com/",
+   "Description": "E-book on Rails testing – free version contains long Cucumber tutorial",
+   "Posting Date": "May 10 2009"
+ },
+ {
+   "Post": "“New project: Gutkumber”:http://danlucraft.com/blog/2009/05/new-project-gutkumber-integration-testing-for-ruby-gnome2/",
+   "Description": "Integration testing for Ruby-GNOME2",
+   "Posting Date": "May 10 2009"
+ },
+ {
+   "Post": "“Aslak’s Slides from RailsConf 09”:http://en.oreilly.com/rails2009/public/schedule/detail/7722",
+   "Description": "You can get the audio “here”:http://blip.tv/file/2079353",
+   "Posting Date": "May 06 2009"
+ },
+ {
+   "Post": "“Cucumber is hot technology at developer event”:http://www.infoworld.com/d/developer-world/cucumber-hot-technology-developer-event-447",
+   "Description": "InfoWorld interview with Aslak Hellesøy at RailsConf 09",
+   "Posting Date": "May 06 2009"
+ },
+ {
+   "Post": "“More on Cucumber”:http://asciicasts.com/episodes/159-more-on-cucumber",
+   "Description": "How to use tables and tags.",
+   "Posting Date": "May 03 2009"
+ },
+ {
+   "Post": "“Using Cucumber to test Erlang Servers”:http://blog.wolfman.com/articles/2009/5/2/using-cucumber-to-test-erlang-servers",
+   "Description": "Cucumber, JRuby, JInterface and more",
+   "Posting Date": "May 2 2009"
+ },
+ {
+   "Post": "“Try adding Cucumber to Watir”:http://www.rudyonrails.com/blog/?p=278",
+   "Description": "Cucumber+Watir tutorial",
+   "Posting Date": "Apr 17 2009"
+ },
+ {
+   "Post": "“20 articles on Cucumber and a free beverage recipe!”:http://www.robbyonrails.com/articles/2009/04/09/20-articles-on-cucumber-and-a-free-beverage-recipe",
+   "Description": "20 awesome links",
+   "Posting Date": "Apr 9 2009"
+ },
+ {
+   "Post": "“Cucumber On JRuby inside Eclipse”:http://ketan.padegaonkar.name/2009/04/10/cucumber-on-jruby-inside-eclipse.html",
+   "Description": "Allows RCP based apps to be tested with Cucumber",
+   "Posting Date": "Apr 10 2009"
+ },
+ {
+   "Post": "“Capistrano recipes with cucumber”:http://pivotallabs.com/users/jdean/blog/articles/763-testing-capistrano-recipes-with-cucumber",
+   "Description": "Jeff’s Blog @ Pivotal labs",
+   "Posting Date": "Apr 5 2009"
+ },
+ {
+   "Post": "“What? NetBeans 6.5.1 Can Now Recognize My Cucumber .feature Files!”:http://www.pmamediagroup.com/2009/04/what-netbeans-651-can-now-recognize-my-cucumber-feature-files/",
+   "Description": "Cucumber + Netbeans plugin",
+   "Posting Date": "Apr 2 2009"
+ },
+ {
+   "Post": "“Outside-in Development with Cucumber and RSpec”:http://blog.josephwilk.net/ruby/outside-in-development-with-cucumber-and-rspec.html",
+   "Description": "Joseph Wilk’s slides from Scotland on Rails",
+   "Posting Date": "Mar 30 2009"
+ },
+ {
+   "Post": "“Testing outbound emails Cucumber”:http://drnicwilliams.com/2009/03/26/testing-outbound-emails-with-cucumber/",
+   "Description": "Emails….",
+   "Posting Date": "Mar 26 2009"
+ },
+ {
+   "Post": "“Using Cucumber for Acceptance Testing”:http://www.pathf.com/blogs/2009/03/using-cucumber-for-acceptance-testing",
+   "Description": "Using Cucumber for Acceptance Testing",
+   "Posting Date": "Mar 20 2009"
+ },
+ {
+   "Post": "“Slides from Outside-In Development with Cucumber”:http://www.benmabey.com/2009/03/14/slides-from-outside-in-development-with-cucumber/",
+   "Description": "Ben Mabey’s slides from “MWRC presentation”:http://mwrc2009.confreaks.com/14-mar-2009-15-00-bdd-with-cucumber-ben-mabey.html",
+   "Posting Date": "Mar 14 2009"
+ },
+ {
+   "Post": "“Story Driven Development Recipes with Cucumber”:http://www.infoq.com/news/2009/03/bdd-with-cucumber",
+   "Description": "Not detailed, but nice to be on InfoQ :-)",
+   "Posting Date": "Mar 03 2009"
+ },
+ {
+   "Post": "“Using Cucumber with Machinist”:http://themomorohoax.com/2009/03/08/rails-machinist-tutorial-machinist-with-cucumber-in-10-minutes",
+   "Description": "A basic tutorial for people starting out. Explains how to use machinist instead of fixtures with cucumber.",
+   "Posting Date": "Mar 08 2009"
+ },
+ {
+   "Post": "“Testing Dash metrics with Cucumber”:http://bradley.is/post/82649218/testing-dash-metrics-with-cucumber",
+   "Description": "Using Cucumber to test metrics",
+   "Posting Date": "Mar 01 2009"
+ },
+ {
+   "Post": "“Cucumber metrics with Dash”:http://bradley.is/post/82409348/cucumber-metrics-with-dash",
+   "Description": "Gathering progress metrics with Dash",
+   "Posting Date": "Feb 28 2009"
+ },
+ {
+   "Post": "“Web app integration testing for sysadmins with cucumber-nagios”:http://holmwood.id.au/~lindsay/2009/02/23/web-app-integration-testing-for-sysadmins-with-cucumber-nagios/",
+   "Description": "Monitor web sites with Cucumber",
+   "Posting Date": "Feb 23 2009"
+ },
+ {
+   "Post": "“Mixing Cucumber with Test::Unit/Shoulda”:http://giantrobots.thoughtbot.com/2009/2/20/mixing-cucumber-with-test-unit",
+   "Description": "Title says it all",
+   "Posting Date": "Feb 20 2009"
+ },
+ {
+   "Post": "“Using Cucumber to Integrate Distributed Systems and Test Messaging”:http://www.benmabey.com/2009/02/17/using-cucumber-to-integrate-distributed-systems-and-test-messaging/",
+   "Description": "Testing asynchronous messaging",
+   "Posting Date": "Feb 17 2009"
+ },
+ {
+   "Post": "“Getting started with Cucumber and Sinatra”:http://tooky.github.com/2009/02/05/getting-started-with-cucumber-and-sinatra.html",
+   "Description": "Sinatra loves Cucumbers",
+   "Posting Date": "Feb 05 2009"
+ },
+ {
+   "Post": "“Leveraging Test Data Builders in Cucumber Steps”:http://www.benmabey.com/2009/02/05/leveraging-test-data-builders-in-cucumber-steps/",
+   "Description": "Step definitions for creating objects from step tables.",
+   "Posting Date": "Feb 5 2009"
+ },
+ {
+   "Post": "“iPhone GUI testing”:http://www.ian.dees.name/tech/iphone-gui-testing.html",
+   "Description": "Cucumber meets the iPhone",
+   "Posting Date": "Feb 2 2009"
+ },
+ {
+   "Post": "“Ruby-GNOME2 testing”:http://www.daniellucraft.com/blog/2009/03/testing-ruby-gnome2-with-cucumber/",
+   "Description": "Testing Ruby-GNOME2 applications with Cucumber",
+   "Posting Date": "March 8 2009"
+ },
+ {
+   "Post": "“One Smart Cucumber”:http://joshuahoover.com/2009/01/28/one-smart-cucumber/",
+   "Description": "Business value",
+   "Posting Date": "Jan 28 2009"
+ },
+ {
+   "Post": "“Testing with the help of machinist, forgery, cucumber, webrat and rspec”:http://itsignals.cascadia.com.au/?p=30",
+   "Description": "Using test data with Cucumber in a Rails app",
+   "Posting Date": "Jan 7 2009"
+ },
+ {
+   "Post": "“rails 2 day 4: rcov and more behavior-driven development”:http://www.ultrasaurus.com/sarahblog/2008/12/rails-2-day-4-rcov-and-more-behavior-driven-development",
+   "Description": "Cucumber+RCov Tutorial",
+   "Posting Date": "Dec 29 2008"
+ },
+ {
+   "Post": "“rails 2 day 3: behavior-driven development”:http://www.ultrasaurus.com/sarahblog/2008/12/rails-2-day-3-behavior-driven-development/",
+   "Description": "Tutorial of basic Cucumber usage and workflow.",
+   "Posting Date": "Dec 22 2008"
+ },
+ {
+   "Post": "“Feature Injection and handling technical stories”:http://lizkeogh.com/2008/09/10/feature-injection-and-handling-technical-stories/",
+   "Description": "Explains how to phrase technical stories and focus on business value in all types of stories.",
+   "Posting Date": "Sept 10 2008"
+ },
+ {
+   "Post": "“Telling a good story - Rspec stories from the trenches”:http://blog.josephwilk.net/ruby/telling-a-good-story-rspec-stories-from-the-trenches.html",
+   "Description": "Discussion of common pitfalls when writing plain-text stories/features.",
+   "Posting Date": "Aug 5 2008"
+ },
+ {
+   "Post": "“Imperative Vs Declarative Scenarios in User Stories”:http://www.benmabey.com/2008/05/19/imperative-vs-declarative-scenarios-in-user-stories/",
+   "Description": "Discussion about trade-offs of different scenario writing styles.",
+   "Posting Date": "May 19 2008"
+ },
+ {
+   "Post": "“rspec plain text stories + webrat = chunky bacon!”:http://www.benmabey.com/2008/02/04/rspec-plain-text-stories-webrat-chunky-bacon/",
+   "Description": "Motivation and tutorial for webrat in features.",
+   "Posting Date": "Feb 4 2008"
+ },
+ {
+   "Post": "“What’s in a Story?”:http://dannorth.net/whats-in-a-story",
+   "Description": "Dan North’s first post about writing stories.",
+   "Posting Date": "Feb 11 2007"
+ }
+]

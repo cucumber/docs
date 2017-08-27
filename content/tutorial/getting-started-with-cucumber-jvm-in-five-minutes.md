@@ -1,16 +1,20 @@
 ---
 title: Getting Started with Cucumber-JVM
-menu: main
+menu:
+  old:
+  main:
+    weight: 25
+
 ---
 This page provides a brief introduction to get you started with Cucumber-JVM.
 
 You will need the following:
 
-* [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) 
+* [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
 
 * [Maven](https://maven.apache.org/index.html)
 
-* Cucumber-JVM 
+* Cucumber-JVM
 
 * An IDE editor, for example [IntelliJ  IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
 introduction)
@@ -63,7 +67,7 @@ Let's take a quick look at the project structure:
 
 Now we'll look a bit closer at the following parts of the structure and tidy up a bit:
 
-* In the skeleton directory, you'll see a _POM.XML_ file 
+* In the skeleton directory, you'll see a _POM.XML_ file
 
   This Project Object Model (POM) defines the project and its configuration in a manner that is understood by Maven.
 
@@ -74,16 +78,16 @@ Now we'll look a bit closer at the following parts of the structure and tidy up 
 
 * Navigate to _src\test\resources\skeleton_
 
-  You'll see a single file, called _belly.feature_. 
+  You'll see a single file, called _belly.feature_.
 
   Delete the _belly.feature_ file.
 
 * Navigate to _src\test\java\skeleton_
 
-  You'll see the _RunCukesTest.java_ file. This file is used to run the tests. 
+  You'll see the _RunCukesTest.java_ file. This file is used to run the tests.
 
   There is also a file called _Stepdefs.java_; delete this file.
-  
+
 Now, you have a clean project, but before we start let's rename the application.
 
 Open the _POM.XML_ file in a text editor. At the top of the file, you will see the following:
@@ -100,10 +104,10 @@ Change the `<groupId>`, `<artifactId>` and `<name>`.
 
 ## Creating a Package
 
-Now, you need to create a package. 
- 
+Now, you need to create a package.
+
 To do this, right-click on the _src\test\java_ folder and select __New > Package__ from the context menu.
- 
+
 Enter a name for your new package. We'll call it shouty.
 
 ### Using POM.XML
@@ -125,7 +129,7 @@ The default file defines the following versions:
 * Cucumber 1.2.5
 * Maven 3.3
 
-To check the versions you have installed, open a command prompt and enter `mvn --version`. 
+To check the versions you have installed, open a command prompt and enter `mvn --version`.
 
 If your versions do not agree with the defaults in the skeleton POM file, update the properties accordingly and save the updated POM file.
 
@@ -154,7 +158,7 @@ Save the updated POM file.
 
 Time to make sure everything is hanging together correctly.
 
-Open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`. 
+Open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`.
 
 You should see something like the following:
 
@@ -188,7 +192,7 @@ To create a clean build, enter `mvn clean install` at the command prompt.
 
 # Specifying Behaviour
 
-How do you specify behaviour? By defining features and their scenarios. 
+How do you specify behaviour? By defining features and their scenarios.
 
 We'll do that now.
 
@@ -220,7 +224,7 @@ Now, let's add some content to this file to define the feature. Open the feature
 
 We don't want anyone with the application to hear the shout, only those within 1000m, so we'll add another line to the feature file with this rule. Add _Shouts have a range of approximately 1000m_.
 
-Now we need to think of a way of testing against this rule. We do that using scenarios. 
+Now we need to think of a way of testing against this rule. We do that using scenarios.
 
 ## Creating a Scenario
 
@@ -239,9 +243,9 @@ We'll concentrate on the first of these conditions. Add the following to the fea
 
 Time to see what difference adding the feature and scenario makes.
 
-Open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`. 
+Open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`.
 
-That's a lot of output, we'll take it bit by bit starting at the top of the output. 
+That's a lot of output, we'll take it bit by bit starting at the top of the output.
 
 Scroll to the start of the output, you should see something like the following:
 
@@ -299,7 +303,7 @@ The Given, When, Then structure is used in Agile developments to help when writi
 
 The Given keyword precedes text defining the context. Our Scenario is that the listener is under 1000m from the shouter, we are using an example of a listener within this limit (15m) to set the context.
 
-The When keyword precedes text defining an action.  Our action is that the shouter sends a message. 
+The When keyword precedes text defining an action.  Our action is that the shouter sends a message.
 
 The Then keyword precedes text defining the result of the action on the context. Our result is that the listener who is 15m away hears the shout.
 
@@ -307,7 +311,7 @@ The Then keyword precedes text defining the result of the action on the context.
 
 You can keep amending your scenario and re-testing.
 
-Running the test is always the same: open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`. 
+Running the test is always the same: open a command prompt, navigate to your project directory (the one containing the POM file) and enter `mvn clean test`.
 
 The end of the output includes a summary of the results; it'll look something like the following:
 
@@ -392,24 +396,3 @@ __Note:__ If this does not work, select __Run > Edit Configurations__, select __
 Now, run the tests again.
 
 This time, your step definitions will be found, and the first will be run. However, as we have defined a `PendingException`, it will skip the other steps.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
