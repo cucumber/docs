@@ -21,27 +21,6 @@
 
 <aside class="menu">
   <p class="menu-label">
-    Implementations
-  </p>
-  <ul class="menu-list">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.implementations }}
-      <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "implementations" . }} class="is-active"{{end}}>
-          {{ .Pre }}
-          <span>{{ .Name }}</span>
-        </a>
-
-        {{if $currentPage.IsMenuCurrent "implementations" . }}
-          {{ $currentPage.TableOfContents }}
-        {{end}}
-      </li>
-    {{end}}
-  </ul>
-</aside>
-
-<aside class="menu">
-  <p class="menu-label">
     Gherkin
   </p>
   <ul class="menu-list">
@@ -75,6 +54,27 @@
         </a>
 
         {{if $currentPage.IsMenuCurrent "reference" . }}
+          {{ $currentPage.TableOfContents }}
+        {{end}}
+      </li>
+    {{end}}
+  </ul>
+</aside>
+
+<aside class="menu">
+  <p class="menu-label">
+    Implementations
+  </p>
+  <ul class="menu-list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.implementations }}
+      <li>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "implementations" . }} class="is-active"{{end}}>
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+
+        {{if $currentPage.IsMenuCurrent "implementations" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>
