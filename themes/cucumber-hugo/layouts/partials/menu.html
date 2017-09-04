@@ -128,18 +128,18 @@
 
 <aside class="menu">
   <p class="menu-label">
-    About us
+    About Cucumber
   </p>
   <ul class="menu-list">
     {{ $currentPage := . }}
-    {{ range .Site.Menus.meta }}
+    {{ range .Site.Menus.about }}
       <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "meta" . }} class="is-active"{{end}}>
+        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "about" . }} class="is-active"{{end}}>
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
 
-        {{if $currentPage.IsMenuCurrent "meta" . }}
+        {{if $currentPage.IsMenuCurrent "about" . }}
           {{ $currentPage.TableOfContents }}
         {{end}}
       </li>
