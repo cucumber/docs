@@ -1,7 +1,6 @@
 ---
 menu:
-- all
-- wiki
+- about
 source: https://github.com/cucumber/cucumber/wiki/Related-tools/
 title: Related tools
 ---

@@ -1,6 +1,6 @@
 ---
 menu:
-- meta
+- about
 source: https://github.com/cucumber/cucumber/wiki/Projects-Using-Cucumber/
 title: Projects Using Cucumber
 ---

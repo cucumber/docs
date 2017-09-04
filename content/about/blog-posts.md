@@ -1,7 +1,6 @@
 ---
 menu:
-- all
-- wiki
+- about
 source: https://github.com/cucumber/cucumber/wiki/Tutorials-and-Related-Blog-Posts/
 title: Blog Posts about Cucumber
 ---
