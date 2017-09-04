@@ -1,7 +1,6 @@
 ---
 menu:
-- all
-- wiki
+- gherkin
 source: https://github.com/cucumber/cucumber/wiki/Given-When-Then/
 title: Given When Then
 ---

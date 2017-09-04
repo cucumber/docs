@@ -1,7 +1,6 @@
 ---
 menu:
-- all
-- wiki
+- reference 
 source: https://github.com/cucumber/cucumber/wiki/Tags/
 title: Tags
 ---

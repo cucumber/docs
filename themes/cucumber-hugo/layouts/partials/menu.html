@@ -63,51 +63,7 @@
 
 <aside class="menu">
   <p class="menu-label">
-    Website menu
-  </p>
-  <ul class="menu-list">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.website }}
-      <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "website" . }} class="is-active"{{end}}>
-          {{ .Pre }}
-          <span>{{ .Name }}</span>
-        </a>
-
-        {{if $currentPage.IsMenuCurrent "website" . }}
-          {{ $currentPage.TableOfContents }}
-        {{end}}
-      </li>
-    {{end}}
-  </ul>
-</aside>
-
-
-
-<aside class="menu">
-  <p class="menu-label">
-    Wiki
-  </p>
-  <ul class="menu-list">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.wiki }}
-      <li>
-        <a href="{{.URL}}"{{if $currentPage.IsMenuCurrent "wiki" . }} class="is-active"{{end}}>
-          {{ .Pre }}
-          <span>{{ .Name }}</span>
-        </a>
-
-        {{if $currentPage.IsMenuCurrent "wiki" . }}
-          {{ $currentPage.TableOfContents }}
-        {{end}}
-      </li>
-    {{end}}
-  </ul>
-</aside>
-
-<aside class="menu">
-  <p class="menu-label">
-    Reference
+     Cucumber Reference
   </p>
   <ul class="menu-list">
     {{ $currentPage := . }}

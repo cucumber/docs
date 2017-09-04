@@ -1,7 +1,5 @@
 ---
 menu:
-- all
-- wiki
 - reference
 source: https://github.com/cucumber/cucumber/wiki/cucumber.yml/
 title: cucumber.yml

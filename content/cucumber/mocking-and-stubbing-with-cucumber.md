@@ -1,7 +1,6 @@
 ---
 menu:
-- all
-- wiki
+- reference
 source: https://github.com/cucumber/cucumber/wiki/Mocking-and-Stubbing-with-Cucumber/
 title: Mocking and Stubbing with Cucumber
 ---

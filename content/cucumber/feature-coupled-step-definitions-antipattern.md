@@ -1,7 +1,6 @@
 ---
 menu:
-- all
-- wiki
+- reference
 source: https://github.com/cucumber/cucumber/wiki/Feature-Coupled-Step-Definitions-(Antipattern)/
 title: Feature Coupled Step Definitions (Antipattern)
 ---
