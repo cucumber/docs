@@ -40,9 +40,9 @@ You simply tell Cucumber to start a transaction in a [[Before Hook]], and later
 roll it back in an [[After Hook]].
 
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
-[[Tagged Hooks]] using a tag named `@txn`.
+[[Tagged Hooks]] using a Tag named `@txn`.
 
-To enable it, you must to tag every [[Feature]] or [[Scenario]] that requires 
+To enable it, you must tag every [[Feature]] or [[Scenario]] that requires 
 transactions with `@txn`:
 
 ```gherkin
@@ -58,7 +58,7 @@ Feature: Let's write a lot of stuff to the DB
 
 ### Using JUnit and Spring
 
-The [[`cucumber-spring`]] module contains `@txn` hooks in the `cucumber.api.spring` package.
+The [[`cucumber-spring`]] module contains `@txn` Hooks in the `cucumber.api.spring` package.
 
 This package isn't on your [[glue path]] by default, so you have to add it yourself in your
 [[Configuration Options]].
