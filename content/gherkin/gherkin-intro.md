@@ -9,18 +9,18 @@ status: merge into gherkin.md
 ## Gherkin Syntax
 
 Like Python and YAML, Gherkin is a line-oriented language that uses indentation
-to define structure. Line endings terminate statements (eg, steps). Either
+to define structure. Line endings terminate statements (i.e. Steps). Either
 spaces or tabs may be used for indentation (but spaces are more portable). Most
 lines start with a keyword.
 
 Comment lines are allowed anywhere in the file. They begin with zero or more
 spaces, followed by a hash sign (`#`) and some amount of text.
 
-The parser divides the input into features, scenarios and steps. When you run
-the feature the trailing portion (after the keyword) of each step is matched to
-a Ruby code block called [Step Definitions](/cucumber/step-definitions/).
+The parser divides the input into Features, Scenarios, and Steps. When you run
+the Feature, the trailing portion (after the keyword) of each Step is matched to
+a Ruby code block, called a [Step Definition](/cucumber/step-definitions/).
 
-A Gherkin source file usually looks like this
+A Gherkin source file usually looks like this.
 
 ```gherkin
 Feature: Some terse yet descriptive text of what is desired
@@ -41,11 +41,11 @@ Feature: Some terse yet descriptive text of what is desired
           ...
 ```
 
-First line starts the feature. Lines 2–4 are unparsed text, which is expected to
-describe the business value of this feature. Line 6 starts a scenario. Lines
-7–13 are the steps for the scenario. Line 15 starts next scenario and so on.
+First line starts the Feature. Lines 2–4 are unparsed text, which is expected to
+describe the business value of this Feature. Line 6 starts a Scenario. Lines
+7–13 are the Steps for the Scenario. Line 15 starts next Scenario, and so on.
 
-Read more
+Read more:
 
 - [Feature Introduction](/gherkin/feature-introduction/) - general structure of a feature
 - [Given-When-Then](/gherkin/given-when-then/) - steps
