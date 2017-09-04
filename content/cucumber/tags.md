@@ -7,7 +7,7 @@ title: Tags
 
 > TODO: Gherkin *and* Cucumber. This is mostly Cucumber
 
-Tags are a great way to organise your features and scenarios. Consider this example:
+Tags are a great way to organise your Features and Scenarios. Consider this example:
 
 ```gherkin
 @billing
@@ -19,7 +19,7 @@ Scenario: Missing product description
 Scenario: Several products
 ```
 
-A Scenario or feature can have as many tags as you like. Just separate them with spaces:
+A Scenario or Feature can have as many tags as you like. Just separate them with spaces:
 
 ```gherkin
 `billing`bicker @annoy
@@ -28,11 +28,13 @@ Feature: Verify billing
 
 ## Tag Inheritance
 
-Any tag that exists on a `Feature` will be inherited by `Scenario`, `Scenario Outline` or `Examples`.
+Any tag that exists on a `Feature` will be inherited by `Scenario`, `Scenario Outline`, or `Examples`.
 
-## Running a subset of scenarios
+## Running a subset of Scenarios
 
-You can use the `--tags` option to tell Cucumber that you only want to run features or scenarios that have (or don't have) certain tags. Examples:
+You can use the `--tags` option to tell Cucumber that you only want to run Features or Scenarios that have (or don't have) certain tags. 
+
+Examples:
 
 ```
 cucumber --tags @billing            # Runs both scenarios
@@ -45,37 +47,37 @@ cucumber --tags @billing,@important           # Runs both scenarios (Scenarios w
 
 (Another way to "filter" what you want to run is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running Features](/cucumber/running-features/)).
 
-Tags are also a great way to "link" your Cucumber features to other documents. For example, if you have to deal with old school requirements in a different system (Word, Excel, a wiki) you can refer to numbers:
+Tags are also a great way to "link" your Cucumber Features to other documents. For example, if you have to deal with old school requirements in a different system (Word, Excel, a wiki) you can refer to numbers:
 
 ```gherkin
 `BJ-x98.77`BJ-z12.33
 Feature: Convert transaction
 ```
 
-Another creative way to use tags is to keep track of where in the development process a certain feature is:
+Another creative way to use tags is to keep track of where in the development process a certain Feature is:
 
 ```gherkin
 @qa_ready
 Feature: Index projects
 ```
 
-Tags are also used in Tagged [Hooks](/cucumber/hooks/), which let you use tags to define what `Before` and `After` blocks get run for what scenarios.
+Tags are also used in Tagged [Hooks](/cucumber/hooks/), which allow you to use tags to define `Before` and/or `After` blocks to run for marked Scenarios.
 
-## Logically ANDing and ORing Tags
+## Logically `AND`-ing and `OR`-ing Tags
 
-As you may have seen in the previous examples Cucumber allows you to use logical ANDs and ORs to help gain greater control of what features to run.
+As you may have seen in the previous examples, Cucumber allows you to use logical ANDs and ORs to help gain greater control of which Features to run.
 
-Tags which are comma separated are ORed:
+Tags which are comma-separated are ORed:
 
-Example: Running scenarios which match `important OR`billing
+Example: Running Scenarios which match `important OR billing`
 
 ```
 cucumber --tags @billing,@important
 ```
 
-Tags which are passed in separate --tags are ANDed
+Tags which are passed in separate `--tags` are ANDed
 
-Example: Running scenarios which match `important AND`billing
+Example: Running Scenarios which match `important AND billing`
 
 ```
 cucumber --tags @billing --tags @important
@@ -83,52 +85,56 @@ cucumber --tags @billing --tags @important
 
 You can combine these two methods to create powerful selection criteria:
 
-Example: Running scenarios which match: (`billing OR`WIP) AND @important
+Example: Running scenarios which match: `(billing OR WIP) AND important`
 
 ```
 cucumber --tags @billing,@wip --tags @important
 ```
 
-Example: Skipping both `todo and`wip tags
+Example: Skipping both `todo AND wip` tags
 
 ```
 cucumber --tags ~@todo --tags ~@wip
 ```
 
-You can use this tag logic in your [Hooks](/cucumber/hooks/) as well.
+You can use this Tag logic in your [Hooks](/cucumber/hooks/) as well.
 
-*This feature was originally added in version 0.4.3. The logical behaviour of tags was later reversed in version 0.6.0.*
+*This feature was originally added in version 0.4.3.*
+*The logical behaviour of tags was later reversed in version 0.6.0.*
+
 
 ## Overriding the tag filters from a profile
 
-It is currently not possible to override the tag filters from a profile.
+It is not currently possible to override the Tag filters from a profile.
 
-The default profile, for example, includes a &lt;code>--tags ~@wip&lt;/code> filter. But what if you want to use everything from the default profile *except* the &lt;code>--tags ~@wip&lt;/code> portion?
+The default profile, for example, includes a `--tags ~@wip` filter. But what if you want to use everything from the default profile *except* the `--tags ~@wip` portion?
 
-You might think you could just append something like this to the command line to "undo" the `--tags` from the profile: &lt;code>--tags @wip,~@wip&lt;/code> (anything either **tagged** with `wip or *not* tagged with`wip)
+You might think you could just append something like this to the command line to "undo" the `--tags` from the profile: `--tags @wip,~@wip` (anything either **tagged** with `wip` or *not* tagged with `wip`).
 
-But because that is effectively doing an "and" between &lt;code>--tags ~@wip&lt;/code> and &lt;code>--tags @wip,~@wip&lt;/code>, it doesn't match any scenarios.
+But because that is effectively doing an "and" between `--tags ~@wip` and`--tags @wip,~@wip`, it doesn't match any Scenarios.
 
-How can we override the tag filter then?
+How can we override the Tag filter then?
 
 ## Tag limits and WIP
 
-If you're following Kanban principles, you want to limit the work in progress (WIP). The idea is that the fewer features or scenarios that being worked on simultaneously, the quicker you'll be able to implement new features.
+If you're following Kanban principles, you want to limit the work in progress (WIP). The idea is, the fewer Features or Scenarios that are being worked on simultaneously, the quicker you'll be able to implement new Features.
 
-Cucumber can enforce this using tag limits. Here is an example:
+Cucumber can enforce this using *Tag limits*. 
+
+Here is an example:
 
 ```
 cucumber --tags @dev:2,@qa:3
 ```
 
-This will make cucumber fail if you have more than 2 `dev` tags or more than 3 `qa` tags, even if each of your scenarios pass individually.
+This will make Cucumber fail if you have more than 2 `dev` Tags or more than 3 `qa` Tags, even if each of your Scenarios pass individually.
 
-Used in conjunction with the `--wip` switch you can set up your project to enforce the WIP limits of your team.
+Used in conjunction with the `--wip` switch, you can set up a project to enforce the WIP limits of your team.
 
 ## Special Tags
 
-**@allow-rescue**: Turns off Cucumber’s exception capturing for the tagged scenario(s). Used when the code being tested is expected to raise and handle exceptions.
+**@allow-rescue**: Turns off Cucumber’s exception capturing for the tagged Scenario(s). Used when the code being tested is expected to raise and handle exceptions.
 
-**@javascript**: Uses a javascript-aware system to process web requests (e.g., Selenium) instead of the default (non-javascript-aware) webrat browser.
+**@javascript**: Uses a Javascript-aware system to process web requests (e.g., Selenium) instead of the default (non-Javascript-aware) webrat browser.
 
 **@no-txn**: Turns off transactions. See [Browsers and Transactions](/implementations/ruby/browsers-and-transactions/).
