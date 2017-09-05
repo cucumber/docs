@@ -7,7 +7,7 @@ title: Gherkin Reference
 # Reference
 
 This is the general reference for all Cucumber implementations. Please refer to
-the [[documentation overview]] for links to platform-specific documentation.
+the [documentation overview](/implementations/) for links to platform-specific documentation.
 
 ## Gherkin
 

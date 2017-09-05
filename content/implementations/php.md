@@ -92,7 +92,7 @@ and reload it at the end so that next time it will be the same, or you can do it
 on a per feature level and per database table level. I have so far found the
 second approach to be the quickest and most flexible.
 
-The per feature and per table approach can be accomplished using [[hooks]].
+The per feature and per table approach can be accomplished using [hooks](/cucumber/hooks/).
 Here are is the code that I currently have in 'support/hooks.rb'
 
 ```

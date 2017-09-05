@@ -5,14 +5,14 @@ source: https://github.com/cucumber/cucumber/wiki/Feature-Introduction/
 title: Feature Introduction
 ---
 
-> TODO: gherkin referemce
+> TODO: gherkin reference
 
 Every `.feature` file conventionally consists of a single feature. A line
 starting with the keyword **Feature** followed by free indented text starts a
 feature. A feature usually contains a list of scenarios. You can write whatever
 you want up until the first scenario, which starts with the word **Scenario**
-(or localized equivalent; Gherkin is localized for [[dozens of languages|Spoken
-languages]]) on a new line. You can use \[\[tagging|Tags]] to group features and
+(or localized equivalent; Gherkin is localized for dozens of [spoken
+languages](/gherkin/spoken-languages/) on a new line. You can use \[\[tagging|Tags]] to group features and
 scenarios together independent of your file and directory structure.
 
 Every scenario consists of a list of steps, which must start with one of the
