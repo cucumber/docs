@@ -11,7 +11,7 @@ Cucumber-JVM is a Cucumber implementation for the most popular JVM languages.
 
 This document is the reference for features that are specific to Cucumber-JVM.
 
-Please see the [general reference](/gherkin/) for features that are
+Please see the [general reference](/gherkin/gherkin-reference/) for features that are
 common to all Cucumber implementations.
 
 ## Languages
