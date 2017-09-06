@@ -37,8 +37,8 @@ Each scenario is a list of steps for Cucumber to work through. So that Cucumber
 can understand these feature files, they must follow some basic syntax rules.
 The name for this set of rules is [Gherkin](/gherkin/gherkin-intro/).
 
-Along with the features, you give Cucumber a set of step definitions. These
-files map each business-readable language step into programming code to carry
+Along with the features, you give Cucumber a set of [step definitions](/cucumber/step-definitions/). These
+files map (or "glue") each business-readable language step into programming code to carry
 out what action should be performed by the step. In a mature test suite, the
 step definition itself will probably just be one or two lines of code that
 delegate to a library of support code, specific to the domain of your
@@ -59,11 +59,11 @@ them avoid misunderstandings.
 
 # How does Cucumber work with BDD?
 
-This is the most typical question for every enthusiastic personality would get.
-What makes Cucumber to stand out from the crowd of other communication and
+This is the most typical question everyone enthusiastic about Cucumber will get.
+What makes Cucumber stand out from the crowd of other communication and
 collaboration tools?
 
-Cucumber has designed specifically to ensure the acceptance tests can easily be
+Cucumber was designed specifically to ensure the acceptance tests can easily be
 read and written by anyone on the team. This reveals the true value of
 acceptance tests: as a communication and collaboration tool. The easy
 readability of Cucumber tests draws business stakeholders into the process,
@@ -72,14 +72,14 @@ helping you really explore and understand the requirements.
 Cucumber was designed specifically to help business stakeholders get involved in
 writing acceptance tests.
 
-Each test case in Cucumber is called a scenario, and scenarios are grouped into
-features. Each scenario contains several steps. The business-facing parts of a
+Each test case in Cucumber is called a [scenario] (/gherkin/gherkin-reference/#scenario), and scenarios are grouped into
+[features] (/gherkin/gherkin-reference/#feature). Each scenario contains several steps. The business-facing parts of a
 Cucumber test suite, stored in feature files, must be written according to
-syntax rules—known as Gherkin—so that Cucumber can read them. Under the hood,
+syntax rules — known as [Gherkin](/gherkin/gherkin-intro/) — so that Cucumber can read them. Under the hood,
 step definitions translate from the business-facing language of steps into
 programming code.
 
- <!-- ![Cucumber-stack](docs/images/Cucumber_Stack.png) -->
+ <!-- ![[Cucumber-stack]] -->
 
 Here is an example of a Cucumber Feature:
 
@@ -179,7 +179,9 @@ the person the feature is intended to serve (in this case, “a non-programmer�
 Every feature file has a single Feature description at the top, but can have any
 number of Scenarios.
 
-The `Feature` line names the feature. This should be a short label.
+The `Feature` line names the feature. This should be a short label. A good practice is to put down the [[User Story]], commonly written like in the example:
+
+Below the `Feature` line, you can place a little more text.
 
 `In order to` presents the reason/justification for having the feature. In
 general, this should match to one of the project’s core purposes or “business
@@ -247,7 +249,7 @@ and
 ```
 
 have identical meaning, so it’s better to pick one and use the same line in
-every scenario where you need to be logged in.
+every scenario where you need to be logged in. That way it can be reused (it only has to be implemented once!).
 
 There are more details to writing and testing Cucumber features
 ([Cucumber Backgrounder](/wiki/cucumber-backgrounder/)), but this basically covers what
