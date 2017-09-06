@@ -38,7 +38,7 @@ can understand these feature files, they must follow some basic syntax rules.
 The name for this set of rules is [Gherkin](/gherkin/gherkin-intro/).
 
 Along with the features, you give Cucumber a set of [step definitions](/cucumber/step-definitions/). These
-files map ("glue") each business-readable language step into programming code to carry
+files map (or "glue") each business-readable language step into programming code to carry
 out what action should be performed by the step. In a mature test suite, the
 step definition itself will probably just be one or two lines of code that
 delegate to a library of support code, specific to the domain of your
