@@ -1,3 +1,10 @@
+{{ partial "header.html" . }}
+{{ partial "nav.html" . }}
+{{ partial "menu-content" . }}
+
+
+Test
+
 {{ define "main" }}
   <main>
       {{ .Content }}
@@ -13,3 +20,5 @@
       {{ partial "pagination.html" . }}
   </main>
 {{ end }}
+
+{{ partial "footer.html" . }}
