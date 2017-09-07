@@ -92,7 +92,7 @@ So, if you have several profiles with similar values, you might do this:
 
 ## Environment Variables
 
-[[Environment Variables]] can be used in the profile argument list, just as you would normally specify one on the command-line.
+[Environment Variables](/cucumber/environment-variables/) can be used in the profile argument list, just as you would normally specify one on the command-line.
 
 ```yaml
 

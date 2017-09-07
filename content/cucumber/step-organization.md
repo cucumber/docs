@@ -6,13 +6,13 @@ source: https://github.com/cucumber/cucumber/wiki/Step-Organization/
 title: Step Organization
 ---
 
-> TODO: intregrate with Step Definitions
+> TODO: integrate with step definitions
 
 How do you name Step Definition files? What to put in each Step Definition? What **not** to put in Step Definitions? 
 
 Here are some guidelines that will lead to better Scenarios. 
 
-If you are new to Steps and the general syntax, please read [[Feature Introduction]] first.
+If you are new to Steps and the general syntax, please read [[Feature Introduction](/gherkin/feature-introduction/) first.
 
 ## Grouping
 
