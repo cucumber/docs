@@ -14,7 +14,7 @@ All *relevant* documentation from the old documentation has been added to this p
 Some files have been deleted; this does not necessarily mean that those files should not exist, 
 just that there was not enough info there to justify leaving them.
 
-This work is currently being done on branch `sw-reorg` and will be merged to master soon.
+**This work is currently being done and has been merged to master**.
 
 ## Old documentation
 
