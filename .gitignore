@@ -1,2 +1,4 @@
 public/
+venv
+*.swp
 Gemfile.lock

@@ -4,11 +4,11 @@
   "author": "Cucumber Ltd",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "bulma": "^0.4.2",
-    "concurrently": "^3.4.0",
+    "autoprefixer": "^7.1.2",
+    "bulma": "^0.4.3",
+    "concurrently": "^3.5.0",
     "node-sass": "^4.5.3",
-    "postcss-cli": "^4.0.0",
+    "postcss-cli": "^4.1.0",
     "rimraf": "^2.6.1"
   },
   "scripts": {

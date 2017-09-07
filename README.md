@@ -85,7 +85,7 @@ If you make changes to the `sass`, it will be rebuilt if you run the following:
 
     cd themes/cucumber-hugo
     yarn        # install dependencies
-    yarn watch  # rebuild cucumber.css
+    yarn build  # rebuild cucumber.css
 
 A rebuild of the CSS will trigger a reload of the browser, just like with content.
 
