@@ -7,17 +7,20 @@ title: Feature Introduction
 
 > TODO: gherkin reference
 
-Every `.feature` file conventionally consists of a single feature. A line
+Every `.feature` file conventionally consists of a single Feature. A line
 starting with the keyword **Feature** followed by free indented text starts a
-feature. A feature usually contains a list of scenarios. You can write whatever
-you want up until the first scenario, which starts with the word **Scenario**
-(or localized equivalent; Gherkin is localized for dozens of [spoken
-languages](/gherkin/spoken-languages/) on a new line. You can use \[\[tagging|Tags]] to group features and
-scenarios together independent of your file and directory structure.
+Feature. 
 
-Every scenario consists of a list of steps, which must start with one of the
-keywords **Given**, **When**, **Then**, **But** or **And**. Cucumber treats them
-all the same, but you shouldn't. Here is an example:
+A Feature usually contains a list of Scenarios. You can write whatever
+you want up until the first Scenario, which starts with the word **Scenario**
+(or localized equivalent; Gherkin is localized for dozens of [spoken
+languages](/gherkin/spoken-languages/)) on a new line. You can use [Tags](/cucumber/tags/) to group Features and
+Scenarios together, independent of your file and directory structure.
+
+Every Scenario consists of a list of Steps, which must start with one of the
+keywords **Given**, **When**, **Then**, **But**, or **And**. Cucumber treats them all the same, but you shouldn't. 
+
+Here is an example:
 
 ```gherkin
 Feature: Serve coffee
@@ -32,4 +35,4 @@ When I press the coffee button
 Then I should be served a coffee
 ```
 
-In addition to a scenario, a feature may contain a background, scenario outline and examples.
+In addition to a Scenario, a Feature may contain a Background, a Scenario Outline, and Examples.

@@ -11,13 +11,12 @@ Automation tools such as:
 
 - [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/)
 - [Capybara](http://teamcapybara.github.io/capybara/)
-- [Watir](http://watir.com/)
-- [Serenity](http://serenity-bdd.info/)
+- [Watir](http://watir.com)
+- [Serenity](http://serenity-bdd.info)
 
 ## Selenium WebDriver
 
-Let's convert the [Selenium-Webdriver by Example
-tutorial](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example)
+Let's convert the [Selenium-Webdriver by Example tutorial](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example)
 to use Cucumber.
 
 We can express the example as the following Scenario:
@@ -86,13 +85,14 @@ TODO
 ## Serenity BDD
 
 Serenity BDD is an open source reporting library that helps you write better
-structured, more maintainable automated acceptance criteria, and also produces
-rich meaningful test reports (or "living documentation") that not only report on
-the test results, but also what features have been tested. A detailed tutorial
-on using Cucumber-JVM with Serenity can be found
-[here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html)
+structured, more maintainable automated acceptance criteria. Serenity also produces
+rich meaningful test reports (or "living documentation") that report not only the
+test results, but also which features have been tested. 
 
-The step definitions for the scenario above writing using Serenity might look like this:
+A detailed tutorial on using Cucumber-JVM with Serenity can be found
+[here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html).
+
+The above Scenario's Step Definitions might be written for Serenity like this:
 
 [carousel]
 
@@ -136,7 +136,8 @@ public class SearchSteps {
 
 [/carousel]
 
-In this example, the WebDriver interaction is delegated to Page Object classes. Serenity has built-in support for Page Objects, which might look like this:
+In this example, the `WebDriver` interaction is delegated to `PageObject` subclasses. 
+Serenity has built-in support for `PageObject`s, which might look like this:
 
 [carousel]
 
@@ -174,8 +175,8 @@ public class SearchResultsPage extends PageObject {}
 
 ### Multiple Browsers
 
-Cucumber can run your scenarios with different browsers. Simply select the browser
-to use based on a configuration property that is loaded at runtime:
+Cucumber can run your Scenarios with different browsers. 
+Simply select the browser to use based on a configuration property loaded at runtime:
 
 [carousel]
 
@@ -208,7 +209,7 @@ public class WebDriverFactory {
 
 [/carousel]
 
-Then, simply define the browser property when you run Cucumber:
+Then, simply define the `browser` property when you run Cucumber:
 
 [carousel]
 
@@ -222,7 +223,7 @@ mvn test -Dbrowser=chrome
 
 [/carousel]
 
-If you are using Serenity, simply pass the `driver` system property (no extra coding is required):
+If you are using Serenity, simply pass the `driver` system property (no extra coding required):
 
 [carousel]
 
@@ -234,9 +235,10 @@ mvn test -Ddriver=chrome
 
 ### Re-using the browser window
 
-Closing and re-opening the browser window between your scenarios will slow them down.
+Closing and re-opening the browser window between Scenarios will slow them down.
 
-To re-use them you can use the [SharedDriver](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java) wrapper rather than calling WebDriver directly.
+To reuse them, you can use the [`SharedDriver`](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java) 
+wrapper rather than calling `WebDriver` directly.
 
 ### Example Projects
 
