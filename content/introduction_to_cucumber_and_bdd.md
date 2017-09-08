@@ -18,8 +18,8 @@ bonus feature — when it yells in red, it's talking to you, telling you what co
 you should write.
 
 Gherkin's grammar is defined in the Treetop grammar that is part of the Cucumber
-codebase. The grammar exists in different flavours for many spoken
-languages (60 at the time of writing), so that your team can use the
+codebase. The grammar exists in different flavours for many [spoken
+languages](/gherkin/spoken-languages/) (60 at the time of writing), so that your team can use the
 keywords in your own language.
 
 There are a few conventions:
@@ -38,8 +38,8 @@ Each Scenario is a list of Steps for Cucumber to work through. So that Cucumber
 can understand these Feature files, they must follow some basic syntax rules.
 The name for this set of rules is [Gherkin](/gherkin/gherkin-intro/).
 
-Along with the Features, you give Cucumber a set of Step Definitions. These
-files map each business-readable language step into programming code to carry
+Along with the [Features](/gherkin/feature-introduction/), you give Cucumber a set of [Step Definitions](/cucumber/step-definitions/). These
+files map (or "glue") each business-readable language step into programming code to carry
 out what action should be performed by the Step. 
 
 In a mature test suite, the Step Definition itself will probably just be one or two lines of code that delegate to a library of support code, specific to the domain of your application.
@@ -59,11 +59,11 @@ their own ubiquitous language for talking about their problem domain. This helps
 
 # How does Cucumber work with BDD?
 
-This is the most typical question for every enthusiastic personality would get.
-What makes Cucumber to stand out from the crowd of other communication and
+This is the most typical question everyone enthusiastic about Cucumber will get.
+What makes Cucumber stand out from the crowd of other communication and
 collaboration tools?
 
-Cucumber has designed specifically to ensure the acceptance tests can easily be
+Cucumber was designed specifically to ensure the acceptance tests can easily be
 read and written by anyone on the team. This reveals the true value of
 acceptance tests: as a communication and collaboration tool. The easy
 readability of Cucumber tests draws business stakeholders into the process,
@@ -72,7 +72,7 @@ helping you really explore and understand the requirements.
 Cucumber was designed specifically to help business stakeholders get involved in
 writing acceptance tests.
 
-Related test cases in Cucumber are grouped into *Features*. Each test case in a Feature is called a *Scenario*. Each Scenario contains several Steps. 
+Related test cases in Cucumber are grouped into *Features*. Each test case in a Feature is called a *Scenario*. Each Scenario contains several Steps.
 
 The business-facing parts of a Cucumber test suite, stored in Feature files, must be written according to syntax rules—known as Gherkin—so that Cucumber can read them. Under the hood, Step Definitions translate the business-facing language of Steps into runnable programming code.
 
@@ -246,7 +246,7 @@ covers what a non-programmer needs to know.
 It is preferable that the first draft of any Feature be written by, or with, a
 “domain expert”. This person is typically a non-programmer, and always someone who knows the Feature's domain from a user or business perspective.
 
-Thenm the programmer(s) will go over the Scenarios, refining the Steps for
+Then the programmer(s) will go over the Scenarios, refining the Steps for
 clarification and increased testability. The result is then reviewed by the domain expert to ensure the intent has not been compromised by the programmers’
 reworking. 
 
