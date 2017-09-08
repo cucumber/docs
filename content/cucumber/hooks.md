@@ -129,7 +129,7 @@ end
 **Think twice before you use Hooks!** 
 Whatever happens in Hooks is invisible to people who only read the Features. 
 You should consider using [Background](/gherkin/background/) as a more explicit 
-alternative, expecially if the setup should be readable by non-technical people.
+alternative, especially if the setup should be readable by non-technical people.
 
 ## Global Hooks
 
@@ -177,4 +177,4 @@ end
 
 This Hook will run _only once_: after support has been loaded, and before any Features are loaded. 
 
-You can use this Hook to extend Cucumber. For example you could affect how Features are loaded, or register [custom formatters](/implementations/ruby/custom-formatters/) programatically.
+You can use this Hook to extend Cucumber. For example you could affect how Features are loaded, or register [custom formatters](/implementations/ruby/custom-formatters/) programmatically.
