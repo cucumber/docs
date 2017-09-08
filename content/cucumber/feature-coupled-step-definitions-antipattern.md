@@ -2,7 +2,7 @@
 menu:
 - reference
 source: https://github.com/cucumber/cucumber/wiki/Feature-Coupled-Step-Definitions-(Antipattern)/
-title: Feature Coupled Step Definitions (Antipattern)
+title: Feature Coupled Step Definitions (Anti-pattern)
 ---
 
 > TODO: Generalize. Move to Step Definitions
