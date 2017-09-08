@@ -160,7 +160,7 @@ default: --format pretty
 html: --format html --out features.html
 ```
 
-Remember that you need AUTOFEATURE=true for autospec to include cucumber features. See [[Running Features]] and \[\[Autotest Integration]] for more info.
+Remember that you need AUTOFEATURE=true for autospec to include cucumber features. See [Running Features](/cucumber/running-features) and [Autotest Integration](/wiki/autotest-integration) for more info.
 
 For autospec, change autotest in the above block to autospec:
 
@@ -173,11 +173,12 @@ html: --format html --out features.html
 
 ### Special tags
 
-There are two special [[tags]] you can use to change how Cucumber runs your scenarios
+There are two special [tags](/cucumber/tags) you can use to change how Cucumber runs your scenarios
 
 #### @no-txn
 
-By default all scenarios will run within a database transaction that is rolled back at the end. However, scenarios tagged with `@no-txn` will run **without** a transaction. This can be useful when you have to deal with [[Browsers and Transactions]]. Beware that this will leave data in your database after that scenario, which can lead to hard-to-debug failures in subsequent scenarios. If you use this, we recommend you create a Before block that will explicitly put your database in a known state, for example using [DatabaseCleaner](https://github.com/bmabey/database_cleaner)
+By default all scenarios will run within a database transaction that is rolled back at the end. However, scenarios tagged with `@no-txn` will run **without** a transaction. This can be useful when you have to deal with [Browsers and Transactions](/implementations/ruby/browsers-and-transactions).
+Beware that this will leave data in your database after that scenario, which can lead to hard-to-debug failures in subsequent scenarios. If you use this, we recommend you create a Before block that will explicitly put your database in a known state, for example using [DatabaseCleaner](https://github.com/bmabey/database_cleaner)
 
 #### @allow-rescue
 
