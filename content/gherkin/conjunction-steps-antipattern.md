@@ -2,7 +2,7 @@
 menu:
 - gherkin
 source: https://github.com/cucumber/cucumber/wiki/Conjunction-Steps-(Antipattern)/
-title: Conjunction Steps (Antipattern)
+title: Conjunction Steps (Anti-pattern)
 ---
 
 From the online Merriam-Webster dictionary:
