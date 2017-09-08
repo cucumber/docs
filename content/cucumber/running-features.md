@@ -71,8 +71,8 @@ See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) doc
 
 ## Using other build tools
 
-Maven and Ant are described in [[JRuby and Java]]. 
+Maven and Ant are described in [JRuby](/implementations/jvm/#jruby) and [Java](/implementations/jvm/#java).
 
-MSBuild and Nant should be under [[IronRuby and .NET]]. 
+MSBuild and Nant should be under [[IronRuby]] and [.NET](/implementations/dotnet-specflow/).
 
 Anything else? Please contribute to this wiki!
