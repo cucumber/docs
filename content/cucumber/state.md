@@ -21,9 +21,9 @@ Make sure you clean your database between Scenarios.
 ### The Before Hook Approach
 
 The recommended approach to clean a database between Scenarios is to use a
-[[Before Hook]] to remove all data *before* a Scenario starts.
+`Before`[Hook](/cucumber/hooks/) to remove all data *before* a Scenario starts.
 
-This is usually better than using an [[After Hook]], as it allows
+This is usually better than using an `After`[Hook](/cucumber/hooks/), as it allows
 you to perform a post-mortem inspection of the database if a Scenario fails.
 
 An alternative approach is to use database transactions.
@@ -36,13 +36,13 @@ You can wrap a transaction (if your database supports it) *around* each Scenario
 You won't be able to perform a post-mortem, and you won't be able to 
 use [browser automation](/cucumber/browser-automation/)).
 
-You simply tell Cucumber to start a transaction in a [[Before Hook]], and later 
-roll it back in an [[After Hook]].
+You simply tell Cucumber to start a transaction in a `Before`[Hook](/cucumber/hooks/), and later
+roll it back in an `After`[Hook](/cucumber/hooks/).
 
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
-[[Tagged Hooks]] using a Tag named `@txn`.
+[Tagged Hooks](/cucumber/hooks/#tagged-hooks) using a Tag named `@txn`.
 
-To enable it, you must tag every [[Feature]] or [[Scenario]] that requires 
+To enable it, you must tag every [Feature](/gherkin/feature-introduction/) or [Scenario](/gherkin/gherkin-reference/#scenario) that requires
 transactions with `@txn`:
 
 ```gherkin
@@ -58,7 +58,7 @@ Feature: Let's write a lot of stuff to the DB
 
 ### Using JUnit and Spring
 
-The [[`cucumber-spring`]] module contains `@txn` Hooks in the `cucumber.api.spring` package.
+The [`cucumber-spring`](/implementations/jvm/java-di/#spring) module contains `@txn` Hooks in the `cucumber.api.spring` package.
 
 This package isn't on your [[glue path]] by default, so you have to add it yourself in your
 [[Configuration Options]].
