@@ -43,8 +43,7 @@ If you're using Ant, you can run cucumber with the [`exec`](https://ant.apache.o
 
 A Jenkins plugin is available that produces beautiful Cucumber reports.
 
-Follow the install instructions here:
-<https://github.com/jenkinsci/cucumber-reports-plugin>
+Follow the install instructions [here](https://github.com/jenkinsci/cucumber-reports-plugin).
 
 Overview Page:
 
