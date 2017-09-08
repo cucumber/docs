@@ -61,7 +61,7 @@ Another creative way to use tags is to keep track of where in the development pr
 Feature: Index projects
 ```
 
-Tags are also used in Tagged [Hooks](/cucumber/hooks/), which allow you to use tags to define `Before` and/or `After` blocks to run for marked Scenarios.
+Tags are also used in [Tagged Hooks](/cucumber/hooks/#tagged-hooks), which allow you to use tags to define `Before` and/or `After` blocks to run for marked Scenarios.
 
 ## Logically `AND`-ing and `OR`-ing Tags
 
