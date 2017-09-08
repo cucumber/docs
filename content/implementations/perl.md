@@ -7,7 +7,7 @@ title: Perl
 
 > TODO: Review
 
-Writing Cucumber Tests in Perl rather than ruby
+Writing Cucumber Tests in Perl rather than Ruby
 
 **Test::BDD::Cucumber**
 
