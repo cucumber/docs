@@ -7,7 +7,7 @@ title: Blog Posts about Cucumber
 
 Here is a list of Cucumber related blog posts/tutorials. Please keep in mind that blogs can become dated quickly with a fast moving project like Cucumber. Cucumber's RDocs and wiki should be considered the canonical documentation source with the, hopefully, most up to date information. Some blog posts may refer to the RSpec Story Runner but they still provide value since Cucumber started out as a rewrite of that project.
 
-Please add any helpful blog posts that you have found or written about all things Cucumber. Also see [[Related Tools]].
+Please add any helpful blog posts that you have found or written about all things Cucumber. Also see [Related Tools](/about/related-tools/).
 
 |                                                                                                                                                                                                                                                                         |                                                                                                                                                       |                    |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|
