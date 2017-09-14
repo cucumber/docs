@@ -60,8 +60,8 @@ Feature: Let's write a lot of stuff to the DB
 
 The [`cucumber-spring`](/implementations/jvm/java-di/#spring) module contains `@txn` Hooks in the `cucumber.api.spring` package.
 
-This package isn't on your [[glue path]] by default, so you have to add it yourself in your
-[[Configuration Options]].
+This package isn't on your glue path by default, so you have to add it yourself in your
+Configuration Options.
 
 ```java
 @RunWith(Cucumber.class)

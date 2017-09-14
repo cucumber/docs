@@ -54,7 +54,7 @@ autotest-all: --color
 
 Please see [Running Features](/cucumber/running-features/) for more information about profiles, and the [Ruby on Rails](/implementations/ruby/ruby-on-rails/) page for extra help when running in that context.
 
-If you get an error like `When using several—format options only one of them can be without a file (RuntimeError)` when running features with autospec, you are probably accidentally requiring 'spec'. Read about the solution on [[Troubleshooting]].
+If you get an error like `When using several—format options only one of them can be without a file (RuntimeError)` when running features with autospec, you are probably accidentally requiring 'spec'. Read about the solution on Troubleshooting.
 
 ### What does it do?
 
