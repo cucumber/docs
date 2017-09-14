@@ -80,7 +80,7 @@ Cucumber-Rails needs to add a few files to your project:
 ruby script/generate cucumber
 ```
 
-If you're on an OS that supports fork we recommend you use [[Spork and --drb]] as this lets you start cucumber faster:
+If you're on an OS that supports fork we recommend you use [Spork](https://github.com/sporkrb/spork) and '--drb'] as this lets you start cucumber faster:
 
 ```
 ruby script/generate cucumber --spork
@@ -173,7 +173,7 @@ html: --format html --out features.html
 
 ### Special tags
 
-There are two special [tags](/cucumber/tags) you can use to change how Cucumber runs your scenarios
+There are two special [tags](/cucumber/tags) you can use to change how Cucumber runs your scenarios:
 
 #### @no-txn
 
