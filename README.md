@@ -112,7 +112,8 @@ GitHub will notify Netlify for every `git push` via a [webhook](thanks to a [web
 Netlify will then build the site
 [deploy](https://app.netlify.com/sites/cucumber/deploys) it if the build is successful.
 
-The build will check for broken links and other problems.
+The build will check for broken links and other problems. Internal and external links are checked by htmlproofer CI.
+Occasionally, the build will fail due to external links being unavailable or giving a timeout.When that happens, please check if these external links are available and if so, 'Retry build' on Netlify.
 
 Build notifications are sent to the `#cucumber-docs-bots` Slack channel. See
 https://cucumber.io/support for details on how to access Slack.
