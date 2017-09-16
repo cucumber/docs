@@ -60,7 +60,7 @@ Scenario: View last incidents
 
 ## Calling steps with multiline step arguments
 
-Sometimes you want to call a step that has been designed to take Multiline [Step Arguments](#step-arguments), for example:
+Sometimes you want to call a step that has been designed to take [Multiline Strings](#multiline-strings), for example:
 
 ### Tables
 
