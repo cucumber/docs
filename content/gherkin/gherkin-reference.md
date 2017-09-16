@@ -254,3 +254,40 @@ Scenario Outline: Password validation
     | abcd     | invalid          |
     | abcd1    | valid            |
 ```
+
+## Step Arguments
+
+In some cases you might want to pass more data to a step than fits on a single line.
+For this purpose Gherkin has Doc Strings and Data Tables:
+
+### Doc Strings
+
+Doc Strings are handy for passing a larger piece of text to a step definition. The syntax is inspired from Python's Docstring syntax.
+
+The text should be offset by delimiters consisting of three double-quote marks on lines of their own:
+
+```Given a blog post named "Random" with Markdown body
+  """
+  Some Title, Eh?
+  ===============
+  Here is the first paragraph of my blog post. Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit.
+  """
+```
+In your Step Definition, there’s no need to find this text and match it in your pattern. It will automatically be passed as the last parameter in the step definition.
+
+Indentation of the opening """ is unimportant, although common practice is two spaces in from the enclosing step. The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be de-indented according to the opening """. Indentation beyond the column of the opening """ will therefore be preserved.
+
+### Data Tables
+
+Data Tables are handy for passing a list of values to a step definition:
+
+```Given the following users exist:
+  | name   | email              | twitter         |
+  | Aslak  | aslak@cucumber.io  | @aslak_hellesoy |
+  | Julien | julien@cucumber.io | @jbpros         |
+  | Matt   | matt@cucumber.io   | @mattwynne      |
+```
+Just like Doc Strings, Data Tables will be passed to the Step Definition as the last argument.
+
+The type of this argument will be DataTable. See the API docs for more details about how to access the rows and cells.
