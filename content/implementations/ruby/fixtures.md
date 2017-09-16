@@ -5,7 +5,7 @@ source: https://github.com/cucumber/cucumber/wiki/Fixtures/
 title: Fixtures
 ---
 
-If you are using Rails 2.x, paste this code snippet into env.rb to load all fixtures from spec/fixtures before each scenario.
+If you are using Rails 2.x, paste this code snippet into `env.rb` to load all fixtures from spec/fixtures before each Scenario.
 
 ```ruby
 Before do
@@ -16,7 +16,7 @@ Before do
 end
 ```
 
-If you are using Rails 3.1, paste this code snippet into env.rb instead:
+If you are using Rails 3.1, paste this code snippet into `env.rb` instead:
 
 ```ruby
 Before do
@@ -27,7 +27,7 @@ Before do
 end
 ```
 
-If you are using Rails 4.x, paste this code snippet into env.rb instead:
+If you are using Rails 4.x, paste this code snippet into `env.rb` instead:
 
 ```ruby
 Before do
@@ -38,7 +38,7 @@ Before do
 end
 ```
 
-If you are using transactional fixtures in Rails then instead of loading your fixtures before each scenario you can load it just once by placing the same code in your env.rb file.  This way will be much faster than loading the fixtures before each scenario. For example:
+If you are using transactional fixtures in Rails, then instead of loading your fixtures before each Scenario you can load it just once by placing the same code in your `env.rb` file.  This way will be much faster than loading the fixtures before each Scenario. For example:
 
 ```ruby
 # Sets up the Rails environment for Cucumber
@@ -58,11 +58,13 @@ For Rails 3.1 just replace `Fixtures` with `ActiveRecord::Fixtures` and `RAILS_R
 
 ## Usage
 
-Once you've done one of the two load methods above (please, don't do both ;-) you can access your fixture data from the database using *Model.find*.  Example to find the first User model you'd use User.find(:first).
+Once you've done one of the two load methods above (please, don't do both ;-) you can access your fixture data from the database using `Model.find`.  
+
+For example, to find the first `User` model, you'd use `User.find(:first)`.
 
 ## Fixture helper methods
 
-If you want to also enable the fixture helper methods, such as *users(:admin)*, you need to add the following to your env.rb file (pretty much stolen straight from the Rails guts). This includes loading of the fixtures. For Rails 3.x:
+If you want to also enable the fixture helper methods, such as *users(:admin)*, you need to add the following to your `env.rb` file (pretty much stolen straight from the Rails guts). This includes loading of the fixtures. For Rails 3.x:
 
 ```ruby
 module FixtureAccess
