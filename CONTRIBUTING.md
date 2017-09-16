@@ -53,7 +53,3 @@ a particular programming language:
 
     The preferred build tool is {{% text "java" %}}Rake{{% /text %}}{{% text "java" %}}Yarn{{% /text %}}{{% text "java" %}}Maven{{% /text %}}.
 
-### Htmlproofer CI
-During the build, internal and external links are checked by htmlproofer CI.
-Occasionally, the build will fail due to external links being unavailable or giving a timeout.
-When that happens, please check if these external links are available and if so, 'Retry build' on Netlify.
