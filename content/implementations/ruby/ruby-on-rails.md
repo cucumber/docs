@@ -80,13 +80,13 @@ Cucumber-Rails needs to add a few files to your project:
 ruby script/generate cucumber
 ```
 
-If you're on an OS that supports fork we recommend you use [[Spork and --drb]] as this lets you start cucumber faster:
+If you're on an OS that supports fork we recommend you use [[Spork and `--drb`]]. This lets you start Cucumber faster:
 
 ```
 ruby script/generate cucumber --spork
 ```
 
-For more help on the generator you can just ask for help:
+For more help on the generator, just ask for help:
 
 ```
 ruby script/generate cucumber --help
@@ -100,21 +100,24 @@ Take a look at the generated files. If you need to, you can tweak them later.
 [sudo] rake RAILS_ENV=cucumber gems:install
 ```
 
-### Start a feature
+### Start a Feature
 
-It's really, really recommended that you write your features by hand - in collaboration with your customer / business analyst / domain expert / interaction designer. However, to get you started you can use the feature generator to generate the first few features:
+It's really, really recommended that you write your Features by hand, *and* in collaboration with your customer / business analyst / domain expert / interaction designer. 
+
+However, to get you started, you can use the Feature generator to generate the first few Features:
 
 ```
 ruby script/generate feature Frooble name:string color:string description:text
 ```
 
-This will generate a simple plain text feature with associated steps. Don't get addicted to this
-generator - you're better off writing these by hand in the long run.
+This will generate a simple plain text Feature with associated Steps. 
 
-**Important**: The generated feature will fail unless you have set up a layout in your app. This is because Webrat fails to parse HTML
+*Don't get addicted to this generator!* You're better off writing these by hand in the long run.
+
+**Important**: The generated Feature will fail, unless you have set up a layout in your app. This is because Webrat fails to parse HTML
 that isn't well formed (i.e. has a single `<html>` root node). [Here is a simple layout](https://github.com/aslakhellesoy/cucumber-rails-test/raw/master/app/views/layouts/application.html.erb) you can use, but I hope you have a better one yourself.
 
-### Run features
+### Run Features
 
 If working on a fresh Rails project, first set up the (empty) database:
 
@@ -124,7 +127,7 @@ rake db:migrate
 
 (Otherwise Cucumber fails with the error `no such file to load -- YourProjectName/db/schema.rb`.)
 
-Then run the features:
+Then run the Features:
 
 ```
 rake cucumber
@@ -142,16 +145,16 @@ rake db:migrate
 rake cucumber
 ```
 
-### Other ways of running features
+### Other ways of running Features
 
-You can also run specific features directly with cucumber:
+You can also run specific Features directly with Cucumber:
 
 ```
 cucumber --require features --require lib features/subdir/
 cucumber --require features --require lib features/some-nifty.feature
 ```
 
-And using autospec with a similar setting (`--require features --require lib`), applied in your project's /cucumber.yml:
+And using autospec with a similar setting (`--require features --require lib`), applied in your project's `cucumber.yml`:
 
 ```
 autotest-all: --require features --require lib --format progress features
@@ -160,9 +163,9 @@ default: --format pretty
 html: --format html --out features.html
 ```
 
-Remember that you need AUTOFEATURE=true for autospec to include cucumber features. See [[Running Features]] and \[\[Autotest Integration]] for more info.
+Remember that you need `AUTOFEATURE=true` for autospec to include Cucumber Features. See [[Running Features]] and [[Autotest Integration]] for more info.
 
-For autospec, change autotest in the above block to autospec:
+For autospec, change `autotest` in the above block to `autospec`:
 
 ```
 autospec-all: --require features --require lib --format progress features
@@ -171,27 +174,31 @@ default: --format pretty
 html: --format html --out features.html
 ```
 
-### Special tags
+### Special Tags
 
-There are two special [[tags]] you can use to change how Cucumber runs your scenarios
+There are two special [[Tags]] you can use to change how Cucumber runs your Scenarios.
 
-#### @no-txn
+#### `@no-txn`
 
-By default all scenarios will run within a database transaction that is rolled back at the end. However, scenarios tagged with `@no-txn` will run **without** a transaction. This can be useful when you have to deal with [[Browsers and Transactions]]. Beware that this will leave data in your database after that scenario, which can lead to hard-to-debug failures in subsequent scenarios. If you use this, we recommend you create a Before block that will explicitly put your database in a known state, for example using [DatabaseCleaner](https://github.com/bmabey/database_cleaner)
+By default, all Scenarios will run within a database transaction that is rolled back at the end. However, Scenarios tagged with `@no-txn` will run **without** a transaction. 
 
-#### @allow-rescue
+This can be useful when you have to deal with [[Browsers and Transactions]]. Beware that this will leave data in your database after that Scenario, which can lead to hard-to-debug failures in subsequent Scenarios. 
+
+If you use this, we recommend you create a Before block that will explicitly put your database in a known state (for example using [DatabaseCleaner](https://github.com/bmabey/database_cleaner)).
+
+#### `@allow-rescue`
 
 Scenarios tagged with `@allow-rescue` will cause Rails to rescue all errors and render error pages, more or less in the same way your application would behave in the default production environment. It's not recommended to do this for all of your scenarios, as this makes it hard to discover errors in your application.
 
 #### Controller and View spec redundancy
 
-Since I recommend you verify outcomes (**Then** steps) by looking at the HTML, you might end up having some degree of redundancy with controller and view specs. I recommend you delete generated controller and view specs if you run into too much maintenance headaches and rely on the features instead. However, in some cases it can be handy to use them.
+Since I recommend you verify outcomes (**`Then`** steps) by looking at the HTML, you might end up having some degree of redundancy with controller and view specs. I recommend you delete generated controller and view specs if you run into too much maintenance headaches and rely on the Features instead. However, in some cases it can be handy to use them.
 
 ### Authentication
 
-Some guidance for authentication is provided below. It is recommended that a new user is created, rather than loaded through fixtures or etc.
+Some guidance for authentication is provided below. It is recommended that a new user is created, rather than loaded through fixtures or other means.
 
-In the .feature, use a phrase similar to `Given a user is logged in as "markEmark"`, and add the following to your relevent step definitions.
+In the `.feature`, use a phrase similar to `Given a user is logged in as "markEmark"`, and add the following to your relevent Step Definitions.
 
 ```
 Given /^a user is logged in as "(.*)"$/ do |login|
