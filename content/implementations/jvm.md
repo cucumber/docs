@@ -70,7 +70,7 @@ There are several ways to run scenarios with Cucumber-JVM:
 
 - [JUnit Runner](#junit-runner)
 - [CLI Runner](#cli-runner)
-- [[Android Runner]]
+- Android Runner
 - [Third party runners](#third-party-runners)
 
 ### JUnit Runner
@@ -146,7 +146,7 @@ For example:
 java cucumber.api.cli.Main --version
 ```
 
-The [JUnit Runner](#junit-runner) and [[Android Runner]] can also pick
+The [JUnit Runner](#junit-runner) and Android Runner can also pick
 up configuration options defined via the `@CucumberOptions` annotation. For example, if
  you want to tell Cucumber to use the two formatter plugins `pretty`
 and `html`, you would specify it like this:
@@ -317,7 +317,7 @@ public void the_following_animals(List<String> animals) {
 
 See the @Delimiter annotation for details about how to define a delimiter different than `,`.
 
-If you prefer to use a [[Data Table]] to define a list you can do that too:
+If you prefer to use a [Data Table](/gherkin/gherkin-reference/#data-tables/) to define a list you can do that too:
 
 ```gherkin
 Given the following animals:

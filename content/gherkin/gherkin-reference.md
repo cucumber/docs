@@ -188,7 +188,7 @@ Given <I'm a placeholder and I'm ok>
 
 The placeholders indicate that when the Examples row is run, they should be substituted with real values from the `Examples` table. If a placeholder name is the same as a column title in the `Examples` table, that is the value that will replace it.
 
-You can also use placeholders in [[Multiline Step Arguments]].
+You can also use placeholders in Multiline [Step Arguments](#step-arguments).
 
 **IMPORTANT:** *Your Step Definitions will never have to match a placeholder. They will need to match the values that will _replace_ the placeholder.*
 
@@ -265,8 +265,8 @@ For this purpose Gherkin has Doc Strings and Data Tables:
 Doc Strings are handy for passing a larger piece of text to a step definition. The syntax is inspired from Python's Docstring syntax.
 
 The text should be offset by delimiters consisting of three double-quote marks on lines of their own:
-
-```Given a blog post named "Random" with Markdown body
+```gherkin
+Given a blog post named "Random" with Markdown body
   """
   Some Title, Eh?
   ===============
@@ -276,13 +276,14 @@ The text should be offset by delimiters consisting of three double-quote marks o
 ```
 In your Step Definition, there’s no need to find this text and match it in your pattern. It will automatically be passed as the last parameter in the step definition.
 
-Indentation of the opening """ is unimportant, although common practice is two spaces in from the enclosing step. The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be de-indented according to the opening """. Indentation beyond the column of the opening """ will therefore be preserved.
+Indentation of the opening '"""' is unimportant, although common practice is two spaces in from the enclosing step. The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be de-indented according to the opening """. Indentation beyond the column of the opening """ will therefore be preserved.
 
 ### Data Tables
 
 Data Tables are handy for passing a list of values to a step definition:
 
-```Given the following users exist:
+```gherkin
+Given the following users exist:
   | name   | email              | twitter         |
   | Aslak  | aslak@cucumber.io  | @aslak_hellesoy |
   | Julien | julien@cucumber.io | @jbpros         |
