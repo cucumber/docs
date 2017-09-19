@@ -52,3 +52,4 @@ Use the `{{% text %}}` shortcode around text that should only be displayed for
 a particular programming language:
 
     The preferred build tool is {{% text "java" %}}Rake{{% /text %}}{{% text "java" %}}Yarn{{% /text %}}{{% text "java" %}}Maven{{% /text %}}.
+
