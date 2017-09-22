@@ -11,9 +11,8 @@ Behat is the official Cucumber implementation for PHP.
 
 The docs are currently at [behat.org](http://behat.org).
 
-According to <http://docs.behat.org/en/v3.0/> bq. Since v3.0, Behat is considered
-an official Cucumber implementation in PHP and is part of one big family of BDD
-tools.
+According to <http://docs.behat.org/en/v3.0/> bq. Since v3.0, Behat is 
+considered an official Cucumber implementation in PHP and is part of one big family of BDD tools.
 
 ## Directly testing PHP code
 
@@ -21,9 +20,13 @@ To directly test PHP code using step definitions written in PHP, please see the 
 
 ## Testing against PHP web applications
 
-Most people seem to use cucumber for rails and most of the howtos and documents on the web reflect this. But cucumber is a great tool for testing any kind of web application, no matter what language it was built in. We could use Selenium, and there are good [how-to's](/cucumber/browser-automation/#selenium-webdriver) for that - but Selenium is slow and clunky to setup, and should only be used if you need to test JavaScript. What if I want to write BDD stories and test a PHP app with cucumber?
+Most people seem to use Cucumber for Rails. Most of the How-Tos and documents on the web reflect this. 
 
-Turns out it is easier than I expected. Webrat has options for interfacing with a web application using rails, selenium or mechanize. All we have to do is tell webrat to use mechanize and most things will work exactly the same as in any other cucumber setup.
+But Cucumber is a great tool for testing any kind of web application, no matter what language it was built in. You could use Selenium, and there are good [How-To's](/cucumber/browser-automation/#selenium-webdriver) for it. 
+
+But Selenium is slow and clunky to set up! It should only be used if you need to test JavaScript. What if I want to write BDD stories and test a PHP app with Cucumber?
+
+Turns out it is easier than I expected. Webrat has options for interfacing with a web application using Rails, Selenium, or Mechanize. All you have to do is tell Webrat to use Mechanize, and most things will work exactly the same as in any other Cucumber setup.
 
 Here is how to do it:
 
@@ -76,24 +79,24 @@ end
 
 A few other gotchas:
 
-The mechanize configuration for webrat seems to use response_body instead of
-response.body. I am not sure what is going on there, but when using the webrat
-step definitions from: <https://github.com/brynary/webrat> required a few
+The Mechanize configuration for Webrat seems to use `response_body` instead of
+`response.body`. I am not sure what is going on there, but when using the Webrat
+Step Definitions from: <https://github.com/brynary/webrat> required a few
 substitutions to make it work right.
 
 If you want your test data to be the same every time your run it, you need a few
-things. First, you need a separate database that has a known and controlled set
+things. First, you need a separate database that has a known, controlled set
 of data in it. Secondly, if your data is different every time you test, then
-your tests probably are not repeatable.
+your tests are probably not repeatable.
 
-To get around this you can hack in database dumps and table dumps to happen
-before and after scenarios. You can save database state before all of the tests
-and reload it at the end so that next time it will be the same, or you can do it
-on a per feature level and per database table level. I have so far found the
-second approach to be the quickest and most flexible.
+To get around this, you can hack in database dumps and table dumps to happen
+before and after Scenarios. You can save database state before all of the tests,
+and reload it at the end. Next time, it will be the same. 
 
-The per feature and per table approach can be accomplished using [hooks](/cucumber/hooks/).
-Here are is the code that I currently have in 'support/hooks.rb'
+Alternatively, you can do it on a per-Feature level and per-database table level. I have so far found the second approach to be the quickest and most flexible.
+
+The per-Feature and per-table approach can be accomplished using [[Hooks]].
+Here are is the code that I currently have in `support/hooks.rb`:
 
 ```
     Before ('@reset_users') do
@@ -118,7 +121,7 @@ Here are is the code that I currently have in 'support/hooks.rb'
     end
 ```
 
-Then you can just put the @reset_users tag in before the scenario that does
+Then you can just put the `@reset_users` Tag in before the Scenario that does
 stuff with your user table, and it will reset it after it completes:
 
 ```
@@ -127,7 +130,7 @@ stuff with your user table, and it will reset it after it completes:
     Given ...
 ```
 
-A full cucumber env.rb for PHP can be found
-[here](https://gist.github.com/188166) Also check out the features directory in
-[chits](https://github.com/mikeymckay/chits) to see cucumber testing a real PHP
+A full Cucumber `env.rb` for PHP can be found
+[here](https://gist.github.com/188166). Also, check out the `features/` directory in
+[chits](https://github.com/mikeymckay/chits) to see Cucumber testing a real PHP
 app.

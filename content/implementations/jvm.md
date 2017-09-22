@@ -11,8 +11,8 @@ Cucumber-JVM is a Cucumber implementation for the most popular JVM languages.
 
 This document is the reference for features that are specific to Cucumber-JVM.
 
-Please see the [general reference](/gherkin/gherkin-reference/) for features that are
-common to all Cucumber implementations.
+Please see the [General Reference](/gherkin/gherkin-reference/) for features common to all Cucumber implementations.
+
 
 ## Languages
 
@@ -29,15 +29,15 @@ Cucumber-JVM supports the following JVM languages:
 
 ## Installation
 
-Cucumber-JVM consists of several modules (jars) that you can download from the [public maven repo](http://repo1.maven.org/maven2/info/cukes/).
-There is no "setup" program for Cucumber-JVM---just jar files.
+Cucumber-JVM consists of several modules (JARs) that you can download from the [public Maven repo](http://repo1.maven.org/maven2/info/cukes/).
+There is no "setup" program for Cucumber-JVM---just JAR files.
 
-What jar files to add to your project classpath depends on what programming language you are using. If you
-are using Java, you may want to add one of the jars for [dependency injection](/implementations/jvm/java-di/) as well.
+Determining which JARs to add to your project's `CLASSPAth` depends on the programming language you are using. If you
+are using Java, you may want to add one of the JARs for [dependency injection](/implementations/jvm/java-di/) as well.
 
 ### Snapshot releases
 
-If you want to take advantage of functionality that has been committed to the git master branch, but hasn't been released to the public maven repo yet, you can use `SNAPSHOT` builds from the [sonatype snapshot repo](https://oss.sonatype.org/content/repositories/snapshots/info/cukes/).
+If you want to take advantage of functionality that has been committed to the git `master` branch, but hasn't been released to the public maven repo yet, you can use `SNAPSHOT` builds from the [sonatype snapshot repo](https://oss.sonatype.org/content/repositories/snapshots/info/cukes/).
 
 Just add the following to your `pom.xml`:
 
@@ -51,7 +51,9 @@ Just add the following to your `pom.xml`:
 </repository>
 ```
 
-Then add a dependency to the snapshot version, for example:
+Then, add a dependency to the snapshot version. 
+
+For example:
 
 ```xml
 <dependency>
@@ -75,8 +77,7 @@ There are several ways to run scenarios with Cucumber-JVM:
 
 ### JUnit Runner
 
-The JUnit runner uses the JUnit framework to run Cucumber. All you need is a single
-empty class with an annotation:
+The JUnit runner uses the JUnit framework to run Cucumber. All you need is a single empty class with an annotation:
 
 ```java
 package mypackage;
@@ -113,7 +114,7 @@ To use the JUnit runner you need to add the following dependencies:
 ### CLI Runner
 
 The Command-Line Interface Runner (CLI Runner) is an executable Java class that
-can be run from the command-line, or from any build tool such as Gradle or Ant.
+can be run from the command-line, or from any build tool (such as Gradle or Ant).
 
 ```
 java cucumber.api.cli.Main
@@ -128,28 +129,28 @@ java cucumber.api.cli.Main --help
 
 ### Third party runners
 
-IntelliJ IDEA and Eclipse have plugins that can run scenarios from within an IDE:
+IntelliJ IDEA and Eclipse have plugins that can run Scenarios from within an IDE:
 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
 - [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
 
-Please refer to the documentation for the third party runner for details about how
-to pass configuration options to Cucumber.
+Please refer to the documentation for the third party runner for details about how to pass configuration options to Cucumber.
 
 ## Configuration
 
 Cucumber has a set of configuration options that can be passed to each runner.
 Configuration options can be passed to the [CLI Runner](#cli-runner) on the command-line.
+
 For example:
 
 ```
 java cucumber.api.cli.Main --version
 ```
 
-The [JUnit Runner](#junit-runner) and Android Runner can also pick
-up configuration options defined via the `@CucumberOptions` annotation. For example, if
- you want to tell Cucumber to use the two formatter plugins `pretty`
-and `html`, you would specify it like this:
+The [JUnit Runner](#junit-runner) and [[Android Runner]] can also pick
+up configuration options defined via the `@CucumberOptions` annotation. 
+
+For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
 
 ```java
 package mypackage;
@@ -164,8 +165,9 @@ public class RunCukesTest {
 }
 ```
 
-Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options`
-Java system property. For example, if you are using Maven and want to run a subset of scenarios tagged
+Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property. 
+
+For example, if you are using Maven and want to run a subset of Scenarios tagged
 with `@smoke`:
 
 ```
@@ -175,13 +177,14 @@ mvn test -Dcucumber.options="--tags @smoke"
 ### List configuration options
 
 To print out all the available configuration options, simply pass the `--help` option.
+
 For example:
 
 ```
 mvn test -Dcucumber.options="--help"
 ```
 
-will print out:
+Will print out:
 
 ```
 Usage: java cucumber.api.cli.Main [options] [[[FILE|DIR][:LINE[:LINE]*] ]+ | @FILE ]
@@ -257,7 +260,7 @@ Otherwise, to write them using annotated methods, you need:
 While it's not required, we strongly recommend you include one of the
 [Dependency Injection](/implementations/jvm/java-di/) modules as well. This allows
 you to share state between [Step Definitions](/cucumber/step-definitions/)
-without resorting to static variables (a common source of flickering scenarios).
+without resorting to static variables (a common source of flickering Scenarios).
 
 ### Step Definitions
 
@@ -301,7 +304,7 @@ public class MyStepdefs {
 
 #### One-dimensional lists
 
-The simplest way to pass a `List<String>` to a step definition is to use commas:
+The simplest way to pass a `List<String>` to a Step Definition is to use commas:
 
 ```gherkin
 Given the following animals: cow, horse, sheep
@@ -315,7 +318,8 @@ public void the_following_animals(List<String> animals) {
 }
 ```
 
-See the @Delimiter annotation for details about how to define a delimiter different than `,`.
+See the `@Delimiter` annotation for details about how to define a delimiter different than `,`.
+
 
 If you prefer to use a [Data Table](/gherkin/gherkin-reference/#step-arguments) to define a list you can do that too:
 
@@ -326,7 +330,7 @@ Given the following animals:
   | sheep |
 ```
 
-Simply declare the argument as a `List<String>` (but do not define a capture group in the pattern):
+Simply declare the argument as a `List<String>`, but don't define any capture groups in the pattern:
 
 ```java
 @Given("the following animals:")
@@ -335,8 +339,8 @@ public void the_following_animals(List<String> animals) {
 ```
 
 In this case, the `DataTable` is automatically flattened to a `List<String>`
-by Cucumber (using `DataTable.asList(String.class)`) before invoking the step
-definition.
+by Cucumber (using `DataTable.asList(String.class)`) before invoking the Step
+Definition.
 
 ## Groovy
 

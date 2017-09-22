@@ -60,7 +60,7 @@ require 'minitest/unit'
 World(MiniTest::Assertions)
 ```
 
-Also, if you wanted to use MiniTest::Spec, the snippet would look like this:
+Also, if you wanted to use `MiniTest::Spec`, the snippet would look like this:
 
 ```ruby
 require 'minitest/spec'
