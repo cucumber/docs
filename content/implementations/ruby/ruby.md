@@ -25,7 +25,7 @@ group :test do
 end
 ```
 
-Then initialize a features directory:
+Then, initialize a `features/` directory:
 
 ```
 cucumber --init
@@ -39,7 +39,7 @@ To see the full list of options:
 cucumber --help
 ```
 
-Otherwise, to run all features:
+Otherwise, to run all Features:
 
 ```
 cucumber

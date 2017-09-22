@@ -8,7 +8,7 @@ title: Debugging
 
 > TODO: Review for length
 
-Adding the following as the contents of `features/support/debugging.rb` can be helpful in debugging failing steps:
+Adding the following as the contents of `features/support/debugging.rb` can be helpful in debugging failing Steps:
 
 ```ruby
 # rubocop:disable Lint/Debugger

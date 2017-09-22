@@ -7,10 +7,9 @@ title: JavaScript
 
 # JavaScript
 
-[Cucumber.js](https://github.com/cucumber/cucumber-js) is a Cucumber implementation
-written in pure JavaScript.
+[Cucumber.js](https://github.com/cucumber/cucumber-js) is a Cucumber implementation written in pure JavaScript.
 
-It runs on Node.js, IO.js, browsers and any other JavaScript platform.
+It runs on Node.js, IO.js, browsers, and any other JavaScript platform.
 
 ## Installation
 

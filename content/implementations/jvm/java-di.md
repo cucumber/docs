@@ -11,9 +11,8 @@ If your programming language is Java you will be writing glue code
 ([Step Definitions](/cucumber/step-definitions/) and [Hooks](/cucumber/hooks/)) in plain old Java classes.
 
 Cucumber will create a new instance of each of your glue code classes before each Scenario.
-If all of your glue code classes have an empty constructor you don’t need anything else.
-However, most projects will benefit from a Dependency Injection module to organize your code better and to share
-state between Step Definitions.
+
+If all of your glue code classes have an empty constructor, you don’t need anything else. However, most projects will benefit from a Dependency Injection module to organize your code better and to share state between Step Definitions.
 
 The available Dependency Injection modules are:
 

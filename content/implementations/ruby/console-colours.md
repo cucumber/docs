@@ -8,14 +8,16 @@ title: Console Colours
 
 > TODO: Review.
 
-The console output for Cucumber colours steps according to how execution went. In addition to that, matched step variables are highlighted. Here is an example of how a single step gets printed:
+The console output for Cucumber colours steps according to how execution went. In addition to that, matched Step variables are highlighted. 
+
+Here is an example of how a single Step gets printed:
 
 <pre><span style="color:green">Given I have</span> <span style="color:green;font-weight:bold">487</span> <span style="color:green">cucumbers in my belly</span> <span style="color:grey"># features/vegetable_features.feature:49&</span>
 </pre>
 
 You can tweak the colours by defining a `$CUCUMBER_COLORS` variable in your shell.
 
-**Don't attempt to set it in your `support/env.rb` file or any other Ruby file. It must be defined *before* Cucumber starts. You can do it in your Rakefile with** `ENV\['CUCUMBER_COLORS'] = '...'`
+**Don't attempt to set it in your `support/env.rb` file—or any other Ruby file! It must be defined *before* Cucumber starts. You can do it in your `Rakefile` with** `ENV\['CUCUMBER_COLORS'] = '...'`.
 
 The colours that you can change are:
 
@@ -34,8 +36,10 @@ The colours that you can change are:
 | tag           | <span style="color:cyan;">cyan</span> (v0.2.0 and up)            |
 
 For instance, if your shell has a black background and a green font (like the
-"Homebrew" settings for OS X' Terminal.app), you may want to override passed
-steps to be white instead of green. Examples:
+"Homebrew" settings for macOS's Terminal.app), you may want to override `passed`
+Steps to be white instead of green. 
+
+Examples:
 
 ```
 export CUCUMBER_COLORS=passed=white
