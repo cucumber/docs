@@ -5,6 +5,17 @@ It is currently live at [https://cucumber.netlify.com](https://cucumber.netlify.
 and the plan is to move it to [https://docs.cucumber.io](https://docs.cucumber.io) once
 it is good enough to replace the existing documentation.
 
+Please make ALL contributions to the documentation in this repo.
+
+## Current status
+We are working to add and update all of the old documentation (see below) to this repo. 
+
+All *relevant* documentation from the old documentation has been added to this project.
+Some files have been deleted; this does not necessarily mean that those files should not exist, 
+just that there was not enough info there to justify leaving them.
+
+**This work is currently being done and has been merged to master**.
+
 ## Old documentation
 
 For various reasons, old Cucumber documentation is scattered around different places:
@@ -101,7 +112,8 @@ GitHub will notify Netlify for every `git push` via a [webhook](thanks to a [web
 Netlify will then build the site
 [deploy](https://app.netlify.com/sites/cucumber/deploys) it if the build is successful.
 
-The build will check for broken links and other problems.
+The build will check for broken links and other problems. Internal and external links are checked by [HTMLProofer](https://github.com/gjtorikian/html-proofer).
+Occasionally, the build will fail due to external links being unavailable or giving a timeout.When that happens, please check if these external links are available and if so, 'Retry build' on Netlify.
 
 Build notifications are sent to the `#cucumber-docs-bots` Slack channel. See
 https://cucumber.io/support for details on how to access Slack.

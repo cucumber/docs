@@ -41,7 +41,7 @@ When I try to post to "Expensive Therapy"
 Then I should see "Your article was published."
 ```
 
-For a less explicit alternative to Background, check out Tagged [Hooks](/cucumber/hooks/).
+For a less explicit alternative to Background, check out [Tagged Hooks](/cucumber/hooks/#tagged-hooks).
 
 ## Good practices for using Background
 

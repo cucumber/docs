@@ -69,7 +69,7 @@ Steps are declared in your `features/\*.feature` files.
 3. Cucumber passes them to the Step Definition's `Proc` (or “function”) and executes it
 
 
-Recall that Step Definitions start with a [preposition][preposition] or an [adverb][adverb] (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**). and can be expressed in any of Cucumber's supported [spoken languages](/gherkin/spoken-languages/). 
+Recall that Step Definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**). and can be expressed in any of Cucumber's supported [spoken languages](/gherkin/spoken-languages/).
 
 All Step Definitions are loaded (and defined) before Cucumber starts to execute the plain text.  
 
@@ -79,8 +79,6 @@ The specific preposition/adverb used has **no** significance when Cucumber is re
 
 Also, check out [[Multiline Step Arguments]] for more info on how to pass entire tables or bigger strings to your Step Definitions.
 
-[preposition]: http://www.merriam-webster.com/dictionary/given
-[adverb]: http://www.merriam-webster.com/dictionary/when
 
 ## Successful Steps
 

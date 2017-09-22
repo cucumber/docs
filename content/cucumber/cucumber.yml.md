@@ -24,7 +24,7 @@ want to execute with this profile.
 The example above generates two profiles: 
 
 1. `html_report`, with a list of command-line options that specify new output formats, and 
-2. `bvt`, which executes all Features and Scenarios [[tagged|Tags]] with `@bvt`.
+2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/tags/) with `@bvt`.
 
 ## Executing Profiles
 
@@ -107,5 +107,6 @@ So, if you have several profiles with similar values, you might do this:
 
 ## Autotest Profiles
 
-[[Integration with Autotest|Autotest-Integration]] uses two profiles: `autotest` and `autotest-all`. 
+cucumber.yml - [Autotest Integration](/wiki/autotest-integration)
+ uses two profiles: `autotest` and `autotest-all`.
 These profile names should be reserved for that service.
