@@ -77,7 +77,7 @@ Once plain text execution begins, for each Step, Cucumber will look for a regist
 
 The specific preposition/adverb used has **no** significance when Cucumber is registering or looking up Step Definitions.
 
-Also, check out [[Multiline Step Arguments]] for more info on how to pass entire tables or bigger strings to your Step Definitions.
+Also, check out Multiline [Step Arguments](/gherkin/gherkin-reference/#step-arguments) for more info on how to pass entire tables or bigger strings to your Step Definitions.
 
 
 ## Successful Steps

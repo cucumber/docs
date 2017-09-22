@@ -72,7 +72,7 @@ There are several ways to run scenarios with Cucumber-JVM:
 
 - [JUnit Runner](#junit-runner)
 - [CLI Runner](#cli-runner)
-- [[Android Runner]]
+- Android Runner
 - [Third party runners](#third-party-runners)
 
 ### JUnit Runner
@@ -320,7 +320,8 @@ public void the_following_animals(List<String> animals) {
 
 See the `@Delimiter` annotation for details about how to define a delimiter different than `,`.
 
-If you prefer to use a [[Data Table]] to define a list, you can do that, too:
+
+If you prefer to use a [Data Table](/gherkin/gherkin-reference/#step-arguments) to define a list you can do that too:
 
 ```gherkin
 Given the following animals:
