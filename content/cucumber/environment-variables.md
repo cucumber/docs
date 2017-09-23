@@ -20,7 +20,7 @@ You can now pick up `ENV\['FOO']` in Ruby (for example, in `env.rb`, or a Step D
 
 You can also do this in [`cucumber.yml`](/cucumber/cucumber.yml/). 
 
-For example, the following sets up a profile that runs a tag and sets an environment variable
+For example, the following sets up a profile that runs the specified Tag and sets an environment variable:
 
 ```
 baz: --tags @mytag FOO=BAR
