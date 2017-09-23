@@ -13,7 +13,7 @@ Any of these techniques also lets you define common command line options in a [`
 
 ## Using the Gem's `cucumber` Command
 
-Assuming you've installed cucumber as a gem, run this at a command prompt to see the options for running Features:
+Assuming you've installed Cucumber as a gem, run this at a command prompt to see the options for running Features:
 
 ```
 cucumber --help
