@@ -22,8 +22,8 @@ The configuration is a set of parameters that tell Cucumber how to
 behave. Some examples include:
 
 * Which plugins to load (such as formatter plugins)
-* Which features and scenarios to run (using file paths, tags, or line numbers)
-* Which step definitions to use
+* Which Features and Scenarios to run (using file paths, Tags, or line numbers)
+* Which Step Definitions to use
 * Whether to report `undefined` and/or `pending` as errors
 * Test plan strategy (randomise order, distribute Scenarios across threads or processes)
 
@@ -42,7 +42,7 @@ Step Definitions' patterns to parse the Markdown.
 
 The specifications are transformed to an AST (Abstract Syntax Tree).
 
-## 4. Compile scenarios into bare `TestCase`s
+## 4. Compile Scenarios into bare `TestCase`s
 
 The ASTs are compiled into a list of `TestCase`s. During this phase,
 `Scenario Outline`s and their `Example`s are exploded into multiple 
