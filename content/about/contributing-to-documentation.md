@@ -1,15 +1,14 @@
 ---
-menu: tbd
+menu:
+- about
 source: https://github.com/cucumber/cucumber/docs
 title: Contributing to Documentation
 status: check and update content
 ---
 
-# Contributing to Documentation
-
 The Cucumber documentation is open source and anyone is welcome to contribute.
 
-Please make ALL contributions to the documentation in this repo.
+Please make ALL contributions to the documentation in [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io).
 
 ## Process
 
@@ -21,7 +20,7 @@ As a **committer** you should still use pull requests.
 
 Each pull request should only modify/add a single topic. Don't lump many unrelated document changes into the same pull request.
 
-The title should explain what docs you are modifying/creating and why.
+The title should explain which docs you are modifying/creating (and why).
 For example `[docs] Add tags.md` or `[docs] Modify tags.md to explain boolean expressions`.
 
 The more general contribution process is described in the [Cucumber Community Contributing Guide](../CONTRIBUTING.md).

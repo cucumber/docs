@@ -5,7 +5,7 @@ It is currently live at [https://cucumber.netlify.com](https://cucumber.netlify.
 and the plan is to move it to [https://docs.cucumber.io](https://docs.cucumber.io) once
 it is good enough to replace the existing documentation.
 
-Please make ALL contributions to the documentation in this repo.
+Please make ALL contributions to the documentation in [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io).
 
 ## Current status
 We are working to add and update all of the old documentation (see below) to this repo. 
