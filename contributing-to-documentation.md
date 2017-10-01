@@ -15,14 +15,13 @@ Please make ALL contributions to the documentation in this repo.
 
 First-time **contributors** will have to send a pull request.
 
-Once your first pull request has been accepted you will be promoted to a **committer** and
+Once your first pull request has been accepted, you will be promoted to a **committer** and
 gain write access to the [GitHub](https://github.com/cucumber/docs.cucumber.io) repository.
 As a **committer** you should still use pull requests.
 
 Each pull request should only modify/add a single topic. Don't lump many unrelated document changes into the same pull request.
 
-The title of documentation pull requests should be prefixed `[docs] `.
-The title should explain what docs you are modifying/creating.
+The title should explain what docs you are modifying/creating and why.
 For example `[docs] Add tags.md` or `[docs] Modify tags.md to explain boolean expressions`.
 
 The more general contribution process is described in the [Cucumber Community Contributing Guide](../CONTRIBUTING.md).
@@ -53,13 +52,6 @@ the docs, and then reply on the mailing list with a link to your contribution.
 
 If you are contributing for the first time we recommend you start by contributing to the [Reference](#reference-style) documentation. Once you get a hang of that you
 can start contributing to [Learning](#learning-style) and [Tutorial](#tutorial-style) documentation.
-
-## Toolchain
-The documentation is written in [Markdown](http://toolchain.gitbook.com/syntax/markdown.html)
-(simple markup) and [AsciiDoc](http://toolchain.gitbook.com/syntax/asciidoc.html) (richer markup).
-
-The documentation is stored in [the cucumber/docs.cucumber.io GitHub repository](https://github.com/cucumber/docs.cucumber.io).
-
 
 ## Different styles of documentation
 
@@ -111,3 +103,62 @@ In general, it should be brief and to the point.
   * `(platform-consistent)` means this works the same on all platforms, like Gherkin
   * `(platform-inconsistent)` means this currently works differently across platforms, like formatter outputs
     * (The Cucumber team is working to make the implementations more consistent, but this takes time)
+
+## Toolchain
+The documentation is written in [Markdown](http://toolchain.gitbook.com/syntax/markdown.html)
+(simple markup) and [AsciiDoc](http://toolchain.gitbook.com/syntax/asciidoc.html) (richer markup).
+
+The documentation is stored in [the cucumber/docs.cucumber.io GitHub repository](https://github.com/cucumber/docs.cucumber.io).
+
+## Page structure
+
+* YAML front matter (with title)
+* Introduction paragraph
+* Subtitles
+
+The page's title from the YAML front-matter is rendered as a `<h1>` header
+at the top of the page. Only use `##`, `###` and `####` headers in the document
+body - do not use `#` headers as we only want a single `h1` header per page.
+
+Start the body with a paragraph, not a header. If you start with a header, the
+top of the page will have a `h1` followed immediately by a `h2`, which does not
+look good.
+
+## Polyglot pages
+
+All pages with source code should be polyglot, meaning there should be source code
+for all supported programming languages. See `themes/cucumber-hugo/layouts/partials/language-tabs.html`
+for a list of supported languages.
+
+The front-matter should also declare that this is a polyglot page so that the
+programming language tabs are displayed at the top of the page:
+
+```yaml
+polyglot: true
+```
+
+When a tab is selected, only source code and language-specific text for the selected
+language will be displayed.
+
+### Source code
+
+Use fenced code blocks to specify polyglot source code:
+
+    ```ruby
+    puts "hello"
+    ```
+
+    ```javascript
+    console.log("hello")
+    ```
+
+    ```java
+    System.out.println("hello")
+    ```
+
+### Language-specific text
+
+Use the `{{% text %}}` shortcode around text that should only be displayed for
+a particular programming language:
+
+    The preferred build tool is {{% text "ruby" %}}Rake{{% /text %}}{{% text "javascript" %}}Yarn{{% /text %}}{{% text "java" %}}Maven{{% /text %}}.
