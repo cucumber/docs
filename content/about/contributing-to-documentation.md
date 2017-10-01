@@ -29,22 +29,11 @@ The more general contribution process is described in the [Cucumber Community Co
 
 It's great to get feedback on your writing. Start out with small changes, then wait for feedback from other contributors and committers in the pull request.
 
-You can hop into the Cucumber [Slack](https://cucumber.io/support#slack) or [Gitter](https://cucumber.io/support#gitter) chat rooms to discuss.
+You can hop into the Cucumber [Slack](https://cucumber.io/support#slack) channel `#committers-docs` or [Gitter](https://cucumber.io/support#gitter) chat rooms to discuss.
 
 Otherwise - there is always the friendly [Cucumber Google group](mailto:cukes-devs@googlegroups.com)
 
 ## What to contribute
- <!-- !
-The [SUMMARY.md](../SUMMARY.md) file is the table of contents. As you see,
-several of the links point to non-existent files. This is what we need help with.
-
-Documentation that isn't [reference](#reference-style) documentation for a particular library (the
-majority of the documentation) lives under the `/docs` directory.
-
-Some [reference](#reference-style) documentation lives
-in `README` files inside standard libraries, such as
-`/cucumber-expressions/README.md` and `/tag-expressions/README.md`.
--->
 A great way to start contributing is to answer a
 [mailing list](https://groups.google.com/group/cukes) question by improving
 the docs, and then reply on the mailing list with a link to your contribution.
@@ -161,3 +150,7 @@ Use the `{{% text %}}` shortcode around text that should only be displayed for
 a particular programming language:
 
     The preferred build tool is {{% text "ruby" %}}Rake{{% /text %}}{{% text "javascript" %}}Yarn{{% /text %}}{{% text "java" %}}Maven{{% /text %}}.
+
+### Working locally
+
+For information on how to work locally, please see the README.md in [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io).

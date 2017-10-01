@@ -17,12 +17,12 @@ If you are certain you have found a bug, just register a ticket. If you're not s
 
 The only way we can fix a bug is to reproduce it first. If reproducing the bug requires setting up a project, please write a [Cucumber Feature](/gherkin/feature-introduction/) that demonstrates the bug. When you have done that, mention it in your ticket or send a pull request.
 
-Explain which version of Cucumber you are using {{% text "ruby" %}}(`gem list`){{% /text %}}, on which OS you are using it, which command(s) you ran, what the output is, etc.
+Explain which version of Cucumber you are using, on which OS, which command(s) you ran, what the output is, etc.
 
 ## You want a new feature
 
 Start by creating a ticket. Then, create a [Cucumber Feature](/gherkin/feature-introduction/) and start implementing it. It also helps if you add unit tests for the low level code.
 
-## Contributing to the documentation
+## You want to update the documentation
 
 If you would like to contribute to the documentation, please see [Contributing to documentation](/about/contributing-to-documentation/).
