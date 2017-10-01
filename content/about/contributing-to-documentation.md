@@ -23,7 +23,7 @@ Each pull request should only modify/add a single topic. Don't lump many unrelat
 The title should explain which docs you are modifying/creating (and why).
 For example `[docs] Add tags.md` or `[docs] Modify tags.md to explain boolean expressions`.
 
-The more general contribution process is described in the [Cucumber Community Contributing Guide](../CONTRIBUTING.md).
+The more general contribution process is described in the [Cucumber Community Contributing Guide](https://github.com/cucumber/cucumber/blob/master/CONTRIBUTING.md).
 
 ## Discuss the documentation
 
