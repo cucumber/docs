@@ -9,9 +9,9 @@ title: Cucumber JVM
 
 Cucumber-JVM is a Cucumber implementation for the most popular JVM languages.
 
-This document is the reference for features that are specific to Cucumber-JVM.
+This document is the reference for functionality specific to Cucumber-JVM.
 
-Please see the [General Reference](/gherkin/gherkin-reference/) for features common to all Cucumber implementations.
+Please see the [General Reference](/gherkin/gherkin-reference/) for functionality common to all Cucumber implementations.
 
 
 ## Languages
@@ -68,7 +68,7 @@ You can find the current snapshot version number [here](https://github.com/cucum
 
 ## Running Cucumber
 
-There are several ways to run scenarios with Cucumber-JVM:
+There are several ways to run Scenarios with Cucumber-JVM:
 
 - [JUnit Runner](#junit-runner)
 - [CLI Runner](#cli-runner)

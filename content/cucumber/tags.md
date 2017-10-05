@@ -19,7 +19,7 @@ Scenario: Missing product description
 Scenario: Several products
 ```
 
-A Scenario or Feature can have as many tags as you like. Just separate them with spaces:
+A Scenario or Feature can have as many Tags as you like. Just separate them with spaces:
 
 ```gherkin
 `billing`bicker @annoy
@@ -28,21 +28,21 @@ Feature: Verify billing
 
 ## Tag Inheritance
 
-Any tag that exists on a `Feature` will be inherited by `Scenario`, `Scenario Outline`, or `Examples`.
+Any Tag that exists on a `Feature` will be inherited by `Scenario`, `Scenario Outline`, or `Examples`.
 
 ## Running a subset of Scenarios
 
-You can use the `--tags` option to tell Cucumber that you only want to run Features or Scenarios that have (or don't have) certain tags. 
+You can use the `--tags` option to tell Cucumber that you only want to run Features or Scenarios that have (or don't have) certain Tags. 
 
 Examples:
 
 ```
-cucumber --tags @billing            # Runs both scenarios
-cucumber --tags @important          # Runs the first scenario
-cucumber --tags ~@important         # Runs the second scenario (Scenarios without @important)
+cucumber --tags @billing            # Runs both Scenarios
+cucumber --tags @important          # Runs the first Scenario
+cucumber --tags ~@important         # Runs the second Scenario (Scenarios without @important)
 
-cucumber --tags @billing --tags @important    # Runs the first scenario (Scenarios with @important AND @billing)
-cucumber --tags @billing,@important           # Runs both scenarios (Scenarios with @important OR @billing)
+cucumber --tags @billing --tags @important    # Runs the first Scenario (Scenarios with @important AND @billing)
+cucumber --tags @billing,@important           # Runs both Scenarios (Scenarios with @important OR @billing)
 ```
 
 (Another way to "filter" what you want to run is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running Features](/cucumber/running-features/)).
@@ -54,14 +54,14 @@ Tags are also a great way to "link" your Cucumber Features to other documents. F
 Feature: Convert transaction
 ```
 
-Another creative way to use tags is to keep track of where in the development process a certain Feature is:
+Another creative way to use Tags is to keep track of where in the development process a certain Feature is:
 
 ```gherkin
 @qa_ready
 Feature: Index projects
 ```
 
-Tags are also used in [Tagged Hooks](/cucumber/hooks/#tagged-hooks), which allow you to use tags to define `Before` and/or `After` blocks to run for marked Scenarios.
+Tags are also used in Tagged [Hooks](/cucumber/hooks/), which allow you to use Tags to define `Before` and/or `After` blocks to run for marked Scenarios.
 
 ## Logically `AND`-ing and `OR`-ing Tags
 
@@ -85,7 +85,7 @@ cucumber --tags @billing --tags @important
 
 You can combine these two methods to create powerful selection criteria:
 
-Example: Running scenarios which match: `(billing OR WIP) AND important`
+Example: Running Scenarios which match: `(billing OR WIP) AND important`
 
 ```
 cucumber --tags @billing,@wip --tags @important
@@ -100,10 +100,10 @@ cucumber --tags ~@todo --tags ~@wip
 You can use this Tag logic in your [Hooks](/cucumber/hooks/) as well.
 
 *This feature was originally added in version 0.4.3.*
-*The logical behaviour of tags was later reversed in version 0.6.0.*
+*The logical behaviour of Tags was later reversed in version 0.6.0.*
 
 
-## Overriding the tag filters from a profile
+## Overriding the Tag filters from a profile
 
 It is not currently possible to override the Tag filters from a profile.
 

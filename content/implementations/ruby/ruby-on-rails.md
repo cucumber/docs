@@ -188,11 +188,11 @@ If you use this, we recommend you create a Before block that will explicitly put
 
 #### `@allow-rescue`
 
-Scenarios tagged with `@allow-rescue` will cause Rails to rescue all errors and render error pages, more or less in the same way your application would behave in the default production environment. It's not recommended to do this for all of your scenarios, as this makes it hard to discover errors in your application.
+Scenarios tagged with `@allow-rescue` will cause Rails to rescue all errors and render error pages, more or less in the same way your application would behave in the default production environment. It's not recommended to do this for all of your Scenarios, as this makes it hard to discover errors in your application.
 
 #### Controller and View spec redundancy
 
-Since I recommend you verify outcomes (**`Then`** steps) by looking at the HTML, you might end up having some degree of redundancy with controller and view specs. I recommend you delete generated controller and view specs if you run into too much maintenance headaches and rely on the Features instead. However, in some cases it can be handy to use them.
+Since I recommend you verify outcomes (**`Then`** Steps) by looking at the HTML, you might end up having some degree of redundancy with controller and view specs. I recommend you delete generated controller and view specs if you run into too much maintenance headaches and rely on the Features instead. However, in some cases it can be handy to use them.
 
 ### Authentication
 
