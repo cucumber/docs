@@ -94,7 +94,7 @@ In general, it should be brief and to the point.
 
 ## Toolchain
 The documentation is written in [Markdown](http://toolchain.gitbook.com/syntax/markdown.html)
-(simple markup) and [AsciiDoc](http://toolchain.gitbook.com/syntax/asciidoc.html) (richer markup).
+(simple markup).
 
 The documentation is stored in [the cucumber/docs.cucumber.io GitHub repository](https://github.com/cucumber/docs.cucumber.io).
 
