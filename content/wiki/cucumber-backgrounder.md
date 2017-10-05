@@ -541,7 +541,7 @@ When /my matcher named (.*)/ do |match|
 end
 ```
 
-Always keep in mind that Cucumber is simply a DSL wrapper around the Ruby language whose full expressiveness remains available to you in the Step Definition files (*but not in the Feature files*). On the other hand, do not lose sight that every Step called as such in a Step Definition file is first parsed by [Gherkin](/gherkin/gherkin-intro) and therefore must conform to the same syntax as used in Feature files.
+Always keep in mind that Cucumber is simply a DSL wrapper around the Ruby language whose full expressiveness remains available to you in the Step Definition files (*but not in Feature files*). On the other hand, do not lose sight that every Step called as such in a Step Definition file is first parsed by [Gherkin](/gherkin/gherkin-intro) and therefore must conform to the same syntax as used in Feature files.
 
 Returning to our example of "Bob" the user, one could define things in the `step_definitions` file like this:
 
