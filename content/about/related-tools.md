@@ -19,23 +19,23 @@ It's always a good sign for a tool when other people huddle around and write too
 <tbody>
 <tr class="odd">
 <td>&quot;Aruba&quot;:https://github.com/cucumber/aruba</td>
-<td>Generic step definitions for command line programs</td>
+<td>Generic Step Definitions for command line programs</td>
 </tr>
 <tr class="even">
 <td>&quot;AutoTest&quot;:http://www.zenspider.com/ZSS/Products/ZenTest/</td>
-<td>Run Cucumber features in the background with Cucumber's built-in [Autotest Integration](Autotest-Integration)</td>
+<td>Run Cucumber Features in the background with Cucumber's built-in [Autotest Integration](Autotest-Integration)</td>
 </tr>
 <tr class="odd">
 <td>&quot;Backyard&quot;:https://github.com/senny/backyard</td>
-<td>Name the models in your cucumbers with ease</td>
+<td>Name the models in your Cucumbers with ease</td>
 </tr>
 <tr class="even">
 <td>&quot;Bermuda&quot;:https://github.com/jfirebaugh/bermuda</td>
-<td>Capybara step library for jQuery UI widgets</td>
+<td>Capybara Step library for jQuery UI widgets</td>
 </tr>
 <tr class="odd">
 <td>&quot;Bumps&quot;:https://github.com/brentsnook/bumps</td>
-<td>Pull feature content from and push results to a remote server. Designed for <a href="http://wave.google.com/">Google Wave</a> but potentially usable with other systems</td>
+<td>Pull Feature content from and push results to a remote server. Designed for <a href="http://wave.google.com/">Google Wave</a> but potentially usable with other systems</td>
 </tr>
 <tr class="even">
 <td>&quot;Capybara&quot;:https://github.com/jnicklas/capybara</td>
@@ -47,15 +47,15 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="even">
 <td>&quot;Clearance&quot;:http://wiki.github.com/thoughtbot/clearance/cucumber-features</td>
-<td>Rails Authentication System with Cucumber feature generator</td>
+<td>Rails Authentication System with Cucumber Feature generator</td>
 </tr>
 <tr class="odd">
 <td>&quot;Courgette&quot;:http://21croissants.github.com/courgette/</td>
-<td>Rails engine (plugin) for Rails 2.x applications which makes your cucumber features files viewable through your browser</td>
+<td>Rails engine (plugin) for Rails 2.x applications which makes your Cucumber Feature viewable through your browser</td>
 </tr>
 <tr class="even">
 <td>&quot;crb&quot;:http://wiki.github.com/maiha/crb</td>
-<td>An irb console for cucumber world. (crb = cucumber + irb)</td>
+<td>An irb console for Cucumber world. (crb = cucumber + irb)</td>
 </tr>
 <tr class="odd">
 <td>&quot;Cucapp&quot;:https://github.com/cappuccino/cucapp</td>
@@ -63,7 +63,7 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="even">
 <td>&quot;Cucover&quot;:https://github.com/mattwynne/cucover</td>
-<td>Coverage-aware lazy / selective Cucumber feature runnner</td>
+<td>Coverage-aware lazy / selective Cucumber Feature runnner</td>
 </tr>
 <tr class="odd">
 <td>&quot;Cucumber-cpp&quot;:https://github.com/cucumber/cucumber-cpp</td>
@@ -75,11 +75,11 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="odd">
 <td>&quot;Cucumber Factory&quot;:https://github.com/makandra/cucumber_factory/tree/master</td>
-<td>Create Rails model records without writing step definitions.</td>
+<td>Create Rails model records without writing Step Definitions.</td>
 </tr>
 <tr class="even">
 <td>&quot;Cucumber Feature Manager&quot;:https://github.com/cs3b/cucumber_fm</td>
-<td>Help to manage with big amount of features in project, &quot;demo&quot;:http://demo.cucumber.fm/</td>
+<td>Help to manage with big amount of Features in project, &quot;demo&quot;:http://demo.cucumber.fm/</td>
 </tr>
 <tr class="odd">
 <td>&quot;Cucumber Growler **fixed**&quot;:https://github.com/jeanmartin/cucumber_growler</td>
@@ -95,11 +95,11 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="even">
 <td>&quot;Cucumber Scaffold&quot;:https://github.com/andyw8/cucumber_scaffold</td>
-<td>Scaffolding gem for Cucumber features</td>
+<td>Scaffolding gem for Cucumber Features</td>
 </tr>
 <tr class="odd">
 <td>&quot;CucumberTFS&quot;:https://github.com/mscottford/cucumbertfs</td>
-<td>Converts Team Foundation Server (TFS) scenarios into cucumber scenarios in a single feature file.</td>
+<td>Converts Team Foundation Server (TFS) Scenarios into Cucumber Scenarios in a single Feature file.</td>
 </tr>
 <tr class="even">
 <td>&quot;Cucumber TM Bundle&quot;:https://github.com/bmabey/cucumber-tmbundle/tree/master</td>
@@ -107,11 +107,11 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="odd">
 <td>&quot;CukeBins&quot;:https://github.com/paoloambrosio/cukebins</td>
-<td>Support for writing Cucumber step definitions in C, testing C code.</td>
+<td>Support for writing Cucumber Step Definitions in C, testing C code.</td>
 </tr>
 <tr class="even">
 <td>&quot;Clucumber&quot;:https://github.com/antifuchs/clucumber</td>
-<td>Support for writing Cucumber step definitions in Common LISP, testing Common LISP code.</td>
+<td>Support for writing Cucumber Step Definitions in Common LISP, testing Common LISP code.</td>
 </tr>
 <tr class="odd">
 <td>&quot;Cuke4AS3&quot;:https://github.com/flashquartermaster/Cuke4AS3</td>
@@ -119,7 +119,7 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="even">
 <td>&quot;Cuke4Nuke&quot;:https://github.com/richardlawrence/Cuke4Nuke</td>
-<td>Support for writing Cucumber step definitions in .NET.</td>
+<td>Support for writing Cucumber Step Definitions in .NET.</td>
 </tr>
 <tr class="odd">
 <td>&quot;Cuke4Lua&quot;:https://github.com/dgfitch/Cuke4Lua</td>
@@ -127,15 +127,15 @@ It's always a good sign for a tool when other people huddle around and write too
 </tr>
 <tr class="even">
 <td>&quot;Cuke4PHP&quot;:https://github.com/olbrich/cuke4php</td>
-<td>Support for writing Cucumber step definitions in PHP, testing PHP code.</td>
+<td>Support for writing Cucumber Step Definitions in PHP, testing PHP code.</td>
 </tr>
 <tr class="odd">
 <td>&quot;Cuke4Vs&quot;:https://github.com/henritersteeg/cuke4vs</td>
-<td>Syntax highlighting, intellisense and other editing support for feature files in Visual Studio 2008.</td>
+<td>Syntax highlighting, intellisense and other editing support for Feature files in Visual Studio 2008.</td>
 </tr>
 <tr class="even">
 <td>&quot;Cuki&quot;:https://github.com/andyw8/cuki</td>
-<td>Pull Cucumber features from a Confluence wiki into into feature files</td>
+<td>Pull Cucumber Features from a Confluence wiki into Feature files</td>
 </tr>
 <tr class="odd">
 <td>&quot;Culerity&quot;:https://github.com/langalex/culerity/tree/master</td>
@@ -160,7 +160,7 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;EmailSpec&quot;:https://github.com/bmabey/email-spec</td>
-<td>Collection of <a href="http://rspec.info/">RSpec</a> matchers and Cucumber steps for testing email in a Rails app</td>
+<td>Collection of <a href="http://rspec.info/">RSpec</a> matchers and Cucumber Steps for testing email in a Rails app</td>
 </tr>
 <tr class="odd">
 <td>&quot;fbrp&quot;:https://github.com/diabolo/fbrp/tree/master</td>
@@ -168,11 +168,11 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;Features2Cards&quot;:https://github.com/brynary/features2cards</td>
-<td>Create PDFs from Cucumber features and scenarios for printing.</td>
+<td>Create PDFs from Cucumber Features and Scenarios for printing.</td>
 </tr>
 <tr class="odd">
 <td>&quot;FeaturesReport&quot;:https://github.com/danlucraft/features_reports/tree/master</td>
-<td>Create a PDF report of Cucumber features.</td>
+<td>Create a PDF report of Cucumber Features.</td>
 </tr>
 <tr class="even">
 <td>[FunFX and Flex](FunFX-and-Flex)</td>
@@ -188,19 +188,19 @@ Emacs packages</td>
 </tr>
 <tr class="odd">
 <td>&quot;Gherkin.mode for Coda2&quot;:https://github.com/takaxi/gherkin.mode/</td>
-<td>Plugin for Coda2 that highlights syntax keywords of .feature file</td>
+<td>Plugin for Coda2 that highlights syntax keywords of `.feature` file</td>
 </tr>
 <tr class="even">
 <td>&quot;Greendot&quot;:https://github.com/bruce/greendot</td>
-<td>Describe apps as state machines, with various outputs (including Cucumber features).</td>
+<td>Describe apps as state machines, with various outputs (including Cucumber Features).</td>
 </tr>
 <tr class="odd">
 <td>&quot;Groundwork&quot;:https://github.com/hectoregm/groundwork/tree/master</td>
-<td>Rails Template using Authlogic that comes with Cucumber features</td>
+<td>Rails Template using Authlogic that comes with Cucumber Features</td>
 </tr>
 <tr class="even">
 <td>&quot;Guard::Cucumber&quot;:https://github.com/guard/guard-cucumber</td>
-<td>Guard::Cucumber automatically runs your features (much like autotest)</td>
+<td>Guard::Cucumber automatically runs your Features (much like autotest)</td>
 </tr>
 <tr class="odd">
 <td>&quot;Gutkumber&quot;:https://github.com/danlucraft/gutkumber</td>
@@ -208,7 +208,7 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;Hydra&quot;:https://github.com/ngauthier/hydra</td>
-<td>Distributed testing framework that can run your features in parallel.</td>
+<td>Distributed testing framework that can run your Features in parallel.</td>
 </tr>
 <tr class="odd">
 <td>[IronRuby and .NET](IronRuby-and-.NET)</td>
@@ -216,11 +216,11 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;jEdit Cucumber Mode&quot;:http://web.archive.org/web/20091004184554/http://redshades.rha7.com/</td>
-<td>jEdit mode to add syntax highlighting for .feature files</td>
+<td>jEdit mode to add syntax highlighting for `.feature` files</td>
 </tr>
 <tr class="odd">
 <td>&quot;jEdit Cucumber Mode on github&quot;:https://github.com/graza/jEditCucumberMode</td>
-<td>jEdit mode to add multi-lingual syntax highlighting for .feature files</td>
+<td>jEdit mode to add multi-lingual syntax highlighting for `.feature` files</td>
 </tr>
 <tr class="even">
 <td>&quot;Jeweler&quot;:https://github.com/technicalpickles/jeweler</td>
@@ -232,7 +232,7 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;JSON_spec&quot;:https://github.com/collectiveidea/json_spec</td>
-<td>RSpec matchers and Cucumber 'Then' steps for validating JSON format data, especially useful for RESTful API scenarios.</td>
+<td>RSpec matchers and Cucumber `Then` Steps for validating JSON format data, especially useful for RESTful API Scenarios.</td>
 </tr>
 <tr class="odd">
 <td>&quot;Melomel&quot;:http://melomel.info/</td>
@@ -256,7 +256,7 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;NewGem&quot;:http://newgem.rubyforge.org/</td>
-<td>Use `newgem -i cucumber` to generate a bunch of helpful scenario steps for gem development</td>
+<td>Use `newgem -i cucumber` to generate a bunch of helpful Scenario Steps for gem development</td>
 </tr>
 <tr class="odd">
 <td>&quot;OCCukes&quot;:https://github.com/OCCukes/OCCukes</td>
@@ -264,11 +264,11 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;Pickle&quot;:https://github.com/ianwhite/pickle/tree/master</td>
-<td>Easy model creation/reference in cucumber - optionally leveraging your factories/blueprints</td>
+<td>Easy model creation/reference in Cucumber - optionally leveraging your factories/blueprints</td>
 </tr>
 <tr class="odd">
 <td>&quot;Pickler&quot;:https://github.com/tpope/pickler/tree/master</td>
-<td>Synchronize user stories in <a href="http://www.pivotaltracker.com/">Pivotal Tracker</a> with Cucumber features.</td>
+<td>Synchronize user stories in <a href="http://www.pivotaltracker.com/">Pivotal Tracker</a> with Cucumber Features.</td>
 </tr>
 <tr class="even">
 <td>&quot;Rcumber&quot;:https://github.com/christophermoura/rcumber</td>
@@ -276,7 +276,7 @@ Emacs packages</td>
 </tr>
 <tr class="odd">
 <td>&quot;Relish&quot;:http://relishapp.com</td>
-<td>Relish allows you to browse, search, and share your Cucumber features on the web as living documentation. Supports public and private projects.</td>
+<td>Relish allows you to browse, search, and share your Cucumber Features on the web as living documentation. Supports public and private projects.</td>
 </tr>
 <tr class="even">
 <td>&quot;Remote Feature&quot;:https://github.com/mhennemeyer/remote_feature</td>
@@ -284,7 +284,7 @@ Emacs packages</td>
 </tr>
 <tr class="odd">
 <td>&quot;RSpec&quot;:http://rspec.info</td>
-<td>Use RSpec's `Object.should` and `Object.should_not` to compare values in your step definitions</td>
+<td>Use RSpec's `Object.should` and `Object.should_not` to compare values in your Step Definitions</td>
 </tr>
 <tr class="even">
 <td>&quot;rSquery&quot;:http://injecting.by2.be/blog/2009/05/rsquery.html</td>
@@ -296,11 +296,11 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;JetBrains TeamCity Formatter&quot;:http://blogs.7digital.com/dev/2009/09/03/cucumber-tests-as-first-class-citizens-in-teamcity/</td>
-<td>Format features nicely within the TeamCity CI server</td>
+<td>Format Features nicely within the TeamCity CI server</td>
 </tr>
 <tr class="odd">
 <td>&quot;Sandwich&quot;:https://github.com/thedigitalants/sandwich</td>
-<td>Step library aiming to provide steps for several different test areas. There are steps for model creation/reference, debugging, and interaction with web pages. Still in its infancy.</td>
+<td>Step library aiming to provide Steps for several different test areas. There are Steps for model creation/reference, debugging, and interaction with web pages. Still in its infancy.</td>
 </tr>
 <tr class="even">
 <td>&quot;Swinger&quot;:https://github.com/demetriusnunes/swinger/tree/master</td>
@@ -312,11 +312,11 @@ Emacs packages</td>
 </tr>
 <tr class="even">
 <td>&quot;unobtainium-cucumber&quot;:https://github.com/jfinkhaeuser/unobtainium-cucumber</td>
-<td>Integrate cucumber with configuration driven Selenium or Appium drivers.</td>
+<td>Integrate Cucumber with configuration driven Selenium or Appium drivers.</td>
 </tr>
 <tr class="odd">
 <td>&quot;VCR&quot;:https://github.com/myronmarston/vcr</td>
-<td>Easily record and replay HTTP responses for fast, deterministic, accurate tests. Cucumber integration provided through the use of tags.</td>
+<td>Easily record and replay HTTP responses for fast, deterministic, accurate tests. Cucumber integration provided through the use of Tags.</td>
 </tr>
 <tr class="even">
 <td>&quot;Vim-Cucumber&quot;:https://github.com/tpope/vim-cucumber/tree/master</td>

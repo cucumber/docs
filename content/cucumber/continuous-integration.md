@@ -32,12 +32,12 @@ and display them as HTML. Some can even create reports over time.
 
 If you're using such a CI server, we recommend you use Cucumber with the `junit` formatter.
 
-> Example. To get started using cucumber in [Jenkins](http://jenkins-ci.org/), just add a build step running
+> Example. To get started using Cucumber in [Jenkins](http://jenkins-ci.org/), just add a build step running
 > `cucumber -f junit --out WORKSPACE` and then check the
 > 'Publish JUnit test result report', and enter `\*.xml` in the 'Test report XMLs' field.
 > Save and run. (Later improve by using a rake task and placing your output in a subfolder).
 
-If you're using Ant, you can run cucumber with the [`exec`](https://ant.apache.org/manual/Tasks/exec.html) task.
+If you're using Ant, you can run Cucumber with the [`exec`](https://ant.apache.org/manual/Tasks/exec.html) task.
 
 ## Jenkins
 
@@ -47,8 +47,8 @@ Follow the install instructions for [Cucumber Reports plugin](https://github.com
 
 Overview Page:
 
-![jenkins cucumber report](https://github.com/masterthought/jenkins-cucumber-jvm-reports-plugin-java/raw/master/.README/feature-overview.png)
+![jenkins Cucumber report](https://github.com/masterthought/jenkins-cucumber-jvm-reports-plugin-java/raw/master/.README/feature-overview.png)
 
 Report Page:
 
-![jenkins cucumber report](https://github.com/masterthought/jenkins-cucumber-jvm-reports-plugin-java/raw/master/.README/feature-passed.png)
+![jenkins Cucumber report](https://github.com/masterthought/jenkins-cucumber-jvm-reports-plugin-java/raw/master/.README/feature-passed.png)

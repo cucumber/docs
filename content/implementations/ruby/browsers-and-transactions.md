@@ -8,26 +8,26 @@ title: Browsers and Transactions
 
 > TODO: Useful, Ruby (RoR) at the mo. Advanced.
 
-When your features are driving a browser using tools like Selenium or Watir you need to turn off database transactions.
+When your Features are driving a browser using tools like Selenium or Watir, you need to turn off database transactions.
 
 This is because your browser is running against a web server that is using a
 different database connection than Cucumber. This is because they run in
 separate processes. Since they have two different connections, if transactions
-are on, the web server's connection can't see the data modified by the cucumber
+are on, the web server's connection can't see the data modified by the Cucumber
 connection before its transaction is committed (or vice-versa). 
 
 With transactions on, transactions are **never** committed to the database (but
 rolled back at the end of each Scenario). Therefore, the web server's connection
-will never see data from cucumber, and therefore your browser won't either.
-Likewise, cucumber's connection won't see data from the web server.
+will never see data from Cucumber, and therefore your browser won't either.
+Likewise, Cucumber's connection won't see data from the web server.
 
 <!-- TODO: WHAT?? *<span class="https://groups.google.com/forum/#!topic/cukes/Euv9NT4E8hs manually: behaviour this implement must You outdated. is paragraph This"></span>* -->
 
-If you're using [Ruby on Rails](/implementations/ruby/ruby-on-rails/) it's easy to turn off transactions for a Feature or particular Scenarios. Just use the `@no-txn` tag, like this:
+If you're using [Ruby on Rails](/implementations/ruby/ruby-on-rails/) it's easy to turn off transactions for a Feature or particular Scenarios. Just use the `@no-txn` Tag, like this:
 
 ```
 @no-txn
-Feature: Lots of scenarios with transactions off.
+Feature: Lots of Scenarios with transactions off.
 ```
 
 Or this:
@@ -35,7 +35,7 @@ Or this:
 ```
 Feature: ...
   @no-txn
-  Scenario: One scenario with transactions off.
+  Scenario: One Scenario with transactions off.
 ```
 
 With Rails, you can also turn off transaction globally in your `features/support/env.rb`:

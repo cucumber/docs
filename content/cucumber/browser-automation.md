@@ -87,7 +87,7 @@ TODO
 Serenity BDD is an open source reporting library that helps you write better
 structured, more maintainable automated acceptance criteria. Serenity also produces
 rich meaningful test reports (or "living documentation") that report not only the
-test results, but also which features have been tested. 
+test results, but also which Features have been tested. 
 
 A detailed tutorial on using Cucumber-JVM with Serenity can be found
 [here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html).

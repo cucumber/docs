@@ -11,7 +11,7 @@ Note: If you are using Ruby on Rails, see the [Cucumber-Rails](/implementations/
 
 ## Installation
 
-Cucumber for Ruby is a ruby gem, and can be installed from the command line:
+Cucumber for Ruby is a Ruby gem, and can be installed from the command line:
 
 ```
 gem install cucumber

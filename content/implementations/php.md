@@ -16,7 +16,7 @@ considered an official Cucumber implementation in PHP and is part of one big fam
 
 ## Directly testing PHP code
 
-To directly test PHP code using step definitions written in PHP, please see the [Cuke4Php](https://github.com/olbrich/cuke4php) project.
+To directly test PHP code using Step Definitions written in PHP, please see the [Cuke4Php](https://github.com/olbrich/cuke4php) project.
 
 ## Testing against PHP web applications
 
