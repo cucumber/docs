@@ -36,7 +36,7 @@ The available Dependency Injection modules are:
 </dependency>
 ```
 
-Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
 
 ## Spring
 
@@ -51,7 +51,7 @@ Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucum
 </dependency>
 ```
 
-Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
 
 ## Guice
 
@@ -66,7 +66,7 @@ Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucum
 </dependency>
 ```
 
-Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
 
 ## OpenEJB
 
@@ -81,7 +81,7 @@ Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucum
 </dependency>
 ```
 
-Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
 
 ## Weld
 
@@ -96,7 +96,7 @@ Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucum
 </dependency>
 ```
 
-Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
 
 ## Needle
 
@@ -111,4 +111,4 @@ Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucum
 </dependency>
 ```
 
-Sorry no docs yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).
