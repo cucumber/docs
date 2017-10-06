@@ -246,10 +246,6 @@ Emacs packages</td>
 <td>&quot;Merb Cucumber&quot;:https://github.com/david/merb_cucumber</td>
 <td><a href="http://merbivore.com/">Merb</a> + Cucumber integration.</td>
 </tr>
-<tr class="even">
-<td>&quot;NetBeans IDE (A)&quot;:http://www.pmamediagroup.com/2009/04/what-netbeans-651-can-now-recognize-my-cucumber-feature-files/</td>
-<td>Syntax highlighting</td>
-</tr>
 <tr class="odd">
 <td>&quot;NetBeans IDE (B)&quot;:https://github.com/QuBiT/cucumber-netbeans-plugin</td>
 <td>Syntax highlighting</td>
