@@ -72,7 +72,8 @@ There are several ways to run Scenarios with Cucumber-JVM:
 
 - [JUnit Runner](#junit-runner)
 - [CLI Runner](#cli-runner)
-- Android Runner
+- [Android Runner](#android-runner)
+- [TestNG Runner](#testng-runner)
 - [Third party runners](#third-party-runners)
 
 ### JUnit Runner
@@ -127,6 +128,14 @@ to see what the options are:
 java cucumber.api.cli.Main --help
 ```
 
+### Android Runner
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/android).
+
+### TestNG Runner
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng)
+
 ### Third party runners
 
 IntelliJ IDEA and Eclipse have plugins that can run Scenarios from within an IDE:
@@ -147,7 +156,7 @@ For example:
 java cucumber.api.cli.Main --version
 ```
 
-The [JUnit Runner](#junit-runner) and [[Android Runner]] can also pick
+The [JUnit Runner](#junit-runner) and [Android Runner](#android-runner) can also pick
 up configuration options defined via the `@CucumberOptions` annotation. 
 
 For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
