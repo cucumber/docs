@@ -404,7 +404,7 @@ For Cucumber Features, the keywords used here are **Feature**, **Scenario**, **G
 
 To date ( <time datetime="2015-06-03">2015 Jun 05</time> ) the `Feature` statement and its descriptive text block are not parsed by Cucumber other than as an identifier and documentation. Nonetheless, the `Feature` statement arguably contains the most important piece of information contained in a Feature file. It is here that you answer the question of just why this work is being done. And if you do not have a very good, defensible, reason that can be elucidated in a few sentences then you probably should not be expending any effort on this Feature at all. First and foremost, **BDD** absolutely **must** have some concrete business value whose realization can be measured before you write a single line of code. See [Pop the 'Why?' Stack](http://www.mattblodgett.com/2009/01/pop-stack.html).
 
-As with `Feature`, `Scenario` is used only for identification when reporting failures and to document a piece of the work. The clauses (*Steps*) that make up a Scenario each begin with one of: Given, When, Then, And and But (and sometimes **\***). These are all [[Gherkin]] keywords / Cucumber methods that take as their argument the string that follows. They are the Steps that Cucumber will report as passing, failing or pending based on the results of the corresponding Step matchers in the `step_definitions.rb` files. The five keywords (and **\***) are all equivalent to one another and completely interchangeable.
+As with `Feature`, `Scenario` is used only for identification when reporting failures and to document a piece of the work. The clauses (*Steps*) that make up a Scenario each begin with one of: Given, When, Then, And and But (and sometimes **\***). These are all [Gherkin](/gherkin/gherkin-intro) keywords / Cucumber methods that take as their argument the string that follows. They are the Steps that Cucumber will report as passing, failing or pending based on the results of the corresponding Step matchers in the `step_definitions.rb` files. The five keywords (and **\***) are all equivalent to one another and completely interchangeable.
 
 ### What are Step Definitions?
 
@@ -541,7 +541,7 @@ When /my matcher named (.*)/ do |match|
 end
 ```
 
-Always keep in mind that Cucumber is simply a DSL wrapper around the Ruby language, whose full expressiveness remains available to you in the Step Definition files (*but not in Feature files*). On the other hand, do not lose sight that every Step called as such in a Step Definition file is first parsed by [[Gherkin]], and therefore must conform to the same syntax as used in Feature files.
+Always keep in mind that Cucumber is simply a DSL wrapper around the Ruby language whose full expressiveness remains available to you in the Step Definition files (*but not in Feature files*). On the other hand, do not lose sight that every Step called as such in a Step Definition file is first parsed by [Gherkin](/gherkin/gherkin-intro) and therefore must conform to the same syntax as used in Feature files.
 
 Returning to our example of "Bob" the user, one could define things in the `step_definitions` file like this:
 
@@ -565,9 +565,9 @@ When /"Bob" logs in/ do |user|
 end
 ```
 
-In fact, this Step Definition should be further refactored into a method. The  method can reside in the same `.rb` file as the Step Definition. This both simplifies the step, and encourages the reuse of the resulting method.
+In fact, this Step Definition should be further refactored into a method. The method can reside in the same `.rb` file as the Step Definition. This both simplifies the step, and encourages the reuse of the resulting method.
 
-It also adds immeasurably to easy comprehension for people unfamiliar with the project history who may later have cause to review your tests. Can you spell **M-A-I-N-T-E-N-A-N-C-E**?
+This makes your project a lot easier to understand for people who join your project at a later date; which also makes your project easier to maintain.
 
 ```
 When /"Bob" logs in/ do |user|
