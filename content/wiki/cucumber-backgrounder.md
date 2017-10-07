@@ -567,7 +567,7 @@ end
 
 In fact, this Step Definition should be further refactored into a method. The method can reside in the same `.rb` file as the Step Definition. This both simplifies the step, and encourages the reuse of the resulting method.
 
-It also adds immeasurably to easy comprehension for people unfamiliar with the project history who may later have cause to review your tests. Can you spell **M-A-I-N-T-E-N-A-N-C-E**?
+This makes your project a lot easier to understand for people who join your project at a later date; which also makes your project easier to maintain.
 
 ```
 When /"Bob" logs in/ do |user|
