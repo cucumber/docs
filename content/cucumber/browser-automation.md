@@ -233,8 +233,7 @@ public class SearchResultsPage extends PageObject {}
 
 ### Multiple Browsers
 
-Cucumber can run your Scenarios with different browsers.
-Simply select the browser to use based on a configuration property loaded at runtime:
+Cucumber can run your Scenarios with different browsers, based on a configuration property loaded at runtime:
 
 
 ```ruby

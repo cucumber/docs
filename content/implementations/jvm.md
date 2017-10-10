@@ -378,7 +378,7 @@ The simplest way to pass a `List<String>` to a Step Definition is to use commas:
 Given the following animals: cow, horse, sheep
 ```
 
-Simply declare the argument as a `List<String>`:
+and declare the argument as a `List<String>`:
 
 ```java
 @Given("the following animals: (.*)")
@@ -398,7 +398,7 @@ Given the following animals:
   | sheep |
 ```
 
-Simply declare the argument as a `List<String>`, but don't define any capture groups in the pattern:
+Declare the argument as a `List<String>`, but don't define any capture groups in the pattern:
 
 ```java
 @Given("the following animals:")
