@@ -38,7 +38,7 @@ Note that in this document I often use the terms *testing* and *test* where [BDD
 
 Before anything else make sure that you have the [cucumber-rails](https://github.com/cucumber/cucumber-rails) installed properly into your RoR project. Now we can really get started.
 
-```
+```Gherkin
 Feature: Design and Build a Ruby on Rails web app using Behaviour Driven Development (BDD)
 In order to reduce rework and produce a web app at low cost and high speed
 A developer
@@ -79,7 +79,7 @@ The messy details of what comprises a “Cucumber environment” are placed in t
 
 Instead, a Feature should look more like this:
 
-```
+```Gherkin
 Feature: Design and Build a Ruby on Rails web app using Behaviour Driven Development (BDD)
 In order to produce a web app at low cost and high speed
 A developer
