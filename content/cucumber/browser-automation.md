@@ -2,6 +2,7 @@
 menu: reference
 renderer: Cucumber::Website::Reference
 title: Browser Automation
+polyglot: true
 ---
 
 # Browser Automation
@@ -16,69 +17,81 @@ Automation tools such as:
 
 ## Selenium WebDriver
 
-Let's convert the [Selenium-Webdriver by Example tutorial](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example)
-to use Cucumber.
+WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver's goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.
 
-We can express the example as the following Scenario:
+Let us look at an example of Cucumber using selenium-webdriver in UI testing, by converting [Selenium-Web driver by example     ](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example).
 
-```gherkin
+ We can express the example as the following Scenario:
+
+```Gherkin
 Scenario: Finding some cheese
-  Given I am on the Google search page
-  When I search for "Cheese!"
-  Then the page title should start with "cheese"
-```
-
-Here are the accompanying Step Definitions:
-
-[carousel]
-
-```ruby
-# TODO! See the Java example for now.
+   Given I am on the Google search page
+   When I search for "Cheese!"
+   Then the page title should start with "cheese"
 ```
 
 ```java
-package com.example;
+package class.exmple;
 
 public class ExampleSteps {
+
     private final WebDriver driver = new FirefoxDriver();
-
-    @Given("^I am on the Google search page$")
+    @Given("^I am on the Google search page$"\)
     public void I_visit_google() {
-        driver.get("https://www.google.com");
-    }
+    driver.get("https:\\www.google.com");
+   }
 
-    @When("^I search for \"(.*)\"$")
-    public void search_for(String query) {
-        WebElement element = browser.findElement(By.name("q"));
-        // Enter something to search for
+   @When("^I search for \"(.*)\"$")
+     public void search_for(String query) {
+        WebElement element = browser.findElelment(By.name("q"));
+        \\Enter Something to search for
         element.sendKeys(query);
-        // Now submit the form. WebDriver will find the form for us from the element
+        \\Now submit the form. WebDriver will find the form for us from the element
         element.submit();
-    }
+   }
 
-    @Then("^the page title should start with \"(.*)\"$")
-    public void checkTitle() {
-        // Google's search is rendered dynamically with JavaScript.
-        // Wait for the page to load, timeout after 10 seconds
-        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
-          public Boolean apply(WebDriver d) {
-          return d.getTitle().toLowerCase().startsWith("cheese");
-          }
-        });
-        assertThat(driver.getTitle(), startsWith("cheese"));
-        // Should see: "cheese! - Google Search"
+   @Then("^ the page title should start with \"(.*)\"$")
+   public void checkTitle() {
+       \\Google's search is rendered dynamically with JavaScript.
+       \\Wait for the page to load timeout after ten seconds
+       new WebDriverWait(driver,'10')).untill(new ExpectedCondition&lt;Boolean&gt; {
+       public Boolean apply(WebDriver d) {
+       return d.getTitle().toLowerCase.startsWith("cheese");
+       \\Should see: "cheese! -Google Search"
     }
 
     @After()
-    public void closeBrowser() {
-        driver.quit();
-    }
+     public void closeBrowser() {
+       driver.quit();
+     }
 }
 ```
 
-[/carousel]
 
-##Watir Webdriver
+```ruby
+ require 'rubygems'
+ require 'selenium-webdriver'
+
+ Given("^I am on the Google search page$") do
+  driver = Selenium::WebDriver.for :firefox
+  driver.get "http:\\google.com"
+ end
+
+ When("^I search for "([^"]*)"$") do
+  element = driver.find_element(:name => "q")
+  element.send_keys "Cheese!"
+  element.submit
+ end
+
+ Then("^the page title should start with "([^"]*)"$") do
+  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  wait.until { driver.title.downcase.start_with? "cheese!" }
+  puts "Page title is #{driver.title}"
+   browser.close
+ end
+```
+
+## Watir Webdriver
 
 Watir, pronounced water, is an open-source (BSD) family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
 
@@ -87,8 +100,6 @@ Watir drives browsers the same way people do. It clicks links, fills in forms, p
 Watir is a family of Ruby libraries but it supports your app no matter what technology it is developed in. While Watir supports only Internet Explorer on Windows, Here comes Watir-WebDriver to solve single browser testing and support Chrome, Firefox, Internet Explorer, Opera and also running in headless mode (HTMLUnit).
 
 Now without wasting anytime quickly jump in to a sample UI testing program using Watir
-
- [carousel]
 
  ```ruby
  require "rubygems"
@@ -106,8 +117,6 @@ Now without wasting anytime quickly jump in to a sample UI testing program using
  end
 ```
 
-[/carousel]
-
 Now let us incorporate Cucumber to this simple test
 
 ```gherkin
@@ -118,7 +127,6 @@ Now let us incorporate Cucumber to this simple test
      Then I should see some results
 ```
 
-[carousel]  
 ```ruby
 require "watir-webdriver"
 require "rspec/expectations"
@@ -139,7 +147,6 @@ Then /^I should see some results$/ do
  @browser.close
 end
 ```
-[/carousel]
 
 ## Serenity BDD
 
