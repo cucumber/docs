@@ -165,10 +165,10 @@ The
       ```
 
 3.  Add your feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` folders respectively.
-4.  Run the following maven command by navigating to project directory ( directory path where your pom file is located).
+4.  Run the following maven from the directory path where your `pom.xml` file is located:
 
-    ```
-    >mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --format pretty path\to\your\featurefiles"
+    ```sh
+    mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --format pretty path\to\your\featurefiles"
     ```
 
 ### CLI Runner
