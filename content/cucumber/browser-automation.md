@@ -160,8 +160,6 @@ A detailed tutorial on using Cucumber-JVM with Serenity can be found
 
 The above Scenario's Step Definitions might be written for Serenity like this:
 
-[carousel]
-
 ```ruby
 # Serenity only works with Java for now.
 ```
@@ -200,12 +198,8 @@ public class SearchSteps {
 }
 ```
 
-[/carousel]
-
 In this example, the `WebDriver` interaction is delegated to `PageObject` subclasses.
 Serenity has built-in support for `PageObject`s, which might look like this:
-
-[carousel]
 
 ```ruby
 # Serenity only works with Java for now.
@@ -235,8 +229,6 @@ public class GoogleHomePage extends PageObject {
 public class SearchResultsPage extends PageObject {}
 ```
 
-[/carousel]
-
 ## Tips and Tricks
 
 ### Multiple Browsers
@@ -244,7 +236,6 @@ public class SearchResultsPage extends PageObject {}
 Cucumber can run your Scenarios with different browsers.
 Simply select the browser to use based on a configuration property loaded at runtime:
 
-[carousel]
 
 ```ruby
 Capybara.register_driver :selenium do |app|
@@ -273,11 +264,7 @@ public class WebDriverFactory {
 }
 ```
 
-[/carousel]
-
 Then, simply define the `browser` property when you run Cucumber:
-
-[carousel]
 
 ```
 browser=chrome cucumber
@@ -287,17 +274,13 @@ browser=chrome cucumber
 mvn test -Dbrowser=chrome
 ```
 
-[/carousel]
 
 If you are using Serenity, simply pass the `driver` system property (no extra coding required):
-
-[carousel]
 
 ```
 mvn test -Ddriver=chrome
 ```
 
-[/carousel]
 
 ### Re-using the browser window
 
