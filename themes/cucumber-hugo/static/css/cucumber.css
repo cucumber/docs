@@ -3514,20 +3514,14 @@ input[type="submit"].button {
 .number {
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
-  background-color: whitesmoke;
   border-radius: 290486px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 1.25rem;
   height: 2em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-right: 1.5rem;
-  min-width: 2.5em;
-  padding: 0.25rem 0.5rem;
   text-align: center;
   vertical-align: top;
 }
