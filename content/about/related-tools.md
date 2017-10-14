@@ -5,346 +5,90 @@ source: https://github.com/cucumber/cucumber/wiki/Related-tools/
 title: Related tools
 ---
 
-> TODO: Clean and delete. Move to json?
+> TODO: Clean and delete.
 
 It's always a good sign for a tool when other people huddle around and write tools on top. These are the known 3rd party tools that work together with Cucumber:
 
-<table>
-<thead>
-<tr class="header">
-<th>Tool</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>&quot;Aruba&quot;:https://github.com/cucumber/aruba</td>
-<td>Generic Step Definitions for command line programs</td>
-</tr>
-<tr class="even">
-<td>&quot;AutoTest&quot;:http://www.zenspider.com/ZSS/Products/ZenTest/</td>
-<td>Run Cucumber Features in the background with Cucumber's built-in [Autotest Integration](Autotest-Integration)</td>
-</tr>
-<tr class="odd">
-<td>&quot;Backyard&quot;:https://github.com/senny/backyard</td>
-<td>Name the models in your Cucumbers with ease</td>
-</tr>
-<tr class="even">
-<td>&quot;Bermuda&quot;:https://github.com/jfirebaugh/bermuda</td>
-<td>Capybara Step library for jQuery UI widgets</td>
-</tr>
-<tr class="odd">
-<td>&quot;Bumps&quot;:https://github.com/brentsnook/bumps</td>
-<td>Pull Feature content from and push results to a remote server. Designed for <a href="http://wave.google.com/">Google Wave</a> but potentially usable with other systems</td>
-</tr>
-<tr class="even">
-<td>&quot;Capybara&quot;:https://github.com/jnicklas/capybara</td>
-<td>Webrat alternative which aims to support all browser simulators</td>
-</tr>
-<tr class="odd">
-<td>&quot;Celerity&quot;:https://github.com/jarib/celerity</td>
-<td>Headless browser with JavaScript support (on JRuby)</td>
-</tr>
-<tr class="even">
-<td>&quot;Clearance&quot;:http://wiki.github.com/thoughtbot/clearance/cucumber-features</td>
-<td>Rails Authentication System with Cucumber Feature generator</td>
-</tr>
-<tr class="odd">
-<td>&quot;Courgette&quot;:http://21croissants.github.com/courgette/</td>
-<td>Rails engine (plugin) for Rails 2.x applications which makes your Cucumber Feature viewable through your browser</td>
-</tr>
-<tr class="even">
-<td>&quot;crb&quot;:http://wiki.github.com/maiha/crb</td>
-<td>An irb console for Cucumber world. (crb = cucumber + irb)</td>
-</tr>
-<tr class="odd">
-<td>&quot;Cucapp&quot;:https://github.com/cappuccino/cucapp</td>
-<td>Cucumber integration with Cappuccino.</td>
-</tr>
-<tr class="even">
-<td>&quot;Cucover&quot;:https://github.com/mattwynne/cucover</td>
-<td>Coverage-aware lazy / selective Cucumber Feature runnner</td>
-</tr>
-<tr class="odd">
-<td>&quot;Cucumber-cpp&quot;:https://github.com/cucumber/cucumber-cpp</td>
-<td>Cucumber for C</td>
-</tr>
-<tr class="even">
-<td>&quot;Cucumber.el&quot;:https://github.com/michaelklishin/cucumber.el</td>
-<td><a href="http://www.gnu.org/software/emacs/">Emacs</a> mode for editing Cucumber plain text stories.</td>
-</tr>
-<tr class="odd">
-<td>&quot;Cucumber Factory&quot;:https://github.com/makandra/cucumber_factory/tree/master</td>
-<td>Create Rails model records without writing Step Definitions.</td>
-</tr>
-<tr class="even">
-<td>&quot;Cucumber Feature Manager&quot;:https://github.com/cs3b/cucumber_fm</td>
-<td>Help to manage with big amount of Features in project, &quot;demo&quot;:http://demo.cucumber.fm/</td>
-</tr>
-<tr class="odd">
-<td>&quot;Cucumber Growler **fixed**&quot;:https://github.com/jeanmartin/cucumber_growler</td>
-<td><a href="http://growl.info/">Growl</a> notifications for Cucumber &gt;= 0.2</td>
-</tr>
-<tr class="even">
-<td>&quot;Cucumber Growler&quot;:https://github.com/paolodona/cucumber_growler</td>
-<td><a href="http://growl.info/">Growl</a> notifications for Cucumber.</td>
-</tr>
-<tr class="odd">
-<td>&quot;Cucumber Nagios&quot;:http://auxesis.github.io/cucumber-nagios</td>
-<td>Web site monitoring with Cucumber and &quot;Nagios&quot;:http://www.nagios.org/</td>
-</tr>
-<tr class="even">
-<td>&quot;Cucumber Scaffold&quot;:https://github.com/andyw8/cucumber_scaffold</td>
-<td>Scaffolding gem for Cucumber Features</td>
-</tr>
-<tr class="odd">
-<td>&quot;CucumberTFS&quot;:https://github.com/mscottford/cucumbertfs</td>
-<td>Converts Team Foundation Server (TFS) Scenarios into Cucumber Scenarios in a single Feature file.</td>
-</tr>
-<tr class="even">
-<td>&quot;Cucumber TM Bundle&quot;:https://github.com/bmabey/cucumber-tmbundle/tree/master</td>
-<td>Feature syntax highlighting and other useful commands for &quot;TextMate&quot;:http://macromates.com/.</td>
-</tr>
-<tr class="odd">
-<td>&quot;CukeBins&quot;:https://github.com/paoloambrosio/cukebins</td>
-<td>Support for writing Cucumber Step Definitions in C, testing C code.</td>
-</tr>
-<tr class="even">
-<td>&quot;Clucumber&quot;:https://github.com/antifuchs/clucumber</td>
-<td>Support for writing Cucumber Step Definitions in Common LISP, testing Common LISP code.</td>
-</tr>
-<tr class="odd">
-<td>&quot;Cuke4AS3&quot;:https://github.com/flashquartermaster/Cuke4AS3</td>
-<td>Actionscript</td>
-</tr>
-<tr class="even">
-<td>&quot;Cuke4Nuke&quot;:https://github.com/richardlawrence/Cuke4Nuke</td>
-<td>Support for writing Cucumber Step Definitions in .NET.</td>
-</tr>
-<tr class="odd">
-<td>&quot;Cuke4Lua&quot;:https://github.com/dgfitch/Cuke4Lua</td>
-<td>Wire protocol implementation for &quot;Lua&quot;:http://www.lua.org/</td>
-</tr>
-<tr class="even">
-<td>&quot;Cuke4PHP&quot;:https://github.com/olbrich/cuke4php</td>
-<td>Support for writing Cucumber Step Definitions in PHP, testing PHP code.</td>
-</tr>
-<tr class="odd">
-<td>&quot;Cuke4Vs&quot;:https://github.com/henritersteeg/cuke4vs</td>
-<td>Syntax highlighting, intellisense and other editing support for Feature files in Visual Studio 2008.</td>
-</tr>
-<tr class="even">
-<td>&quot;Cuki&quot;:https://github.com/andyw8/cuki</td>
-<td>Pull Cucumber Features from a Confluence wiki into Feature files</td>
-</tr>
-<tr class="odd">
-<td>&quot;Culerity&quot;:https://github.com/langalex/culerity/tree/master</td>
-<td>Integrates Cucumber and Celerity to test Javascript in webapps.</td>
-</tr>
-<tr class="even">
-<td>&quot;DatabaseCleaner&quot;:https://github.com/bmabey/database_cleaner/tree/master</td>
-<td>Different strategies for keeping your DB clean to ensure a clean state. Has Cucumber support out of the box.</td>
-</tr>
-<tr class="odd">
-<td>&quot;Eclipse plugin&quot;:https://github.com/QuBiT/cucumber-eclipse-plugin</td>
-<td>Apparently not in a working state, but good starting point?</td>
-</tr>
-<tr class="even">
-<td>&quot;Eclipse plugin newer&quot;:https://github.com/crealytics/cucumber-eclipse-plugin</td>
-<td>An Eclipse plugin is provided in the downloads section. XText SDK has to be installed first</td>
-</tr>
-<tr class="odd">
-<td>&quot;Ecukes&quot;:http://ecukes.info/</td>
-<td>Emacs package that makes it possible to write Cucumber like tests for your<br />
-Emacs packages</td>
-</tr>
-<tr class="even">
-<td>&quot;EmailSpec&quot;:https://github.com/bmabey/email-spec</td>
-<td>Collection of <a href="http://rspec.info/">RSpec</a> matchers and Cucumber Steps for testing email in a Rails app</td>
-</tr>
-<tr class="odd">
-<td>&quot;fbrp&quot;:https://github.com/diabolo/fbrp/tree/master</td>
-<td>Sample rails app of Cucumber showing how to use with restful-authentication.</td>
-</tr>
-<tr class="even">
-<td>&quot;Features2Cards&quot;:https://github.com/brynary/features2cards</td>
-<td>Create PDFs from Cucumber Features and Scenarios for printing.</td>
-</tr>
-<tr class="odd">
-<td>&quot;FeaturesReport&quot;:https://github.com/danlucraft/features_reports/tree/master</td>
-<td>Create a PDF report of Cucumber Features.</td>
-</tr>
-<tr class="even">
-<td>[FunFX and Flex](FunFX-and-Flex)</td>
-<td>Test Adobe Flex applications with Cucumber</td>
-</tr>
-<tr class="odd">
-<td>&quot;Frank&quot;:http://www.testingwithfrank.com/</td>
-<td>Test iPhone/iPad applications using Cucumber</td>
-</tr>
-<tr class="even">
-<td>&quot;Gizmo&quot;:http://gizmo-gem.info/</td>
-<td>Simple page model testing framework that works great with Cucumber</td>
-</tr>
-<tr class="odd">
-<td>&quot;Gherkin.mode for Coda2&quot;:https://github.com/takaxi/gherkin.mode/</td>
-<td>Plugin for Coda2 that highlights syntax keywords of `.feature` file</td>
-</tr>
-<tr class="even">
-<td>&quot;Greendot&quot;:https://github.com/bruce/greendot</td>
-<td>Describe apps as state machines, with various outputs (including Cucumber Features).</td>
-</tr>
-<tr class="odd">
-<td>&quot;Groundwork&quot;:https://github.com/hectoregm/groundwork/tree/master</td>
-<td>Rails Template using Authlogic that comes with Cucumber Features</td>
-</tr>
-<tr class="even">
-<td>&quot;Guard::Cucumber&quot;:https://github.com/guard/guard-cucumber</td>
-<td>Guard::Cucumber automatically runs your Features (much like autotest)</td>
-</tr>
-<tr class="odd">
-<td>&quot;Gutkumber&quot;:https://github.com/danlucraft/gutkumber</td>
-<td>Integration testing for &quot;Ruby-GNOME2&quot;:http://ruby-gnome2.sourceforge.jp/.</td>
-</tr>
-<tr class="even">
-<td>&quot;Hydra&quot;:https://github.com/ngauthier/hydra</td>
-<td>Distributed testing framework that can run your Features in parallel.</td>
-</tr>
-<tr class="odd">
-<td>[IronRuby and .NET](IronRuby-and-.NET)</td>
-<td>Test .NET applications with Cucumber</td>
-</tr>
-<tr class="even">
-<td>&quot;jEdit Cucumber Mode&quot;:http://web.archive.org/web/20091004184554/http://redshades.rha7.com/</td>
-<td>jEdit mode to add syntax highlighting for `.feature` files</td>
-</tr>
-<tr class="odd">
-<td>&quot;jEdit Cucumber Mode on github&quot;:https://github.com/graza/jEditCucumberMode</td>
-<td>jEdit mode to add multi-lingual syntax highlighting for `.feature` files</td>
-</tr>
-<tr class="even">
-<td>&quot;Jeweler&quot;:https://github.com/technicalpickles/jeweler</td>
-<td>Craft the perfect RubyGem - with built-in Cucumber support</td>
-</tr>
-<tr class="odd">
-<td>[JRuby and Java](JRuby-and-Java)</td>
-<td>Test Java applications with Cucumber</td>
-</tr>
-<tr class="even">
-<td>&quot;JSON_spec&quot;:https://github.com/collectiveidea/json_spec</td>
-<td>RSpec matchers and Cucumber `Then` Steps for validating JSON format data, especially useful for RESTful API Scenarios.</td>
-</tr>
-<tr class="odd">
-<td>&quot;Melomel&quot;:http://melomel.info/</td>
-<td>ActionScript, Flex and Air support for Cucumber</td>
-</tr>
-<tr class="even">
-<td>&quot;Maven&quot;:http://maven.apache.org/</td>
-<td>see &quot;Cuke4Duke Maven&quot;:http://wiki.github.com/aslakhellesoy/cuke4duke/maven</td>
-</tr>
-<tr class="odd">
-<td>&quot;Merb Cucumber&quot;:https://github.com/david/merb_cucumber</td>
-<td><a href="http://merbivore.com/">Merb</a> + Cucumber integration.</td>
-</tr>
-<tr class="odd">
-<td>&quot;NetBeans IDE (B)&quot;:https://github.com/QuBiT/cucumber-netbeans-plugin</td>
-<td>Syntax highlighting</td>
-</tr>
-<tr class="even">
-<td>&quot;NewGem&quot;:http://newgem.rubyforge.org/</td>
-<td>Use `newgem -i cucumber` to generate a bunch of helpful Scenario Steps for gem development</td>
-</tr>
-<tr class="odd">
-<td>&quot;OCCukes&quot;:https://github.com/OCCukes/OCCukes</td>
-<td>Objective-C wire protocol implementation. Can be used for testing native iOS and Mac apps.</td>
-</tr>
-<tr class="even">
-<td>&quot;Pickle&quot;:https://github.com/ianwhite/pickle/tree/master</td>
-<td>Easy model creation/reference in Cucumber - optionally leveraging your factories/blueprints</td>
-</tr>
-<tr class="odd">
-<td>&quot;Pickler&quot;:https://github.com/tpope/pickler/tree/master</td>
-<td>Synchronize user stories in <a href="http://www.pivotaltracker.com/">Pivotal Tracker</a> with Cucumber Features.</td>
-</tr>
-<tr class="even">
-<td>&quot;Rcumber&quot;:https://github.com/christophermoura/rcumber</td>
-<td>RCumber is a rails plugin that gives your customers a web interface where they can view, edit and run Cucumber tests directly on your rails project. No update since 2008</td>
-</tr>
-<tr class="odd">
-<td>&quot;Relish&quot;:http://relishapp.com</td>
-<td>Relish allows you to browse, search, and share your Cucumber Features on the web as living documentation. Supports public and private projects.</td>
-</tr>
-<tr class="even">
-<td>&quot;Remote Feature&quot;:https://github.com/mhennemeyer/remote_feature</td>
-<td>Run Cucumber Features that are defined in &quot;Writeboard&quot;:http://www.writeboard.com/.</td>
-</tr>
-<tr class="odd">
-<td>&quot;RSpec&quot;:http://rspec.info</td>
-<td>Use RSpec's `Object.should` and `Object.should_not` to compare values in your Step Definitions</td>
-</tr>
-<tr class="even">
-<td>&quot;rSquery&quot;:http://injecting.by2.be/blog/2009/05/rsquery.html</td>
-<td>Using jquery matchers and more in selenium, taking the pain out of writing selenium tests.</td>
-</tr>
-<tr class="odd">
-<td>&quot;JetBrains RubyMine&quot;:http://blogs.jetbrains.com/ruby/tag/cucumber/</td>
-<td>Syntax highlighting and Test Runner UI</td>
-</tr>
-<tr class="even">
-<td>&quot;JetBrains TeamCity Formatter&quot;:http://blogs.7digital.com/dev/2009/09/03/cucumber-tests-as-first-class-citizens-in-teamcity/</td>
-<td>Format Features nicely within the TeamCity CI server</td>
-</tr>
-<tr class="odd">
-<td>&quot;Sandwich&quot;:https://github.com/thedigitalants/sandwich</td>
-<td>Step library aiming to provide Steps for several different test areas. There are Steps for model creation/reference, debugging, and interaction with web pages. Still in its infancy.</td>
-</tr>
-<tr class="even">
-<td>&quot;Swinger&quot;:https://github.com/demetriusnunes/swinger/tree/master</td>
-<td>Write acceptance tests for Java/Swing Desktop apps using Cucumber!</td>
-</tr>
-<tr class="odd">
-<td>&quot;Testjour&quot;:https://github.com/brynary/testjour</td>
-<td>Distributed test running (for Cucumber first).</td>
-</tr>
-<tr class="even">
-<td>&quot;unobtainium-cucumber&quot;:https://github.com/jfinkhaeuser/unobtainium-cucumber</td>
-<td>Integrate Cucumber with configuration driven Selenium or Appium drivers.</td>
-</tr>
-<tr class="odd">
-<td>&quot;VCR&quot;:https://github.com/myronmarston/vcr</td>
-<td>Easily record and replay HTTP responses for fast, deterministic, accurate tests. Cucumber integration provided through the use of Tags.</td>
-</tr>
-<tr class="even">
-<td>&quot;Vim-Cucumber&quot;:https://github.com/tpope/vim-cucumber/tree/master</td>
-<td>Feature syntax highlighting for &quot;Vim&quot;:http://www.vim.org/.</td>
-</tr>
-<tr class="odd">
-<td>&quot;Webrat&quot;:https://github.com/brynary/webrat/wikis</td>
-<td>Interact with a web application from Ruby. Works with <a href="https://github.com/aslakhellesoy/cucumber/wikis/ruby-on-rails">Rails</a>, [Sinatra](Sinatra) and other web frameworks.</td>
-</tr>
-<tr class="even">
-<td>&quot;Webrat TM Bundle&quot;:https://github.com/bmabey/webrat-tmbundle/tree/master</td>
-<td>Collection of TextMate snippets for the webrat API.</td>
-</tr>
-<tr class="odd">
-<td>&quot;WebDriver&quot;:http://code.google.com/p/selenium/wiki/RubyBindings</td>
-<td>Developer-focused browser automation tool for IE, Firefox, Chrome</td>
-</tr>
-<tr class="even">
-<td>&quot;WatirCraft&quot;:http://wiki.github.com/bret/watircraft</td>
-<td>Web testing framework with Cucumber integration that builds on Watir.</td>
-</tr>
-<tr class="odd">
-<td>&quot;watircuke&quot;:https://github.com/richdownie/watircuke/tree/master</td>
-<td>Cucumber and H30 (watir, safariwatir, firewatir)</td>
-</tr>
-<tr class="even">
-<td>&quot;Watir WebDriver&quot;:http://watirwebdriver.com</td>
-<td>the most elegant way to use webdriver with ruby</td>
-</tr>
-<tr class="odd">
-<td>&quot;YARD-Cucumber&quot;:https://github.com/burtlo/yard-cucumber</td>
-<td>Feature documentation integration with &quot;YARD&quot;:http://yardoc.org/</td>
-</tr>
-</tbody>
-</table>
+
+| Tool | Description |
+| ---- | ----------- |
+| [Aruba](https://github.com/cucumber/aruba) | Generic Step Definitions for command-line programs |
+| [AutoTest](http://www.zenspider.com/projects/zentest.html) | Run Cucumber Features in the background with Cucumber's built-in [Autotest Integration](/wiki/autotest-integration/) |
+| [Backyard](https://github.com/senny/backyard) | Name the models in your Cucumbers with ease |
+| [Bermuda](https://github.com/jfirebaugh/bermuda) | Capybara Step library for jQuery UI widgets |
+| [Capybara](https://github.com/jnicklas/capybara) | Webrat alternative which aims to support all browser simulators |
+| [Celerity](https://github.com/jarib/celerity) | Headless browser with JavaScript support (on JRuby) |
+| [Clearance](http://wiki.github.com/thoughtbot/clearance/cucumber-features) | Rails Authentication System with Cucumber Feature generator |
+| [Courgette](http://21croissants.github.com/courgette/) | Rails engine (plugin) for Rails 2.x applications which makes your Cucumber Feature viewable through your browser |
+| [crb](http://wiki.github.com/maiha/crb) | An irb console for Cucumber world. (crb = cucumber + irb) |
+| [Cucapp](https://github.com/cappuccino/cucapp) | Cucumber integration with Cappuccino. |
+| [Cucover](https://github.com/mattwynne/cucover) | Coverage-aware lazy / selective Cucumber Feature runnner |
+| [Cucumber-cpp](https://github.com/cucumber/cucumber-cpp) | Cucumber for C |
+| [Cucumber.el](https://github.com/michaelklishin/cucumber.el) | [Emacs](http://www.gnu.org/software/emacs/) mode for editing Cucumber plain text stories. |
+| [Cucumber Factory](https://github.com/makandra/cucumber_factory/tree/master) | Create Rails model records without writing Step Definitions. |
+| [Cucumber Growler **fixed**](https://github.com/jeanmartin/cucumber_growler) | [Growl](http://growl.info/) notifications for Cucumber &gt;= 0.2 |
+| [Cucumber Growler](https://github.com/paolodona/cucumber_growler) | [Growl](http://growl.info/) notifications for Cucumber. |
+| [Cucumber Nagios](http://auxesis.github.io/cucumber-nagios) | Web site monitoring with Cucumber and [Nagios](http://www.nagios.org/) |
+| [Cucumber Scaffold](https://github.com/andyw8/cucumber_scaffold) | Scaffolding gem for Cucumber Features |
+| [CucumberTFS](https://github.com/mscottford/cucumbertfs) | Converts Team Foundation Server (TFS) Scenarios into Cucumber Scenarios in a single Feature file. |
+| [Cucumber TM Bundle](https://github.com/bmabey/cucumber-tmbundle/tree/master) | Feature syntax highlighting and other useful commands for [TextMate](http://macromates.com/.) |
+| [CukeBins](https://github.com/paoloambrosio/cukebins) | Support for writing Cucumber Step Definitions in C, testing C code. |
+| [Clucumber](https://github.com/antifuchs/clucumber) | Support for writing Cucumber Step Definitions in Common LISP, testing Common LISP code. |
+| [Cuke4AS3](https://github.com/flashquartermaster/Cuke4AS3) | Actionscript |
+| [Cuke4Nuke](https://github.com/richardlawrence/Cuke4Nuke) | Support for writing Cucumber Step Definitions in .NET. |
+| [Cuke4Lua](https://github.com/dgfitch/Cuke4Lua) | Wire protocol implementation for [Lua](http://www.lua.org/) |
+| [Cuke4PHP](https://github.com/olbrich/cuke4php) | Support for writing Cucumber Step Definitions in PHP, testing PHP code. |
+| [Cuke4Vs](https://github.com/henritersteeg/cuke4vs) | Syntax highlighting, intellisense and other editing support for Feature files in Visual Studio 2008. |
+| [Cuki](https://github.com/andyw8/cuki) | Pull Cucumber Features from a Confluence wiki into Feature files |
+| [Culerity](https://github.com/langalex/culerity/tree/master) | Integrates Cucumber and Celerity to test Javascript in webapps. |
+| [DatabaseCleaner](https://github.com/bmabey/database_cleaner/tree/master) | Different strategies for keeping your DB clean to ensure a clean state. Has Cucumber support out of the box. |
+| [Eclipse plugin](https://github.com/QuBiT/cucumber-eclipse-plugin) | Apparently not in a working state, but good starting point? |
+| [Eclipse plugin newer](https://github.com/crealytics/cucumber-eclipse-plugin) | An Eclipse plugin is provided in the downloads section. XText SDK has to be installed first |
+| [Ecukes](http://ecukes.info/) | Emacs package that makes it possible to write Cucumber like tests for your Emacs packages |
+| [EmailSpec](https://github.com/bmabey/email-spec) | Collection of [RSpec](http://rspec.info) matchers and Cucumber Steps for testing email in a Rails app |
+| [fbrp](https://github.com/diabolo/fbrp/tree/master) | Sample rails app of Cucumber showing how to use with restful-authentication. |
+| [Features2Cards](https://github.com/brynary/features2cards) | Create PDFs from Cucumber Features and Scenarios for printing. |
+| [FeaturesReport](https://github.com/danlucraft/features_reports/tree/master) | Create a PDF report of Cucumber Features. |
+| [FunFX and Flex](FunFX-and-Flex) | Test Adobe Flex applications with Cucumber |
+| [Frank](http://www.testingwithfrank.com/) | Test iPhone/iPad applications using Cucumber |
+| [Gizmo](http://gizmo-gem.info/) | Simple page model testing framework that works great with Cucumber |
+| [Gherkin.mode for Coda2](https://github.com/takaxi/gherkin.mode/) | Plugin for Coda2 that highlights syntax keywords of `.feature` file |
+| [Greendot](https://github.com/bruce/greendot) | Describe apps as state machines, with various outputs (including Cucumber Features). |
+| [Groundwork](https://github.com/hectoregm/groundwork/tree/master) | Rails Template using Authlogic that comes with Cucumber Features |
+| [Guard::Cucumber](https://github.com/guard/guard-cucumber) | Guard::Cucumber automatically runs your Features (much like autotest) |
+| [Gutkumber](https://github.com/danlucraft/gutkumber) | Integration testing for [Ruby-GNOME2](http://ruby-gnome2.sourceforge.jp/.) |
+| [Hydra](https://github.com/ngauthier/hydra) | Distributed testing framework that can run your Features in parallel. |
+| [IronRuby and .NET](IronRuby-and-.NET) | Test .NET applications with Cucumber |
+| [jEdit Cucumber Mode](http://web.archive.org/web/20091004184554/http://redshades.rha7.com/) | jEdit mode to add syntax highlighting for `.feature` files |
+| [jEdit Cucumber Mode on github](https://github.com/graza/jEditCucumberMode) | jEdit mode to add multi-lingual syntax highlighting for `.feature` files |
+| [Jeweler](https://github.com/technicalpickles/jeweler) | Craft the perfect RubyGem - with built-in Cucumber support |
+| [JRuby and Java](JRuby-and-Java) | Test Java applications with Cucumber |
+| [JSON_spec](https://github.com/collectiveidea/json_spec) | RSpec matchers and Cucumber `Then` Steps for validating JSON format data, especially useful for RESTful API Scenarios. |
+| [Melomel](http://melomel.info/) | ActionScript, Flex and Air support for Cucumber |
+| [Maven](http://maven.apache.org/) | See [Cuke4Duke Maven](https://github.com/cucumber-attic/cuke4duke/wiki/Maven). **NB**: This project is defunkt, and has been replaced by [Cucumber-JVM](/implementations/jvm/). For more info [see this thread](http://groups.google.com/group/cukes/browse_thread/thread/299d94d38500e8c3). |
+| [Merb Cucumber](https://github.com/david/merb_cucumber) | [Merb](https://github.com/merb/) + Cucumber integration. |
+| [NetBeans IDE (B)](https://github.com/QuBiT/cucumber-netbeans-plugin) | Syntax highlighting |
+| [NewGem](http://newgem.rubyforge.org/) | Use `newgem -i cucumber` to generate a bunch of helpful Scenario Steps for gem development |
+| [OCCukes](https://github.com/OCCukes/OCCukes) | Objective-C wire protocol implementation. Can be used for testing native iOS and Mac apps. |
+| [Pickle](https://github.com/ianwhite/pickle/tree/master) | Easy model creation/reference in Cucumber - optionally leveraging your factories/blueprints |
+| [Pickler](https://github.com/tpope/pickler/tree/master) | Synchronize user stories in [Pivotal Tracker](http://www.pivotaltracker.com/) with Cucumber Features. |
+| [Rcumber](https://github.com/christophermoura/rcumber) | RCumber is a rails plugin that gives your customers a web interface where they can view, edit and run Cucumber tests directly on your rails project. No update since 2008 |
+| [Relish](http://relishapp.com) | Relish allows you to browse, search, and share your Cucumber Features on the web as living documentation. Supports public and private projects. |
+| [Remote Feature](https://github.com/mhennemeyer/remote_feature) | Run Cucumber Features that are defined in [Writeboard](http://www.writeboard.com/). **NB**: The Writeboard service has been retired. |
+| [RSpec](http://rspec.info) | Use RSpec's `Object.should` and `Object.should_not` to compare values in your Step Definitions |
+| [rSquery](http://injecting.by2.be/blog/2009/05/rsquery.html) | Using jquery matchers and more in selenium, taking the pain out of writing selenium tests. |
+| [JetBrains RubyMine](http://blogs.jetbrains.com/ruby/tag/cucumber/) | Syntax highlighting and Test Runner UI |
+| [JetBrains TeamCity Formatter](http://blogs.7digital.com/dev/2009/09/03/cucumber-tests-as-first-class-citizens-in-teamcity/) | Format Features nicely within the TeamCity CI server |
+| [Sandwich](https://github.com/thedigitalants/sandwich) | Step library aiming to provide Steps for several different test areas. There are Steps for model creation/reference, debugging, and interaction with web pages. Still in its infancy. |
+| [Swinger](https://github.com/demetriusnunes/swinger/tree/master) | Write acceptance tests for Java/Swing Desktop apps using Cucumber! |
+| [Testjour](https://github.com/brynary/testjour) | Distributed test running (for Cucumber first). |
+| [unobtainium-cucumber](https://github.com/jfinkhaeuser/unobtainium-cucumber) | Integrate Cucumber with configuration driven Selenium or Appium drivers. |
+| [VCR](https://github.com/myronmarston/vcr) | Easily record and replay HTTP responses for fast, deterministic, accurate tests. Cucumber integration provided through the use of Tags. |
+| [Vim-Cucumber](https://github.com/tpope/vim-cucumber/tree/master) | Feature syntax highlighting for [Vim](http://www.vim.org/.) |
+| [Webrat](https://github.com/brynary/webrat/wikis) | Interact with a web application from Ruby. Works with [Rails](/implementations/ruby/ruby-on-rails/), [Sinatra](/implementations/ruby/sinatra/) and other web frameworks. |
+| [Webrat TM Bundle](https://github.com/bmabey/webrat-tmbundle/tree/master) | Collection of TextMate snippets for the webrat API. |
+| [WebDriver](http://code.google.com/p/selenium/wiki/RubyBindings) | Developer-focused browser automation tool for IE, Firefox, Chrome |
+| [WatirCraft](http://wiki.github.com/bret/watircraft) | Web testing framework with Cucumber integration that builds on Watir. |
+| [watircuke](https://github.com/richdownie/watircuke/tree/master) | Cucumber and H30 (watir, safariwatir, firewatir) |
+| [Watir WebDriver](http://watirwebdriver.com) | the most elegant way to use webdriver with ruby |
+| [YARD-Cucumber](https://github.com/burtlo/yard-cucumber) | Feature documentation integration with [YARD](http://yardoc.org/) |
