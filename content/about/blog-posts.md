@@ -5,9 +5,11 @@ source: https://github.com/cucumber/cucumber/wiki/Tutorials-and-Related-Blog-Pos
 title: Blog Posts about Cucumber
 ---
 
-Here is a list of Cucumber related blog posts/tutorials. Please keep in mind that blogs can become dated quickly with a fast moving project like Cucumber. Cucumber's RDocs and wiki should be considered the canonical documentation source with the, hopefully, most up to date information. Some blog posts may refer to the RSpec Story Runner but they still provide value since Cucumber started out as a rewrite of that project.
+Here is a list of Cucumber related blog posts/tutorials.
 
-Please add any helpful blog posts that you have found or written about all things Cucumber. Also see [Related Tools](/about/related-tools/).
+Do keep in mind that blogs can become dated quickly with a fast-moving project like Cucumber. Cucumber's documentation should be considered the canonical documentation source with the, hopefully, most up-to-date information. Some very old blog posts may refer to the "RSpec Story Runner", since Cucumber started out as a rewrite of that project.
+
+See also [Related Tools](/about/related-tools/).
 
 |                                                                                                                                                                                                                                                                         |                                                                                                                                                       |                    |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|
