@@ -16,9 +16,9 @@ People have written tools on top of Cucumber. These are the known third-party to
 | [Bermuda](https://github.com/jfirebaugh/bermuda) | Capybara Step library for jQuery UI widgets |
 | [Capybara](https://github.com/jnicklas/capybara) | Webrat alternative which aims to support all browser simulators |
 | [Celerity](https://github.com/jarib/celerity) | Headless browser with JavaScript support (on JRuby) |
-| [Clearance](http://wiki.github.com/thoughtbot/clearance/cucumber-features) | Rails Authentication System with Cucumber Feature generator |
+| [Clearance](https://github.com/thoughtbot/clearance/wiki/cucumber-features) | Rails Authentication System with Cucumber Feature generator |
 | [Courgette](https://github.com/jnicklas/courgette) | Browse your cucumber features from within your Rails app with Courgette, a Rails engine. |
-| [crb](http://wiki.github.com/maiha/crb) | An irb console for Cucumber world. (crb = cucumber + irb) |
+| [crb](https://github.com/maiha/crb/wiki) | An irb console for Cucumber world. (crb = cucumber + irb) |
 | [Cucapp](https://github.com/cappuccino/cucapp) | Cucumber integration with Cappuccino. |
 | [Cucover](https://github.com/mattwynne/cucover) | Coverage-aware lazy / selective Cucumber Feature runnner |
 | [Cucumber-cpp](https://github.com/cucumber/cucumber-cpp) | Cucumber for C |
@@ -69,15 +69,15 @@ People have written tools on top of Cucumber. These are the known third-party to
 | [RSpec](http://rspec.info) | Use RSpec's `Object.should` and `Object.should_not` to compare values in your Step Definitions |
 | [rSquery](https://github.com/caifara/rsquery) | Using jQuery matchers and more in Selenium. Aims to reduce the difficulties involved in writing Selenium tests in Cucumber environments for webapps that use jQuery. |
 | [JetBrains RubyMine](http://blogs.jetbrains.com/ruby/tag/cucumber/) | Syntax highlighting and Test Runner UI |
+| [selenium-webdriver](https://github.com/SeleniumHQ/selenium/wiki/Ruby-Bindings) | Developer-focused browser automation tool for IE, Firefox, Chrome |
 | [JetBrains TeamCity Formatter](http://developer.7digital.com/blog/cucumber-tests-first-class-citizens-teamcity) | Format Features nicely within the TeamCity CI server |
 | [Swinger](https://github.com/demetriusnunes/swinger/tree/master) | Write acceptance tests for Java/Swing Desktop apps using Cucumber! |
 | [Testjour](https://github.com/brynary/testjour) | Distributed test running (for Cucumber first). |
 | [unobtainium-cucumber](https://github.com/jfinkhaeuser/unobtainium-cucumber) | Integrate Cucumber with configuration driven Selenium or Appium drivers. |
 | [VCR](https://github.com/myronmarston/vcr) | Easily record and replay HTTP responses for fast, deterministic, accurate tests. Cucumber integration provided through the use of Tags. |
 | [Vim-Cucumber](https://github.com/tpope/vim-cucumber/tree/master) | Feature syntax highlighting for [Vim](http://www.vim.org/.) |
-| [Webrat](https://github.com/brynary/webrat/wikis) | Interact with a web application from Ruby. Works with [Rails](/implementations/ruby/ruby-on-rails/), [Sinatra](/implementations/ruby/sinatra/) and other web frameworks. |
+| [Webrat](https://github.com/brynary/webrat/wiki) | Interact with a web application from Ruby. Works with [Rails](/implementations/ruby/ruby-on-rails/), [Sinatra](/implementations/ruby/sinatra/) and other web frameworks. |
 | [Webrat TM Bundle](https://github.com/bmabey/webrat-tmbundle/tree/master) | Collection of TextMate snippets for the webrat API. |
-| [WebDriver](http://code.google.com/p/selenium/wiki/RubyBindings) | Developer-focused browser automation tool for IE, Firefox, Chrome |
 | [Watir](http://watir.com/) | An open source Ruby library for automating tests. Watir interacts with a browser the same way people do: clicking links, filling out forms and validating text. |
 | [WatirCraft](https://github.com/bret/watircraft/wiki) | Web testing framework with Cucumber integration that builds on Watir. |
 | [watircuke](https://github.com/richdownie/watircuke/tree/master) | Cucumber and H30 (watir, safariwatir, firewatir) |
