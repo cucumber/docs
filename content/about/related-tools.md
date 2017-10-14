@@ -5,9 +5,7 @@ source: https://github.com/cucumber/cucumber/wiki/Related-tools/
 title: Related tools
 ---
 
-> TODO: Clean and delete.
-
-It's always a good sign for a tool when other people huddle around and write tools on top. These are the known 3rd party tools that work together with Cucumber:
+People have written tools on top of Cucumber. These are the known third-party tools that work together with Cucumber:
 
 
 | Tool | Description |
