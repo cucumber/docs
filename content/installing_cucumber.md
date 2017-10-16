@@ -5,8 +5,6 @@ menu:
 title: Installing Cucumber
 ---
 
-# Installation
-
 Cucumber exists for different platforms such as Java, JavaScript, Ruby, etc. Cucumber is a command-line tool, and how you install it depends on your platform.
 
 ## Ruby {#ruby}

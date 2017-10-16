@@ -8,10 +8,10 @@ it is good enough to replace the existing documentation.
 Please make ALL contributions to the documentation in [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io).
 
 ## Current status
-We are working to add and update all of the old documentation (see below) to this repo. 
+We are working to add and update all of the old documentation (see below) to this repo.
 
 All *relevant* documentation from the old documentation has been added to this project.
-Some files have been deleted; this does not necessarily mean that those files should not exist, 
+Some files have been deleted; this does not necessarily mean that those files should not exist,
 just that there was not enough info there to justify leaving them.
 
 **This work is currently being done and has been merged to master**.
@@ -72,7 +72,7 @@ Open a browser:
 
 ### Modify content
 
-Simply edit Markdown files under `content`.
+Edit Markdown files under in the `content` directory.
 
 Whenever you make a change to the content, the server will automatically rebuild the site (in a few milliseconds) and tell the browser to reload (using a WebSocket).
 

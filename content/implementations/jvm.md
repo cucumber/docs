@@ -51,7 +51,7 @@ Just add the following to your `pom.xml`:
 </repository>
 ```
 
-Then, add a dependency to the snapshot version. 
+Then, add a dependency to the snapshot version.
 
 For example:
 
@@ -71,6 +71,7 @@ You can find the current snapshot version number [here](https://github.com/cucum
 There are several ways to run Scenarios with Cucumber-JVM:
 
 - [JUnit Runner](#junit-runner)
+- [Maven Runner](#maven-runner)
 - [CLI Runner](#cli-runner)
 - [Android Runner](#android-runner)
 - [TestNG Runner](#testng-runner)
@@ -111,6 +112,34 @@ To use the JUnit runner you need to add the following dependencies:
     <scope>test</scope>
 </dependency>
 ```
+
+### Maven Runner
+
+To run Cucumber with Maven, make sure that
+
+* Maven is installed
+* The environment variable `MAVEN_HOME` is correctly configured
+* Your IDE is configured with latest maven installation
+
+Steps:
+
+1.  Create a new Maven project or fork from cucumber-java examples on github
+2.  Add the following dependency to your  `pom.xml`
+
+      ```xml
+      <dependency>
+      	<groupId>io.cucumber</groupId>
+      	<artifactId>cucumber-java</artifactId>
+      	<version>2.0.1</version>
+      </dependency>
+      ```
+
+3.  Add your feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` folders respectively.
+4.  Run the following maven from the directory path where your `pom.xml` file is located:
+
+    ```sh
+    mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --format pretty path\to\your\featurefiles"
+    ```
 
 ### CLI Runner
 
@@ -157,7 +186,7 @@ java cucumber.api.cli.Main --version
 ```
 
 The [JUnit Runner](#junit-runner) and [Android Runner](#android-runner) can also pick
-up configuration options defined via the `@CucumberOptions` annotation. 
+up configuration options defined via the `@CucumberOptions` annotation.
 
 For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
 
@@ -174,7 +203,7 @@ public class RunCukesTest {
 }
 ```
 
-Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property. 
+Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property.
 
 For example, if you are using Maven and want to run a subset of Scenarios tagged
 with `@smoke`:
@@ -319,7 +348,7 @@ The simplest way to pass a `List<String>` to a Step Definition is to use commas:
 Given the following animals: cow, horse, sheep
 ```
 
-Simply declare the argument as a `List<String>`:
+and declare the argument as a `List<String>`:
 
 ```java
 @Given("the following animals: (.*)")
@@ -339,7 +368,7 @@ Given the following animals:
   | sheep |
 ```
 
-Simply declare the argument as a `List<String>`, but don't define any capture groups in the pattern:
+Declare the argument as a `List<String>`, but don't define any capture groups in the pattern:
 
 ```java
 @Given("the following animals:")

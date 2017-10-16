@@ -5,7 +5,7 @@ menu:
 title: Introduction to Cucumber and BDD
 ---
 
-# What is Gherkin
+## What is Gherkin
 
 Gherkin is the language that Cucumber understands. It is a [Business Readable,
 Domain Specific
@@ -27,7 +27,7 @@ There are a few conventions:
 - Each Gherkin source file contains a description of a single Feature
 - Each Gherkin source file uses the `.feature` extension
 
-# What is Cucumber?
+## What is Cucumber?
 
 Cucumber is a [command-line
 tool](https://en.wikipedia.org/wiki/Command-line_interface). When you run it, it
@@ -40,7 +40,7 @@ The name for this set of rules is [Gherkin](/gherkin/gherkin-intro/).
 
 Along with the [Features](/gherkin/feature-introduction/), you give Cucumber a set of [Step Definitions](/cucumber/step-definitions/). These
 files map (or "glue") each business-readable language step into programming code to carry
-out what action should be performed by the Step. 
+out what action should be performed by the Step.
 
 In a mature test suite, the Step Definition itself will probably just be one or two lines of code that delegate to a library of support code, specific to the domain of your application.
 
@@ -57,7 +57,7 @@ When the team writes their acceptance tests collaboratively, they can develop
 their own ubiquitous language for talking about their problem domain. This helps
  avoid misunderstandings.
 
-# How does Cucumber work with BDD?
+## How does Cucumber work with BDD?
 
 This is the most typical question everyone enthusiastic about Cucumber will get.
 What makes Cucumber stand out from the crowd of other communication and
@@ -109,7 +109,7 @@ documentation in parallel.
 Acceptance tests written in this style become more than just *tests*; they are
 *executable specifications*, as well as *living documentation*.
 
-# Living Documentation
+## Living Documentation
 
 Cucumber tests share the benefit of traditional specification documents in that
 they can be written and read by business stakeholders, but they have a distinct
@@ -117,7 +117,7 @@ advantage in that you can give them to a computer at any time to tell you how
 accurate they are. In practice, this means that documentation, rather than
 being something that's written once and then gradually becoming outdated, becomes a [living document](https://en.wikipedia.org/wiki/Living_document) that reflects the true state of the project.
 
-# Source of Truth
+## Source of Truth
 
 For many teams, they become the definitive source of truth as to what the system
 does. Having a single place to go for this information saves a lot of time that
@@ -125,7 +125,7 @@ is often wasted trying to keep requirements documents, tests, and code all in
 sync. It also helps build trust within the team, because different parts of
 the team no longer have their own personal versions of the truth.
 
-# The Three Amigos
+## The Three Amigos
 
 *The Three Amigos* is a meeting that takes user stories and turns them into clean, thorough Gherkin Scenarios. It involves three voices (at least):
 
@@ -138,7 +138,7 @@ the product from a different perspective. If the tests are being developed befor
 
 Finally, there is no reason to limit these meetings to three people—or to hold only one such meeting at the beginning of the project. Continually refine your features and collaborate with everyone to best understand how to talk about, develop, and test your application.
 
-# Cucumber for non-programmers
+## Cucumber for non-programmers
 
 Cucumber tests are written in terms of “Features”. Each Feature consists of one or more “Scenarios”.
 
@@ -185,26 +185,26 @@ So, those three lines cover Why, Who, and What. Then, the document gets into the
 
 ## Scenarios
 
-You can have any number of Scenarios for a Feature. 
+You can have any number of Scenarios for a Feature.
 
 Of course, if you have lots and lots of Scenarios in one Feature, you might
-actually be describing *more* than one Feature. When that happens, we recommend 
+actually be describing *more* than one Feature. When that happens, we recommend
 splitting up the document into separate Feature definitions. (The definition of
 “lots and lots” here is subjective, and it's up to you determine when it's time to split up a Feature.)
 
 The first line provides a short description of what the Scenario is intended to
 cover. If you can’t describe your Scenario in a single sentence (and not a
-run-on sentence), then it’s probably trying to cover too much, and should be 
+run-on sentence), then it’s probably trying to cover too much, and should be
 split into multiple Scenarios.
 
 That is followed by some combination of “Steps”—lines that begin with the
-keywords `Given`, `When`, and `Then` (typically in that order). 
+keywords `Given`, `When`, and `Then` (typically in that order).
 
 You can have many lines that use the same keyword (e.g., `Given there is something` followed by `Given I have another thing`). To increase the readability, you can substitute the keywords `And` or `But` (e.g., `Given there is something` followed by `And I have another thing`).
 
 In general, any `Given` Step line should describe only one thing. If you have
 words like “and” in the middle of a Step, you are probably describing more than
-one Step, and should split it into multiple Steps. 
+one Step, and should split it into multiple Steps.
 
 For example:
 
@@ -220,7 +220,7 @@ Becomes:
 ```
 
 Cucumber Features are best served by consistency. Don't say the same thing in
-different ways — say it the same way every time. 
+different ways — say it the same way every time.
 
 For example:
 
@@ -248,7 +248,7 @@ It is preferable that the first draft of any Feature be written by, or with, a
 
 Then the programmer(s) will go over the Scenarios, refining the Steps for
 clarification and increased testability. The result is then reviewed by the domain expert to ensure the intent has not been compromised by the programmers’
-reworking. 
+reworking.
 
 This cycle is repeated until everyone involved is satisfied that the
 Scenarios accurately describe what is wanted in a testable manner.

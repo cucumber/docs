@@ -20,9 +20,9 @@ its background the Ruby on Rails (RoR) [web application
 framework](http://en.wikipedia.org/wiki/Web_application_framework). Detailed
 discussion of [Behaviour
 Driven](http://en.wikipedia.org/wiki/Behavior_driven_development) (BDD), [Test
-Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and [Panic
-Driven Development](http://en.wikipedia.org/wiki/SNAFU) (SNAFU aka [Cowboy
-Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/))
+Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and Panic
+Driven Development aka [Cowboy
+Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/)
 can be found elsewhere. Of course, there are still some
 [skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html)
 on this whole Agile thing. But, if you are reading this then you probably are
@@ -38,7 +38,7 @@ Note that in this document I often use the terms *testing* and *test* where [BDD
 
 Before anything else make sure that you have the [cucumber-rails](https://github.com/cucumber/cucumber-rails) installed properly into your RoR project. Now we can really get started.
 
-```
+```Gherkin
 Feature: Design and Build a Ruby on Rails web app using Behaviour Driven Development (BDD)
 In order to reduce rework and produce a web app at low cost and high speed
 A developer
@@ -69,17 +69,17 @@ The above is an example of the form that Feature files often take ( *sadly* ).
 
 These lines, called Feature or Scenario *Steps* or *Statements*, are the user
 interface to Cucumber testing. (The Steps above are written in the imperative
-style simply for illustrative purposes.) 
+style simply for illustrative purposes.)
 
-**Never put statements that look anything like these in a Feature file!** ( (*But you will.* ) 
+**Never put statements that look anything like these in a Feature file!** ( (*But you will.* )
 
-In practice, all those `Then`/`And` Steps should be combined into one simple Declarative Style statement. For example: `I should create the Cucumber environment`. 
+In practice, all those `Then`/`And` Steps should be combined into one simple Declarative Style statement. For example: `I should create the Cucumber environment`.
 
 The messy details of what comprises a “Cucumber environment” are placed in the Step Definition files.
 
 Instead, a Feature should look more like this:
 
-```
+```Gherkin
 Feature: Design and Build a Ruby on Rails web app using Behaviour Driven Development (BDD)
 In order to produce a web app at low cost and high speed
 A developer
@@ -93,7 +93,7 @@ Scenario: Cucumber-Rails should be installed and configured
   Then I should have a cucumber environment
 ```
 
-We will return to how to write Features and Steps later. 
+We will return to how to write Features and Steps later.
 
 For the moment, we deal with the logical arrangement of Cucumber files within the context of an RoR project. The root level of the archetypal RoR-4.0 project directory tree looks like this:
 
@@ -126,7 +126,7 @@ features
     └── env.rb
 ```
 
-If you are not using Rails and Cucumber-Rails in your project then you can accomplish much the same thing by creating the directory tree from the command line (`mkdir -p features/step_definitions`) and similarly adding the support directory (`mkdir -p features/support`). 
+If you are not using Rails and Cucumber-Rails in your project then you can accomplish much the same thing by creating the directory tree from the command line (`mkdir -p features/step_definitions`) and similarly adding the support directory (`mkdir -p features/support`).
 
 People returning to Cucumber who are familiar with earlier versions will note the absence of most of the files `cucumber-rails` used to provide, leaving only `features/support/env.rb`. Conspicuous by its absence is `features/step_definitions/web_steps.rb`. [Since version 1.1.0, you are required to provide all of your web steps from your own resources.](http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off) (see [wayback machine archive](http://web.archive.org/web/20130424133851/http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off)). But the old, deprecated, Step Definitions can still be found if you read the referenced blog entry.
 
@@ -136,18 +136,18 @@ Once the `features/` directory structure is in place, you're ready to begin test
 
 ### Where do I put Tests?
 
-Cucumber divides testing into two parts: 
+Cucumber divides testing into two parts:
 
-1. The outward-facing *Features*, which contain *Scenario Steps*, and 
-2. the inward-facing *Step Definitions*. 
+1. The outward-facing *Features*, which contain *Scenario Steps*, and
+2. the inward-facing *Step Definitions*.
 
 **Features** are descriptions of desired outcomes (**Then**) following upon specific events (**When**) under predefined conditions (**Given**). They are typically used in conjunction with end-user input and, in some cases, may be entirely under end-user (in the form of a domain expert) control. Feature files are given the extension `.feature`.
 
-[Step Definitions](/cucumber/step-definitions/), or *stepdefs*, are keyed by their snippets of text from the Scenario's statements, and invoke blocks of Ruby and Rails code that usually contain API methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.). 
+[Step Definitions](/cucumber/step-definitions/), or *stepdefs*, are keyed by their snippets of text from the Scenario's statements, and invoke blocks of Ruby and Rails code that usually contain API methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.).
 
-Given that Cucumber originally evolved out of RSpec stories, it is unsurprising that the Cucumber-Rails generator once assumed that RSpec was available. This has long since ceased to be the case. 
+Given that Cucumber originally evolved out of RSpec stories, it is unsurprising that the Cucumber-Rails generator once assumed that RSpec was available. This has long since ceased to be the case.
 
-What the generator does now is detect if the RSpec gems are installed. If so then the rails generator builds the environment files to suit and if not then it ignores RSpec and configures for test-unit instead. In fact, the availability of options is increasing over time. 
+What the generator does now is detect if the RSpec gems are installed. If so then the rails generator builds the environment files to suit and if not then it ignores RSpec and configures for test-unit instead. In fact, the availability of options is increasing over time.
 
 To see what is available in the version of Cucumber-Rails that you have installed use the command: `rails g cucumber:install --help` or `script/generate cucumber --help`.
 
@@ -163,7 +163,7 @@ Given I have installed the gem named "rails"
 . . .
 ```
 
-Inside a `step_definitions.rb` file, Steps—which, strictly speaking, should always be called Step Definitions (and are now often simply called *stepdefs* or even just *defs*)—refer to the *matcher* methods, which may be given any of the same names (Given, When, Then, And, or But), each provided with a matcher *"string"* or */regexp/* that corresponds to one or more Scenario Steps. 
+Inside a `step_definitions.rb` file, Steps—which, strictly speaking, should always be called Step Definitions (and are now often simply called *stepdefs* or even just *defs*)—refer to the *matcher* methods, which may be given any of the same names (Given, When, Then, And, or But), each provided with a matcher *"string"* or */regexp/* that corresponds to one or more Scenario Steps.
 
 Note that the method name does NOT form part of the matcher. A `Given` clause can match a `When` Step Definition matcher. Over time, clauses from Features have come to be referred to simply as *Features*, while *Steps* now refers almost exclusively to Step Definitions.
 
@@ -199,7 +199,7 @@ However, Cucumber is programmed with the flexibility to support a much more expr
         |__ local_transforms.rb
 ```
 
-In this case, the bland initial setup has been divided into sub-directories, informed by model-centric testing. 
+In this case, the bland initial setup has been divided into sub-directories, informed by model-centric testing.
 
 This could equally well have been broken up in to model/view/controller hierarchies, like so:
 
@@ -242,11 +242,11 @@ Or, like this:
        |__local_transforms.rb
 ```
 
-**It is considered an anti-pattern to relate `step_definition` files to specific Feature files!** 
+**It is considered an anti-pattern to relate `step_definition` files to specific Feature files!**
 
 As always, there are exceptions and contrary opinions to the “standard” or “orthodox” practice. Nonetheless, it is probably best to start out following the recommendation against Feature-specific Step Definition files. Thereafter, you may depart from it, but only when you are experienced enough to evaluate the trade-offs between approaches.
 
-Be aware that, regardless of the directory structure employed, Cucumber effectively flattens the `features/` directory tree when running tests. By this I mean that anything ending in `.rb` under the start point for a Cucumber Feature run (the default case) or specified with the `-r` option is searched for Feature matches. 
+Be aware that, regardless of the directory structure employed, Cucumber effectively flattens the `features/` directory tree when running tests. By this I mean that anything ending in `.rb` under the start point for a Cucumber Feature run (the default case) or specified with the `-r` option is searched for Feature matches.
 
 Thus, a Step contained in `features/models/entities/step_definitions/anything.rb` can be used in a Feature file contained in `features/views/entity_new`, provided that:
 
@@ -259,7 +259,7 @@ Note that if the `-r` option is passed, then **ONLY** that directory tree will b
 
 ### How do I Write Tests?
 
-Constructing ones first tests (or “Features”, as BDD purists prefer) is often accompanied by what can only be described as *[writer's block](http://en.wikipedia.org/wiki/Writer%27s_block)*. The question of "Where to begin?" seems to be a particular roadblock for some. 
+Constructing ones first tests (or “Features”, as BDD purists prefer) is often accompanied by what can only be described as *[writer's block](http://en.wikipedia.org/wiki/Writer%27s_block)*. The question of "Where to begin?" seems to be a particular roadblock for some.
 
 If you truly have no idea where to start, I suggest that you consider what you are writing, presumably a web application, and what the initial point of contact between it and a user is, the home page. You can do worse than simply starting with:
 
@@ -306,9 +306,9 @@ And NEVER, EVER write:
   Then I should see the "welcome" page
 ```
 
-What is important about the difference in styles? 
+What is important about the difference in styles?
 
-The first example, **When "Bob" logs in**, is a *functional requirement*. The second, much longer, example is a *procedural reference*. 
+The first example, **When "Bob" logs in**, is a *functional requirement*. The second, much longer, example is a *procedural reference*.
 
 Functional requirements are features, but procedures belong in the implementation details. Ironically, given the propensity to use the word **should** in BDD/TDD, the real **[Plain English](http://www.plainlanguage.gov/whatisPL/definitions/Kimble.cfm)** folks advocate the use of “must” in place of “should” or “shall”.
 
@@ -344,7 +344,7 @@ Now, go write the code to implement this requirement in your application.
 
 It is tempting, sometimes irresistibly so, to skip ahead to the analysis stage alone, and complete as many Features, Scenarios, and Steps as one can imagine. In some cases, limited access to domain experts and end users may require that many Features have their Scenario details completed long before coding the associated Step Definitions is undertaken. When this is avoidable it should be, and when it is not avoidable then every effort should be made to avoid it nonetheless. In the long run, the best results are achieved when you write Steps and Step Definitions incrementally, using the absolute minimum of code to express the requirement. Immediately implement the new Step requirement in the application using the absolute minimum code that will satisfy it.
 
-You should, in fact, treat this part somewhat as a game. The application code that you write should literally be the minimum that will satisfy the requirement (particularly if this code is totally unsuited for production use). This way, you are forced to add additional Scenarios to drive out exactly what is acceptable. This pressure forces application code to evolve strictly to meet those requirements. 
+You should, in fact, treat this part somewhat as a game. The application code that you write should literally be the minimum that will satisfy the requirement (particularly if this code is totally unsuited for production use). This way, you are forced to add additional Scenarios to drive out exactly what is acceptable. This pressure forces application code to evolve strictly to meet those requirements.
 
 This might seem like a foolish waste of time at first, but if you pre-empt the design process by writing more sophisticated code than is called for, then you will inevitably fail to provide Scenario coverage for some of that code. You will also write code that will never *ever* be used. This *will* happen and it *will* bite you at some point. Keep the *[YAGNI](http://en.wikipedia.org/wiki/You_ain%27t_gonna_need_it)* principle in mind at all times.
 
@@ -354,9 +354,9 @@ Strictly following this approach permits you to face significant design changes 
 
 As is the case with most professions, the real value that a skilled programmer provides lies not so much in knowing how to do something as in knowing when and where it must be done. The real challenge with maintaining code is simply discovering which piece of code to change. Finding the exact spots in an application that need attention is usually the biggest maintenance problem. By strictly coding to Features backed by suitable Step Definitions you can simplify that task almost to the point of triviality.
 
-If it happens that, on occasion, you do anticipate Steps (*and we all do this on occasion no matter how much we try to avoid it*), then omitting any matcher for them in the Step Definition files causes those Steps to be reported as missing by Cucumber. 
+If it happens that, on occasion, you do anticipate Steps (*and we all do this on occasion no matter how much we try to avoid it*), then omitting any matcher for them in the Step Definition files causes those Steps to be reported as missing by Cucumber.
 
-Not only does Cucumber report them, it also helpfully provides a suggested Step matcher and argument to implement. If you end up writing stub Step matchers prior to full implementation, then you have an explicit ***pending*** method available to designate defined but pending/unspecified/stub Step Definitions. 
+Not only does Cucumber report them, it also helpfully provides a suggested Step matcher and argument to implement. If you end up writing stub Step matchers prior to full implementation, then you have an explicit ***pending*** method available to designate defined but pending/unspecified/stub Step Definitions.
 
 The `pending` method provides for specifying an optional message. Step Definitions containing the `pending` method will display as defined but pending in your Cucumber runs, and will print any message that you provided it.
 
@@ -421,7 +421,7 @@ Given /there are (\d+) froobles/ do |n|
 end
 ```
 
-The significant things here are that the method (`Given`) takes as its argument a [`regexp`](http://en.wikipedia.org/wiki/Regexp) bounded by `/` ( *although a quoted "simple string" can be used instead* ), and that the matcher method is followed by a block. 
+The significant things here are that the method (`Given`) takes as its argument a [`regexp`](http://en.wikipedia.org/wiki/Regexp) bounded by `/` ( *although a quoted "simple string" can be used instead* ), and that the matcher method is followed by a block.
 
 In other words, written differently in Ruby this matcher method could look like this:
 
@@ -450,7 +450,7 @@ The Step Sefinition match depends only upon the pattern given as the argument pa
 
 If Cucumber finds more than one matcher in all of the Step Definitions files matches a Step, then it complains that it has found multiple Step Definition matches for that Step and forces you to distinguish them. You can instruct Cucumber to just choose one of the candidates instead by passing it the `--guess` option on the command line.
 
-It is considered better form by some to surround with double quotation marks, **`" "`**, all of the elements in the Step clauses that are meant to be taken as values for variables passed to the Step Definition. This is just a convention. However, if you choose to follow this road then you must adjust your Step Definition matchers accordingly if the `"` characters are now considered part of the literal matcher string. 
+It is considered better form by some to surround with double quotation marks, **`" "`**, all of the elements in the Step clauses that are meant to be taken as values for variables passed to the Step Definition. This is just a convention. However, if you choose to follow this road then you must adjust your Step Definition matchers accordingly if the `"` characters are now considered part of the literal matcher string.
 
 For example, consider this Step:
 
@@ -464,7 +464,7 @@ And this Step Definition:
 When /determinable "(.*)" situation/ do |s|
 ```
 
-Finally, you can have Step Definitions call other Step Definitions, including those contained in other Step Definition files. This is one ( *but not the recommended* ) means by which you can specify the procedural details by combining other steps. 
+Finally, you can have Step Definitions call other Step Definitions, including those contained in other Step Definition files. This is one ( *but not the recommended* ) means by which you can specify the procedural details by combining other steps.
 
 For example:
 
@@ -482,9 +482,9 @@ end
 
 ### Steps within Steps: An anti-pattern
 
-If one Step Definition calls another Step Definition, then the matcher argument to the called **Given/When/Then** method must be enclosed with string delimiters. 
+If one Step Definition calls another Step Definition, then the matcher argument to the called **Given/When/Then** method must be enclosed with string delimiters.
 
-Because of this, if you have adopted the practice of demarcating parameter values present in Steps with double quotation marks, you must escape these quotes when calling another `definition_steps.rb` matcher from inside a `step_definitions.rb` file. 
+Because of this, if you have adopted the practice of demarcating parameter values present in Steps with double quotation marks, you must escape these quotes when calling another `definition_steps.rb` matcher from inside a `step_definitions.rb` file.
 
 You must take care not to include the quote marks in the `step_definitions` parameter matchers, because `"(.**)"` is not the same as `(.**)` or `(".\*")`. If you use quote-delimited values in the `.feature` Steps and do not account for them in the corresponding `step_definition.rb` matcher regexp, then you will obtain variables that contain leading and trailing quotes as part of their value.
 
@@ -500,9 +500,9 @@ When /some "(.*)" action/ do |a|
   a => required
 ```
 
-Once upon a time, one could simply nest **Given**, **When**, and **Then** matchers within Step Definitions and thereby directly call Dteps from within other Steps. 
+Once upon a time, one could simply nest **Given**, **When**, and **Then** matchers within Step Definitions and thereby directly call Dteps from within other Steps.
 
-This created increased coupling between `step_definition` files, which was frowned upon, and finally removed (well, *strongly* deprecated). 
+This created increased coupling between `step_definition` files, which was frowned upon, and finally removed (well, *strongly* deprecated).
 
 If you use nested steps, then you must now call them using the **`step`** method. You may still encounter the following forms in Step Definition files created before this change:
 
@@ -601,7 +601,7 @@ When /"([\w[\d\w]+)" logs on through the logon page/ do |user_name|
 end
 ```
 
-Having just shown you how to do it now take heed that you do not write **any** Step Definitions that call other Step Definitions (*you will do this too, but try hard not to*). 
+Having just shown you how to do it now take heed that you do not write **any** Step Definitions that call other Step Definitions (*you will do this too, but try hard not to*).
 
 At times, this will seem like the quickest solution to a troublesome bit of environment building. However, for anything beyond trivial use, it is always better to implement a custom method using the **API** provided by Cucumber ( *or by any other libraries you have installed* ), and then call that method directly from your Step Definition. You can either keep these custom methods in the same file as Steps Definitions, or stick them in any convenient file ending in `.rb` that is located in the `support/` directory ( *well, anywhere that Cucumber can find it, really* ), in which case you must enclose your methods within the following block:
 
@@ -635,7 +635,7 @@ World do
 end
 ```
 
-My rule of thumb is that if a Step Definition is called from another Step Definition, then its contents probably should be extracted out into a custom method. 
+My rule of thumb is that if a Step Definition is called from another Step Definition, then its contents probably should be extracted out into a custom method.
 
 For example, a logon Step Definition is likely to be used repeatedly throughout many Features. Turning it into a method is probably called for.
 
@@ -664,9 +664,9 @@ Feature: .  .  .
   Scenario: .  .  .
 ```
 
-Step Definition files have a corresponding method available in the `before(condition) do . . .` method, which has however a matching `after(condition) do . . .` method as well. 
+Step Definition files have a corresponding method available in the `before(condition) do . . .` method, which has however a matching `after(condition) do . . .` method as well.
 
-Recall that we are working in Ruby, and therefore the condition which enables the before/after block is anything that besides `false` or `nil` (like a **Tag**, for instance). 
+Recall that we are working in Ruby, and therefore the condition which enables the before/after block is anything that besides `false` or `nil` (like a **Tag**, for instance).
 
 Also, be aware that **all** eligible `before` methods are run before any Scenario statements are processed, and that they are run in the order encountered. Likewise, every eligible `after` block will run at the completion of every Scenario, again in the order that it is encountered.
 
@@ -778,13 +778,13 @@ Using the default profile...
 
 Since version 0.6.0, one can no longer overcome this default setting by adding the `--tags=@wip` to the Cucumber argument list on the command line, because now all `--tags` options are ANDed together.  Thus the combination of `--tags @wip` **AND** `--tags ~@wip` fails everywhere.
 
-You either must create a special profile in `config/cucumber.yml` to deal with this, or alter the default profile to suit your needs. 
+You either must create a special profile in `config/cucumber.yml` to deal with this, or alter the default profile to suit your needs.
 
-The `@wip` tags are a special case. If any Scenario tagged as `@wip` passes all of its Steps without error, and the `--wip` option is also passed, Cucumber reports the run as failing (because Scenarios that are marked as a work in progress are not *supposed* to pass!) 
+The `@wip` tags are a special case. If any Scenario tagged as `@wip` passes all of its Steps without error, and the `--wip` option is also passed, Cucumber reports the run as failing (because Scenarios that are marked as a work in progress are not *supposed* to pass!)
 
 Note as well that the `--strict` and `--wip` options are mutually exclusive.
 
-The number of occurrences of a particular Tag in your Features may be controlled by appending a colon followed by a number to the end of the tag name passed to the `--tags` option, like so: 
+The number of occurrences of a particular Tag in your Features may be controlled by appending a colon followed by a number to the end of the tag name passed to the `--tags` option, like so:
 
 ```
 $ cucumber --tags=@wip:3 features/log\*
@@ -844,7 +844,7 @@ Finally, running `autotest` with the environment variable `AUTOFEATURE=true` wil
 
 ### Customising the Cucumber Environment
 
-I advise against putting local Cucumber customisation code in `support/env.rb` itself as that file is typically overwritten by `script/generate cucumber:install | rails g cucumber`. Regardless, there are some customisations that must be loaded before the rest of Cucumber initialises and these must be placed at the beginning of the `env.rb file`. 
+I advise against putting local Cucumber customisation code in `support/env.rb` itself as that file is typically overwritten by `script/generate cucumber:install | rails g cucumber`. Regardless, there are some customisations that must be loaded before the rest of Cucumber initialises and these must be placed at the beginning of the `env.rb file`.
 
 Every file ending in `.rb` that is found in features/support is loaded by Cucumber. Therefore, you may place local customisations in any so-named file in that directory and they will get loaded. However, be advised that Cucumber's `--dry-run` option only excludes files in `features/support` that match the regexp `/env\\..\*/` (*note that the trailing dot is significant*). So a file with local customisations called `my_locals.rb` will be loaded regardless.
 
@@ -881,7 +881,7 @@ If you are testing with intent then you should be using something similar to the
 
 If you are working on a project that uses an older version of Ruby then a really neat method to drop into an interactive debugging session *inside a Cucumber Step Definition* using debugger's predecessor, ruby-debug, was provided by [Scott Taylor on the rspec mailing list](http://www.ruby-forum.com/topic/175732#769713) ( *The technique should still work with debugger but I have not yet tested it* ). Just put these statements inside the Step Definition at the point that you wish to debug: `require 'rubygems'; require 'debugger'; debugger`. When that code interrupts then type `irb` and you open an interactive debugging session wherein you can step forwards and backwards inside the code under test to determine exactly where the breakage is happening. Alternatively, you can add `require 'rubygems'; require 'debugger';` to your `support/local_env.rb` file (see below) and just put `debugger` wherever you desire it inside any Step Definition.
 
-Realize that tests/assertions/expectations either “pass” or “fail” (raise an error), and that “fail” is **not** the same as `false`. Anything besides “fail” is a pass. 
+Realize that tests/assertions/expectations either “pass” or “fail” (raise an error), and that “fail” is **not** the same as `false`. Anything besides “fail” is a pass.
 
 When, in RSpec, `something.should_be 0` and it is not, then what is returned is an error exception, not a Boolean value. In raw Cucumber (pardon the pun) one writes `fail if false` and not simply `false`. A little reflection reveals why this is so, since `false` might be the expected successful outcome of a test, and thus not an error. However, the distinction between fail and `false` escaped me, until I tripped over it in an actual test suite (*and sadly I continue to do so from time to time*).
 
