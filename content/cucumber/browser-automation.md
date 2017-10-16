@@ -44,20 +44,20 @@ public class ExampleSteps {
    @When("^I search for \"(.*)\"$")
      public void search_for(String query) {
         WebElement element = browser.findElelment(By.name("q"));
-        \\Enter Something to search for
+        //Enter Something to search for
         element.sendKeys(query);
-        \\Now submit the form. WebDriver will find the form for us from the element
+        //Now submit the form. WebDriver will find the form for us from the element
         element.submit();
    }
 
    @Then("^ the page title should start with \"(.*)\"$")
    public void checkTitle() {
-       \\Google's search is rendered dynamically with JavaScript.
-       \\Wait for the page to load timeout after ten seconds
-       new WebDriverWait(driver,'10')).untill(new ExpectedCondition&lt;Boolean&gt; {
+       //Google's search is rendered dynamically with JavaScript.
+       //Wait for the page to load timeout after ten seconds
+       new WebDriverWait(driver,'10')).untill(new ExpectedCondition<Boolean> {
        public Boolean apply(WebDriver d) {
        return d.getTitle().toLowerCase.startsWith("cheese");
-       \\Should see: "cheese! -Google Search"
+       //Should see: "cheese! -Google Search"
     }
 
     @After()
@@ -97,9 +97,9 @@ Watir, pronounced water, is an open-source (BSD) family of Ruby libraries for au
 
 Watir drives browsers the same way people do. It clicks links, fills in forms, presses buttons. Watir also checks results, such as whether expected text appears on the page.
 
-Watir is a family of Ruby libraries but it supports your app no matter what technology it is developed in. While Watir supports only Internet Explorer on Windows, Here comes Watir-WebDriver to solve single browser testing and support Chrome, Firefox, Internet Explorer, Opera and also running in headless mode (HTMLUnit).
+Watir is a family of Ruby libraries but it supports your application no matter which technology it is developed in. While Watir supports only Internet Explorer on Windows; Watir-WebDriver solves single browser testing and support Chrome, Firefox, Internet Explorer, Opera and also running in headless mode (HTMLUnit).
 
-Now without wasting anytime quickly jump in to a sample UI testing program using Watir
+Now let's jump in to a sample UI testing program using Watir:
 
  ```ruby
  require "rubygems"
