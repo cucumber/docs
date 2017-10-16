@@ -117,50 +117,20 @@ To use the JUnit runner you need to add the following dependencies:
 
 To run Cucumber with Maven, make sure that
 
-* Maven is installed.
-* the environment variable `MAVEN_HOME` is correctly configured.
-* your IDE is configured with latest maven installation.
+* Maven is installed
+* The environment variable `MAVEN_HOME` is correctly configured
+* Your IDE is configured with latest maven installation
 
-The
+Steps:
 
-1.  Create a new maven project or fork from cucumber-java examples on github.
-2.  Then add the following dependencies to your  `pom.xml`
+1.  Create a new Maven project or fork from cucumber-java examples on github
+2.  Add the following dependency to your  `pom.xml`
 
       ```xml
       <dependency>
-      	<groupId>info.cukes</groupId>
-      	<artifactId>cucumber-testng</artifactId>
-      	<version>1.2.2</version>
-      </dependency>
-
-      <dependency>
-      	<groupId>info.cukes</groupId>
-      	<artifactId>cucumber-core</artifactId>
-      	<version>1.2.2</version>
-      </dependency>
-
-      <dependency>
-      	<groupId>info.cukes</groupId>
-      	<artifactId>cucumber-html</artifactId>
-      	<version>0.2.3</version>
-      </dependency>
-
-      <dependency>
-      	<groupId>info.cukes</groupId>
+      	<groupId>io.cucumber</groupId>
       	<artifactId>cucumber-java</artifactId>
-      	<version>1.2.2</version>
-      </dependency>
-
-      <dependency>
-      	<groupId>info.cukes</groupId>
-      	<artifactId>cucumber-jvm-deps</artifactId>
-      	<version>1.0.3</version>
-      </dependency>
-
-      <dependency>
-      	<groupId>info.cukes</groupId>
-      	<artifactId>cucumber-picocontainer</artifactId>
-      	<version>1.2.2</version>
+      	<version>2.0.1</version>
       </dependency>
       ```
 
