@@ -16,16 +16,17 @@ Please see the [General Reference](/gherkin/gherkin-reference/) for functionalit
 
 ## Languages
 
-Cucumber-JVM supports the following JVM languages:
+Cucumber-JVM supports Java, Kotlin and Android.
 
-- [Java](#java)
-- [Groovy](#groovy)
-- [Scala](#scala)
-- [Clojure](#clojure)
-- [Jython](#jython)
-- [JRuby](#jruby)
-- [Rhino JavaScript](#rhino-javascript)
-- [Gosu](#gosu)
+Other JVM languages have been moved to their own repository:
+* [Clojure](https://github.com/cucumber/cucumber-jvm-clojure)
+* [Gosu](https://github.com/cucumber/cucumber-jvm-gosu)
+* [Groovy](https://github.com/cucumber/cucumber-jvm-groovy)
+* [JRuby](https://github.com/cucumber/cucumber-jvm-jruby)
+* [Jython](https://github.com/cucumber/cucumber-jvm-jython)
+* [Rhino](https://github.com/cucumber/cucumber-jvm-rhino)
+* [Scala](https://github.com/cucumber/cucumber-jvm-scala)
+
 
 ## Installation
 

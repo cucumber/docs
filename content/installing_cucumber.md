@@ -57,16 +57,16 @@ Add these dependencies to your project:
 
 ```java
     <dependency>
-        <groupId>info.cukes</groupId>
+        <groupId>io.cucumber</groupId>
         <artifactId>cucumber-java</artifactId>
-        <version>1.2.4</version>
+        <version>2.0.1</version>
         <scope>test</scope>
     </dependency>
 
     <dependency>
-        <groupId>info.cukes</groupId>
+        <groupId>io.cucumber</groupId>
         <artifactId>cucumber-junit</artifactId>
-        <version>1.2.4</version>
+        <version>2.0.1</version>
         <scope>test</scope>
     </dependency>
 ```
