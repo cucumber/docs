@@ -3,19 +3,20 @@ menu:
 - reference
 source: https://github.com/cucumber/cucumber/wiki/Feature-Coupled-Step-Definitions-(Antipattern)/
 title: Feature Coupled Step Definitions (Anti-pattern)
+polyglot: true
 ---
 
 > TODO: Generalize. Move to Step Definitions
 
 Feature-coupled Step Definitions are Step Definitions that can't be used across Features or Scenarios. 
 
-This is evil! It may lead to an explosion of Step Definitions, code duplication, and high maintenance costs.
+This is a bad practice. It may lead to an explosion of Step Definitions, code duplication, and high maintenance costs.
 
 ## Example
 
 An imaginary résumé application could have the following Feature and Step Definition files:
 
-```
+```ruby
 features/
 +--edit_work_experience.feature
 +--edit_languages.feature
@@ -24,6 +25,17 @@ features/
    +--edit_work_experience_steps.rb
    +--edit_languages_steps.rb
    +--edit_education_steps.rb
+```
+
+```java
+features/
++--edit_work_experience.feature
++--edit_languages.feature
++--edit_education.feature
++--steps/
+   +--edit_work_experience_steps.java
+   +--edit_languages_steps.java
+   +--edit_education_steps.java
 ```
 
 The `edit_work_experience.feature` could have the following Scenario:
@@ -36,7 +48,12 @@ Scenario: add description
   Then I should see "Cucumber BDD tool" under "Descriptions"
 ```
 
+```ruby
 The `edit_work_experience_steps.rb` could be implemented like this:
+```
+```java
+The `edit_work_experience_steps.java` could be implemented like this:
+```
 
 ```
 Given /I have a CV and I'm on the edit description page/ do
@@ -45,11 +62,14 @@ Given /I have a CV and I'm on the edit description page/ do
   visits("/employees/#{@employee.id}/descriptions/new")
 end
 ```
+```java
+// TODO
+```
 
 ## How to fix
 
 \## Organise steps by domain concept. See [Step Organization](/cucumber/step-organization/).
 
-\## Rename `step.rb` files to a domain-related name (rather than a Feature- or Scenario-related name).
+\## Rename step files to a domain-related name (rather than a Feature- or Scenario-related name).
 
 \## Break up [Conjunction Steps (Antipattern)](/gherkin/conjunction-steps-antipattern/) steps into individual steps.
