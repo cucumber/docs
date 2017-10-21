@@ -9,6 +9,8 @@ polyglot: true
 When Cucumber executes a Step in a Scenario, it will look for a matching *Step Definition* to execute.
 The Step Definitions map (or "glue") the Gherkin to the underlying programming language.
 
+## What is a _Step_Definition_?
+
 A Step Definition is
 {{% text "java" %}}a method with a regular expression attached to it. They are defined in Java files.{{% /text %}}
 {{% text "ruby" %}}a block of code with a regular expression attached to it. They are defined in Ruby files under `features/step_definitions/`.  Each filename should follow the pattern `\*\_steps.rb`.{{% /text %}}
@@ -57,36 +59,38 @@ Given(/^I have (\d+) cukes in my belly$/, cukes => {
 
 ### Step Definition Arguments
 
-### Step Definition Arguments
+A Step Definition can optionally accept *arguments*; determined by the capture groups in a Regular Expression (`Regexp`).
+The number and type of the arguments are defined in the Step Definition.
 
-A Step Definition can optionally accept *arguments*. If it accepts any arguments, then they are determined by the capture groups of a `Regexp` (and an equal number of arguments to the Proc).
+The Step Definition in the example above accepts just one argument, identified by the capture group
+{{% text "ruby" %}}`(\d+)`.  When the Step Definition is executed, the argument is passed to the Ruby code as `cukes`.{{% /text %}}
+{{% text "java" %}}`(\\d+)`.  When the Step Definition is executed, the argument is passed to the Java code as `cukes`.{{% /text %}}
+{{% text "javascript" %}}`(\d+)`.  When the Step Definition is executed, the argument is passed to the JavaScript code as `cukes`.{{% /text %}}
 
-In the example above, the Step Definition accepts just one argument, identified by the capture group `(\d+)`.  When the Step Definition is executed, the argument is passed to Ruby code as `cukes`.
-
-If you aren't comfortable with Regular Expressions, it's also possible to define Step Definitions using strings and `$variables`, like this:
-
-```
+{{% text "ruby" %}}
+If you aren't comfortable with Regular Expressions, it's also possible to define Step Definitions using strings and variables, like this:
+{{% /text %}}
+```ruby
 Given "I have $n cucumbers in my belly" do |cukes|
   # Some Ruby code here
 end
 ```
 
+{{% text "ruby" %}}
 In this case, the String is compiled to a Regular Expression behind the scenes: `/^I have (.\*) cucumbers in my belly$/`.
-
+{{% /text %}}
 
 ## What is a _Step_?
 
-Then there are Steps. A Step is analogous to a method or function *invocation*.
+A Step is analogous to a method call or function invocation.
 
-Here is an example:
+For example:
 
 ```
 Given I have 93 cucumbers in my belly
 ```
 
-In this Step, you're "calling" the above Step Definition with one argument: the string `"93"`.
-
-## _Where_ are Steps?
+In this Step, you're "calling" the above Step Definition with one argument: the value `93`.
 
 Steps are declared in your `features/\*.feature` files.
 
@@ -94,20 +98,18 @@ Steps are declared in your `features/\*.feature` files.
 ## How Steps and Step Definitions work together
 
 1. Cucumber matches a Step against a Step Definition's `Regexp`
-2. Cucumber gathers any captures or variables
-3. Cucumber passes them to the Step Definition's `Proc` (or “function”) and executes it
-
+2. Cucumber gathers any capture groups or variables
+3. Cucumber passes them to the Step Definition's {{% text "ruby" %}}`Proc` (or “function”){{% /text %}}{{% text "javascript" %}}function{{% /text %}}{{% text "java" %}}method{{% /text %}} and executes it
 
 Recall that Step Definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**). and can be expressed in any of Cucumber's supported [spoken languages](/gherkin/spoken-languages/).
 
-All Step Definitions are loaded (and defined) before Cucumber starts to execute the plain text.
+All Step Definitions are loaded (and defined) before Cucumber starts to execute the plain text in the feature file.
 
-Once plain text execution begins, for each Step, Cucumber will look for a registered Step Definition with a matching `Regexp`. If it finds one, it will execute its Proc, passing all capture groups from the Regexp as arguments to the Proc.
+Once execution begins, for each Step, Cucumber will look for a registered Step Definition with a matching `Regexp`. If it finds one, it will execute it, passing all capture groups and variables from the Regexp as arguments to the method or function.
 
 The specific preposition/adverb used has **no** significance when Cucumber is registering or looking up Step Definitions.
 
 Also, check out Multiline [Step Arguments](/gherkin/gherkin-reference/#step-arguments) for more info on how to pass entire tables or bigger strings to your Step Definitions.
-
 
 ## Successful Steps
 
@@ -119,11 +121,11 @@ When Cucumber can't find a matching Step Definition, the Step gets marked as yel
 
 ## Pending Steps
 
-When a Step Definition's Proc invokes the `pending` method, the Step is marked as yellow (as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
+When a Step Definition's method or function invokes the `pending` method, the Step is marked as yellow (as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
 ## Failed Steps
 
-When a Step Definition's Proc is executed and raises an error, the step is marked as red. What you return from a Step Definition has no significance whatsoever.
+When a Step Definition's method or function is executed and raises an error, the step is marked as red. What you return from a Step Definition has no significance whatsoever.
 
 Returning `nil` or `false` will **not** cause a Step Definition to fail.
 

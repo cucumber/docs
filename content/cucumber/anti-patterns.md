@@ -1,6 +1,4 @@
 ---
-menu:
-- reference
 source: https://github.com/cucumber/cucumber/wiki/Feature-Coupled-Step-Definitions-(Antipattern)/
 source: https://github.com/cucumber/cucumber/wiki/Conjunction-Steps-(Antipattern)/
 source: https://stackoverflow.com/questions/22696646/how-to-call-a-step-from-another-step-in-cucumber-jvm
@@ -9,7 +7,9 @@ title: Anti-patterns
 polyglot: true
 ---
 
-We describe several anti-patterns and how to avoid them here.
+We describe a few anti-patterns and how to avoid them here.
+
+For more information, see [Cucumber Anti-Patterns (blog)](http://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns).
 
 ## Feature Coupled Step Definitions (Anti-pattern)
 
@@ -125,7 +125,7 @@ Given I have shades
 And I have a brand new Mustang
 ```
 
-## Support for conjunction steps
+### Support for conjunction steps
 
 Sometimes you may want to combine several Steps into one, to make your Scenarios easier to read.
 
