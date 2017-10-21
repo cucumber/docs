@@ -1,32 +1,61 @@
 ---
-menu:
-- all
-- wiki
+menu: gherkin
+source: step-definitions-old.md
 source: https://github.com/cucumber/cucumber/wiki/Step-Definitions/
 title: Step Definitions
 polyglot: true
 ---
 
+When Cucumber executes a Step in a Scenario, it will look for a matching *Step Definition* to execute.
+The Step Definitions map (or "glue") the Gherkin to the underlying programming language.
 
-## What is a Step Definition?
+A Step Definition is
+{{% text "java" %}}a method with a regular expression attached to it. They are defined in Java files.{{% /text %}}
+{{% text "ruby" %}}a block of code with a regular expression attached to it. They are defined in Ruby files under `features/step_definitions/`.  Each filename should follow the pattern `\*\_steps.rb`.{{% /text %}}
+{{% text "javascript" %}}a function with a Cucumber expression attached to it. They are defined in Javascript files.{{% /text %}}
 
-Each Step Definition is similar to a *method* or *function* in a typical
-OO/procedural programming language. 
+ To illustrate how this works, look at the following Gherkin Scenario:
 
-Here's a simple example:
-
+```gherkin
+Scenario: Some cukes
+  Given I have 48 cukes in my belly
 ```
-Given /^I have (\d+) cucumbers in my belly$/ do |cukes|
-  # Some Ruby code here
+
+The `I have 48 cukes in my belly` part of the step (the text following the `Given` keyword) will match the Step Definition below:
+
+```java
+@Given("I have (\\d+) cukes in my belly")
+public void I_have_cukes_in_my_belly(int cukes) {
+    System.out.format("Cukes: %n\n", cukes);
+}
+```
+
+```ruby
+Given(/I have (\d+) cukes in my belly/) do |cukes|
+  puts "Cukes: #{cukes}"
 end
 ```
 
+```javascript
+Given(/^I have (\d+) cukes in my belly$/, function (cukes) {
+  console.log(`Cukes: ${cukes}`);
+});
+```
 
+{{% block "javascript" %}}
+Please note that if you use arrow functions, you won't be able
+to share state between Steps!
 
-## _Where_ are Step Definitions?
+```javascript
+// Don't do this!
+Given(/^I have (\d+) cukes in my belly$/, cukes => {
+  console.log(`Cukes: ${cukes}`);
+});
+```
 
-Step Definitions are defined in Ruby files under `features/step_definitions/`.  Each filename should follow the pattern `\*\_steps.rb`. 
+{{% /block %}}
 
+### Step Definition Arguments
 
 ### Step Definition Arguments
 
@@ -55,11 +84,11 @@ Here is an example:
 Given I have 93 cucumbers in my belly
 ```
 
-In this Step, you're "calling" the above Step Definition with one argument: the string `"93"`. 
+In this Step, you're "calling" the above Step Definition with one argument: the string `"93"`.
 
 ## _Where_ are Steps?
 
-Steps are declared in your `features/\*.feature` files. 
+Steps are declared in your `features/\*.feature` files.
 
 
 ## How Steps and Step Definitions work together
@@ -71,7 +100,7 @@ Steps are declared in your `features/\*.feature` files.
 
 Recall that Step Definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**). and can be expressed in any of Cucumber's supported [spoken languages](/gherkin/spoken-languages/).
 
-All Step Definitions are loaded (and defined) before Cucumber starts to execute the plain text.  
+All Step Definitions are loaded (and defined) before Cucumber starts to execute the plain text.
 
 Once plain text execution begins, for each Step, Cucumber will look for a registered Step Definition with a matching `Regexp`. If it finds one, it will execute its Proc, passing all capture groups from the Regexp as arguments to the Proc.
 
@@ -94,7 +123,7 @@ When a Step Definition's Proc invokes the `pending` method, the Step is marked a
 
 ## Failed Steps
 
-When a Step Definition's Proc is executed and raises an error, the step is marked as red. What you return from a Step Definition has no significance whatsoever. 
+When a Step Definition's Proc is executed and raises an error, the step is marked as red. What you return from a Step Definition has no significance whatsoever.
 
 Returning `nil` or `false` will **not** cause a Step Definition to fail.
 
@@ -104,7 +133,7 @@ Steps that follow `undefined`, `pending`, or `failed` Steps are never executed, 
 
 ## String Steps
 
-Step Definitions can be written using strings rather than regular expressions. 
+Step Definitions can be written using strings rather than regular expressions.
 
 Instead of writing:
 
@@ -118,7 +147,7 @@ You could write:
 Given "I have $count cucumbers in my belly" do |cukes|
 ```
 
-When writing a Step Definition using the string form, any word preceded by a `$` is taken to be a placeholder. Behind the scenes, Cucumber will convert it to the regular expression `(.*)`. 
+When writing a Step Definition using the string form, any word preceded by a `$` is taken to be a placeholder. Behind the scenes, Cucumber will convert it to the regular expression `(.*)`.
 
 The text matched by the wildcard becomes an argument to the block, and the word that appeared in the Step Definition is disregarded.
 
@@ -148,7 +177,7 @@ Cucumber can't make a decision about what Step Definition to execute, and will r
 
 ### Guess mode
 
-Running the plain text step will match the Regexp of both Step Definitions and raise `Cucumber::Ambiguous`. 
+Running the plain text step will match the Regexp of both Step Definitions and raise `Cucumber::Ambiguous`.
 
 However, if you run Cucumber with `--guess`, it will guess that you were aiming for the Step Definition with 2 match groups.
 
@@ -165,7 +194,7 @@ So if you try `--guess` with the mice above, Cucumber will pick `/Three blind (.
 
 ## Redundant Step Definitions
 
-In Cucumber, you're not allowed to use a `Regexp` more than once in a Step Definition—even across files, and even with different code inside the Proc. 
+In Cucumber, you're not allowed to use a `Regexp` more than once in a Step Definition—even across files, and even with different code inside the Proc.
 
 Thus, the following would cause a `Cucumber::Redundant` error:
 
