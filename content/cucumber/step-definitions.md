@@ -7,9 +7,7 @@ polyglot: true
 ---
 
 When Cucumber executes a Step in a Scenario, it will look for a matching *Step Definition* to execute.
-The Step Definitions map (or "glue") the Gherkin to the underlying programming language.
-
-## What is a _Step_Definition_?
+The Step Definitions map, or "glue", the Gherkin to the underlying programming language.
 
 A Step Definition is
 {{% text "java" %}}a method with a regular expression attached to it. They are defined in Java files.{{% /text %}}
@@ -57,7 +55,7 @@ Given(/^I have (\d+) cukes in my belly$/, cukes => {
 
 {{% /block %}}
 
-### Step Definition Arguments
+## Step Definition Arguments
 
 A Step Definition can optionally accept *arguments*; determined by the capture groups in a Regular Expression (`Regexp`).
 The number and type of the arguments are defined in the Step Definition.
@@ -80,7 +78,7 @@ end
 In this case, the String is compiled to a Regular Expression behind the scenes: `/^I have (.\*) cucumbers in my belly$/`.
 {{% /text %}}
 
-## What is a _Step_?
+## Steps
 
 A Step is analogous to a method call or function invocation.
 
@@ -92,7 +90,7 @@ Given I have 93 cucumbers in my belly
 
 In this Step, you're "calling" the above Step Definition with one argument: the value `93`.
 
-Steps are declared in your `features/\*.feature` files.
+Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}{{% text "java" %}}`*.feature`{{% /text %}}{{% text "javascript" %}}`*.feature`{{% /text %}} files.
 
 
 ## How Steps and Step Definitions work together
@@ -111,31 +109,32 @@ The specific preposition/adverb used has **no** significance when Cucumber is re
 
 Also, check out Multiline [Step Arguments](/gherkin/gherkin-reference/#step-arguments) for more info on how to pass entire tables or bigger strings to your Step Definitions.
 
-## Successful Steps
+### Successful Steps
 
 When Cucumber finds a matching Step Definition it will execute it. If the block in the Step Definition doesn't raise an error, the Step is marked as successful (green). Anything you `return` from a Step Definition has no significance whatsoever.
 
-## Undefined Steps
+### Undefined Steps
 
 When Cucumber can't find a matching Step Definition, the Step gets marked as yellow, and all subsequent steps in the Scenario are skipped. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
-## Pending Steps
+### Pending Steps
 
 When a Step Definition's method or function invokes the `pending` method, the Step is marked as yellow (as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
-## Failed Steps
+### Failed Steps
 
 When a Step Definition's method or function is executed and raises an error, the step is marked as red. What you return from a Step Definition has no significance whatsoever.
 
-Returning `nil` or `false` will **not** cause a Step Definition to fail.
+Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java" %}}`null`{{% /text %}}{{% text "javascript" %}}`null`{{% /text %}} or `false` will **not** cause a Step Definition to fail.
 
-## Skipped Steps
+### Skipped Steps
 
 Steps that follow `undefined`, `pending`, or `failed` Steps are never executed,  even if there is a matching Step Definition. These Steps are marked as cyan.
 
-## String Steps
+{{% text "ruby" %}}
+### String Steps (Ruby)
 
-Step Definitions can be written using Strings rather than Regular Expressions.
+In Ruby, Step Definitions can be written using Strings rather than Regular Expressions.
 
 Instead of writing:
 
@@ -143,62 +142,23 @@ Instead of writing:
 Given /^I have (.*) cucumbers in my belly$/ do |cukes|
 ```
 
-```java
-TODO
-```
-
-```javascript
-TODO
-```
 You could write:
 
 ```ruby
 Given "I have $count cucumbers in my belly" do |cukes|
 ```
 
-```java
-TODO
-```
-
-```javascript
-TODO
-```
-
-When writing a Step Definition using the string form, any word preceded by a `$` is taken to be a placeholder. Behind the scenes, Cucumber will convert it to the regular expression `(.*)`.
+When writing a Step Definition using the String form, any word preceded by a `$` is taken to be a placeholder. Behind the scenes, Cucumber will convert it to the Regular Expression `(.*)`.
 
 The text matched by the wildcard becomes an argument to the block, and the word that appeared in the Step Definition is disregarded.
-
+{{% /text %}}
 
 ## Ambiguous Steps
 
-Consider these Step Definitions:
+Step Definitions have to be unique for Cucumber to know what to execute.
+If you use ambiguous Step Definitions, Cucumber will raise {{% text "ruby" %}}a `Cucumber::Ambiguous` error,{{% /text %}}{{% text "java" %}}an `AmbiguousStepDefinitionsException`,{{% /text %}}{{% text "javascript" %}}an error or exception,{{% /text %}} telling you to fix the ambiguity.
 
-```ruby
-Given /Three (.*) mice/ do |disability|
-  # some code
-end
-
-Given /Three blind (.*)/ do |animal|
-  # some other code..
-end
-```
-
-```java
-TODO
-```
-
-```javascript
-TODO
-```
-And a plain text step:
-
-```
-Given Three blind mice
-```
-
-Cucumber can't make a decision about what Step Definition to execute, and will raise a `Cucumber::Ambiguous` error telling you to fix the ambiguity.
-
-
+{{% text "ruby" %}}
 ### Guess mode
 
 Running the plain text step will match the Regexp of both Step Definitions and raise `Cucumber::Ambiguous`.
@@ -231,3 +191,4 @@ Given /Three (.*) mice/ do |disability|
   # some other code..
 end
 ```
+{{% /text %}}
