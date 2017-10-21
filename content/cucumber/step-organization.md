@@ -6,7 +6,7 @@ source: https://github.com/cucumber/cucumber/wiki/Step-Organization/
 title: Step Organization
 ---
 
-> TODO: integrate with step definitions
+> TODO: integrate with step definitions and/or anti-patterns
 
 How do you name Step Definition files? What to put in each Step Definition? What **not** to put in Step Definitions? 
 
