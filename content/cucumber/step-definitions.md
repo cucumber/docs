@@ -135,18 +135,33 @@ Steps that follow `undefined`, `pending`, or `failed` Steps are never executed, 
 
 ## String Steps
 
-Step Definitions can be written using strings rather than regular expressions.
+Step Definitions can be written using Strings rather than Regular Expressions.
 
 Instead of writing:
 
-```
+```ruby
 Given /^I have (.*) cucumbers in my belly$/ do |cukes|
 ```
 
+```java
+TODO
+```
+
+```javascript
+TODO
+```
 You could write:
 
-```
+```ruby
 Given "I have $count cucumbers in my belly" do |cukes|
+```
+
+```java
+TODO
+```
+
+```javascript
+TODO
 ```
 
 When writing a Step Definition using the string form, any word preceded by a `$` is taken to be a placeholder. Behind the scenes, Cucumber will convert it to the regular expression `(.*)`.
@@ -158,7 +173,7 @@ The text matched by the wildcard becomes an argument to the block, and the word 
 
 Consider these Step Definitions:
 
-```
+```ruby
 Given /Three (.*) mice/ do |disability|
   # some code
 end
@@ -168,6 +183,13 @@ Given /Three blind (.*)/ do |animal|
 end
 ```
 
+```java
+TODO
+```
+
+```javascript
+TODO
+```
 And a plain text step:
 
 ```
@@ -196,7 +218,7 @@ So if you try `--guess` with the mice above, Cucumber will pick `/Three blind (.
 
 ## Redundant Step Definitions
 
-In Cucumber, you're not allowed to use a `Regexp` more than once in a Step Definition—even across files, and even with different code inside the Proc.
+In Cucumber, you're not allowed to use a `Regexp` more than once in a Step Definition—even across files, and even with different code inside the method or function.
 
 Thus, the following would cause a `Cucumber::Redundant` error:
 
