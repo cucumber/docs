@@ -101,8 +101,6 @@ end
 
 * Rename Step & Step Definition files to a domain-related name (rather than a Feature- or Scenario-related name).
 
-* Break up [Conjunction Steps (Antipattern)](/gherkin/conjunction-steps-antipattern/) Steps into individual Steps.
-
 
 ## Conjunction Steps (Anti-pattern)
 

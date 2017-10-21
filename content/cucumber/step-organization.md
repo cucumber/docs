@@ -31,7 +31,7 @@ For example, in a Curriculum Vitae application, we might have:
 
 The first three would define all the [Given-When-Then](/gherkin/given-when-then/) Step Definitions related to creating, reading, updating, and deleting the various models. The last one would define Step Definitions related to logging in and out.
 
-If you follow this pattern you also avoid the [Feature-Coupled Step Definitions (Antipattern)](/cucumber/feature-coupled-step-definitions-antipattern/) antipattern.
+If you follow this pattern you also avoid the [Feature-Coupled Step Definitions (Antipattern)](/cucumber/anti-patterns/) anti-pattern.
 
 ## Step state
 
