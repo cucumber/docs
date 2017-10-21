@@ -2,17 +2,22 @@
 menu:
 - reference
 source: https://github.com/cucumber/cucumber/wiki/Feature-Coupled-Step-Definitions-(Antipattern)/
-title: Feature Coupled Step Definitions (Anti-pattern)
+source: https://github.com/cucumber/cucumber/wiki/Conjunction-Steps-(Antipattern)/
+source: https://stackoverflow.com/questions/22696646/how-to-call-a-step-from-another-step-in-cucumber-jvm
+source: https://groups.google.com/forum/#!searchin/cukes/jvm$20steps$20programming/cukes/DzE_kGZx94I/5rf__N31qvAJ
+title: Anti-patterns
 polyglot: true
 ---
 
-> TODO: Move to Step Definitions
+We describe several anti-patterns and how to avoid them here.
+
+## Feature Coupled Step Definitions (Anti-pattern)
 
 Feature-coupled Step Definitions are Step Definitions that can't be used across Features or Scenarios. 
 
-This is considered an anti-pattern, as it may lead to an explosion of Step Definitions, code duplication, and high maintenance costs.
+This may lead to an explosion of Step Definitions, code duplication, and high maintenance costs.
 
-## Example
+### Example
 
 An imaginary résumé application could have the following Feature and Step Definition files:
 
@@ -48,7 +53,6 @@ features/
    +--edit_languages_steps.rb
    +--edit_education_steps.rb
 ```
-
 
 
 The `edit_work_experience.feature` could have the following Scenario:
@@ -91,10 +95,43 @@ Given /I have a CV and I'm on the edit description page/ do
 end
 ```
 
-## How to fix
+### How to fix
 
 * Organise Steps by domain concept. See [Step Organization](/cucumber/step-organization/).
 
 * Rename Step & Step Definition files to a domain-related name (rather than a Feature- or Scenario-related name).
 
 * Break up [Conjunction Steps (Antipattern)](/gherkin/conjunction-steps-antipattern/) Steps into individual Steps.
+
+
+## Conjunction Steps (Anti-pattern)
+
+From the online Merriam-Webster dictionary:
+
+> **con·junc·tion**: an uninflected linguistic form that joins together sentences, clauses, phrases, or words.
+
+Don't do this in Steps. It makes Steps too specialised, and hard to reuse. Cucumber has built-in support for conjunctions (`And`, `But`) for a reason!
+
+### Example
+
+```
+Given I have shades and a brand new Mustang
+```
+
+### How to fix
+
+```
+Given I have shades
+And I have a brand new Mustang
+```
+
+## Support for conjunction steps
+
+Sometimes you may want to combine several Steps into one, to make your Scenarios easier to read.
+
+In Ruby, it is possible to [Call Steps from Step Definitions](/implementations/ruby/calling-steps-from-step-definitions/).
+
+In Cucumber-JVM this is not supported. This is by design; the best tool to achieve composition and reuse is the host programming language.
+To use several (smaller) steps inside a bigger step; extract each small step to a regular method, and call these methods from the bigger step.
+
+To make your life easier, strive to keep your Steps atomic!
