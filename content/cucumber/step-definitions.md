@@ -153,10 +153,13 @@ When writing a Step Definition using the String form, any word preceded by a `$`
 The text matched by the wildcard becomes an argument to the block, and the word that appeared in the Step Definition is disregarded.
 {{% /text %}}
 
-## Ambiguous Steps
+### Ambiguous Steps
 
 Step Definitions have to be unique for Cucumber to know what to execute.
-If you use ambiguous Step Definitions, Cucumber will raise {{% text "ruby" %}}a `Cucumber::Ambiguous` error,{{% /text %}}{{% text "java" %}}an `AmbiguousStepDefinitionsException`,{{% /text %}}{{% text "javascript" %}}an error or exception,{{% /text %}} telling you to fix the ambiguity.
+If you use ambiguous Step Definitions,{{% text "ruby" %}}Cucumber will raise a `Cucumber::Ambiguous` error,{{% /text %}}
+{{% text "java" %}} Cucumber will raise an `AmbiguousStepDefinitionsException`,{{% /text %}}
+{{% text "javascript" %}}the Step / Scenario will get an "Ambiguous" result,{{% /text %}}
+telling you to fix the ambiguity.
 
 {{% text "ruby" %}}
 ### Guess mode
