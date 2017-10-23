@@ -1,4 +1,5 @@
 ---
+menu: reference
 source: https://github.com/cucumber/cucumber/wiki/Feature-Coupled-Step-Definitions-(Antipattern)/
 source: https://github.com/cucumber/cucumber/wiki/Conjunction-Steps-(Antipattern)/
 source: https://stackoverflow.com/questions/22696646/how-to-call-a-step-from-another-step-in-cucumber-jvm
@@ -95,7 +96,7 @@ Given /I have a CV and I'm on the edit description page/ do
 end
 ```
 
-### How to fix
+### How to decouple Steps & Step Definitions
 
 * Organise Steps by domain concept. See [Step Organization](/cucumber/step-organization/).
 
@@ -116,20 +117,20 @@ Don't do this in Steps. It makes Steps too specialised, and hard to reuse. Cucum
 Given I have shades and a brand new Mustang
 ```
 
-### How to fix
+### How to split Conjunction Steps
 
 ```
 Given I have shades
 And I have a brand new Mustang
 ```
 
-### Support for conjunction steps
+### Support for Conjunction Steps
 
 Sometimes you may want to combine several Steps into one, to make your Scenarios easier to read.
 
 In Ruby, it is possible to [Call Steps from Step Definitions](/implementations/ruby/calling-steps-from-step-definitions/).
 
-In Cucumber-JVM this is not supported. This is by design; the best tool to achieve composition and reuse is the host programming language.
+In Cucumber-JVM this is not supported. This is *by design*; the best tool to achieve composition and reuse is the host programming language.
 To use several (smaller) steps inside a bigger step; extract each small step to a regular method, and call these methods from the bigger step.
 
 To make your life easier, strive to keep your Steps atomic!

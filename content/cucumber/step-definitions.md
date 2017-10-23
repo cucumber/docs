@@ -1,6 +1,5 @@
 ---
 menu: gherkin
-source: step-definitions-old.md
 source: https://github.com/cucumber/cucumber/wiki/Step-Definitions/
 title: Step Definitions
 polyglot: true
@@ -109,30 +108,33 @@ The specific preposition/adverb used has **no** significance when Cucumber is re
 
 Also, check out Multiline [Step Arguments](/gherkin/gherkin-reference/#step-arguments) for more info on how to pass entire tables or bigger strings to your Step Definitions.
 
-### Successful Steps
+
+### Step Results
+
+#### Successful Steps
 
 When Cucumber finds a matching Step Definition it will execute it. If the block in the Step Definition doesn't raise an error, the Step is marked as successful (green). Anything you `return` from a Step Definition has no significance whatsoever.
 
-### Undefined Steps
+#### Undefined Steps
 
 When Cucumber can't find a matching Step Definition, the Step gets marked as yellow, and all subsequent steps in the Scenario are skipped. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
-### Pending Steps
+#### Pending Steps
 
 When a Step Definition's method or function invokes the `pending` method, the Step is marked as yellow (as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
-### Failed Steps
+#### Failed Steps
 
 When a Step Definition's method or function is executed and raises an error, the step is marked as red. What you return from a Step Definition has no significance whatsoever.
 
 Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java" %}}`null`{{% /text %}}{{% text "javascript" %}}`null`{{% /text %}} or `false` will **not** cause a Step Definition to fail.
 
-### Skipped Steps
+#### Skipped Steps
 
 Steps that follow `undefined`, `pending`, or `failed` Steps are never executed,  even if there is a matching Step Definition. These Steps are marked as cyan.
 
 {{% text "ruby" %}}
-### String Steps (Ruby)
+#### String Steps (Ruby)
 
 In Ruby, Step Definitions can be written using Strings rather than Regular Expressions.
 
@@ -153,7 +155,7 @@ When writing a Step Definition using the String form, any word preceded by a `$`
 The text matched by the wildcard becomes an argument to the block, and the word that appeared in the Step Definition is disregarded.
 {{% /text %}}
 
-### Ambiguous Steps
+#### Ambiguous Steps
 
 Step Definitions have to be unique for Cucumber to know what to execute.
 If you use ambiguous Step Definitions,{{% text "ruby" %}}Cucumber will raise a `Cucumber::Ambiguous` error,{{% /text %}}
@@ -162,9 +164,9 @@ If you use ambiguous Step Definitions,{{% text "ruby" %}}Cucumber will raise a `
 telling you to fix the ambiguity.
 
 {{% text "ruby" %}}
-### Guess mode
+#### Guess mode
 
-Running the plain text step will match the Regexp of both Step Definitions and raise `Cucumber::Ambiguous`.
+In Ruby, running the plain text step will match the `Regexp` of both Step Definitions and raise `Cucumber::Ambiguous`.
 
 However, if you run Cucumber with `--guess`, it will guess that you were aiming for the Step Definition with 2 match groups.
 
@@ -172,14 +174,14 @@ There is ranking logic that gets invoked when the option is turned on:
 
 1. The longest `Regexp` with 0 capture groups always wins.
 2. The `Regexp` with the most capture groups wins (when there are none with 0 groups).
-3. If there are 2+ `Regex` with the same number of capture groups, the one with the shortest overall captured string length wins.
+3. If there are 2+ `Regexp` with the same number of capture groups, the one with the shortest overall captured string length wins.
 4. If there are still 2+ options, then a `Cucumber::Ambiguous` error is raised.
 
 So if you try `--guess` with the mice above, Cucumber will pick `/Three blind (.\*)/`, because `"mice"` is shorter than `"blind"`.
 
 *Consider guess mode to be a workaround.* We still recommend that you have unambiguous regular expressions. When you have a lot of Step Definitions, it's easy to lose track of the situations where Cucumber's guess mode occurs, and that can lead to some surprises.
 
-## Redundant Step Definitions
+#### Redundant Steps
 
 In Cucumber, you're not allowed to use a `Regexp` more than once in a Step Definition—even across files, and even with different code inside the method or function.
 
