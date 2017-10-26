@@ -65,16 +65,9 @@ Scenario: add description
   When I press "Save"
   Then I should see "Cucumber BDD tool" under "Descriptions"
 ```
-
-```java
-The `edit_work_experience_steps.java` could be implemented like this:
-```
-```javascript
-TODO: See Java or Ruby example
-```
-```ruby
-The `edit_work_experience_steps.rb` could be implemented like this:
-```
+The{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
+{{% text "javascript" %}}`edit_work_experience_steps.js`{{% /text %}}
+{{% text "ruby" %}}`edit_work_experience_steps.rb`{{% /text %}}could be implemented like this:
 
 ```java
     @Given("^I have a CV and I'm on the edit description page$")
