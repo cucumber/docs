@@ -180,11 +180,13 @@ There is ranking logic that gets invoked when the option is turned on:
 So if you try `--guess` with the mice above, Cucumber will pick `/Three blind (.\*)/`, because `"mice"` is shorter than `"blind"`.
 
 *Consider guess mode to be a workaround.* We still recommend that you have unambiguous regular expressions. When you have a lot of Step Definitions, it's easy to lose track of the situations where Cucumber's guess mode occurs, and that can lead to some surprises.
+{{% /text %}}
 
 #### Redundant Steps
 
 In Cucumber, you're not allowed to use a `Regexp` more than once in a Step Definition—even across files, and even with different code inside the method or function.
 
+{{% text "ruby" %}}
 Thus, the following would cause a `Cucumber::Redundant` error:
 
 ```
