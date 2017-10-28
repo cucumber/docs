@@ -164,9 +164,6 @@ a:hover {
 }
 
 code {
-  background-color: whitesmoke;
-  color: #ff1245;
-  font-size: 0.8em;
   font-weight: normal;
   padding: 0.25em 0.5em 0.25em;
 }
@@ -3160,9 +3157,7 @@ input[type="submit"].button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: whitesmoke;
   border-radius: 290486px;
-  color: #4a4a4a;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -3172,8 +3167,6 @@ input[type="submit"].button {
       -ms-flex-pack: center;
           justify-content: center;
   line-height: 1.5;
-  padding-left: 0.875em;
-  padding-right: 0.875em;
   white-space: nowrap;
 }
 
