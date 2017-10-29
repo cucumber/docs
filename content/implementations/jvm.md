@@ -30,17 +30,18 @@ Other JVM languages have been moved to their own repository:
 
 ## Installation
 
-Cucumber-JVM consists of several modules (JARs) that you can download from the [public Maven repo](http://repo1.maven.org/maven2/io/cucumber/).
-There is no "setup" program for Cucumber-JVM---just JAR files.
+Cucumber-JVM consists of several modules (JARs). We recommend using a build tool, like [Maven](https://maven.apache.org/) or [Gradle](https://gradle.org/),
+to manage the dependencies in your project.
 
-Determining which JARs to add to your project's `CLASSPATH` depends on the programming language you are using. If you
-are using Java, you may want to add one of the JARs for [dependency injection](/implementations/jvm/java-di/) as well.
+Determining which dependencies to add to your project, depends on the programming language you are using. If you
+are using Java, you may also want to add one of the JARs for [dependency injection](/implementations/jvm/java-di/).
+In addition, you may want to use a test framework, like JUnit or TestNg.
 
 ### Snapshot releases
 
 If you want to take advantage of functionality that has been committed to the git `master` branch, but hasn't been released to the public maven repo yet, you can use `SNAPSHOT` builds from the [sonatype snapshot repo](https://oss.sonatype.org/content/repositories/snapshots/io/cucumber/).
 
-Just add the following to your `pom.xml`:
+If you are using Maven, just add the following to your `pom.xml`:
 
 ```xml
 <repository>
@@ -66,6 +67,8 @@ For example:
 ```
 
 You can find the current snapshot version number [here](https://github.com/cucumber/cucumber-jvm/blob/master/pom.xml).
+
+If you are using Gradle, check the [build.gradle](https://github.com/cucumber/cucumber-java-skeleton/blob/master/build.gradle) file in the cucumber-java-skeleton project.
 
 ## Running Cucumber
 
@@ -100,9 +103,9 @@ To use the JUnit runner you need to add the following dependencies:
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
-    <version>2.1.0</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 
@@ -116,11 +119,11 @@ To use the JUnit runner you need to add the following dependencies:
 
 ### Maven Runner
 
-To run Cucumber with Maven, make sure that
+To run Cucumber with [Maven](https://maven.apache.org/), make sure that
 
 - Maven is installed
 - The environment variable `MAVEN_HOME` is correctly configured
-- Your IDE is configured with latest maven installation
+- Your IDE is configured with latest Maven installation
 
 Steps:
 
@@ -131,7 +134,7 @@ Steps:
     <dependency>
         <groupId>io.cucumber</groupId>
       	<artifactId>cucumber-java</artifactId>
-      	<version>2.1.0</version>
+      	<version>{{ site.versions.cucumber_jvm }}</version>
     </dependency>
     ```
 
@@ -189,7 +192,7 @@ java cucumber.api.cli.Main --version
 The [JUnit Runner](#junit-runner) and [Android Runner](#android-runner) can also pick
 up configuration options defined via the `@CucumberOptions` annotation.
 
-**Note:** Cucumber only supports @ClassRule,@BeforeClass and @AfterClass JUnit annotations.
+**Note:** Cucumber only supports `@ClassRule`,`@BeforeClass` and `@AfterClass` JUnit annotations.
 
 For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
 
@@ -282,24 +285,24 @@ Some of the runners provide additional mechanisms for passing options to Cucumbe
 ### {java-}Dependency
 
 If you are going to use the lambda expressions API to write the Step
-Definitions, you need:
+Definitions, you need to add the following dependency to your  `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-java</artifactId>
-    <version>2.1.0</version>
+    <artifactId>cucumber-java8</artifactId>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
 
-Otherwise, to write them using annotated methods, you need:
+Otherwise, to write them using annotated methods, you need to add the following dependency to your  `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
-    <version>2.1.0</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -397,7 +400,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-groovy</artifactId>
-    <version>${version}</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -410,7 +413,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-scala</artifactId>
-    <version>${version}</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -423,7 +426,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-clojure</artifactId>
-    <version>${version}</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -436,7 +439,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-jython</artifactId>
-    <version>${version}</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -449,7 +452,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-jruby</artifactId>
-    <version>${version}</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -462,7 +465,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-rhino</artifactId>
-    <version>${version}</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -475,7 +478,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-gosu</artifactId>
-    <version>${version}</version>
+    <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
 </dependency>
 ```
