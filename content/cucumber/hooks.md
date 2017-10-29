@@ -14,13 +14,13 @@ You can put them in your `support/env.rb` file, or any other file under the `sup
 {{% /text %}}
 
 There is no link between where a Hook is defined and which Scenario or Step it is run for.
-If you want more fine grained control, you can use [Tagged Hooks](#tagged-hooks).
+If you want more fine-grained control, you can use [Tagged Hooks](#tagged-hooks).
 
 All defined Hooks run whenever the relevant event occurs.
 
 ## Scenario hooks
 
-`Before` hooks will be run before the first Step of each Scenario. They will run in the **same order** in which they are registered.
+`Before` hooks will run before the first Step of each Scenario. They run in the **same order** in which they are registered.
 
 ```ruby
 Before do
@@ -49,7 +49,7 @@ Before(function () {
 });
 ```
 
-`After` Hooks will be run after the last step of each Scenario, even when steps are `failed`, `undefined`, `pending`, or `skipped`. They will run in the **reverse order** in which they are registered.
+`After` Hooks will run after the last step of each Scenario, even when steps are `failed`, `undefined`, `pending`, or `skipped`. They run in the **reverse order** in which they are registered.
 
 ```ruby
 After do |scenario|
@@ -99,7 +99,7 @@ TODO: See Ruby or Java example
 ```
 
 {{% text "javascript" %}}
-Hooks are used for setup and teardown the environment before and after each scenario.
+Hooks are used for setup and teardown of the environment before and after each scenario.
 The first argument will be a [ScenarioResult](https://github.com/cucumber/cucumber-js/blob/2.x/src/models/scenario_result.js) for the current running scenario.
 {{% /text %}}
 
@@ -270,7 +270,7 @@ especially when the setup should be readable by non-technical people.
 ## Global Hooks
 
 {{% text "ruby" %}}
-If you want something to happen once before any Scenario is run, just put that 
+A Global Hook will run once before any Scenario is run. Put the
 code at the top-level in your `env.rb` file (or any other file under 
 `features/support` directory). 
 
