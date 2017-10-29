@@ -260,7 +260,7 @@ defineSupportCode(function({After, Before}) {
 });
 ```
 
-See more documentation on [tag expressions](https://docs.cucumber.io/tag-expressions/).
+See more documentation on [tag expressions](/cucumber/tag-expressions/).
 
 **Think twice before you use Hooks!** 
 Whatever happens in Hooks is invisible to people who only read the Features. 
