@@ -264,8 +264,8 @@ See more documentation on [tag expressions](/cucumber/tag-expressions/).
 
 **Think twice before you use Hooks!** 
 Whatever happens in Hooks is invisible to people who only read the Features. 
-Consider using [Background](/gherkin/background/) as a more explicit alternative,
-especially when the setup should be readable by non-technical people.
+You should consider using [Background](/gherkin/gherkin-reference/#background) as a more explicit 
+alternative, especially if the setup should be readable by non-technical people.
 
 ## Global Hooks
 
