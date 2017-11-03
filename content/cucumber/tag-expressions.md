@@ -5,8 +5,6 @@ source: https://github.com/cucumber/cucumber/edit/master/tag-expressions/README.
 title: Tag Expressions
 ---
 
-# Tag Expressions
-
 Tag Expressions provide a simple query language for tags. The simplest tag expression is
 simply a single tag, for example:
 

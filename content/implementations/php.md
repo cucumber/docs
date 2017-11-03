@@ -5,13 +5,11 @@ nav: docs
 title: PHP using Behat
 ---
 
-# Behat
-
 Behat is the official Cucumber implementation for PHP.
 
 The docs are currently at [behat.org](http://behat.org).
 
-According to <http://docs.behat.org/en/v3.0/> bq. Since v3.0, Behat is 
+According to <http://docs.behat.org/en/v3.0/> bq. Since v3.0, Behat is
 considered an official Cucumber implementation in PHP and is part of one big family of BDD tools.
 
 ## Directly testing PHP code
@@ -20,9 +18,9 @@ To directly test PHP code using Step Definitions written in PHP, please see the 
 
 ## Testing against PHP web applications
 
-Most people seem to use Cucumber for Rails. Most of the How-Tos and documents on the web reflect this. 
+Most people seem to use Cucumber for Rails. Most of the How-Tos and documents on the web reflect this.
 
-But Cucumber is a great tool for testing any kind of web application, no matter what language it was built in. You could use Selenium, and there are good [How-To's](/cucumber/browser-automation/#selenium-webdriver) for it. 
+But Cucumber is a great tool for testing any kind of web application, no matter what language it was built in. You could use Selenium, and there are good [How-To's](/cucumber/browser-automation/#selenium-webdriver) for it.
 
 But Selenium is slow and clunky to set up! It should only be used if you need to test JavaScript. What if I want to write BDD stories and test a PHP app with Cucumber?
 
@@ -91,7 +89,7 @@ your tests are probably not repeatable.
 
 To get around this, you can hack in database dumps and table dumps to happen
 before and after Scenarios. You can save database state before all of the tests,
-and reload it at the end. Next time, it will be the same. 
+and reload it at the end. Next time, it will be the same.
 
 Alternatively, you can do it on a per-Feature level and per-database table level. I have so far found the second approach to be the quickest and most flexible.
 

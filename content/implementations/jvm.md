@@ -2,10 +2,8 @@
 menu:
 - implementations
 nav: docs
-title: Cucumber JVM
+title: Cucumber-JVM
 ---
-
-# Cucumber-JVM
 
 Cucumber-JVM is a Cucumber implementation for the most popular JVM languages.
 

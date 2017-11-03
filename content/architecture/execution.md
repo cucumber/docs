@@ -1,10 +1,8 @@
 ---
 menu: junkyard
 source: https://docs.cucumber.io/
-title: Architecture
+title: Execution
 ---
-
-# Execution
 
 When Cucumber runs, different things happen at different times.
 Here’s an overview of what happens.
@@ -34,7 +32,7 @@ memory, inside a `Glue` object.
 
 ## 3. Load executable specifications (Gherkin or Markdown)
 
-The Gherkin3 library is used to load specifications. 
+The Gherkin3 library is used to load specifications.
 
 For specifications written in Markdown, the Step Definitions
 are passed to the Markdown parser, because it needs the
@@ -45,7 +43,7 @@ The specifications are transformed to an AST (Abstract Syntax Tree).
 ## 4. Compile Scenarios into bare `TestCase`s
 
 The ASTs are compiled into a list of `TestCase`s. During this phase,
-`Scenario Outline`s and their `Example`s are exploded into multiple 
+`Scenario Outline`s and their `Example`s are exploded into multiple
 `TestCase`s.  Background Steps are copied into each `TestCase`.
 
 ## 5. Linking `StepDefinition`s into executable `TestCase`s
@@ -61,10 +59,10 @@ threads or separate processes.
 
 Test executors are configured with a Scheduler, which decides in
 what order the test cases should be run. They might run sequentially
-as defined on disk, or they may be randomised. 
+as defined on disk, or they may be randomised.
 
-Special scheduler plugins may be provided to run Scenarios in a 
-particular order, using an algorithm that runs test cases that are 
+Special scheduler plugins may be provided to run Scenarios in a
+particular order, using an algorithm that runs test cases that are
 more likely to fail first.
 
 ## 7. Start test executors

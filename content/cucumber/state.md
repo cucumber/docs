@@ -5,10 +5,6 @@ renderer: Cucumber::Website::Reference
 title: State
 ---
 
-> TODO: Needs generalizing
-
-# State
-
 It's important to prevent state created by one Scenario from leaking into others.
 Leaking state makes your Scenarios brittle, and difficult to run in isolation.
 
@@ -32,8 +28,8 @@ An alternative approach is to use database transactions.
 
 You can wrap a transaction (if your database supports it) *around* each Scenario.
 
-(This might lead to faster Scenarios, but it comes at a cost. 
-You won't be able to perform a post-mortem, and you won't be able to 
+(This might lead to faster Scenarios, but it comes at a cost.
+You won't be able to perform a post-mortem, and you won't be able to
 use [browser automation](/cucumber/browser-automation/)).
 
 You simply tell Cucumber to start a transaction in a `Before`[Hook](/cucumber/hooks/), and later

@@ -6,7 +6,7 @@ build:
 .PHONY: build
 
 htmlproofer: build Gemfile.lock
-	htmlproofer --extension .html public
+	ruby tools/htmlproofer/htmlproofer.rb
 .PHONY: htmlproofer
 
 Gemfile.lock: Gemfile

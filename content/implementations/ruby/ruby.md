@@ -5,8 +5,6 @@ nav: docs
 title: Ruby/JRuby
 ---
 
-# Ruby/JRuby
-
 Note: If you are using Ruby on Rails, see the [Cucumber-Rails](/implementations/ruby/ruby-on-rails/) reference.
 
 ## Installation

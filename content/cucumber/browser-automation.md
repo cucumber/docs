@@ -5,8 +5,6 @@ title: Browser Automation
 polyglot: true
 ---
 
-# Browser Automation
-
 Cucumber is not a Browser Automation tool, but it works well with Browser
 Automation tools such as:
 
@@ -23,7 +21,7 @@ Let us look at an example of Cucumber using selenium-webdriver in UI testing, by
 
  We can express the example as the following Scenario:
 
-```Gherkin
+```gherkin
 Scenario: Finding some cheese
    Given I am on the Google search page
    When I search for "Cheese!"
@@ -69,31 +67,31 @@ public class ExampleSteps {
 
 
 ```ruby
- require 'rubygems'
- require 'selenium-webdriver'
+require 'rubygems'
+require 'selenium-webdriver'
 
- Given("^I am on the Google search page$") do
+Given("^I am on the Google search page$") do
   driver = Selenium::WebDriver.for :firefox
   driver.get "http:\\google.com"
- end
+end
 
- When("^I search for "([^"]*)"$") do
+When("^I search for "([^"]*)"$") do
   element = driver.find_element(:name => "q")
   element.send_keys "Cheese!"
   element.submit
- end
+end
 
- Then("^the page title should start with "([^"]*)"$") do
+Then("^the page title should start with "([^"]*)"$") do
   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   wait.until { driver.title.downcase.start_with? "cheese!" }
   puts "Page title is #{driver.title}"
-   browser.close
- end
+    browser.close
+end
 ```
 
 ## Watir Webdriver
 
-Watir, pronounced water, is an open-source (BSD) family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
+Watir, pronounced _water_, is an open-source (BSD) family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
 
 Watir drives browsers the same way people do. It clicks links, fills in forms, presses buttons. Watir also checks results, such as whether expected text appears on the page.
 

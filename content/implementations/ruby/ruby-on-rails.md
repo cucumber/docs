@@ -46,13 +46,13 @@ Without Rake:
 [bundle exec] cucumber
 ```
 
-# Rails 3.x and above
+## Rails 3.x and above
 
 Go to Cucumber-Rails' [README](https://github.com/cucumber/cucumber-rails/blob/master/README.md) for installation instructions and ignore this page.
 
 As of Cucumber-Rails version 0.5.0 and above, Cucumber-Rails **only** supports Rails 3.x and above (Rails 2 is **not** supported). The following is only for Rails 2.x.
 
-# Rails 2.x
+## Rails 2.x
 
 If you are on Rails 2.x you have to use an older version of Cucumber-Rails. These are the recommended versions for maximum compatibility with Rails 2.3.x (though see note on javascript emulation below):
 
@@ -102,7 +102,7 @@ Take a look at the generated files. If you need to, you can tweak them later.
 
 ### Start a Feature
 
-It's really, really recommended that you write your Features by hand, *and* in collaboration with your customer / business analyst / domain expert / interaction designer. 
+It's really, really recommended that you write your Features by hand, *and* in collaboration with your customer / business analyst / domain expert / interaction designer.
 
 However, to get you started, you can use the Feature generator to generate the first few Features:
 
@@ -110,7 +110,7 @@ However, to get you started, you can use the Feature generator to generate the f
 ruby script/generate feature Frooble name:string color:string description:text
 ```
 
-This will generate a simple plain text Feature with associated Steps. 
+This will generate a simple plain text Feature with associated Steps.
 
 *Don't get addicted to this generator!* You're better off writing these by hand in the long run.
 
@@ -180,9 +180,9 @@ There are two special [[Tags]] you can use to change how Cucumber runs your Scen
 
 #### `@no-txn`
 
-By default, all Scenarios will run within a database transaction that is rolled back at the end. However, Scenarios tagged with `@no-txn` will run **without** a transaction. 
+By default, all Scenarios will run within a database transaction that is rolled back at the end. However, Scenarios tagged with `@no-txn` will run **without** a transaction.
 
-This can be useful when you have to deal with [[Browsers and Transactions]]. Beware that this will leave data in your database after that Scenario, which can lead to hard-to-debug failures in subsequent Scenarios. 
+This can be useful when you have to deal with [[Browsers and Transactions]]. Beware that this will leave data in your database after that Scenario, which can lead to hard-to-debug failures in subsequent Scenarios.
 
 If you use this, we recommend you create a Before block that will explicitly put your database in a known state (for example using [DatabaseCleaner](https://github.com/bmabey/database_cleaner)).
 

@@ -4,8 +4,6 @@ menu:
 title: Gherkin Reference
 ---
 
-# Reference
-
 This is the general reference for all Cucumber implementations. Please refer to
 the Implementations menu for links to platform-specific documentation.
 
@@ -103,7 +101,7 @@ This is done with Steps.
 
 ### Steps
 
-A Step typically starts with `Given`, `When`, or `Then`. 
+A Step typically starts with `Given`, `When`, or `Then`.
 
 If there are multiple `Given` or `When` Steps underneath each other, you can use `And` or `But`. Cucumber does not differentiate between the keywords, but choosing the right one is important for the readability of the Scenario as a whole.
 
@@ -227,7 +225,7 @@ Scenario Outline: eating
 
 The Scenario Outline Steps provide a template which is never directly run. A Scenario Outline is run once for each row in the `Examples` section beneath it (not counting the first row).
 
-The way this works is via placeholders. Placeholders must be contained within `< >` in the Scenario Outline's Steps. 
+The way this works is via placeholders. Placeholders must be contained within `< >` in the Scenario Outline's Steps.
 
 For example:
 
@@ -279,7 +277,7 @@ Scenario Outline: Password validation
   | abcd1    | valid            |
 ```
 
-In that Feature, it isn't clear why certain passwords are valid or invalid. 
+In that Feature, it isn't clear why certain passwords are valid or invalid.
 
 By reformatting the Examples into two tables with descriptive text, the Scenario Outline becomes much more effective (p.75):
 

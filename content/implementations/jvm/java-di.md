@@ -5,8 +5,6 @@ renderer: Cucumber::Website::Reference
 title: Dependency Injection
 ---
 
-# Dependency Injection
-
 If your programming language is Java you will be writing glue code
 ([Step Definitions](/cucumber/step-definitions/) and [Hooks](/cucumber/hooks/)) in plain old Java classes.
 
