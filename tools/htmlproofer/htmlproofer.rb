@@ -1,5 +1,5 @@
+require 'bundler/setup'
 require 'html-proofer'
-require 'os'
 
 class SingleH1Check < HTMLProofer::Check
   IGNORE_PATHS = [
