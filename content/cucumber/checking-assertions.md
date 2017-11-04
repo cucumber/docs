@@ -8,12 +8,13 @@ title: Checking Assertions
 Part of your tests will be to make assertions about your application. To do so, you can make use of a testing framework.
 There are several options, depending on which programming language you are using.
 
-{{% text "ruby" %}}
+## Ruby
+For Ruby, there are several options.
+
+### RSpec
 If you're using bundler, add the `rspec-expectations` gem to your `Gemfile`.
 Cucumber will automatically load RSpec's matchers and expectation methods to be
-available in your Step Definitions.
-
-e.g.
+available in your Step Definitions. For example:
 
 ```ruby
 Given /^a nice new bike$/ do
@@ -21,7 +22,7 @@ Given /^a nice new bike$/ do
 end
 ```
 
-If you'd like to configure RSpec, you'll need to also add the `rspec-core` gem
+If you want to configure RSpec, you'll need to also add the `rspec-core` gem
 to your `Gemfile`. Then, you can add to your `features/support/env.rb`
 configuration, such as:
 
@@ -33,12 +34,9 @@ RSpec.configure do |config|
 end
 ```
 
-## Test Unit
+### Test Unit
 
-Don't like RSpec's `should` methods for assertions? No problem, we won't force
-you to. 
-
-You can use the familiar `Test::Unit` `assert` methods by mixing it into
+If you don't like RSpec's `should` methods for assertions, you can use the familiar `Test::Unit` `assert` methods by mixing it into
 your [`World`](/wiki/a-whole-new-world).
 
 ```ruby
@@ -48,10 +46,11 @@ World(Test::Unit::Assertions)
 ```
 
 <!-- TODO: You can see a full example under the [examples](https://github.com/cucumber/cucumber/tree/master/examples%2Ftest_unit) -->
-{{% /text %}}
 
-{{% text "java" %}}
-## JUnit
+## Java
+For Java, there are several options.
+
+### JUnit
 
 [JUnit](http://junit.org/junit4/) is a unit testing framework designed for the Java programming language. It is an instance of the xUnit architecture for unit testing frameworks.
 
@@ -90,7 +89,7 @@ public class Example {
 For more examples of how to use JUnit assertions, see the [JUnit wiki on github](https://github.com/junit-team/junit4/wiki/Assertions)
 For a more extensive example of how to use JUnit with Cucumber, see the [java-calculator example](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator).
 
-## TestNG
+### TestNG
 
 [TestNG](http://testng.org/doc/) is a testing framework designed for the Java programming language and inspired by JUnit and NUnit.
 
@@ -117,9 +116,7 @@ If you are using Maven, just add the following to your `pom.xml`:
 
 Using assertions in TestNG is similar to using them in JUnit.
 For a more extensive example of how to use TestNG with Cucumber, see the [java-calculator-testng example](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng).
-{{% /text %}}
 
-{{% text "javascript" %}}
+## Javascript
 If you are using cucumber-js, you can use a javascript test framework.
-{{% /text %}}
 
