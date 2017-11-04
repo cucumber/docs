@@ -35,7 +35,7 @@ end
 For java, there are multiple mocking and stubbing frameworks available for different purposes.
 
 ### Mockito
-[Mockito](site.mockito.org/) is a framework for the creation of [test doubles](http://www.martinfowler.com/bliki/TestDouble.html) in automated unit tests for the purpose of TDD or BDD.
+[Mockito](http://mockito.org) is a framework for the creation of [test doubles](http://www.martinfowler.com/bliki/TestDouble.html) in automated unit tests for the purpose of TDD or BDD.
 For more information on using Mockito with Cucumber-jvm, see this blog on [cucumber-jvm-mocking](https://zsoltfabok.com/blog/2012/03/cucumber-jvm-mocking/).
 
 ### MockServer
