@@ -4,14 +4,10 @@
 
   As the code base gradually increases in size, more and more attention is consumed by the re-factoring step. The design is constantly evolving and under constant review, though it is not predetermined. This process is known as emergent design, and is one of the most significant by-products of Test Driven Development. 
 
-To get better understanding here we go life cycle of TDD
+TDD follows this cycle:
 
-  * Write a test
-  * Run it ( No implementation code in place, Test needs to fail)
-  * Write implemnetation code to make the test pass
-  * Run it
-  * Refactor the test for better code quality
+  * **RED**: Write a test and run it (Test will fail, as it's not implemented yet)
+  * **GREEN**: Write the simplest implementation to make the test pass
+  * **REFACTOR**: Refactor the code to improve quality
   
-This procedure is called **RED-GREEN-REFACTOR**
-
-Final Note: TDD is not about testing, It is the process of approaching your design and forcing you to think about the desired outcome and API before you code.
+**Note**: TDD is not about testing; it is the process of approaching your design and forcing you to think about the desired outcome and API before you code.
