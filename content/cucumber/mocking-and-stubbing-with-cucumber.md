@@ -5,11 +5,14 @@ source: https://github.com/cucumber/cucumber/wiki/Mocking-and-Stubbing-with-Cucu
 title: Mocking and Stubbing with Cucumber
 ---
 
-> TODO: Generalize and update
+Mocking is usually discouraged when using Cucumber; ideally you would exercise as much of your stack as possible.
+There are cases when using mocking can come in handy. For example, if your system depends on a third party.
+If you have a dependency on an external system, we recommend using [stubs instead of mocks](http://martinfowler.com/articles/mocksArentStubs.html).
+You **can** set up mocks with expectations in your [Step Definitions](/cucumber/step-definitions/).
 
-Mocking is usually discouraged when using Cucumber. You **can** set up mocks with expectations in your [Step Definitions](/cucumber/step-definitions/), but ideally you would exercise as much of your stack as possible. If you have a dependency on an external system, we recommend using [stubs instead of mocks](http://martinfowler.com/articles/mocksArentStubs.html).
+## Ruby
 
-## RSpec 2.x
+### RSpec 2.x
 
 Starting with Cucumber 0.8.4, you can use all of RSpec's supported mocking frameworks (RSpec, Mocha, RR, Flexmock). 
 Just `require 'cucumber/rspec/doubles'` ([Test-Double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
@@ -26,3 +29,21 @@ SmartyStreets.stub(:get_city_state).with("94109").and_return(stub_resp)
 click_button "check zip"
 end
 ```
+
+## Java
+
+For java, there are multiple mocking and stubbing frameworks available for different purposes.
+
+### Mockito
+[Mockito](site.mockito.org/) is a framework for the creation of [test doubles](http://www.martinfowler.com/bliki/TestDouble.html) in automated unit tests for the purpose of TDD or BDD.
+For more information on using Mockito with Cucumber-jvm, see this blog on [cucumber-jvm-mocking](https://zsoltfabok.com/blog/2012/03/cucumber-jvm-mocking/).
+
+### MockServer
+You can use [MockServer](http://www.mock-server.com/) for mocking any system you integrate with via HTTP or HTTPS (i.e. services, web sites, etc).
+
+### WireMock
+[WireMock](http://wiremock.org/) is a simulator for HTTP-based APIs, similar to MockServer.
+
+## Javascript
+
+Please add information on javascript mocking frameworks that could be used with cucumber.
