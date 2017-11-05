@@ -8,17 +8,17 @@ status: merge into gherkin.md
 
 ## Gherkin Syntax
 
-Like Python and YAML, Gherkin is a line-oriented language that uses indentation
-to define structure. Line endings terminate statements (i.e. Steps). Either
-spaces or tabs may be used for indentation (but spaces are more portable). Most
+Gherkin is a line-oriented language that uses indentation
+to define structure, like Python and YAML. Line endings terminate statements (i.e. Steps).
+Either spaces or tabs may be used for indentation (but spaces are more portable). Most
 lines start with a keyword.
 
-Comment lines are allowed anywhere in the file. They begin with zero or more
-spaces, followed by a hash sign (`#`) and some amount of text.
+Comment lines are allowed anywhere in the file (as long as they're on a new line).
+They begin with zero or more spaces, followed by a hash sign (`#`) and some text.
 
 The parser divides the input into Features, Scenarios, and Steps. When you run
 the Feature, the trailing portion (after the keyword) of each Step is matched to
-a Ruby code block, called a [Step Definition](/cucumber/step-definitions/).
+a code block, called a [Step Definition](/cucumber/step-definitions/).
 
 A Gherkin source file usually looks like this.
 
@@ -41,11 +41,11 @@ Feature: Some terse yet descriptive text of what is desired
           ...
 ```
 
-First line starts the Feature. Lines 2–4 are unparsed text, which is expected to
-describe the business value of this Feature. Line 6 starts a Scenario. Lines
-7–13 are the Steps for the Scenario. Line 15 starts next Scenario, and so on.
+The Feature starts on the first line. Lines 2–4 are unparsed (free format) text, which is expected to
+describe the business value of this Feature. The keyword **Scenario** on line 6 starts a Scenario.
+Lines 7–13 are the Steps for the Scenario. Line 15 starts the next Scenario, and so on.
 
 Read more:
 
-- [Feature Introduction](/gherkin/feature-introduction/) - general structure of a feature
+- [Feature](/gherkin/gherkin-reference/#feature) - general structure of a feature
 - [Given-When-Then](/gherkin/given-when-then/) - steps
