@@ -14,7 +14,7 @@ This is because your browser is running against a web server that is using a
 different database connection than Cucumber. This is because they run in
 separate processes. Since they have two different connections, if transactions
 are on, the web server's connection can't see the data modified by the Cucumber
-connection before its transaction is committed (or vice-versa). 
+connection before its transaction is committed (or vice-versa).
 
 With transactions on, transactions are **never** committed to the database (but
 rolled back at the end of each Scenario). Therefore, the web server's connection
@@ -44,18 +44,18 @@ With Rails, you can also turn off transaction globally in your `features/support
 Cucumber::Rails::World.use_transactional_fixtures = false
 ```
 
-## Cleaning Your Database
+# Cleaning Your Database
 
 
 <!-- TODO: WHAT
 *&lt;span class="source":<https://github.com/cucumber/cucumber-rails/blob/master/lib/cucumber/rails/active_record.rb> Rails "Cucumber the in Details box. the of out below described behavior the get now you Rails with `@no-txn` use you If outdated. is paragraph This"></span>* -->
 
-Once you turn transactions off, you face a different problem. Features will leave data in your database! 
+Once you turn transactions off, you face a different problem. Features will leave data in your database!
 
-If you're using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), a good 
+If you're using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), a good
 tool to deal with this is Ben Mabey's [Database Cleaner](https://github.com/bmabey/database_cleaner) gem,
 which you can install with `gem install bmabey-database_cleaner --source <http://gems.github.com>`. (Or, just `gem install database_cleaner` if you are
-using gemcutter.) 
+using gemcutter.)
 
 You can use this very effectively with the `@no-txn` Tag.
 Something like the following somewhere in e.g. `features/support/db_cleaner.rb`

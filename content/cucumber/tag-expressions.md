@@ -29,7 +29,7 @@ For more complex Tag Expressions you can use parenthesis for clarity, or to chan
 (The [standard library](https://github.com/cucumber/cucumber/blob/master/docs/standard-library.adoc#implementations) list indicates
 what Cucumber implementations currently support Tag Expressions).
 
-## Migrating from old style tags
+# Migrating from old style tags
 
 * `--tags @dev` stays the same
 * `--tags ~@dev` becomes `--tags 'not @dev'`
@@ -37,7 +37,7 @@ what Cucumber implementations currently support Tag Expressions).
 * `--tags @foo --tags @bar` becomes `--tags '@foo and bar'`
 * `--tags ~@foo --tags @bar,@zap` becomes `--tags 'not @foo and (@bar or @zap)'`
 
-## Internal design
+# Internal design
 
 The implementation is based on a modified version of Edsger Dijkstra's
 [Shunting Yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm)

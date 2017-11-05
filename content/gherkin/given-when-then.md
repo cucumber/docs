@@ -11,9 +11,9 @@ Cucumber doesn't technically distinguish between these three kind of Steps. Howe
 
 Robert C. Martin has written a [great post](https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd) about BDD's Given-When-Then concept where he thinks of them as a finite state machine.
 
-## `Given`
+# `Given`
 
-The purpose of `Given`s is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` Steps). 
+The purpose of `Given`s is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` Steps).
 
 Avoid talking about user interaction in `Given`s. If you were creating use cases, `Given`s would be your preconditions.
 
@@ -25,7 +25,7 @@ Examples:
 
 And for all the Rails users out there - we recommend using a [`Given` with a multiline table argument](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/manage_lorries.feature) to [set up records](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/step_definitions/lorry_steps.rb) instead of fixtures. This way, you can read the Scenario and make sense out of it without having to look elsewhere (at the fixtures).
 
-## `When`
+# `When`
 
 The purpose of `When`s is to **describe the key action** the user performs (or, using Robert C. Martin's metaphor, the state transition).
 
@@ -35,9 +35,9 @@ Examples:
 - Interact with some other user interface element.
 - Developing a library? Kicking off some kind of action that has an observable effect somewhere else.
 
-## `Then`
+# `Then`
 
-The purpose of `Then`s is to **observe outcomes**. The observations should be related to the business value/benefit in your Feature description. 
+The purpose of `Then`s is to **observe outcomes**. The observations should be related to the business value/benefit in your Feature description.
 
 The observations should also be on some kind of *output*. That is, something that comes *out* of the system (report, user interface, message), and not something deeply buried inside it (that has no business value).
 
@@ -48,7 +48,7 @@ Examples:
 
 While it might be tempting to implement `Then` steps to just look in the database - resist the temptation. You should only verify outcome that is observable for the user (or external system), and databases usually are not.
 
-## `And`, `But`
+# `And`, `But`
 
 If you have several `Given`s, `When`s, or `Then`s, you *could* write:
 

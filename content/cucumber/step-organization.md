@@ -8,19 +8,19 @@ title: Step Organization
 
 > TODO: integrate with step definitions and/or anti-patterns
 
-How do you name Step Definition files? What to put in each Step Definition? What **not** to put in Step Definitions? 
+How do you name Step Definition files? What to put in each Step Definition? What **not** to put in Step Definitions?
 
-Here are some guidelines that will lead to better Scenarios. 
+Here are some guidelines that will lead to better Scenarios.
 
 If you are new to Steps and the general syntax, please read [[Feature Introduction](/gherkin/feature-introduction/) first.
 
-## Grouping
+# Grouping
 
-Technically it doesn't matter how you name your Step Definition files, or which Step Definitions you put in a file. You *could* have one giant file called `all_steps.rb` and put all your Step Definitions there. 
+Technically it doesn't matter how you name your Step Definition files, or which Step Definitions you put in a file. You *could* have one giant file called `all_steps.rb` and put all your Step Definitions there.
 
-But that would be so *messy*. Instead, we recommend creating a separate `*_steps.rb` file for each domain concept. 
+But that would be so *messy*. Instead, we recommend creating a separate `*_steps.rb` file for each domain concept.
 
-A good rule of thumb is to have one file for each major model/database table. 
+A good rule of thumb is to have one file for each major model/database table.
 
 For example, in a Curriculum Vitae application, we might have:
 
@@ -33,10 +33,10 @@ The first three would define all the [Given-When-Then](/gherkin/given-when-then/
 
 If you follow this pattern you also avoid the [Feature-Coupled Step Definitions (Antipattern)](/cucumber/anti-patterns/) anti-pattern.
 
-## Step state
+# Step state
 
-It's possible to store object state in `variables` inside your Step Definitions. 
+It's possible to store object state in `variables` inside your Step Definitions.
 
-**Be careful with this!**  It can make your Steps more tightly coupled and harder to reuse. But there is no absolute rule here; sometimes it's okay to use `variables`. 
+**Be careful with this!**  It can make your Steps more tightly coupled and harder to reuse. But there is no absolute rule here; sometimes it's okay to use `variables`.
 
 You can follow a longer discussion [here](http://www.mail-archive.com/rspec-users@rubyforge.org/msg06268.html).

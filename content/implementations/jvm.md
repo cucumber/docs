@@ -11,8 +11,7 @@ This document is the reference for functionality specific to Cucumber-JVM.
 
 Please see the [General Reference](/gherkin/gherkin-reference/) for functionality common to all Cucumber implementations.
 
-
-## Languages
+# Languages
 
 Cucumber-JVM supports Java, Kotlin and Android.
 

@@ -6,8 +6,6 @@ title: Gherkin syntax
 status: merge into gherkin.md
 ---
 
-## Gherkin Syntax
-
 Like Python and YAML, Gherkin is a line-oriented language that uses indentation
 to define structure. Line endings terminate statements (i.e. Steps). Either
 spaces or tabs may be used for indentation (but spaces are more portable). Most
@@ -24,21 +22,21 @@ A Gherkin source file usually looks like this.
 
 ```gherkin
 Feature: Some terse yet descriptive text of what is desired
-   Textual description of the business value of this feature
-   Business rules that govern the scope of the feature
-   Any additional information that will make the feature easier to understand
+  Textual description of the business value of this feature
+  Business rules that govern the scope of the feature
+  Any additional information that will make the feature easier to understand
 
-   Scenario: Some determinable business situation
-     Given some precondition
-       And some other precondition
-     When some action by the actor
-       And some other action
-       And yet another action
-     Then some testable outcome is achieved
-       And something else we can check happens too
+  Scenario: Some determinable business situation
+    Given some precondition
+    And some other precondition
+    When some action by the actor
+    And some other action
+    And yet another action
+    Then some testable outcome is achieved
+    And something else we can check happens too
 
-   Scenario: A different situation
-          ...
+  Scenario: A different situation
+    # ...
 ```
 
 First line starts the Feature. Lines 2–4 are unparsed text, which is expected to

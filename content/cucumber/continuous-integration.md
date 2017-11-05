@@ -8,10 +8,10 @@ title: Continuous Integration
 Using Cucumber in a [Continuous Integration](http://martinfowler.com/articles/continuousIntegration.html) (CI) environment is relatively straightforward.
 
 The `cucumber` executable will exit with an [exit status](http://en.wikipedia.org/wiki/Exit_status)
-different from `0` if one or more Scenarios are failing. This is all your CI 
+different from `0` if one or more Scenarios are failing. This is all your CI
 server needs to know.
 
-First, you have to make sure your CI server executes Cucumber. 
+First, you have to make sure your CI server executes Cucumber.
 Most CI setups invoke some kind of build tool. Common build tools are:
 
 * [Rake](https://github.com/ruby/rake)
@@ -20,14 +20,14 @@ Most CI setups invoke some kind of build tool. Common build tools are:
 
 We recommend you executing Cucumber from one of these on a CI server.
 
-## Rake
+# Rake
 
-If your CI server is [using Rake](/implementations/ruby/rake), just make sure 
+If your CI server is [using Rake](/implementations/ruby/rake), just make sure
 that Rake executes your Cucumber task.
 
-## Ant, Maven, and JUnit output
+# Ant, Maven, and JUnit output
 
-Many CI servers can interpret XML files produced by the [Ant JUnit task](https://ant.apache.org/manual/Tasks/junit.html) 
+Many CI servers can interpret XML files produced by the [Ant JUnit task](https://ant.apache.org/manual/Tasks/junit.html)
 and display them as HTML. Some can even create reports over time.
 
 If you're using such a CI server, we recommend you use Cucumber with the `junit` formatter.
@@ -39,7 +39,7 @@ If you're using such a CI server, we recommend you use Cucumber with the `junit`
 
 If you're using Ant, you can run Cucumber with the [`exec`](https://ant.apache.org/manual/Tasks/exec.html) task.
 
-## Jenkins
+# Jenkins
 
 A Jenkins plugin is available that produces beautiful Cucumber reports.
 

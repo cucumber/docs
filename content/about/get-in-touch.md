@@ -16,7 +16,7 @@ If you file a Github issue without following the "Before you ask" guidelines bel
 
 If you contact a developer directly you may not get an answer. If you do get an answer, the answer will most likely be cc'ed to the mailing list. Open source development also means open communication.
 
-## Before you consider asking
+# Before you consider asking
 
 Try the latest released gem:
 
@@ -24,7 +24,7 @@ Try the latest released gem:
 gem update cucumber
 ```
 
-## Before you ask
+# Before you ask
 
 It's impossible to give a meaningful answer to "Cucumber doesn't work - what's wrong?" -style questions. You have to tell us more.
 
