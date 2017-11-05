@@ -13,9 +13,9 @@ Cucumber executes your `.feature` files, and those files contain executable spec
 written in a language called Gherkin.
 
 Gherkin is plain-text English (or one of 60+ other languages) with a little extra structure.
-Gherkin is designed to be easy to learn by non-programmers, yet structured enough to
+Gherkin is designed to be easy for people to read and write, yet structured enough to
 allow concise description of examples to illustrate business rules in most real-world
-domains.
+domains. It is structured enough for a tool like Cucumber to process.
 
 Here is a sample Gherkin document:
 
