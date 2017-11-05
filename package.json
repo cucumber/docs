@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "lunr": "^2.1.4"
+  }
+}
