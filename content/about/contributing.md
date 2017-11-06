@@ -15,7 +15,7 @@ Or have a look on [StackOverflow](https://stackoverflow.com/questions/tagged/cuc
 
 It's impossible to give a meaningful answer to "Cucumber doesn't work - what's wrong?" -style questions. You have to tell us [more](#help-us-help-you).
 
-## You have found a bug
+# You have found a bug
 
 Before you file an [Issue on Github](https://github.com/cucumber/cucumber/issues/), make sure you have tried the latest version.
 This way you don't waste time by reporting a bug that has already been fixed.
@@ -27,7 +27,7 @@ gem update cucumber
 
 If you are certain you have found a bug, just register a ticket with the relevant project. If you're not sure, please [get in touch](/about/get-in-touch).
 
-### Help us help you
+## Help us help you
 
 You will likely use Cucumber combined with various web frameworks, many different dependencies and your own code.
 You can [run Features](/cucumber/running-features/) in different ways, and many things can go wrong - and quite often it has nothing to do with Cucumber at all.
@@ -50,15 +50,15 @@ If you file a Github issue without providing following these quidelines, your ti
 
 Whenever possible, please provide a Pull Request yourself that fixes the issue and/or consider adding your solution to the documentation.
 
-## You want a new feature
+# You want a new feature
 
 Start by creating a ticket, explaining what you would like to achieve and how. Then, create a [Cucumber Feature](/gherkin/feature-introduction/) and start implementing it. It also helps if you add unit tests for the low level code.
 Note that Cucumber is developed and maintained by volunteers. If you don't implement the feature yourself, it's not sure that someone else will.
 
-## You want to update the documentation
+# You want to update the documentation
 
 If you would like to contribute to the documentation, please see [Contributing to documentation](/about/contributing-to-documentation/).
 
-## You want to contribute but don't know how
+# You want to contribute but don't know how
 
 If you enjoy using Cucumber, consider [Investing in Cucumber](https://cucumber.io/blog/2017/10/03/invest-in-cucumber).

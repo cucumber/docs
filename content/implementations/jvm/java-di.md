@@ -21,9 +21,9 @@ The available Dependency Injection modules are:
 - [Weld](#weld)
 - [Needle](#needle)
 
-## PicoContainer
+# PicoContainer
 
-### {picocontainer-}Dependency
+## {picocontainer-}Dependency
 
 ```xml
 <dependency>
@@ -36,9 +36,9 @@ The available Dependency Injection modules are:
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
 
-## Spring
+# Spring
 
-### {spring-}Dependency
+## {spring-}Dependency
 
 ```xml
 <dependency>
@@ -51,9 +51,9 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
 
-## Guice
+# Guice
 
-### {guice-}Dependency
+## {guice-}Dependency
 
 ```xml
 <dependency>
@@ -66,9 +66,9 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
 
-## OpenEJB
+# OpenEJB
 
-### {openejb-}Dependency
+## {openejb-}Dependency
 
 ```xml
 <dependency>
@@ -81,9 +81,9 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
 
-## Weld
+# Weld
 
-### {weld-}Dependency
+## {weld-}Dependency
 
 ```xml
 <dependency>
@@ -96,9 +96,9 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
 
-## Needle
+# Needle
 
-### {needle-}Dependency
+## {needle-}Dependency
 
 ```xml
 <dependency>

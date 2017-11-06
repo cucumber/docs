@@ -10,7 +10,7 @@ The Cucumber documentation is open source and anyone is welcome to contribute.
 
 Please make ALL contributions to the documentation in [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io).
 
-## Process
+# Process
 
 First-time **contributors** will have to send a pull request.
 
@@ -25,7 +25,7 @@ For example `[docs] Add tags.md` or `[docs] Modify tags.md to explain boolean ex
 
 The more general contribution process is described in the [Cucumber Community Contributing Guide](https://github.com/cucumber/cucumber/blob/master/CONTRIBUTING.md).
 
-## Discuss the documentation
+# Discuss the documentation
 
 It's great to get feedback on your writing. Start out with small changes, then wait for feedback from other contributors and committers in the pull request.
 
@@ -33,7 +33,7 @@ You can hop into the Cucumber [Slack](https://cucumber.io/support#slack) channel
 
 Otherwise - there is always the friendly [Cucumber Google group](mailto:cukes-devs@googlegroups.com)
 
-## What to contribute
+# What to contribute
 A great way to start contributing is to answer a
 [mailing list](https://groups.google.com/group/cukes) question by improving
 the docs, and then reply on the mailing list with a link to your contribution.
@@ -41,7 +41,7 @@ the docs, and then reply on the mailing list with a link to your contribution.
 If you are contributing for the first time we recommend you start by contributing to the [Reference](#reference-style) documentation. Once you get a hang of that you
 can start contributing to [Learning](#learning-style) and [Tutorial](#tutorial-style) documentation.
 
-## Different styles of documentation
+# Different styles of documentation
 
 This documentation has three different styles of documentation:
 
@@ -53,7 +53,7 @@ In general, it should be brief and to the point.
 
 > Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away - Antoine de Saint Exupéry
 
-### General writing style
+## General writing style
 
 * Every page should start with an informational/motivational paragraph
 * Paragraphs should be short enough to be readable, but long enough to develop an idea.
@@ -73,18 +73,18 @@ In general, it should be brief and to the point.
 * Do not use copyrighted material (images, text or other)
 * Illustrations are great, but please use lo-fi drawings. Cucumber's design team will recreate illustrations according to Cucumber's [brand guidelines](https://github.com/cucumber-ltd/brand).
 
-### Tutorial writing style {#tutorial-style}
+## Tutorial writing style {#tutorial-style}
 
 * Assume the reader has little or no knowledge of the topic
 * Use a conversational style
 * Don't go too deep - refer to Learning and Reference docs for depth
 
-### Learning writing style {#learning-style}
+## Learning writing style {#learning-style}
 
 * Go deeper than tutorials
 * Investigate why and how, pros and cons
 
-### Reference writing style {#reference-style}
+## Reference writing style {#reference-style}
 
 * Use a `h2` section for every major feature.
 * Append `(platform-consistent)` or `(platform-inconsistent)` to each header
@@ -92,13 +92,13 @@ In general, it should be brief and to the point.
   * `(platform-inconsistent)` means this currently works differently across platforms, like formatter outputs
     * (The Cucumber team is working to make the implementations more consistent, but this takes time)
 
-## Toolchain
+# Toolchain
 The documentation is written in [Markdown](http://toolchain.gitbook.com/syntax/markdown.html)
 (simple markup).
 
 The documentation is stored in [the cucumber/docs.cucumber.io GitHub repository](https://github.com/cucumber/docs.cucumber.io).
 
-## Page structure
+# Page structure
 
 * YAML front matter (with title)
 * Introduction paragraph
@@ -112,7 +112,7 @@ Start the body with a paragraph, not a header. If you start with a header, the
 top of the page will have a `h1` followed immediately by a `h2`, which does not
 look good.
 
-## Polyglot pages
+# Polyglot pages
 
 All pages with source code should be polyglot, meaning there should be source code
 for all supported programming languages. See `themes/cucumber-hugo/layouts/partials/language-tabs.html`
@@ -128,7 +128,7 @@ polyglot: true
 When a tab is selected, only source code and language-specific text for the selected
 language will be displayed.
 
-### Source code
+## Source code
 
 Use fenced code blocks to specify polyglot source code:
 
@@ -144,13 +144,13 @@ Use fenced code blocks to specify polyglot source code:
     System.out.println("hello")
     ```
 
-### Language-specific text
+## Language-specific text
 
 Use the `{{% text %}}` shortcode around text that should only be displayed for
 a particular programming language:
 
     The preferred build tool is {{% text "ruby" %}}Rake{{% /text %}}{{% text "javascript" %}}Yarn{{% /text %}}{{% text "java" %}}Maven{{% /text %}}.
 
-### Working locally
+## Working locally
 
 For information on how to work locally, please see the README.md in [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io).

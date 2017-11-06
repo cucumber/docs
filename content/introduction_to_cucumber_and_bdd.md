@@ -5,7 +5,7 @@ menu:
 title: Introduction to Cucumber and BDD
 ---
 
-## What is Gherkin
+# What is Gherkin
 
 Gherkin is the language that Cucumber understands. It is a [Business Readable,
 Domain Specific
@@ -27,7 +27,7 @@ There are a few conventions:
 - Each Gherkin source file contains a description of a single Feature
 - Each Gherkin source file uses the `.feature` extension
 
-## What is Cucumber?
+# What is Cucumber?
 
 Cucumber is a [command-line
 tool](https://en.wikipedia.org/wiki/Command-line_interface). When you run it, it
@@ -57,7 +57,7 @@ When the team writes their acceptance tests collaboratively, they can develop
 their own ubiquitous language for talking about their problem domain. This helps
  avoid misunderstandings.
 
-## How does Cucumber work with BDD?
+# How does Cucumber work with BDD?
 
 This is the most typical question everyone enthusiastic about Cucumber will get.
 What makes Cucumber stand out from the crowd of other communication and
@@ -109,7 +109,7 @@ documentation in parallel.
 Acceptance tests written in this style become more than just *tests*; they are
 *executable specifications*, as well as *living documentation*.
 
-## Living Documentation
+# Living Documentation
 
 Cucumber tests share the benefit of traditional specification documents in that
 they can be written and read by business stakeholders, but they have a distinct
@@ -117,7 +117,7 @@ advantage in that you can give them to a computer at any time to tell you how
 accurate they are. In practice, this means that documentation, rather than
 being something that's written once and then gradually becoming outdated, becomes a [living document](https://en.wikipedia.org/wiki/Living_document) that reflects the true state of the project.
 
-## Source of Truth
+# Source of Truth
 
 For many teams, they become the definitive source of truth as to what the system
 does. Having a single place to go for this information saves a lot of time that
@@ -125,7 +125,7 @@ is often wasted trying to keep requirements documents, tests, and code all in
 sync. It also helps build trust within the team, because different parts of
 the team no longer have their own personal versions of the truth.
 
-## The Three Amigos
+# The Three Amigos
 
 *The Three Amigos* is a meeting that takes user stories and turns them into clean, thorough Gherkin Scenarios. It involves three voices (at least):
 
@@ -138,7 +138,7 @@ the product from a different perspective. If the tests are being developed befor
 
 Finally, there is no reason to limit these meetings to three people—or to hold only one such meeting at the beginning of the project. Continually refine your features and collaborate with everyone to best understand how to talk about, develop, and test your application.
 
-## Cucumber for non-programmers
+# Cucumber for non-programmers
 
 Cucumber tests are written in terms of “Features”. Each Feature consists of one or more “Scenarios”.
 
@@ -183,7 +183,7 @@ values” such as:
 
 So, those three lines cover Why, Who, and What. Then, the document gets into the “How” with Scenarios.
 
-## Scenarios
+# Scenarios
 
 You can have any number of Scenarios for a Feature.
 
@@ -241,7 +241,7 @@ There are more details to writing and testing Cucumber Features
 ([Cucumber Backgrounder](/wiki/cucumber-backgrounder/)), but this basically
 covers what a non-programmer needs to know.
 
-## Writing Features
+# Writing Features
 
 It is preferable that the first draft of any Feature be written by, or with, a
 “domain expert”. This person is typically a non-programmer, and always someone who knows the Feature's domain from a user or business perspective.

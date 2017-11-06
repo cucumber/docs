@@ -7,11 +7,11 @@ title: Parameters in Step Definitions
 
 > TODO: Ruby specific feature. generalize.
 
-Step argument Transforms keep your Step Definitions DRY. They allow you to refactor common operations that you perform on Step Definition arguments. 
+Step argument Transforms keep your Step Definitions DRY. They allow you to refactor common operations that you perform on Step Definition arguments.
 
 Before each of a Step Definition's captured matches is yielded as an argument to the Step Definition's block, Cucumber attempts to match them against registered `Transform` objects. If the captured match also matches the regular expression of a `Transform` object, its original string value is replaced with the result of what the `Transform` block yields.
 
-## Registering a Transform
+# Registering a Transform
 
 ```ruby
 
@@ -26,7 +26,7 @@ end
 - Has a regular expression that is compared against all the captures of the Step Definition
 - Implements a block whose result is sent to the Step Definition block as the matching argument
 
-## Transforms during Execution
+# Transforms during Execution
 
 An example, the following Transform converts any Step Definition captures that match digits and converts them automatically to integers.
 
@@ -46,8 +46,7 @@ end
 
 ```
 
-
-## Transforming Tables
+# Transforming Tables
 
 ```gherkin
 
@@ -63,7 +62,7 @@ Given the following users:
 | mattwynne | 33 |
 ```
 
-### (Re-)Mapping Headers and Columns
+## (Re-)Mapping Headers and Columns
 
 Table objects have two extremely useful methods: `map_column!` and `map_headers!`.
 
@@ -87,11 +86,11 @@ end
 end
 ```
 
-### The Whole Table
+## The Whole Table
 
 Transforms can also be used with tables. Just as they do for Step Definitions, using a Transform with tables will keep your code DRY.
 
-A table like this may occur again in a creation Step, and again in a validation Step. 
+A table like this may occur again in a creation Step, and again in a validation Step.
 
 A table Transform is matched via a comma-delimited list of the column headers prefixed with `table:`:
 
@@ -120,13 +119,13 @@ Then /^I expect the following users$/ do |table|
 end
 ```
 
-## Transform Wisdom
+# Transform Wisdom
 
 Transforms are powerful, and it is important to implement them with care. A mistake can often introduce strange and unexpected behavior.
 
 **1. Transforms always require that you specify a block variable, _even if you do not specify any groups to capture_.**
 
-With no capture groups specified, the entire value is returned as a string to the block. This is in contrast to how Step Definitions behave, and can be confusing. 
+With no capture groups specified, the entire value is returned as a string to the block. This is in contrast to how Step Definitions behave, and can be confusing.
 
 Cucumber will fail execution with a warning when you fail to specify at least one variable.
 

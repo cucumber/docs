@@ -7,7 +7,7 @@ title: Using MiniTest
 
 You can also use [minitest](https://github.com/seattlerb/minitest) `assert` methods by defining your own [World](/wiki/a-whole-new-world/) block:
 
-### Minitest 5
+# Minitest 5
 
 ```ruby
 require 'minitest/spec'
@@ -32,7 +32,7 @@ Or, if that causes problems, try:
 World(MultiTest::MinitestWorld)
 ```
 
-### Older versions
+# Older versions
 
 ```ruby
 require 'mini/test'

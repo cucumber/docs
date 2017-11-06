@@ -56,13 +56,13 @@ Fixtures.create_fixtures(fixtures_folder, fixtures)
 
 For Rails 3.1 just replace `Fixtures` with `ActiveRecord::Fixtures` and `RAILS_ROOT` with `Rails.root`
 
-## Usage
+# Usage
 
 Once you've done one of the two load methods above (please, don't do both ;-) you can access your fixture data from the database using `Model.find`.  
 
 For example, to find the first `User` model, you'd use `User.find(:first)`.
 
-## Fixture helper methods
+# Fixture helper methods
 
 If you want to also enable the fixture helper methods, such as *users(:admin)*, you need to add the following to your `env.rb` file (pretty much stolen straight from the Rails guts). This includes loading of the fixtures. For Rails 3.x:
 

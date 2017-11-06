@@ -12,7 +12,7 @@
     "rimraf": "^2.6.1"
   },
   "scripts": {
-    "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix",
+    "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix && cp node_modules/lunr/lunr.js static/js/lunr.js",
     "build-clean": "rimraf static/css/cucumber.css*",
     "build-sass": "node-sass --output-style expanded static/css/cucumber.sass static/css/cucumber.css.tmp",
     "build-autoprefix": "postcss --use autoprefixer --output static/css/cucumber.css static/css/cucumber.css.tmp",
