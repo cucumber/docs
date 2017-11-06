@@ -2,6 +2,8 @@ site: hugo htmlproofer
 .PHONY: site
 
 site-with-search: site static/js/lunr-index.json static/js/lunr.js
+	# Need to run hugo again to copy over lunr-index.json 
+	hugo
 .PHONY: site-with-search
 
 hugo:
