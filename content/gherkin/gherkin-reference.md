@@ -13,9 +13,8 @@ Cucumber executes your `.feature` files, and those files contain executable spec
 written in a language called Gherkin.
 
 Gherkin is plain-text English (or one of 60+ other languages) with a little extra structure.
-Gherkin is designed to be easy for people to read and write, yet structured enough to
-allow concise description of examples to illustrate business rules in most real-world
-domains. It is structured enough for a tool like Cucumber to process.
+Gherkin is designed to be easy for people to read and write, yet structured enough to allow
+for automated processing and concise description of business rules.
 
 Here is a sample Gherkin document:
 
@@ -56,9 +55,9 @@ The `.feature` file starts with the keyword **Feature**, a *name* (on the same l
 followed by an optional (but highly recommended) free format *description* which can span multiple lines.
 The free format description ends when the first scenario starts.
 
-Cucumber does not care about the name or the description.
-Their purpose is simply to provide a place for you to document important aspects of the Feature,
-such as a brief explanation and a list of business rules (general acceptance criteria).
+The name and the description have no special meaning to Cucumber. Their purpose is to provide
+a place for you to document important aspects of the Feature, such as a brief explanation
+and a list of business rules (general acceptance criteria).
 
 In addition to a *name* and a *description*, features contain a list of [Scenarios](#scenario)
 or [Scenario Outlines](#scenario-outlines) with Examples, and an optional [Background](#background).
