@@ -3,6 +3,10 @@ languageCode = "en-us"
 title = "Cucumber Documentation"
 theme = "cucumber-hugo"
 
+pygmentsCodeFences = true
+pygmentsStyle = "friendly"
+pygmentsUseClasses = false
+
 # This lets us add multiple links to subsections
 [[menu.implementations]]
     name = "Clojure"
