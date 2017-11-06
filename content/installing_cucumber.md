@@ -7,9 +7,9 @@ title: Installing Cucumber
 
 Cucumber exists for different platforms such as Java, JavaScript, Ruby, etc. Cucumber is a command-line tool, and how you install it depends on your platform.
 
-## Ruby {#ruby}
+# Ruby {#ruby}
 
-### Gem {#gem}
+## Gem {#gem}
 
 Cucumber for Ruby is a Ruby gem, and can be installed from the command line. After you have installed Ruby and RubyGems, install Cucumber with the following command:
 
@@ -17,7 +17,7 @@ Cucumber for Ruby is a Ruby gem, and can be installed from the command line. Aft
 $ gem install cucumber
 ```
 
-### Ruby on Rails {#rails}
+## Ruby on Rails {#rails}
 
 Before you can use the generator, add the gem to your project's `Gemfile` as follows:
 
@@ -47,11 +47,11 @@ Finally, bootstrap your Rails app, for example:
     rails generate cucumber:install
 ```
 
-## Java {#java}
+# Java {#java}
 
 Cucumber is published as several JAR files in the central Maven repository. Installation is simply a matter of adding a dependency in your build file:
 
-### Maven {#maven}
+## Maven {#maven}
 
 Add these dependencies to your project:
 
@@ -71,9 +71,9 @@ Add these dependencies to your project:
     </dependency>
 ```
 
-### Gradle {#gradle}
+## Gradle {#gradle}
 
-## JavaScript {#javascript}
+# JavaScript {#javascript}
 
 Cucumber.js is available as an npm module.
 
@@ -81,7 +81,7 @@ Cucumber.js is available as an npm module.
 $ npm install cucumber
 ```
 
-## PHP {#php}
+# PHP {#php}
 
 [Behat](http://docs.behat.org) is an official Cucumber implementation available as a Composer package.
 

@@ -7,7 +7,7 @@ title: Gherkin Reference
 This is the general reference for all Cucumber implementations. Please refer to
 the Implementations menu for links to platform-specific documentation.
 
-## Gherkin
+# Gherkin
 
 Cucumber executes your `.feature` files, and those files contain executable specifications
 written in a language called Gherkin.
@@ -46,7 +46,7 @@ There are a few extra keywords as well:
 - `@` (Tags)
 - `#` (Comments)
 
-### Feature
+## Feature
 
 A `.feature` file is supposed to describe a single Feature of the system, or a
 particular aspect of a Feature. It's a way to provide a high-level description
@@ -88,13 +88,13 @@ Then I should be served a coffee
 You can use [Tags](/cucumber/tags/) to group Features and
 Scenarios together, independent of your file and directory structure.
 
-### Descriptions
+## Descriptions
 
 Some parts of Gherkin documents do not have to start with a keyword.
 
 On the lines following a `Feature`, `Scenario`, `Scenario Outline`, or `Examples`, you can write anything you like, as long as no line starts with a keyword.
 
-### Scenario
+## Scenario
 
 A Scenario is a *concrete example* that *illustrates* a business rule. It consists of
 a list of [Steps](#steps).
@@ -113,13 +113,13 @@ Scenarios follow the same pattern:
 
 This is done with Steps.
 
-### Steps
+## Steps
 
 A Step typically starts with `Given`, `When`, or `Then`.
 
 If there are multiple `Given` or `When` Steps underneath each other, you can use `And` or `But`. Cucumber does not differentiate between the keywords, but choosing the right one is important for the readability of the Scenario as a whole.
 
-#### Given
+### Given
 
 `Given` steps are used to describe the initial context of the system---the *scene* of the Scenario.
 It is typically something that happened in the *past*.
@@ -129,13 +129,13 @@ such as creating and configuring objects or adding data to the test database.
 
 It's okay to have several `Given` steps (just use `And` or `But` for number 2 and upwards to make it more readable).
 
-#### When
+### When
 
 `When` Steps are used to describe an event, or an *action*. This can be a person interacting with the system, or it can be an event triggered by another system.
 
 It's strongly recommended you only have a single `When` step per Scenario. If you feel compelled to add more, it's usually a sign that you should split the Scenario up into multiple Scenarios.
 
-#### Then
+### Then
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
@@ -143,7 +143,7 @@ The [Step Definition](/cucumber/step-definitions/) of a `Then` Step should use a
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the Step says the system is supposed to do).
 
-### Background
+## Background
 
 Occasionally you'll find yourself repeating the same `Given` Steps in all of the Scenarios in a Feature.
 
@@ -205,7 +205,8 @@ Use colorful names, and try to tell a story. The human brain keeps track of stor
 
 If the Background section has scrolled off the screen, think about using higher-level Steps, or splitting the `*.feature` file.
 
-## Scenario Outlines
+
+# Scenario Outlines
 
 Copying and pasting Scenarios to use different values quickly becomes tedious and repetitive:
 
@@ -314,12 +315,12 @@ Scenario Outline: Password validation
     | abcd1    | valid            |
 ```
 
-## Step Arguments
+# Step Arguments
 
 In some cases you might want to pass more data to a step than fits on a single line.
 For this purpose Gherkin has Doc Strings and Data Tables:
 
-### Doc Strings
+## Doc Strings
 
 Doc Strings are handy for passing a larger piece of text to a step definition. The syntax is inspired from Python's Docstring syntax.
 
@@ -337,7 +338,7 @@ In your Step Definition, there’s no need to find this text and match it in you
 
 Indentation of the opening '"""' is unimportant, although common practice is two spaces in from the enclosing step. The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be de-indented according to the opening """. Indentation beyond the column of the opening """ will therefore be preserved.
 
-### Data Tables
+## Data Tables
 
 Data Tables are handy for passing a list of values to a step definition:
 

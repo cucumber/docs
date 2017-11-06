@@ -8,7 +8,7 @@ title: Console Colours
 
 > TODO: Review.
 
-The console output for Cucumber colours steps according to how execution went. In addition to that, matched Step variables are highlighted. 
+The console output for Cucumber colours steps according to how execution went. In addition to that, matched Step variables are highlighted.
 
 Here is an example of how a single Step gets printed:
 
@@ -37,7 +37,7 @@ The colours that you can change are:
 
 For instance, if your shell has a black background and a green font (like the
 "Homebrew" settings for macOS's Terminal.app), you may want to override `passed`
-Steps to be white instead of green. 
+Steps to be white instead of green.
 
 Examples:
 
@@ -62,6 +62,6 @@ ruby -e "require 'rubygems'; require 'term/ansicolor'; puts Term::ANSIColor.attr
 
 Although not listed in the output, you can also use `grey`.
 
-## Windows
+# Windows
 
 Windows users can get colours by installing [ANSICON](https://github.com/adoxa/ansicon/downloads) or [cmder](http://cmder.net/)

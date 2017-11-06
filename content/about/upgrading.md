@@ -3,6 +3,7 @@ menu:
 - about
 source: https://github.com/cucumber/cucumber/wiki/Upgrading/
 title: Upgrading
+status: merge into installation page
 ---
 
 Cucumber tries to follow the [SemVer](http://semver.org/) specification for

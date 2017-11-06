@@ -7,9 +7,9 @@ title: Cucumber Backgrounder
 
 > TODO: Blog post intro or some such
 
-## Or: How I Learned to Stop Worrying and ~~Love Testing~~ Start Behaving
+# Or: How I Learned to Stop Worrying and ~~Love Testing~~ Start Behaving
 
-### Introduction
+## Introduction
 
 Cucumber is a tool that implements a [Behaviour Driven Development
 (BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development)
@@ -34,7 +34,7 @@ Details regarding installing the Cucumber Rubygem and its recommended support to
 
 Note that in this document I often use the terms *testing* and *test* where [BDD practitioners](http://dannorth.net/introducing-bdd) prefer the terms *behaviour* and *expectation*. When I use the word test in a BDD context I am in fact discussing expressing and verifying expected behaviour.
 
-### Where to Start?
+## Where to Start?
 
 Before anything else make sure that you have the [cucumber-rails](https://github.com/cucumber/cucumber-rails) installed properly into your RoR project. Now we can really get started.
 
@@ -134,7 +134,7 @@ People returning to Cucumber who are familiar with earlier versions will note th
 
 Once the `features/` directory structure is in place, you're ready to begin testing with Cucumber.
 
-### Where do I put Tests?
+## Where do I put Tests?
 
 Cucumber divides testing into two parts:
 
@@ -257,7 +257,7 @@ Thus, a Step contained in `features/models/entities/step_definitions/anything.rb
 
 Note that if the `-r` option is passed, then **ONLY** that directory tree will be searched for Step Definition matches. You may specify the `-r` option multiple times if you need to include Step Definitions from directories that do not share a convenient root.
 
-### How do I Write Tests?
+## How do I Write Tests?
 
 Constructing ones first tests (or “Features”, as BDD purists prefer) is often accompanied by what can only be described as *[writer's block](http://en.wikipedia.org/wiki/Writer%27s_block)*. The question of "Where to begin?" seems to be a particular roadblock for some.
 
@@ -340,7 +340,7 @@ Think about how you are going to express this behaviour in your application and 
 
 Now, go write the code to implement this requirement in your application.
 
-### When do I Write Tests?
+## When do I Write Tests?
 
 It is tempting, sometimes irresistibly so, to skip ahead to the analysis stage alone, and complete as many Features, Scenarios, and Steps as one can imagine. In some cases, limited access to domain experts and end users may require that many Features have their Scenario details completed long before coding the associated Step Definitions is undertaken. When this is avoidable it should be, and when it is not avoidable then every effort should be made to avoid it nonetheless. In the long run, the best results are achieved when you write Steps and Step Definitions incrementally, using the absolute minimum of code to express the requirement. Immediately implement the new Step requirement in the application using the absolute minimum code that will satisfy it.
 
@@ -372,7 +372,7 @@ Before writing any line of code, whether it be Feature, Step, or application, th
 
 > When faced with two or more alternatives that deliver roughly the same value, take the path that makes future change easier.
 
-### What are Features and Scenarios?
+## What are Features and Scenarios?
 
 A <dfn>Feature</dfn> can be conceptualized as an indivisible unit of functionality embedded in the project to which it belongs. For example, an authentication challenge and response user interface is usually considered a feature while an entire authentication system necessarily comprises many features. A single ***Feature*** is typically contained in its own file (ending in `.feature`). Each Feature is usually elaborated though multiple ***Scenarios***.
 
@@ -406,7 +406,7 @@ To date ( <time datetime="2015-06-03">2015 Jun 05</time> ) the `Feature` stateme
 
 As with `Feature`, `Scenario` is used only for identification when reporting failures and to document a piece of the work. The clauses (*Steps*) that make up a Scenario each begin with one of: Given, When, Then, And and But (and sometimes **\***). These are all [Gherkin](/gherkin/gherkin-intro) keywords / Cucumber methods that take as their argument the string that follows. They are the Steps that Cucumber will report as passing, failing or pending based on the results of the corresponding Step matchers in the `step_definitions.rb` files. The five keywords (and **\***) are all equivalent to one another and completely interchangeable.
 
-### What are Step Definitions?
+## What are Step Definitions?
 
 The string following the keyword in the Feature file is compared against all the matchers contained in all of the loaded `step_definitions.rb` files. A Step Definition looks much like this:
 
@@ -480,7 +480,7 @@ When /in an invoiced non-shipped situation/ do
 end
 ```
 
-### Steps within Steps: An anti-pattern
+## Steps within Steps: An anti-pattern
 
 If one Step Definition calls another Step Definition, then the matcher argument to the called **Given/When/Then** method must be enclosed with string delimiters.
 
@@ -654,7 +654,7 @@ end
 
 Before you ask: Yes, these *helper* methods can go into the same Step Definitions file that uses them. I put them at the top, above all the matchers. And they can be called from elsewhere in your Step Definitions, so you need not repeat yourself.
 
-### Before, After, and Background
+## Before, After, and Background
 
 If all your Feature's Scenarios share the same 'set-up' Steps, then Cucumber provides the *Background* section. Steps contained within a Background section are run before each Scenario.
 
@@ -672,7 +672,7 @@ Also, be aware that **all** eligible `before` methods are run before any Scenari
 
 These two methods are powerful tools, but be aware that if you use them excessively then you will hang yourself eventually.
 
-### What is a good Step Definition?
+## What is a good Step Definition?
 
 Opinions vary of course, but for me a ***good*** Step Definition has the following attributes:
 
@@ -719,7 +719,7 @@ When /product ([^\"]+) should( not)? belong to category ([^\"]+)/i do |product, 
 Which can be conveniently `grep`*ed* for ( *on \*nix systems at least* ) using:
 `find features -name \\**rb | xargs grep "product .** should belong to category"`
 
-### What are "Tags"?
+## What are "Tags"?
 
 Cucumber provides a simple method to organize Features and Scenarios by user determined classifications. This is implemented using the convention that any space delimited string found in a Feature file that is prefaced with the commercial at (**`@`**) symbol is considered a Tag.  As distributed, Cucumber-Rails builds a Rake task that recognizes the *`@wip`* Tag. However, any string may be used as a Tag and any Scenario or entire Feature can have multiple Tags associated with it. For example:
 
@@ -804,7 +804,7 @@ A convention that I use is to tag all Scenarios created to track down a specific
 
 Be aware that Tags are heritable within Feature files. Scenarios inherit Tags from the Feature statement.
 
-### What Way do I Run the Tests?
+## What Way do I Run the Tests?
 
 Unless you are knowledgeable enough that you can use [mocks and stubs](http://martinfowler.com/articles/mocksArentStubs.html) with flair then I consider it best to begin with creating a Rails migration file for the models you are testing (or expressing Features for) followed by:
 
@@ -842,7 +842,7 @@ Cucumber-Rails creates a `cucumber.yml` file in the project config directory con
 
 Finally, running `autotest` with the environment variable `AUTOFEATURE=true` will run ALL tests, including those in `/test` and (if present) `/rspec`. As this will load all the TestUnit and RSpec fixtures as well, your test database may be left in an indefinite state when the Cucumber Features are run. It is wise, as always, to write Cucumber Steps either so that they do not depend upon an empty database or they place the database in the requisite state.
 
-### Customising the Cucumber Environment
+## Customising the Cucumber Environment
 
 I advise against putting local Cucumber customisation code in `support/env.rb` itself as that file is typically overwritten by `script/generate cucumber:install | rails g cucumber`. Regardless, there are some customisations that must be loaded before the rest of Cucumber initialises and these must be placed at the beginning of the `env.rb file`.
 
@@ -852,7 +852,7 @@ If you do put custom files inside `features/support` that you do not wish loaded
 
 As a matter of good practice you should always run `script/generate cucumber | rails g cucumber:install` whenever you install an updated version of Cucumber or cucumber-rails. However, this overwrites `features/support/env.rb`. And, unfortunately, there are some configuration options that simply **must** go into `env.rb` to have their desired effect as `env.rb` is always loaded by Cucumber first. So, check in your `env.rb` along with the rest of your version controlled files and be prepared to diff and merge changes to `env.rb` between versions of Cucumber-Rails.
 
-### Ruby, Rails, Bundler, RVM, and RBenv
+## Ruby, Rails, Bundler, RVM, and RBenv
 
 Software is frequently designed to run on different environments and new software may need to co-exist with earlier efforts whose dependencies are incompatible with current projects. To deal with this circumstance Ruby has the [Ruby Version Manager](http://rvm.io/) (RVM) and [RBenv](https://github.com/sstephenson/rbenv.git) ( *and likely other projects* ) that manage multiple separate Ruby vm environments running on a single host. Additionally, recent versions of Ruby on Rails ship with a dependency on [Bundler](http://gembundler.com/), a utility gem that manages project specific RubyGem dependencies such that each Rails project is unaffected by the gem requirements of another. All these tools are covered elsewhere but you should be aware of them from the outset of any new project.
 
@@ -867,7 +867,7 @@ bc.
    alias bcuke='bundle exec cucumber'
    alias bexec='bundle exec
 
-### Anything Else?
+## Anything Else?
 
 The terminology for elements of Behaviour Driven Development differs somewhat from that employed by Test Driven Development. This article, because of the introductory nature of its contents, tends to blur the semantic distinction between these two divergent philosophies.
 
@@ -897,13 +897,13 @@ Those of you that have used `growl` or `snarl` to provide desktop notifiers from
 
 `autotest` is installed via the [ZenTest](http://www.zenspider.com/ZSS/Products/ZenTest/) gem. If you use autotest then take a look at the contents of `example_dot_autotest.rb` in the ZenTest gem root directory.
 
-### Need Help?
+## Need Help?
 
 The best place to go for help, that I know of, is the [Google Cucumber Group](http://groups.google.com/group/cukes). Another good place for support is [StackOverflow](http://stackoverflow.com/). On either venue take the time to observe what is acceptable as a question prior to posting one; and do not expect "qualtity-of-service" response times.
 
 If you find a bug in Cucumber, or wish a new Feature added, then you should open a ticket at [GitHub](https://github.com/cucumber/cucumber/issues) for it.
 
-### A Note on Ruby Syntax
+## A Note on Ruby Syntax
 
 Cucumber is a Ruby code project at its heart and the syntax used in its user interface reflects that fact. Specifically, as noted above, you must be aware that all defined Ruby methods may be called containing their argument list within parenthesis or not; and all Ruby methods may be called with a following code block delimited by `do`. . .`end` or the symbolic equivalent `{`. . .`}`.
 
@@ -911,7 +911,7 @@ So, although `When /I have a match/i do . . . end` in a Step Definition file may
 
 See this discussion respecting the significance of Ruby's [`yield` statement](http://yehudakatz.com/2010/02/07/the-building-blocks-of-ruby/).
 
-### Note Respecting cucumber-rails v0.5.0. *(2011 June 28)*
+## Note Respecting cucumber-rails v0.5.0. *(2011 June 28)*
 
 Rails-4+ requires Ruby-1.9.3+ while Cucumber and Cucumber-Rails have both passed their initial 1.0 release point. So this note of 2011 June 28 is now of passing historic interest only. However, if you are maintaining an application implemented with an older version of Rails that still uses Ruby-1.8.7; and you are employing testunit or Capybara; then one or both of the following may need to be added to the `support/env.rb` file produced by the rails generator:
 
@@ -928,7 +928,7 @@ require "capybara"
 
 This requirement may no longer be case in releases of cucumber-rails v0.5.1 and later but I have not checked this against Ruby-1.8.7 as yet (and ~~may~~ **will never** get around to it). As stated above, Rails-4 has dropped support for all versions of MRI Ruby prior to v1.9.3 and Rails-5 requires Ruby-2.2.2*. Do yourself a favour and just use Ruby-2.2.2* wherever possible.
 
-### Revision History
+## Revision History
 
 - 2008 November 28 - J. B. Byrne initial
 - 2010 January 17 - J. B. Byrne revised to 0.6.1
@@ -949,7 +949,7 @@ This requirement may no longer be case in releases of cucumber-rails v0.5.1 and 
 - 2015 June 05 - J. B. Byrne revised with minor corrections to 1.3.19.
 - 2015 July 23 - J. B. Byrne reviewed for 2.0.2.
 
-### Postscript
+## Postscript
 
 A caution, Cucumber is meant to facilitate expressing required behaviours.
 Indirection and excessive adherence to the principle of DRY, particularly in

@@ -14,7 +14,7 @@ host: localhost
 port: 98989
 ```
 
-When you run your Features, Cucumber will then connect to this TCP socket, ask the service at the other end for its registered Step Definitions, and subsequently tell the service to invoke them if necessary. 
+When you run your Features, Cucumber will then connect to this TCP socket, ask the service at the other end for its registered Step Definitions, and subsequently tell the service to invoke them if necessary.
 
 It's perfectly feasible to have a mix of Step Definitions, some being implemented and invoked normally, and others implemented and invoked over the wire.
 
@@ -22,7 +22,7 @@ The details of the protocol are documented in [the Wire Protocol Features](https
 
 Please feel free to suggest enhancements to the protocol, or ask for help on the mailing list if you'd like to implement a new server.
 
-## Implementations
+# Implementations
 
 - [Clucumber](https://github.com/antifuchs/clucumber) (Common Lisp)
 - [Cuke4AS3](https://github.com/flashquartermaster/Cuke4AS3) (ActionScript / Flash)
@@ -31,7 +31,7 @@ Please feel free to suggest enhancements to the protocol, or ask for help on the
 - [OCCukes](https://github.com/royratcliffe/OCCukes) (Objective-C)
 - [Unencumbered](https://github.com/atilaneves/unencumbered) (D)
 
-## References
+# References
 
 - <http://www.richardlawrence.info/2009/09/19/cuke4nuke-cucumber-for-net-teams/>
 - <https://rspec.lighthouseapp.com/projects/16211/tickets/428-wire-protocol>

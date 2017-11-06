@@ -1,12 +1,18 @@
-all: build htmlproofer
+all: hugo static/js/lunr-index.json htmlproofer
 .PHONY: all
 
-build:
+hugo:
 	hugo
-.PHONY: build
+.PHONY: hugo
 
-htmlproofer: build Gemfile.lock
-	ruby tools/htmlproofer/htmlproofer.rb
+static/js/lunr-index.json: public/index.json
+	cat $< | node themes/cucumber-hugo/tools/lunr/buildIndex.js > $@
+
+public/index.json:
+	hugo
+
+htmlproofer: hugo Gemfile.lock
+	ruby themes/cucumber-hugo/tools/htmlproofer/htmlproofer.rb
 .PHONY: htmlproofer
 
 Gemfile.lock: Gemfile

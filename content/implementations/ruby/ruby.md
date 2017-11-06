@@ -7,7 +7,7 @@ title: Ruby/JRuby
 
 Note: If you are using Ruby on Rails, see the [Cucumber-Rails](/implementations/ruby/ruby-on-rails/) reference.
 
-## Installation
+# Installation
 
 Cucumber for Ruby is a Ruby gem, and can be installed from the command line:
 
@@ -29,7 +29,7 @@ Then, initialize a `features/` directory:
 cucumber --init
 ```
 
-## Running
+# Running
 
 To see the full list of options:
 

@@ -8,7 +8,7 @@ title: Ruby on Rails
 [Cucumber-Rails](https://github.com/cucumber/cucumber-rails) is a generator that
 generates and modifies files in a Rails project so it can be used with Cucumber.
 
-## Installation
+# Installation
 
 Before you can use the generator, add the gem to your project's `Gemfile` as follows:
 
@@ -32,7 +32,7 @@ Run the generator:
 rails generate cucumber:install
 ```
 
-## Running
+# Running
 
 With Rake:
 
@@ -46,13 +46,13 @@ Without Rake:
 [bundle exec] cucumber
 ```
 
-## Rails 3.x and above
+# Rails 3.x and above
 
 Go to Cucumber-Rails' [README](https://github.com/cucumber/cucumber-rails/blob/master/README.md) for installation instructions and ignore this page.
 
 As of Cucumber-Rails version 0.5.0 and above, Cucumber-Rails **only** supports Rails 3.x and above (Rails 2 is **not** supported). The following is only for Rails 2.x.
 
-## Rails 2.x
+# Rails 2.x
 
 If you are on Rails 2.x you have to use an older version of Cucumber-Rails. These are the recommended versions for maximum compatibility with Rails 2.3.x (though see note on javascript emulation below):
 
@@ -64,7 +64,7 @@ gem "cucumber-rails", "0.3.2"
 
 The rest of this page describes how to install Cucumber-Rails in a Rails 2.x application. These instructions assume you already have a Rails 2.x application, and that you have a shell where the current directory is the root of your Rails app.
 
-## Install Cucumber-Rails
+# Install Cucumber-Rails
 
 ```
 [sudo] gem install cucumber-rails -v 0.3.2
@@ -72,7 +72,7 @@ The rest of this page describes how to install Cucumber-Rails in a Rails 2.x app
 
 The `cucumber-rails` gem depends on the `cucumber` gem, so you don't need to install that separately.
 
-### Bootstrap Cucumber-Rails
+## Bootstrap Cucumber-Rails
 
 Cucumber-Rails needs to add a few files to your project:
 
@@ -94,13 +94,13 @@ ruby script/generate cucumber --help
 
 Take a look at the generated files. If you need to, you can tweak them later.
 
-### Install new dependencies
+## Install new dependencies
 
 ```
 [sudo] rake RAILS_ENV=cucumber gems:install
 ```
 
-### Start a Feature
+## Start a Feature
 
 It's really, really recommended that you write your Features by hand, *and* in collaboration with your customer / business analyst / domain expert / interaction designer.
 
@@ -117,7 +117,7 @@ This will generate a simple plain text Feature with associated Steps.
 **Important**: The generated Feature will fail, unless you have set up a layout in your app. This is because Webrat fails to parse HTML
 that isn't well formed (i.e. has a single `<html>` root node). [Here is a simple layout](https://github.com/aslakhellesoy/cucumber-rails-test/raw/master/app/views/layouts/application.html.erb) you can use, but I hope you have a better one yourself.
 
-### Run Features
+## Run Features
 
 If working on a fresh Rails project, first set up the (empty) database:
 
@@ -145,7 +145,7 @@ rake db:migrate
 rake cucumber
 ```
 
-### Other ways of running Features
+## Other ways of running Features
 
 You can also run specific Features directly with Cucumber:
 
@@ -174,11 +174,11 @@ default: --format pretty
 html: --format html --out features.html
 ```
 
-### Special Tags
+## Special Tags
 
 There are two special [[Tags]] you can use to change how Cucumber runs your Scenarios.
 
-#### `@no-txn`
+### `@no-txn`
 
 By default, all Scenarios will run within a database transaction that is rolled back at the end. However, Scenarios tagged with `@no-txn` will run **without** a transaction.
 
@@ -186,15 +186,15 @@ This can be useful when you have to deal with [[Browsers and Transactions]]. Bew
 
 If you use this, we recommend you create a Before block that will explicitly put your database in a known state (for example using [DatabaseCleaner](https://github.com/bmabey/database_cleaner)).
 
-#### `@allow-rescue`
+### `@allow-rescue`
 
 Scenarios tagged with `@allow-rescue` will cause Rails to rescue all errors and render error pages, more or less in the same way your application would behave in the default production environment. It's not recommended to do this for all of your Scenarios, as this makes it hard to discover errors in your application.
 
-#### Controller and View spec redundancy
+### Controller and View spec redundancy
 
 Since I recommend you verify outcomes (**`Then`** Steps) by looking at the HTML, you might end up having some degree of redundancy with controller and view specs. I recommend you delete generated controller and view specs if you run into too much maintenance headaches and rely on the Features instead. However, in some cases it can be handy to use them.
 
-### Authentication
+## Authentication
 
 Some guidance for authentication is provided below. It is recommended that a new user is created, rather than loaded through fixtures or other means.
 
