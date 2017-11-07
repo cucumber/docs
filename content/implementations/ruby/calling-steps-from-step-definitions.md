@@ -62,7 +62,7 @@ Scenario: View last incidents
 
 # Calling Steps with multiline Step arguments
 
-Sometimes you want to call a Step that has been designed to take [[Multiline Step Arguments]] and sometimes you want to call a step that has been designed to take [Multiline Strings](#multiline-strings).
+Sometimes you want to call a Step that has been designed to take [[Multiline Step Arguments]] and sometimes you want to call a step that has been designed to take [Multiline Strings](#doc-strings).
 For example:
 
 ## Tables

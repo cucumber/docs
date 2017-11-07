@@ -1,37 +1,141 @@
-<div class="container">
-  <nav class="nav">
-    <div class="nav-left">
-      <a class="nav-item is-brand" href="/">
-        <img src="/img/cucumber-logo.png" alt="Cucumber">
-      </a>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/img/cucumber-logo.png" alt="Cucumber">
+    </a>
+
+    <button class="button navbar-burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="navbar-menu" id="navbarExampleTransparentExample">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/documentation">
+          Documentation
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Overview</strong>
+              <br>
+              <small>Learn what Cucumber is and isn't</small>
+            </p>
+          </a>
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Installation</strong>
+              <br>
+              <small>Java, JavaScript, Ruby and more</small>
+            </p>
+          </a>
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Gherkin</strong>
+              <br>
+              <small>The language for executable specifications</small>
+            </p>
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>API</strong>
+              <br>
+              <small>Step Definitions, Hooks and more</small>
+            </p>
+          </a>
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Configuration</strong>
+              <br>
+              <small>Command line, tags, reports and more</small>
+            </p>
+          </a>
+        </div>
+      </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/documentation">
+          BDD
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Overview</strong>
+              <br>
+              <small>The essence of Behaviour-Driven Development</small>
+            </p>
+          </a>
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Example Mapping</strong>
+              <br>
+              <small>Three amigos agreeing on what to build</small>
+            </p>
+          </a>
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Who does what</strong>
+              <br>
+              <small>Programmers, Testers, Domain experts and more</small>
+            </p>
+          </a>
+        </div>
+      </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/documentation">
+          Guides
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Tutorial</strong>
+              <br>
+              <small>Build a small application the BDD way</small>
+            </p>
+          </a>
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Browser automation</strong>
+              <br>
+              <small>Selenium WebDriver, Capybara and more</small>
+            </p>
+          </a>
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Good practices</strong>
+              <br>
+              <small>Isolated state</small>
+            </p>
+          </a>
+          <a class="navbar-item" href="/documentation">
+            <p>
+              <strong>Testable architecture</strong>
+              <br>
+              <small>How to have fast and reliable tests</small>
+            </p>
+          </a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="nav-center">
-      <a class="nav-item" href="https://github.com/cucumber/cucumber">
+
+    <div class="navbar-end">
+      <a class="navbar-item" href="https://github.com/cucumber/cucumber">
         <span class="icon">
           <i class="fa fa-github"></i>
         </span>
       </a>
-      <a class="nav-item" href="https://twitter.com/cucumberbdd">
+      <a class="navbar-item" href="https://twitter.com/cucumberbdd">
         <span class="icon">
           <i class="fa fa-twitter"></i>
         </span>
       </a>
     </div>
-
-    <span id="nav-toggle" class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-
-    <div id="nav-menu" class="nav-right nav-menu">
-      <a class="nav-item " href="/introduction_to_cucumber_and_bdd/">
-        Documentation
-      </a>
-      <a class="nav-item " href="https://cucumber.io/blog">
-        Blog
-      </a>
-    </div>
-  </nav>
-</div>
+  </div>
+</nav>

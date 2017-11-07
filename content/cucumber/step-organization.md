@@ -12,8 +12,6 @@ How do you name Step Definition files? What to put in each Step Definition? What
 
 Here are some guidelines that will lead to better Scenarios.
 
-If you are new to Steps and the general syntax, please read [[Feature Introduction](/gherkin/feature-introduction/) first.
-
 # Grouping
 
 Technically it doesn't matter how you name your Step Definition files, or which Step Definitions you put in a file. You *could* have one giant file called `all_steps.rb` and put all your Step Definitions there.

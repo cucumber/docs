@@ -3,7 +3,7 @@ require 'html-proofer'
 
 # TODO: Check that depth increases by only 1 for each header,
 # And that we always start with h1 (ignore the title h1)
-class SingleH1Check < HTMLProofer::Check
+class HeaderCheck < HTMLProofer::Check
   IGNORE_PATHS = [
     'public/admin/index.html',
     'public/index.html'
@@ -38,8 +38,7 @@ end
 # https://app.netlify.com/sites/cucumber/settings/deploys
 external_link_check = ENV['EXTERNAL_LINK_CHECK'] == 'true'
 options = {
-  disable_external: !external_link_check,
-  checks_to_ignore: ["ScriptCheck", "LinkCheck", "ImageCheck"]
+  disable_external: !external_link_check
 }
 path = ARGV[0] || 'public'
 if File.file?(path)

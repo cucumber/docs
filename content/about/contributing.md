@@ -32,6 +32,8 @@ If you are certain you have found a bug, just register a ticket with the relevan
 You will likely use Cucumber combined with various web frameworks, many different dependencies and your own code.
 You can [run Features](/cucumber/running-features/) in different ways, and many things can go wrong - and quite often it has nothing to do with Cucumber at all.
 
+The only way we can fix a bug is to reproduce it first. If reproducing the bug requires setting up a project, please write a Cucumber Feature that demonstrates the bug. When you have done that, mention it in your Issue or send a Pull Request.
+
 When asking a question, or filing a bug report, please tell us:
 
 - Which version of Cucumber you are using: `cucumber --version`.
@@ -43,7 +45,7 @@ When asking a question, or filing a bug report, please tell us:
 - What relevant code you have. Don't *describe* your code; show your actual code. You can use <http://gist.github.com/>, rather than pasting code in emails.
 
 The only way to fix a bug, is to reproduce it first. At the very least, provide the steps to reproduce the issue.
-If you can, write a Unit Test or a [Cucumber Feature](/gherkin/feature-introduction/) that demonstrates the bug.
+If you can, write a Unit Test or a Cucumber Feature that demonstrates the bug.
 On occasion, we might ask you to provide a [Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (preferably in the form of a Github project).
 
 If you file a Github issue without providing following these quidelines, your ticket may be closed. If that happens, please provide the missing information in the ticket to have it reopened.
@@ -52,8 +54,7 @@ Whenever possible, please provide a Pull Request yourself that fixes the issue a
 
 # You want a new feature
 
-Start by creating a ticket, explaining what you would like to achieve and how. Then, create a [Cucumber Feature](/gherkin/feature-introduction/) and start implementing it. It also helps if you add unit tests for the low level code.
-Note that Cucumber is developed and maintained by volunteers. If you don't implement the feature yourself, it's not sure that someone else will.
+Start by creating a ticket. Then, create a Cucumber Feature and start implementing it. It also helps if you add unit tests for the low level code.
 
 # You want to update the documentation
 

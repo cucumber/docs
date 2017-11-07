@@ -1,4 +1,9 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+{{ partial "head.html" . }}
+<body>
 {{ partial "nav.html" . }}
 {{ partial "menu-content" . }}
-{{ partial "footer.html" . }}
+<script src="/js/site-lunr.js"></script>
+</body>
+</html>

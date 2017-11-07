@@ -6,7 +6,6 @@ function loadIndex(indexLoadedFn) {
   x.onreadystatechange = function() {
     if (4 == x.readyState && "200" == x.status) {
       var data = JSON.parse(x.responseText)
-      console.log(data)
       var lunrIndex = lunr.Index.load(data)
       indexLoadedFn(lunrIndex)
     }
