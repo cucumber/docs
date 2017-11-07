@@ -35,6 +35,7 @@ The available Dependency Injection modules are:
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
+For more information, please see [sharing state using Picocontainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
 
 # Spring
 
@@ -50,6 +51,7 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
+For more information, please see [sharing state using Spring](http://www.thinkcode.se/blog/2017/06/24/sharing-state-between-steps-in-cucumberjvm-using-spring).
 
 # Guice
 
@@ -65,7 +67,7 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
-
+For more information, please see [sharing state using Guice](http://www.thinkcode.se/blog/2017/08/16/sharing-state-between-steps-in-cucumberjvm-using-guice).
 # OpenEJB
 
 ## {openejb-}Dependency
