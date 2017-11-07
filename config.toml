@@ -6,7 +6,7 @@ theme = "cucumber-hugo"
 pygmentsUseClassic = true
 pygmentsCodeFences = true
 pygmentsStyle = "friendly"
-pygmentsUseClasses = false
+pygmentsUseClasses = true
 
 # This lets us add multiple links to subsections
 [[menu.implementations]]
