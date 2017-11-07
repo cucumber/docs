@@ -13,9 +13,8 @@ Cucumber executes your `.feature` files, and those files contain executable spec
 written in a language called Gherkin.
 
 Gherkin is plain-text English (or one of 60+ other languages) with a little extra structure.
-Gherkin is designed to be easy to learn by non-programmers, yet structured enough to
-allow concise description of examples to illustrate business rules in most real-world
-domains.
+Gherkin is designed to be easy for people to read and write, yet structured enough to allow
+for automated processing and concise description of business rules.
 
 Here is a sample Gherkin document:
 
@@ -49,30 +48,44 @@ There are a few extra keywords as well:
 ## Feature
 
 A `.feature` file is supposed to describe a single Feature of the system, or a
-particular aspect of a Feature. It's just a way to provide a high-level description
+particular aspect of a Feature. It's a way to provide a high-level description
 of a software Feature, and to group related Scenarios.
 
-A Feature has three basic elements---the `Feature:` keyword, a *name* (on the same line)
-and an optional (but highly recommended) *description*, which can span multiple lines.
+The `.feature` file starts with the keyword **Feature**, a *name* (on the same line),
+followed by an optional (but highly recommended) free format *description* which can span multiple lines.
+The free format description ends when the first scenario starts.
 
-Cucumber does not care about the name or the description. Their purpose is simply to provide a place for you to document important aspects of the Feature, such as a brief explanation and a list of business rules (general acceptance criteria).
+The name and the description have no special meaning to Cucumber. Their purpose is to provide
+a place for you to document important aspects of the Feature, such as a brief explanation
+and a list of business rules (general acceptance criteria).
+
+In addition to a *name* and a *description*, features contain a list of [Scenarios](#scenario)
+or [Scenario Outlines](#scenario-outlines) with Examples, and an optional [Background](#background).
+
+A Scenario starts with the word **Scenario** (or the localized equivalent;
+Gherkin is localized for dozens of [spoken languages](/gherkin/spoken-languages/))
+on a new line.
+
+Every Scenario consists of a list of Steps, which must start with one of the
+keywords **Given**, **When**, **Then**, **But**, or **And**. Cucumber treats them all the same, but you shouldn't.
 
 Here is an example:
 
 ```gherkin
-Feature: Refund item
+Feature: Serve coffee
+Coffee should not be served until paid for
+Coffee should not be served until the button has been pressed
+If there is no coffee left then money should be refunded
 
-  Sales assistants should be able to refund customers' purchases.
-  This is required by the law, and is also essential in order to
-  keep customers happy.
-
-  Rules:
-  - Customer must present proof of purchase
-  - Purchase must be less than 30 days ago
+Scenario: Buy last coffee
+Given there are 1 coffees left in the machine
+And I have deposited 1$
+When I press the coffee button
+Then I should be served a coffee
 ```
 
-In addition to a *name* and a *description*, features contain a list of [Scenarios](#scenario)
-or [Scenario Outlines](#scenario-outlines), and an optional [Background](#background).
+You can use [Tags](/cucumber/tags/) to group Features and
+Scenarios together, independent of your file and directory structure.
 
 ## Descriptions
 
@@ -190,6 +203,7 @@ Use colorful names, and try to tell a story. The human brain keeps track of stor
 - Keep your Scenarios **short**, and don't have too many.
 
 If the Background section has scrolled off the screen, think about using higher-level Steps, or splitting the `*.feature` file.
+
 
 # Scenario Outlines
 
