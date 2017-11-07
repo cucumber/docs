@@ -5,8 +5,6 @@ source: https://github.com/cucumber/cucumber/wiki/Tags/
 title: Tags
 ---
 
-> TODO: Gherkin *and* Cucumber. This is mostly Cucumber
-
 Tags are a great way to organise your Features and Scenarios. Consider this example:
 
 ```gherkin
@@ -26,26 +24,30 @@ A Scenario or Feature can have as many Tags as you like. Just separate them with
 Feature: Verify billing
 ```
 
-# Tag Inheritance
+Reasons for tagging scenarios:
 
-Any Tag that exists on a `Feature` will be inherited by `Scenario`, `Scenario Outline`, or `Examples`.
+* [**Filtering**](#running-a-subset-of-scenarios): Cucumber allows you to use tags as a filter to pick out specific scenarios to run or report on. You can even have Cucumber fail your test run if a certain tag appears too many times.
+* [**Hooks**](#hooks): Run a block of code whenever a scenario with a particular tag is about to start or has just finished.
+* [**Documentation**](#documentation): You simply want to use a tag to attach a label to certain scenarios, for example to label them with an ID from a project or requirement management tool.
 
 # Running a subset of Scenarios
 
 You can use the `--tags` option to tell Cucumber that you only want to run Features or Scenarios that have (or don't have) certain Tags.
 
-Examples:
-
+```gherkin
+@important
+Feature: Calculate insurance prices
 ```
-cucumber --tags @billing            # Runs both Scenarios
-cucumber --tags @important          # Runs the first Scenario
-cucumber --tags ~@important         # Runs the second Scenario (Scenarios without @important)
 
-cucumber --tags @billing --tags @important    # Runs the first Scenario (Scenarios with @important AND @billing)
-cucumber --tags @billing,@important           # Runs both Scenarios (Scenarios with @important OR @billing)
-```
+See [Tag Expressions](#tag-expressions) for more details on how to use tags.
+Cucumber can also enforce [Tag Limits](#tag-limits-and-wip)
 
 (Another way to "filter" what you want to run is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running Features](/cucumber/running-features/)).
+
+# Hooks
+Tags are also used in [Tagged Hooks](/cucumber/hooks/#tagged-hooks), which allow you to use Tags to define Before and/or After blocks to run for marked Scenarios.
+
+# Documentation
 
 Tags are also a great way to "link" your Cucumber Features to other documents. For example, if you have to deal with old school requirements in a different system (Word, Excel, a wiki) you can refer to numbers:
 
@@ -61,21 +63,40 @@ Another creative way to use Tags is to keep track of where in the development pr
 Feature: Index projects
 ```
 
-Tags are also used in Tagged [Hooks](/cucumber/hooks/), which allow you to use Tags to define `Before` and/or `After` blocks to run for marked Scenarios.
+# Tag Inheritance
 
-# Logically `AND`-ing and `OR`-ing Tags
+Any Tag that exists on a `Feature` will be inherited by `Scenario`, `Scenario Outline`, or `Examples`.
+
+# Tag expressions
+
+Tag Expressions provide a simple query language for tags. The simplest tag expression is
+simply a single tag, for example:
+
+    @smoke
+
+A slightly more elaborate expression may combine tags, for example:
+
+    @smoke and not @ui
+
+Tag Expressions are used for two purposes:
+
+1. Run a subset of scenarios (using the `--tags expression` option of the command line)
+2. Specify that a hook should only run for a subset of scenarios (using [Tagged Hooks](/cucumber/hooks/#tagged-hooks))
+
+Tag Expressions are [boolean expressions](https://en.wikipedia.org/wiki/Boolean_expression)
+of tags with the logical operators `and`, `or` and `not`.
+
+For more complex Tag Expressions you can use parenthesis for clarity, or to change operator precedence:
+
+    (@smoke or @ui) and (not @slow)
 
 As you may have seen in the previous examples, Cucumber allows you to use logical ANDs and ORs to help gain greater control of which Features to run.
-
-Tags which are comma-separated are ORed:
 
 Example: Running Scenarios which match `important OR billing`
 
 ```
-cucumber --tags @billing,@important
+cucumber --tags '@billing or @important'
 ```
-
-Tags which are passed in separate `--tags` are ANDed
 
 Example: Running Scenarios which match `important AND billing`
 
@@ -88,29 +109,50 @@ You can combine these two methods to create powerful selection criteria:
 Example: Running Scenarios which match: `(billing OR WIP) AND important`
 
 ```
-cucumber --tags @billing,@wip --tags @important
+cucumber --tags '@billing or @wip' --tags @important
 ```
 
 Example: Skipping both `todo AND wip` tags
 
 ```
-cucumber --tags ~@todo --tags ~@wip
+cucumber --tags 'not @todo' --tags 'not @wip'
 ```
 
 You can use this Tag logic in your [Hooks](/cucumber/hooks/) as well.
 
-*This feature was originally added in version 0.4.3.*
-*The logical behaviour of Tags was later reversed in version 0.6.0.*
+<!--- *This feature was originally added in version 0.4.3.*
+*The logical behaviour of Tags was later reversed in version 0.6.0.* --->
+
+An overview of different options:
+
+```
+cucumber --tags @billing            # Runs both Scenarios
+cucumber --tags @important          # Runs the first Scenario
+cucumber --tags 'not @important'    # Runs the second Scenario (Scenarios without @important)
+cucumber --tags ~@important         # Deprecated; use cucumber --tags 'not @important' instead
+
+cucumber --tags @billing --tags @important    # Runs the first Scenario (Scenarios with @important AND @billing)
+cucumber --tags '@billing or @important'      # Runs both Scenarios (Scenarios with @important OR @billing)
+cucumber --tags @billing,@important           # Deprecated; use cucumber --tags '@billing or @important' instead
+
+cucumber --tags 'not @foo and (@bar or @zap)' # Runs Scenarios marked with @bar or @ zap, but not with @foo
+cucumber --tags ~@foo --tags @bar,@zap        # Deprecated; use cucumber --tags 'not @foo and (@bar or @zap)' instead
+```
+
+(The [standard library](https://github.com/cucumber/cucumber/blob/master/docs/standard-library.adoc#implementations) list indicates
+what Cucumber implementations currently support Tag Expressions).
+
+If you're interested in how it works exactly, have a look at the [Internal Design](/cucumber/tag-expressions).
 
 # Overriding the Tag filters from a profile
 
 It is not currently possible to override the Tag filters from a profile.
 
-The default profile, for example, includes a `--tags ~@wip` filter. But what if you want to use everything from the default profile *except* the `--tags ~@wip` portion?
+The default profile, for example, includes a `--tags 'not @wip'` filter. But what if you want to use everything from the default profile *except* the `--tags 'not @wip'` portion?
 
-You might think you could just append something like this to the command line to "undo" the `--tags` from the profile: `--tags @wip,~@wip` (anything either **tagged** with `wip` or *not* tagged with `wip`).
+You might think you could just append something like this to the command line to "undo" the `--tags` from the profile: `--tags '@wip or not @wip'` (anything either **tagged** with `wip` or *not* tagged with `wip`).
 
-But because that is effectively doing an "and" between `--tags ~@wip` and`--tags @wip,~@wip`, it doesn't match any Scenarios.
+But because that is effectively doing an "and" between `--tags 'not @wip'` and`--tags @wip --tags 'not @wip'`, it doesn't match any Scenarios.
 
 How can we override the Tag filter then?
 

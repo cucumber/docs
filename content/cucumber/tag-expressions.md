@@ -2,42 +2,9 @@
 menu:
 - reference
 source: https://github.com/cucumber/cucumber/edit/master/tag-expressions/README.md
-title: Tag Expressions
 ---
 
-Tag Expressions provide a simple query language for tags. The simplest tag expression is
-simply a single tag, for example:
-
-    @smoke
-
-A slightly more elaborate expression may combine tags, for example:
-
-    @smoke and not @ui
-
-Tag Expressions are used for two purposes:
-
-1. Run a subset of scenarios (using the `--tags expression` option of the command line)
-2. Specify that a hook should only run for a subset of scenarios (using [Tagged Hooks](/cucumber/hooks/#tagged-hooks))
-
-Tag Expressions are [boolean expressions](https://en.wikipedia.org/wiki/Boolean_expression)
-of tags with the logical operators `and`, `or` and `not`.
-
-For more complex Tag Expressions you can use parenthesis for clarity, or to change operator precedence:
-
-    (@smoke or @ui) and (not @slow)
-
-(The [standard library](https://github.com/cucumber/cucumber/blob/master/docs/standard-library.adoc#implementations) list indicates
-what Cucumber implementations currently support Tag Expressions).
-
-# Migrating from old style tags
-
-* `--tags @dev` stays the same
-* `--tags ~@dev` becomes `--tags 'not @dev'`
-* `--tags @foo,@bar` becomes  `--tags '@foo or @bar'`
-* `--tags @foo --tags @bar` becomes `--tags '@foo and bar'`
-* `--tags ~@foo --tags @bar,@zap` becomes `--tags 'not @foo and (@bar or @zap)'`
-
-# Internal design
+# Tag Expressions - Internal Design
 
 The implementation is based on a modified version of Edsger Dijkstra's
 [Shunting Yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm)
