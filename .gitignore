@@ -3,3 +3,4 @@ venv
 *.swp
 /.idea/
 node_modules/
+.DS_Store
