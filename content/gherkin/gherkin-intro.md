@@ -6,7 +6,7 @@ title: Gherkin syntax
 status: merge into gherkin.md
 ---
 
-## Gherkin Syntax
+# Gherkin Syntax
 
 Gherkin is a line-oriented language that uses indentation
 to define structure, like Python and YAML. Line endings terminate statements (i.e. Steps).
