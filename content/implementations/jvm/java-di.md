@@ -27,7 +27,7 @@ The available Dependency Injection modules are:
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-picocontainer</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -43,7 +43,7 @@ For more information, please see [sharing state using Picocontainer](http://www.
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-spring</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -59,7 +59,7 @@ For more information, please see [sharing state using Spring](http://www.thinkco
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-guice</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
