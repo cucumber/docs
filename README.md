@@ -56,15 +56,23 @@ install some software.
     git clone https://github.com/cucumber/docs.cucumber.io.git
     cd docs.cucumber.io
 
-### Install the software (Mac)
+### Install the software (OS X)
+
+The site is built with [Hugo](https://gohugo.io). Install it:
 
     brew install git hugo
+
+Hugo uses [Pygments](http://pygments.org/) for syntax highlighting.
+Installing Pygments is optional - if you don't have it, code won't
+be highlighted.
+
+    pip install Pygments
 
 ### Run the site locally
 
 Start the server:
 
-    hugo server --buildDrafts
+    hugo server
 
 Open a browser:
 
