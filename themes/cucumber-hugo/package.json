@@ -4,19 +4,18 @@
   "author": "Cucumber Ltd",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
-    "bulma": "^0.4.3",
+    "autoprefixer": "^7.1.6",
+    "bulma": "^0.6.1",
     "concurrently": "^3.5.0",
-    "lunr": "^2.1.4",
-    "node-sass": "^4.5.3",
-    "postcss-cli": "^4.1.0",
-    "rimraf": "^2.6.1"
+    "node-sass": "^4.6.0",
+    "postcss-cli": "^4.1.1",
+    "rimraf": "^2.6.2"
   },
   "scripts": {
-    "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix && cp node_modules/lunr/lunr.js static/js/lunr.js",
+    "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix",
     "build-clean": "rimraf static/css/cucumber.css*",
     "build-sass": "node-sass --output-style expanded static/css/cucumber.sass static/css/cucumber.css.tmp",
     "build-autoprefix": "postcss --use autoprefixer --output static/css/cucumber.css static/css/cucumber.css.tmp",
-    "watch": "concurrently --kill-others \"yarn build-sass -- --watch\" \"yarn build-autoprefix -- --watch\""
+    "watch": "concurrently --kill-others \"yarn build-sass --watch\" \"yarn build-autoprefix --watch\""
   }
 }

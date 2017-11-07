@@ -22,29 +22,29 @@ $ gem install cucumber
 Before you can use the generator, add the gem to your project's `Gemfile` as follows:
 
 ```ruby
-    group :test do
-      gem 'cucumber-rails', :require => false
-      # database_cleaner is not required, but highly recommended
-      gem 'database_cleaner'
-    end
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
 ```
 
 Then install it by running:
 
 ```shell
-    bundle install
+bundle install
 ```
 
 Learn about the various options:
 
 ```shell
-    rails generate cucumber:install --help
+rails generate cucumber:install --help
 ```
 
 Finally, bootstrap your Rails app, for example:
 
 ```shell
-    rails generate cucumber:install
+rails generate cucumber:install
 ```
 
 # Java {#java}
@@ -55,20 +55,20 @@ Cucumber is published as several JAR files in the central Maven repository. Inst
 
 Add these dependencies to your project:
 
-```java
-    <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>cucumber-java</artifactId>
-        <version>2.0.1</version>
-        <scope>test</scope>
-    </dependency>
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>2.0.1</version>
+    <scope>test</scope>
+</dependency>
 
-    <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>cucumber-junit</artifactId>
-        <version>2.0.1</version>
-        <scope>test</scope>
-    </dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>2.0.1</version>
+    <scope>test</scope>
+</dependency>
 ```
 
 ## Gradle {#gradle}
@@ -78,7 +78,7 @@ Add these dependencies to your project:
 Cucumber.js is available as an npm module.
 
 ```shell
-$ npm install cucumber
+npm install cucumber
 ```
 
 # PHP {#php}
@@ -86,5 +86,5 @@ $ npm install cucumber
 [Behat](http://docs.behat.org) is an official Cucumber implementation available as a Composer package.
 
 ```shell
-$ composer require behat/behat
+composer require behat/behat
 ```
