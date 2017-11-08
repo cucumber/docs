@@ -74,7 +74,7 @@ For more information, please see [sharing state using Guice](http://www.thinkcod
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-openejb</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -89,7 +89,7 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-weld</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -104,7 +104,7 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-needle</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
