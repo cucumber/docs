@@ -145,7 +145,7 @@ We'll have to add a dependency for Cucumber core, as follows:
 
 ```
  <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-core</artifactId>
     <version>${cucumber.version}</version>
     <scope>test</scope>
