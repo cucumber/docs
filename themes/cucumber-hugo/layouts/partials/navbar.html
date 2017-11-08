@@ -1,0 +1,34 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/img/cucumber-logo.png" alt="Cucumber">
+    </a>
+
+    <button class="button navbar-burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="navbar-menu" id="navbarExampleTransparentExample">
+    <div class="navbar-start">
+      {{ partial "navbar-item" (dict "Menu" .Site.Menus.documentation "NavbarTitle" "Documentation" ) }}
+      {{ partial "navbar-item" (dict "Menu" .Site.Menus.bdd           "NavbarTitle" "BDD"           ) }}
+      {{ partial "navbar-item" (dict "Menu" .Site.Menus.guides        "NavbarTitle" "Guides"        ) }}
+    </div>
+
+    <div class="navbar-end">
+      <a class="navbar-item" href="https://github.com/cucumber/cucumber">
+        <span class="icon">
+          <i class="fa fa-github"></i>
+        </span>
+      </a>
+      <a class="navbar-item" href="https://twitter.com/cucumberbdd">
+        <span class="icon">
+          <i class="fa fa-twitter"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</nav>

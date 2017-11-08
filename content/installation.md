@@ -1,7 +1,4 @@
 ---
-menu:
-  main:
-    weight: 20
 title: Installation
 polyglot: true
 ---
