@@ -7,6 +7,16 @@ title: Code Highlight Sample
 
 This page is temporary
 
+```shell
+rm -rf /
+```
+
+```xml
+<hello>
+  <foo zap="bar" />
+</hello>
+```
+
 ```gherkin
 # Comment
 @tag
