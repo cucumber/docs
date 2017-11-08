@@ -4,14 +4,14 @@
       <img src="/img/cucumber-logo.png" alt="Cucumber">
     </a>
 
-    <button class="button navbar-burger" data-target="navbarExampleTransparentExample">
+    <button class="button navbar-burger" data-target="navbarMenu">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
 
-  <div class="navbar-menu" id="navbarExampleTransparentExample">
+  <div class="navbar-menu" id="navbarMenu">
     <div class="navbar-start">
       {{ partial "navbar-item" (dict "Menu" .Site.Menus.documentation "NavbarTitle" "Documentation" ) }}
       {{ partial "navbar-item" (dict "Menu" .Site.Menus.bdd           "NavbarTitle" "BDD"           ) }}
