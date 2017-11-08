@@ -14,8 +14,7 @@ points throughout the run of Features.
 
 https://app.cucumber.pro/projects/cucumber-ruby/documents/master/features/docs/extending_cucumber/custom_formatter.feature
 
-
-## Other Formatters
+# Other Formatters
 
 1. TeamCity - prints Cucumber results in a format for interpretation by a [TeamCity](http://www.jetbrains.com/teamcity/index.html) build agent.
    1. [teamcity_formatter](https://github.com/kevinrood/teamcity_formatter) - Compatible with Cucumber 2.

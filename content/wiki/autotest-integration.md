@@ -11,7 +11,7 @@ title: Autotest Integration
 
 Cucumber comes with an autotest plugin that will hook into the regular autotest
 cycle to run the Features after the tests/specs. The plugin is disabled by
-default but can be turned on by setting the `AUTOFEATURE` environment variable to `true`. 
+default but can be turned on by setting the `AUTOFEATURE` environment variable to `true`.
 
 For example:
 
@@ -57,7 +57,7 @@ Please see [Running Features](/cucumber/running-features/) for more information 
 
 If you get an error like `When using several—format options only one of them can be without a file (RuntimeError)` when running Features with autospec, you are probably accidentally requiring `spec`. Read about the solution on [Troubleshooting](#troubleshooting).
 
-### What does it do?
+# What does it do?
 
 In autotest's normal flow, it runs all of your tests and remembers the
 ones which fail. Each time you save a file, it reruns the failing
@@ -101,13 +101,13 @@ Here's the intended (but flexible) BDD workflow:
 
 If you like to write out lots of Features at the beginning, you may want to keep them somewhere where they won't run and slowly introduce them, implementing them along the way. (Future versions may provide a way to mark a Scenario as "pending" to accomplish something similar.)
 
-### Customizing Autotest Behavior
+# Customizing Autotest Behavior
 
-When autotest runs your Features, it looks for an `autotest` profile in your [`cucumber.yml`](/cucumber/cucumber.yml/). If it finds one, it uses that profile when running your Features. 
+When autotest runs your Features, it looks for an `autotest` profile in your [`cucumber.yml`](/cucumber/cucumber.yml/). If it finds one, it uses that profile when running your Features.
 
-It's useful to use the Pretty formatter in autotest to see exactly what's going on when Scenarios fail. However, the Pretty formatter may be too much information when autotest does its final run-through of all of your Features. 
+It's useful to use the Pretty formatter in autotest to see exactly what's going on when Scenarios fail. However, the Pretty formatter may be too much information when autotest does its final run-through of all of your Features.
 
-If you define an `autotest-all` profile, autotest will use this profile instead when running your Features. You may want to use the Progress formatter for `autotest-all`. 
+If you define an `autotest-all` profile, autotest will use this profile instead when running your Features. You may want to use the Progress formatter for `autotest-all`.
 
 For more information on defining profiles, see [Running Features](/cucumber/running-features/).
 
@@ -127,7 +127,7 @@ changing a file which autotest is monitoring as they run. Use a setting like
 this to ignore such files. You'll likely need to set autotest to ignore
 `rerun.txt` as well.
 
-### Why is it disabled by default?
+# Why is it disabled by default?
 
 Autotest is geared toward the Red~~Green~~>Refactor cycle on an object level
 (unit tests). These object level specs/tests are generally highly focused, and
@@ -135,13 +135,13 @@ isolated on a per-object basis, allowing breaks to be detected on a very detaile
 
 Cucumber, on the other hand, provides end-to-end application level testing. By
 executing the entire stack, Features can help find integration failures between
-objects and provide large coverage to prevent regressions. 
+objects and provide large coverage to prevent regressions.
 
 A side effect of this is that Features are generally much slower than object level specs. Due to their relative slowness and non-focused nature, they may not be realistic to run alongside the object-level suite. Of course, every project is different, and every developer has different workflow preferences.
 
-### Troubleshooting
+# Troubleshooting
 
-#### Missing autotest-rails gem
+## Missing autotest-rails gem
 
 Some people have reported problems running autotest. One known issue is an error
 similar to this:
@@ -153,7 +153,7 @@ $ AUTOFEATURE=true autotest
 > Aborting.
 ```
 
-The error can occur because is missing a required library. 
+The error can occur because is missing a required library.
 
 Try this:
 
@@ -168,7 +168,7 @@ issue. Running the autotest within the bundle will solve this problem.
 $ bundle exec autotest
 ```
 
-#### Dirty database
+## Dirty database
 
 If you use fixtures for your specs, rspec/rails will leave the fixture data in the database after your specs run. If you depend on a clean database for your Features, you can use [DatabaseCleaner](https://github.com/bmabey/database_cleaner/tree/master) to wipe your DB before running any features by placing the following in your `env.rb`:
 

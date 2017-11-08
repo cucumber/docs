@@ -7,15 +7,14 @@ title: Gherkin Reference
 This is the general reference for all Cucumber implementations. Please refer to
 the Implementations menu for links to platform-specific documentation.
 
-## Gherkin
+# Gherkin
 
 Cucumber executes your `.feature` files, and those files contain executable specifications
 written in a language called Gherkin.
 
 Gherkin is plain-text English (or one of 60+ other languages) with a little extra structure.
-Gherkin is designed to be easy to learn by non-programmers, yet structured enough to
-allow concise description of examples to illustrate business rules in most real-world
-domains.
+Gherkin is designed to be easy for people to read and write, yet structured enough to allow
+for automated processing and concise description of business rules.
 
 Here is a sample Gherkin document:
 
@@ -46,41 +45,55 @@ There are a few extra keywords as well:
 - `@` (Tags)
 - `#` (Comments)
 
-### Feature
+## Feature
 
 A `.feature` file is supposed to describe a single Feature of the system, or a
-particular aspect of a Feature. It's just a way to provide a high-level description
+particular aspect of a Feature. It's a way to provide a high-level description
 of a software Feature, and to group related Scenarios.
 
-A Feature has three basic elements---the `Feature:` keyword, a *name* (on the same line)
-and an optional (but highly recommended) *description*, which can span multiple lines.
+The `.feature` file starts with the keyword **Feature**, a *name* (on the same line),
+followed by an optional (but highly recommended) free format *description* which can span multiple lines.
+The free format description ends when the first scenario starts.
 
-Cucumber does not care about the name or the description. Their purpose is simply to provide a place for you to document important aspects of the Feature, such as a brief explanation and a list of business rules (general acceptance criteria).
+The name and the description have no special meaning to Cucumber. Their purpose is to provide
+a place for you to document important aspects of the Feature, such as a brief explanation
+and a list of business rules (general acceptance criteria).
+
+In addition to a *name* and a *description*, features contain a list of [Scenarios](#scenario)
+or [Scenario Outlines](#scenario-outlines) with Examples, and an optional [Background](#background).
+
+A Scenario starts with the word **Scenario** (or the localized equivalent;
+Gherkin is localized for dozens of [spoken languages](/gherkin/spoken-languages/))
+on a new line.
+
+Every Scenario consists of a list of Steps, which must start with one of the
+keywords **Given**, **When**, **Then**, **But**, or **And**. Cucumber treats them all the same, but you shouldn't.
 
 Here is an example:
 
 ```gherkin
-Feature: Refund item
+Feature: Serve coffee
+Coffee should not be served until paid for
+Coffee should not be served until the button has been pressed
+If there is no coffee left then money should be refunded
 
-  Sales assistants should be able to refund customers' purchases.
-  This is required by the law, and is also essential in order to
-  keep customers happy.
-
-  Rules:
-  - Customer must present proof of purchase
-  - Purchase must be less than 30 days ago
+Scenario: Buy last coffee
+Given there are 1 coffees left in the machine
+And I have deposited 1$
+When I press the coffee button
+Then I should be served a coffee
 ```
 
-In addition to a *name* and a *description*, features contain a list of [Scenarios](#scenario)
-or [Scenario Outlines](#scenario-outlines), and an optional [Background](#background).
+You can use [Tags](/cucumber/tags/) to group Features and
+Scenarios together, independent of your file and directory structure.
 
-### Descriptions
+## Descriptions
 
 Some parts of Gherkin documents do not have to start with a keyword.
 
 On the lines following a `Feature`, `Scenario`, `Scenario Outline`, or `Examples`, you can write anything you like, as long as no line starts with a keyword.
 
-### Scenario
+## Scenario
 
 A Scenario is a *concrete example* that *illustrates* a business rule. It consists of
 a list of [Steps](#steps).
@@ -99,13 +112,13 @@ Scenarios follow the same pattern:
 
 This is done with Steps.
 
-### Steps
+## Steps
 
 A Step typically starts with `Given`, `When`, or `Then`.
 
 If there are multiple `Given` or `When` Steps underneath each other, you can use `And` or `But`. Cucumber does not differentiate between the keywords, but choosing the right one is important for the readability of the Scenario as a whole.
 
-#### Given
+### Given
 
 `Given` steps are used to describe the initial context of the system---the *scene* of the Scenario.
 It is typically something that happened in the *past*.
@@ -115,13 +128,13 @@ such as creating and configuring objects or adding data to the test database.
 
 It's okay to have several `Given` steps (just use `And` or `But` for number 2 and upwards to make it more readable).
 
-#### When
+### When
 
 `When` Steps are used to describe an event, or an *action*. This can be a person interacting with the system, or it can be an event triggered by another system.
 
 It's strongly recommended you only have a single `When` step per Scenario. If you feel compelled to add more, it's usually a sign that you should split the Scenario up into multiple Scenarios.
 
-#### Then
+### Then
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
@@ -129,7 +142,7 @@ The [Step Definition](/cucumber/step-definitions/) of a `Then` Step should use a
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the Step says the system is supposed to do).
 
-### Background
+## Background
 
 Occasionally you'll find yourself repeating the same `Given` Steps in all of the Scenarios in a Feature.
 
@@ -192,8 +205,7 @@ Use colorful names, and try to tell a story. The human brain keeps track of stor
 If the Background section has scrolled off the screen, think about using higher-level Steps, or splitting the `*.feature` file.
 
 
-
-## Scenario Outlines
+# Scenario Outlines
 
 Copying and pasting Scenarios to use different values quickly becomes tedious and repetitive:
 
@@ -302,12 +314,12 @@ Scenario Outline: Password validation
     | abcd1    | valid            |
 ```
 
-## Step Arguments
+# Step Arguments
 
 In some cases you might want to pass more data to a step than fits on a single line.
 For this purpose Gherkin has Doc Strings and Data Tables:
 
-### Doc Strings
+## Doc Strings
 
 Doc Strings are handy for passing a larger piece of text to a step definition. The syntax is inspired from Python's Docstring syntax.
 
@@ -325,7 +337,7 @@ In your Step Definition, there’s no need to find this text and match it in you
 
 Indentation of the opening '"""' is unimportant, although common practice is two spaces in from the enclosing step. The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be de-indented according to the opening """. Indentation beyond the column of the opening """ will therefore be preserved.
 
-### Data Tables
+## Data Tables
 
 Data Tables are handy for passing a list of values to a step definition:
 

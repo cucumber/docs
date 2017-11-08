@@ -10,11 +10,11 @@ title: A Whole New World
 
 Cucumber runs scenarios in a `World`. By default, the `World` is just an instance of `Object`.
 
-## Step Definitions
+# Step Definitions
 
 All [Step Definitions](/cucumber/step-definitions/) will run in the context of the current World instance. (A new instance is created for each scenario). This means that `self` in a Step Definition block will be the World instance. Any `@instance_variable` instantiated in a Step Definition will be assigned to the World, and can be accessed from other Step Definitions.
 
-## A better world
+# A better world
 
 If you want to add any behaviour to the world, perhaps some helper methods, or logging, or whatever you can do this in `support/env.rb`:
 
@@ -74,6 +74,6 @@ This will `extend` each new World object with those modules.
 
 If you use [Ruby on Rails](/implementations/ruby/ruby-on-rails/), there is already a World set up for you, so you will get an instance of `Cucumber::Rails::World`, which is a subclass of `ActionDispatch::IntegrationTest`. This gives you access to a lot of Rails' helper methods.
 
-## Related blog posts
+# Related blog posts
 
 - [Building a better World](http://drnicwilliams.com/2009/04/15/cucumber-building-a-better-world-object/)

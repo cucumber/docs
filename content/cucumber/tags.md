@@ -1,6 +1,6 @@
 ---
 menu:
-- reference 
+- reference
 source: https://github.com/cucumber/cucumber/wiki/Tags/
 title: Tags
 ---
@@ -26,13 +26,13 @@ A Scenario or Feature can have as many Tags as you like. Just separate them with
 Feature: Verify billing
 ```
 
-## Tag Inheritance
+# Tag Inheritance
 
 Any Tag that exists on a `Feature` will be inherited by `Scenario`, `Scenario Outline`, or `Examples`.
 
-## Running a subset of Scenarios
+# Running a subset of Scenarios
 
-You can use the `--tags` option to tell Cucumber that you only want to run Features or Scenarios that have (or don't have) certain Tags. 
+You can use the `--tags` option to tell Cucumber that you only want to run Features or Scenarios that have (or don't have) certain Tags.
 
 Examples:
 
@@ -63,7 +63,7 @@ Feature: Index projects
 
 Tags are also used in Tagged [Hooks](/cucumber/hooks/), which allow you to use Tags to define `Before` and/or `After` blocks to run for marked Scenarios.
 
-## Logically `AND`-ing and `OR`-ing Tags
+# Logically `AND`-ing and `OR`-ing Tags
 
 As you may have seen in the previous examples, Cucumber allows you to use logical ANDs and ORs to help gain greater control of which Features to run.
 
@@ -102,8 +102,7 @@ You can use this Tag logic in your [Hooks](/cucumber/hooks/) as well.
 *This feature was originally added in version 0.4.3.*
 *The logical behaviour of Tags was later reversed in version 0.6.0.*
 
-
-## Overriding the Tag filters from a profile
+# Overriding the Tag filters from a profile
 
 It is not currently possible to override the Tag filters from a profile.
 
@@ -115,11 +114,11 @@ But because that is effectively doing an "and" between `--tags ~@wip` and`--tags
 
 How can we override the Tag filter then?
 
-## Tag limits and WIP
+# Tag limits and WIP
 
 If you're following Kanban principles, you want to limit the work in progress (WIP). The idea is, the fewer Features or Scenarios that are being worked on simultaneously, the quicker you'll be able to implement new Features.
 
-Cucumber can enforce this using *Tag limits*. 
+Cucumber can enforce this using *Tag limits*.
 
 Here is an example:
 
@@ -131,7 +130,7 @@ This will make Cucumber fail if you have more than 2 `dev` Tags or more than 3 `
 
 Used in conjunction with the `--wip` switch, you can set up a project to enforce the WIP limits of your team.
 
-## Special Tags
+# Special Tags
 
 **@allow-rescue**: Turns off Cucumber’s exception capturing for the tagged Scenario(s). Used when the code being tested is expected to raise and handle exceptions.
 

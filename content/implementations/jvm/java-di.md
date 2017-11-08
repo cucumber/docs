@@ -21,13 +21,13 @@ The available Dependency Injection modules are:
 - [Weld](#weld)
 - [Needle](#needle)
 
-## PicoContainer
+# PicoContainer
 
-### {picocontainer-}Dependency
+## {picocontainer-}Dependency
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-picocontainer</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -35,14 +35,15 @@ The available Dependency Injection modules are:
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
+For more information, please see [sharing state using Picocontainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
 
-## Spring
+# Spring
 
-### {spring-}Dependency
+## {spring-}Dependency
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-spring</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -50,14 +51,15 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
+For more information, please see [sharing state using Spring](http://www.thinkcode.se/blog/2017/06/24/sharing-state-between-steps-in-cucumberjvm-using-spring).
 
-## Guice
+# Guice
 
-### {guice-}Dependency
+## {guice-}Dependency
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-guice</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -65,14 +67,14 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
+For more information, please see [sharing state using Guice](http://www.thinkcode.se/blog/2017/08/16/sharing-state-between-steps-in-cucumberjvm-using-guice).
+# OpenEJB
 
-## OpenEJB
-
-### {openejb-}Dependency
+## {openejb-}Dependency
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-openejb</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -81,13 +83,13 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
 
-## Weld
+# Weld
 
-### {weld-}Dependency
+## {weld-}Dependency
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-weld</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>
@@ -96,13 +98,13 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
 
-## Needle
+# Needle
 
-### {needle-}Dependency
+## {needle-}Dependency
 
 ```xml
 <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-needle</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
     <scope>test</scope>

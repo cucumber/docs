@@ -12,13 +12,13 @@ We describe a few anti-patterns and how to avoid them here.
 
 For more information, see [Cucumber Anti-Patterns (blog)](http://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns).
 
-## Feature Coupled Step Definitions (Anti-pattern)
+# Feature Coupled Step Definitions (Anti-pattern)
 
-Feature-coupled Step Definitions are Step Definitions that can't be used across Features or Scenarios. 
+Feature-coupled Step Definitions are Step Definitions that can't be used across Features or Scenarios.
 
 This may lead to an explosion of Step Definitions, code duplication, and high maintenance costs.
 
-### Example
+## Example
 
 An imaginary résumé application could have the following Feature and Step Definition files:
 
@@ -55,7 +55,6 @@ features/
    +--edit_education_steps.rb
 ```
 
-
 The `edit_work_experience.feature` could have the following Scenario:
 
 ```
@@ -89,14 +88,14 @@ Given /I have a CV and I'm on the edit description page/ do
 end
 ```
 
-### How to decouple Steps & Step Definitions
+## How to decouple Steps & Step Definitions
 
 * Organise Steps by domain concept. See [Step Organization](/cucumber/step-organization/).
 
 * Rename Step & Step Definition files to a domain-related name (rather than a Feature- or Scenario-related name).
 
 
-## Conjunction Steps (Anti-pattern)
+# Conjunction Steps (Anti-pattern)
 
 From the online Merriam-Webster dictionary:
 
@@ -104,20 +103,20 @@ From the online Merriam-Webster dictionary:
 
 Don't do this in Steps. It makes Steps too specialised, and hard to reuse. Cucumber has built-in support for conjunctions (`And`, `But`) for a reason!
 
-### Example
+## Example
 
 ```
 Given I have shades and a brand new Mustang
 ```
 
-### How to split Conjunction Steps
+## How to split Conjunction Steps
 
 ```
 Given I have shades
 And I have a brand new Mustang
 ```
 
-### Support for Conjunction Steps
+## Support for Conjunction Steps
 
 Sometimes you may want to combine several Steps into one, to make your Scenarios easier to read.
 

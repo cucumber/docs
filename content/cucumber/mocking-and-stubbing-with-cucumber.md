@@ -9,9 +9,9 @@ title: Mocking and Stubbing with Cucumber
 
 Mocking is usually discouraged when using Cucumber. You **can** set up mocks with expectations in your [Step Definitions](/cucumber/step-definitions/), but ideally you would exercise as much of your stack as possible. If you have a dependency on an external system, we recommend using [stubs instead of mocks](http://martinfowler.com/articles/mocksArentStubs.html).
 
-## RSpec 2.x
+# RSpec 2.x
 
-Starting with Cucumber 0.8.4, you can use all of RSpec's supported mocking frameworks (RSpec, Mocha, RR, Flexmock). 
+Starting with Cucumber 0.8.4, you can use all of RSpec's supported mocking frameworks (RSpec, Mocha, RR, Flexmock).
 Just `require 'cucumber/rspec/doubles'` ([Test-Double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
 
 Perhaps place your stub action within a block as below:

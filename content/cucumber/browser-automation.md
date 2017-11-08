@@ -13,7 +13,7 @@ Automation tools such as:
 - [Watir](http://watir.com)
 - [Serenity](http://serenity-bdd.info)
 
-## Selenium WebDriver
+# Selenium WebDriver
 
 WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver's goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.
 
@@ -89,7 +89,7 @@ Then("^the page title should start with "([^"]*)"$") do
 end
 ```
 
-## Watir Webdriver
+# Watir Webdriver
 
 Watir, pronounced _water_, is an open-source (BSD) family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
 
@@ -99,30 +99,30 @@ Watir is a family of Ruby libraries but it supports your application no matter w
 
 Now let's jump in to a sample UI testing program using Watir:
 
- ```ruby
- require "rubygems"
- require "rspec"
- require "watir-webdriver"
+```ruby
+require "rubygems"
+require "rspec"
+require "watir-webdriver"
 
- describe "google.com" do
-   let(:browser) { @browser ||= Watir::Browser.new :firefox }
-   before { browser.goto "http://google.com" }
-   browser.text_field(:name => "q").set "watir"
-   browser.button.click
-   browser.div(:id => "resultStats").wait_until_present
-   browser.title.should == "watir - Google Search"
-   after { browser.close }
- end
+describe "google.com" do
+  let(:browser) { @browser ||= Watir::Browser.new :firefox }
+  before { browser.goto "http://google.com" }
+  browser.text_field(:name => "q").set "watir"
+  browser.button.click
+  browser.div(:id => "resultStats").wait_until_present
+  browser.title.should == "watir - Google Search"
+  after { browser.close }
+end
 ```
 
 Now let us incorporate Cucumber to this simple test
 
 ```gherkin
- Feature: Search In order to use Google users must be able to search for content
-   Scenario: Search for a term
-     Given I have entered "watir" into the query
-     When I click "search"
-     Then I should see some results
+Feature: Search In order to use Google users must be able to search for content
+  Scenario: Search for a term
+    Given I have entered "watir" into the query
+    When I click "search"
+    Then I should see some results
 ```
 
 ```ruby
@@ -130,9 +130,9 @@ require "watir-webdriver"
 require "rspec/expectations"
 
 Given /^I have entered "([^"]*)" into the query$/ do |term|
- @browser ||= Watir::Browser.new :firefox
- @browser.goto "google.com"
- @browser.text_field(:name => "q").set term
+  @browser ||= Watir::Browser.new :firefox
+  @browser.goto "google.com"
+  @browser.text_field(:name => "q").set term
 end
 
 When /^I click "([^"]*)"$/ do |button_name|
@@ -140,13 +140,13 @@ When /^I click "([^"]*)"$/ do |button_name|
 end
 
 Then /^I should see some results$/ do
- @browser.div(:id => "resultStats").wait_until_present
- @browser.div(:id => "resultStats").should exist
- @browser.close
+  @browser.div(:id => "resultStats").wait_until_present
+  @browser.div(:id => "resultStats").should exist
+  @browser.close
 end
 ```
 
-## Serenity BDD
+# Serenity BDD
 
 Serenity BDD is an open source reporting library that helps you write better
 structured, more maintainable automated acceptance criteria. Serenity also produces
@@ -227,9 +227,9 @@ public class GoogleHomePage extends PageObject {
 public class SearchResultsPage extends PageObject {}
 ```
 
-## Tips and Tricks
+# Tips and Tricks
 
-### Multiple Browsers
+## Multiple Browsers
 
 Cucumber can run your Scenarios with different browsers, based on a configuration property loaded at runtime:
 
@@ -271,7 +271,6 @@ browser=chrome cucumber
 mvn test -Dbrowser=chrome
 ```
 
-
 If you are using Serenity, simply pass the `driver` system property (no extra coding required):
 
 ```
@@ -279,14 +278,14 @@ mvn test -Ddriver=chrome
 ```
 
 
-### Re-using the browser window
+## Re-using the browser window
 
 Closing and re-opening the browser window between Scenarios will slow them down.
 
 To reuse them, you can use the [`SharedDriver`](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java)
 wrapper rather than calling `WebDriver` directly.
 
-### Example Projects
+## Example Projects
 
 - [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
 - [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)

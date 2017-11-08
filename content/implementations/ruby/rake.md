@@ -23,9 +23,9 @@ end
 
 Note, how we use the `cucumber_opts` accessor to define our arguments passed to the Cucumber binary.
 
-## Using Profiles in Rake Tasks
+# Using Profiles in Rake Tasks
 
-For complex Feature runs that are tested often, it is nice to save the command line arguments as [Cucumber profiles](/cucumber/cucumber.yml). 
+For complex Feature runs that are tested often, it is nice to save the command line arguments as [Cucumber profiles](/cucumber/cucumber.yml).
 
 Once you have some profiles defined, you can use them in your rake tasks, like so:
 
@@ -45,7 +45,7 @@ namespace :features do
 end
 ```
 
-## Guarding Your Production Boxes From Cucumber
+# Guarding Your Production Boxes From Cucumber
 
 Since rake tasks are used on development and productions systems, it is generally a good idea to place a guard around your Cucumber task so your productions boxes don't need to install Cucumber.  
 
