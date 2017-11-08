@@ -121,7 +121,7 @@ Netlify will then build the site
 [deploy](https://app.netlify.com/sites/cucumber/deploys) it if the build is successful.
 
 The build will check for broken links and other problems. Internal and external links are checked by [HTMLProofer](https://github.com/gjtorikian/html-proofer).
-Occasionally, the build will fail due to external links being unavailable or giving a timeout.When that happens, please check if these external links are available and if so, 'Retry build' on Netlify.
+Occasionally, the build will fail due to external links being unavailable or giving a timeout. When that happens, please check if these external links are available and if so, 'Retry build' on Netlify.
 
-Build notifications are sent to the `#cucumber-docs-bots` Slack channel. See
+Build notifications are sent to the `#bots-website` Slack channel. See
 https://cucumber.io/support for details on how to access Slack.
