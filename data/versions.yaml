@@ -1,0 +1,6 @@
+# This file contains version numbers for Cucumber
+#
+# They can be referred to with the custom {% version "cucumber-jvm" %} Hugo shortcode
+#
+
+cucumberjvm: "2.1.0"
