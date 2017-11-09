@@ -16,6 +16,7 @@ Please see the [General Reference](/gherkin/gherkin-reference/) for functionalit
 Cucumber-JVM supports Java, Kotlin and Android.
 
 Other JVM languages have been moved to their own repository:
+
 - [Clojure](https://github.com/cucumber/cucumber-jvm-clojure)
 - [Gosu](https://github.com/cucumber/cucumber-jvm-gosu)
 - [Groovy](https://github.com/cucumber/cucumber-jvm-groovy)
@@ -102,7 +103,7 @@ To use the JUnit runner you need to add the following dependencies:
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 
@@ -131,7 +132,7 @@ Steps:
     <dependency>
         <groupId>io.cucumber</groupId>
       	<artifactId>cucumber-java</artifactId>
-      	<version>{{ site.versions.cucumber_jvm }}</version>
+      	<version>{{% version "cucumberjvm" %}}</version>
     </dependency>
     ```
 
@@ -288,7 +289,7 @@ Definitions, you need to add the following dependency to your  `pom.xml`:
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java8</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -299,7 +300,7 @@ Otherwise, to write them using annotated methods, you need to add the following 
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -397,7 +398,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-groovy</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "groovy" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -410,7 +411,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-scala</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "scala" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -423,7 +424,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-clojure</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "clojure" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -436,7 +437,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-jython</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "jython" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -449,7 +450,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-jruby</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "jruby" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -462,7 +463,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-rhino</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "rhino" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -475,7 +476,7 @@ Definition.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-gosu</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "gosu" %}}</version>
     <scope>test</scope>
 </dependency>
 ```

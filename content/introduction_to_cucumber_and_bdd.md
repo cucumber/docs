@@ -216,7 +216,7 @@ For example:
 
 Becomes:
 
-```Gherkin
+```gherkin
 	When I fill in the "Name" field
 	And I fill in the "Address" field
 ```
@@ -226,7 +226,7 @@ different ways — say it the same way every time.
 
 For example:
 
-```Gherkin
+```gherkin
 	Given I am logged in
 ```
 

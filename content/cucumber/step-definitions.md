@@ -187,6 +187,8 @@ So if you try `--guess` with the mice above, Cucumber will pick `/Three blind (.
 ### Redundant Steps
 
 In Cucumber, you're not allowed to use a `Regexp` more than once in a Step Definition—even across files, and even with different code inside the method or function.
+Note that the keywords (`Given`, `When`, `Then`, `And` and `But`) are not part of the `Regexp`; 
+this means you also cannot have the same Step Definition, but with different keywords.
 
 {{% text "ruby" %}}
 Thus, the following would cause a `Cucumber::Redundant` error:

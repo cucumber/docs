@@ -56,15 +56,23 @@ install some software.
     git clone https://github.com/cucumber/docs.cucumber.io.git
     cd docs.cucumber.io
 
-### Install the software (Mac)
+### Install the software (OS X)
+
+The site is built with [Hugo](https://gohugo.io). Install it:
 
     brew install git hugo
+
+Hugo uses [Pygments](http://pygments.org/) for syntax highlighting.
+Installing Pygments is optional - if you don't have it, code won't
+be highlighted.
+
+    pip install Pygments
 
 ### Run the site locally
 
 Start the server:
 
-    hugo server --buildDrafts
+    hugo server
 
 Open a browser:
 
@@ -113,7 +121,7 @@ Netlify will then build the site
 [deploy](https://app.netlify.com/sites/cucumber/deploys) it if the build is successful.
 
 The build will check for broken links and other problems. Internal and external links are checked by [HTMLProofer](https://github.com/gjtorikian/html-proofer).
-Occasionally, the build will fail due to external links being unavailable or giving a timeout.When that happens, please check if these external links are available and if so, 'Retry build' on Netlify.
+Occasionally, the build will fail due to external links being unavailable or giving a timeout. When that happens, please check if these external links are available and if so, 'Retry build' on Netlify.
 
-Build notifications are sent to the `#cucumber-docs-bots` Slack channel. See
+Build notifications are sent to the `#bots-website` Slack channel. See
 https://cucumber.io/support for details on how to access Slack.

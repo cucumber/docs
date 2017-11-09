@@ -11,16 +11,18 @@ Tags are a great way to organise your Features and Scenarios. Consider this exam
 @billing
 Feature: Verify billing
 
-@important
-Scenario: Missing product description
+  @important
+  Scenario: Missing product description
+    Given hello
 
-Scenario: Several products
+  Scenario: Several products
+    Given hello
 ```
 
 A Scenario or Feature can have as many Tags as you like. Just separate them with spaces:
 
 ```gherkin
-`billing`bicker @annoy
+@billing @bicker @annoy
 Feature: Verify billing
 ```
 
@@ -34,6 +36,12 @@ Reasons for tagging scenarios:
 
 You can use the `--tags` option to tell Cucumber that you only want to run Features or Scenarios that have (or don't have) certain Tags.
 
+Examples:
+
+```shell
+cucumber --tags @billing            # Runs both Scenarios
+cucumber --tags @important          # Runs the first Scenario
+cucumber --tags ~@important         # Runs the second Scenario (Scenarios without @important)
 ```gherkin
 @important
 Feature: Calculate insurance prices
@@ -52,7 +60,7 @@ Tags are also used in [Tagged Hooks](/cucumber/hooks/#tagged-hooks), which allow
 Tags are also a great way to "link" your Cucumber Features to other documents. For example, if you have to deal with old school requirements in a different system (Word, Excel, a wiki) you can refer to numbers:
 
 ```gherkin
-`BJ-x98.77`BJ-z12.33
+@BJ-x98.77 @BJ-z12.33
 Feature: Convert transaction
 ```
 
@@ -96,11 +104,13 @@ Example: Running Scenarios which match `important OR billing`
 
 ```
 cucumber --tags '@billing or @important'
+```shell
+cucumber --tags @billing,@important
 ```
 
 Example: Running Scenarios which match `important AND billing`
 
-```
+```shell
 cucumber --tags @billing --tags @important
 ```
 
@@ -108,12 +118,16 @@ You can combine these two methods to create powerful selection criteria:
 
 Example: Running Scenarios which match: `(billing OR WIP) AND important`
 
+```shell
+cucumber --tags @billing,@wip --tags @important
 ```
 cucumber --tags '@billing or @wip' --tags @important
 ```
 
 Example: Skipping both `todo AND wip` tags
 
+```shell
+cucumber --tags ~@todo --tags ~@wip
 ```
 cucumber --tags 'not @todo' --tags 'not @wip'
 ```
@@ -164,7 +178,7 @@ Cucumber can enforce this using *Tag limits*.
 
 Here is an example:
 
-```
+```shell
 cucumber --tags @dev:2,@qa:3
 ```
 

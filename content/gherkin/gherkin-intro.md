@@ -2,7 +2,7 @@
 menu:
 - gherkin
 source: https://github.com/cucumber/cucumber/wiki/Gherkin/
-title: Gherkin syntax
+title: Gherkin Syntax
 status: merge into gherkin.md
 ---
 

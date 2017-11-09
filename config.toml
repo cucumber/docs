@@ -5,10 +5,89 @@ theme = "cucumber-hugo"
 
 pygmentsUseClassic = true
 pygmentsCodeFences = true
-pygmentsStyle = "friendly"
 pygmentsUseClasses = true
 
-# This lets us add multiple links to subsections
-[[menu.implementations]]
-    name = "Clojure"
-    url = "/implementations/jvm/#clojure"
+[[menu.documentation]]
+    weight = 1
+    name = "Overview"
+    identifier = "A gentle introduction to Cucumber"
+    url = "/overview/"
+[[menu.documentation]]
+    weight = 2
+    name = "Installation"
+    identifier = "Java, JavaScript, Ruby and more"
+    url = "/installation/"
+[[menu.documentation]]
+    weight = 3
+    name = "Gherkin"
+    identifier = "Cucumber syntax: Given, When, Then"
+    url = "/gherkin/"
+[[menu.documentation]]
+    weight = 4
+    name = "---"
+[[menu.documentation]]
+    weight = 5
+    name = "Configuration"
+    identifier = "Tweaking Cucumber's behaviour"
+    url = "/configuration/"
+[[menu.documentation]]
+    weight = 6
+    name = "---"
+[[menu.documentation]]
+    weight = 7
+    name = "Step Definitions"
+    identifier = "Connecting Gherkin to code"
+    url = "/hooks/"
+[[menu.documentation]]
+    weight = 8
+    name = "Hooks"
+    identifier = "Setup and teardown"
+    url = "/hooks/"
+[[menu.documentation]]
+    weight = 9
+    name = "Tags"
+    identifier = "Grouping scenarios"
+    url = "/tags/"
+
+[[menu.bdd]]
+    weight = 1
+    name = "Overview" 
+    identifier = "The essence of Behaviour-Driven Development"
+    url = "/bdd/"
+[[menu.bdd]]
+    weight = 2
+    name = "Example Mapping" 
+    identifier = "Three amigos agreeing on what to build"
+    url = "/example-mapping/"
+[[menu.bdd]]
+    weight = 3
+    name = "Who Does What" 
+    identifier = "Programmers, Testers, Domain experts and more"
+    url = "/who-does-what/"
+
+[[menu.guides]]
+    weight = 1
+    name = "10 minute Tutorial"
+    identifier = "Get up and running with Cucumber"
+    url = "/10-minute-tutorial/"
+[[menu.guides]]
+    weight = 2
+    name = "BDD Tutorial"
+    identifier = "Build an application, guided by Cucumber"
+    url = "/bdd-tutorial/"
+[[menu.guides]]
+    weight = 3
+    name = "Browser Automation"
+    identifier = "Selenium WebDriver, Capybara and more"
+    url = "/browser-automation/"
+[[menu.guides]]
+    weight = 4
+    name = "Good Practices"
+    identifier = "Isolated state"
+    url = "/good-practices/"
+[[menu.guides]]
+    weight = 5
+    name = "Testable Architecture"
+    identifier = "How to have fast and reliable tests"
+    url = "/testable-architecture/"
+    

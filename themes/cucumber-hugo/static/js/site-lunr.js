@@ -6,69 +6,72 @@ function loadIndex(indexLoadedFn) {
   x.onreadystatechange = function() {
     if (4 == x.readyState && "200" == x.status) {
       var data = JSON.parse(x.responseText)
-      var lunrIndex = lunr.Index.load(data)
-      indexLoadedFn(lunrIndex)
+      var lunrIndex = lunr.Index.load(data.idx)
+      indexLoadedFn(lunrIndex, data.metadata)
     }
   }
   x.send(null)
 }
 
 function registerSearchHandler(searchInputNode, makeSearchFn) {
-  return function(lunrIndex) {
-    var searchFn = makeSearchFn(lunrIndex)
+  return function(lunrIndex, metadata) {
+    var searchFn = makeSearchFn(lunrIndex, metadata)
     // Register an oninput event handler
     searchInputNode.oninput = function(event) {
       var query = event.target.value
       searchFn(query)
     }
-  }
-}
 
-function search(makeRenderFn) {
-  return function(lunrIndex) {
-    var renderFn = makeRenderFn()
-    return function(query) {
-      var results = lunrIndex.search(query)
-      console.log('RES', results)
-      renderFn(results)
+    // https://github.com/LeaVerou/awesomplete/blob/28b7aed11974a30cc985652e64bd06fe729e685c/awesomplete.js#L70
+    searchInputNode.onkeydown = function(evt) {
+      var c = evt.keyCode
+
+      if (c === 38 || c === 40) { // Down/Up arrow
+        evt.preventDefault()
+        console.log("EVT", c)
+      }
     }
   }
 }
 
-function renderSearchResults(searchResultsNode) {
+function search(makeRenderFn) {
+  return function(lunrIndex, metadata) {
+    var renderFn = makeRenderFn()
+    return function(query) {
+      var results = lunrIndex.search(query)
+      renderFn(results, metadata)
+    }
+  }
+}
+
+function renderSearchResultsAutocomplete($navbarItem, searchResultsNode) {
   return function() {
-    return function(results) {
+    return function(results, metadata) {
       if (results.length === 0) {
-        // If there were no results, display all menus and menu items
-        each(document, '.menu', function(li) {
-          removeClass(li, 'is-hidden')
+        removeClass($navbarItem, 'is-active')
+      } else {
+        var $dropdown = document.getElementById('search-hit-dropdown')
+        // Remove old items created dynamically
+        each($dropdown, '.js-item', function($item) {
+          $item.parentNode.removeChild($item)
         })
-        each(document, '.menu li', function(li) {
-          removeClass(li, 'is-hidden')
+
+        results.forEach(function(result) {
+          var $template = document.getElementById('search-hit-item-template')
+          var $item = $template.cloneNode(true)
+          $item.removeAttribute('id')
+          $item.removeAttribute('style') // the template is invisible
+          $item.setAttribute('href', result.ref)
+          $item.querySelector('.js-title').textContent = metadata[result.ref].title
+          $item.querySelector('.js-description').textContent = metadata[result.ref].description
+          removeClass($item, 'is-hidden')
+          addClass($item, 'js-item')
+          $dropdown.appendChild($item)
         })
-        return
+
+        addClass($navbarItem, 'is-active')
       }
-
-      // Hide all menu items that don't match the result
-
-      var paths = results.map(function (result) {
-        return result.ref
-      })
-      each(document, '.menu li a', function(a) {
-        var match = paths.indexOf(a.getAttribute('href')) !== -1
-        if(!match) {
-          addClass(a.parentElement, 'is-hidden')
-        }
-      })
-
-      // Hide all menus that no longer have visible menu items
-      each(document, '.menu', function(menu) {
-        var visibleItems = menu.querySelectorAll('ul > li:not(.is-hidden)')
-        if(visibleItems.length === 0) {
-          addClass(menu, 'is-hidden')
-        }
-      })
-
+      console.log(results)
     }
   }
 }
@@ -77,7 +80,8 @@ loadIndex(
   registerSearchHandler(
     document.getElementById('search-input'),
     search(
-      renderSearchResults(
+      renderSearchResultsAutocomplete(
+        document.getElementById('search-navbar-item'),
         document.getElementById('search-results')
       )
     )

@@ -34,7 +34,17 @@ function hasClass(el, className) {
     return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
 }
 
-////// Show/hide content
+function toggleClass(el, className) {
+  if(el.classList.toggle) {
+    el.classList.toggle(className)
+  } else if(hasClass(el, className)) {
+    removeClass(el, className)
+  } else {
+    addClass(el, className)
+  }
+}
+
+////// Show/hide polyglot content
 
 var showHideSelectors = [
   '.language-java',
@@ -70,6 +80,8 @@ function showOnly(language) {
   }
 }
 
+// Activate
+
 ready(function() {
   each(document, '.tabs li', function(li) {
     var language = li.getAttribute('data-language')
@@ -80,4 +92,15 @@ ready(function() {
 
   var firstLi = document.querySelector('.tabs li')
   if(firstLi) showOnly(firstLi.getAttribute('data-language'))
+  
+  // Toggle navbar menu
+  var burger = document.querySelector('.navbar-burger')
+  if(burger) {
+    burger.addEventListener('click', function() {
+      var navbarMenu = document.getElementById(burger.dataset.target)
+      
+      toggleClass(burger, 'is-active')
+      toggleClass(navbarMenu, 'is-active')
+    })
+  }
 })
