@@ -20,7 +20,7 @@ To directly test PHP code using Step Definitions written in PHP, please see the 
 
 Most people seem to use Cucumber for Rails. Most of the How-Tos and documents on the web reflect this.
 
-But Cucumber is a great tool for testing any kind of web application, no matter what language it was built in. You could use Selenium, and there are good [How-To's](/cucumber/browser-automation/#selenium-webdriver) for it.
+But Cucumber is a great tool for testing any kind of web application, no matter what language it was built in. You could use [Selenium](/browser-automation/#selenium-webdriver).
 
 But Selenium is slow and clunky to set up! It should only be used if you need to test JavaScript. What if I want to write BDD stories and test a PHP app with Cucumber?
 
@@ -93,7 +93,7 @@ and reload it at the end. Next time, it will be the same.
 
 Alternatively, you can do it on a per-Feature level and per-database table level. I have so far found the second approach to be the quickest and most flexible.
 
-The per-Feature and per-table approach can be accomplished using [[Hooks]].
+The per-Feature and per-table approach can be accomplished using [Hooks](/hooks/).
 Here are is the code that I currently have in `support/hooks.rb`:
 
 ```
