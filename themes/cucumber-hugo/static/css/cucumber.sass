@@ -1,14 +1,25 @@
 @import "../../node_modules/bulma/sass/utilities/initial-variables"
 
 // Brand colours: https://github.com/cucumber-ltd/brand/blob/master/Cucumber_Brand_V1.0.pdf
+
+// Non-bulma variables
+$cucumber-grey-lighter: #efefef
+
+// Bulma variable overrides
 $blue:   #004fff
 $orange: #ff7f00
 $red:    #ff1245
 $green:  #00a818
+$purple: #3e10af
+$black:  #1b1d1e
+$grey:   #65696b
 
 $primary: $green
+// This sets the code snippet background colour
+$pre-background: $cucumber-grey-lighter
 
 @import "../../node_modules/bulma/bulma"
+@import "./pygments"
 
 // Override Bulma's content.sass style to ensure tabs render properly
 .content

@@ -8,7 +8,7 @@ title: cucumber.yml
 You can specify commonly-used command line arguments for Cucmber in a `cucumber.yml` or `cucumber.yaml` file.
 This file must be in a `.config` subdirectory, or `config` subdirectory of your current working directory.
 
-## Defining Profiles
+# Defining Profiles
 
 ```yaml
 
@@ -24,7 +24,7 @@ want to execute with this profile.
 The example above generates two profiles:
 
 1. `html_report`, with a list of command-line options that specify new output formats, and
-2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/tags/) with `@bvt`.
+2. `bvt`, which executes all Features and Scenarios [tagged](/tags/) with `@bvt`.
 
 ## Executing Profiles
 

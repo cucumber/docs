@@ -18,7 +18,7 @@ cucumber FOO=BAR --format progress features
 
 You can now pick up `ENV\['FOO']` in Ruby (for example, in `env.rb`, or a Step Definition) and perform actions according to the value.
 
-You can also do this in [`cucumber.yml`](/cucumber/cucumber.yml/). 
+You can also do this in [`cucumber.yml`](/cucumber/cucumber.yml/).
 
 For example, the following sets up a profile that runs the specified Tag and sets an environment variable:
 

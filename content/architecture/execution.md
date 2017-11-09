@@ -7,7 +7,7 @@ title: Execution
 When Cucumber runs, different things happen at different times.
 Here’s an overview of what happens.
 
-## 1. Configuration
+# 1. Configuration
 
 The first thing that happens is to create a configuration for Cucumber.
 This can come from a variety of sources:
@@ -25,12 +25,12 @@ behave. Some examples include:
 * Whether to report `undefined` and/or `pending` as errors
 * Test plan strategy (randomise order, distribute Scenarios across threads or processes)
 
-## 2. Load glue code (Step Definitions and Hooks)
+# 2. Load glue code (Step Definitions and Hooks)
 
 The user's Step Definitions and Hooks are loaded and stored in
 memory, inside a `Glue` object.
 
-## 3. Load executable specifications (Gherkin or Markdown)
+# 3. Load executable specifications (Gherkin or Markdown)
 
 The Gherkin3 library is used to load specifications.
 
@@ -40,18 +40,18 @@ Step Definitions' patterns to parse the Markdown.
 
 The specifications are transformed to an AST (Abstract Syntax Tree).
 
-## 4. Compile Scenarios into bare `TestCase`s
+# 4. Compile Scenarios into bare `TestCase`s
 
 The ASTs are compiled into a list of `TestCase`s. During this phase,
 `Scenario Outline`s and their `Example`s are exploded into multiple
 `TestCase`s.  Background Steps are copied into each `TestCase`.
 
-## 5. Linking `StepDefinition`s into executable `TestCase`s
+# 5. Linking `StepDefinition`s into executable `TestCase`s
 
 Each `TestCase` is linked to matching `StepDefinition`s. This connects
 each `TestCase` to the body of the matching `StepDefinition`.
 
-## 6. Create test executors
+# 6. Create test executors
 
 Depending on the configuration there may be a single test executor,
 or multiple ones if test cases are meant to be distributed across
@@ -65,13 +65,13 @@ Special scheduler plugins may be provided to run Scenarios in a
 particular order, using an algorithm that runs test cases that are
 more likely to fail first.
 
-## 7. Start test executors
+# 7. Start test executors
 
 This is when the test cases are run. Results are tracked by a
 `ResultCollector`, which passes on the results to configured reporter
 plugins.
 
-## 8. Finish and report summary
+# 8. Finish and report summary
 
 When all test executors have finished running their test cases,
 Cucumber reports a summary of the run (to `STDOUT`), and exits

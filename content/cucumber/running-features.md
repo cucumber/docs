@@ -7,11 +7,11 @@ title: Running Features
 
 > TODO: Generalize
 
-There are several ways to run your Features. This page lists the most common ones. 
+There are several ways to run your Features. This page lists the most common ones.
 
 Any of these techniques also lets you define common command line options in a [`cucumber.yml`](/cucumber/cucumber.yml/) file.
 
-## Using the Gem's `cucumber` Command
+# Using the Gem's `cucumber` Command
 
 Assuming you've installed Cucumber as a gem, run this at a command prompt to see the options for running Features:
 
@@ -39,9 +39,9 @@ cucumber --require features features/authentication/authenticate_user.feature
 
 ...will run the `authenticate_user` Feature. Any Feature in a sub-directory of `features/` directory must `require` Features. **Note:** You can also add this to your `cucumber.yml`.
 
-You can also use [Tags](/cucumber/tags/) to specify what to run, or pass [Environment Variables](/cucumber/environment-variables/) to Cucumber.
+You can also use [Tags](/tags/) to specify what to run, or pass [Environment Variables](/cucumber/environment-variables/) to Cucumber.
 
-## Using Rake
+# Using Rake
 
 From the command line:
 
@@ -61,15 +61,15 @@ end
 
 ```
 
-If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), this task is defined for you already. 
+If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), this task is defined for you already.
 
 For more information, please see the [detailed page about using `rake`.](/implementations/ruby/rake/)
 
-## Using TextMate
+# Using TextMate
 
 See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) documentation.
 
-## Using other build tools
+# Using other build tools
 
 Maven and Ant are described in [JRuby](/implementations/jvm/#jruby) and [Java](/implementations/jvm/#java).
 

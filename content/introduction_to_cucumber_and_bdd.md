@@ -5,20 +5,20 @@ menu:
 title: Introduction to Cucumber and BDD
 ---
 
-## What is Gherkin
+# What is Gherkin
 
 Gherkin is the language that Cucumber understands. It is a [Business Readable,
-Domain Specific
-Language](http://martinfowler.com/bliki/BusinessReadableDSL.html) that lets you
-describe software's behaviour without detailing how that behaviour is
+Domain Specific Language](http://martinfowler.com/bliki/BusinessReadableDSL.html)
+that lets you describe software's behaviour without detailing how that behaviour is
 implemented.
 
-Gherkin serves two purposes — documentation and automated tests. The third is a
-bonus feature — when it yells in red, it's talking to you, telling you what code
-you should write.
+Gherkin serves multiple purposes:
 
-Gherkin's grammar is defined in the Treetop grammar that is part of the Cucumber
-codebase. The grammar exists in different flavours for many [spoken
+- Provide an unambiguous specification for developers
+- Allow automated testing using Cucumber
+- Document how the system *actually* behaves
+
+The grammar exists in different flavours for many [spoken
 languages](/gherkin/spoken-languages/) (60 at the time of writing), so that your team can use the
 keywords in your own language.
 
@@ -27,7 +27,7 @@ There are a few conventions:
 - Each Gherkin source file contains a description of a single Feature
 - Each Gherkin source file uses the `.feature` extension
 
-## What is Cucumber?
+# What is Cucumber?
 
 Cucumber is a [command-line
 tool](https://en.wikipedia.org/wiki/Command-line_interface). When you run it, it
@@ -38,17 +38,19 @@ Each Scenario is a list of Steps for Cucumber to work through. So that Cucumber
 can understand these Feature files, they must follow some basic syntax rules.
 The name for this set of rules is [Gherkin](/gherkin/gherkin-intro/).
 
-Along with the [Features](/gherkin/feature-introduction/), you give Cucumber a set of [Step Definitions](/cucumber/step-definitions/). These
+Along with the [Features](/gherkin/gherkin-reference/#feature), you give Cucumber a set of [Step Definitions](/cucumber/step-definitions/). These
 files map (or "glue") each business-readable language step into programming code to carry
 out what action should be performed by the Step.
 
 In a mature test suite, the Step Definition itself will probably just be one or two lines of code that delegate to a library of support code, specific to the domain of your application.
 
+Cucumber is also a collaboration tool.
 Software teams work best when the developers and business stakeholders are
 communicating clearly with one another. A great way to do that is to
 collaboratively specify the work that’s about to be done using automated
 acceptance tests.
 
+Teams produce examples that describe desired behaviour before the software is implemented.
 When the acceptance tests are written as examples, it stimulates people’s
 imaginations and helps them see other Scenarios they hadn’t previously
 considered.
@@ -57,11 +59,9 @@ When the team writes their acceptance tests collaboratively, they can develop
 their own ubiquitous language for talking about their problem domain. This helps
  avoid misunderstandings.
 
-## How does Cucumber work with BDD?
+After discovering examples as a team, developers and testers formalise those examples into Gherkin documents.
 
-This is the most typical question everyone enthusiastic about Cucumber will get.
-What makes Cucumber stand out from the crowd of other communication and
-collaboration tools?
+# How does Cucumber work with BDD?
 
 Cucumber was designed specifically to ensure the acceptance tests can easily be
 read and written by anyone on the team. This reveals the true value of
@@ -109,23 +109,24 @@ documentation in parallel.
 Acceptance tests written in this style become more than just *tests*; they are
 *executable specifications*, as well as *living documentation*.
 
-## Living Documentation
+# Living Documentation
 
 Cucumber tests share the benefit of traditional specification documents in that
 they can be written and read by business stakeholders, but they have a distinct
 advantage in that you can give them to a computer at any time to tell you how
 accurate they are. In practice, this means that documentation, rather than
-being something that's written once and then gradually becoming outdated, becomes a [living document](https://en.wikipedia.org/wiki/Living_document) that reflects the true state of the project.
+being something that's written once and then gradually becoming outdated, becomes a
+[living document](https://en.wikipedia.org/wiki/Living_document) that reflects the true state of the project.
 
-## Source of Truth
+# Source of Truth
 
-For many teams, they become the definitive source of truth as to what the system
-does. Having a single place to go for this information saves a lot of time that
+The whole team can use the Gherkin documents as a shared source of truth of how the software is supposed to work.
+Having a single place to go for this information saves a lot of time that
 is often wasted trying to keep requirements documents, tests, and code all in
 sync. It also helps build trust within the team, because different parts of
 the team no longer have their own personal versions of the truth.
 
-## The Three Amigos
+# The Three Amigos
 
 *The Three Amigos* is a meeting that takes user stories and turns them into clean, thorough Gherkin Scenarios. It involves three voices (at least):
 
@@ -134,11 +135,12 @@ the team no longer have their own personal versions of the truth.
 - **The developer** - This person will add many of the Steps to the Scenarios, and think of the details that go into each requirement. How will this application execute? What are some of the roadblocks or requirements behind the scenes?
 
 These conversations can produce great tests, because each amigo sees
-the product from a different perspective. If the tests are being developed before the application is built, these conversations will also be clarifying for all parties going forward and help to develop a shared (ubiquitous) language for the product.
+the product from a different perspective. For this reason it is *essential* that all of these roles have conversations to discover examples *together*.
+[Example Mapping](https://cucumber.io/blog/2015/12/08/example-mapping-introduction) and Event Storming are great collaborative analysis techniques for discovering examples.
 
 Finally, there is no reason to limit these meetings to three people—or to hold only one such meeting at the beginning of the project. Continually refine your features and collaborate with everyone to best understand how to talk about, develop, and test your application.
 
-## Cucumber for non-programmers
+# Cucumber for non-programmers
 
 Cucumber tests are written in terms of “Features”. Each Feature consists of one or more “Scenarios”.
 
@@ -157,7 +159,7 @@ Feature: Explaining Cucumber
     Then I should have a basic understanding of Cucumber
 ```
 
-Note that the Scenarios do not go into the nitty-gritty of what the software
+Note that the Scenarios do not go into the details of what the software
 (or, in this case, the coworker) will do. It stays focused on the perspective of
 the person the Feature is intended to serve (in this case, “a non-programmer”).
 
@@ -183,7 +185,7 @@ values” such as:
 
 So, those three lines cover Why, Who, and What. Then, the document gets into the “How” with Scenarios.
 
-## Scenarios
+# Scenarios
 
 You can have any number of Scenarios for a Feature.
 
@@ -214,7 +216,7 @@ For example:
 
 Becomes:
 
-```Gherkin
+```gherkin
 	When I fill in the "Name" field
 	And I fill in the "Address" field
 ```
@@ -224,7 +226,7 @@ different ways — say it the same way every time.
 
 For example:
 
-```Gherkin
+```gherkin
 	Given I am logged in
 ```
 
@@ -241,7 +243,7 @@ There are more details to writing and testing Cucumber Features
 ([Cucumber Backgrounder](/wiki/cucumber-backgrounder/)), but this basically
 covers what a non-programmer needs to know.
 
-## Writing Features
+# Writing Features
 
 It is preferable that the first draft of any Feature be written by, or with, a
 “domain expert”. This person is typically a non-programmer, and always someone who knows the Feature's domain from a user or business perspective.

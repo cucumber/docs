@@ -23,13 +23,13 @@ You will need the following:
 
 - A text editor
 
-## Concepts
+# Concepts
 
 Cucumber helps you define what your application should do, not how it should do it.
 
 Definitions for terms can be found under the Reference section.
 
-## Overview
+# Overview
 
 The following diagram illustrates the structure when using Cucumber:
 
@@ -43,11 +43,11 @@ Cucumber uses Feature files to define the Features that you require in your syst
 
 The Step Definitions define the code required for your application to deliver on the agreed Features.
 
-## Creating a Project
+# Creating a Project
 
 For this introduction, we will use the skeleton project, [which is available from GitHub](https://github.com/cucumber/cucumber-java-skeleton).
 
-### Project Structure
+## Project Structure
 
 Let's take a quick look at the project structure:
 
@@ -102,7 +102,7 @@ Open the `POM.XML` file in a text editor. At the top of the file, you will see t
 
 Change the `<groupId>`, `<artifactId>`, and `<name>`.
 
-### Creating a Package
+## Creating a Package
 
 Now, you need to create a package.
 
@@ -110,7 +110,7 @@ To do this, right-click on the `src/test/java` folder and select **New > Package
 
 Enter a name for your new package. We'll call it shouty.
 
-#### Using `POM.XML`
+### Using `POM.XML`
 
 The Project Object Model (POM) file is an XML representation of a Maven project. It defines the project settings, dependencies, and plug-ins.
 
@@ -120,20 +120,20 @@ Take a look at the Maven [POM Reference](https://maven.apache.org/pom.html#Intro
 
 Open the POM file in your preferred editor and we'll check that the defined versions agree with our installed stack and add dependencies for the shouty project.
 
-#### Check the Versions
+### Check the Versions
 
 The default file defines the following versions:
 
 - Java 1.7
 - Junit 4.12
-- Cucumber 1.2.5
+- Cucumber {% version "cucumber-jvm" %}
 - Maven 3.3
 
 To check the versions you have installed, open a command prompt and enter `mvn --version`.
 
 If your versions do not agree with the defaults in the skeleton POM file, update the properties accordingly and save the updated POM file.
 
-#### Adding Dependencies
+### Adding Dependencies
 
 The default POM contains definitions for the following dependencies:
 
@@ -145,16 +145,16 @@ We'll have to add a dependency for Cucumber core, as follows:
 
 ```
  <dependency>
-    <groupId>info.cukes</groupId>
+    <groupId>io.cucumber</groupId>
     <artifactId>cucumber-core</artifactId>
-    <version>${cucumber.version}</version>
+    <version>{% version "cucumber-jvm" %}</version>
     <scope>test</scope>
  </dependency>
 ```
 
 Save the updated POM file.
 
-## Testing the Setup (Maven)
+# Testing the Setup (Maven)
 
 Time to make sure everything is hanging together correctly.
 
@@ -186,17 +186,17 @@ Tests run: 0, Failures: 0, Errors 0, Skipped: 0
 
 You have a correctly built project, but nothing can be tested as you have not specified any behaviour to test against.
 
-## Creating a Clean Build
+# Creating a Clean Build
 
 To create a clean build, enter `mvn clean install` at the command prompt.
 
-## Specifying Behaviour
+# Specifying Behaviour
 
 How do you specify behaviour? By defining Features and their Scenarios.
 
 We'll do that now.
 
-### Defining the Feature Directory
+## Defining the Feature Directory
 
 Features are defined in Feature files, which are stored in the `feature/` directory.
 
@@ -206,7 +206,7 @@ Bring it into line with the new project name, and rename the `skeleton/` folder 
 
 While we're doing this, we'll bring the other `skeleton` folders - the ones under `src/test/java` and `src/main/java` - into line, too. Rename both `skeleton` folders to `shouty`.
 
-### Creating a Feature
+## Creating a Feature
 
 To create a Feature file:
 
@@ -226,7 +226,7 @@ We don't want everyone with the application to hear the shout, only those within
 
 Now we need to think of a way of testing against this rule. We do that using Scenarios.
 
-### Creating a Scenario
+## Creating a Scenario
 
 Scenarios are added to the Feature file. They define the conditions to test the Feature. For our Feature, there are two things we need to check:
 
@@ -244,7 +244,7 @@ Add the following to the Feature file (don't worry, we'll walk through it in a m
   Then Lucy hears Sean’s message
 ```
 
-### Running a Feature
+## Running a Feature
 
 Time to see what difference adding the Feature and Scenario makes.
 
@@ -284,7 +284,7 @@ You can see that we have one undefined Scenario and three undefined Steps.
 
 To define the Scenario, you have to define all of its related Steps. In our case, this is all three Steps.
 
-### Defining Steps
+## Defining Steps
 
 The Steps you need to define to check that people within 1000m hear the shout are defined in the following lines:
 
@@ -296,7 +296,7 @@ These all have a keyword (`Given`, `When`, and `Then`) followed by a Step. The S
 
 [Step Definitions](/cucumber/step-definitions/) define the plain text Step in code.
 
-#### `Given`/`When`/`Then`
+### `Given`/`When`/`Then`
 
 The plain text Steps are defined in the Gherkin language.
 
@@ -313,7 +313,7 @@ The `When` keyword precedes text defining an action.  Our action is that the sho
 
 The `Then` keyword precedes text defining the result of the action on the context. Our result is that the listener who is 15m away hears the shout.
 
-### Running the Tests
+## Running the Tests
 
 You can keep amending your Scenario and re-testing.
 
@@ -337,13 +337,13 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 4
 [INFO] ------------------------------------------------------------------------
 ```
 
-#### Passed Tests
+### Passed Tests
 
 Did your tests pass? Well done! Now, go write the code for this part of the application.
 
 **Note:** Passing these tests does not guarantee the implementation will be correct—just that the behaviour is as expected. You will need to test your code and your Feature.
 
-#### `Failed` Tests
+### `Failed` Tests
 
 Tests fail if the behaviour is not as expected. If Lucy does not hear Sean's shout despite being within 1000m, the test will fail.
 
@@ -351,7 +351,7 @@ You need to re-examine your Step Definition. Once you have made changes, re-run 
 
 You need to work round the define-test-redefine-retest loop until the test passes before you move onto coding.
 
-#### `Pending` Tests
+### `Pending` Tests
 
 Tests are `pending` when they are incomplete.
 
@@ -359,13 +359,13 @@ It is good practice to give unfinished Step Definitions a status of `pending` an
 
 You shouldn't be surprised by any tests that are pending. After you have completed the Step Definition, a previously pending test should be either `passed` or `failed`.
 
-#### `Skipped` Tests
+### `Skipped` Tests
 
 Any tests following a test that was deemed to be `failed` or `pending` will be `skipped`.
 
 The only way to run a `skipped` test is to ensure all tests before it are deemed to be `passed`.
 
-#### Snippets for Missing Steps
+### Snippets for Missing Steps
 
 In our last test, we had one `undefined` Scenario and three `undefined` Steps. Luckily, Cucumber has given us examples, or snippets, that we can use to define the Steps.
 

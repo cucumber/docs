@@ -39,7 +39,7 @@ Given /^(.*) is logged in$/ do |name|
 end
 ```
 
-Invoking Steps from Step Definitions is practical if you have several common Steps that you want to perform in several Scenarios—or, simply if you want to make your Scenarios shorter and more declarative. 
+Invoking Steps from Step Definitions is practical if you have several common Steps that you want to perform in several Scenarios—or, simply if you want to make your Scenarios shorter and more declarative.
 
 This allows you to do this in a Scenario:
 
@@ -60,12 +60,12 @@ Scenario: View last incidents
   When I go to the incident page
 ```
 
-## Calling Steps with multiline Step arguments
+# Calling Steps with multiline Step arguments
 
-Sometimes you want to call a Step that has been designed to take [[Multiline Step Arguments]] and sometimes you want to call a step that has been designed to take [Multiline Strings](#multiline-strings).
+Sometimes you want to call a Step that has been designed to take [[Multiline Step Arguments]] and sometimes you want to call a step that has been designed to take [Multiline Strings](#doc-strings).
 For example:
 
-### Tables
+## Tables
 
 ```
 # ruby
@@ -84,7 +84,7 @@ Given an expense report for Jan 2009 with the following posts:
   | CUC-101 | Peeler      |     22 |
 ```
 
-But what if you want to call this from a Step Definition? 
+But what if you want to call this from a Step Definition?
 
 There are a couple of ways to do this:
 
@@ -127,7 +127,7 @@ Then /^I should see the links:$/ do |links_table|
 end
 ```
 
-### Multiline Strings
+## Doc Strings
 
 To call a Step that takes a multiline string, such as
 

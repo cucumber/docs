@@ -18,7 +18,7 @@ If you want more fine-grained control, you can use [Tagged Hooks](#tagged-hooks)
 
 All defined Hooks run whenever the relevant event occurs.
 
-## Scenario hooks
+# Scenario hooks
 
 `Before` hooks will run before the first Step of each Scenario. They run in the **same order** in which they are registered.
 
@@ -43,6 +43,7 @@ public void beforeScenario(){
     // Do something before each scenario
 }
 ```
+
 ```javascript
 Before(function () {
     // This hook will be executed before all scenarios
@@ -71,9 +72,11 @@ public void afterScenario(){
     // Do something after each scenario
 }
 ```
+
 ```javascript
 TODO: See Ruby or Java example
 ```
+
 Here is an example in which we exit at the first failure (which could be useful in some cases like [Continuous Integration](/cucumber/continuous-integration/), where fast feedback is important).
 
 ```ruby
@@ -167,7 +170,7 @@ To run a particular Hook only for certain Scenarios, you can associate a
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
-Hook with one or more [Tags](/cucumber/tags/).
+Hook with one or more [Tags](/tags/).
 
 You can use OR and AND and NOT Tags in much the same way as you can when running Cucumber from the command line. Examples:
 
@@ -260,21 +263,21 @@ defineSupportCode(function({After, Before}) {
 });
 ```
 
-See more documentation on [tag expressions](/cucumber/tag-expressions/).
+See more documentation on [tags](/tags/).
 
-**Think twice before you use Hooks!** 
-Whatever happens in Hooks is invisible to people who only read the Features. 
-You should consider using [Background](/gherkin/gherkin-reference/#background) as a more explicit 
+**Think twice before you use Hooks!**
+Whatever happens in Hooks is invisible to people who only read the Features.
+You should consider using [Background](/gherkin/gherkin-reference/#background) as a more explicit
 alternative, especially if the setup should be readable by non-technical people.
 
 ## Global Hooks
 
 {{% text "ruby" %}}
 A Global Hook will run once before any Scenario is run. Put the
-code at the top-level in your `env.rb` file (or any other file under 
-`features/support` directory). 
+code at the top-level in your `env.rb` file (or any other file under
+`features/support` directory).
 
-Use `Kernel#at_exit` for global teardown. 
+Use `Kernel#at_exit` for global teardown.
 
 Example:
 {{% /text %}}
@@ -308,7 +311,7 @@ end
 
 ## `AfterConfiguration`
 {{% text "ruby" %}}
-You may also provide an `AfterConfiguration` Hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`). 
+You may also provide an `AfterConfiguration` Hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`).
 
 Example:
 {{% /text %}}
@@ -319,7 +322,7 @@ end
 ```
 
 {{% text "ruby" %}}
-This Hook will run _only once_: after support has been loaded, and before any Features are loaded. 
+This Hook will run _only once_: after support has been loaded, and before any Features are loaded.
 
 You can use this Hook to extend Cucumber. For example you could affect how Features are loaded, or register [Custom Formatters](/implementations/ruby/custom-formatters/) programmatically.
 {{% /text %}}

@@ -31,10 +31,10 @@ RSpec.configure do |config|
 end
 ```
 
-## Test Unit
+# Test Unit
 
 Don't like RSpec's `should` methods for assertions? No problem, we won't force
-you to. 
+you to.
 
 You can use the familiar `Test::Unit` `assert` methods by mixing it into
 your [`World`](/wiki/a-whole-new-world).

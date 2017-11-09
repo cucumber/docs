@@ -12,11 +12,11 @@ The docs are currently at [behat.org](http://behat.org).
 According to <http://docs.behat.org/en/v3.0/> bq. Since v3.0, Behat is
 considered an official Cucumber implementation in PHP and is part of one big family of BDD tools.
 
-## Directly testing PHP code
+# Directly testing PHP code
 
 To directly test PHP code using Step Definitions written in PHP, please see the [Cuke4Php](https://github.com/olbrich/cuke4php) project.
 
-## Testing against PHP web applications
+# Testing against PHP web applications
 
 Most people seem to use Cucumber for Rails. Most of the How-Tos and documents on the web reflect this.
 

@@ -12,9 +12,9 @@ Avoid using global or static variables.
 
 Make sure you clean your database between Scenarios.
 
-## Databases
+# Databases
 
-### The Before Hook Approach
+## The Before Hook Approach
 
 The recommended approach to clean a database between Scenarios is to use a
 `Before`[Hook](/cucumber/hooks/) to remove all data *before* a Scenario starts.
@@ -24,7 +24,7 @@ you to perform a post-mortem inspection of the database if a Scenario fails.
 
 An alternative approach is to use database transactions.
 
-### The Database Transaction Approach
+## The Database Transaction Approach
 
 You can wrap a transaction (if your database supports it) *around* each Scenario.
 
@@ -38,7 +38,7 @@ roll it back in an `After`[Hook](/cucumber/hooks/).
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
 [Tagged Hooks](/cucumber/hooks/#tagged-hooks) using a Tag named `@txn`.
 
-To enable it, you must tag every [Feature](/gherkin/feature-introduction/) or [Scenario](/gherkin/gherkin-reference/#scenario) that requires
+To enable it, you must tag every [Feature](/gherkin/gherkin-reference/#feature) or [Scenario](/gherkin/gherkin-reference/#scenario) that requires
 transactions with `@txn`:
 
 ```gherkin
@@ -52,7 +52,7 @@ Feature: Let's write a lot of stuff to the DB
     Given I write to the DB
 ```
 
-### Using JUnit and Spring
+## Using JUnit and Spring
 
 The [`cucumber-spring`](/implementations/jvm/java-di/#spring) module contains `@txn` Hooks in the `cucumber.api.spring` package.
 
@@ -68,7 +68,7 @@ public class RunCukesTest {
 
 See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
 
-### Browsers, beware
+## Browsers, beware
 
 If you're using a [Browser Automation](/cucumber/browser-automation/) tool that talks to your application over HTTP the transactional approach
 will not work if your [Step Definitions](/cucumber/step-definitions/) and the web application serving HTTP request each have their own database connection.
