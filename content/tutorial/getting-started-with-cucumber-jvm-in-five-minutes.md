@@ -126,7 +126,7 @@ The default file defines the following versions:
 
 - Java 1.7
 - Junit 4.12
-- Cucumber 1.2.5
+- Cucumber {% version "cucumber-jvm" %}
 - Maven 3.3
 
 To check the versions you have installed, open a command prompt and enter `mvn --version`.
@@ -147,7 +147,7 @@ We'll have to add a dependency for Cucumber core, as follows:
  <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-core</artifactId>
-    <version>${cucumber.version}</version>
+    <version>{% version "cucumber-jvm" %}</version>
     <scope>test</scope>
  </dependency>
 ```
