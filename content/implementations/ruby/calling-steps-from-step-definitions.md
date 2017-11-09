@@ -8,7 +8,7 @@ title: Calling Steps from Step Definitions
 
 > TODO: Deprecated feature?
 
-It is possible to call Steps from [Step Definitions](/cucumber/step-definitions/):
+It is possible to call Steps from [Step Definitions](/step-definitions/):
 
 ```
 # ruby

@@ -71,6 +71,6 @@ See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/exam
 ## Browsers, beware
 
 If you're using a [Browser Automation](/cucumber/browser-automation/) tool that talks to your application over HTTP the transactional approach
-will not work if your [Step Definitions](/cucumber/step-definitions/) and the web application serving HTTP request each have their own database connection.
+will not work if your [Step Definitions](/step-definitions/) and the web application serving HTTP request each have their own database connection.
 
 If this is the case you should use the brute-force approach where the data is explicitly deleted before each Scenario.

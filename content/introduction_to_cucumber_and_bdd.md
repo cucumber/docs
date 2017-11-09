@@ -38,7 +38,7 @@ Each Scenario is a list of Steps for Cucumber to work through. So that Cucumber
 can understand these Feature files, they must follow some basic syntax rules.
 The name for this set of rules is [Gherkin](/gherkin/gherkin-intro/).
 
-Along with the [Features](/gherkin/gherkin-reference/#feature), you give Cucumber a set of [Step Definitions](/cucumber/step-definitions/). These
+Along with the [Features](/gherkin/gherkin-reference/#feature), you give Cucumber a set of [Step Definitions](/step-definitions/). These
 files map (or "glue") each business-readable language step into programming code to carry
 out what action should be performed by the Step.
 
