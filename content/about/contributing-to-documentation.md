@@ -161,7 +161,7 @@ And may also contain multiple paragraphs.
 
 These text blocks can also contain code blocks.
 
-In order to show the correct text / blocks per language, the mage should be marked as a [polyglot page](#polyglot-pages).
+In order to show the correct text / blocks per language, the page should be marked as a [polyglot page](#polyglot-pages).
 
 ## Working locally
 
