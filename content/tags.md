@@ -144,8 +144,6 @@ cucumber --tags ~@foo --tags @bar,@zap        # Deprecated; use cucumber --tags 
 (The [standard library](https://github.com/cucumber/cucumber/blob/master/docs/standard-library.adoc#implementations) list indicates
 what Cucumber implementations currently support Tag Expressions).
 
-If you're interested in how it works exactly, have a look at the [Internal Design](/cucumber/tag-expressions).
-
 # Overriding the Tag filters from a profile
 
 It is not currently possible to override the Tag filters from a profile.

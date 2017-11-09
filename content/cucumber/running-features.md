@@ -39,7 +39,7 @@ cucumber --require features features/authentication/authenticate_user.feature
 
 ...will run the `authenticate_user` Feature. Any Feature in a sub-directory of `features/` directory must `require` Features. **Note:** You can also add this to your `cucumber.yml`.
 
-You can also use [Tags](/cucumber/tags/) to specify what to run, or pass [Environment Variables](/cucumber/environment-variables/) to Cucumber.
+You can also use [Tags](/tags/) to specify what to run, or pass [Environment Variables](/cucumber/environment-variables/) to Cucumber.
 
 # Using Rake
 

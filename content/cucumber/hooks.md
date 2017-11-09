@@ -170,7 +170,7 @@ To run a particular Hook only for certain Scenarios, you can associate a
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
-Hook with one or more [Tags](/cucumber/tags/).
+Hook with one or more [Tags](/tags/).
 
 You can use OR and AND and NOT Tags in much the same way as you can when running Cucumber from the command line. Examples:
 
@@ -263,7 +263,7 @@ defineSupportCode(function({After, Before}) {
 });
 ```
 
-See more documentation on [tag expressions](/cucumber/tag-expressions/).
+See more documentation on [tags](/tags/).
 
 **Think twice before you use Hooks!**
 Whatever happens in Hooks is invisible to people who only read the Features.
