@@ -182,7 +182,7 @@ Cucumber-Rails provide three special [tags](/tags/) you can use to change how Cu
 
 By default, all Scenarios will run within a database transaction that is rolled back at the end. However, Scenarios tagged with `@no-txn` will run **without** a transaction.
 
-This can be useful when you have to deal with [Browsers and Transactions](ruby/browsers-and-transactions). Beware that this will leave data in your database after that Scenario, which can lead to hard-to-debug failures in subsequent Scenarios.
+This can be useful when you have to deal with [Browsers and Transactions](/implementations/ruby/browsers-and-transactions). Beware that this will leave data in your database after that Scenario, which can lead to hard-to-debug failures in subsequent Scenarios.
 
 If you use this, we recommend you create a Before block that will explicitly put your database in a known state (for example using [DatabaseCleaner](https://github.com/bmabey/database_cleaner)).
 

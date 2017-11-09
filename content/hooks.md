@@ -267,7 +267,7 @@ See more documentation on [tags](/tags/).
 
 **Think twice before you use Hooks!**
 Whatever happens in Hooks is invisible to people who only read the Features.
-You should consider using [Background](/gherkin/gherkin-reference/#background) as a more explicit
+You should consider using [Background](/gherkin/#background) as a more explicit
 alternative, especially if the setup should be readable by non-technical people.
 
 ## Global Hooks
