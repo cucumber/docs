@@ -27,7 +27,7 @@ For example, in a Curriculum Vitae application, we might have:
 - `experience_steps.rb`
 - `authentication_steps.rb`
 
-The first three would define all the [Given-When-Then](/gherkin/given-when-then/) Step Definitions related to creating, reading, updating, and deleting the various models. The last one would define Step Definitions related to logging in and out.
+The first three would define all the `Given`, `When`, and `Then` step definitions related to creating, reading, updating, and deleting the various models. The last one would define Step Definitions related to logging in and out.
 
 If you follow this pattern you also avoid the [Feature-Coupled Step Definitions (Antipattern)](/cucumber/anti-patterns/) anti-pattern.
 

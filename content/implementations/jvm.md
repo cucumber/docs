@@ -9,7 +9,7 @@ Cucumber-JVM is a Cucumber implementation for the most popular JVM languages.
 
 This document is the reference for functionality specific to Cucumber-JVM.
 
-Please see the [General Reference](/gherkin/gherkin-reference/) for functionality common to all Cucumber implementations.
+Please see [Gherkin](/gherkin/) for functionality common to all Cucumber implementations.
 
 # Languages
 
@@ -369,7 +369,7 @@ public void the_following_animals(List<String> animals) {
 See the `@Delimiter` annotation for details about how to define a delimiter different than `,`.
 
 
-If you prefer to use a [Data Table](/gherkin/gherkin-reference/#step-arguments) to define a list you can do that too:
+If you prefer to use a [Data Table](/gherkin/#step-arguments) to define a list you can do that too:
 
 ```gherkin
 Given the following animals:
