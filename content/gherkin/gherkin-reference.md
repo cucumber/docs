@@ -138,7 +138,7 @@ It's strongly recommended you only have a single `When` step per Scenario. If yo
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
-The [Step Definition](/cucumber/step-definitions/) of a `Then` Step should use an *assertion* to
+The [Step Definition](/step-definitions/) of a `Then` Step should use an *assertion* to
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the Step says the system is supposed to do).
 

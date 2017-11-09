@@ -18,7 +18,7 @@ They begin with zero or more spaces, followed by a hash sign (`#`) and some text
 
 The parser divides the input into Features, Scenarios, and Steps. When you run
 the Feature, the trailing portion (after the keyword) of each Step is matched to
-a code block, called a [Step Definition](/cucumber/step-definitions/).
+a code block, called a [Step Definition](/step-definitions/).
 
 A Gherkin source file usually looks like this.
 
