@@ -46,6 +46,7 @@ You can use [MockServer](http://www.mock-server.com/) for mocking any system you
 {{% /block %}}
 
 {{% block "javascript" %}}
+# Javascript mocking and stubbing
 If you are using cucumber-js, there are many test frameworks to choose from.
 Which one you use, may depend on other javascript frameworks your project is using and / or personal preference.
 {{% /block %}}
