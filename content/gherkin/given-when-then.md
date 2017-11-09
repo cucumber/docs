@@ -77,4 +77,29 @@ Then I see something
 But I don't see something else
 ```
 
-To Cucumber Steps beginning with `And` or `But` are exactly the same kind of Steps as all the others.
+Again, Cucumber doesn't technically distinguish between these kinds of Steps.
+It considers Steps beginning with `And` or `But` exactly the same as all other Steps.
+You may prefer to use `And` or `But` for the readability of your scenario's though.
+
+If you find `Given`, `When`, `Then`, `And` and `But` too verbose, you can also use an additional keyword to start a step: `*`(**an asterisk**).
+For example:
+```Gherkin
+Scenario: Attempt withdrawal using stolen card
+  * I have $100 in my account
+  * my card is invalid
+  * I request $50
+  * my card should not be returned
+  * I should be told to contact the bank
+```
+
+Cucumber executes each step in a scenario, one at a time, in the sequence you’ve written them in.
+When Cucumber tries to execute a step, it just looks for a matching step definition to execute.
+
+Keywords are not taken into account when looking for a match. This means you cannot have a
+`Given`, `When`, `Then`, `And` or `But` Step with the same text as another Step.
+
+This means that Cucumber considers the following steps duplicates:
+```Gherkin
+Given there is money in my account
+Then there is money in my account
+```

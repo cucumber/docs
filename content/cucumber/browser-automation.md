@@ -1,7 +1,7 @@
 ---
 menu: reference
 renderer: Cucumber::Website::Reference
-title: Browser Automation
+title: Browser Automation Old
 polyglot: true
 ---
 
