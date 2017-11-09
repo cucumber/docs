@@ -51,7 +51,7 @@ Tag expressions provide a simple query language to select scenarios based on
 Tag expressions are used for two different purposes: 
 
 * [Running a subset of scenarios](#running-a-subset-of-scenarios)
-* [Scoping hooks to a subset of scenarios](/cucumber/hooks#tagged-hooks)
+* [Scoping hooks to a subset of scenarios](/hooks#tagged-hooks)
 
 The simplest possible tag expression is simply a tag, for example:
 
