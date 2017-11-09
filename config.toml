@@ -46,7 +46,7 @@ pygmentsUseClasses = true
 [[menu.documentation]]
     weight = 9
     name = "Tags"
-    identifier = "Grouping scenarios"
+    identifier = "Grouping Scenarios"
     url = "/tags/"
 
 [[menu.bdd]]

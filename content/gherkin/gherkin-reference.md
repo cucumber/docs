@@ -84,7 +84,7 @@ When I press the coffee button
 Then I should be served a coffee
 ```
 
-You can use [Tags](/cucumber/tags/) to group Features and
+You can use [Tags](/tags/) to group Features and
 Scenarios together, independent of your file and directory structure.
 
 ## Descriptions
