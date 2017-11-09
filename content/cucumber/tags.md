@@ -38,17 +38,13 @@ You can use the `--tags` option to tell Cucumber that you only want to run Featu
 
 Examples:
 
-```shell
-cucumber --tags @billing            # Runs both Scenarios
-cucumber --tags @important          # Runs the first Scenario
-cucumber --tags ~@important         # Runs the second Scenario (Scenarios without @important)
 ```gherkin
 @important
 Feature: Calculate insurance prices
 ```
 
 See [Tag Expressions](#tag-expressions) for more details on how to use tags.
-Cucumber can also enforce [Tag Limits](#tag-limits-and-wip)
+Cucumber can also enforce [Tag Limits](#tag-limits-and-wip).
 
 (Another way to "filter" what you want to run is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running Features](/cucumber/running-features/)).
 
@@ -100,15 +96,13 @@ For more complex Tag Expressions you can use parenthesis for clarity, or to chan
 
 As you may have seen in the previous examples, Cucumber allows you to use logical ANDs and ORs to help gain greater control of which Features to run.
 
-Example: Running Scenarios which match `important OR billing`
+Example: Running Scenarios which match `billing OR important`
 
-```
-cucumber --tags '@billing or @important'
 ```shell
-cucumber --tags @billing,@important
+cucumber --tags '@billing or @important'
 ```
 
-Example: Running Scenarios which match `important AND billing`
+Example: Running Scenarios which match `billing AND important`
 
 ```shell
 cucumber --tags @billing --tags @important
@@ -119,16 +113,12 @@ You can combine these two methods to create powerful selection criteria:
 Example: Running Scenarios which match: `(billing OR WIP) AND important`
 
 ```shell
-cucumber --tags @billing,@wip --tags @important
-```
 cucumber --tags '@billing or @wip' --tags @important
 ```
 
 Example: Skipping both `todo AND wip` tags
 
 ```shell
-cucumber --tags ~@todo --tags ~@wip
-```
 cucumber --tags 'not @todo' --tags 'not @wip'
 ```
 
@@ -138,8 +128,7 @@ You can use this Tag logic in your [Hooks](/cucumber/hooks/) as well.
 *The logical behaviour of Tags was later reversed in version 0.6.0.* --->
 
 An overview of different options:
-
-```
+```shell
 cucumber --tags @billing            # Runs both Scenarios
 cucumber --tags @important          # Runs the first Scenario
 cucumber --tags 'not @important'    # Runs the second Scenario (Scenarios without @important)
