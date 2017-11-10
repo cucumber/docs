@@ -133,7 +133,7 @@ Before(10, () -> {
 
 ## After
 
-`After` hooks run after the first step of each scenario, even when steps are `failed`, `undefined`, `pending`, or `skipped`. 
+`After` hooks run after the last step of each scenario, even when steps are `failed`, `undefined`, `pending`, or `skipped`.
 
 {{% block "java" %}}
 
