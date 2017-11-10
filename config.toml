@@ -37,7 +37,7 @@ pygmentsUseClasses = true
     weight = 7
     name = "Step Definitions"
     identifier = "Connecting Gherkin to code"
-    url = "/hooks/"
+    url = "/step-definitions/"
 [[menu.documentation]]
     weight = 8
     name = "Hooks"
