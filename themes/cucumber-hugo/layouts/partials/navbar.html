@@ -40,6 +40,9 @@
     </div>
 
     <div class="navbar-end">
+      {{ if eq .Page.Params.polyglot true }}
+        {{ partial "language-tabs.html" . }}
+      {{ end }}
       <a class="navbar-item" href="https://github.com/cucumber/cucumber">
         <span class="icon">
           <i class="fa fa-github"></i>
