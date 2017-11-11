@@ -16,7 +16,7 @@ You will need the following:
 
 - [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm)
 
-- An IDE editor, for example [IntelliJ  IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
+- An IDE editor, for example [IntelliJ IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
   introduction)
 
 - A Cucumber plugin for your chosen IDE
@@ -300,10 +300,10 @@ These all have a keyword (`Given`, `When`, and `Then`) followed by a Step. The S
 
 The plain text Steps are defined in the Gherkin language.
 
-[Gherkin](/gherkin/gherkin-intro/) allows technical and non-technical staff to describe and share the expected behaviour of the application. It does not describe the implementation.
+[Gherkin](/gherkin/) allows technical and non-technical staff to describe and share the expected behaviour of the application. It does not describe the implementation.
 
 The Feature file contains the Gherkin source. In our Feature, we use only the `Given`, `When`, and `Then` keywords. (There are other keywords, too. You can
-read more about them on the [Wiki page](https://github.com/cucumber/cucumber/wiki/Gherkin).)
+read more about [Gherkin](/gherkin/) if you like.
 
 The `Given`, `When`, `Then` structure is used in Agile developments to help when writing acceptance criteria or user stories.
 

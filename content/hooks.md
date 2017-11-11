@@ -96,7 +96,7 @@ end
 
 {{% tip "Think twice before you use Before" %}}
 Whatever happens in a `Before` hook is invisible to people who only read the features.
-You should consider using [Background](/gherkin/gherkin-reference/#background) as a more explicit
+You should consider using [Background](/gherkin/#background) as a more explicit
 alternative, especially if the setup should be readable by non-technical people.
 Only use a `Before` hook for low-level logic such as starting a browser or deleting
 data from a database.
