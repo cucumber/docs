@@ -56,6 +56,9 @@ var showHideSelectors = [
 ]
 
 function showOnly(language) {
+  // Remember
+  localStorage.setItem('language', language)
+
   // Activate tab for language
   each(document, '.tabs li', function(a) { removeClass(a, 'is-active') })
   var tab = document.querySelector('[data-language="' + language + '"]')
@@ -91,7 +94,10 @@ ready(function() {
   })
 
   var firstLi = document.querySelector('.tabs li')
-  if(firstLi) showOnly(firstLi.getAttribute('data-language'))
+  if(firstLi) {
+    var language = localStorage.getItem('language') || firstLi.getAttribute('data-language')
+    showOnly(language)
+  }
   
   // Toggle navbar menu
   var burger = document.querySelector('.navbar-burger')

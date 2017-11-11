@@ -143,10 +143,25 @@ Use fenced code blocks to specify polyglot source code:
 
 ## Language-specific text
 
-Use the `{{% text %}}` shortcode around text that should only be displayed for
+Use the `{{% text %}}` shortcode around text fragments that should only be displayed for
 a particular programming language:
 
     The preferred build tool is {{% text "ruby" %}}Rake{{% /text %}}{{% text "javascript" %}}Yarn{{% /text %}}{{% text "java" %}}Maven{{% /text %}}.
+
+Use the `{{% block %}}` shortcode around paragraphs of text that should only be displayed for
+a particular programming language:
+
+{{% block "java" %}}
+A block of text about Java that may also include code examples:
+```java
+// code example
+```
+And may also contain multiple paragraphs.
+{{% /block %}}
+
+These text blocks can also contain code blocks.
+
+In order to show the correct text / blocks per language, the page should be marked as a [polyglot page](#polyglot-pages).
 
 ## Working locally
 
