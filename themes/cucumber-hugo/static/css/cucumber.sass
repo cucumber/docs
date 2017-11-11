@@ -21,13 +21,14 @@ $pre-background: $cucumber-grey-lighter
 @import "../../node_modules/bulma/bulma"
 @import "./pygments"
 
-// Override Bulma's content.sass style to ensure tabs render properly
 .content
+  // Override Bulma's content.sass style to ensure tabs render properly
   li + li
     margin-top: 0
 
-is-hidden
-  display: none
+  // div.text-java, div.text-javascript, div.text-ruby
+  //   p:last-child
+  //     margin-bottom: 1em !important
 
 pre
   code

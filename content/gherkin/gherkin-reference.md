@@ -138,7 +138,7 @@ It's strongly recommended you only have a single `When` step per Scenario. If yo
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
-The [Step Definition](/cucumber/step-definitions/) of a `Then` Step should use an *assertion* to
+The [Step Definition](/step-definitions/) of a `Then` Step should use an *assertion* to
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the Step says the system is supposed to do).
 
@@ -150,7 +150,7 @@ Since it is repeated in every Scenario, this is an indication that those Steps
 are not *essential* to describe the Scenarios; they are *incidental details*. You can literally move such `Given` steps to the background, by grouping them under a `Background` section.
 
 A `Background` allows you to add some context to the Scenarios in the Feature. It can contain one or more Steps.
-It is run before *each* Scenario, but after any Before [Hooks](/cucumber/hooks/). In your feature file, put the `Background` before the first Scenario.
+It is run before *each* Scenario, but after any Before [Hooks](/hooks/). In your feature file, put the `Background` before the first Scenario.
 
 Example:
 
@@ -182,7 +182,7 @@ When I try to post to "Expensive Therapy"
 Then I should see "Your article was published."
 ```
 
-For a less explicit alternative to Background, check out [Tagged Hooks](/cucumber/hooks/#tagged-hooks).
+For a less explicit alternative to Background, check out [Tagged Hooks](/hooks/#tagged-hooks).
 
 **Good practices for using Background:**
 

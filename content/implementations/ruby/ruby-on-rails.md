@@ -176,7 +176,7 @@ html: --format html --out features.html
 
 ## Special Tags
 
-There are two special [[Tags]] you can use to change how Cucumber runs your Scenarios.
+Cucumber-Rails provide three special [tags](/tags/) you can use to change how Cucumber runs your scenarios.
 
 ### `@no-txn`
 
@@ -189,6 +189,10 @@ If you use this, we recommend you create a Before block that will explicitly put
 ### `@allow-rescue`
 
 Scenarios tagged with `@allow-rescue` will cause Rails to rescue all errors and render error pages, more or less in the same way your application would behave in the default production environment. It's not recommended to do this for all of your Scenarios, as this makes it hard to discover errors in your application.
+
+### `@javascript`
+
+Uses a Javascript-aware system to process web requests (e.g., Selenium) instead of the default (non-Javascript-aware) webrat browser.
 
 ### Controller and View spec redundancy
 

@@ -294,7 +294,7 @@ The Steps you need to define to check that people within 1000m hear the shout ar
 
 These all have a keyword (`Given`, `When`, and `Then`) followed by a Step. The Step is then matched to a *Step Definition*.
 
-[Step Definitions](/cucumber/step-definitions/) define the plain text Step in code.
+[Step Definitions](/step-definitions/) define the plain text Step in code.
 
 ### `Given`/`When`/`Then`
 
