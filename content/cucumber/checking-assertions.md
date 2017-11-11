@@ -67,6 +67,8 @@ If you are using Maven, just add the following to your `pom.xml`:
 </dependency>
 ```
 
+**Note:** Make sure to use the same version for `cucumber-junit` that you are using for `cucumber-java` or cucumber-java8`.
+
 **Note:** At the moment, JUnit 5 is not yet supported by Cucumber.
 
 Using assertions in JUnit is very easy. For example:
