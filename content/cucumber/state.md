@@ -30,7 +30,7 @@ You can wrap a transaction (if your database supports it) *around* each Scenario
 
 (This might lead to faster Scenarios, but it comes at a cost.
 You won't be able to perform a post-mortem, and you won't be able to
-use [browser automation](/cucumber/browser-automation/)).
+use [browser automation](/browser-automation/)).
 
 You simply tell Cucumber to start a transaction in a `Before`[Hook](/hooks/), and later
 roll it back in an `After`[Hook](/hooks/).
@@ -70,7 +70,7 @@ See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/exam
 
 ## Browsers, beware
 
-If you're using a [Browser Automation](/cucumber/browser-automation/) tool that talks to your application over HTTP the transactional approach
+If you're using a [Browser Automation](/browser-automation/) tool that talks to your application over HTTP the transactional approach
 will not work if your [Step Definitions](/step-definitions/) and the web application serving HTTP request each have their own database connection.
 
 If this is the case you should use the brute-force approach where the data is explicitly deleted before each Scenario.
