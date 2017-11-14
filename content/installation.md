@@ -95,7 +95,7 @@ rails generate cucumber:install
 
 {{% block "javascript" %}}
 
-Cucumber.js is avaliable as an [NPM](https://www.npmjs.com) module. It works
+Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works
 with both Node.js and browsers.
 
 # Node.js
