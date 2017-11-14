@@ -67,7 +67,13 @@ If you are using Maven, just add the following to your `pom.xml`:
 </dependency>
 ```
 
-**Note:** At the moment, JUnit 5 is not yet supported by Cucumber.
+{{% note "Cucumber version"%}}
+Make sure to use the same version for `cucumber-junit` that you are using for `cucumber-java` or cucumber-java8`.
+{{% /note %}}
+
+{{% note "JUnit 5"%}}
+At the moment, JUnit 5 is not yet supported by Cucumber.
+{{% /note %}}
 
 Using assertions in JUnit is very easy. For example:
 
