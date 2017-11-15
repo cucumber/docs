@@ -11,7 +11,7 @@ Here are some guidelines that will lead to better scenarios.
 # Grouping steps
 
 Technically it doesn't matter how you name your step definition files, or which step definitions you put in a file.
-You *could* have one giant file and put all your step definitions in there. But that would get very *messy*, and hard to maintain.
+You *could* have one giant file and put all your step definitions in there. But that would get very messy, and hard to maintain.
 Instead, we recommend creating a separate {{% text "ruby" %}}`*_steps.rb`{{% /text %}}{{% text "java" %}}`Steps.java`{{% /text %}}{{% text "javascript" %}}`*_steps.js`{{% /text %}} file for each domain concept.
 
 A good rule of thumb is to have one file for each major {{% text "ruby" %}}model/database table.{{% /text %}}{{% text "java" %}}domain object.{{% /text %}}{{% text "javascript" %}}domain object.{{% /text %}}
@@ -57,7 +57,7 @@ TODO: summarize relevant information from this thread? --->
 
 # Anti-patterns
 
-There are several anti-patterns which we will describe here. We will also give you hints on how to avoid these.
+There are several anti-patterns, which we will describe here. We will also give you hints on how to avoid them!
 
 ## Feature-coupled step definitions (anti-pattern)
 
@@ -137,9 +137,9 @@ end
 
 ### How to decouple steps & step definitions
 
-* Organise steps by domain concept.
+* Organise your steps by domain concept.
 
-* Rename step & step definition files to domain-related names (rather than feature- or scenario-related names).
+* Use domain-related names (rather than feature- or scenario-related names) for your step & step definition files.
 
 
 ## Conjunction steps (anti-pattern)
