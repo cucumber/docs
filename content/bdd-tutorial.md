@@ -8,7 +8,7 @@ It's focus is obtaining a clear and mutual understanding of desired behaviour of
 The goal is to capture the outcome of the conversations in a meaningful way, using natural and domain language. The focus should be on
 the intended behaviour, not on the implementation or technical details. It should create shared understanding, helping the developers to create the right things.
 
-> **"Behaviour-driven development is about implementing an application by describing its behavior from the perspective of its stakeholders”** -- Dan North
+> **"Behaviour-driven development is about implementing an application by describing its behavior from the perspective of its stakeholders"** -- Dan North
 
 The main intention of BDD is to collaborate and create a shared understanding of the intended behaviour of the system.
 It is useful to record the outcome of these conversations, in order to share this understanding with others.
