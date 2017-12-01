@@ -1,6 +1,6 @@
 ---
 source: https://github.com/cucumber/cucumber/wiki/Step-Organization/
-title: Good Practices
+title: Best Practices
 polyglot: true
 ---
 
