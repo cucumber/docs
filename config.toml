@@ -82,9 +82,9 @@ pygmentsUseClasses = true
     url = "/browser-automation/"
 [[menu.guides]]
     weight = 4
-    name = "Good Practices"
+    name = "Best Practices"
     identifier = "Isolated state"
-    url = "/good-practices/"
+    url = "/best-practices/"
 [[menu.guides]]
     weight = 5
     name = "Testable Architecture"

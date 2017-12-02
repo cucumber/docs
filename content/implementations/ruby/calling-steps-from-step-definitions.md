@@ -6,9 +6,7 @@ source: https://github.com/cucumber/cucumber/wiki/Calling-Steps-from-Step-Defini
 title: Calling Steps from Step Definitions
 ---
 
-> TODO: Deprecated feature?
-
-It is possible to call Steps from [Step Definitions](/step-definitions/):
+It is possible to call steps from [step definitions](/step-definitions/):
 
 ```
 # ruby
@@ -39,9 +37,9 @@ Given /^(.*) is logged in$/ do |name|
 end
 ```
 
-Invoking Steps from Step Definitions is practical if you have several common Steps that you want to perform in several Scenarios—or, simply if you want to make your Scenarios shorter and more declarative.
+Invoking steps from step definitions is practical if you have several common steps that you want to perform in several scenarios—or, if you want to make your scenarios shorter and more declarative.
 
-This allows you to do this in a Scenario:
+This allows you to do this in a scenario:
 
 ```
 # feature
@@ -60,9 +58,9 @@ Scenario: View last incidents
   When I go to the incident page
 ```
 
-# Calling Steps with multiline Step arguments
+# Calling steps with multiline step arguments
 
-Sometimes you want to call a Step that has been designed to take Multiline [Step Arguments](/gherkin/#step-arguments) and sometimes you want to call a step that has been designed to take [Multiline Strings](#doc-strings).
+Sometimes you want to call a step that has been designed to take multiline [step arguments](/gherkin/#step-arguments) and sometimes you want to call a step that has been designed to take [multiline strings](#doc-strings).
 For example:
 
 ## Tables
@@ -74,7 +72,7 @@ Given /^an expense report for (.*) with the following posts:$/ do |date, posts_t
 end
 ```
 
-This can easily be called from a plain text Step like this:
+This can easily be called from a plain text step like this:
 
 ```
 # feature
@@ -84,7 +82,7 @@ Given an expense report for Jan 2009 with the following posts:
   | CUC-101 | Peeler      |     22 |
 ```
 
-But what if you want to call this from a Step Definition?
+But what if you want to call this from a step definition?
 
 There are a couple of ways to do this:
 
@@ -112,7 +110,7 @@ Given /A simple expense report/ do
 end
 ```
 
-You can also simply receive a table and pass it down. This Spanish Step Definition passes its table to the English one:
+You can also simply receive a table and pass it down. This Spanish step definition passes its table to the English one:
 
 ```
 # ruby
@@ -129,7 +127,7 @@ end
 
 ## Doc Strings
 
-To call a Step that takes a multiline string, such as
+To call a step that takes a multiline string, such as
 
 ```
 # ruby
@@ -138,7 +136,7 @@ Given /^I fill in "([^\"]*)" with$/ do |field, pystring|
 end
 ```
 
-From a Step Definition, pass the string after the Step:
+From a step definition, pass the string after the step:
 
 ```
 # ruby
