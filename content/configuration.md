@@ -35,7 +35,7 @@ java cucumber.api.cli.Main
 
 {{% block "javascript" %}}
 ## CLI
-Cucumber.js includes a executable file to run the features. After installing Cucumber in your project, you can run it with:
+Cucumber.js includes an executable file to run the features. After installing Cucumber in your project, you can run it with:
 
 ``` shell
 $ ./node_modules/.bin/cucumber.js
@@ -100,7 +100,7 @@ To run Cucumber with [Maven](https://maven.apache.org/), make sure that:
 
 Steps:
 
-1.  Create a new Maven project or fork from cucumber-java examples on github
+1.  Create a new Maven project or fork cucumber-java examples on Github
 2.  Add the following dependency to your  `pom.xml`
 
     ```xml
@@ -173,7 +173,7 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/android).
 
-## From you IDE / Third party runners
+## From you IDE / Third-party runners
 Finally, you can run your features from your IDE.
 
 IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from within an IDE:
@@ -181,7 +181,7 @@ IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
 - [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
 
-Please refer to the documentation for the third party runner for details about how to pass configuration options to Cucumber.
+Please refer to the documentation for the third-party runner for details about how to pass configuration options to Cucumber.
 {{% /block %}}
 
 # Configuration
@@ -333,7 +333,7 @@ Some of the runners provide additional mechanisms for passing options to Cucumbe
 {{% /block %}}
 
 {{% block "ruby" %}}
-You can also define common command line options in a [`cucumber.yml`](/cucumber/cucumber.yml/) file.
+You can also define common command-line options in a [`cucumber.yml`](/cucumber/cucumber.yml/) file.
 {{% /block %}}
 
 {{% block "javascript" %}}
