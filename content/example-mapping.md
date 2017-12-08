@@ -33,4 +33,4 @@ We keep going until the group is satisfied that the scope of the story is clear,
 
 # More information
 
-For more details, see Matt Wynne's blog on [Example Mapping](https://cucumber.io/blog/2015/12/08/example-mapping-introduction)
+For more details, see Matt Wynne's blog on [Example Mapping](https://cucumber.io/blog/2015/12/08/example-mapping-introduction).
