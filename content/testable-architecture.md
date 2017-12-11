@@ -5,7 +5,7 @@ description: Designing for testability
 
 Automated tests and executable specifications can only work with software that has a testable architecture.
 A testable architecture enables fast and reliable tests that are easy to write, execute and maintain.
-Fast tests enable the developers to run them and obtain fast feedback on what they are building, without loosing focus or flow.
+Fast tests enable the developers to run them and obtain fast feedback on what they are building, without losing focus or flow.
 
 When designing for testability, make sure that your products and services are composed of loosely-coupled,
 well-encapsulated components or modules; following the principles of
@@ -32,7 +32,7 @@ an adapter for the queue, and an adapter for the web service. There is also a po
 a web server which plugs into this port and displays a UI in a browser. All the IO tends to happen outside of these ports.
 
 This architectural patterns is called the **ports and adapters pattern** (or [hexagonal architecture](http://alistair.cockburn.us/Hexagonal+architecture)).
-This pattern enables you to hook your scenarios and unit tests at a lower level, while he 'contract tests' give you the confidence to do that.
+This pattern enables you to hook your scenarios and unit tests at a lower level, while the 'contract tests' give you the confidence to do that.
 
 You’ll want to run *some* tests that go through the whole depth of your stack, to get complete confidence.
 Diagnosing where the problem is in a full-stack, end-to-end test is really hard, because it can be anywhere.
