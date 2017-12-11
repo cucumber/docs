@@ -20,7 +20,7 @@ we need to make sure the database is in the expected state for each test, so the
 
 We want our tests to use some kind of in-memory stub implementation, instead of an actual database.
 From the perspective of the domain logic, the behavior looks exactly the same.
-To make sure that the stub works in the same way as the real thing, we need to have confidence, which we can obtain using ‘contract tests’.
+To make sure that the stub works in the same way as the real thing, we need to have confidence, which we can obtain using [contract tests](https://martinfowler.com/bliki/IntegrationContractTest.html).
 
 We can think of our database and our stub as two things that can be plugged into the same socket, or **port**.
 The application containing the business logic doesn't need to know it's talking to a stub rather than the actual database; it's simply talking to this port
@@ -32,7 +32,7 @@ an adapter for the queue, and an adapter for the web service. There is also a po
 a web server which plugs into this port and displays a UI in a browser. All the IO tends to happen outside of these ports.
 
 This architectural patterns is called the **ports and adapters pattern** (or [hexagonal architecture](http://alistair.cockburn.us/Hexagonal+architecture)).
-This pattern enables you to hook your scenarios and unit tests at a lower level, while the 'contract tests' give you the confidence to do that.
+This pattern enables you to hook your scenarios and unit tests at a lower level, while the **contract tests** give you the confidence to do that.
 
 You’ll want to run *some* tests that go through the whole depth of your stack, to get complete confidence.
 Diagnosing where the problem is in a full-stack, end-to-end test is really hard, because it can be anywhere.
