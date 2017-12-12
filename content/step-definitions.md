@@ -82,7 +82,7 @@ In this case, the String is compiled to a Regular Expression behind the scenes: 
 ## DataTables
 To automatically transform DataTables in your feature file, you can change the DataTable to a List or Map:
 List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V> where E,K,V must be a scalar (String, Integer, Date, enum etc).
-If you want to transform to a List<YourType>, make sure the variable names for YourType match the column names in your feature file.
+To transform to a List<YourType>, the field names for YourType must match the column names in your feature file.
 {{% /text %}}
 
 # Steps
