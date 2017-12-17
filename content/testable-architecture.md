@@ -21,7 +21,7 @@ We want most of our tests to use some kind of in-memory stub implementation, ins
 From the perspective of the domain logic, the behavior looks exactly the same.
 To make sure that the stub works in the same way as the real thing, we need to have confidence, which we can obtain using [contract tests](https://martinfowler.com/bliki/IntegrationContractTest.html).
 
-We can think of our database and our stub as two things that can be plugged into the same socket, or **port**.
+We can think of our database and our stub as two things that can be plugged into the **port**.
 The application containing the business logic doesn't need to know if it's talking to a stub or the actual database; it's simply talking to this port
 and storing and retrieving data. We can run our tests using both the stub and the real implementation. This gives us confidence that the stub behaves like the real thing.
 
