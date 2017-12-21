@@ -206,7 +206,7 @@ end
 
 ### Nested Steps
 
-In an effort to keep your code DRY, you may be tempted to utilize Cucumber's feature of calling step definitions from other steps: **DON'T**. While this may seem like a useful feature to utilize, it creates bad code smells and can make things like readability difficult and stack traces terrible. Instead, in places where you're calling steps from other steps, use those as opportunities to refactor your code to create helper methods to use instead.
+In an effort to keep from [repeating yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), you may be tempted to utilize Cucumber's feature of calling step definitions from other steps: **DON'T**. While this may seem like a useful feature to utilize, it creates bad code smells and will be deprecated in the future. In places where you're calling steps from other steps, use those as opportunities to refactor your code to create helper methods.
 
 {{% text "ruby" %}}
 Instead of:
@@ -230,6 +230,12 @@ Given('a starting amount of ${int}') do |starting_amount|
   @account = Account.new('foo123', @starting_balance, 1234)
 end
 ```
-{{% /text %}}
 
-This refactoring has multiple benefits, but core to this topic is that it would then allow you to access this code more easily throughout all of your steps as needed, instead of having to call a step to do it. You get much more flexibility, readabilitiy, and usability with helper methods. Lastly, they won't be deprecated in the future!
+Now that your code has been refactored you can access these helper methods anywhere in your code, instead of calling a step. Benefits:
+
+* Increased flexibility
+* Increased readabilitiy
+* Increased usability
+* You won't be writing code that's planned to be deprecated
+
+{{% /text %}}
