@@ -83,7 +83,7 @@ A Step is analogous to a method call or function invocation.
 
 For example:
 
-```
+```gherkin
 Given I have 93 cucumbers in my belly
 ```
 
@@ -193,7 +193,7 @@ this means you also cannot have the same Step Definition, but with different key
 {{% text "ruby" %}}
 Thus, the following would cause a `Cucumber::Redundant` error:
 
-```
+```ruby
 Given /Three (.*) mice/ do |disability|
   # some code
 end
@@ -202,4 +202,40 @@ Given /Three (.*) mice/ do |disability|
   # some other code..
 end
 ```
+{{% /text %}}
+
+### Nested Steps
+
+In an effort to keep from [repeating yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), you may be tempted to utilize Cucumber's feature of calling step definitions from other steps: **DON'T**. While this may seem like a useful feature to utilize, it creates bad code smells and will be deprecated in the future. In places where you're calling steps from other steps, use those as opportunities to refactor your code to create helper methods.
+
+{{% text "ruby" %}}
+Instead of:
+
+```ruby
+Given('a starting amount of ${int}') do |int|
+  steps %(
+    Given a customer account with ID: 'foo123'
+    Given a balance of 100 dollars
+    Given the customer has authenticated with pin 1234
+  )
+end
+```
+
+Create accounts and user helper classes/methods, which would allow you to refactor your step to the following:
+
+```ruby
+Given('a starting amount of ${int}') do |starting_amount|
+  @starting_balance = starting_amount
+  @user = User.new(0)
+  @account = Account.new('foo123', @starting_balance, 1234)
+end
+```
+
+Now that your code has been refactored you can access these helper methods anywhere in your code, instead of calling a step. Benefits:
+
+* Increased flexibility
+* Increased readabilitiy
+* Increased usability
+* You won't be writing code that's planned to be deprecated
+
 {{% /text %}}
