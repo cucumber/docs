@@ -77,6 +77,14 @@ end
 In this case, the String is compiled to a Regular Expression behind the scenes: `/^I have (.\*) cucumbers in my belly$/`.
 {{% /text %}}
 
+{{% text "java" %}}
+
+## DataTables
+To automatically transform DataTables in your feature file, you can change the DataTable to a List or Map:
+List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V> where E,K,V must be a scalar (String, Integer, Date, enum etc).
+To transform to a List<YourType>, the field names for YourType must match the column names in your feature file (except for spaces and capitalization).
+{{% /text %}}
+
 # Steps
 
 A Step is analogous to a method call or function invocation.
