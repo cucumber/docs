@@ -5,10 +5,10 @@ polyglot: true
 ---
 
 
-You can [configure](#configuration) how Cucumber should run your features.
+You can [configure](#configuration) how Cucumber should run features.
 
 # Running features
-There are several ways to run your features with Cucumber.
+There are several ways to run features with Cucumber.
 
 ## From the command line
 The most standard option is to run Cucumber from the command line.
@@ -27,7 +27,7 @@ cucumber --require features features/authentication/authenticate_user.feature
 {{% block "java" %}}
 ### CLI Runner
 The Command-Line Interface Runner (CLI Runner) is an executable Java class that
-can be run from the command-line, or from any build tool (such as Maven, Gradle or Ant), or your IDE.
+can be run from the command-line, or from any build tool (such as Maven, Gradle or Ant), or an IDE.
 
 ```
 java cucumber.api.cli.Main
@@ -36,7 +36,7 @@ java cucumber.api.cli.Main
 
 {{% block "javascript" %}}
 ### CLI
-Cucumber.js includes an executable file to run the features. After installing Cucumber in your project, you can run it with:
+Cucumber.js includes an executable file to run the features. After installing Cucumber in  project, you can run it with:
 
 ``` shell
 $ ./node_modules/.bin/cucumber.js
@@ -51,14 +51,13 @@ because of the file extension.
 {{% /note %}}
 
 {{% note "Note on global installs"%}}
-Cucumber does not work when installed globally because cucumber
-needs to be required in your support files and globally installed modules cannot be required.
+Cucumber does not work when installed globally because cucumber needs to be required in support files and globally installed modules cannot be required.
 {{% /note %}}
 
 {{% /block %}}
 
 ## From a build tool
-You can also run your features using a build tool.
+You can also run features using a build tool.
 
 {{% block "ruby" %}}
 ### Using Rake
@@ -96,12 +95,12 @@ To run Cucumber with [Maven](https://maven.apache.org/), make sure that:
 
 - Maven is installed
 - The environment variable `MAVEN_HOME` is correctly configured
-- Your IDE is configured with latest Maven installation
+- IDE is configured with latest Maven installation
 
 Steps:
 
 1.  Create a new Maven project or fork cucumber-java examples on Github
-2.  Add the following dependency to your  `pom.xml`
+2.  Add the following dependency to `pom.xml`
 
     ```xml
     <dependency>
@@ -111,11 +110,50 @@ Steps:
     </dependency>
     ```
 
-3.  Add your feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` folders respectively.
-4.  Run the following maven from the directory path where your `pom.xml` file is located:
+3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` folders respectively.
+4.  Run the following maven from the directory path where `pom.xml` file is located:
 
     ```sh
-    mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\your\featurefiles"
+    mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\featurefiles"
+    ```
+
+### Gradle Runner
+
+To run Cucumber with [Gradle](https://gradle.org/):
+
+- Gradle is installed
+- The environment variable `GRADLE_HOME` is correctly configured
+- IDE is configured with latest Gradle installation
+
+Steps:
+
+1.  Create a new Gradle project or look at  [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
+2.  Add the following dependency to `build.gradle`
+
+    ```
+    dependencies {
+        testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
+    }
+    ```
+
+3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` respectively in a `gradle.cucumber` package.
+4. Add the following Gradle `cucumber` task in `build.gradle`
+    ```
+    task cucumber() {
+        dependsOn assemble, compileTestJava
+        doLast {
+            javaexec {
+                main = "cucumber.api.cli.Main"
+                classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+                args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+            }
+        }
+    }
+    ```
+4.  Run the following gradle task from the directory path where `build.gradle` file is located:
+
+    ```sh
+    gradle cucumber
     ```
 
 {{% /block %}}
@@ -127,7 +165,7 @@ You can run cucumber-js with tools like yarn.
 
 {{% block "java" %}}
 ## From a test framework
-You can run your features using a test framework.
+You can run features using a test framework.
 
 ### JUnit Runner
 
@@ -144,8 +182,8 @@ public class RunCukesTest {
 }
 ```
 
-You can run this test in the same way you run your other JUnit tests, using
-your IDE or your build tool (for example `mvn test`).
+You can run this test in the same way you run other JUnit tests, using
+an IDE or a build tool (for example `mvn test`).
 
 To use the JUnit runner you need to add the following dependencies:
 
@@ -174,7 +212,7 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/android).
 
 ### From you IDE / Third-party runners
-Finally, you can run your features from your IDE.
+Finally, you can run features from an IDE.
 
 IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from within an IDE:
 
@@ -185,7 +223,7 @@ Please refer to the documentation for the third-party runner for details about h
 {{% /block %}}
 
 ## Configuration
-You can configure how Cucumber will run your features.
+You can configure how Cucumber will run features.
 Configuration options can be passed to on the command-line.
 
 
@@ -337,5 +375,5 @@ You can also define common command-line options in a [`cucumber.yml`](/cucumber/
 {{% /block %}}
 
 {{% block "javascript" %}}
-For more information on how to configure your options, have a look at the [cucumber-js docs on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/cli.md).
+For more information on how to configure options, have a look at the [cucumber-js docs on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/cli.md).
 {{% /block %}}
