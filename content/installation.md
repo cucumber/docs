@@ -46,7 +46,7 @@ repositories {
 }
 ```
 
-You can now use cucumber's [CLI Runner](/configuration/#configuration) to execute by adding the following `cucumber` task to `build.gradle`. See [Configuration](/configuration):
+You can now use cucumber's [CLI Runner](/configuration/#configuration) to execute by adding a `cucumber` task to `build.gradle`. See [Configuration](/configuration):
 
 {{% /block %}}
 
