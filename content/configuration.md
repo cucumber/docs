@@ -99,7 +99,7 @@ To run Cucumber with [Maven](https://maven.apache.org/), make sure that:
 Steps:
 
 1.  Create a new Maven project or fork cucumber-java examples on Github
-2.  Add the following dependency to `pom.xml`
+2.  Add the following dependency to the `pom.xml`
 
     ```xml
     <dependency>
@@ -110,7 +110,7 @@ Steps:
     ```
 
 3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` folders respectively.
-4.  Run the following maven from the directory path where `pom.xml` file is located:
+4.  Run the following maven from the directory path where the `pom.xml` file is located:
 
     ```sh
     mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\featurefiles"
