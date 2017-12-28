@@ -5,7 +5,7 @@ polyglot: true
 
 {{% block "java" %}}
 
-Cucumber-JVM is published as several JAR files in the central Maven repository. Installation is simply a matter of adding dependencies to build files:
+Cucumber-JVM is published as several JAR files in the central Maven repository. Install by adding dependencies to build files:
 
 {{% note "Dependencies"%}}
 Make sure the version of cucumber dependencies is the same for all.
@@ -46,7 +46,7 @@ repositories {
 }
 ```
 
-You can use now cucumber's [CLI Runner](/configuration/#configuration) to execute by adding the following `cucumber` task to `build.gradle`. See [Configuration](/configuration):
+You can now use cucumber's [CLI Runner](/configuration/#configuration) to execute by adding the following `cucumber` task to `build.gradle`. See [Configuration](/configuration):
 
 {{% /block %}}
 

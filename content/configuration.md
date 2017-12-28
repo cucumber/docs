@@ -35,7 +35,7 @@ java cucumber.api.cli.Main
 
 {{% block "javascript" %}}
 ### CLI
-Cucumber.js includes an executable file to run the features. After installing Cucumber in project, you can run it with:
+Cucumber.js includes an executable file to run the features. After installing Cucumber in a project, you can run it with:
 
 ``` shell
 $ ./node_modules/.bin/cucumber.js
