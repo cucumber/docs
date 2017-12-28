@@ -4,11 +4,6 @@ menu:
 title: Gherkin Reference
 ---
 
-This is the general reference for all Cucumber implementations. Please refer to
-the Implementations menu for links to platform-specific documentation.
-
-# Gherkin
-
 Cucumber executes your `.feature` files, and those files contain executable specifications
 written in a language called Gherkin.
 
@@ -19,16 +14,16 @@ for automated processing and concise description of business rules.
 # Gherkin Syntax
 
 Gherkin is a line-oriented language that uses indentation
-to define structure, like Python and YAML. Line endings terminate statements (i.e. Steps).
+to define structure, like Python and YAML. Line endings terminate statements (i.e. steps).
 Either spaces or tabs may be used for indentation (but spaces are more portable). Most
-lines start with a keyword.
+lines start with a [keyword](#keywords).
 
 Comment lines are allowed anywhere in the file. They begin with zero or more spaces,
 followed by a hash sign (`#`) and some text. Comments do have to start on a new line.
 
 The parser divides the input into features, scenarios, and steps. When you run
 the feature, the trailing portion (after the keyword) of each step is matched to
-a code block, called a [Step Definition](/step-definitions/).
+a code block, called a [step definition](/step-definitions/).
 
 A Gherkin source file usually looks like this.
 
@@ -53,7 +48,9 @@ The `Feature` starts on the first line. Lines 2–4 are unparsed (free format) t
 describe the business value of this feature. The keyword `Scenario` on line 6 starts a scenario.
 Lines 7–13 are the steps for the scenario. Line 15 starts the next Scenario, and so on.
 
-In Gherkin, each line that isn't blank has to start with a Gherkin *keyword*,
+## Keywords
+
+In Gherkin, each line that isn't blank (except for the feature and scenario descriptions) has to start with a Gherkin *keyword*,
 followed by any text you like. The main keywords are:
 
 - `Feature`
@@ -63,7 +60,7 @@ followed by any text you like. The main keywords are:
 - `Scenario Outline`
 - `Examples`
 
-There are a few extra keywords as well:
+There are a few additional keywords:
 
 - `"""` (Doc Strings)
 - `|` (Data Tables)
@@ -72,7 +69,7 @@ There are a few extra keywords as well:
 
 ## Feature
 
-A `.feature` file is supposed to describe a single feature of the system, or a
+A `.feature` file describes a single feature of the system, or a
 particular aspect of a feature. It's a way to provide a high-level description
 of a software feature, and to group related scenarios.
 
@@ -84,8 +81,8 @@ The name and the description have no special meaning to Cucumber. Their purpose 
 a place for you to document important aspects of the feature, such as a brief explanation
 and a list of business rules (general acceptance criteria).
 
-In addition to a *name* and a *description*, features contain a list of [Scenarios](#scenario)
-or [Scenario Outlines](#scenario-outlines) with Examples, and an optional [Background](#background).
+In addition to a *name* and a *description*, features contain a list of [scenarios](#scenario)
+or [scenario outlines](#scenario-outlines) with Examples, and an optional [background](#background).
 
 A Scenario starts with the word **Scenario** (or the localized equivalent;
 Gherkin is localized for dozens of [spoken languages](/gherkin/spoken-languages/))
@@ -108,7 +105,7 @@ Feature: Refund item
     But the faulty microwave should be returned
 ```
 
-You can use [Tags](/tags/) to group features and scenarios together,
+You can use [tags](/tags/) to group features and scenarios together,
 independent of your file and directory structure.
 
 ## Descriptions
@@ -120,7 +117,7 @@ On the lines following a `Feature`, `Scenario`, `Scenario Outline`, or `Examples
 ## Scenario
 
 A scenario is a *concrete example* that *illustrates* a business rule. It consists of
-a list of [Steps](#steps).
+a list of [steps](#steps).
 
 You can have as many steps as you like, but we recommend you keep the number at 3-5 per scenario.
 If they become longer than that, they lose their expressive power as specification and documentation.
