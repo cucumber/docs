@@ -26,8 +26,7 @@ cucumber --require features features/authentication/authenticate_user.feature
 
 {{% block "java" %}}
 ### CLI Runner
-The Command-Line Interface Runner (CLI Runner) is an executable Java class that
-can be run from the command-line, or from any build tool (such as Maven, Gradle or Ant), or an IDE.
+The Command-Line Interface Runner (CLI Runner) is an executable Java class that can be run from the command-line, or from any build tool (such as Maven, Gradle or Ant), or an IDE.
 
 ```
 java cucumber.api.cli.Main
@@ -36,7 +35,7 @@ java cucumber.api.cli.Main
 
 {{% block "javascript" %}}
 ### CLI
-Cucumber.js includes an executable file to run the features. After installing Cucumber in  project, you can run it with:
+Cucumber.js includes an executable file to run the features. After installing Cucumber in project, you can run it with:
 
 ``` shell
 $ ./node_modules/.bin/cucumber.js
