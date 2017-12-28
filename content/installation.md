@@ -5,11 +5,15 @@ polyglot: true
 
 {{% block "java" %}}
 
-Cucumber-JVM is published as several JAR files in the central Maven repository. Installation is simply a matter of adding dependencies to your build file:
+Cucumber-JVM is published as several JAR files in the central Maven repository. Install by adding dependencies to build files:
+
+{{% note "Dependencies"%}}
+Make sure the version of cucumber dependencies is the same for all.
+{{% /note %}}
 
 # Maven
 
-Add the following dependency to your `pom.xml`:
+Add the following dependencies to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -26,6 +30,24 @@ Add the following dependency to your `pom.xml`:
     <scope>test</scope>
 </dependency>
 ```
+
+# Gradle
+
+Add the following dependencies to `build.gradle`:
+
+```
+dependencies {
+    testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
+    testCompile 'io.cucumber:cucumber-junit:{{% version "cucumberjvm" %}}'
+}
+
+repositories {
+    mavenCentral()
+}
+```
+
+You can now use cucumber's [CLI Runner](/configuration/#configuration) to execute by adding the following `cucumber` task to `build.gradle`. See [Configuration](/configuration):
+
 {{% /block %}}
 
 {{% block "ruby" %}}
