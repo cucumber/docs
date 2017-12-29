@@ -6,8 +6,6 @@ source: https://github.com/cucumber/cucumber/wiki/Custom-Formatters/
 title: Custom Formatters
 ---
 
-> TODO: fix link
-
 As Cucumber runs your Features, it calls out to any number of listener objects
 to let them know how it's progressing. These listeners are notified at various
 points throughout the run of Features.
