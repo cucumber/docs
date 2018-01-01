@@ -151,7 +151,7 @@ It is typically something that happened in the *past*.
 When Cucumber executes a `Given` step, it will configure the system to be in a well-defined state,
 such as creating and configuring objects or adding data to the test database.
 
-The purpose of `Given`'s is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` Steps).
+The purpose of `Given`'s is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` steps).
 Avoid talking about user interaction in `Given`'s. If you were creating use cases, `Given`'s would be your preconditions.
 
 It's okay to have several `Given` steps (just use `And` or `But` for number 2 and upwards to make it more readable).
@@ -187,7 +187,7 @@ The observations should also be on some kind of *output*. That is, something tha
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
-The [Step Definition](/step-definitions/) of a `Then` step should use an *assertion* to
+The [step definition](/step-definitions/) of a `Then` step should use an *assertion* to
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
@@ -255,7 +255,7 @@ Since it is repeated in every scenario, this is an indication that those steps
 are not *essential* to describe the scenarios; they are *incidental details*. You can literally move such `Given` steps to the background, by grouping them under a `Background` section.
 
 A `Background` allows you to add some context to the scenarios in the feature. It can contain one or more steps.
-It is run before *each* scenario, but after any `Before` [Hooks](/hooks/). In your feature file, put the `Background` before the first scenario.
+It is run before *each* scenario, but after any `Before` [hooks](/hooks/). In your feature file, put the `Background` before the first scenario.
 
 Example:
 
@@ -287,7 +287,7 @@ Scenario: Greg posts to a client's blog
   Then I should see "Your article was published."
 ```
 
-For a less explicit alternative to Background, check out [Tagged Hooks](/hooks/#tagged-hooks).
+For a less explicit alternative to Background, check out [tagged hooks](/hooks/#tagged-hooks).
 
 **Good practices for using Background:**
 
@@ -297,9 +297,9 @@ For example, if the user and site names don't matter to the client, use a higher
 
 - Keep your `Background` section **short**.
 
-The client needs to actually remember this stuff when reading the scenarios. If the `Background` is more than 4 lines long, consider moving some of the irrelevant details into higher-level Steps.
+The client needs to actually remember this stuff when reading the scenarios. If the `Background` is more than 4 lines long, consider moving some of the irrelevant details into higher-level steps.
 
-See [Calling Steps from Step Definitions](/implementations/ruby/calling-steps-from-step-definitions/).
+See [Calling steps from step definitions](/implementations/ruby/calling-steps-from-step-definitions/).
 
 - Make your `Background` section **vivid**.
 
@@ -352,7 +352,7 @@ Given <I'm a placeholder and I'm ok>
 
 The placeholders indicate that when the `Examples` row is run, they should be substituted with real values from the `Examples` table. If a placeholder name is the same as a column title in the `Examples` table, that is the value that will replace it.
 
-You can also use placeholders in Multiline [Step Arguments](#step-arguments).
+You can also use placeholders in [multiline step arguments](#step-arguments).
 
 **IMPORTANT:** *Your step definitions will never have to match a placeholder. They will need to match the values that will _replace_ the placeholder.*
 
