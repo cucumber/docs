@@ -70,8 +70,9 @@ There are a few additional keywords:
 - `@` (Tags)
 - `#` (Comments)
 
-
-Note: Gherkin is localized for dozens of [spoken languages](/gherkin/spoken-languages/); each has their own localized equivalent of these keywords.
+{{% note "Localization"%}}
+Gherkin is localized for dozens of [spoken languages](/gherkin/spoken-languages/); each has their own localized equivalent of these keywords.
+{{% /note %}}
 
 ## Feature
 
@@ -166,8 +167,10 @@ Examples:
 - It's okay to call into the layer "inside" the UI layer here (talking to the domain model).
 - Log in a user (this is an exception to the no-interaction recommendation; things that "happened earlier" are okay).
 
-Note to Rails users - we recommend using a [`Given` with a multiline table argument](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/manage_lorries.feature) to [set up records](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/step_definitions/lorry_steps.rb) instead of fixtures.
+{{% note "Rails users"%}}
+We recommend using a [`Given` with a multiline table argument](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/manage_lorries.feature) to [set up records](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/step_definitions/lorry_steps.rb) instead of fixtures.
 This way, you can read the Scenario and make sense out of it without having to look elsewhere (at the fixtures).
+{{% /note %}}
 
 ### When
 
