@@ -16,7 +16,7 @@ The most standard option is to run Cucumber from the command line.
 {{% block "ruby" %}}
 ### Using the Gem's `cucumber` Command
 
-The following command will run the `authenticate_user` Feature. Any Feature in a sub-directory of `features/` directory must `require` features.
+The following command will run the `authenticate_user` feature. Any feature in a sub-directory of `features/` directory must `require` features.
 
 ```
 cucumber --require features features/authentication/authenticate_user.feature
@@ -94,7 +94,7 @@ To run Cucumber with [Maven](https://maven.apache.org/), make sure that:
 
 - Maven is installed
 - The environment variable `MAVEN_HOME` is correctly configured
-- IDE is configured with latest Maven installation
+- The IDE is configured with the latest Maven installation
 
 Steps:
 
@@ -122,7 +122,7 @@ To run Cucumber with [Gradle](https://gradle.org/):
 
 - Gradle is installed
 - The environment variable `GRADLE_HOME` is correctly configured
-- IDE is configured with latest Gradle installation
+- The IDE is configured with the latest Gradle installation
 
 Steps:
 
@@ -168,21 +168,7 @@ You can run features using a test framework.
 
 ### JUnit Runner
 
-The JUnit runner uses the JUnit framework to run Cucumber. All you need is a single class with an annotation:
-
-```java
-package mypackage;
-
-import cucumber.api.junit.Cucumber;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-public class RunCukesTest {
-}
-```
-
-You can run this test in the same way you run other JUnit tests, using
-an IDE or a build tool (for example `mvn test`).
+The JUnit runner uses the JUnit framework to run Cucumber.
 
 To use the JUnit runner you need to add the following dependencies:
 
@@ -201,6 +187,33 @@ To use the JUnit runner you need to add the following dependencies:
     <scope>test</scope>
 </dependency>
 ```
+
+{{% note "Supported JUnit versions"%}}
+Cucumber-JVM currently does not yet support JUnit5 (Jupiter)
+{{% /note %}}
+
+Create an empty class that uses the Cucumber JUnit runner.
+
+```java
+package mypackage;
+
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+public class RunCukesTest {
+}
+```
+
+This will execute all scenarios in same package as the runner; by default glue code is also assumed to be in the same
+package.
+
+You can use the `@CucumberOptions` annotation to provide
+additional [configuration](#list-configuration-options) to the runner.
+
+You can run this test in the same way you run other JUnit tests, using
+an IDE or a build tool (for example `mvn test`).
+
 
 ### TestNG Runner
 
@@ -343,23 +356,32 @@ public class RunCukesTest {
 }
 ```
 
-Usually, this class will be empty. You can, however, specify certain JUnit options.
+Usually, this class will be empty. You can, however, specify several JUnit rules.
 
 {{% note "Supported JUnit annotations"%}}
-Cucumber only supports `@ClassRule`,`@BeforeClass` and `@AfterClass` JUnit annotations.
+Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotations.
+These will executed before and after all scenarios. Using these is not recommended, as it limits the portability between different runners;
+they may not execute correctly when using the commandline, [IntelliJ IDEA](https://www.jetbrains.com/help/idea/cucumber.html) or
+[Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse). Instead it is recommended to use Cucumbers `Before`
++and `After` [hooks](/hooks/).
 {{% /note %}}
+
+The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
+Listeners and Reporters can all be expected to work.
+
+For more information on JUnit, see the [JUnit web site](http://www.junit.org).
 {{% /block %}}
 
 {{% block "javascript" %}}
 Use the `cucumber-js --help` command to see which arguments can be passed to the executable file.
 {{% /block %}}
 
-You can also use [Tags](/tags/) to specify what to run, or pass [Environment Variables](/cucumber/environment-variables/) to Cucumber.
+You can also use [tags](/tags/) to specify what to run, or pass [environment variables](/cucumber/environment-variables/) to Cucumber.
 
 {{% block "java" %}}
 Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property.
 
-For example, if you are using Maven and want to run a subset of Scenarios tagged
+For example, if you are using Maven and want to run a subset of scenarios tagged
 with `@smoke`:
 
 ```
