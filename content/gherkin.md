@@ -26,7 +26,7 @@ the feature, the trailing portion (after the keyword) of each step is matched to
 a code block, called a [step definition](/step-definitions/).
 
 A Gherkin source file will usually contain a feature and several scenarios and/or scenario outlines that describe this feature.
-Fot example:
+For example:
 
 ```gherkin
 Feature: Some terse yet descriptive text of what is desired
@@ -51,8 +51,7 @@ The text after the keyword `Scenario` -but still on the same line- is also free 
 
 ## Keywords
 
-Except for the free format feature and scenario descriptions, each line that isn't blank has to start with a Gherkin *keyword*,
-followed by any text you like.
+Each line that isn't a blank line has to start with a Gherkin *keyword*, followed by any text you like. The only exceptions are the feature and scenario descriptions.
 
 The main keywords are:
 
@@ -81,7 +80,7 @@ particular aspect of a feature. It's a way to provide a high-level description
 of a software feature, and to group related scenarios.
 
 The `.feature` file starts with the keyword **Feature**, a *name* (on the same line),
-followed by an optional (but highly recommended!) free format *description* for the feature which can span multiple lines.
+followed by an optional (but highly recommended!) free format *description* of the feature which can span multiple lines.
 The free format description ends when the first scenario starts.
 
 The name and the description have no special meaning to Cucumber. Their purpose is to provide
