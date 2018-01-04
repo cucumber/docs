@@ -121,7 +121,7 @@ To create a clean build, enter `mvn clean install` at the command prompt.
 
 We specify the expected behaviour by defining features and scenarios.
 
-## Creating the Feature Directory
+# Creating the Feature Directory
 
 Features are defined in feature files, which are stored in the `src/test/resources/` directory (or a subdirectory).
 
@@ -139,7 +139,7 @@ src/test/resources - marked as test resources root,
     containing src/test/resources/features directory
 pom.xml - containing our Cucumber and JUnit dependencies
 
-## Creating a Feature
+# Creating a Feature
 
 To create a feature file:
 
@@ -159,16 +159,16 @@ Feature: Cucumber tutorial
   This feature illustrates the 10 minute tutorial for Cucumber
 ```
 
-## Creating a Scenario
+# Creating a Scenario
 
 Scenarios are added to the feature file, to define examples of the expected behaviour. These scenarios can be used to test the feature.
 Start a scenario with the `Scenario` keyword and add a brief description of the scenario. To define the scenario, you have to define all of its steps.
 
-## Defining Steps
+# Defining Steps
 
 These all have a keyword (`Given`, `When`, and `Then`) followed by a step. The step is then matched to a [step definition](/step-definitions/) which map the plain text step to programming code.
 
-### `Given`/`When`/`Then`
+# `Given`/`When`/`Then`
 
 The plain text steps are defined in the [Gherkin](/gherkin/) language.
 
@@ -232,7 +232,7 @@ public void i_get_undefined_snippets() throws Exception {
 Process finished with exit code 0
 ```
 
-### Snippets for Missing Steps
+# Snippets for Missing Steps
 
 We now have one `undefined` scenario and three `undefined` steps. Luckily, Cucumber has given us examples, or snippets, that we can use to define the steps.
 
