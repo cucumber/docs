@@ -25,7 +25,8 @@ The parser divides the input into features, scenarios, and steps. When you run
 the feature, the trailing portion (after the keyword) of each step is matched to
 a code block, called a [step definition](/step-definitions/).
 
-A Gherkin source file usually looks like this.
+A Gherkin source file will usually contain a feature and several scenarios and/or scenario outlines that describe this feature.
+For example:
 
 ```gherkin
 Feature: Some terse yet descriptive text of what is desired
@@ -44,14 +45,15 @@ Feature: Some terse yet descriptive text of what is desired
     # ...
 ```
 
-The `Feature` starts on the first line. Lines 2–4 are unparsed (free format) text, which is expected to
-describe the business value of this feature. The keyword `Scenario` on line 6 starts a scenario.
-Lines 7–13 are the steps for the scenario. Line 15 starts the next Scenario, and so on.
+The feature starts on the first line with the keyword `Feature`. The lines below are unparsed (i.e. free format) text, which you can use to
+describe this feature. The keyword `Scenario` starts a scenario, followed by the steps for the scenario. The next scenario is started by the keyword `Scenario` again.
+The text after the keyword `Scenario` -but still on the same line- is also free format text to describe your scenario.
 
 ## Keywords
 
-In Gherkin, each line that isn't blank (except for the feature and scenario descriptions) has to start with a Gherkin *keyword*,
-followed by any text you like. The main keywords are:
+Each line that isn't a blank line has to start with a Gherkin *keyword*, followed by any text you like. The only exceptions are the feature and scenario descriptions.
+
+The main keywords are:
 
 - `Feature`
 - `Scenario`
@@ -67,6 +69,10 @@ There are a few additional keywords:
 - `@` (Tags)
 - `#` (Comments)
 
+{{% note "Localization"%}}
+Gherkin is localized for dozens of [spoken languages](/gherkin/spoken-languages/); each has their own localized equivalent of these keywords.
+{{% /note %}}
+
 ## Feature
 
 A `.feature` file describes a single feature of the system, or a
@@ -74,7 +80,7 @@ particular aspect of a feature. It's a way to provide a high-level description
 of a software feature, and to group related scenarios.
 
 The `.feature` file starts with the keyword **Feature**, a *name* (on the same line),
-followed by an optional (but highly recommended) free format *description* which can span multiple lines.
+followed by an optional (but highly recommended!) free format *description* of the feature which can span multiple lines.
 The free format description ends when the first scenario starts.
 
 The name and the description have no special meaning to Cucumber. Their purpose is to provide
@@ -82,14 +88,12 @@ a place for you to document important aspects of the feature, such as a brief ex
 and a list of business rules (general acceptance criteria).
 
 In addition to a *name* and a *description*, features contain a list of [scenarios](#scenario)
-or [scenario outlines](#scenario-outlines) with Examples, and an optional [background](#background).
+or [scenario outlines](#scenario-outlines) with examples, and an optional [background](#background).
 
-A Scenario starts with the word **Scenario** (or the localized equivalent;
-Gherkin is localized for dozens of [spoken languages](/gherkin/spoken-languages/))
-on a new line.
+A Scenario starts with the word **Scenario** on a new line.
 
 Every scenario consists of a list of steps, which must start with one of the
-keywords **Given**, **When**, **Then**, **But**, or **And**. Cucumber treats them all the same, but you shouldn't.
+keywords **Given**, **When**, **Then**, **But**, or **And**. Cucumber treats them all the same, but you shouldn't!
 The different keywords help you write scenarios that are easy to read and understand.
 
 Here is an example:
@@ -127,19 +131,19 @@ As a whole, your scenarios are an *executable specification* of the system.
 
 Scenarios follow the same pattern:
 
-- Describe an initial context
-- Describe an event
-- Describe an expected outcome
+- Describe an initial context (`Given`)
+- Describe an event (`When`)
+- Describe an expected outcome (`Then`)
 
 This is done with steps.
 
 ## Steps
 
-A Step typically starts with `Given`, `When`, or `Then`.
+A step typically starts with `Given`, `When`, or `Then`.
 
-If there are multiple `Given` or `When` Steps underneath each other, you can use `And` or `But`.
-Cucumber does not differentiate between the keywords. However, we strongly recommend that you do!
-These words have been carefully selected for their purpose, and you should know what the purpose is to get into the BDD mindset.
+If there are multiple `Given` or `When` steps underneath each other, you can use `And` or `But`.
+Cucumber does not differentiate between the keywords; this means that a step definition will match regardless of the keyword used.
+However, we strongly recommend that you do! These words have been carefully selected for their purpose, and you should know what the purpose is to get into the BDD mindset.
 
 Robert C. Martin has written a [great post](https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd) about BDD's Given-When-Then concept where he thinks of them as a finite state machine.
 
@@ -162,8 +166,10 @@ Examples:
 - It's okay to call into the layer "inside" the UI layer here (talking to the domain model).
 - Log in a user (this is an exception to the no-interaction recommendation; things that "happened earlier" are okay).
 
-And for all the Rails users out there - we recommend using a [`Given` with a multiline table argument](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/manage_lorries.feature) to [set up records](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/step_definitions/lorry_steps.rb) instead of fixtures.
+{{% note "Rails users"%}}
+We recommend using a [`Given` with a multiline table argument](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/manage_lorries.feature) to [set up records](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/step_definitions/lorry_steps.rb) instead of fixtures.
 This way, you can read the Scenario and make sense out of it without having to look elsewhere (at the fixtures).
+{{% /note %}}
 
 ### When
 
@@ -175,7 +181,7 @@ It's strongly recommended you only have a single `When` step per Scenario. If yo
 
 Examples:
 
-- Interact with a web page (Webrat/Watir/Selenium *interaction* etc should mostly go into `When` steps).
+- Interact with a web page (Selenium/Webrat/Watir *interaction* etc should mostly go into `When` steps).
 - Interact with some other user interface element.
 - Developing a library? Kicking off some kind of action that has an observable effect somewhere else.
 
@@ -196,7 +202,7 @@ Examples:
 - Verify that something related to the `Given`+`When` is (or is not) in the output
 - Check that some external system has received the expected message (was an email with specific content sent?)
 
-While it might be tempting to implement `Then` steps to just look in the database - resist the temptation. You should only verify outcome that is observable for the user (or external system), and databases usually are not.
+While it might be tempting to implement `Then` steps to just look in the database - resist the temptation! You should only verify outcome that is observable for the user (or external system), and databases usually are not.
 
 # `And`, `But`
 
@@ -239,7 +245,7 @@ Cucumber executes each step in a scenario, one at a time, in the sequence you’
 When Cucumber tries to execute a step, it looks for a matching step definition to execute.
 
 Keywords are not taken into account when looking for a match. This means you cannot have a
-`Given`, `When`, `Then`, `And` or `But` Step with the same text as another Step.
+`Given`, `When`, `Then`, `And` or `But` step with the same text as another Step.
 
 Cucumber considers the following steps duplicates:
 ```Gherkin
@@ -287,7 +293,7 @@ Scenario: Greg posts to a client's blog
   Then I should see "Your article was published."
 ```
 
-For a less explicit alternative to Background, check out [tagged hooks](/hooks/#tagged-hooks).
+For a less explicit alternative to `Background`, check out [tagged hooks](/hooks/#tagged-hooks).
 
 **Good practices for using Background:**
 
@@ -326,7 +332,7 @@ Scenario: eat 5 out of 20
   Then I should have 15 cucumbers
 ```
 
-Scenario Outlines allow us to more concisely express these examples through the use of a template with placeholders, using `Scenario Outline`, `Examples` with tables, and `< >`-delimited parameters:
+Scenario outlines allow us to more concisely express these examples through the use of a template with placeholders, using `Scenario Outline`, `Examples` with tables, and `< >`-delimited parameters:
 
 ```gherkin
 Scenario Outline: eating
@@ -342,7 +348,7 @@ Scenario Outline: eating
 
 The `Scenario Outline` steps provide a template which is never directly run. A `Scenario Outline` is run once for each row in the `Examples` section beneath it (not counting the first row).
 
-The way this works is via placeholders. Placeholders must be contained within `< >` in the Scenario Outline's Steps.
+The way this works is via placeholders. Placeholders must be contained within `< >` in the Scenario outline's steps.
 
 For example:
 
@@ -422,11 +428,11 @@ Scenario Outline: Password validation
 # Step Arguments
 
 In some cases you might want to pass more data to a step than fits on a single line.
-For this purpose Gherkin has Doc Strings and Data Tables:
+For this purpose Gherkin has `Doc Strings` and `Data Tables`:
 
 ## Doc Strings
 
-Doc Strings are handy for passing a larger piece of text to a step definition. The syntax is inspired from Python's Docstring syntax.
+`Doc Strings` are handy for passing a larger piece of text to a step definition. The syntax is inspired from Python's Docstring syntax.
 
 The text should be offset by delimiters consisting of three double-quote marks on lines of their own:
 ```gherkin
@@ -441,11 +447,11 @@ Given a blog post named "Random" with Markdown body
 In your step definition, there’s no need to find this text and match it in your pattern. It will automatically be passed as the last parameter in the step definition.
 
 Indentation of the opening '"""' is unimportant, although common practice is two spaces in from the enclosing step.
-The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be de-indented according to the opening """. Indentation beyond the column of the opening """ will therefore be preserved.
+The indentation inside the triple quotes, however, is significant. Each line of the `Doc String` will be de-indented according to the opening """. Indentation beyond the column of the opening """ will therefore be preserved.
 
 ## Data Tables
 
-Data Tables are handy for passing a list of values to a step definition:
+`Data Tables` are handy for passing a list of values to a step definition:
 
 ```gherkin
 Given the following users exist:
@@ -454,6 +460,6 @@ Given the following users exist:
   | Julien | julien@cucumber.io | @jbpros         |
   | Matt   | matt@cucumber.io   | @mattwynne      |
 ```
-Just like Doc Strings, Data Tables will be passed to the step definition as the last argument.
+Just like `Doc Strings`, `Data Tables` will be passed to the step definition as the last argument.
 
 The type of this argument will be DataTable. See the API docs for more details about how to access the rows and cells.
