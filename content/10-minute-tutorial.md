@@ -10,12 +10,12 @@ To get started with Cucumber in Java, you will need the following:
 
 - [Maven](https://maven.apache.org/index.html)
 
-- [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm)
-
 - An IDE editor, for example [IntelliJ IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
   introduction)
 
-- A Cucumber plugin for your IDE, for example [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java) to go with IntelliJ
+- A Cucumber plugin for your IDE, for example [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java) to go with IntelliJ IDEA
+
+- [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) (which we will add as a dependency to our project)
 
 # Create a Maven project
 
@@ -23,11 +23,11 @@ To create a new Maven project in IntelliJ, click the menu option **File > New > 
 
 In the **New project** dialog box, select "Maven" on the left (if it isn't already selected).
 
-Also, make sure that the Project SDK is selected (for instance, Java 1.8) and click **Next**.
+Make sure that the Project SDK is selected (for instance, Java 1.8) and click **Next**.
 
-Specify a GroupId and ArtifactId for your project and click **Next**.
+Specify a "GroupId" and "ArtifactId" for your project and click **Next**.
 
-Specify a Project name and Project location for your project (if needed) and click **Finish**.
+Specify a "Project name" and "Project location" for your project (if needed) and click **Finish**.
 
 You should now have a project with the following structure:
 
@@ -40,6 +40,8 @@ pom.xml
 
 Add Cucumber to your project by adding a dependency to your `pom.xml`:
 
+
+
 ```xml
 <dependencies>
     <dependency>
@@ -51,8 +53,12 @@ Add Cucumber to your project by adding a dependency to your `pom.xml`:
 </dependencies>
 ```
 
-{{% note "POM"%}}
+{{% note "Java 8 lambda syntax"%}}
 If you prefer lambda syntax, use the java8 dependency.
+{{% /note %}}
+
+{{% note "POM"%}}
+The Project Object Model (POM) file is an XML representation of a Maven project. It defines the project settings, dependencies, and plug-ins.
 {{% /note %}}
 
 In addition, you need the following dependencies to run Cucumber with JUnit:
@@ -75,13 +81,9 @@ In addition, you need the following dependencies to run Cucumber with JUnit:
 </dependencies>
 ```
 
-If you have IntelliJ configured to autoimport dependencies, it will now import them for you.
-Otherwise, you can manually import them, by opening the "Maven Projects" menu on the right and clicking the "Reimport all Maven Projects" icon on the top left of that menu.
+If you have IntelliJ configured to autoimport dependencies, it will automatically import them for you.
+Otherwise, you can manually import them by opening the "**aven Projects** menu on the right and clicking the "Reimport all Maven Projects" icon on the top left of that menu.
 To check if your dependencies have been downloaded, you can open the External Libraries in the left Project menu in IntelliJ.
-
-{{% note "POM"%}}
-The Project Object Model (POM) file is an XML representation of a Maven project. It defines the project settings, dependencies, and plug-ins.
-{{% /note %}}
 
 {{% note "JUnit 5"%}}
 JUnit 5 is not yet supported with Cucumber.
@@ -89,7 +91,7 @@ JUnit 5 is not yet supported with Cucumber.
 
 If you prefer to use Gradle, have a look at the [installation with Gradle](/installation/#gradle).
 
-To make sure everything works correctly together, open a command prompt and navigate to your project directory (the one containing the pom.xml file) and enter `mvn clean test`.
+To make sure everything works together correctly, open a command prompt and navigate to your project directory (the one containing the pom.xml file) and enter `mvn clean test`.
 
 You should see something like the following:
 ```
@@ -112,10 +114,6 @@ You should see something like the following:
 ```
 
 Your project builds correctly, but nothing can is tested yet as you have not specified any behaviour to test against.
-
-{{% note "Creating a Clean Build"%}}
-To create a clean build, enter `mvn clean install` at the command prompt.
-{{% /note %}}
 
 # Specifying Expected Behaviour
 
@@ -147,16 +145,16 @@ To create a feature file:
 
 2. Select **New > File**
 
-3. Enter a name for your feature file, and use the `.feature` extension. For instance, `tutorial.feature`.
+3. Enter a name for your feature file, and use the `.feature` extension. For instance, `belly.feature`.
 
 Files in this folder with an extension of `.feature` are automatically recognised as feature files. Each feature file describes a single feature, or part of a feature.
 
-Open the file (double click it) and add the feature description, starting with the `Feature` keyword and a free format description.
+Open the file (double click it) and add the feature description, starting with the `Feature` keyword and an optional description.
 
 For instance:
 ```gherkin
-Feature: Cucumber tutorial
-  This feature illustrates the 10 minute tutorial for Cucumber
+Feature: Belly
+  Optional description of the feature
 ```
 
 # Creating a Scenario
@@ -184,46 +182,44 @@ The `Then` keyword precedes text defining the result of the action on the contex
 
 For instance:
 ```gherkin
-  Scenario: First scenario
-    Given a test project
-    When I run the test
-    Then I get undefined snippets
+  Scenario: a few cukes
+    Given I have 42 cukes in my belly
+    When I wait 1 hour
+    Then my belly should growl
 ```
 
 # Running the test
 
 You can run the test by right clicking the feature file, and selecting **Run `Feature: tutorial`** from the context menu.
 
-{{% note "JUnit 5"%}}
+{{% note "Formatter error"%}}
 If you are using Cucumber v2.0.0 or higher, when running the test for the first time you might get an error message that mentions `CucumberJvmSMFormatterUtil`.
 If so, open your Run Configurations and remove the following argument `--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm2SMFormatter`.
 {{% /note %}}
 
-You should get the following result:
+You should get something like the following result:
 ```
-UUU
-
 1 Scenarios (1 undefined)
 3 Steps (3 undefined)
-0m0.016s
+0m0.015s
 
 
 You can implement missing steps with the snippets below:
 
-@Given("^a test project$")
-public void a_test_project() throws Exception {
+@Given("^I have (\\d+) cukes in my belly$")
+public void i_have_cukes_in_my_belly(int arg1) throws Exception {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
 
-@When("^I run the test$")
-public void i_run_the_test() throws Exception {
+@When("^I wait (\\d+) hour$")
+public void i_wait_hour(int arg1) throws Exception {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
 
-@Then("^I get undefined snippets$")
-public void i_get_undefined_snippets() throws Exception {
+@Then("^my belly should growl$")
+public void my_belly_should_growl() throws Exception {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
@@ -247,12 +243,37 @@ Now, when you run the test, your step definitions will be found and run.
 If this does not work, select **Run > Edit Configurations**, select **Cucumber java** from the **Defaults** drop-down, and add the project name to the **Glue** field on the **Configuration** tab.
 {{% /note %}}
 
-However, since we've defined a `PendingException`, Cucumber will skip the other steps.
+
+Your result will include something like the following:
+```
+cucumber.api.PendingException: TODO: implement me
+	at skeleton.Stepdefs.i_have_cukes_in_my_belly(Stepdefs.java:10)
+	at ✽.I have 42 cukes in my belly(/Users/maritvandijk/IdeaProjects/cucumber-java-skeleton/src/test/resources/skeleton/belly.feature:4)
+
+```
+
+The reason for this is that we haven't actually implemented this step; it throws a PendingException telling you to implement the step.
 We will need to implement all steps to actually do something.
+
+# Implement the steps
+
+The step can be implemented like this:
+```java
+    @Given("^I have (\\d+) cukes in my belly$")
+    public void I_have_cukes_in_my_belly(int cukes) throws Throwable {
+        Belly belly = new Belly();
+        belly.eat(cukes);
+    }
+```
+
+To make this step compile we also need to implement a class Belly with a method eat().
+Implement the class in a package inside your src/main/java folder.
+
+Now you run the test and implement just enough code to make the step pass. ONce it does, move on to the next step and repeat.
 
 # Result
 
-Once you have implemented your step definitions and the test passes, the summary of your results should look something like this:
+Once you have implemented all your step definitions (and the expected behaviour in your application) and the test passes, the summary of your results should look something like this:
 
 ```
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.656 sec
