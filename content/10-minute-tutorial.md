@@ -6,9 +6,9 @@ polyglot: true
 
 To get started with Cucumber in Java, you will need the following:
 
-- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) - Java 8 (Java 9 is not yet supported by Cucumber)
 
-- [Maven](https://maven.apache.org/index.html)
+- [Maven](https://maven.apache.org/index.html) - Version 3.3.1 or higher
 
 - An IDE editor, for example [IntelliJ IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
   introduction)
