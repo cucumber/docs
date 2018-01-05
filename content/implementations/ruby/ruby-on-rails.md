@@ -163,8 +163,8 @@ default: --format pretty
 html: --format html --out features.html
 ```
 
-Remember that you need `AUTOFEATURE=true` for autospec to include Cucumber Features. See [Running Features](/running/) 
-and [Autotest Integration](/wiki/autotest-integration) for more info.
+Remember that you need `AUTOFEATURE=true` for autospec to include Cucumber features. See [Running Cucumber](/running/) 
+and [autotest integration](/wiki/autotest-integration) for more info.
 
 For autospec, change `autotest` in the above block to `autospec`:
 

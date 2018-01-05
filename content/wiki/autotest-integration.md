@@ -111,7 +111,7 @@ It's useful to use the Pretty formatter in autotest to see exactly what's going 
 
 If you define an `autotest-all` profile, autotest will use this profile instead when running your Features. You may want to use the Progress formatter for `autotest-all`.
 
-For more information on defining profiles, see [Running Features](/running/).
+For more information on defining profiles, see [Running Cucumber](/running/).
 
 You can also customize a number of elements of autotest itself by adding a `.autotest` file to the root of your project (and/or your home directory, if desired). Most of these features are more useful for customizing the way unit tests run. (For instance, you can customize the mapping between code files and the tests which test them.)
 
