@@ -8,11 +8,11 @@ There are several ways to run features with Cucumber.
 
 It is possible to [configure](/configuration) how Cucumber should run features.
 
-## From the command line
+# From the command line
 The most standard option is to run Cucumber from the command line.
 
 {{% block "ruby" %}}
-### Using the Gem's `cucumber` Command
+## Using the Gem's `cucumber` Command
 
 The following command will run the `authenticate_user` feature. Any feature in a sub-directory of `features/` directory must `require` features.
 
@@ -23,7 +23,7 @@ cucumber --require features features/authentication/authenticate_user.feature
 {{% /block %}}
 
 {{% block "java" %}}
-### CLI Runner
+## CLI Runner
 The Command-Line Interface Runner (CLI Runner) is an executable Java class that can be run from the command-line, or from any build tool (such as Maven, Gradle or Ant), or an IDE.
 
 ```
@@ -32,7 +32,7 @@ java cucumber.api.cli.Main
 {{% /block %}}
 
 {{% block "javascript" %}}
-### CLI
+## CLI
 Cucumber.js includes an executable file to run the features. After installing Cucumber in a project, you can run it with:
 
 ``` shell
@@ -54,11 +54,11 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 {{% /block %}}
 
 {{% block "java" %}}
-## From a test framework
+# From a test framework
 You can run features using a test framework. This will allow you to execute Cucumber at the same time as you execute 
 your tests. It simplifies integration with your continuous integration build.
 
-### JUnit Runner
+## JUnit Runner
 
 The JUnit runner uses the JUnit framework to run Cucumber.
 
@@ -101,21 +101,21 @@ This will execute all scenarios in same package as the runner; by default glue c
 package.
 
 You can use the `@CucumberOptions` annotation to provide
-additional [configuration](#list-configuration-options) to the runner.
+additional [configuration](/configuration/#list-configuration-options) to the runner.
 
 You can run this test in the same way you run other JUnit tests, using
 an IDE or a build tool (for example `mvn test`).
 
 
-### TestNG Runner
+## TestNG Runner
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng)
 
-### Android Runner
+## Android Runner
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/android).
 
-### From you IDE / Third-party runners
+## From you IDE / Third-party runners
 Finally, you can run features from an IDE.
 
 IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from within an IDE:
@@ -126,11 +126,11 @@ IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from 
 Please refer to the documentation for the third-party runner for details about how to pass configuration options to Cucumber.
 {{% /block %}}
 
-## From a build tool
+# From a build tool
 You can also run features using a build tool.
 
 {{% block "ruby" %}}
-### Using Rake
+## Using Rake
 
 From the command line:
 
@@ -153,13 +153,13 @@ If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), this tas
 
 For more information, please see the [detailed page about using `rake`.](/implementations/ruby/rake/)
 
-### Using TextMate
+## Using TextMate
 
 See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) documentation.
 {{% /block %}}
 
 {{% block "java" %}}
-### Maven Runner
+## Maven Runner
 
 To run Cucumber with [Maven](https://maven.apache.org/), make sure that:
 
@@ -187,7 +187,7 @@ Steps:
     mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\featurefiles"
     ```
 
-### Gradle Runner
+## Gradle Runner
 
 To run Cucumber with [Gradle](https://gradle.org/):
 
@@ -229,6 +229,6 @@ Steps:
 {{% /block %}}
 
 {{% block "javascript" %}}
-### Javascript build tools
+## Javascript build tools
 You can run cucumber-js with tools like yarn.
 {{% /block %}}

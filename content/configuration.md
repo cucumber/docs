@@ -5,8 +5,10 @@ polyglot: true
 ---
 
 You can configure how Cucumber will run features.
-Configuration options can be passed to on the command-line.
 
+# Command-line
+
+Configuration options can be passed to on the command-line.
 
 {{% block "ruby" %}}
 For example:
@@ -107,7 +109,7 @@ Feature path examples:
 ```
 
 
-The [JUnit Runner](#junit-runner) and [Android Runner](#android-runner) can also pick
+The [JUnit Runner](/running/#junit-runner) and [Android Runner](/running/#android-runner) can also pick
 up configuration options defined via the `@CucumberOptions` annotation.
 
 For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
