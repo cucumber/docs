@@ -34,7 +34,7 @@ java cucumber.api.cli.Main --version
 {{% /block %}}
 
 
-### List configuration options
+## List configuration options
 You can list the options available for the Cucumber version you are using.
 
 {{% block "ruby" %}}
