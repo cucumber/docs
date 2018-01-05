@@ -55,6 +55,79 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 {{% /block %}}
 
+{{% block "java" %}}
+## From a test framework
+You can run features using a test framework. This will allow you to execute Cucumber at the same time as you execute 
+your tests. It simplifies integration with your continuous integration build.
+
+### JUnit Runner
+
+The JUnit runner uses the JUnit framework to run Cucumber.
+
+To use the JUnit runner you need to add the following dependencies:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>{{% version "cucumberjvm" %}}</version>
+    <scope>test</scope>
+</dependency>
+
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+```
+
+{{% note "Supported JUnit versions"%}}
+Cucumber-JVM currently does not yet support JUnit5 (Jupiter)
+{{% /note %}}
+
+Create an empty class that uses the Cucumber JUnit runner.
+
+```java
+package mypackage;
+
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+public class RunCukesTest {
+}
+```
+
+This will execute all scenarios in same package as the runner; by default glue code is also assumed to be in the same
+package.
+
+You can use the `@CucumberOptions` annotation to provide
+additional [configuration](#list-configuration-options) to the runner.
+
+You can run this test in the same way you run other JUnit tests, using
+an IDE or a build tool (for example `mvn test`).
+
+
+### TestNG Runner
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng)
+
+### Android Runner
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/android).
+
+### From you IDE / Third-party runners
+Finally, you can run features from an IDE.
+
+IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from within an IDE:
+
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
+- [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
+
+Please refer to the documentation for the third-party runner for details about how to pass configuration options to Cucumber.
+{{% /block %}}
+
 ## From a build tool
 You can also run features using a build tool.
 
@@ -160,78 +233,6 @@ Steps:
 {{% block "javascript" %}}
 ### Javascript build tools
 You can run cucumber-js with tools like yarn.
-{{% /block %}}
-
-{{% block "java" %}}
-## From a test framework
-You can run features using a test framework.
-
-### JUnit Runner
-
-The JUnit runner uses the JUnit framework to run Cucumber.
-
-To use the JUnit runner you need to add the following dependencies:
-
-```xml
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-junit</artifactId>
-    <version>{{% version "cucumberjvm" %}}</version>
-    <scope>test</scope>
-</dependency>
-
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.12</version>
-    <scope>test</scope>
-</dependency>
-```
-
-{{% note "Supported JUnit versions"%}}
-Cucumber-JVM currently does not yet support JUnit5 (Jupiter)
-{{% /note %}}
-
-Create an empty class that uses the Cucumber JUnit runner.
-
-```java
-package mypackage;
-
-import cucumber.api.junit.Cucumber;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-public class RunCukesTest {
-}
-```
-
-This will execute all scenarios in same package as the runner; by default glue code is also assumed to be in the same
-package.
-
-You can use the `@CucumberOptions` annotation to provide
-additional [configuration](#list-configuration-options) to the runner.
-
-You can run this test in the same way you run other JUnit tests, using
-an IDE or a build tool (for example `mvn test`).
-
-
-### TestNG Runner
-
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng)
-
-### Android Runner
-
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/android).
-
-### From you IDE / Third-party runners
-Finally, you can run features from an IDE.
-
-IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from within an IDE:
-
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
-- [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
-
-Please refer to the documentation for the third-party runner for details about how to pass configuration options to Cucumber.
 {{% /block %}}
 
 ## Configuration
