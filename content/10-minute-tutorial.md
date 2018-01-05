@@ -60,14 +60,6 @@ Add Cucumber to your project by adding a dependency to your `pom.xml`:
 </dependencies>
 ```
 
-{{% note "POM"%}}
-The Project Object Model (POM) file is an XML representation of a Maven project. It defines the project settings, dependencies, and plug-ins.
-{{% /note %}}
-
-{{% note "Java 8 lambda syntax"%}}
-If you prefer lambda syntax, use the java8 dependency.
-{{% /note %}}
-
 In addition, you need the following dependencies to run Cucumber with JUnit:
 ```xml
 <dependencies>
@@ -91,10 +83,6 @@ In addition, you need the following dependencies to run Cucumber with JUnit:
 If you have IntelliJ configured to autoimport dependencies, it will automatically import them for you.
 Otherwise, you can manually import them by opening the "**aven Projects** menu on the right and clicking the "Reimport all Maven Projects" icon on the top left of that menu.
 To check if your dependencies have been downloaded, you can open the External Libraries in the left Project menu in IntelliJ.
-
-{{% note "JUnit 5"%}}
-JUnit 5 is not yet supported with Cucumber.
-{{% /note %}}
 
 If you prefer to use Gradle, have a look at the [installation with Gradle](/installation/#gradle).
 
