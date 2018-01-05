@@ -17,30 +17,37 @@ To get started with Cucumber in Java, you will need the following:
 
 - [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) (which we will add as a dependency to our project)
 
-# Create a Maven project
+- [JUnit 4](http://junit.org/junit4/) (which we will add as a dependency to our project)
+
+# Setting up the project
+
+First, we need to set up the project so we can use Cucumber.
+
+## Create a Maven project
 
 To create a new Maven project in IntelliJ, click the menu option **File > New > Project**.
 
-In the **New project** dialog box, select "Maven" on the left (if it isn't already selected).
+In the **New project** dialog box, select **Maven** on the left (if it isn't already selected).
 
 Make sure that the Project SDK is selected (for instance, Java 1.8) and click **Next**.
 
-Specify a "GroupId" and "ArtifactId" for your project and click **Next**.
+Specify a **GroupId** and **ArtifactId** for your project and click **Next**.
 
-Specify a "Project name" and "Project location" for your project (if needed) and click **Finish**.
+Specify a **Project name** and **Project location** for your project (if needed) and click **Finish**.
 
 You should now have a project with the following structure:
 
 src/main/java - marked as sources root
+
 src/main/resources - marked as resources root
+
 src/test/java - marked as test sources root
+
 pom.xml
 
-# Add Cucumber to your project
+## Add Cucumber to your project
 
 Add Cucumber to your project by adding a dependency to your `pom.xml`:
-
-
 
 ```xml
 <dependencies>
@@ -53,12 +60,12 @@ Add Cucumber to your project by adding a dependency to your `pom.xml`:
 </dependencies>
 ```
 
-{{% note "Java 8 lambda syntax"%}}
-If you prefer lambda syntax, use the java8 dependency.
-{{% /note %}}
-
 {{% note "POM"%}}
 The Project Object Model (POM) file is an XML representation of a Maven project. It defines the project settings, dependencies, and plug-ins.
+{{% /note %}}
+
+{{% note "Java 8 lambda syntax"%}}
+If you prefer lambda syntax, use the java8 dependency.
 {{% /note %}}
 
 In addition, you need the following dependencies to run Cucumber with JUnit:
@@ -113,13 +120,13 @@ You should see something like the following:
 
 ```
 
-Your project builds correctly, but nothing can is tested yet as you have not specified any behaviour to test against.
+Your project builds correctly, but nothing is tested yet as you have not specified any behaviour to test against.
 
 # Specifying Expected Behaviour
 
 We specify the expected behaviour by defining features and scenarios.
 
-# Creating the Feature Directory
+## Creating the Feature Directory
 
 Features are defined in feature files, which are stored in the `src/test/resources/` directory (or a subdirectory).
 
@@ -127,21 +134,26 @@ We need to create this directory, as it was not created for us.
 In IntelliJ, right click on the Test folder, select **New > Directory** and name this directory `resources`.
 Right click the folder and select **Mark directory as > Test Resources Root**.
 
-You can add subdirectories as needed. For instance, create a `src/test/resources/feature` folder.
+You can add subdirectories as needed. Create a subdirectory for your project in `src/test/resources/`
 
 Our project structure is now as follows:
+
 src/main/java - marked as sources root
+
 src/main/resources - marked as resources root
+
 src/test/java - marked as test sources root
+
 src/test/resources - marked as test resources root,
-    containing src/test/resources/features directory
+    containing src/test/resources/<project> directory
+
 pom.xml - containing our Cucumber and JUnit dependencies
 
-# Creating a Feature
+## Creating a Feature
 
 To create a feature file:
 
-1. Open the project in your IDE (if needed) and right-click on the `src/test/resources/feature` folder.
+1. Open the project in your IDE (if needed) and right-click on the `src/test/resources/<project>` folder.
 
 2. Select **New > File**
 
@@ -157,16 +169,14 @@ Feature: Belly
   Optional description of the feature
 ```
 
-# Creating a Scenario
+## Creating a Scenario
 
 Scenarios are added to the feature file, to define examples of the expected behaviour. These scenarios can be used to test the feature.
 Start a scenario with the `Scenario` keyword and add a brief description of the scenario. To define the scenario, you have to define all of its steps.
 
-# Defining Steps
+## Defining Steps
 
 These all have a keyword (`Given`, `When`, and `Then`) followed by a step. The step is then matched to a [step definition](/step-definitions/) which map the plain text step to programming code.
-
-# `Given`/`When`/`Then`
 
 The plain text steps are defined in the [Gherkin](/gherkin/) language.
 
@@ -190,11 +200,11 @@ For instance:
 
 # Running the test
 
-You can run the test by right clicking the feature file, and selecting **Run `Feature: tutorial`** from the context menu.
+You can run the test by right clicking the feature file, and selecting **Run 'Feature: tutorial'** from the context menu.
 
 {{% note "Formatter error"%}}
 If you are using Cucumber v2.0.0 or higher, when running the test for the first time you might get an error message that mentions `CucumberJvmSMFormatterUtil`.
-If so, open your Run Configurations and remove the following argument `--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm2SMFormatter`.
+If so, open your **Run Configurations** and remove the following argument `--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm2SMFormatter`.
 {{% /note %}}
 
 You should get something like the following result:
@@ -228,7 +238,7 @@ public void my_belly_should_growl() throws Exception {
 Process finished with exit code 0
 ```
 
-# Snippets for Missing Steps
+## Snippets for Missing Steps
 
 We now have one `undefined` scenario and three `undefined` steps. Luckily, Cucumber has given us examples, or snippets, that we can use to define the steps.
 
@@ -252,10 +262,10 @@ cucumber.api.PendingException: TODO: implement me
 
 ```
 
-The reason for this is that we haven't actually implemented this step; it throws a PendingException telling you to implement the step.
+The reason for this is that we haven't actually implemented this step; it throws a `PendingException` telling you to implement the step.
 We will need to implement all steps to actually do something.
 
-# Implement the steps
+## Implement the steps
 
 The step can be implemented like this:
 ```java
@@ -269,9 +279,9 @@ The step can be implemented like this:
 To make this step compile we also need to implement a class Belly with a method eat().
 Implement the class in a package inside your src/main/java folder.
 
-Now you run the test and implement just enough code to make the step pass. ONce it does, move on to the next step and repeat.
+Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat.
 
-# Result
+## Result
 
 Once you have implemented all your step definitions (and the expected behaviour in your application) and the test passes, the summary of your results should look something like this:
 
