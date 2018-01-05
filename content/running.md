@@ -115,7 +115,7 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/android).
 
-## From you IDE / Third-party runners
+## IDE / Third-party runners
 Finally, you can run features from an IDE.
 
 IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from within an IDE:
