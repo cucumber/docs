@@ -27,24 +27,29 @@ pygmentsUseClasses = true
     name = "---"
 [[menu.documentation]]
     weight = 5
+    name = "Running"
+    identifier = "Running Cucumber"
+    url = "/running/"
+[[menu.documentation]]
+    weight = 6
     name = "Configuration"
     identifier = "Tweaking Cucumber's behaviour"
     url = "/configuration/"
 [[menu.documentation]]
-    weight = 6
+    weight = 7
     name = "---"
 [[menu.documentation]]
-    weight = 7
+    weight = 8
     name = "Step Definitions"
     identifier = "Connecting Gherkin to code"
     url = "/step-definitions/"
 [[menu.documentation]]
-    weight = 8
+    weight = 9
     name = "Hooks"
     identifier = "Setup and teardown"
     url = "/hooks/"
 [[menu.documentation]]
-    weight = 9
+    weight = 10
     name = "Tags"
     identifier = "Grouping Scenarios"
     url = "/tags/"
