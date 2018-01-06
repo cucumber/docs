@@ -25,15 +25,17 @@ First, we need to set up the project so we can use Cucumber.
 
 ## Create a Maven project
 
-To create a new Maven project in IntelliJ, click the menu option **File > New > Project**.
+To create a new Maven project in IntelliJ:
 
-In the **New project** dialog box, select **Maven** on the left (if it isn't already selected).
+1. Click the menu option **File > New > Project**
 
-Make sure that the Project SDK is selected (for instance, Java 1.8) and click **Next**.
+2. In the **New project** dialog box, select **Maven** on the left (if it isn't already selected)
 
-Specify a **GroupId** and **ArtifactId** for your project and click **Next**.
+3. Make sure that the Project SDK is selected (for instance, Java 1.8) and click **Next**
 
-Specify a **Project name** and **Project location** for your project (if needed) and click **Finish**.
+4. Specify a **GroupId** and **ArtifactId** for your project and click **Next**
+
+5. Specify a **Project name** and **Project location** for your project (if needed) and click **Finish**
 
 You should now have a project with the following structure:
 
@@ -120,11 +122,13 @@ We specify the expected behaviour by defining features and scenarios.
 
 Features are defined in feature files, which are stored in the `src/test/resources/` directory (or a subdirectory).
 
-We need to create this directory, as it was not created for us.
-In IntelliJ, right click on the Test folder, select **New > Directory** and name this directory `resources`.
-Right click the folder and select **Mark directory as > Test Resources Root**.
+We need to create this directory, as it was not created for us. In IntelliJ:
 
-You can add subdirectories as needed. Create a subdirectory for your project in `src/test/resources/`
+1. Right click on the Test folder, select **New > Directory** and name this directory `resources`.
+
+2. Right click the folder and select **Mark directory as > Test Resources Root**.
+
+3. You can add subdirectories as needed. Create a subdirectory for your project in `src/test/resources/`
 
 Our project structure is now as follows:
 
@@ -169,17 +173,15 @@ Start a scenario with the `Scenario` keyword and add a brief description of the 
 
 These all have a keyword (`Given`, `When`, and `Then`) followed by a step. The step is then matched to a [step definition](/step-definitions/) which map the plain text step to programming code.
 
-The plain text steps are defined in the [Gherkin](/gherkin/) language.
-
-Gherkin allows developers and business stakeholders to describe and share the expected behaviour of the application. It should not describe the implementation.
+The plain text steps are defined in the [Gherkin](/gherkin/) language. Gherkin allows developers and business stakeholders to describe and share the expected behaviour of the application. It should not describe the implementation.
 
 The feature file contains the Gherkin source.
 
-The `Given` keyword precedes text defining the context; the known state of the system (or precondition).
+- The `Given` keyword precedes text defining the context; the known state of the system (or precondition).
 
-The `When` keyword precedes text defining an action.
+- The `When` keyword precedes text defining an action.
 
-The `Then` keyword precedes text defining the result of the action on the context (or expected result).
+- The `Then` keyword precedes text defining the result of the action on the context (or expected result).
 
 For instance:
 ```gherkin
@@ -191,7 +193,11 @@ For instance:
 
 # Running the test
 
-You can run the test by right clicking the feature file, and selecting **Run 'Feature: tutorial'** from the context menu.
+You can run the test from IntelliJ:
+
+1. Right click the feature file
+
+2. Select **Run 'Feature: tutorial'** from the context menu.
 
 {{% note "Formatter error"%}}
 If you are using Cucumber v2.0.0 or higher, when running the test for the first time you might get an error message that mentions `CucumberJvmSMFormatterUtil`.
@@ -233,17 +239,25 @@ Process finished with exit code 0
 
 We now have one `undefined` scenario and three `undefined` steps. Luckily, Cucumber has given us examples, or snippets, that we can use to define the steps.
 
-In your IDE, navigate to the `src/test/java/<project>` folder and right-click to display the context menu. Select **New > Java Class**. Give the class a name and paste in the snippets.
+To add them to a Java class in IntelliJ:
 
-Your IDE will not recognise those symbols, so we'll need to add `import` statements.
-In IntelliJ, put your cursor on the `@Given` symbol and press **ALT** + **ENTER**, then select **Import class**. Do the same for the other symbols (underlined in red).
+1. Navigate to the `src/test/java/<project>` folder and right-click it to display the context menu
+
+2. Select **New > Java Class** and give the class a name (for instance, `StepDefinition.java`)
+
+3. Paste in the snippets
+
+IntelliJ will not automatically recognise those symbols (like `@Given`, `@When`, `@Then`), so we'll need to add `import` statements. In IntelliJ:
+
+4. Put your cursor on the `@Given` symbol and press **ALT** + **ENTER**, then select **Import class**.
+
+5. Do the same for the other symbols (underlined in red).
 
 Now, when you run the test, your step definitions will be found and run.
 
 {{% note "Run configurations"%}}
 If this does not work, select **Run > Edit Configurations**, select **Cucumber java** from the **Defaults** drop-down, and add the project name to the **Glue** field on the **Configuration** tab.
 {{% /note %}}
-
 
 Your result will include something like the following:
 ```
@@ -258,6 +272,10 @@ We will need to implement all steps to actually do something.
 
 ## Implement the steps
 
+We will need to implement all steps to actually do something.
+
+1. Update your StepDefinition class file to implement the step definition.
+
 The step can be implemented like this:
 ```java
     @Given("^I have (\\d+) cukes in my belly$")
@@ -268,13 +286,14 @@ The step can be implemented like this:
 ```
 
 To make this step compile we also need to implement a class Belly with a method eat().
-Implement the class in a package inside your src/main/java folder.
+
+2. Implement the class `Belly.java` inside your `src/main/java/<project>` folder; create your `<project>` directory here, if needed
 
 Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat.
 
 ## Result
 
-Once you have implemented all your step definitions (and the expected behaviour in your application) and the test passes, the summary of your results should look something like this:
+Once you have implemented all your step definitions (and the expected behaviour in your application!) and the test passes, the summary of your results should look something like this:
 
 ```
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.656 sec
