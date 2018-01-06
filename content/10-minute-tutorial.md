@@ -17,7 +17,7 @@ To get started with Cucumber in Java, you will need the following:
 
 - [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) (which we will add as a dependency to our project)
 
-- [JUnit 4](http://junit.org/junit4/) (which we will add as a dependency to our project)
+- [JUnit 4](http://junit.org/junit4/) (which we will also add as a dependency to our project)
 
 # Setting up the project
 
@@ -40,7 +40,7 @@ To create a new Maven project in IntelliJ:
 You should now have a project with the following structure:
 
 ```
-├── pom.xml             (containing our Cucumber and JUnit dependencies)
+├── pom.xml
 └── src
     ├── main
     │   └── java        (marked as sources root)
@@ -64,7 +64,7 @@ Add Cucumber to your project by adding a dependency to your `pom.xml`:
 </dependencies>
 ```
 
-In addition, you need the following dependencies to run Cucumber with JUnit:
+In addition, you will need the following dependencies to run Cucumber with JUnit:
 ```xml
 <dependencies>
     ...
@@ -85,10 +85,8 @@ In addition, you need the following dependencies to run Cucumber with JUnit:
 ```
 
 If you have IntelliJ configured to autoimport dependencies, it will automatically import them for you.
-Otherwise, you can manually import them by opening the "**aven Projects** menu on the right and clicking the "Reimport all Maven Projects" icon on the top left of that menu.
-To check if your dependencies have been downloaded, you can open the External Libraries in the left Project menu in IntelliJ.
-
-If you prefer to use Gradle, have a look at the [installation with Gradle](/installation/#gradle).
+Otherwise, you can manually import them by opening the "**Maven Projects** menu on the right and clicking the **Reimport all Maven Projects** icon on the top left of that menu.
+To check if your dependencies have been downloaded, you can open the **External Libraries** in the left **Project** menu in IntelliJ.
 
 To make sure everything works together correctly, open a command prompt and navigate to your project directory (the one containing the pom.xml file) and enter `mvn clean test`.
 
@@ -243,7 +241,7 @@ To add them to a Java class in IntelliJ:
 
 1. Navigate to the `src/test/java/<project>` folder and right-click it to display the context menu
 
-2. Select **New > Java Class** and give the class a name (for instance, `StepDefinition.java`)
+2. Select **New > Java Class** and give the class a name (for instance, `StepDefinitions.java`)
 
 3. Paste in the snippets
 
@@ -274,7 +272,7 @@ We will need to implement all steps to actually do something.
 
 We will need to implement all steps to actually do something.
 
-1. Update your StepDefinition class file to implement the step definition.
+1. Update your `StepDefinitions.java` class to implement the step definition.
 
 The step can be implemented like this:
 ```java
@@ -287,9 +285,9 @@ The step can be implemented like this:
 
 To make this step compile we also need to implement a class Belly with a method eat().
 
-2. Implement the class `Belly.java` inside your `src/main/java/<project>` folder; create your `<project>` directory here, if needed
+2. Implement the class `Belly.java` inside your `src/main/java/<project>` folder; create your `<project>` directory here (if needed)
 
-Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat.
+Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
 
 ## Result
 
@@ -314,7 +312,7 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 4
 # Examples
 If you prefer to get started with a working project, try the skeleton project [which is available from GitHub](https://github.com/cucumber/cucumber-java-skeleton).
 
-For more examples of how to use Cucumber, have a look at the [examples on GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples).
+For more examples of how to use Cucumber in different ways, have a look at the [examples on GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples).
 {{% /block %}}
 
 {{% block "javascript" %}}
