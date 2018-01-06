@@ -199,7 +199,7 @@ If so, open your **Run Configurations** and remove the following argument `--plu
 {{% /note %}}
 
 {{% note "Specify glue location"%}}
-You might need to tell Cucumber where to find your `StepDefinitions.java` file (i.e. the 'glue' between your Gherkin and your programming code).
+If you have defined your step(s) but Cucumber still says they're undefined, you might need to tell Cucumber where to find your `StepDefinitions.java` file (i.e. the 'glue' between your Gherkin and your programming code).
 If so, open your **Run Configurations** and add the name of your `<project>` directory in the **Glue** field.
 {{% /note %}}
 
