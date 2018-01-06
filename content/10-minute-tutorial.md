@@ -37,13 +37,15 @@ Specify a **Project name** and **Project location** for your project (if needed)
 
 You should now have a project with the following structure:
 
-src/main/java - marked as sources root
-
-src/main/resources - marked as resources root
-
-src/test/java - marked as test sources root
-
-pom.xml
+```
+├── pom.xml             (containing our Cucumber and JUnit dependencies)
+└── src
+    ├── main
+    │   └── java        (marked as sources root)
+    │   └── resources   (marked as resources root)
+    └── test
+        └── java        (marked as test sources root)
+```
 
 ## Add Cucumber to your project
 
@@ -126,16 +128,17 @@ You can add subdirectories as needed. Create a subdirectory for your project in 
 
 Our project structure is now as follows:
 
-src/main/java - marked as sources root
-
-src/main/resources - marked as resources root
-
-src/test/java - marked as test sources root
-
-src/test/resources - marked as test resources root,
-    containing src/test/resources/<project> directory
-
-pom.xml - containing our Cucumber and JUnit dependencies
+```
+├── pom.xml             (containing our Cucumber and JUnit dependencies)
+└── src
+    ├── main
+    │   └── java        (marked as sources root)
+    │   └── resources   (marked as resources root)
+    └── test
+        ├── java        (marked as test sources root)
+        └── resources   (marked as test resources root)
+                └── <project>
+```
 
 ## Creating a Feature
 
