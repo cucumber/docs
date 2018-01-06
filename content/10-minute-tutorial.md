@@ -198,6 +198,11 @@ When running the test for the first time you might get an error message that men
 If so, open your **Run Configurations** and remove the following argument `--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm2SMFormatter`.
 {{% /note %}}
 
+{{% note "Specify glue location"%}}
+You might need to tell Cucumber where to find your `StepDefinitions.java` file (i.e. the 'glue' between your Gherkin and your programming code).
+If so, open your **Run Configurations** and add the name of your `<project>` directory in the **Glue** field.
+{{% /note %}}
+
 You should get something like the following result:
 ```
 1 Scenarios (1 undefined)
