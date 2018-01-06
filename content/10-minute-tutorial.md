@@ -15,10 +15,6 @@ To get started with Cucumber in Java, you will need the following:
 
 - A Cucumber plugin for your IDE, for example [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java) to go with IntelliJ IDEA
 
-- [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) (which we will add as a dependency to our project)
-
-- [JUnit 4](http://junit.org/junit4/) (which we will also add as a dependency to our project)
-
 # Setting up the project
 
 First, we need to set up the project so we can use Cucumber.
@@ -198,7 +194,7 @@ You can run the test from IntelliJ:
 2. Select **Run 'Feature: tutorial'** from the context menu.
 
 {{% note "Formatter error"%}}
-If you are using Cucumber v2.0.0 or higher, when running the test for the first time you might get an error message that mentions `CucumberJvmSMFormatterUtil`.
+When running the test for the first time you might get an error message that mentions `CucumberJvmSMFormatterUtil`.
 If so, open your **Run Configurations** and remove the following argument `--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm2SMFormatter`.
 {{% /note %}}
 
