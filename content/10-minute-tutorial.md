@@ -206,22 +206,6 @@ public class RunCukesTest {
 
 The JUnit runner will by default use classpath:package.of.my.runner to look for features
 
-<!-- You can run the test from IntelliJ: -->
-
-<!-- 1. Right click the feature file -->
-
-<!-- 2. Select **Run 'Feature: tutorial'** from the context menu. -->
-
-<!-- {{% note "Formatter error"%}} -->
-<!-- When running the test for the first time you might get an error message that mentions `CucumberJvmSMFormatterUtil`. -->
-<!-- If so, open your **Run Configurations** and remove the following argument `--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm2SMFormatter`. -->
-<!-- {{% /note %}} -->
-
-<!-- {{% note "Specify glue location"%}} -->
-<!-- If you have defined your step(s) but Cucumber still says they're undefined, you might need to tell Cucumber where to find your `StepDefinitions.java` file (i.e. the 'glue' between your Gherkin and your programming code). -->
-<!-- If so, open your **Run Configurations** and add the name of your `<project>` directory in the **Glue** field. -->
-<!-- {{% /note %}} -->
-
 You should get something like the following result:
 ```
 1 Scenarios (1 undefined)
