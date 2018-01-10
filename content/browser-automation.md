@@ -35,7 +35,7 @@ public class ExampleSteps {
 
    @When("^I search for \"(.*)\"$")
      public void search_for(String query) {
-        WebElement element = browser.findElelment(By.name("q"));
+        WebElement element = driver.findElelment(By.name("q"));
         //Enter Something to search for
         element.sendKeys(query);
         //Now submit the form. WebDriver will find the form for us from the element
