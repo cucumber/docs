@@ -160,12 +160,12 @@ Feature: Belly
   Optional description of the feature
 ```
 
-## Creating a Scenario
+### Creating a Scenario
 
 Scenarios are added to the feature file, to define examples of the expected behaviour. These scenarios can be used to test the feature.
 Start a scenario with the `Scenario` keyword and add a brief description of the scenario. To define the scenario, you have to define all of its steps.
 
-## Defining Steps
+### Defining Steps
 
 These all have a keyword (`Given`, `When`, and `Then`) followed by a step. The step is then matched to a [step definition](/step-definitions/) which map the plain text step to programming code.
 
@@ -244,7 +244,7 @@ Process finished with exit code 0
 
 As we can see, our tests have run, but have not actually done anything because they are not yet defined.
 
-## Defining Snippets for Missing Steps
+## Define Snippets for Missing Steps
 
 We now have one `undefined` scenario and three `undefined` steps. Luckily, Cucumber has given us examples, or snippets, that we can use to define the steps.
 
