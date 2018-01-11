@@ -21,6 +21,8 @@ First, we need to set up the project so we can use Cucumber.
 
 ## Create a Maven project
 
+In this tutorial, we're using Maven to import external dependencies. We start by creating a new Maven project, which will automatically create some of the directories and files we will need.
+
 To create a new Maven project in IntelliJ:
 
 1. Click the menu option **File > New > Project**
@@ -110,7 +112,7 @@ Your project builds correctly, but nothing is tested yet as you have not specifi
 
 # Specifying Expected Behaviour
 
-We specify the expected behaviour by defining features and scenarios.
+We specify the expected behaviour by defining [features](/gherkin/#feature) and [scenarios](/gherkin/#scenario).
 
 ## Creating the Feature Directory
 
@@ -118,11 +120,11 @@ Features are defined in feature files, which are stored in the `src/test/resourc
 
 We need to create this directory, as it was not created for us. In IntelliJ:
 
-1. Right click on the Test folder, select **New > Directory** and name this directory `resources`.
+1. In the Test folder, create a new directory called `resources`.
 
 2. Right click the folder and select **Mark directory as > Test Resources Root**.
 
-3. You can add subdirectories as needed. Create a subdirectory for your project in `src/test/resources/`
+3. You can add subdirectories as needed. Create a subdirectory with the name of your project in `src/test/resources/`
 
 Our project structure is now as follows:
 
@@ -150,7 +152,7 @@ To create a feature file:
 
 Files in this folder with an extension of `.feature` are automatically recognised as feature files. Each feature file describes a single feature, or part of a feature.
 
-Open the file (double click it) and add the feature description, starting with the `Feature` keyword and an optional description.
+Open the file and add the feature description, starting with the `Feature` keyword and an optional description.
 
 For instance:
 ```gherkin
@@ -204,7 +206,10 @@ public class RunCukesTest {
 }
 ```
 
-The JUnit runner will by default use classpath:package.of.my.runner to look for features
+The JUnit runner will by default use classpath:package.of.my.runner to look for features.
+You can also specify the location of the feature file(s) and glue file(s) you want Cucumber to use in the @CucumberOptions.
+
+To run your tests with the runner, run this runner class. You can do so by right clicking the class file and selecting `RunCucumberTest` from the context menu.
 
 You should get something like the following result:
 ```
@@ -237,25 +242,25 @@ public void my_belly_should_growl() throws Exception {
 Process finished with exit code 0
 ```
 
-## Snippets for Missing Steps
+As we can see, our tests have run, but have not actually done anything because they are not yet defined.
+
+## Defining Snippets for Missing Steps
 
 We now have one `undefined` scenario and three `undefined` steps. Luckily, Cucumber has given us examples, or snippets, that we can use to define the steps.
 
 To add them to a Java class in IntelliJ:
 
-1. Navigate to the `src/test/java/<project>` folder and right-click it to display the context menu
+1. Create a new Java class in your `src/test/java/<project>` folder (for instance, `StepDefinitions.java`)
 
-2. Select **New > Java Class** and give the class a name (for instance, `StepDefinitions.java`)
-
-3. Paste in the snippets
+2. Paste the generated snippets into this class
 
 IntelliJ will not automatically recognise those symbols (like `@Given`, `@When`, `@Then`), so we'll need to add `import` statements. In IntelliJ:
 
-4. Put your cursor on the `@Given` symbol and press **ALT** + **ENTER**, then select **Import class**.
+3. Add import statements for `@Given`, `@When`, `@Then` (underlined in red)
 
-5. Do the same for the other symbols (underlined in red).
+In IntelliJ you can do so by putting your cursor on the `@Given` symbol and press **ALT** + **ENTER**, then select **Import class**.
 
-Now, when you run the test, your step definitions will be found and run.
+Now, when you run the test, these step definitions should be found and used.
 
 {{% note "Run configurations"%}}
 If this does not work, select **Run > Edit Configurations**, select **Cucumber java** from the **Defaults** drop-down, and add the project name to the **Glue** field on the **Configuration** tab.
@@ -270,11 +275,10 @@ cucumber.api.PendingException: TODO: implement me
 ```
 
 The reason for this is that we haven't actually implemented this step; it throws a `PendingException` telling you to implement the step.
-We will need to implement all steps to actually do something.
 
 ## Implement the steps
 
-We will need to implement all steps to actually do something.
+We will need to implement all steps to actually *do* something.
 
 1. Update your `StepDefinitions.java` class to implement the step definition.
 
@@ -293,16 +297,21 @@ To make this step compile we also need to implement a class Belly with a method 
 
 Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
 
+{{% note "PendingException"%}}
+Once you have implemented this step, remove the statement `throw new PendingException();` from the method body.
+The step should no longer thrown a PendingException, as it is no longer pending.
+{{% /note %}}
+
 ## Result
 
 Once you have implemented all your step definitions (and the expected behaviour in your application!) and the test passes, the summary of your results should look something like this:
 
 ```
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.656 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.656 sec
 
 Results :
 
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 4
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -314,9 +323,9 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 4
 ```
 
 # Examples
-If you prefer to get started with a working project, try the skeleton project [which is available from GitHub](https://github.com/cucumber/cucumber-java-skeleton).
+To get started with a working project, try the [skeleton project](https://github.com/cucumber/cucumber-java-skeleton) which is available from GitHub.
 
-For more examples of how to use Cucumber in different ways, have a look at the [examples on GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples).
+For more examples of how to use Cucumber, have a look at the [examples on GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples).
 {{% /block %}}
 
 {{% block "javascript" %}}
