@@ -44,7 +44,7 @@ end
 World{MyWorld.new}
 ```
 
-You may have to set the `app_file` in your app file. Otherwise, Sinatra (at least version 0.9.1.1) won't find the views or layouts (see [this IRC log](http://irclogger.com/sinatra/2009-05-08)).
+You may have to set the `app_file` in your app file so that Sinatra can find the views and layouts.
 
 You also need to specify the `:public` directory, even if you're on default. Otherwise, stylesheets and javascripts won't be available to your Cucumber session.
 
