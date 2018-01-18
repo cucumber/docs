@@ -1,17 +1,11 @@
 ---
 menu: reference
 renderer: Cucumber::Website::Reference
-title: Browser Automation (Old)
+title: Browser Automation
 polyglot: true
 ---
 
-Cucumber is not a Browser Automation tool, but it works well with Browser
-Automation tools, such as:
-
-- [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/)
-- [Capybara](http://teamcapybara.github.io/capybara/)
-- [Watir](http://watir.com)
-- [Serenity](http://serenity-bdd.info)
+Cucumber is not a Browser Automation tool, but it works well with the following Browser Automation tools.
 
 # Selenium WebDriver
 
@@ -41,7 +35,7 @@ public class ExampleSteps {
 
    @When("^I search for \"(.*)\"$")
      public void search_for(String query) {
-        WebElement element = browser.findElelment(By.name("q"));
+        WebElement element = driver.findElelment(By.name("q"));
         //Enter Something to search for
         element.sendKeys(query);
         //Now submit the form. WebDriver will find the form for us from the element
@@ -88,6 +82,8 @@ Then("^the page title should start with "([^"]*)"$") do
     browser.close
 end
 ```
+
+More information on [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/).
 
 # Watir Webdriver
 
@@ -145,6 +141,8 @@ Then /^I should see some results$/ do
   @browser.close
 end
 ```
+
+More information on [Watir](http://watir.com).
 
 # Serenity BDD
 
@@ -228,6 +226,14 @@ public class GoogleHomePage extends PageObject {
 
 public class SearchResultsPage extends PageObject {}
 ```
+
+More information on [Serenity](http://serenity-bdd.info).
+
+# Capybara
+
+<!-- TODO -->
+
+More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 # Tips and Tricks
 

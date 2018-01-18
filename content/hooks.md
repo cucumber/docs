@@ -8,8 +8,8 @@ polyglot: true
 Hooks are blocks of code that can run at various points in the Cucumber execution cycle.
 They are typically used for setup and teardown of the environment before and after each scenario.
 
-Hooks are global by default. Where a hook is defined has no impact on what scenarios
-or steps it is run for. If you want more fine-grained control, you can use [tagged hooks](#tagged-hooks).
+Where a hook is defined has no impact on what scenarios or steps it is run for.
+If you want more fine-grained control, you can use [tagged hooks](#tagged-hooks).
 
 {{% text "java" %}}
 You can declare hooks in any class.
@@ -253,7 +253,7 @@ end
 ## Tagged hooks
 
 Hooks can be conditionally selected for execution based on the tags of the scenario.
-To run a particular Hook only for certain scenarios, you can associate a
+To run a particular hook only for certain scenarios, you can associate a
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
@@ -315,17 +315,9 @@ end
 {{% block "java" %}}Cucumber-JVM does not support global hooks.{{% /block %}}
 {{% block "javascript" %}}Cucumber.js does not support global hooks.{{% /block %}}
 
+{{% text "ruby" %}}
 ## Running a hook only once
 
-{{% block "java" %}}
-TODO
-{{% /block %}}
-
-{{% block "javascript" %}}
-TODO
-{{% /block %}}
-
-{{% block "ruby" %}}
 If you have a hook you only want to run once, use a global variable:
 
 ```ruby
@@ -336,15 +328,15 @@ Before do
   $dunit = true                            # don't do it again.
 end
 ```
-{{% /block %}}
+{{% /text %}}
 
 ## AfterConfiguration
 
-{{% block "ruby" %}}
+{{% text "ruby" %}}
 You may also provide an `AfterConfiguration` Hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`).
-{{% /block %}}
 
 Example:
+{{% /text %}}
 
 ```ruby
 AfterConfiguration do |config|
@@ -358,5 +350,5 @@ This Hook will run _only once_: after support has been loaded, and before any Fe
 You can use this Hook to extend Cucumber. For example you could affect how Features are loaded, or register [Custom Formatters](/implementations/ruby/custom-formatters/) programmatically.
 {{% /text %}}
 
-{{% text "java" %}}Cucumber jvm does not support `AfterConfiguration` hooks.{{% /text %}}
+{{% text "java" %}}Cucumber-JVM does not support `AfterConfiguration` hooks.{{% /text %}}
 {{% text "javascript" %}}Cucumber js does not support `AfterConfiguration` hooks.{{% /text %}}
