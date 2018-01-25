@@ -16,7 +16,7 @@
       {{ partial "navbar-item" (dict "Menu" .Site.Menus.documentation "NavbarTitle" "Documentation" ) }}
       {{ partial "navbar-item" (dict "Menu" .Site.Menus.bdd           "NavbarTitle" "BDD"           ) }}
       {{ partial "navbar-item" (dict "Menu" .Site.Menus.guides        "NavbarTitle" "Guides"        ) }}
-      
+
       <div id="search-navbar-item" class="navbar-item has-dropdown" style="padding: 10px 0 0 0">
         <div class="field">
           <p class="control has-icons-left">
@@ -31,10 +31,12 @@
             <p>
               <strong class="js-title">Result</strong>
               <br>
-              <small class="js-description">Details bla bla</small>
+              <small class="js-description">Details</small>
             </p>
           </a>
         </div>
+
+      {{ partial "navbar-item" (dict "Menu" .Site.Menus.about        "NavbarTitle" "About"        ) }}
 
       </div>
     </div>
