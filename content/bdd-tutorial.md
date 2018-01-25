@@ -43,12 +43,13 @@ Keeping specifications, regression tests and documentation in a single place red
 
 While many people focus on the value added by the automated "tests" you get out of BDD, the real value is actually the **shared understanding** we get at the beginning.
 
-# Sources:
-https://cucumber.io/blog/2015/07/01/bdd-in-the-financial-sector
-https://cucumber.io/blog/2015/06/18/hamish-tedeschi-what-is-bdd
-https://cucumber.io/blog/2015/03/27/aslaks-view-of-bdd
-https://cucumber.io/blog/2015/03/24/single-source-of-truth
-https://cucumber.io/blog/2014/03/03/the-worlds-most-misunderstood-collaboration-tool
-https://sdjournal.org/bdd-like-jazz/
-https://dannorth.net/introducing-bdd/
-https://lizkeogh.com/2011/09/22/conversational-patterns-in-bdd/
+# Sources
+
+- https://cucumber.io/blog/2015/07/01/bdd-in-the-financial-sector
+- https://cucumber.io/blog/2015/06/18/hamish-tedeschi-what-is-bdd
+- https://cucumber.io/blog/2015/03/27/aslaks-view-of-bdd
+- https://cucumber.io/blog/2015/03/24/single-source-of-truth
+- https://cucumber.io/blog/2014/03/03/the-worlds-most-misunderstood-collaboration-tool
+- https://sdjournal.org/bdd-like-jazz/
+- https://dannorth.net/introducing-bdd/
+- https://lizkeogh.com/2011/09/22/conversational-patterns-in-bdd/
