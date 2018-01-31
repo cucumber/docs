@@ -7,7 +7,7 @@ title: Gherkin Reference
 Cucumber executes your `.feature` files, and those files contain executable specifications
 written in a language called Gherkin.
 
-Gherkin is plain-text English (or one of [60+ other languages](/gherkin/spoken-languages)) with a little extra structure.
+Gherkin is plain-text English (or one of [60+ other languages](#spoken-languages)) with a little extra structure.
 Gherkin is designed to be easy for people to read and write, yet structured enough to allow
 for automated processing and concise description of business rules.
 
@@ -70,7 +70,7 @@ There are a few additional keywords:
 - `#` (Comments)
 
 {{% note "Localization"%}}
-Gherkin is localized for dozens of [spoken languages](/gherkin/spoken-languages/); each has their own localized equivalent of these keywords.
+Gherkin is localized for dozens of [spoken languages](#spoken-languages); each has their own localized equivalent of these keywords.
 {{% /note %}}
 
 ## Feature
