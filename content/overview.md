@@ -18,8 +18,7 @@ Gherkin serves multiple purposes:
 - Allow automated testing using Cucumber
 - Document how the system *actually* behaves
 
-The grammar exists in different flavours for many [spoken
-languages](/gherkin/spoken-languages/) (60 at the time of writing), so that your team can use the
+The grammar exists in different flavours for many [spoken languages](/gherkin/#spoken-languages/) (60 at the time of writing), so that your team can use the
 keywords in your own language.
 
 There are a few conventions:
