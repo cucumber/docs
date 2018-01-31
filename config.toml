@@ -35,6 +35,12 @@ pygmentsUseClasses = true
     name = "Gherkin Reference"
     identifier = "Cucumber syntax: Given, When, Then"
     url = "/gherkin/"
+[[menu.cucumber]]
+    weight = 100
+    name = ".cucumber.yml"
+    identifier = "Cucumber config file"
+    url = "/cucumber/cucumber.yml/"
+
 
 
 [[menu.guides]]
