@@ -464,7 +464,7 @@ Just like `Doc Strings`, `Data Tables` will be passed to the step definition as 
 
 The type of this argument will be DataTable. See the API docs for more details about how to access the rows and cells.
 
-# Spoken Language
+# Spoken Languages
 
 Communication within a team always works better when people can use their spoken language. Cucumber supports over [60 spoken languages](https://github.com/cucumber/cucumber/blob/master/gherkin/gherkin-languages.json) and the number is steadily growing. This is Norwegian:
 
