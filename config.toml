@@ -7,92 +7,102 @@ pygmentsUseClassic = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
-[[menu.documentation]]
-    weight = 1
-    name = "Overview"
+[[menu.cucumber]]
+    weight = 10
+    name = "Introduction and Overview"
     identifier = "A gentle introduction to Cucumber"
     url = "/overview/"
-[[menu.documentation]]
-    weight = 2
+[[menu.cucumber]]
+    weight = 15
+    name = "Tutorial"
+    identifier = "Get started in just 10 minutes"
+    url = "/10-minute-tutorial/"
+[[menu.cucumber]]
+    weight = 20
     name = "Installation"
     identifier = "Java, JavaScript, Ruby and more"
     url = "/installation/"
-[[menu.documentation]]
-    weight = 3
-    name = "Gherkin"
-    identifier = "Cucumber syntax: Given, When, Then"
-    url = "/gherkin/"
-[[menu.documentation]]
-    weight = 4
-    name = "---"
-[[menu.documentation]]
-    weight = 5
+[[menu.cucumber]]
+    weight = 30
     name = "Running"
     identifier = "Running Cucumber"
     url = "/running/"
-[[menu.documentation]]
-    weight = 6
-    name = "Configuration"
-    identifier = "Tweaking Cucumber's behaviour"
-    url = "/configuration/"
-[[menu.documentation]]
-    weight = 7
+[[menu.cucumber]]
+    weight = 70
     name = "---"
-[[menu.documentation]]
-    weight = 8
-    name = "Step Definitions"
-    identifier = "Connecting Gherkin to code"
-    url = "/step-definitions/"
-[[menu.documentation]]
-    weight = 9
-    name = "Hooks"
-    identifier = "Setup and teardown"
-    url = "/hooks/"
-[[menu.documentation]]
-    weight = 10
-    name = "Tags"
-    identifier = "Grouping Scenarios"
-    url = "/tags/"
+[[menu.cucumber]]
+    weight = 90
+    name = "Gherkin Reference"
+    identifier = "Cucumber syntax: Given, When, Then"
+    url = "/gherkin/"
 
-[[menu.bdd]]
-    weight = 1
-    name = "Overview" 
-    identifier = "The essence of Behaviour-Driven Development"
-    url = "/bdd/"
-[[menu.bdd]]
-    weight = 2
-    name = "Example Mapping" 
-    identifier = "Three amigos agreeing on what to build"
-    url = "/example-mapping/"
-[[menu.bdd]]
-    weight = 3
-    name = "Who Does What" 
-    identifier = "Programmers, Testers, Domain experts and more"
-    url = "/who-does-what/"
 
 [[menu.guides]]
-    weight = 1
-    name = "10 minute Tutorial"
-    identifier = "Get up and running with Cucumber"
-    url = "/10-minute-tutorial/"
-[[menu.guides]]
-    weight = 2
-    name = "BDD Tutorial"
-    identifier = "Build an application, guided by Cucumber"
-    url = "/bdd-tutorial/"
-[[menu.guides]]
-    weight = 3
+    weight = 30
     name = "Browser Automation"
     identifier = "Selenium WebDriver, Capybara and more"
     url = "/browser-automation/"
 [[menu.guides]]
-    weight = 4
+    weight = 40
     name = "Best Practices"
     identifier = "Isolated state"
     url = "/best-practices/"
 [[menu.guides]]
-    weight = 5
+    weight = 50
     name = "Testable Architecture"
     identifier = "How to have fast and reliable tests"
     url = "/testable-architecture/"
-    
+[[menu.guides]]
+    weight = 60
+    name = "Continuous Integration"
+    identifier = "Integration with Jenkins, Ant"
+    url = "/cucumber/continuous-integration/"
+[[menu.guides]]
+    weight = 70
+    name = "Mocking and Stubbing"
+    identifier = "Integration with Jenkins, Ant, etc"
+    url = "/cucumber/mocking-and-stubbing-with-cucumber/"
+
+
+[[menu.bdd]]
+    weight = 1
+    name = "Overview"
+    identifier = "The essence of Behaviour-Driven Development"
+    url = "/bdd/"
+[[menu.bdd]]
+    weight = 10
+    name = "BDD Tutorial"
+    identifier = "Build an application, guided by Cucumber"
+    url = "/bdd-tutorial/"
+[[menu.bdd]]
+    weight = 20
+    name = "Example Mapping"
+    identifier = "Three amigos agreeing on what to build"
+    url = "/example-mapping/"
+[[menu.bdd]]
+    weight = 30
+    name = "Who Does What"
+    identifier = "Programmers, Testers, Domain experts and more"
+    url = "/who-does-what/"
+
+
+[[menu.support]]
+    weight = "10"
+    name = "Get in touch"
+    identifier = "How to reach us"
+    url = "/about/get-in-touch/"
+[[menu.support]]
+    weight = "20"
+    name = "Contributing to Cucumber"
+    identifier = "Help make Cucumber better"
+    url = "/about/contributing/"
+[[menu.support]]
+    weight = "30"
+    name = "Contributing to Documentation"
+    identifier = "Help make these docs better"
+    url = "/about/contributing-to-documentation/"
+[[menu.support]]
+    weight = "40"
+    name = "Voting"
+    identifier = "Vote on new Cucumber features"
+    url = "/voting/"
