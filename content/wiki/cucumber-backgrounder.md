@@ -5,34 +5,28 @@ source: https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder/
 title: Cucumber Backgrounder
 ---
 
-> TODO: Blog post intro or some such
+This document deals principally with initial set up and first use of the ***Cucumber-Rails*** and
+***Cucumber*** [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as its background the Ruby on Rails (RoR) [web application
+framework](http://en.wikipedia.org/wiki/Web_application_framework). You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so.
 
-# Or: How I Learned to Stop Worrying and ~~Love Testing~~ Start Behaving
+This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility.
+Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided.
 
-## Introduction
+# Introduction
 
 Cucumber is a tool that implements a [Behaviour Driven Development
-(BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development)
-[workflow](http://en.wikipedia.org/wiki/Workflow). This document deals
-principally with initial set up and first use of the ***Cucumber-Rails*** and
-***Cucumber*** [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as
-its background the Ruby on Rails (RoR) [web application
-framework](http://en.wikipedia.org/wiki/Web_application_framework). Detailed
-discussion of [Behaviour
-Driven](http://en.wikipedia.org/wiki/Behavior_driven_development) (BDD), [Test
-Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and Panic
-Driven Development aka [Cowboy
-Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/)
-can be found elsewhere. Of course, there are still some
+(BDD)](/bdd/) workflow. Detailed discussion of [Behaviour Driven Development (BDD)](/bdd/) and [Test
+Driven Development (TDD)](/tdd/) can be found elsewhere. Of course, there are still some
 [skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html)
 on this whole Agile thing. But, if you are reading this then you probably are
 not one of them.
 
-You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided.
 
-Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading [Ruby on Rails](/implementations/ruby/ruby-on-rails/). To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database. The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
+Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading [Ruby on Rails](/implementations/ruby/ruby-on-rails/).
+To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database.
+The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
 
-Note that in this document I often use the terms *testing* and *test* where [BDD practitioners](http://dannorth.net/introducing-bdd) prefer the terms *behaviour* and *expectation*. When I use the word test in a BDD context I am in fact discussing expressing and verifying expected behaviour.
+Note that in this document the terms *testing* and *test* are used where [BDD practitioners](http://dannorth.net/introducing-bdd) prefer the terms *behaviour* and *expectation*.
 
 ## Where to Start?
 
