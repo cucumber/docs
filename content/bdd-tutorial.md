@@ -42,13 +42,3 @@ These executable specifications also work as automated regression tests which re
 Keeping specifications, regression tests and documentation in a single place reduces the overhead of keeping multiple documents in sync - the Cucumber scenarios work as a shared source of truth for business and IT.
 
 While many people focus on the value added by the automated "tests" you get out of BDD, the real value is actually the **shared understanding** we get at the beginning.
-
-# Sources:
-https://cucumber.io/blog/2015/07/01/bdd-in-the-financial-sector
-https://cucumber.io/blog/2015/06/18/hamish-tedeschi-what-is-bdd
-https://cucumber.io/blog/2015/03/27/aslaks-view-of-bdd
-https://cucumber.io/blog/2015/03/24/single-source-of-truth
-https://cucumber.io/blog/2014/03/03/the-worlds-most-misunderstood-collaboration-tool
-https://sdjournal.org/bdd-like-jazz/
-https://dannorth.net/introducing-bdd/
-https://lizkeogh.com/2011/09/22/conversational-patterns-in-bdd/

@@ -46,24 +46,8 @@ Focus on having different kinds of tests; lots and lots of unit tests.
 A few tests that don’t go through all the heavy infrastructure components and just a few tests that go through the UI.
 This is called the [test pyramid](https://martinfowler.com/bliki/TestPyramid.html).
 
-More information:
+# More information:
 
-[Blog post: How BDD is like jazz](https://sdjournal.org/bdd-like-jazz/)
-
-https://www.nngroup.com/articles/response-times-3-important-limits/
-
-https://cucumber.io/blog/2017/06/29/fast-tests
-
-https://joecolantonio.com/testtalks/180-ten-years-cucumber-bdd-aslak-hellesoy/
-
-https://www.joecolantonio.com/2017/11/30/3-ways-ui-based-cucumber-bdd-can-go-bad/
-
-https://github.com/subsecondtdd/todo-subsecond
-
-https://xp2017.sched.com/event/91jK/testable-architecture
-
-https://skillsmatter.com/skillscasts/9971-testable-software-architecture-with-aslak-hellesoy
-
-https://speakerdeck.com/aslakhellesoy/testable-architecture-at-devlin-2017
-
-[SOLID design](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design))
+For an example of how to implement fast tests (in node.js), see [subsecondtdd on GitHub](https://github.com/subsecondtdd/todo-subsecond)
+Or have a look at Aslak's [talk at Devlin 2017](https://skillsmatter.com/skillscasts/9971-testable-software-architecture-with-aslak-hellesoy)
+- or the [slides](https://speakerdeck.com/aslakhellesoy/testable-architecture-at-devlin-2017) - about this subject.
