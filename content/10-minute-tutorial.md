@@ -15,7 +15,37 @@ To get started with Cucumber in Java, you will need the following:
 
 - A Cucumber plugin for your IDE, for example [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java) to go with IntelliJ IDEA
 
+{{% /block %}}
+
+{{% block "javascript" %}}
+
+To get started with Cucumber in JavaScript, you will need the following:
+
+- node.js
+On Mac OS, you can install `node.js` using homebrew: `brew install node`.
+
+To verify that you have node.js installed properly, type `node -v` in a terminal.
+This should return the node version number.
+
+- npm
+We will use npm as our package manager. It should be installed in the same location as node.js.
+
+To verify that npm is installed, type `npm -v` in a terminal.
+This should return the npm version number.
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+To get started with Cucumber in Ruby, you will need the following:
+
+// TODO
+
+{{% /block %}}
+
 # Setting up the project
+
+{{% block "java" %}}
 
 First, we need to set up the project so we can use Cucumber.
 
@@ -110,11 +140,33 @@ You should see something like the following:
 
 Your project builds correctly, but nothing is tested yet as you have not specified any behaviour to test against.
 
+{{% /block %}}
+
+{{% block "javascript" %}}
+
+Create a new working directory called `cucumber-js` and change into it. The rest of tutorial assumes that you are in this directory.
+
+TODO: Clarify need for package.json file (if no package.json, npm install cucumber does not seem to work?)
+
+Cucumber-js is available as an npm package. We can install it using `npm install cucumber`.
+
+This will create a lockfile called `package-lock.json`. You should commit this file.
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+// TODO: How to install Cucumber ruby / create a project with Cucumber ruby
+
+{{% /block %}}
+
 # Specifying Expected Behaviour
 
 We specify the expected behaviour by defining [features](/gherkin/#feature) and [scenarios](/gherkin/#scenario).
 
 ## Creating the Feature Directory
+
+{{% block "java" %}}
 
 Features are defined in feature files, which are stored in the `src/test/resources/` directory (or a subdirectory).
 
@@ -140,15 +192,47 @@ Our project structure is now as follows:
                 └── <project>
 ```
 
+{{% /block %}}
+
+{{% block "javascript" %}}
+
+Inside the `cucumber-js` folder, create a folder called `features`.
+
+TODO: Add directory structure
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+// TODO: Create the features folder & add directory structure for Ruby.
+
+{{% /block %}}
+
 ## Creating a Feature
 
 To create a feature file:
+
+{{% block "java" %}}
 
 1. Open the project in your IDE (if needed) and right-click on the `src/test/resources/<project>` folder.
 
 2. Select **New > File**
 
 3. Enter a name for your feature file, and use the `.feature` extension. For instance, `belly.feature`.
+
+{{% /block %}}
+
+{{% block "javascript" %}}
+
+Create a new file inside the `features` directory, for instance `belly.feature`.
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+Create a new file inside the `features` directory, for instance `belly.feature`.
+
+{{% /block %}}
 
 Files in this folder with an extension of `.feature` are automatically recognised as feature files. Each feature file describes a single feature, or part of a feature.
 
@@ -188,6 +272,8 @@ For instance:
 ```
 
 # Running the test
+
+{{% block "java" %}}
 
 To run the tests from JUnit we need to add a runner to our project.
 
@@ -242,11 +328,68 @@ public void my_belly_should_growl() throws Exception {
 Process finished with exit code 0
 ```
 
+{{% /block %}}
+
+{{% block "javascript" %}}
+
+Run the tests with `./node_modules/.bin/cucumber-js`.
+
+NOTE: You should run them from the directory containing the `/features` directory.
+
+// TODO: By default...
+
+You should get something like the following result:
+```
+UUU
+
+Warnings:
+
+1) Scenario: a few cukes # features/belly.feature:3
+   ? Given I have 42 cukes in my belly
+       Undefined. Implement with the following snippet:
+
+         Given('I have {int} cukes in my belly', function (int, callback) {
+           // Write code here that turns the phrase above into concrete actions
+           callback(null, 'pending');
+         });
+
+   ? When I wait 1 hour
+       Undefined. Implement with the following snippet:
+
+         When('I wait {int} hour', function (int, callback) {
+           // Write code here that turns the phrase above into concrete actions
+           callback(null, 'pending');
+         });
+
+   ? Then my belly should growl
+       Undefined. Implement with the following snippet:
+
+         Then('my belly should growl', function (callback) {
+           // Write code here that turns the phrase above into concrete actions
+           callback(null, 'pending');
+         });
+
+
+1 scenario (1 undefined)
+3 steps (3 undefined)
+0m00.000s
+```
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+// TODO: How to run feature with Ruby and add result for this example
+
+{{% /block %}}
+
 As we can see, our tests have run, but have not actually done anything because they are not yet defined.
 
 ## Define Snippets for Missing Steps
 
 We now have one `undefined` scenario and three `undefined` steps. Luckily, Cucumber has given us examples, or snippets, that we can use to define the steps.
+
+{{% block "java" %}}
 
 To add them to a Java class in IntelliJ:
 
@@ -276,9 +419,72 @@ cucumber.api.PendingException: TODO: implement me
 
 The reason for this is that we haven't actually implemented this step; it throws a `PendingException` telling you to implement the step.
 
+{{% /block %}}
+
+{{% block "javascript" %}}
+
+Create a directory `step_definitions` and add a file called `belly.js`.
+The convention is to store the step definitions in a directory called `step_definitions/` inside the `features` directory.
+Create the `features/step_definitions/` and add a file `features/step_definitions/belly_steps.js` with the suggested snippets.
+
+When we run the test with just the snippets, we get an error message stating `ReferenceError: Given is not defined`.
+We need to import the keywords `Before`, `Given`, `When`, `Then`.
+Do so by adding `const { Before, Given, When, Then } = require('cucumber')` to the top of the file.
+
+It should look like this:
+```javascript
+const { Before, Given, When, Then } = require('cucumber')
+
+Given('I have {int} cukes in my belly', function (int, callback) {
+// Write code here that turns the phrase above into concrete actions
+callback(null, 'pending');
+});
+
+
+When('I wait {int} hour', function (int, callback) {
+// Write code here that turns the phrase above into concrete actions
+callback(null, 'pending');
+});
+
+Then('my belly should growl', function (callback) {
+// Write code here that turns the phrase above into concrete actions
+callback(null, 'pending');
+});
+```
+
+Now when we run the test, we get something like the following:
+```
+P--
+
+Warnings:
+
+1) Scenario: a few cukes # features/belly.feature:3
+   ? Given I have 42 cukes in my belly # features/step-definitions/belly-steps.js:3
+       Pending
+   - When I wait 1 hour # features/step-definitions/belly-steps.js:9
+   - Then my belly should growl # features/step-definitions/belly-steps.js:14
+
+1 scenario (1 pending)
+3 steps (1 pending, 2 skipped)
+0m00.001s
+
+```
+
+The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending` tells you to implement the step.
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+TODO: Add ruby result for this Gherkin example and how to import required classes.
+
+{{% /block %}}
+
 ## Implement the steps
 
 We will need to implement all steps to actually *do* something.
+
+{{% block "java" %}}
 
 1. Update your `StepDefinitions.java` class to implement the step definition.
 
@@ -302,9 +508,41 @@ Once you have implemented this step, remove the statement `throw new PendingExce
 The step should no longer thrown a PendingException, as it is no longer pending.
 {{% /note %}}
 
+{{% /block %}}
+
+{{% block "javascript" %}}
+
+We need to update our `belly-steps.js` to implement the step definition.
+The step can be implemented like this:
+```javascript
+// TODO: Implement belly-steps in javascript
+```
+
+To make this step pass, we also need to add a file called `belly.js` with a method eat().
+
+Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+We need to update our `belly-steps.rb` to implement the step definition.
+The step can be implemented like this:
+```ruby
+// TODO: Implement belly-steps in ruby
+```
+
+To make this step pass, we also need to add a file called `belly.rb` with a method eat().
+
+Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
+
+{{% /block %}}
+
 ## Result
 
 Once you have implemented all your step definitions (and the expected behaviour in your application!) and the test passes, the summary of your results should look something like this:
+
+{{% block "java" %}}
 
 ```
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.656 sec
@@ -321,17 +559,27 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Final Memory: 15M/142M
 [INFO] ------------------------------------------------------------------------
 ```
+{{% /block %}}
 
+{{% block "javascript" %}}
+
+```
+1 scenario (1 passed)
+3 steps (3 passed)
+0m00.001s
+```
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+// TODO: Add results for passed scenario
+
+{{% /block %}}
+
+{{% block "java" %}}
 # Examples
 To get started with a working project, try the [skeleton project](https://github.com/cucumber/cucumber-java-skeleton) which is available from GitHub.
 
 For more examples of how to use Cucumber, have a look at the [examples on GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples).
-{{% /block %}}
-
-{{% block "javascript" %}}
-TO DO
-{{% /block %}}
-
-{{% block "ruby" %}}
-TO DO
 {{% /block %}}
