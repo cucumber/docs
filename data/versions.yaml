@@ -1,6 +1,6 @@
 # This file contains version numbers for Cucumber
 #
-# They can be referred to with the custom {% version "cucumber-jvm" %} Hugo shortcode
+# They can be referred to with the custom Hugo shortcode, e.g. {{% version "cucumberjvm" %}}
 #
 
 cucumberjvm: "2.3.1"
@@ -11,3 +11,5 @@ jython: "2.0.1"
 jruby: "2.0.1"
 rhino: "2.0.1"
 gosu: "2.0.1"
+cucumberjs: "4.0.0"
+cucumberruby: "3.1.0"

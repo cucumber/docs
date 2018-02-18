@@ -21,17 +21,17 @@ To get started with Cucumber in Java, you will need the following:
 
 To get started with Cucumber in JavaScript, you will need the following:
 
-- node.js
+- node.js (4 and above)
+
 On Mac OS, you can install `node.js` using homebrew: `brew install node`.
 
-To verify that you have node.js installed properly, type `node -v` in a terminal.
-This should return the node version number.
+To verify that you have node.js installed properly, type `node -v` in a terminal; this should return the node version number.
 
 - npm
+
 We will use npm as our package manager. It should be installed in the same location as node.js.
 
-To verify that npm is installed, type `npm -v` in a terminal.
-This should return the npm version number.
+To verify that npm is installed, type `npm -v` in a terminal; this should return the npm version number.
 
 {{% /block %}}
 
@@ -39,7 +39,9 @@ This should return the npm version number.
 
 To get started with Cucumber in Ruby, you will need the following:
 
-// TODO
+- Ruby
+
+- RubyGems
 
 {{% /block %}}
 
@@ -146,7 +148,14 @@ Your project builds correctly, but nothing is tested yet as you have not specifi
 
 Create a new working directory called `cucumber-js` and change into it. The rest of tutorial assumes that you are in this directory.
 
-TODO: Clarify need for package.json file (if no package.json, npm install cucumber does not seem to work?)
+Add a package.json file and add Cucumber to your project:
+```
+{
+  "devDependencies": {
+    "cucumber": "^{{% version "cucumberjs" %}}"
+  }
+}
+```
 
 Cucumber-js is available as an npm package. We can install it using `npm install cucumber`.
 
@@ -156,7 +165,34 @@ This will create a lockfile called `package-lock.json`. You should commit this f
 
 {{% block "ruby" %}}
 
-// TODO: How to install Cucumber ruby / create a project with Cucumber ruby
+## Ruby
+
+Cucumber for Ruby is a ruby gem, and can be installed from the command line.
+After you have installed Ruby and RubyGems, install Cucumber with the following command: `gem install cucumber`
+
+Add Cucumber to your Ruby project:
+```ruby
+    group :test do
+      gem 'cucumber', '~> 2.4.0'
+    end
+```
+
+## Ruby on Rails
+
+Before you can use the generator, add the gem to your project's Gemfile:
+```ruby
+    group :test do
+      gem 'cucumber-rails', :require => false
+      # database_cleaner is not required, but highly recommended
+      gem 'database_cleaner'
+    end
+```
+
+Then install it by running: `bundle install`.
+
+To learn about the various options: `rails generate cucumber:install --help`.
+
+Finally, bootstrap your Rails app, for example: `rails generate cucumber:install`.
 
 {{% /block %}}
 
@@ -198,21 +234,27 @@ Our project structure is now as follows:
 
 Inside the `cucumber-js` folder, create a folder called `features`.
 
-TODO: Add directory structure
+Your directory now contains the following:
+```
+├── features
+├── package.json
+└── package-lock.json
+```
 
 {{% /block %}}
 
 {{% block "ruby" %}}
 
-// TODO: Create the features folder & add directory structure for Ruby.
+To create a simple directory structure:
+`bundle exec cucumber --init`
 
 {{% /block %}}
 
 ## Creating a Feature
 
-To create a feature file:
-
 {{% block "java" %}}
+
+To create a feature file:
 
 1. Open the project in your IDE (if needed) and right-click on the `src/test/resources/<project>` folder.
 
@@ -334,9 +376,11 @@ Process finished with exit code 0
 
 Run the tests with `./node_modules/.bin/cucumber-js`.
 
-NOTE: You should run them from the directory containing the `/features` directory.
+{{% note "Running your tests"%}}
+You should run them from the directory containing the `/features` directory.
+By default, Cucumber-js will run all feature files found in the relative `/features` directory.
+{{% /note %}}
 
-// TODO: By default...
 
 You should get something like the following result:
 ```
@@ -423,9 +467,18 @@ The reason for this is that we haven't actually implemented this step; it throws
 
 {{% block "javascript" %}}
 
-Create a directory `step_definitions` and add a file called `belly.js`.
 The convention is to store the step definitions in a directory called `step_definitions/` inside the `features` directory.
 Create the `features/step_definitions/` and add a file `features/step_definitions/belly_steps.js` with the suggested snippets.
+
+Your directory now contains the following:
+```
+├── features
+│   ├── step-definitions
+│   │   └── belly-steps.js
+│   └── belly.feature
+├── package.json
+└── package-lock.json
+```
 
 When we run the test with just the snippets, we get an error message stating `ReferenceError: Given is not defined`.
 We need to import the keywords `Before`, `Given`, `When`, `Then`.
@@ -519,6 +572,19 @@ The step can be implemented like this:
 ```
 
 To make this step pass, we also need to add a file called `belly.js` with a method eat().
+We create this file in a separate `lib` directory.
+
+Your directory now contains the following:
+```
+├── features
+│   ├── step-definitions
+│   │   └── belly-steps.js
+│   └── belly.feature
+├── lib
+│   └── belly.js
+├── package.json
+└── package-lock.json
+```
 
 Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
 
@@ -573,7 +639,7 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 
 {{% block "ruby" %}}
 
-// TODO: Add results for passed scenario
+TODO: Add results for passed scenario in Ruby
 
 {{% /block %}}
 
