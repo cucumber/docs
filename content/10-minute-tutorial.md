@@ -422,8 +422,28 @@ Warnings:
 {{% /block %}}
 
 {{% block "ruby" %}}
+Run your tests with the following command: `bundle exec cucumber`.
 
-// TODO: How to run feature with Ruby and add result for this example
+You should get something like the following result:
+```
+1 scenario (1 undefined)
+3 steps (3 undefined)
+0m0.003s
+
+You can implement step definitions for undefined steps with these snippets:
+
+Given(/^I have (\\d+) cukes in my belly$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I wait (\\d+) hour$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^my belly should growl$/) do
+  pending # express the regexp above with the code you wish you had
+end
+```
 
 {{% /block %}}
 
