@@ -895,7 +895,7 @@ While Capybara is the preferred testing method for HTML views in cucumber-rails 
 
 Those of you that have used `growl` or `snarl` to provide desktop notifiers from autotest are advised that, as of this writing, Cucumber did not hook into the `:red` `:green` notifier capability of autotest; so, no pop-ups when a Step fails. However, there is a project for adding similar functionality to Cucumber: see [Cucumber_Growler](https://github.com/paolodona/cucumber_growler/tree/master).
 
-`autotest` is installed via the [ZenTest](http://www.zenspider.com/ZSS/Products/ZenTest/) gem. If you use autotest then take a look at the contents of `example_dot_autotest.rb` in the ZenTest gem root directory.
+`autotest` is installed via the [ZenTest](http://www.zenspider.com/projects/zentest.html) gem. If you use autotest then take a look at the contents of `example_dot_autotest.rb` in the ZenTest gem root directory.
 
 ## Need Help?
 
