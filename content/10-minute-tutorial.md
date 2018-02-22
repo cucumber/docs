@@ -643,9 +643,18 @@ TODO: Add results for passed scenario in Ruby
 
 {{% /block %}}
 
-{{% block "java" %}}
 # Examples
+
+{{% block "java" %}}
 To get started with a working project, try the [skeleton project](https://github.com/cucumber/cucumber-java-skeleton) which is available from GitHub.
 
 For more examples of how to use Cucumber, have a look at the [examples on GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples).
+{{% /block %}}
+
+{{% block "javascript" %}}
+For a Cucumber-js tutorial and example project, have a look at [TuteCumber](https://github.com/denford/TuteCumber)
+{{% /block %}}
+
+{{% block "ruby" %}}
+For a Ruby tutorial and example project, have a look at this [example project on GitHub](https://github.com/basti1302/audiobook-collection-manager-acceptance)
 {{% /block %}}
