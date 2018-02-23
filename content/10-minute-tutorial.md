@@ -21,7 +21,7 @@ To get started with Cucumber in Java, you will need the following:
 
 To get started with Cucumber in JavaScript, you will need the following:
 
-- node.js (4 and above)
+- node.js (v4 and up)
 
 On Mac OS, you can install `node.js` using homebrew: `brew install node`.
 
