@@ -513,7 +513,6 @@ Given('I have {int} cukes in my belly', function (int, callback) {
 callback(null, 'pending');
 });
 
-
 When('I wait {int} hour', function (int, callback) {
 // Write code here that turns the phrase above into concrete actions
 callback(null, 'pending');
@@ -588,11 +587,30 @@ The step should no longer thrown a PendingException, as it is no longer pending.
 We need to update our `belly-steps.js` to implement the step definition.
 The step can be implemented like this:
 ```javascript
-// TODO: Implement belly-steps in javascript
+const { Before, Given, When, Then } = require('cucumber')
+const Belly = require('../../lib/belly');
+
+let belly;
+
+Given('I have {int} cukes in my belly', function (int) {
+    belly = new Belly();
+    belly.eat(int);
+});
 ```
 
 To make this step pass, we also need to add a file called `belly.js` with a method eat().
 We create this file in a separate `lib` directory.
+
+```javascript
+class Belly {
+
+    eat() {
+    }
+}
+
+module.exports = Belly;
+```
+
 
 Your directory now contains the following:
 ```
