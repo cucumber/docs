@@ -546,8 +546,46 @@ The reason for this is that we haven't actually implemented the step; Cucumber t
 {{% /block %}}
 
 {{% block "ruby" %}}
+Create the directory `features/step_definitions`.
+In this directory, create a file called `belly_steps.rb` and add the snippets to this file.
 
-TODO: Add ruby result for this Gherkin example and how to import required classes.
+It should like this:
+```ruby
+Given(/^I have (\\d+) cukes in my belly$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I wait (\\d+) hour$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^my belly should growl$/) do
+  pending # express the regexp above with the code you wish you had
+end
+```
+
+Now when we run the test, we get something like the following:
+```
+  Scenario: a few cukes
+    Given I have 42 cukes in my belly
+    When I wait 1 hour
+    Then my belly should growl
+
+  Scenario: a few cukes                 # features/belly.feature:8
+    I have 42 cukes in my belly         # features/step_definitions/belly_steps.rb:1
+      TODO (Cucumber::Pending)
+      ./features/step_definitions/belly_steps.rb:2:in `/^I have (\\d+) cukes in my belly$/'
+      features/first.feature:9:in `Given I have 42 cukes in my belly'
+    When I wait 1 hour                  # features/step_definitions/belly_steps.rb:5
+    Then my belly should growl          # features/step_definitions/belly_steps.rb:9
+
+
+1 scenario (1 pending)
+4 steps (3 skipped, 1 pending)
+0m0.005s
+```
+
+The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending` tells you to implement the step.
 
 {{% /block %}}
 
@@ -629,13 +667,20 @@ Now you run the test and implement the code to make the step pass. Once it does,
 
 {{% block "ruby" %}}
 
-We need to update our `belly-steps.rb` to implement the step definition.
+We need to update our `belly_steps.rb` to implement the step definition.
+
 The step can be implemented like this:
 ```ruby
-// TODO: Implement belly-steps in ruby
+Given(/^I have (\\d+) cukes in my belly$/) do |cukes|
+  // TODO
+end
 ```
 
 To make this step pass, we also need to add a file called `belly.rb` with a method eat().
+
+```ruby
+// TODO
+```
 
 Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
 
@@ -676,7 +721,11 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 
 {{% block "ruby" %}}
 
-TODO: Add results for passed scenario in Ruby
+```
+1 scenario (1 passed)
+3 steps (3 passed)
+0m00.001s
+```
 
 {{% /block %}}
 
@@ -689,9 +738,9 @@ For more examples of how to use Cucumber, have a look at the [examples on GitHub
 {{% /block %}}
 
 {{% block "javascript" %}}
-For a Cucumber-js tutorial and example project, have a look at [TuteCumber](https://github.com/denford/TuteCumber)
+For a Cucumber-js tutorial and example project, have a look at [TuteCumber](https://github.com/denford/TuteCumber).
 {{% /block %}}
 
 {{% block "ruby" %}}
-For a Ruby tutorial and example project, have a look at this [example project on GitHub](https://github.com/basti1302/audiobook-collection-manager-acceptance)
+For a Ruby tutorial and example project, have a look at this [example project on GitHub](https://github.com/basti1302/audiobook-collection-manager-acceptance).
 {{% /block %}}
