@@ -377,7 +377,8 @@ Process finished with exit code 0
 Run the tests with `./node_modules/.bin/cucumber-js`.
 
 {{% note "Running your tests"%}}
-You should run them from the directory containing the `/features` directory.
+Run your tests from the directory containing the `/features` directory.
+
 By default, Cucumber-js will run all feature files found in the relative `/features` directory.
 {{% /note %}}
 
@@ -478,7 +479,6 @@ Your result will include something like the following:
 cucumber.api.PendingException: TODO: implement me
 	at skeleton.Stepdefs.i_have_cukes_in_my_belly(Stepdefs.java:10)
 	at ✽.I have 42 cukes in my belly(/Users/maritvandijk/IdeaProjects/cucumber-java-skeleton/src/test/resources/skeleton/belly.feature:4)
-
 ```
 
 The reason for this is that we haven't actually implemented this step; it throws a `PendingException` telling you to implement the step.
@@ -539,7 +539,6 @@ Warnings:
 1 scenario (1 pending)
 3 steps (1 pending, 2 skipped)
 0m00.001s
-
 ```
 
 The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending` tells you to implement the step.
