@@ -28,6 +28,11 @@ pygmentsUseClasses = true
     identifier = "Running Cucumber"
     url = "/running/"
 [[menu.cucumber]]
+    weight = 40
+    name = "Configuring"
+    identifier = "Configuring Cucumber"
+    url = "/configuration/"
+[[menu.cucumber]]
     weight = 70
     name = "---"
 [[menu.cucumber]]
@@ -37,10 +42,9 @@ pygmentsUseClasses = true
     url = "/gherkin/"
 [[menu.cucumber]]
     weight = 100
-    name = ".cucumber.yml"
-    identifier = "Cucumber config file"
-    url = "/cucumber/cucumber.yml/"
-
+    name = "Cucumber Reference"
+    identifier = "Using Cucumber: Step Definitions, Hooks, Tags"
+    url = "/cucumber/"
 
 
 [[menu.guides]]
@@ -112,3 +116,21 @@ pygmentsUseClasses = true
     name = "Voting"
     identifier = "Vote on new Cucumber features"
     url = "/voting/"
+[[menu.support]]
+    weight = 50
+    name = "---"
+[[menu.support]]
+    weight = "60"
+    name = "Blog posts"
+    identifier = "Blog posts on Cucumber and BDD"
+    url = "/about/blog-posts/"
+[[menu.support]]
+    weight = "70"
+    name = "Related Tools"
+    identifier = "Tools to use with Cucumber"
+    url = "/about/related-tools/"
+[[menu.support]]
+    weight = "80"
+    name = "Projects"
+    identifier = "Projects using Cucumber"
+    url = "/about/projects-using-cucumber/"

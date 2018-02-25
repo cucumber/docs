@@ -242,7 +242,7 @@ end
 Now that your code has been refactored you can access these helper methods anywhere in your code, instead of calling a step. Benefits:
 
 * Increased flexibility
-* Increased readabilitiy
+* Increased readability
 * Increased usability
 * You won't be writing code that's planned to be deprecated
 
