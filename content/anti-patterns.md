@@ -5,13 +5,13 @@ polyglot: true
 
 There are several anti-patterns, which we will describe here. We will also give you hints on how to avoid them!
 
-## Feature-coupled step definitions
+# Feature-coupled step definitions
 
 Feature-coupled step definitions are step definitions that **can't be reused** across features or scenarios.
 
 This may lead to an explosion of step definitions, code duplication, and high maintenance costs.
 
-### Example
+**Example**
 
 An imaginary résumé application could have the following Feature and Step Definition files:
 
@@ -81,14 +81,14 @@ Given /I have a CV and I'm on the edit description page/ do
 end
 ```
 
-### How to decouple steps & step definitions
+## How to decouple steps & step definitions
 
 * Organise your steps by domain concept.
 
 * Use domain-related names (rather than feature- or scenario-related names) for your step & step definition files.
 
 
-## Conjunction steps (anti-pattern)
+# Conjunction steps
 
 From the online Merriam-Webster dictionary:
 
@@ -97,20 +97,20 @@ From the online Merriam-Webster dictionary:
 Don't use steps that combine a bunch of different things. This makes steps too specialised, and hard to reuse.
 Cucumber has built-in support for conjunctions (`And`, `But`) for a reason!
 
-### Example
+**Example**
 
 ```
 Given I have shades and a brand new Mustang
 ```
 
-### How to split conjunction steps
+## How to split conjunction steps
 
 ```
 Given I have shades
 And I have a brand new Mustang
 ```
 
-### Support for conjunction steps
+## Support for conjunction steps
 
 Sometimes you may want to combine several steps into one, to make your scenarios easier to read.
 
@@ -129,5 +129,5 @@ To use several (smaller) steps inside a bigger step, extract each small step to 
 
 To make your life easier, strive to keep your steps atomic!
 
-## More information
+# More information
 For more information on anti-patterns, see [Cucumber Anti-Patterns (blog)](http://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns).
