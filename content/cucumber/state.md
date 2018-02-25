@@ -3,14 +3,28 @@ menu: reference
 nav: docs
 renderer: Cucumber::Website::Reference
 title: State
+polyglot: true
 ---
 
 It's important to prevent state created by one Scenario from leaking into others.
 Leaking state makes your Scenarios brittle, and difficult to run in isolation.
 
-Avoid using global or static variables.
+* Avoid using global or static variables.
 
-Make sure you clean your database between Scenarios.
+* Make sure you clean your database between Scenarios.
+
+# Sharing state between steps
+
+It's possible to store object state in variables inside your Step Definitions.
+
+{{% note "Be careful with state"%}}
+State can make your steps more tightly coupled and harder to reuse.
+{{% /note %}}
+
+<!--- You can follow a longer discussion [here](http://www.mail-archive.com/rspec-users@rubyforge.org/msg06268.html).
+TODO: summarize relevant information from this thread? --->
+
+{{% text "java" %}}You might also want to have a look at [dependency injection](/implementations/jvm/java-di).{{% /text %}}
 
 # Databases
 
@@ -52,6 +66,7 @@ Feature: Let's write a lot of stuff to the DB
     Given I write to the DB
 ```
 
+{{% block "java" %}}
 ## Using JUnit and Spring
 
 The [`cucumber-spring`](/implementations/jvm/java-di/#spring) module contains `@txn` Hooks in the `cucumber.api.spring` package.
@@ -67,7 +82,7 @@ public class RunCukesTest {
 ```
 
 See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
-
+{{% /block %}}
 ## Browsers, beware
 
 If you're using a [Browser Automation](/browser-automation/) tool that talks to your application over HTTP the transactional approach

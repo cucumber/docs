@@ -48,15 +48,20 @@ pygmentsUseClasses = true
 
 
 [[menu.guides]]
-    weight = 30
+    weight = 20
     name = "Browser Automation"
     identifier = "Selenium WebDriver, Capybara and more"
     url = "/browser-automation/"
 [[menu.guides]]
+    weight = 30
+    name = "Step Organization"
+    identifier = "How to organize your steps"
+    url = "/step-organization/"
+[[menu.guides]]
     weight = 40
-    name = "Best Practices"
-    identifier = "Isolated state"
-    url = "/best-practices/"
+    name = "State"
+    identifier = "Sharing state, isolated state"
+    url = "/cucumber/state/"
 [[menu.guides]]
     weight = 50
     name = "Testable Architecture"
@@ -72,6 +77,11 @@ pygmentsUseClasses = true
     name = "Mocking and Stubbing"
     identifier = "Using mocking and stubbing with Cucumber"
     url = "/cucumber/mocking-and-stubbing-with-cucumber/"
+[[menu.guides]]
+    weight = 80
+    name = "Anti-patterns"
+    identifier = "Several anti-patterns and how to avoid them"
+    url = "/anti-patterns/"
 
 
 [[menu.bdd]]
