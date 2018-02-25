@@ -23,11 +23,15 @@ To get started with Cucumber in JavaScript, you will need the following:
 
 - node.js (v4 and up)
 
+- npm
+
+**Install node.js**
+
 On Mac OS, you can install `node.js` using homebrew: `brew install node`.
 
 To verify that you have node.js installed properly, type `node -v` in a terminal; this should return the node version number.
 
-- npm
+**Install npm**
 
 We will use npm as our package manager. It should be installed in the same location as node.js.
 
@@ -260,19 +264,19 @@ To create a feature file:
 
 2. Select **New > File**
 
-3. Enter a name for your feature file, and use the `.feature` extension. For instance, `belly.feature`.
+3. Enter a name for your feature file, and use the `.feature` extension. For this tutorial, call it `belly.feature`.
 
 {{% /block %}}
 
 {{% block "javascript" %}}
 
-Create a new file inside the `features` directory, for instance `belly.feature`.
+Create a new file inside the `features` directory, and call it `belly.feature`.
 
 {{% /block %}}
 
 {{% block "ruby" %}}
 
-Create a new file inside the `features` directory, for instance `belly.feature`.
+Create a new file inside the `features` directory, and call it `belly.feature`.
 
 {{% /block %}}
 
@@ -280,7 +284,7 @@ Files in this folder with an extension of `.feature` are automatically recognise
 
 Open the file and add the feature description, starting with the `Feature` keyword and an optional description.
 
-For instance:
+Add the following:
 ```gherkin
 Feature: Belly
   Optional description of the feature
@@ -305,7 +309,7 @@ The feature file contains the Gherkin source.
 
 - The `Then` keyword precedes text defining the result of the action on the context (or expected result).
 
-For instance:
+Add the following:
 ```gherkin
   Scenario: a few cukes
     Given I have 42 cukes in my belly
@@ -374,11 +378,9 @@ Process finished with exit code 0
 
 {{% block "javascript" %}}
 
-Run the tests with `./node_modules/.bin/cucumber-js`.
+Run the tests with `./node_modules/.bin/cucumber-js`, from the directory containing the `/features` directory.
 
-{{% note "Running your tests"%}}
-Run your tests from the directory containing the `/features` directory.
-
+{{% note "Location of your feature files"%}}
 By default, Cucumber-js will run all feature files found in the relative `/features` directory.
 {{% /note %}}
 
@@ -458,7 +460,7 @@ We now have one `undefined` scenario and three `undefined` steps. Luckily, Cucum
 
 To add them to a Java class in IntelliJ:
 
-1. Create a new Java class in your `src/test/java/<project>` folder (for instance, `StepDefinitions.java`)
+1. Create a new Java class in your `src/test/java/<project>` folder, and call it `StepDefinitions.java`)
 
 2. Paste the generated snippets into this class
 
@@ -509,18 +511,18 @@ It should look like this:
 const { Before, Given, When, Then } = require('cucumber')
 
 Given('I have {int} cukes in my belly', function (int, callback) {
-// Write code here that turns the phrase above into concrete actions
-callback(null, 'pending');
+  // Write code here that turns the phrase above into concrete actions
+  callback(null, 'pending');
 });
 
 When('I wait {int} hour', function (int, callback) {
-// Write code here that turns the phrase above into concrete actions
-callback(null, 'pending');
+  // Write code here that turns the phrase above into concrete actions
+  callback(null, 'pending');
 });
 
 Then('my belly should growl', function (callback) {
-// Write code here that turns the phrase above into concrete actions
-callback(null, 'pending');
+  // Write code here that turns the phrase above into concrete actions
+  callback(null, 'pending');
 });
 ```
 
@@ -541,7 +543,7 @@ Warnings:
 0m00.001s
 ```
 
-The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending` tells you to implement the step.
+The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending`  means that you have to implement the step.
 
 {{% /block %}}
 
@@ -585,7 +587,7 @@ Now when we run the test, we get something like the following:
 0m0.005s
 ```
 
-The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending` tells you to implement the step.
+The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending`  means that you have to implement the step.
 
 {{% /block %}}
 
