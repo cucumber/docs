@@ -152,18 +152,52 @@ Your project builds correctly, but nothing is tested yet as you have not specifi
 
 Create a new working directory called `cucumber-js` and change into it. The rest of tutorial assumes that you are in this directory.
 
-Add a package.json file and add Cucumber to your project:
+We want to add a `package.json` file to our project and add Cucumber to it.
+
+We can have npm create the `package.json` for us. To get a default package.json, run `npm init -y` (or `npm init -yes`).
+
+This will generate a default `package.json` using information extracted from the current directory:
+
+```
+Wrote to /Users/maritvandijk/cucumberjs/package.json:
+
+{
+  "name": "cucumberjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+This will also create a lockfile called `package-lock.json`. You should commit this file.
+
+Cucumber-js is available as an npm package. To add it automatically to your `package.json`, run `npm install cucumber --save-dev`.
+
+Your `package.json` file should be updated, similar to this:
 ```
 {
+  "name": "cucumberjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
     "cucumber": "^{{% version "cucumberjs" %}}"
   }
 }
 ```
-
-Cucumber-js is available as an npm package. We can install it using `npm install cucumber`.
-
-This will create a lockfile called `package-lock.json`. You should commit this file.
 
 {{% /block %}}
 
