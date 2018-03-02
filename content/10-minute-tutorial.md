@@ -31,9 +31,7 @@ On Mac OS, you can install `node.js` using homebrew: `brew install node`.
 
 To verify that you have node.js installed properly, type `node -v` in a terminal; this should return the node version number.
 
-**Install npm**
-
-We will use npm as our package manager. It should be installed in the same location as node.js.
+We will use npm as our package manager. It comes pre-packaged with node.js.
 
 To verify that npm is installed, type `npm -v` in a terminal; this should return the npm version number.
 
@@ -150,7 +148,7 @@ Your project builds correctly, but nothing is tested yet as you have not specifi
 
 {{% block "javascript" %}}
 
-Create a new working directory called `cucumber-js` and change into it. The rest of tutorial assumes that you are in this directory.
+Create a new working directory called `my-project` and change into it. The rest of tutorial assumes that you are in this directory.
 
 We want to add a `package.json` file to our project and add Cucumber to it.
 
@@ -158,7 +156,7 @@ We can have npm create the `package.json` for us. To get a default package.json,
 
 This will generate a default `package.json` using information extracted from the current directory:
 
-```
+```json
 Wrote to /Users/maritvandijk/cucumberjs/package.json:
 
 {
@@ -180,7 +178,7 @@ This will also create a lockfile called `package-lock.json`. You should commit t
 Cucumber-js is available as an npm package. To add it automatically to your `package.json`, run `npm install cucumber --save-dev`.
 
 Your `package.json` file should be updated, similar to this:
-```
+```json
 {
   "name": "cucumberjs",
   "version": "1.0.0",
@@ -270,7 +268,7 @@ Our project structure is now as follows:
 
 {{% block "javascript" %}}
 
-Inside the `cucumber-js` folder, create a folder called `features`.
+Inside the `my-project` folder, create a folder called `features`.
 
 Your directory now contains the following:
 ```
@@ -412,7 +410,7 @@ Process finished with exit code 0
 
 {{% block "javascript" %}}
 
-Run the tests with `./node_modules/.bin/cucumber-js`, from the directory containing the `/features` directory.
+Run the tests with `./node_modules/.bin/my-project`, from the directory containing the `/features` directory.
 
 {{% note "Location of your feature files"%}}
 By default, Cucumber-js will run all feature files found in the relative `/features` directory.
