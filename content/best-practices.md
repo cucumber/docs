@@ -124,7 +124,14 @@ The{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
 ```
 
 ```javascript
-TODO: See Java or Ruby example
+    var { Given } = require('cucumber');
+
+    Given(/^I have a CV and I'm on the edit description page$/, function (callback) {
+      this.employee = new Employee('Sally');
+      this.employee.createCV();
+
+      callback();
+    });
 ```
 
 ```ruby
