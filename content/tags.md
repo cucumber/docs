@@ -123,7 +123,7 @@ cucumber --tags "@smoke and @fast"
 <p></p>
 
 {{% tip "Filtering by line" %}}
-Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running Cucumber](/running).
+Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running features](/running).
 {{% /tip %}}
 
 # Using tags for documentation
@@ -151,4 +151,3 @@ Another creative way to use Tags is to keep track of where in the development pr
 @qa_ready
 Feature: Index projects
 ```
-

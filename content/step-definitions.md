@@ -106,7 +106,7 @@ Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}
 2. Cucumber gathers any capture groups or variables
 3. Cucumber passes them to the step definition's {{% text "ruby" %}}`Proc` (or “function”){{% /text %}}{{% text "javascript" %}}function{{% /text %}}{{% text "java" %}}method{{% /text %}} and executes it
 
-Recall that step definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**). and can be expressed in any of Cucumber's supported [spoken languages](/gherkin/spoken-languages/).
+Recall that step definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**).
 
 All step definitions are loaded (and defined) before Cucumber starts to execute the plain text in the feature file.
 
@@ -195,7 +195,7 @@ So if you try `--guess` with the mice above, Cucumber will pick `/Three blind (.
 ### Redundant Steps
 
 In Cucumber, you're not allowed to use a `Regexp` more than once in a step definition—even across files, and even with different code inside the method or function.
-Note that the keywords (`Given`, `When`, `Then`, `And` and `But`) are not part of the `Regexp`; 
+Note that the keywords (`Given`, `When`, `Then`, `And` and `But`) are not part of the `Regexp`;
 this means you also cannot have the same step definition, but with different keywords.
 
 {{% text "ruby" %}}
@@ -242,7 +242,7 @@ end
 Now that your code has been refactored you can access these helper methods anywhere in your code, instead of calling a step. Benefits:
 
 * Increased flexibility
-* Increased readabilitiy
+* Increased readability
 * Increased usability
 * You won't be writing code that's planned to be deprecated
 

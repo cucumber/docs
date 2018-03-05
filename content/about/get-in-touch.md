@@ -5,12 +5,7 @@ source: https://github.com/cucumber/cucumber/wiki/Get-in-touch/
 title: Get in touch
 ---
 
-If you need help using Cucumber, you have several options:
-
--    Online community chat ([Slack](#slack), [Gitter](#gitter))
--    [The mailing list](#mailing-list)
--    [Premium support](#premium-support)
-
+If you need help using Cucumber, you have several options.
 Wherever you interact with the Cucumber community, always remember to respect and uphold our [code of conduct](https://github.com/cucumber/cucumber/blob/master/CODE_OF_CONDUCT.md).
 
 # Slack
