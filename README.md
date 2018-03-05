@@ -115,7 +115,7 @@ CMS doesn't fit with our workflow.
 
 ## Continuous Deployment
 
-GitHub will notify Netlify for every `git push` via a [webhook](thanks to a [webhook](https://github.com/cucumber/docs.cucumber.io/settings/hooks)).
+GitHub will notify Netlify for every `git push` thanks to a [webhook](https://github.com/cucumber/docs.cucumber.io/settings/hooks).
 
 Netlify will then build the site
 [deploy](https://app.netlify.com/sites/cucumber/deploys) it if the build is successful.
