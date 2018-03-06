@@ -70,7 +70,7 @@ be highlighted.
 
 If you don't have `pip` installed yet, you'll first need to install it.
 
-On Mac OS you can do so by installing Python with homebrew
+On macOS you can do so by installing Python with Homebrew
 
     brew install python
 
