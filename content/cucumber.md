@@ -509,7 +509,7 @@ To run a particular hook only for certain scenarios, you can associate a
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
-Hook with a [tag expression](/tags/#tag-expressions).
+Hook with a [tag expression](/cucumber/#tags/#tag-expressions).
 
 {{% block "java" %}}
 Annotated method style:
@@ -542,7 +542,7 @@ end
 ```
 {{% /block %}}
 
-See more documentation on [tags](/tags/).
+See more documentation on [tags](/cucumber/#tags/).
 
 ## Global Hooks
 
@@ -758,7 +758,7 @@ Feature: Index projects
 
 There are several ways to run features with Cucumber.
 
-It is possible to [configure](/configuration) how Cucumber should run features.
+It is possible to [configure](#configuration) how Cucumber should run features.
 
 ## From the command line
 The most standard option is to run Cucumber from the command line.
@@ -853,7 +853,7 @@ This will execute all scenarios in same package as the runner; by default glue c
 package.
 
 You can use the `@CucumberOptions` annotation to provide
-additional [configuration](/configuration/#list-configuration-options) to the runner.
+additional [configuration](#configuration/#list-configuration-options) to the runner.
 
 You can run this test in the same way you run other JUnit tests, using
 an IDE or a build tool (for example `mvn test`).
@@ -1077,7 +1077,7 @@ For more information on JUnit, see the [JUnit web site](http://www.junit.org).
 Use the `cucumber-js --help` command to see which arguments can be passed to the executable file.
 {{% /block %}}
 
-You can also use [tags](/tags/) to specify what to run, or pass [environment variables](/cucumber/environment-variables/) to Cucumber.
+You can also use [tags](/#tags/) to specify what to run, or pass [environment variables](/environment-variables/) to Cucumber.
 
 {{% block "java" %}}
 Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property.
