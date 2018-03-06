@@ -70,7 +70,7 @@ Open a terminal and run the following command:
 mvn archetype:generate                      \
    -DarchetypeGroupId=io.cucumber           \
    -DarchetypeArtifactId=cucumber-archetype \
-   -DarchetypeVersion=2.3.1.1               \
+   -DarchetypeVersion={{% version "cucumberarchetype" %}}               \
    -DgroupId=hellocucumber                  \
    -DartifactId=hellocucumber               \
    -Dpackage=hellocucumber                  \
