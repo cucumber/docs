@@ -97,7 +97,7 @@ Otherwise, to write them using annotated methods, you need to add the following 
 
 While it's not required, we strongly recommend you include one of the
 [Dependency Injection](/implementations/jvm/java-di/) modules as well. This allows
-you to share state between [Step Definitions](/step-definitions/)
+you to share state between [Step Definitions](/cucumber/#step-definitions)
 without resorting to static variables (a common source of flickering Scenarios).
 
 ### Step Definitions
@@ -108,7 +108,7 @@ method annotations:
 
 #### Lambda Expressions (Java 8)
 
-If you use the `cucumber-java8` module, you can write the [Step Definitions](/step-definitions/)
+If you use the `cucumber-java8` module, you can write the [Step Definitions](/cucumber/#step-definitions)
 using lambdas:
 
 ```java

@@ -35,7 +35,7 @@ examine them for scenarios to test, and run the scenarios against your system.
 Each scenario is a list of steps for Cucumber to work through. In order for Cucumber
 to understand the feature files, they must follow some basic syntax rules; this set of rules is called [Gherkin](/gherkin/).
 
-Along with the [features](/gherkin/#feature), you give Cucumber a set of [step definitions](/step-definitions/). These
+Along with the [features](/gherkin/#feature), you give Cucumber a set of [step definitions](/cucumber/#step-definitions). These
 files map (or "glue") each business-readable language step into programming code to carry
 out what action should be performed by the step.
 

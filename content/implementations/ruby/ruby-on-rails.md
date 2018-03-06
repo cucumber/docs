@@ -163,7 +163,7 @@ default: --format pretty
 html: --format html --out features.html
 ```
 
-Remember that you need `AUTOFEATURE=true` for autospec to include Cucumber features. See [Running Cucumber](/running/) 
+Remember that you need `AUTOFEATURE=true` for autospec to include Cucumber features. See [Running Features](/cucumber/#running-features)
 and [autotest integration](/wiki/autotest-integration) for more info.
 
 For autospec, change `autotest` in the above block to `autospec`:
@@ -177,7 +177,7 @@ html: --format html --out features.html
 
 ## Special Tags
 
-Cucumber-Rails provide three special [tags](/tags/) you can use to change how Cucumber runs your scenarios.
+Cucumber-Rails provide three special [tags](/cucumber/#tags) you can use to change how Cucumber runs your scenarios.
 
 ### `@no-txn`
 

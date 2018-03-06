@@ -12,7 +12,7 @@ Cucumber runs scenarios in a `World`. By default, the `World` is just an instanc
 
 # Step Definitions
 
-All [Step Definitions](/step-definitions/) will run in the context of the current World instance. (A new instance is created for each scenario). This means that `self` in a Step Definition block will be the World instance. Any `@instance_variable` instantiated in a Step Definition will be assigned to the World, and can be accessed from other Step Definitions.
+All [Step Definitions](/cucumber/#step-definitions) will run in the context of the current World instance. (A new instance is created for each scenario). This means that `self` in a Step Definition block will be the World instance. Any `@instance_variable` instantiated in a Step Definition will be assigned to the World, and can be accessed from other Step Definitions.
 
 # A better world
 

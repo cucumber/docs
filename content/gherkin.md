@@ -23,7 +23,7 @@ followed by a hash sign (`#`) and some text. Comments do have to start on a new 
 
 The parser divides the input into features, scenarios, and steps. When you run
 the feature, the trailing portion (after the keyword) of each step is matched to
-a code block, called a [step definition](/step-definitions/).
+a code block, called a [step definition](/cucumber/#step-definitions).
 
 A Gherkin source file will usually contain a feature and several scenarios and/or scenario outlines that describe this feature.
 For example:
@@ -109,7 +109,7 @@ Feature: Refund item
     But the faulty microwave should be returned
 ```
 
-You can use [tags](/tags/) to group features and scenarios together,
+You can use [tags](/cucumber/#tags) to group features and scenarios together,
 independent of your file and directory structure.
 
 ## Descriptions
@@ -193,7 +193,7 @@ The observations should also be on some kind of *output*. That is, something tha
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
-The [step definition](/step-definitions/) of a `Then` step should use an *assertion* to
+The [step definition](/cucumber/#step-definitions) of a `Then` step should use an *assertion* to
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
@@ -261,7 +261,7 @@ Since it is repeated in every scenario, this is an indication that those steps
 are not *essential* to describe the scenarios; they are *incidental details*. You can literally move such `Given` steps to the background, by grouping them under a `Background` section.
 
 A `Background` allows you to add some context to the scenarios in the feature. It can contain one or more steps.
-It is run before *each* scenario, but after any `Before` [hooks](/hooks/). In your feature file, put the `Background` before the first scenario.
+It is run before *each* scenario, but after any `Before` [hooks](/cucumber/#hooks). In your feature file, put the `Background` before the first scenario.
 
 Example:
 
@@ -293,7 +293,7 @@ Scenario: Greg posts to a client's blog
   Then I should see "Your article was published."
 ```
 
-For a less explicit alternative to `Background`, check out [tagged hooks](/hooks/#tagged-hooks).
+For a less explicit alternative to `Background`, check out [tagged hooks](/cucumber/#tagged-hooks).
 
 **Good practices for using Background:**
 
