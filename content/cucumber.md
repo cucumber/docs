@@ -653,7 +653,7 @@ Tag expressions provide a simple query language to select scenarios based on
 Tag expressions are used for two different purposes:
 
 * [Running a subset of scenarios](#running-a-subset-of-scenarios)
-* [Scoping hooks to a subset of scenarios](/hooks#tagged-hooks)
+* [Scoping hooks to a subset of scenarios](#hooks#tagged-hooks)
 
 The simplest possible tag expression is simply a tag, for example:
 
@@ -725,7 +725,7 @@ cucumber --tags "@smoke and @fast"
 <p></p>
 
 {{% tip "Filtering by line" %}}
-Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running features](/running).
+Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running features](#running).
 {{% /tip %}}
 
 ## Using tags for documentation
@@ -1039,7 +1039,7 @@ Or:
 mvn test -Dcucumber.options="--help"
 ```
 
-The [JUnit Runner](/running/#junit-runner) and [Android Runner](/running/#android-runner) can also pick
+The [JUnit Runner](#running/#junit-runner) and [Android Runner](#running/#android-runner) can also pick
 up configuration options defined via the `@CucumberOptions` annotation.
 
 For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
@@ -1064,7 +1064,7 @@ Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotati
 These will executed before and after all scenarios. Using these is not recommended, as it limits the portability between different runners;
 they may not execute correctly when using the commandline, [IntelliJ IDEA](https://www.jetbrains.com/help/idea/cucumber.html) or
 [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse). Instead it is recommended to use Cucumbers `Before`
-+and `After` [hooks](/hooks/).
++and `After` [hooks](#hooks/).
 {{% /note %}}
 
 The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
