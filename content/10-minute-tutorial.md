@@ -2,779 +2,783 @@
 title: 10 Minute Tutorial
 polyglot: true
 ---
+
+In this quick tutorial you will learn how to:
+
+* Install Cucumber
+* Write your first Scenario using the Gherkin syntax
+* Write your first step definition in {{% text "java" %}}Java{{% /text %}}{{% text "javascript" %}}JavaScript{{% /text %}}{{% text "ruby" %}}Ruby{{% /text %}}
+* Run Cucumber
+* Learn the basic workflow of BDD
+
+We'll use Cucumber to develop a small library that can figure out whether it's
+Friday yet. 
+
+Before we begin, you will need the following:
+
 {{% block "java" %}}
 
-To get started with Cucumber in Java, you will need the following:
-
-- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) - Java 8 (Java 9 is not yet supported by Cucumber)
-
-- [Maven](https://maven.apache.org/index.html) - Version 3.3.1 or higher
-
-- An IDE editor, for example [IntelliJ IDEA](https://www.jetbrains.com/idea/?fromMenu#chooseYourEdition) (which will be used in this
-  introduction)
-
-- A Cucumber plugin for your IDE, for example [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java) to go with IntelliJ IDEA
+- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) (Java 9 is not yet supported by Cucumber)
+- [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
+   - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
+- [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ)
+   - [Cucumber Eclipse](https://cucumber.github.io/cucumber-eclipse/)
 
 {{% /block %}}
 
 {{% block "javascript" %}}
 
-To get started with Cucumber in JavaScript, you will need the following:
+- [Node.js](https://nodejs.org/)
+- A text editor
 
-- node.js (v4 and up)
+Open a terminal to verify that Node.js is installed properly:
 
-- npm
+```shell
+node -v
+npm -v
+```
 
-**Install node.js**
-
-On Mac OS, you can install `node.js` using homebrew: `brew install node`.
-
-To verify that you have node.js installed properly, type `node -v` in a terminal; this should return the node version number.
-
-We will use npm as our package manager. It comes pre-packaged with node.js.
-
-To verify that npm is installed, type `npm -v` in a terminal; this should return the npm version number.
+Both of these commands should print a version number.
 
 {{% /block %}}
 
 {{% block "ruby" %}}
 
-To get started with Cucumber in Ruby, you will need the following:
+- [Ruby](https://www.ruby-lang.org/)
+- [Bundler](http://bundler.io/)
+- A text editor
 
-- Ruby
+Open a terminal to verify that Ruby is installed properly:
 
-- RubyGems
+```shell
+ruby -v
+bundle -v
+```
+
+Both of these commands should print a version number.
 
 {{% /block %}}
 
-# Setting up the project
+# Create an empty Cucumber project
 
 {{% block "java" %}}
+We'll start by creating a new project directory with the `cucumber-archetype` Maven plugin.
+Open a terminal and run the following command:
 
-First, we need to set up the project so we can use Cucumber.
+```shell
+mvn archetype:generate                      \
+   -DarchetypeGroupId=io.cucumber           \
+   -DarchetypeArtifactId=cucumber-archetype \
+   -DarchetypeVersion=2.3.1.1               \
+   -DgroupId=hellocucumber                  \
+   -DartifactId=hellocucumber               \
+   -Dpackage=hellocucumber                  \
+   -Dversion=1.0.0-SNAPSHOT                 \
+   -DinteractiveMode=false
 
-## Create a Maven project
-
-In this tutorial, we're using Maven to import external dependencies. We start by creating a new Maven project, which will automatically create some of the directories and files we will need.
-
-To create a new Maven project in IntelliJ:
-
-1. Click the menu option **File > New > Project**
-
-2. In the **New project** dialog box, select **Maven** on the left (if it isn't already selected)
-
-3. Make sure that the Project SDK is selected (for instance, Java 1.8) and click **Next**
-
-4. Specify a **GroupId** and **ArtifactId** for your project and click **Next**
-
-5. Specify a **Project name** and **Project location** for your project (if needed) and click **Finish**
-
-You should now have a project with the following structure:
-
-```
-├── pom.xml
-└── src
-    ├── main
-    │   └── java        (marked as sources root)
-    │   └── resources   (marked as resources root)
-    └── test
-        └── java        (marked as test sources root)
+cd hellocucumber
 ```
 
-## Add Cucumber to your project
+Open the project in IntelliJ IDEA: 
 
-Add Cucumber to your project by adding a dependency to your `pom.xml`:
-
-```xml
-<dependencies>
-    <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>cucumber-java</artifactId>
-        <version>{{% version "cucumberjvm" %}}</version>
-        <scope>test</scope>
-    </dependency>
-</dependencies>
-```
-
-In addition, you will need the following dependencies to run Cucumber with JUnit:
-```xml
-<dependencies>
-    ...
-    <dependency>
-        <groupId>io.cucumber</groupId>
-        <artifactId>cucumber-junit</artifactId>
-        <version>{{% version "cucumberjvm" %}}</version>
-        <scope>test</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-        <scope>test</scope>
-    </dependency>
-</dependencies>
-```
-
-If you have IntelliJ configured to autoimport dependencies, it will automatically import them for you.
-Otherwise, you can manually import them by opening the "**Maven Projects** menu on the right and clicking the **Reimport all Maven Projects** icon on the top left of that menu.
-To check if your dependencies have been downloaded, you can open the **External Libraries** in the left **Project** menu in IntelliJ.
-
-To make sure everything works together correctly, open a command prompt and navigate to your project directory (the one containing the pom.xml file) and enter `mvn clean test`.
-
-You should see something like the following:
-```
-[INFO] Scanning for projects...
-[INFO]
-[INFO] ------------------------------------------------------------------------
-[INFO] Building cucumber-tutorial 1.0-SNAPSHOT
-[INFO] ------------------------------------------------------------------------
-
-    <progress messages....>
-
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: <time> s
-[INFO] Finished at: <date> <time>
-[INFO] Final Memory: <X>M/<Y>M
-[INFO] ------------------------------------------------------------------------
-
-```
-
-Your project builds correctly, but nothing is tested yet as you have not specified any behaviour to test against.
+* **File -> Open... -> (Select the pom.xml)**
+* Select **Open as Project**
 
 {{% /block %}}
 
 {{% block "javascript" %}}
+We'll start by creating a new directory and an empty Node.js project.
 
-Create a new working directory called `my-project` and change into it. The rest of tutorial assumes that you are in this directory.
-
-We want to add a `package.json` file to our project and add Cucumber to it.
-
-We can have npm create the `package.json` for us. To get a default package.json, run `npm init -y` (or `npm init -yes`).
-
-This will generate a default `package.json` using information extracted from the current directory:
-
-```json
-Wrote to /Users/maritvandijk/cucumberjs/package.json:
-
-{
-  "name": "cucumberjs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-}
+```shell
+mkdir hellocucumber
+cd hellocucumber
+npm init --yes
 ```
 
-This will also create a lockfile called `package-lock.json`. You should commit this file.
+Add Cucumber as a development dependency:
 
-Cucumber-js is available as an npm package. To add it automatically to your `package.json`, run `npm install cucumber --save-dev`.
+```shell
+npm install cucumber --save-dev
+```
 
-Your `package.json` file should be updated, similar to this:
+Open `package.json` in a text editor and change the `test` section so it looks like this:
+
 ```json
 {
-  "name": "cucumberjs",
+  "name": "hellocucumber",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cucumber-js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "cucumber": "^{{% version "cucumberjs" %}}"
   }
 }
 ```
 
-{{% /block %}}
+Install Cucumber:
 
-{{% block "ruby" %}}
-
-## Ruby
-
-Cucumber for Ruby is a ruby gem, and can be installed from the command line.
-After you have installed Ruby and RubyGems, install Cucumber with the following command: `gem install cucumber`
-
-Add Cucumber to your Ruby project:
-```ruby
-    group :test do
-      gem 'cucumber', '~> 2.4.0'
-    end
+```shell
+npm install
 ```
 
-## Ruby on Rails
+Prepare the file structure:
 
-Before you can use the generator, add the gem to your project's Gemfile:
-```ruby
-    group :test do
-      gem 'cucumber-rails', :require => false
-      # database_cleaner is not required, but highly recommended
-      gem 'database_cleaner'
-    end
+```shell
+mkdir features
+mkdir features/step_definitions
 ```
 
-Then install it by running: `bundle install`.
+Create a file called `cucumber.js` at the root of your project and add the following
+content:
 
-To learn about the various options: `rails generate cucumber:install --help`.
-
-Finally, bootstrap your Rails app, for example: `rails generate cucumber:install`.
-
-{{% /block %}}
-
-# Specifying Expected Behaviour
-
-We specify the expected behaviour by defining [features](/gherkin/#feature) and [scenarios](/gherkin/#scenario).
-
-## Creating the Feature Directory
-
-{{% block "java" %}}
-
-Features are defined in feature files, which are stored in the `src/test/resources/` directory (or a subdirectory).
-
-We need to create this directory, as it was not created for us. In IntelliJ:
-
-1. In the Test folder, create a new directory called `resources`.
-
-2. Right click the folder and select **Mark directory as > Test Resources Root**.
-
-3. You can add subdirectories as needed. Create a subdirectory with the name of your project in `src/test/resources/`
-
-Our project structure is now as follows:
-
-```
-├── pom.xml             (containing our Cucumber and JUnit dependencies)
-└── src
-    ├── main
-    │   └── java        (marked as sources root)
-    │   └── resources   (marked as resources root)
-    └── test
-        ├── java        (marked as test sources root)
-        └── resources   (marked as test resources root)
-                └── <project>
-```
-
-{{% /block %}}
-
-{{% block "javascript" %}}
-
-Inside the `my-project` folder, create a folder called `features`.
-
-Your directory now contains the following:
-```
-├── features
-├── package.json
-└── package-lock.json
-```
-
-{{% /block %}}
-
-{{% block "ruby" %}}
-
-To create a simple directory structure:
-`bundle exec cucumber --init`
-
-{{% /block %}}
-
-## Creating a Feature
-
-{{% block "java" %}}
-
-To create a feature file:
-
-1. Open the project in your IDE (if needed) and right-click on the `src/test/resources/<project>` folder.
-
-2. Select **New > File**
-
-3. Enter a name for your feature file, and use the `.feature` extension. For this tutorial, call it `belly.feature`.
-
-{{% /block %}}
-
-{{% block "javascript" %}}
-
-Create a new file inside the `features` directory, and call it `belly.feature`.
-
-{{% /block %}}
-
-{{% block "ruby" %}}
-
-Create a new file inside the `features` directory, and call it `belly.feature`.
-
-{{% /block %}}
-
-Files in this folder with an extension of `.feature` are automatically recognised as feature files. Each feature file describes a single feature, or part of a feature.
-
-Open the file and add the feature description, starting with the `Feature` keyword and an optional description.
-
-Add the following:
-```gherkin
-Feature: Belly
-  Optional description of the feature
-```
-
-### Creating a Scenario
-
-Scenarios are added to the feature file, to define examples of the expected behaviour. These scenarios can be used to test the feature.
-Start a scenario with the `Scenario` keyword and add a brief description of the scenario. To define the scenario, you have to define all of its steps.
-
-### Defining Steps
-
-These all have a keyword (`Given`, `When`, and `Then`) followed by a step. The step is then matched to a [step definition](/step-definitions/) which map the plain text step to programming code.
-
-The plain text steps are defined in the [Gherkin](/gherkin/) language. Gherkin allows developers and business stakeholders to describe and share the expected behaviour of the application. It should not describe the implementation.
-
-The feature file contains the Gherkin source.
-
-- The `Given` keyword precedes text defining the context; the known state of the system (or precondition).
-
-- The `When` keyword precedes text defining an action.
-
-- The `Then` keyword precedes text defining the result of the action on the context (or expected result).
-
-Add the following:
-```gherkin
-  Scenario: a few cukes
-    Given I have 42 cukes in my belly
-    When I wait 1 hour
-    Then my belly should growl
-```
-
-# Running the test
-
-{{% block "java" %}}
-
-To run the tests from JUnit we need to add a runner to our project.
-
-Create a new Java class in your `src/test/java/<project>` directory, called `RunCucumberTest.java`.
-
-```java
-package <project>;
-
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty"})
-public class RunCukesTest {
+```javascript
+module.exports = {
+  default: `--format-options '{"snippetInterface": "synchronous"}'`
 }
 ```
 
-The JUnit runner will by default use classpath:package.of.my.runner to look for features.
-You can also specify the location of the feature file(s) and glue file(s) you want Cucumber to use in the @CucumberOptions.
+Also, create a file called `features/step_definitions/stepdefs.js` with the
+following content:
 
-To run your tests with the runner, run this runner class. You can do so by right clicking the class file and selecting `RunCucumberTest` from the context menu.
-
-You should get something like the following result:
+```javascript
+const assert = require('assert');
+const { Given, When, Then } = require('cucumber');
 ```
+
+{{% /block %}}
+
+{{% block "ruby" %}}
+We'll start by creating a new directory and an empty Ruby project.
+
+```
+mkdir hellocucumber
+cd hellocucumber
+```
+
+Create a `Gemfile` with the following contents:
+
+```ruby
+group :test do
+  gem 'cucumber', '~> {{% version "cucumberruby" %}}'
+  gem 'rspec', '~> {{% version "rspec" %}}'
+end
+```
+
+Install Cucumber and prepare the file structure:
+
+```shell
+bundle install
+cucumber --init
+```
+
+{{% /block %}}
+
+You now have a simple project with Cucumber installed.
+
+# Verify Cucumber installation
+
+To make sure everything works together correctly, let's run Cucumber.
+
+{{% block "java" %}}
+```shell
+mvn test
+```
+{{% /block %}}
+
+{{% block "javascript" %}}
+```shell
+# Run via NPM
+npm run test
+
+# Run standalone
+./node_modules/.bin/cucumber-js
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```shell
+cucumber
+```
+{{% /block %}}
+
+You should see something like the following:
+
+{{% block "java" %}}
+```
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+No features found at [classpath:hellocucumber]
+
+0 Scenarios
+0 Steps
+0m0.004s
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.541 sec
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+```
+
+If you prefer, you can also run Cucumber from your IDE. Right-click the `RunCucumberTest`
+class file and selecting **Run Test** from the context menu.
+
+{{% /block %}}
+
+{{% block "javascript" %}}
+```
+0 Scenarios
+0 steps
+0m00.000s
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```
+0 scenarios
+0 steps
+0m0.000s
+```
+{{% /block %}}
+
+Cucumber's output is telling us that it didn't find anything to run.
+
+# Write a Scenario
+
+When we do Behaviour-Driven Development with Cucumber we use *concrete examples* 
+to specify *what* we want the software to do. Scenarios are written *before*
+production code. They start their life as an *executable specification*. As
+the production code emerges, Scenarios take on a role as *living documentation* and 
+*automated tests*.
+
+{{% tip "Example Mapping"%}}
+Try running an [Example Mapping](/example-mapping/) workshop in your team to design examples
+together.
+{{% /tip %}}
+
+In Cucumber, an example is called a [Scenario](/gherkin/#Scenario). 
+Scenarios are defined in `.feature` files, which are stored in the 
+{{% text "java" %}}`src/test/resources/hellocucumber`{{% /text %}}
+{{% text "javascript" %}}`features`{{% /text %}}
+{{% text "ruby" %}}`features`{{% /text %}}
+directory (or a subdirectory).
+
+One concrete example would be that *Sunday isn't Friday*.
+
+Create an empty file called
+{{% text "java" %}}`src/test/resources/hellocucumber/is_it_friday_yet.feature`{{% /text %}}
+{{% text "javascript" %}}`features/is_it_friday_yet.feature`{{% /text %}}
+{{% text "ruby" %}}`features/is_it_friday_yet.feature`{{% /text %}}
+with the following contents:
+
+```gherkin
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+  
+  Scenario: Sunday isn't Friday
+    Given today is Sunday
+    When I ask whether is's Friday yet
+    Then I should be told "Nope"
+```
+
+The first line of this file starts with the keyword `Feature:` followed by a name.
+It's a good idea to use a name similar to the file name.
+
+The second line is a brief description of the feature. Cucumber does not
+execute this line, it's just documentation.
+
+The fourth line, `Scenario: Sunday is not Friday` is a [Scenario](/gherkin#Scenario), which
+is a *concrete example* illustrating how the software should behave.
+
+The last three lines starting with `Given`, `When` and `Then` are the [steps](/gherkin#Scenario)
+of our Scenario. This is what Cucumber will execute.
+
+# See Scenario reported as undefined
+
+Now that we have a Scenario, we can ask Cucumber to execute it.
+
+{{% block "java" %}}
+```shell
+mvn test
+```
+
+{{% /block %}}
+
+{{% block "javascript" %}}
+```shell
+npm run test
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+
+```shell
+cucumber
+```
+{{% /block %}}
+
+Cucumber is telling us we have one `undefined` Scenario and three `undefined` steps. 
+It's also suggesting some snippets of code that we can use to **define** these steps:
+
+{{% block "java" %}}
+```
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # null
+    When I ask whether is's Friday yet # null
+    Then I should be told "Nope"       # null
+
 1 Scenarios (1 undefined)
 3 Steps (3 undefined)
-0m0.015s
+0m0.040s
 
 
 You can implement missing steps with the snippets below:
 
-@Given("^I have (\\d+) cukes in my belly$")
-public void i_have_cukes_in_my_belly(int arg1) throws Exception {
+@Given("^today is Sunday$")
+public void today_is_Sunday() throws Exception {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
 
-@When("^I wait (\\d+) hour$")
-public void i_wait_hour(int arg1) throws Exception {
+@When("^I ask whether is's Friday yet$")
+public void i_ask_whether_is_s_Friday_yet() throws Exception {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
 
-@Then("^my belly should growl$")
-public void my_belly_should_growl() throws Exception {
+@Then("^I should be told \"([^\"]*)\"$")
+public void i_should_be_told(String arg1) throws Exception {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
-
-
-Process finished with exit code 0
 ```
-
 {{% /block %}}
 
 {{% block "javascript" %}}
-
-Run the tests with `./node_modules/.bin/my-project`, from the directory containing the `/features` directory.
-
-{{% note "Location of your feature files"%}}
-By default, Cucumber-js will run all feature files found in the relative `/features` directory.
-{{% /note %}}
-
-
-You should get something like the following result:
 ```
 UUU
 
 Warnings:
 
-1) Scenario: a few cukes # features/belly.feature:3
-   ? Given I have 42 cukes in my belly
+1) Scenario: Sunday is not Friday # features/is_it_friday_yet.feature:4
+   ? Given today is Sunday
        Undefined. Implement with the following snippet:
 
-         Given('I have {int} cukes in my belly', function (int, callback) {
+         Given('today is Sunday', function () {
            // Write code here that turns the phrase above into concrete actions
-           callback(null, 'pending');
+           return 'pending';
          });
-
-   ? When I wait 1 hour
+       
+   ? When I ask whether is's Friday yet
        Undefined. Implement with the following snippet:
 
-         When('I wait {int} hour', function (int, callback) {
+         When('I ask whether is\'s Friday yet', function () {
            // Write code here that turns the phrase above into concrete actions
-           callback(null, 'pending');
+           return 'pending';
          });
-
-   ? Then my belly should growl
+       
+   ? Then I should be told "Nope"
        Undefined. Implement with the following snippet:
 
-         Then('my belly should growl', function (callback) {
+         Then('I should be told {string}', function (string) {
            // Write code here that turns the phrase above into concrete actions
-           callback(null, 'pending');
+           return 'pending';
          });
+       
 
-
-1 scenario (1 undefined)
+1 Scenario (1 undefined)
 3 steps (3 undefined)
 0m00.000s
 ```
-
 {{% /block %}}
 
 {{% block "ruby" %}}
-Run your tests with the following command: `bundle exec cucumber`.
-
-You should get something like the following result:
 ```
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday is not Friday       # features/is_it_friday_yet.feature:4
+    Given today is Sunday              # features/is_it_friday_yet.feature:5
+    When I ask whether is's Friday yet # features/is_it_friday_yet.feature:6
+    Then I should be told "Nope"       # features/is_it_friday_yet.feature:7
+
 1 scenario (1 undefined)
 3 steps (3 undefined)
-0m0.003s
+0m0.052s
 
 You can implement step definitions for undefined steps with these snippets:
 
-Given(/^I have (\\d+) cukes in my belly$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Given("today is Sunday") do
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I wait (\\d+) hour$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When("I ask whether is's Friday yet") do
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then(/^my belly should growl$/) do
-  pending # express the regexp above with the code you wish you had
+Then("I should be told {string}") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
 end
 ```
-
 {{% /block %}}
 
-As we can see, our tests have run, but have not actually done anything because they are not yet defined.
+Copy each of the three snippets for the undefined steps and paste them into 
+{{% text "java" %}}`src/test/java/hellocucumber/Stepdefs.java`{{% /text %}}
+{{% text "javascript" %}}`features/step_definitions/stepdefs.js`{{% /text %}}
+{{% text "ruby" %}}`features/step_definitions/stepdefs.js`{{% /text %}}.
 
-## Define Snippets for Missing Steps
+# See Scenario reported as pending
 
-We now have one `undefined` scenario and three `undefined` steps. Luckily, Cucumber has given us examples, or snippets, that we can use to define the steps.
+Run Cucumber again. This time the output is a little different:
 
 {{% block "java" %}}
-
-To add them to a Java class in IntelliJ:
-
-1. Create a new Java class in your `src/test/java/<project>` folder, and call it `StepDefinitions.java`)
-
-2. Paste the generated snippets into this class
-
-IntelliJ will not automatically recognise those symbols (like `@Given`, `@When`, `@Then`), so we'll need to add `import` statements. In IntelliJ:
-
-3. Add import statements for `@Given`, `@When`, `@Then` (underlined in red)
-
-In IntelliJ you can do so by putting your cursor on the `@Given` symbol and press **ALT** + **ENTER**, then select **Import class**.
-
-Now, when you run the test, these step definitions should be found and used.
-
-{{% note "Run configurations"%}}
-If this does not work, select **Run > Edit Configurations**, select **Cucumber java** from the **Defaults** drop-down, and add the project name to the **Glue** field on the **Configuration** tab.
-{{% /note %}}
-
-Your result will include something like the following:
 ```
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # Stepdefs.today_is_Sunday()
+      cucumber.api.PendingException: TODO: implement me
+	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:12)
+	at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
+
+    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
+
+1 Scenarios (1 pending)
+3 Steps (2 skipped, 1 pending)
+0m0.188s
+
 cucumber.api.PendingException: TODO: implement me
-	at skeleton.Stepdefs.i_have_cukes_in_my_belly(Stepdefs.java:10)
-	at ✽.I have 42 cukes in my belly(/Users/maritvandijk/IdeaProjects/cucumber-java-skeleton/src/test/resources/skeleton/belly.feature:4)
+	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:12)
+	at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
 ```
-
-The reason for this is that we haven't actually implemented this step; it throws a `PendingException` telling you to implement the step.
-
 {{% /block %}}
 
 {{% block "javascript" %}}
-
-The convention is to store the step definitions in a directory called `step_definitions/` inside the `features` directory.
-Create the `features/step_definitions/` and add a file `features/step_definitions/belly_steps.js` with the suggested snippets.
-
-Your directory now contains the following:
-```
-├── features
-│   ├── step-definitions
-│   │   └── belly-steps.js
-│   └── belly.feature
-├── package.json
-└── package-lock.json
-```
-
-When we run the test with just the snippets, we get an error message stating `ReferenceError: Given is not defined`.
-We need to import the keywords `Before`, `Given`, `When`, `Then`.
-Do so by adding `const { Before, Given, When, Then } = require('cucumber')` to the top of the file.
-
-It should look like this:
-```javascript
-const { Before, Given, When, Then } = require('cucumber')
-
-Given('I have {int} cukes in my belly', function (int, callback) {
-  // Write code here that turns the phrase above into concrete actions
-  callback(null, 'pending');
-});
-
-When('I wait {int} hour', function (int, callback) {
-  // Write code here that turns the phrase above into concrete actions
-  callback(null, 'pending');
-});
-
-Then('my belly should growl', function (callback) {
-  // Write code here that turns the phrase above into concrete actions
-  callback(null, 'pending');
-});
-```
-
-Now when we run the test, we get something like the following:
 ```
 P--
 
 Warnings:
 
-1) Scenario: a few cukes # features/belly.feature:3
-   ? Given I have 42 cukes in my belly # features/step-definitions/belly-steps.js:3
+1) Scenario: Sunday is not Friday # features/is_it_friday_yet.feature:4
+   ? Given today is Sunday # features/step_definitions/stepdefs.js:3
        Pending
-   - When I wait 1 hour # features/step-definitions/belly-steps.js:9
-   - Then my belly should growl # features/step-definitions/belly-steps.js:14
+   - When I ask whether is's Friday yet # features/step_definitions/stepdefs.js:8
+   - Then I should be told "Nope" # features/step_definitions/stepdefs.js:13
 
-1 scenario (1 pending)
+1 Scenario (1 pending)
 3 steps (1 pending, 2 skipped)
 0m00.001s
 ```
-
-The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending`  means that you have to implement the step.
-
 {{% /block %}}
 
 {{% block "ruby" %}}
-Create the directory `features/step_definitions`.
-In this directory, create a file called `belly_steps.rb` and add the snippets to this file.
-
-It should like this:
-```ruby
-Given(/^I have (\\d+) cukes in my belly$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I wait (\\d+) hour$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^my belly should growl$/) do
-  pending # express the regexp above with the code you wish you had
-end
 ```
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
 
-Now when we run the test, we get something like the following:
-```
-  Scenario: a few cukes
-    Given I have 42 cukes in my belly
-    When I wait 1 hour
-    Then my belly should growl
-
-  Scenario: a few cukes                 # features/belly.feature:8
-    I have 42 cukes in my belly         # features/step_definitions/belly_steps.rb:1
+  Scenario: Sunday is not Friday       # features/is_it_friday_yet.feature:4
+    Given today is Sunday              # features/step_definitions/stepdefs.rb:1
       TODO (Cucumber::Pending)
-      ./features/step_definitions/belly_steps.rb:2:in `/^I have (\\d+) cukes in my belly$/'
-      features/first.feature:9:in `Given I have 42 cukes in my belly'
-    When I wait 1 hour                  # features/step_definitions/belly_steps.rb:5
-    Then my belly should growl          # features/step_definitions/belly_steps.rb:9
-
+      ./features/step_definitions/stepdefs.rb:2:in `"today is Sunday"'
+      features/is_it_friday_yet.feature:5:in `Given today is Sunday'
+    When I ask whether is's Friday yet # features/step_definitions/stepdefs.rb:5
+    Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:9
 
 1 scenario (1 pending)
-4 steps (3 skipped, 1 pending)
-0m0.005s
+3 steps (2 skipped, 1 pending)
+0m0.073s
 ```
-
-The reason for this is that we haven't actually implemented the step; Cucumber telling you it's `Pending`  means that you have to implement the step.
-
 {{% /block %}}
 
-## Implement the steps
+Cucumber found our step definitions and executed them. They are currently marked as 
+*pending*, which means we need to make them do something useful.
 
-We will need to implement all steps to actually *do* something.
+# See Scenario reported as failing
+
+The next step is to do what the comments in the step definitions is telling us to do:
+
+> Write code here that turns the phrase above into concrete actions
+
+Try to use the same words in the code as in the steps.
+
+{{% tip "Ubiquitous Language"%}}
+If the words in your steps originated from conversations during an 
+[Example Mapping](/example-mapping/) session, you're building a 
+[Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html),
+which is a great way to make your production code and test easier to understand
+and maintain.
+{{% /tip %}}
+
+Change your step definition code to this:
 
 {{% block "java" %}}
-
-1. Update your `StepDefinitions.java` class to implement the step definition.
-
-The step can be implemented like this:
 ```java
-    @Given("^I have (\\d+) cukes in my belly$")
-    public void I_have_cukes_in_my_belly(int cukes) throws Throwable {
-        Belly belly = new Belly();
-        belly.eat(cukes);
-    }
-```
+package hellocucumber;
 
-To make this step compile we also need to implement a class Belly with a method eat().
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+import cucumber.api.java.en.Then;
+import static org.junit.Assert.*;
 
-2. Implement the class `Belly.java` inside your `src/main/java/<project>` folder; create your `<project>` directory here (if needed)
-
-Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
-
-{{% note "PendingException"%}}
-Once you have implemented this step, remove the statement `throw new PendingException();` from the method body.
-The step should no longer thrown a PendingException, as it is no longer pending.
-{{% /note %}}
-
-{{% /block %}}
-
-{{% block "javascript" %}}
-
-We need to update our `belly-steps.js` to implement the step definition.
-The step can be implemented like this:
-```javascript
-const { Before, Given, When, Then } = require('cucumber')
-const Belly = require('../../lib/belly');
-
-let belly;
-
-Given('I have {int} cukes in my belly', function (int) {
-    belly = new Belly();
-    belly.eat(int);
-});
-```
-
-To make this step pass, we also need to add a file called `belly.js` with a method eat().
-We create this file in a separate `lib` directory.
-
-```javascript
-class Belly {
-
-    eat() {
+class IsItFriday {
+    static String isItFriday(String today) {
+        return null;
     }
 }
 
-module.exports = Belly;
+public class Stepdefs {
+    private String today;
+    private String actualAnswer;
+
+    @Given("^today is Sunday$")
+    public void today_is_Sunday() throws Exception {
+        this.today = "Sunday";
+    }
+
+    @When("^I ask whether is's Friday yet$")
+    public void i_ask_whether_is_s_Friday_yet() throws Exception {
+        this.actualAnswer = IsItFriday.isItFriday(today);
+    }
+
+    @Then("^I should be told \"([^\"]*)\"$")
+    public void i_should_be_told(String expectedAnswer) throws Exception {
+        assertEquals(expectedAnswer, actualAnswer);
+    }
+}
 ```
+{{% /block %}}
 
+{{% block "javascript" %}}
+```javascript
+const assert = require('assert');
+const { Given, When, Then } = require('cucumber');
 
-Your directory now contains the following:
+function isItFriday(today) {
+  // We'll leave the implementation blank for now
+}
+
+Given('today is Sunday', function () {
+  this.today = 'Sunday'
+});
+
+When('I ask whether is\'s Friday yet', function () {
+  this.actualAnswer = isItFriday(this.today)
+});
+
+Then('I should be told {string}', function (expectedAnswer) {
+  assert.equal(this.actualAnswer, expectedAnswer)
+});
 ```
-├── features
-│   ├── step-definitions
-│   │   └── belly-steps.js
-│   └── belly.feature
-├── lib
-│   └── belly.js
-├── package.json
-└── package-lock.json
-```
-
-Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
-
 {{% /block %}}
 
 {{% block "ruby" %}}
-
-We need to update our `belly_steps.rb` to implement the step definition.
-
-The step can be implemented like this:
 ```ruby
-Given(/^I have (\\d+) cukes in my belly$/) do |cukes|
-  // TODO
+def is_it_friday?(day)
+end
+
+Given("today is Sunday") do
+  @today = 'Sunday'
+end
+
+When("I ask whether is's Friday yet") do
+  @actual_answer = is_it_friday?(@today)
+end
+
+Then("I should be told {string}") do |expected_answer|
+  expect(@actual_answer).to eq(expected_answer)
 end
 ```
+{{% /block %}}
 
-To make this step pass, we also need to add a file called `belly.rb` with a method eat().
+Run Cucumber again:
 
+{{% block "java" %}}
+```
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # Stepdefs.today_is_Sunday()
+    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
+      java.lang.AssertionError: expected:<Nope> but was:<null>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:30)
+	at ✽.I should be told "Nope"(hellocucumber/is_it_friday_yet.feature:7)
+
+
+Failed scenarios:
+hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
+
+1 Scenarios (1 failed)
+3 Steps (1 failed, 2 passed)
+0m0.404s
+```
+{{% /block %}}
+
+{{% block "javascript" %}}
+```
+..F
+
+Failures:
+
+1) Scenario: Sunday is not Friday # features/is_it_friday_yet.feature:4
+   ✔ Given today is Sunday # features/step_definitions/stepdefs.js:8
+   ✔ When I ask whether is's Friday yet # features/step_definitions/stepdefs.js:12
+   ✖ Then I should be told "Nope" # features/step_definitions/stepdefs.js:16
+       AssertionError [ERR_ASSERTION]: undefined == 'Nope'
+           at World.<anonymous> (/private/tmp/tutorial/hellocucumber/features/step_definitions/stepdefs.js:17:10)
+
+1 Scenario (1 failed)
+3 steps (1 failed, 2 passed)
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday is not Friday       # features/is_it_friday_yet.feature:4
+    Given today is Sunday              # features/step_definitions/stepdefs.rb:4
+    When I ask whether is's Friday yet # features/step_definitions/stepdefs.rb:8
+    Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:12
+      
+      expected: "Nope"
+           got: nil
+      
+      (compared using ==)
+       (RSpec::Expectations::ExpectationNotMetError)
+      ./features/step_definitions/stepdefs.rb:13:in `"I should be told {string}"'
+      features/is_it_friday_yet.feature:7:in `Then I should be told "Nope"'
+
+Failing Scenarios:
+cucumber features/is_it_friday_yet.feature:4 # Scenario: Sunday is not Friday
+
+1 scenario (1 failed)
+3 steps (1 failed, 2 passed)
+0m0.092s
+```
+{{% /block %}}
+
+That's progress! The first two steps are passing, but the last one is failing.
+
+# See Scenario reported as passing
+
+Let's do the simplest possible thing to make the Scenario pass. In this case,
+that's simply to make our function return `Nope`:
+
+{{% block "java" %}}
+```java
+static String isItFriday(String today) {
+    return "Nope";
+}
+```
+{{% /block %}}
+{{% block "javascript" %}}
+```javascript
+function isItFriday(today) {
+  return 'Nope'
+}
+```
+{{% /block %}}
+{{% block "ruby" %}}
 ```ruby
-// TODO
+def is_it_friday?(day)
+  'Nope'
+end
 ```
-
-Now you run the test and implement the code to make the step pass. Once it does, move on to the next step and repeat!
-
 {{% /block %}}
 
-## Result
-
-Once you have implemented all your step definitions (and the expected behaviour in your application!) and the test passes, the summary of your results should look something like this:
+Run Cucumber again:
 
 {{% block "java" %}}
-
 ```
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.656 sec
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
 
-Results :
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # Stepdefs.today_is_Sunday()
+    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
-
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 5.688 s
-[INFO] Finished at: 2017-05-22T15:43:29+01:00
-[INFO] Final Memory: 15M/142M
-[INFO] ------------------------------------------------------------------------
+1 Scenarios (1 passed)
+3 Steps (3 passed)
+0m0.255s
 ```
 {{% /block %}}
 
 {{% block "javascript" %}}
-
 ```
-1 scenario (1 passed)
+...
+
+1 Scenario (1 passed)
 3 steps (3 passed)
-0m00.001s
+0m00.003s
 ```
-
 {{% /block %}}
 
 {{% block "ruby" %}}
-
 ```
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday is not Friday       # features/is_it_friday_yet.feature:4
+    Given today is Sunday              # features/step_definitions/stepdefs.rb:5
+    When I ask whether is's Friday yet # features/step_definitions/stepdefs.rb:9
+    Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:13
+
 1 scenario (1 passed)
 3 steps (3 passed)
-0m00.001s
+0m0.066s
 ```
-
 {{% /block %}}
 
-# Examples
+Congratulations! You've got your first green Cucumber scenario.
 
-{{% block "java" %}}
-To get started with a working project, try the [skeleton project](https://github.com/cucumber/cucumber-java-skeleton) which is available from GitHub.
+# Summary
 
-For more examples of how to use Cucumber, have a look at the [examples on GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples).
-{{% /block %}}
+In this brief tutorial you've seen how to install Cucumber, and how to follow
+the BDD process to develop a very simple function. The next natural steps would
+be:
 
-{{% block "javascript" %}}
-For a Cucumber-js tutorial and example project, have a look at [TuteCumber](https://github.com/denford/TuteCumber).
-{{% /block %}}
-
-{{% block "ruby" %}}
-For a Ruby tutorial and example project, have a look at this [example project on GitHub](https://github.com/basti1302/audiobook-collection-manager-acceptance).
-{{% /block %}}
+* Move the `{{% text "java" %}}isItFriday{{% /text %}}{{% text "javascript" %}}isItFriday{{% /text %}}{{% text "ruby" %}}is_it_friday{{% /text %}}` function out from the test code into production code (refactoring)
+* Write another Scenario - `Friday is Friday` perhaps?
+* Follow the same process as outlined above, until both Scenarios are green

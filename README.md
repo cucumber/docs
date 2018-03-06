@@ -60,7 +60,8 @@ install some software.
 
 The site is built with [Hugo](https://gohugo.io). Install it:
 
-    brew install git hugo
+    gem install bundler
+    brew install git hugo python
 
 Hugo uses [Pygments](http://pygments.org/) for syntax highlighting.
 Installing Pygments is optional - if you don't have it, code won't
@@ -83,6 +84,10 @@ Open a browser:
 Edit Markdown files under in the `content` directory.
 
 Whenever you make a change to the content, the server will automatically rebuild the site (in a few milliseconds) and tell the browser to reload (using a WebSocket).
+
+### Verify content integrity
+
+    make 
 
 ### Modify theme
 
