@@ -31,9 +31,9 @@ TODO: summarize relevant information from this thread? --->
 ## The Before Hook Approach
 
 The recommended approach to clean a database between Scenarios is to use a
-`Before`[Hook](cucumber/#hooks) to remove all data *before* a Scenario starts.
+`Before`[Hook](/cucumber/#hooks) to remove all data *before* a Scenario starts.
 
-This is usually better than using an `After`[Hook](cucumber/#hooks), as it allows
+This is usually better than using an `After`[Hook](/cucumber/#hooks), as it allows
 you to perform a post-mortem inspection of the database if a Scenario fails.
 
 An alternative approach is to use database transactions.

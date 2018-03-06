@@ -542,7 +542,7 @@ end
 ```
 {{% /block %}}
 
-See more documentation on [tags](/cucumber/#tags).
+See more documentation on [tags](#tags).
 
 ## Global Hooks
 
@@ -754,7 +754,7 @@ Another creative way to use Tags is to keep track of where in the development pr
 Feature: Index projects
 ```
 
-# Runnning features
+# Running features
 
 There are several ways to run features with Cucumber.
 
@@ -1039,7 +1039,7 @@ Or:
 mvn test -Dcucumber.options="--help"
 ```
 
-The [JUnit Runner](/#junit-runner) and [Android Runner](/#android-runner) can also pick
+The [JUnit Runner](#junit-runner) and [Android Runner](#android-runner) can also pick
 up configuration options defined via the `@CucumberOptions` annotation.
 
 For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
@@ -1077,7 +1077,7 @@ For more information on JUnit, see the [JUnit web site](http://www.junit.org).
 Use the `cucumber-js --help` command to see which arguments can be passed to the executable file.
 {{% /block %}}
 
-You can also use [tags](/#tags) to specify what to run, or pass [environment variables](/cucumber/environment-variables) to Cucumber.
+You can also use [tags](#tags) to specify what to run, or pass [environment variables](/cucumber/environment-variables) to Cucumber.
 
 {{% block "java" %}}
 Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property.
