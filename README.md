@@ -69,6 +69,19 @@ be highlighted.
 
     pip install Pygments
 
+If you don't have `pip` installed yet, you'll first need to install it.
+
+On macOS you can do so by installing Python with Homebrew
+
+    brew install python
+
+We use HTMLProofer to check whether hyperlinks are correct. To run HTMLProofer on your local version, run `make htmlproofer` in the directory
+where this project is located on your machine.
+
+If this doesn't work, you may need to install Ruby first:
+
+    gem install bundler
+
 ### Run the site locally
 
 Start the server:
