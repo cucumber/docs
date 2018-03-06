@@ -24,7 +24,7 @@ want to execute with this profile.
 The example above generates two profiles:
 
 1. `html_report`, with a list of command-line options that specify new output formats, and
-2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/#/tags/) with `@bvt`.
+2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/#tags) with `@bvt`.
 
 ## Executing Profiles
 

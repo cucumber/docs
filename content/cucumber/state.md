@@ -31,9 +31,9 @@ TODO: summarize relevant information from this thread? --->
 ## The Before Hook Approach
 
 The recommended approach to clean a database between Scenarios is to use a
-`Before`[Hook](/hooks/) to remove all data *before* a Scenario starts.
+`Before`[Hook](cucumber/#hooks) to remove all data *before* a Scenario starts.
 
-This is usually better than using an `After`[Hook](/hooks/), as it allows
+This is usually better than using an `After`[Hook](cucumber/#hooks), as it allows
 you to perform a post-mortem inspection of the database if a Scenario fails.
 
 An alternative approach is to use database transactions.
@@ -46,11 +46,11 @@ You can wrap a transaction (if your database supports it) *around* each Scenario
 You won't be able to perform a post-mortem, and you won't be able to
 use [browser automation](/browser-automation/)).
 
-You simply tell Cucumber to start a transaction in a `Before`[Hook](/hooks/), and later
-roll it back in an `After`[Hook](/hooks/).
+You simply tell Cucumber to start a transaction in a `Before`[Hook](/cucumber/#hooks), and later
+roll it back in an `After`[Hook](/cucumber/#hooks).
 
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
-[Tagged Hooks](/hooks/#tagged-hooks) using a Tag named `@txn`.
+[Tagged Hooks](/cucumber/#tagged-hooks) using a Tag named `@txn`.
 
 To enable it, you must tag every [Feature](/gherkin/#feature) or [Scenario](/gherkin/#scenario) that requires
 transactions with `@txn`:
@@ -86,6 +86,6 @@ See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/exam
 ## Browsers, beware
 
 If you're using a [Browser Automation](/browser-automation/) tool that talks to your application over HTTP the transactional approach
-will not work if your [Step Definitions](/step-definitions/) and the web application serving HTTP request each have their own database connection.
+will not work if your [Step Definitions](/cucumber/#step-definitions) and the web application serving HTTP request each have their own database connection.
 
 If this is the case you should use the brute-force approach where the data is explicitly deleted before each Scenario.

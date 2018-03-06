@@ -509,7 +509,7 @@ To run a particular hook only for certain scenarios, you can associate a
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
-Hook with a [tag expression](/cucumber/#tags/#tag-expressions).
+Hook with a [tag expression](/cucumber/#tag-expressions).
 
 {{% block "java" %}}
 Annotated method style:
@@ -542,7 +542,7 @@ end
 ```
 {{% /block %}}
 
-See more documentation on [tags](/cucumber/#tags/).
+See more documentation on [tags](/cucumber/#tags).
 
 ## Global Hooks
 
@@ -653,7 +653,7 @@ Tag expressions provide a simple query language to select scenarios based on
 Tag expressions are used for two different purposes:
 
 * [Running a subset of scenarios](#running-a-subset-of-scenarios)
-* [Scoping hooks to a subset of scenarios](#hooks#tagged-hooks)
+* [Scoping hooks to a subset of scenarios](#tagged-hooks)
 
 The simplest possible tag expression is simply a tag, for example:
 
@@ -725,7 +725,7 @@ cucumber --tags "@smoke and @fast"
 <p></p>
 
 {{% tip "Filtering by line" %}}
-Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running features](#running).
+Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running features](#running-features).
 {{% /tip %}}
 
 ## Using tags for documentation
@@ -853,7 +853,7 @@ This will execute all scenarios in same package as the runner; by default glue c
 package.
 
 You can use the `@CucumberOptions` annotation to provide
-additional [configuration](#configuration/#list-configuration-options) to the runner.
+additional [configuration](#list-configuration-options) to the runner.
 
 You can run this test in the same way you run other JUnit tests, using
 an IDE or a build tool (for example `mvn test`).
@@ -1039,7 +1039,7 @@ Or:
 mvn test -Dcucumber.options="--help"
 ```
 
-The [JUnit Runner](#running/#junit-runner) and [Android Runner](#running/#android-runner) can also pick
+The [JUnit Runner](/#junit-runner) and [Android Runner](/#android-runner) can also pick
 up configuration options defined via the `@CucumberOptions` annotation.
 
 For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
@@ -1064,7 +1064,7 @@ Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotati
 These will executed before and after all scenarios. Using these is not recommended, as it limits the portability between different runners;
 they may not execute correctly when using the commandline, [IntelliJ IDEA](https://www.jetbrains.com/help/idea/cucumber.html) or
 [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse). Instead it is recommended to use Cucumbers `Before`
-+and `After` [hooks](#hooks/).
++and `After` [hooks](#hooks).
 {{% /note %}}
 
 The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
@@ -1077,7 +1077,7 @@ For more information on JUnit, see the [JUnit web site](http://www.junit.org).
 Use the `cucumber-js --help` command to see which arguments can be passed to the executable file.
 {{% /block %}}
 
-You can also use [tags](/#tags/) to specify what to run, or pass [environment variables](/environment-variables/) to Cucumber.
+You can also use [tags](/#tags) to specify what to run, or pass [environment variables](/cucumber/environment-variables) to Cucumber.
 
 {{% block "java" %}}
 Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property.

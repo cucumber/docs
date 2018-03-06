@@ -143,7 +143,7 @@ Cucumber divides testing into two parts:
 
 **Features** are descriptions of desired outcomes (**Then**) following upon specific events (**When**) under predefined conditions (**Given**). They are typically used in conjunction with end-user input and, in some cases, may be entirely under end-user (in the form of a domain expert) control. Feature files are given the extension `.feature`.
 
-[Step Definitions](/step-definitions/), or *stepdefs*, are keyed by their snippets of text from the Scenario's statements, and invoke blocks of Ruby and Rails code that usually contain API methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.).
+[Step Definitions](/cucumber/#step-definitions), or *stepdefs*, are keyed by their snippets of text from the Scenario's statements, and invoke blocks of Ruby and Rails code that usually contain API methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.).
 
 Given that Cucumber originally evolved out of RSpec stories, it is unsurprising that the Cucumber-Rails generator once assumed that RSpec was available. This has long since ceased to be the case.
 

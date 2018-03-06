@@ -6,7 +6,7 @@ source: https://github.com/cucumber/cucumber/wiki/Calling-Steps-from-Step-Defini
 title: Calling Steps from Step Definitions
 ---
 
-It is possible to call steps from [step definitions](/step-definitions/):
+It is possible to call steps from [step definitions](/cucumber/#step-definitions):
 
 ```
 # ruby
