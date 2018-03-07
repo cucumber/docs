@@ -34,6 +34,27 @@ class HeaderCheck < HTMLProofer::Check
   end
 end
 
+$pages = []
+$linked_pages = []
+
+at_exit do
+  orphans = $pages - $linked_pages
+  puts "=== Orphaned pages ==="
+  puts orphans
+end
+
+class OrphanCheck < HTMLProofer::Check  
+  def run
+    if @path === 'public/documentation/index.html'
+      $linked_pages = @html.css('a').map do |node|
+        create_element(node).file_path
+      end
+    else
+      $pages << @path
+    end
+  end
+end
+
 # To speed up local development, external links are only checked in CI:
 # https://app.netlify.com/sites/cucumber/settings/deploys
 external_link_check = ENV['EXTERNAL_LINK_CHECK'] == 'true'
