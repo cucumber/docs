@@ -88,7 +88,7 @@ In this step, you're "calling" the above step definition with one argument: the 
 Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}{{% text "java" %}}`*.feature`{{% /text %}}{{% text "javascript" %}}`*.feature`{{% /text %}} files.
 
 
-## How Steps and Step Definitions work together
+## Matching steps
 
 1. Cucumber matches a step against a Step Definition's `Regexp`
 2. Cucumber gathers any capture groups or variables
