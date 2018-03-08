@@ -21,6 +21,26 @@ $pre-background: $cucumber-grey-lighter
 @import "../../node_modules/bulma/bulma"
 @import "./pygments"
 
+// Scrollable TOC/content columns
+html
+  height: 100%
+
+body
+  height: 100%
+
+.columns
+  height: 100%
+
+.column
+  height: 100%
+  display: flex
+  overflow-y: auto
+  flex-direction: column
+
+// Override Bulma's minireset.sass so the TOC is indented
+li
+  padding-left: 8px
+  
 .content
   // Override Bulma's content.sass style to ensure tabs render properly
   li + li
@@ -34,7 +54,3 @@ pre
   code
     padding: 0
 
-nav#TableOfContents
-  float: right
-  padding: 30px
-  border: 1px dashed #CBCBCB

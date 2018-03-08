@@ -1,12 +1,16 @@
-<section class="section">
-  <div class="container">
+<div class="columns section">
+  <div class="column is-one-quarter">
     {{.TableOfContents}}
-    <h1 class="title is-1">{{ .Title }}</h1>
-    {{ if eq .Page.Params.polyglot true }}
-      {{ partial "language-tabs.html" . }}
-    {{ end }}
-    <div class="content">
-      {{ .Content }}
+  </div>
+  <div class="column">
+    <div style="height: auto">
+      <h1 class="title is-1">{{ .Title }}</h1>
+      {{ if eq .Page.Params.polyglot true }}
+        {{ partial "language-tabs.html" . }}
+      {{ end }}
+      <div class="content">
+        {{ .Content }}
+      </div>
     </div>
   </div>
-</section>
+</div>
