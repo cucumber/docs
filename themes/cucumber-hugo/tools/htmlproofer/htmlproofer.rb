@@ -15,6 +15,8 @@ class HeaderCheck < HTMLProofer::Check
     depth = 0
     count = 0
     @html.css('h1,h2,h3,h4,h5').each do |node|
+      check_not_hidden(node)
+      
       css_class = node.attributes['class'].value rescue nil
       if css_class == 'title is-1'
         # Ignore <h1 class="title is-1"> generated from front matter
@@ -30,6 +32,20 @@ class HeaderCheck < HTMLProofer::Check
         end
       end
       depth = node_depth
+    end
+  end
+  
+  def check_not_hidden(node)
+    p = node
+    while p
+      css_class = p.attributes['class'].value rescue ''
+
+      if css_class =~ /is-hidden text-(\w+)/
+        lang = $1
+        add_issue("Headers are not allowed inside {{% block \"#{lang}\" %}}.")
+        break
+      end
+      p = p.respond_to?(:parent) ? p.parent : nil
     end
   end
 end
