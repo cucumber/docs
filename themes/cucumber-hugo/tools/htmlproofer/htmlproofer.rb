@@ -42,7 +42,7 @@ class HeaderCheck < HTMLProofer::Check
 
       if css_class =~ /is-hidden text-(\w+)/
         lang = $1
-        add_issue("Headers are not allowed inside {{% block \"#{lang}\" %}}.")
+        add_issue("Headers are not allowed inside {{% block \"#{lang}\" %}}. Header: #{node}")
         break
       end
       p = p.respond_to?(:parent) ? p.parent : nil

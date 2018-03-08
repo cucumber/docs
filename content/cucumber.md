@@ -5,17 +5,18 @@ source: https://github.com/cucumber/cucumber/wiki/Tags/
 title: Cucumber Reference
 polyglot: true
 ---
+
 Cucumber can be used to implement automated tests based on scenarios described in your Gherkin feature files.
 
 # Step Definitions
 
-When Cucumber executes a step in a scenario, it will look for a matching *step definition* to execute.
-The step definitions map, or "glue", the Gherkin to the underlying programming language.
+When Cucumber executes a [step](/gherkin/#steps) in a scenario, it will look for a matching *step definition* to execute.
+Step definitions connect Gherkin steps to code.
 
 A step definition is
-{{% text "java" %}}a method with a regular expression attached to it. They are defined in Java files.{{% /text %}}
-{{% text "ruby" %}}a block of code with a regular expression attached to it. They are defined in Ruby files under `features/step_definitions/`.  Each filename should follow the pattern `\*\_steps.rb`.{{% /text %}}
-{{% text "javascript" %}}a function with a Cucumber expression attached to it. They are defined in Javascript files.{{% /text %}}
+{{% text "java" %}}a method with an expression attached to it. They are defined in Java classes.{{% /text %}}
+{{% text "ruby" %}}a block of code with a regular expression attached to it. They are defined in Ruby files under `features/step_definitions/*_steps.rb`.{{% /text %}}
+{{% text "javascript" %}}a function with a Cucumber expression attached to it. They are defined in Javascript files under `features/step_definitions/*_steps.js`.{{% /text %}}
 
  To illustrate how this works, look at the following Gherkin Scenario:
 
@@ -28,68 +29,51 @@ The `I have 48 cukes in my belly` part of the step (the text following the `Give
 
 ```java
 @Given("I have (\\d+) cukes in my belly")
-public void I_have_cukes_in_my_belly(int cukes) {
+public void I_have_n_cukes_in_my_belly(int cukes) {
     System.out.format("Cukes: %n\n", cukes);
 }
 ```
 
 ```ruby
-Given(/I have (\d+) cukes in my belly/) do |cukes|
+Given('I have {int} cukes in my belly') do |cukes|
   puts "Cukes: #{cukes}"
 end
 ```
 
 ```javascript
-Given(/^I have (\d+) cukes in my belly$/, function (cukes) {
-  console.log(`Cukes: ${cukes}`);
+Given('I have {int} cukes in my belly', function (cukes) {
+  console.log(`Cukes: ${cukes}`)
 });
 ```
 
-{{% block "javascript" %}}
+{{% warn %}}
 Please note that if you use arrow functions, you won't be able
 to share state between steps!
 
 ```javascript
 // Don't do this!
-Given(/^I have (\d+) cukes in my belly$/, cukes => {
-  console.log(`Cukes: ${cukes}`);
-});
+Given('I have {int} cukes in my belly', cukes => {
+  console.log(`Cukes: ${cukes}`)
+})
 ```
+{{% /warn %}}
 
-{{% /block %}}
+In the example above Cucumber extracts the text `48` from the step, converts it to an `int`
+and passes it as an argument to the {{% stepdef-body %}}.
 
-## Step Definition Arguments
+The number of parameters in the {{% stepdef-body %}} has to match the number of {{% expression-parameter %}}s in the expression. (If there is a mismatch, Cucumber will throw an error).
 
-A step definition can optionally accept *arguments*; determined by the capture groups in a Regular Expression (`Regexp`).
-The number and type of the arguments are defined in the step definition.
-
-The step definition in the example above accepts just one argument, identified by the capture group
-{{% text "ruby" %}}`(\d+)`.  When the step definition is executed, the argument is passed to the Ruby code as `cukes`.{{% /text %}}
-{{% text "java" %}}`(\\d+)`.  When the step definition is executed, the argument is passed to the Java code as `cukes`.{{% /text %}}
-{{% text "javascript" %}}`(\d+)`.  When the step definition is executed, the argument is passed to the JavaScript code as `cukes`.{{% /text %}}
-
-{{% text "ruby" %}}
-If you aren't comfortable with Regular Expressions, it's also possible to define step definitions using strings and variables, like this:
-{{% /text %}}
-```ruby
-Given "I have $n cucumbers in my belly" do |cukes|
-  # Some Ruby code here
-end
-```
-
-{{% text "ruby" %}}
-In this case, the String is compiled to a Regular Expression behind the scenes: `/^I have (.\*) cucumbers in my belly$/`.
-{{% /text %}}
+# Data Tables
 
 {{% text "java" %}}
 
-### DataTables
 To automatically transform DataTables in your feature file, you can change the DataTable to a List or Map:
 List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V> where E,K,V must be a scalar (String, Integer, Date, enum etc).
 To transform to a List<YourType>, the field names for YourType must match the column names in your feature file (except for spaces and capitalization).
+
 {{% /text %}}
 
-## Steps
+# Steps
 
 A step is analogous to a method call or function invocation.
 
@@ -123,135 +107,37 @@ Also, check out [Multiline step arguments](/gherkin/#step-arguments) for more in
 
 ### Step Results
 
-**Successful Steps**
+Each step can have one of the following results:
+
+#### Success
 
 When Cucumber finds a matching step definition it will execute it. If the block in the step definition doesn't raise an error, the step is marked as successful (green). Anything you `return` from a step definition has no significance whatsoever.
 
-**Undefined Steps**
+#### Undefined
 
 When Cucumber can't find a matching step definition, the step gets marked as yellow, and all subsequent steps in the scenario are skipped. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
-**Pending Steps**
+#### Pending
 
 When a step definition's method or function invokes the `pending` method, the step is marked as yellow (as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
-**Failed Steps**
+#### Failed Steps
 
 When a step definition's method or function is executed and raises an error, the step is marked as red. What you return from a step definition has no significance whatsoever.
 
 Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java" %}}`null`{{% /text %}}{{% text "javascript" %}}`null`{{% /text %}} or `false` will **not** cause a step definition to fail.
 
-**Skipped Steps**
+#### Skipped
 
 Steps that follow `undefined`, `pending`, or `failed` steps are never executed,  even if there is a matching step definition. These steps are marked as cyan.
 
-{{% text "ruby" %}}
-
-**String Steps**
-
-In Ruby, step definitions can be written using Strings rather than Regular Expressions.
-
-Instead of writing:
-
-```ruby
-Given /^I have (.*) cucumbers in my belly$/ do |cukes|
-```
-
-You could write:
-
-```ruby
-Given "I have $count cucumbers in my belly" do |cukes|
-```
-
-When writing a step definition using the String form, any word preceded by a `$` is taken to be a placeholder. Behind the scenes, Cucumber will convert it to the Regular Expression `(.*)`.
-
-The text matched by the wildcard becomes an argument to the block, and the word that appeared in the step definition is disregarded.
-{{% /text %}}
-
-**Ambiguous Steps**
+#### Ambiguous
 
 Step definitions have to be unique for Cucumber to know what to execute.
 If you use ambiguous step definitions,{{% text "ruby" %}}Cucumber will raise a `Cucumber::Ambiguous` error,{{% /text %}}
 {{% text "java" %}} Cucumber will raise an `AmbiguousStepDefinitionsException`,{{% /text %}}
 {{% text "javascript" %}}the step / scenario will get an "Ambiguous" result,{{% /text %}}
 telling you to fix the ambiguity.
-
-{{% text "ruby" %}}
-
-**Guess mode**
-
-In Ruby, running the plain text step will match the `Regexp` of both step definitions and raise `Cucumber::Ambiguous`.
-
-However, if you run Cucumber with `--guess`, it will guess that you were aiming for the step definition with 2 match groups.
-
-There is ranking logic that gets invoked when the option is turned on:
-
-1. The longest `Regexp` with 0 capture groups always wins.
-2. The `Regexp` with the most capture groups wins (when there are none with 0 groups).
-3. If there are 2+ `Regexp` with the same number of capture groups, the one with the shortest overall captured string length wins.
-4. If there are still 2+ options, then a `Cucumber::Ambiguous` error is raised.
-
-So if you try `--guess` with the mice above, Cucumber will pick `/Three blind (.\*)/`, because `"mice"` is shorter than `"blind"`.
-
-*Consider guess mode to be a workaround.* We still recommend that you have unambiguous regular expressions. When you have a lot of step definitions, it's easy to lose track of the situations where Cucumber's guess mode occurs, and that can lead to some surprises.
-{{% /text %}}
-
-**Redundant Steps**
-
-In Cucumber, you're not allowed to use a `Regexp` more than once in a step definition—even across files, and even with different code inside the method or function.
-Note that the keywords (`Given`, `When`, `Then`, `And` and `But`) are not part of the `Regexp`;
-this means you also cannot have the same step definition, but with different keywords.
-
-{{% text "ruby" %}}
-Thus, the following would cause a `Cucumber::Redundant` error:
-
-```ruby
-Given /Three (.*) mice/ do |disability|
-  # some code
-end
-
-Given /Three (.*) mice/ do |disability|
-  # some other code..
-end
-```
-{{% /text %}}
-
-**Nested Steps**
-
-In an effort to keep from [repeating yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), you may be tempted to utilize Cucumber's feature of calling step definitions from other steps: **DON'T**.
-While this may seem like a useful feature to utilize, it creates bad code smells and will be deprecated in the future. In places where you're calling steps from other steps, use those as opportunities to refactor your code to create helper methods.
-
-{{% text "ruby" %}}
-Instead of:
-
-```ruby
-Given('a starting amount of ${int}') do |int|
-  steps %(
-    Given a customer account with ID: 'foo123'
-    Given a balance of 100 dollars
-    Given the customer has authenticated with pin 1234
-  )
-end
-```
-
-Create accounts and user helper classes/methods, which would allow you to refactor your step to the following:
-
-```ruby
-Given('a starting amount of ${int}') do |starting_amount|
-  @starting_balance = starting_amount
-  @user = User.new(0)
-  @account = Account.new('foo123', @starting_balance, 1234)
-end
-```
-
-Now that your code has been refactored you can access these helper methods anywhere in your code, instead of calling a step. Benefits:
-
-* Increased flexibility
-* Increased readability
-* Increased usability
-* You won't be writing code that's planned to be deprecated
-
-{{% /text %}}
 
 # Hooks
 
@@ -567,17 +453,17 @@ end
 {{% block "java" %}}Cucumber-JVM does not support global hooks.{{% /block %}}
 {{% block "javascript" %}}Cucumber.js does not support global hooks.{{% /block %}}
 
-{{% text "ruby" %}}
 ## Running a hook only once
 
 If you have a hook you only want to run once, use a global variable:
 
+{{% text "ruby" %}}
 ```ruby
 Before do
   $dunit ||= false  # have to define a variable before we can reference its value
-  return if $dunit                         # bail if $dunit is true
-  step "run the really slow log in method" # otherwise do it.
-  $dunit = true                            # don't do it again.
+  return if $dunit  # bail if $dunit is true
+  the_slow_thing    # otherwise do it.
+  $dunit = true     # don't do it again.
 end
 ```
 {{% /text %}}
@@ -722,10 +608,8 @@ cucumber --tags "@smoke and @fast"
 ```
 {{% /block %}}
 
-<p></p>
-
 {{% tip "Filtering by line" %}}
-Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option as described in [Running features](#running-features).
+Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option.
 {{% /tip %}}
 
 ## Using tags for documentation
@@ -754,17 +638,23 @@ Another creative way to use Tags is to keep track of where in the development pr
 Feature: Index projects
 ```
 
-# Running features
+# Running Cucumber
 
-There are several ways to run features with Cucumber.
+Cucumber is a 
+{{% text "java" %}}JUnit extension.{{% /text %}}
+{{% text "javascript,ruby" %}}command line tool.{{% /text %}}
+It is launched by running
+{{% text "java" %}}JUnit from your build tool or your IDE.{{% /text %}}
+{{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
+{{% text "javascript" %}}`cucumber` from the command line, or a build script.{{% /text %}}
 
 It is possible to [configure](#configuration) how Cucumber should run features.
 
 ## From the command line
-The most standard option is to run Cucumber from the command line.
+
+The most common option is to run Cucumber from the command line.
 
 {{% block "ruby" %}}
-### Using the Gem's `cucumber` Command
 
 The following command will run the `authenticate_user` feature. Any feature in a sub-directory of `features/` directory must `require` features.
 
@@ -775,7 +665,9 @@ cucumber --require features features/authentication/authenticate_user.feature
 {{% /block %}}
 
 {{% block "java" %}}
-### CLI Runner
+
+**CLI Runner**
+
 The Command-Line Interface Runner (CLI Runner) is an executable Java class that can be run from the command-line, or from any build tool (such as Maven, Gradle or Ant), or an IDE.
 
 ```
@@ -784,7 +676,7 @@ java cucumber.api.cli.Main
 {{% /block %}}
 
 {{% block "javascript" %}}
-### CLI
+
 Cucumber.js includes an executable file to run the features. After installing Cucumber in a project, you can run it with:
 
 ``` shell
@@ -805,187 +697,11 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 {{% /block %}}
 
-{{% block "java" %}}
-## From a test framework
-You can run features using a test framework. This will allow you to execute Cucumber at the same time as you execute
-your tests. It simplifies integration with your continuous integration build.
-
-### JUnit Runner
-
-The JUnit runner uses the JUnit framework to run Cucumber.
-
-To use the JUnit runner you need to add the following dependencies:
-
-```xml
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-junit</artifactId>
-    <version>{{% version "cucumberjvm" %}}</version>
-    <scope>test</scope>
-</dependency>
-
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.12</version>
-    <scope>test</scope>
-</dependency>
-```
-
-{{% note "Supported JUnit versions"%}}
-Cucumber-JVM currently does not yet support JUnit5 (Jupiter)
-{{% /note %}}
-
-Create an empty class that uses the Cucumber JUnit runner.
-
-```java
-package mypackage;
-
-import cucumber.api.junit.Cucumber;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-public class RunCukesTest {
-}
-```
-
-This will execute all scenarios in same package as the runner; by default glue code is also assumed to be in the same
-package.
-
-You can use the `@CucumberOptions` annotation to provide
-additional [configuration](#list-configuration-options) to the runner.
-
-You can run this test in the same way you run other JUnit tests, using
-an IDE or a build tool (for example `mvn test`).
-
-### TestNG Runner
-
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng)
-
-### Android Runner
-
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/android).
-
-### IDE / Third-party runners
-Finally, you can run features from an IDE.
-
-IntelliJ IDEA and Eclipse have plugins that can run features and scenarios from within an IDE:
-
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
-- [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
-
-Please refer to the documentation for the third-party runner for details about how to pass configuration options to Cucumber.
-{{% /block %}}
-
-## From a build tool
 You can also run features using a build tool.
 
-{{% block "ruby" %}}
-### Using Rake
-
-From the command line:
-
-```
-rake features
-```
-
-This requires a `Rakefile` with a `Cucumber` task definition. For example:
-
-```
-require 'rubygems'
-require 'cucumber/rake/task'
-
-Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = "--format pretty" # Any valid command line option can go here.
-end
-```
-
-If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), this task is defined for you already.
-
-For more information, please see the [detailed page about using `rake`.](/implementations/ruby/rake/)
-
-### Using TextMate
-
-See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) documentation.
-{{% /block %}}
-
-{{% block "java" %}}
-### Maven Runner
-
-To run Cucumber with [Maven](https://maven.apache.org/), make sure that:
-
-- Maven is installed
-- The environment variable `MAVEN_HOME` is correctly configured
-- The IDE is configured with the latest Maven installation
-
-Steps:
-
-1.  Create a new Maven project or fork cucumber-java examples on Github
-2.  Add the following dependency to the `pom.xml`
-
-    ```xml
-    <dependency>
-        <groupId>io.cucumber</groupId>
-      	<artifactId>cucumber-java</artifactId>
-      	<version>{{% version "cucumberjvm" %}}</version>
-    </dependency>
-    ```
-
-3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` folders respectively.
-4.  Run the following maven from the directory path where the `pom.xml` file is located:
-
-    ```sh
-    mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\featurefiles"
-    ```
-
-### Gradle Runner
-
-To run Cucumber with [Gradle](https://gradle.org/):
-
-- Gradle is installed
-- The environment variable `GRADLE_HOME` is correctly configured
-- The IDE is configured with the latest Gradle installation
-
-Steps:
-
-1.  Create a new Gradle project or look at  [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
-2.  Add the following dependency to `build.gradle`
-
-    ```
-    dependencies {
-        testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
-    }
-    ```
-
-3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` respectively in a `gradle.cucumber` package.
-4. Add the following Gradle `cucumber` task in `build.gradle`
-    ```
-    task cucumber() {
-        dependsOn assemble, compileTestJava
-        doLast {
-            javaexec {
-                main = "cucumber.api.cli.Main"
-                classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-                args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
-            }
-        }
-    }
-    ```
-4.  Run the following gradle task from the directory path where `build.gradle` file is located:
-
-    ```sh
-    gradle cucumber
-    ```
-
-{{% /block %}}
-
-{{% block "javascript" %}}
-### Javascript build tools
-You can run cucumber-js with tools like yarn.
-{{% /block %}}
-
 # Configuration
-You can configure how Cucumber will run features.
+
+Cucumber provides several configuration options.
 
 ## Command-line
 
@@ -994,28 +710,21 @@ Configuration options can be passed to on the command-line.
 {{% block "ruby" %}}
 For example:
 
-* To run the Scenario defined at line 44 of the `authenticate_user` Feature, format it as HTML, and pipe it to the `features.html` file for viewing in a browser:
+To run the Scenario defined at line 44 of the `authenticate_user` Feature, format it as HTML, and pipe it to the `features.html` file for viewing in a browser:
 
-```
+```shell
 cucumber features/authenticate_user.feature:44 --format html > features.html
 ```
 
-* To run the Scenario(s) named `"Failed login"`:
+To run the Scenario(s) named `"Failed login"`:
 
-```
+```shell
 cucumber features --name "Failed login"
 ```
 {{% /block %}}
-{{% block "java" %}}
-For example, to get the Cucumber version:
-
-```
-java cucumber.api.cli.Main --version
-```
-{{% /block %}}
-
 
 ## List configuration options
+
 You can list the options available for the Cucumber version you are using.
 
 {{% block "ruby" %}}
@@ -1038,9 +747,6 @@ Or:
 ```
 mvn test -Dcucumber.options="--help"
 ```
-
-The [JUnit Runner](#junit-runner) and [Android Runner](#android-runner) can also pick
-up configuration options defined via the `@CucumberOptions` annotation.
 
 For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
 
