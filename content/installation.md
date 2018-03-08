@@ -48,7 +48,7 @@ repositories {
 
 You can now use cucumber's [CLI Runner](/cucumber/#gradle-runner) to execute by adding a `cucumber` task to `build.gradle`.
 
-For more information, see [Running Features](/cucumber/#running-features).
+For more information, see [Running Cucumber](/cucumber/#running-cucumber).
 
 {{% /block %}}
 

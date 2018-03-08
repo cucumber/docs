@@ -7,7 +7,7 @@ title: Environment Variables
 
 > TODO: Make more general
 
-When [running Cucumber](/cucumber/#running-features), it can sometimes be handy to pass special
+When [running Cucumber](/cucumber/#running-cucumber), it can sometimes be handy to pass special
 values to Cucumber for your [step definitions](/cucumber/#step-definitions) to use.
 
 You can easily do this on the command line:
