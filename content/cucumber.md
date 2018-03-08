@@ -783,7 +783,7 @@ For more information on JUnit, see the [JUnit web site](http://www.junit.org).
 Use the `cucumber-js --help` command to see which arguments can be passed to the executable file.
 {{% /block %}}
 
-You can also use [tags](#tags) to specify what to run, or pass [environment variables](/cucumber/environment-variables) to Cucumber.
+You can also use [tags](#tags) to specify what to run.
 
 {{% block "java" %}}
 Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property.
