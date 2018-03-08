@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "gherkin": "^5.0.0",
     "lunr": "^2.1.4"
   }
 }

@@ -523,3 +523,8 @@ Just copy the `examples/i18n/en` example to a new directory with the same name a
 ## Selecting a language from the command line
 
 You can select a language from the command line using the `-L` or `--language` flag, followed by the two-letter language code. Run `cucumber --i18n help` to view the list of available languages and their two-letter codes.
+
+## Gherkin Dialects
+
+{{% gherkin-i18n-table %}}
+
