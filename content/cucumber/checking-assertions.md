@@ -6,11 +6,17 @@ title: Checking Assertions
 polyglot: true
 ---
 
-Part of your tests will be to make assertions about your application. To do so, you can make use of a testing framework.
+Your `Then` steps should make assertions comparing expected results to actual results
+from your application.
+
+Cucumber does not come with an assertion library. Instead, use the assertion methods
+from a unit testing tool.
 
 {{% block "ruby" %}}
-# RSpec
-If you're using bundler, add the `rspec-expectations` gem to your `Gemfile`.
+
+We recommend using RSpec for assertions.
+
+Add the `rspec-expectations` gem to your `Gemfile`.
 Cucumber will automatically load RSpec's matchers and expectation methods to be
 available in your Step Definitions. For example:
 
@@ -32,9 +38,9 @@ RSpec.configure do |config|
 end
 ```
 
-# Test Unit
+---
 
-If you don't like RSpec's `should` methods for assertions, you can use the familiar `Test::Unit` `assert` methods by mixing it into
+If you prefer to use `Test::Unit`'s `assert` methods you can mix them into
 your [`World`](/wiki/a-whole-new-world).
 
 ```ruby
@@ -43,13 +49,11 @@ require 'test/unit/assertions'
 World(Test::Unit::Assertions)
 ```
 
-<!-- TODO: You can see a full example under the [examples](https://github.com/cucumber/cucumber/tree/master/examples%2Ftest_unit) -->
 {{% /block %}}
 
 {{% block "java" %}}
-# JUnit
 
-[JUnit](http://junit.org/junit4/) is a unit testing framework designed for the Java programming language. It is an instance of the xUnit architecture for unit testing frameworks.
+We recommend using [JUnit](http://junit.org/junit4/)'s `assert*` methods.
 
 If you are using Maven, just add the following to your `pom.xml`:
 
@@ -64,6 +68,7 @@ If you are using Maven, just add the following to your `pom.xml`:
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
+    <scope>test</scope>
 </dependency>
 ```
 
@@ -75,55 +80,70 @@ Make sure to use the same version for `cucumber-junit` that you are using for `c
 At the moment, JUnit 5 is not yet supported by Cucumber.
 {{% /note %}}
 
-Using assertions in JUnit is very easy. For example:
+Below is an example using `assertEquals`:
 
 ```java
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class Example {
 
-        @Then("^the result should be (.+)$")
-        public void the_result_should_be(String expectedResult) {
-            assertEquals(expectedResult, result);
-        }
+    @Then("^the result should be (.+)$")
+    public void the_result_should_be(String expectedResult) {
+        assertEquals(expectedResult, result);
+    }
 }
 ```
 
-For more examples of how to use JUnit assertions, see the [JUnit wiki on github](https://github.com/junit-team/junit4/wiki/Assertions)
-For a more extensive example of how to use JUnit with Cucumber, see the [java-calculator example](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator).
+For more examples of how to use JUnit assertions, see the [JUnit Wiki](https://github.com/junit-team/junit4/wiki/Assertions).
 
-# TestNG
+---
 
-[TestNG](http://testng.org/doc/) is a testing framework designed for the Java programming language and inspired by JUnit and NUnit.
+You can also use [TestNG](http://testng.org/doc/)'s assertions'.
 
 If you are using Maven, just add the following to your `pom.xml`:
 ```xml
 <dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-testng</artifactId>
-    <version>6.10</version>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>{{ site.versions.testng }}</version>
     <scope>test</scope>
-    <exclusions>
-        <exclusion>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </exclusion>
-    </exclusions>
 </dependency>
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-testng</artifactId>
     <version>{{ site.versions.cucumber_jvm }}</version>
+    <scope>test</scope>
 </dependency>
 ```
 
-Using assertions in TestNG is similar to using them in JUnit.
+http://testng.org/doc/documentation-main.html#success-failure
+
+TestNG assertions are similar JUnit.
 For a more extensive example of how to use TestNG with Cucumber, see the [java-calculator-testng example](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng).
 {{% /block %}}
 
 {{% block "javascript" %}}
-If you are using cucumber-js, there are many test frameworks to choose from.
-Which one you use, may depend on other javascript frameworks your project is using and / or personal preference.
+We recommend using Node.js' built-in [assert](https://nodejs.org/dist/latest-v8.x/docs/api/assert.html) module.
 
-Here's an example using [Node.js and Chai](https://github.com/cucumber/cucumber-js/blob/master/docs/nodejs_example.md).
+```javascript
+const assert = require('assert')
+
+Then('the result should be {word}', function (expected) {
+  // this.actual is typically set in a previous step
+  assert.equal(this.actual, expected)
+})
+```
+
+---
+
+You can use any other assertion library if you wish. Here is an example using [Chai](http://chaijs.com/):
+
+```javascript
+const expect = require('chai')
+
+Then('the result should be {word}', function (expected) {
+  expect(this.actual).to.eql(expected)
+})
+```
+
 {{% /block %}}
