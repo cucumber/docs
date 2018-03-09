@@ -305,8 +305,6 @@ For example, if the user and site names don't matter to the client, use a higher
 
 The client needs to actually remember this stuff when reading the scenarios. If the `Background` is more than 4 lines long, consider moving some of the irrelevant details into higher-level steps.
 
-See [Calling steps from step definitions](/implementations/ruby/calling-steps-from-step-definitions/).
-
 - Make your `Background` section **vivid**.
 
 Use colorful names, and try to tell a story. The human brain keeps track of stories much better than it keeps track of names like `"User A"`, `"User B"`, `"Site 1"`, and so on.
