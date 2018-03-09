@@ -1,9 +1,9 @@
 ---
 title: Installation
-polyglot: true
+polyglot: false
 ---
 
-{{% block "java" %}}
+# Java
 
 Cucumber-JVM is published as several JAR files in the central Maven repository. Install by adding dependencies to build files:
 
@@ -11,7 +11,7 @@ Cucumber-JVM is published as several JAR files in the central Maven repository. 
 Make sure the Cucumber version is the same for all Cucumber dependencies.
 {{% /note %}}
 
-# Maven
+## With Maven
 
 Add the following dependencies to the `pom.xml`:
 
@@ -31,7 +31,7 @@ Add the following dependencies to the `pom.xml`:
 </dependency>
 ```
 
-# Gradle
+## With Gradle
 
 Add the following dependencies to `build.gradle`:
 
@@ -46,17 +46,16 @@ repositories {
 }
 ```
 
-You can now use cucumber's [CLI Runner](/cucumber/#gradle-runner) to execute by adding a `cucumber` task to `build.gradle`.
+You can now use cucumber's [CLI Runner](/cucumber/#from-the-command-line) to execute by adding a `cucumber` task to `build.gradle`.
 
 For more information, see [Running Cucumber](/cucumber/#running-cucumber).
 
-{{% /block %}}
+# Ruby
 
-{{% block "ruby" %}}
 Cucumber for Ruby is a ruby gem. Depending on your project structure there are
 several ways to install it:
 
-# Rubygems
+## With Rubygems
 
 Install from the command line:
 
@@ -64,7 +63,7 @@ Install from the command line:
 gem install cucumber
 ```
 
-# Bundler
+## With Bundler
 
 Add `cucumber` to your `Gemfile`:
 
@@ -86,7 +85,7 @@ Try it out:
 cucumber --help
 ```
 
-# Ruby on Rails
+## With Ruby on Rails
 
 Add `cucumber-rails` to your `Gemfile`:
 
@@ -115,14 +114,13 @@ Run the generator:
 ```shell
 rails generate cucumber:install
 ```
-{{% /block %}}
 
-{{% block "javascript" %}}
+# Javascript
 
 Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works
 with both Node.js and browsers.
 
-# Node.js
+## With Node.js
 
 Add `cucumber` as a development dependency:
 
@@ -135,8 +133,6 @@ Or, if you prefer [Yarn](https://yarnpkg.com/en/):
 ```shell
 yarn add --dev cucumber
 ```
-
-{{% /block %}}
 
 # Cucumber versioning
 
