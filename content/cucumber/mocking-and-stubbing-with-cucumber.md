@@ -20,7 +20,7 @@ Just `require 'cucumber/rspec/doubles'` ([Test-Double](http://www.martinfowler.c
 
 Perhaps place your stub action within a block as below:
 
-```
+```ruby
 require 'cucumber/rspec/doubles'
 
 RSpec::Mocks.with_temporary_scope do
