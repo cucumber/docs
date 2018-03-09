@@ -3,7 +3,7 @@ menu: reference
 nav: docs
 renderer: Cucumber::Website::Reference
 title: State
-polyglot: true
+polyglot: false
 ---
 
 It's important to prevent state created by one Scenario from leaking into others.
@@ -66,8 +66,7 @@ Feature: Let's write a lot of stuff to the DB
     Given I write to the DB
 ```
 
-{{% block "java" %}}
-## Using JUnit and Spring
+### Using JUnit and Spring
 
 The [`cucumber-spring`](/implementations/jvm/java-di/#spring) module contains `@txn` Hooks in the `cucumber.api.spring` package.
 
@@ -82,7 +81,7 @@ public class RunCukesTest {
 ```
 
 See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
-{{% /block %}}
+
 ## Browsers, beware
 
 If you're using a [Browser Automation](/browser-automation/) tool that talks to your application over HTTP the transactional approach
