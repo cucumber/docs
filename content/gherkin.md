@@ -204,7 +204,7 @@ Examples:
 
 While it might be tempting to implement `Then` steps to just look in the database - resist the temptation! You should only verify outcome that is observable for the user (or external system), and databases usually are not.
 
-# `And`, `But`
+# And, But
 
 If you have several `Given`s, `When`s, or `Then`s, you *could* write:
 
@@ -525,4 +525,3 @@ You can select a language from the command line using the `-L` or `--language` f
 ## Gherkin Dialects
 
 {{% gherkin-i18n-table %}}
-
