@@ -13,6 +13,8 @@ Welcome to the Cucumber documentation...
 
 - [Look up Gherkin Syntax](/gherkin/)
 
-<!-- - [Looking for a language other than Java, Javascript or Ruby?](/implementations/) -->
+- [Look up Cucumber Syntax](/cucumber/)
+
+- [Looking for a language other than Java, Javascript or Ruby?](/cucumber/implementations/)
 
 - [Need help?](/about/get-in-touch/)
