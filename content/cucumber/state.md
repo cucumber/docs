@@ -24,7 +24,116 @@ State can make your steps more tightly coupled and harder to reuse.
 <!--- You can follow a longer discussion [here](http://www.mail-archive.com/rspec-users@rubyforge.org/msg06268.html).
 TODO: summarize relevant information from this thread? --->
 
-{{% text "java" %}}You might also want to have a look at [dependency injection](/implementations/jvm/java-di).{{% /text %}}
+## Dependency Injection in Java
+If your programming language is Java you will be writing glue code
+([Step Definitions](/cucumber/#step-definitions) and [Hooks](/cucumber/#hooks)) in plain old Java classes.
+
+Cucumber will create a new instance of each of your glue code classes before each Scenario.
+
+If all of your glue code classes have an empty constructor, you don’t need anything else.
+However, most projects will benefit from a Dependency Injection module to organize your code better and to share state between Step Definitions.
+
+The available Dependency Injection modules are:
+
+- [PicoContainer](#picocontainer) (The recommended one if your application doesn't use another DI container)
+- [Spring](#spring)
+- [Guice](#guice)
+- [OpenEJB](#openejb)
+- [Weld](#weld)
+- [Needle](#needle)
+
+### PicoContainer
+
+To use PicoContainer, add the following dependency:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>{{ site.versions.cucumber_jvm }}</version>
+    <scope>test</scope>
+</dependency>
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
+For more information, please see [sharing state using Picocontainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
+
+### Spring
+
+To use Spring, add the following dependency:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-spring</artifactId>
+    <version>{{ site.versions.cucumber_jvm }}</version>
+    <scope>test</scope>
+</dependency>
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
+For more information, please see [sharing state using Spring](http://www.thinkcode.se/blog/2017/06/24/sharing-state-between-steps-in-cucumberjvm-using-spring).
+
+### Guice
+
+To use Guice, add the following dependency:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-guice</artifactId>
+    <version>{{ site.versions.cucumber_jvm }}</version>
+    <scope>test</scope>
+</dependency>
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
+For more information, please see [sharing state using Guice](http://www.thinkcode.se/blog/2017/08/16/sharing-state-between-steps-in-cucumberjvm-using-guice).
+
+### OpenEJB
+
+To use OpenEJB, add the following dependency:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-openejb</artifactId>
+    <version>{{ site.versions.cucumber_jvm }}</version>
+    <scope>test</scope>
+</dependency>
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
+
+### Weld
+
+To use Weld, add the following dependency:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-weld</artifactId>
+    <version>{{ site.versions.cucumber_jvm }}</version>
+    <scope>test</scope>
+</dependency>
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
+
+### Needle
+
+To use Needle, add the following dependency:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-needle</artifactId>
+    <version>{{ site.versions.cucumber_jvm }}</version>
+    <scope>test</scope>
+</dependency>
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).
 
 # Databases
 
@@ -66,7 +175,7 @@ Feature: Let's write a lot of stuff to the DB
     Given I write to the DB
 ```
 
-### Using JUnit and Spring
+### With JUnit and Spring
 
 The [`cucumber-spring`](/implementations/jvm/java-di/#spring) module contains `@txn` Hooks in the `cucumber.api.spring` package.
 
@@ -82,7 +191,7 @@ public class RunCukesTest {
 
 See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
 
-## Browsers, beware
+# Browsers, beware
 
 If you're using a [Browser Automation](/browser-automation/) tool that talks to your application over HTTP the transactional approach
 will not work if your [Step Definitions](/cucumber/#step-definitions) and the web application serving HTTP request each have their own database connection.
