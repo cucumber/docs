@@ -1,9 +1,41 @@
 ---
-title: Build Tools
-polyglot: true
+title: Tools
 ---
 
+Using Cucumber in your project is easier with the right tools.
+
+# Editors and IDEs
+
+Most popular text editors support Gherkin syntax highlighting.
+
+Some IDEs also have advanced support for Cucumber, such as running Cucumber
+from within the IDE, Displaying results, navigating between Gherkin steps and
+Step Definitions and so on.
+
+## Java IDEs
+
+### IntelliJ IDEA
+
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
+
+### Eclipse
+
+- [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
+
+## Editors
+
+# Atom
+
+# TextMate
+
+See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) documentation.
+
+
+# Build Tools
+You can run Cucumber using build tools, rather than from the command line.
+
 # Java build tools
+The most widely used build tools for Java are Maven and Gradle.
 
 ## Maven
 
@@ -32,7 +64,6 @@ Steps:
     ```shell
     mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\featurefiles"
     ```
-
 
 ## Gradle
 
@@ -93,7 +124,7 @@ end
 
 If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), this task is defined for you already.
 
-Now you can run Cucumber with rake:
+Now you can run Cucumber with Rake:
 
 ```shell
 rake features

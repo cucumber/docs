@@ -72,7 +72,7 @@ You can now use cucumber's [CLI Runner](/cucumber/#from-the-command-line) to exe
 
 For more information, see [Running Cucumber](/cucumber/#running-cucumber).
 
-### Snapshot releases
+## Snapshot releases
 
 If you want to take advantage of functionality that has been committed to the git `master` branch, but hasn't been released to the public maven repo yet, you can use `SNAPSHOT` builds from the [sonatype snapshot repo](https://oss.sonatype.org/content/repositories/snapshots/io/cucumber/).
 
