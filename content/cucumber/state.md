@@ -150,7 +150,7 @@ You can wrap a transaction (if your database supports it) *around* each Scenario
 
 (This might lead to faster Scenarios, but it comes at a cost.
 You won't be able to perform a post-mortem, and you won't be able to
-use [browser automation](/browser-automation/)).
+use [Browser Automation](/browser-automation/)).
 
 You simply tell Cucumber to start a transaction in a `Before`[Hook](/cucumber/#hooks), and later
 roll it back in an `After`[Hook](/cucumber/#hooks).
