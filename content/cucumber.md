@@ -739,6 +739,12 @@ The following command will run the `authenticate_user` feature. Any feature in a
 cucumber --require features features/authentication/authenticate_user.feature
 ```
 
+Otherwise, to run all Features:
+
+```
+cucumber
+```
+
 {{% /block %}}
 
 {{% block "java" %}}

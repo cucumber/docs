@@ -159,7 +159,16 @@ Try it out:
 cucumber --help
 ```
 
+Then, initialize a `features/` directory:
+
+```
+cucumber --init
+```
+
 ## With Ruby on Rails
+
+[Cucumber-Rails](https://github.com/cucumber/cucumber-rails) is a generator that
+generates and modifies files in a Rails project so it can be used with Cucumber.
 
 Add `cucumber-rails` to your `Gemfile`:
 
