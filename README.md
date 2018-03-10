@@ -75,8 +75,9 @@ On macOS you can do so by installing Python with Homebrew
 
     brew install python
 
-We use HTMLProofer to check whether hyperlinks are correct. To run HTMLProofer on your local version, run `make htmlproofer` in the directory
-where this project is located on your machine.
+We use HTMLProofer to check whether hyperlinks are correct. To run HTMLProofer from the location of the project on your machine
+
+    make htmlproofer
 
 If this doesn't work, you may need to install Ruby first:
 
@@ -98,9 +99,13 @@ Edit Markdown files under in the `content` directory.
 
 Whenever you make a change to the content, the server will automatically rebuild the site (in a few milliseconds) and tell the browser to reload (using a WebSocket).
 
-### Verify content integrity
+### Build the site and check links
 
     make 
+
+If you are getting old errors, you might need to clean your files
+
+    make clean
 
 ### Modify theme
 
