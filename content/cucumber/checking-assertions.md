@@ -3,7 +3,10 @@ menu:
 - reference
 source: https://github.com/cucumber/cucumber/wiki/RSpec-Expectations/
 title: Checking Assertions
-polyglot: true
+polyglot:
+  - java
+  - javascript
+  - ruby
 ---
 
 Your `Then` steps should make assertions comparing expected results to actual results

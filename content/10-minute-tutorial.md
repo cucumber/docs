@@ -1,6 +1,9 @@
 ---
 title: 10 Minute Tutorial
-polyglot: true
+polyglot:
+  - java
+  - javascript
+  - ruby
 ---
 
 In this quick tutorial you will learn how to:

@@ -47,6 +47,8 @@ function toggleClass(el, className) {
 ////// Show/hide polyglot content
 
 var showHideSelectors = [
+  '.language-dot-net',
+  '.text-dot-net',
   '.language-java',
   '.text-java',
   '.language-javascript',

@@ -1,22 +1,20 @@
 <div class="tabs is-boxed left">
   <ul>
-    <li data-language="java">
-      <a>
-        <span class="icon is-small"><i class="devicon-java-plain colored"></i></span>
-        <span>Java</span>
-      </a>
-    </li>
-    <li data-language="javascript">
-      <a>
-        <span class="icon is-small"><i class="devicon-javascript-plain colored"></i></span>
-        <span>JavaScript</span>
-      </a>
-    </li>
-    <li data-language="ruby">
-      <a>
-        <span class="icon is-small"><i class="devicon-ruby-plain colored"></i></span>
-        <span>Ruby</span>
-      </a>
-    </li>
+    {{ range .Page.Params.polyglot }}
+      <li data-language="{{ . }}">
+        <a>
+          <span class="icon is-small"><i class="devicon-{{ . }}-plain colored"></i></span>
+          {{ if eq . "java" }}
+            <span>Java</span>
+          {{ else }}{{ if eq . "javascript" }}
+            <span>JavaScript</span>
+          {{ else }}{{ if eq . "ruby" }}
+            <span>Ruby</span>
+          {{ else }}{{ if eq . "dot-net" }}
+            <span>.NET</span>
+          {{ end }}{{ end }}{{ end }}{{ end }}
+        </a>
+      </li>
+    {{ end }}
   </ul>
 </div>

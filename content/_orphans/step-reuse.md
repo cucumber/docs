@@ -3,7 +3,10 @@ source: https://github.com/cucumber/cucumber/wiki/Step-Definitions/
 source: https://github.com/cucumber/cucumber/wiki/Hooks/
 source: https://github.com/cucumber/cucumber/wiki/Tags/
 title: Cucumber Reference
-polyglot: true
+polyglot:
+  - java
+  - javascript
+  - ruby
 ---
 
 # Reusable step definitions

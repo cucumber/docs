@@ -2,7 +2,10 @@
 menu: reference
 renderer: Cucumber::Website::Reference
 title: Browser Automation
-polyglot: true
+polyglot:
+  - java
+  - javascript
+  - ruby
 ---
 
 Cucumber is not a Browser Automation tool, but it works well with the following Browser Automation tools.

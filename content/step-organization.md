@@ -1,7 +1,10 @@
 ---
 source: https://github.com/cucumber/cucumber/wiki/Step-Organization/
 title: Step organization
-polyglot: true
+polyglot:
+  - java
+  - javascript
+  - ruby
 ---
 
 How do you name your step definition files? What do you put in each step definition? What *don't* you put in there?

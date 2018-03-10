@@ -119,49 +119,51 @@ The front-matter should also declare that this is a polyglot page so that the
 programming language tabs are displayed at the top of the page:
 
 ```yaml
-polyglot: true
+polyglot:
+  - java
+  - javascript
+  - ruby
 ```
 
 When a tab is selected, only source code and language-specific text for the selected
 language will be displayed.
 
-## Source code
+## Language-specific source code and paragraphs
 
-Use fenced code blocks to specify polyglot source code:
+Wrap `{{% block %}}` shortcodes around paragraphs and fenced code blocks:
 
+    {{% block "ruby" %}}
+    Put this in your `hello.rb`:
+    
     ```ruby
     puts "hello"
     ```
+    {{% /block %}}
+
+    {{% block "javascript" %}}
+    Put this in your `hello.js`:
 
     ```javascript
     console.log("hello")
     ```
+    {{% /block %}}
 
+    {{% block "java" %}}
+    Put this in your `Hello.java`:
     ```java
     System.out.println("hello")
     ```
+    {{% /block %}}
 
-## Language-specific text
+## Language-specific text fragments
 
 Use the `{{% text %}}` shortcode around text fragments that should only be displayed for
 a particular programming language:
 
-    The preferred build tool is {{% text "ruby" %}}Rake{{% /text %}}{{% text "javascript" %}}Yarn{{% /text %}}{{% text "java" %}}Maven{{% /text %}}.
-
-Use the `{{% block %}}` shortcode around paragraphs of text that should only be displayed for
-a particular programming language:
-
-{{% block "java" %}}
-A block of text about Java that may also include code examples:
-```java
-// code example
-```
-And may also contain multiple paragraphs.
-{{% /block %}}
-
-These text blocks can also contain code blocks.
-
-In order to show the correct text / blocks per language, the page should be marked as a [polyglot page](#polyglot-pages).
+    The preferred build tool is 
+    {{% text "ruby" %}}Rake{{% /text %}}
+    {{% text "javascript" %}}Yarn{{% /text %}}
+    {{% text "java" %}}Maven{{% /text %}}.
 
 ## Working locally
 
