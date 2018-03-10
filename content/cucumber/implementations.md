@@ -21,7 +21,7 @@ title: Cucumber implementations
 
 ## Java
 
-Cucumber-JVM is a Cucumber implementation for the most popular JVM languages.
+[Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) is a Cucumber implementation for the most popular JVM languages.
 
 Cucumber-JVM supports Java, Kotlin and Android.
 
@@ -40,7 +40,11 @@ Other JVM languages have been moved to their own repository:
 Cucumber.js is a Cucumber implementation written in pure JavaScript.
 It runs on Node.js, IO.js, browsers, and any other JavaScript platform.
 
-[Cucumber.js](https://github.com/cucumber/cucumber-js) 
+[Cucumber.js](https://github.com/cucumber/cucumber-js)
+
+## Kotlin
+
+There is no native Kotlin implementation of Cucumber, but you can use [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) to write Cucumber tests in Kotlin.
 
 ## Lua
 
