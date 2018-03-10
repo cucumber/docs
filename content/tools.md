@@ -24,9 +24,9 @@ Step Definitions and so on.
 
 ## Editors
 
-# Atom
+### Atom
 
-# TextMate
+### TextMate
 
 See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) documentation.
 
