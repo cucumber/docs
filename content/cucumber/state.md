@@ -21,9 +21,6 @@ It's possible to store object state in variables inside your Step Definitions.
 State can make your steps more tightly coupled and harder to reuse.
 {{% /note %}}
 
-<!--- You can follow a longer discussion [here](http://www.mail-archive.com/rspec-users@rubyforge.org/msg06268.html).
-TODO: summarize relevant information from this thread? --->
-
 ## Dependency Injection in Java
 If your programming language is Java you will be writing glue code
 ([Step Definitions](/cucumber/#step-definitions) and [Hooks](/cucumber/#hooks)) in plain old Java classes.
@@ -177,7 +174,7 @@ Feature: Let's write a lot of stuff to the DB
 
 ### With JUnit and Spring
 
-The [`cucumber-spring`](/implementations/jvm/java-di/#spring) module contains `@txn` Hooks in the `cucumber.api.spring` package.
+The [`cucumber-spring`](#dependency-injection-in-java) module contains `@txn` Hooks in the `cucumber.api.spring` package.
 
 This package isn't on your glue path by default, so you have to add it yourself in your
 Configuration Options.

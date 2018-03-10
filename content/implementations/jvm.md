@@ -32,7 +32,7 @@ Cucumber-JVM consists of several modules (JARs). We recommend using a build tool
 to manage the dependencies in your project.
 
 Determining which dependencies to add to your project, depends on the programming language you are using. If you
-are using Java, you may also want to add one of the JARs for [dependency injection](/implementations/jvm/java-di/).
+are using Java, you may also want to add one of the dependencies for [dependency injection](/cucumber/state/#dependency-injection-in-java).
 In addition, you may want to use a test framework, like JUnit or TestNg.
 
 ### Snapshot releases
@@ -96,7 +96,7 @@ Otherwise, to write them using annotated methods, you need to add the following 
 ```
 
 While it's not required, we strongly recommend you include one of the
-[Dependency Injection](/implementations/jvm/java-di/) modules as well. This allows
+[Dependency Injection](/cucumber/state/#dependency-injection-in-java) modules as well. This allows
 you to share state between [Step Definitions](/cucumber/#step-definitions)
 without resorting to static variables (a common source of flickering Scenarios).
 
