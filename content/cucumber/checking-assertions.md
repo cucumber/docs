@@ -116,10 +116,10 @@ If you are using Maven, just add the following to your `pom.xml`:
 </dependency>
 ```
 
-http://testng.org/doc/documentation-main.html#success-failure
-
 TestNG assertions are similar JUnit.
 For a more extensive example of how to use TestNG with Cucumber, see the [java-calculator-testng example](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng).
+
+For more information on how to use TestNG assertions, see the [TestNG documentation](http://testng.org/doc/documentation-main.html#success-failure)
 {{% /block %}}
 
 {{% block "javascript" %}}

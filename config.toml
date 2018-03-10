@@ -43,6 +43,11 @@ pygmentsUseClasses = true
     url = "/cucumber/"
 
 [[menu.guides]]
+    weight = 05
+    name = "Checking Assertions"
+    identifier = "How to determine success or failure"
+    url = "/cucumber/checking-assertions/"
+[[menu.guides]]
     weight = 10
     name = "Step Organization"
     identifier = "How to organize your steps"
