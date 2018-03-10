@@ -137,6 +137,3 @@ and
 have identical meaning, so it’s better to pick one and use the same line in
 every Scenario where you need to be logged in.
 
-<!-- There are more details to writing and testing Cucumber Features
-([Cucumber Backgrounder](/wiki/cucumber-backgrounder/)), but this basically
-covers what a non-programmer needs to know. -->

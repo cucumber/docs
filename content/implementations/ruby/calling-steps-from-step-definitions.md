@@ -58,7 +58,7 @@ Scenario: View last incidents
   When I go to the incident page
 ```
 
-# Calling steps with multiline step arguments
+# Multiline step arguments
 
 Sometimes you want to call a step that has been designed to take multiline [step arguments](/gherkin/#step-arguments) and sometimes you want to call a step that has been designed to take [multiline strings](#doc-strings).
 For example:
