@@ -58,6 +58,12 @@ There is no native Kotlin implementation of Cucumber, but you can use [Cucumber-
 
 * [Test::BDD::Cucumber](https://github.com/sheriff/test-bdd-cucumber-perl)
 
+## PHP
+
+* [Behat](https://github.com/Behat/Behat) is the official Cucumber implementation for PHP.
+
+The docs are currently at [behat.org](http://behat.org).
+
 ## Python
 
 There are no "official" Cucumber ports supported by the Cucumber organisation.
@@ -70,7 +76,7 @@ That's not to say there aren't good alternatives! Try one of these:
 
 ## Ruby
 
-## Roby-on-Rails
+* [Cucumber-ruby](https://github.com/cucumber/cucumber-ruby)
 
 ## Rust
 

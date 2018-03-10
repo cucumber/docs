@@ -5,9 +5,6 @@ nav: docs
 title: PHP using Behat
 ---
 
-Behat is the official Cucumber implementation for PHP.
-
-The docs are currently at [behat.org](http://behat.org).
 
 According to <http://docs.behat.org/en/v3.0/> bq. Since v3.0, Behat is
 considered an official Cucumber implementation in PHP and is part of one big family of BDD tools.
