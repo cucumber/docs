@@ -50,6 +50,34 @@ You can now use cucumber's [CLI Runner](/cucumber/#from-the-command-line) to exe
 
 For more information, see [Running Cucumber](/cucumber/#running-cucumber).
 
+# Javascript
+
+Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works
+with both Node.js and browsers.
+
+## With Node.js
+
+Add `cucumber` as a development dependency:
+
+```shell
+npm install --save-dev cucumber
+```
+
+Or, if you prefer [Yarn](https://yarnpkg.com/en/):
+
+```shell
+yarn add --dev cucumber
+```
+
+# Cucumber versioning
+
+Cucumber tries to follow the [SemVer](http://semver.org/) specification for
+release numbers. Essentially, that means that:
+
+- If only the right-hand (patch) number in the release changes, you don't need to worry.
+- If the middle number (minor) number in the release changes, you don't need to worry.
+- If the left-hand (major) number changes, you can expect that things might break.
+
 # Ruby
 
 Cucumber for Ruby is a ruby gem. Depending on your project structure there are
@@ -114,31 +142,3 @@ Run the generator:
 ```shell
 rails generate cucumber:install
 ```
-
-# Javascript
-
-Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works
-with both Node.js and browsers.
-
-## With Node.js
-
-Add `cucumber` as a development dependency:
-
-```shell
-npm install --save-dev cucumber
-```
-
-Or, if you prefer [Yarn](https://yarnpkg.com/en/):
-
-```shell
-yarn add --dev cucumber
-```
-
-# Cucumber versioning
-
-Cucumber tries to follow the [SemVer](http://semver.org/) specification for
-release numbers. Essentially, that means that:
-
-- If only the right-hand (patch) number in the release changes, you don't need to worry.
-- If the middle number (minor) number in the release changes, you don't need to worry.
-- If the left-hand (major) number changes, you can expect that things might break.
