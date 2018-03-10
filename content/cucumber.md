@@ -46,6 +46,46 @@ Given('I have {int} cukes in my belly', function (cukes) {
 });
 ```
 
+{{% text "java" %}}
+Java Step Definitions are written in regular classes which don't need to extend
+or implement anything. They can be written either using lambda expressions or
+method annotations.
+
+**Lambda Expressions (Java 8)**
+
+If you use the `cucumber-java8` module, you can write the [Step Definitions](/cucumber/#step-definitions)
+using lambdas:
+
+```java
+package foo;
+
+import cucumber.api.java8.En;
+
+public class MyStepdefs implements En {
+    public MyStepdefs() {
+        Given("I have (\\d+) cukes in my belly", (Integer cukes) -> {
+            System.out.format("Cukes: %n\n", cukes);
+        });
+    }
+}
+```
+
+**Annotated methods (Java 6 and onwards)**
+
+If you use the `cucumber-java` module, you can write them using annotated methods:
+
+```java
+package foo;
+
+public class MyStepdefs {
+    @Given("I have (\\d+) cukes in my belly")
+    public void I_have_cukes_in_my_belly(int cukes) {
+        System.out.format("Cukes: %n\n", cukes);
+    }
+}
+```
+{{% /text %}}
+
 {{% warn %}}
 Please note that if you use arrow functions, you won't be able
 to share state between steps!
@@ -66,6 +106,43 @@ The number of parameters in the {{% stepdef-body %}} has to match the number of 
 # Data Tables
 
 {{% text "java" %}}
+The simplest way to pass a `List<String>` to a Step Definition is to use commas:
+
+```gherkin
+Given the following animals: cow, horse, sheep
+```
+
+and declare the argument as a `List<String>`:
+
+```java
+@Given("the following animals: (.*)")
+public void the_following_animals(List<String> animals) {
+}
+```
+
+See the `@Delimiter` annotation for details about how to define a delimiter different than `,`.
+
+
+If you prefer to use a Data Table to define a list you can do that too:
+
+```gherkin
+Given the following animals:
+  | cow   |
+  | horse |
+  | sheep |
+```
+
+Declare the argument as a `List<String>`, but don't define any capture groups in the pattern:
+
+```java
+@Given("the following animals:")
+public void the_following_animals(List<String> animals) {
+}
+```
+
+In this case, the `DataTable` is automatically flattened to a `List<String>`
+by Cucumber (using `DataTable.asList(String.class)`) before invoking the Step
+Definition.
 
 To automatically transform DataTables in your feature file, you can change the DataTable to a List or Map:
 List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V> where E,K,V must be a scalar (String, Integer, Date, enum etc).
