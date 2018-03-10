@@ -6,9 +6,9 @@ Behaviour-Driven development (or BDD) is a software development technique that e
 QA and non-technical or business participants in a software project.
 
 BDD focuses on obtaining a clear understanding of desired software behaviour through discussion with stakeholders.
-It extends [Test-Driven Development (or TDD](#test-driven-development) by writing test cases in a natural language that non-programmers can read.
-Behaviour-driven developers use their native language in combination with the ubiquitous language of Domain-Driven design
-to describe the purpose and benefit of their code.
+It extends [Test-Driven Development (or TDD)](#test-driven-development) by writing test cases in a natural language that
+non-programmers can read. Behaviour-driven developers use their native language in combination with the ubiquitous language
+of Domain-Driven design to describe the purpose and benefit of their code.
 This allows the developers to focus on why the code should be created, rather than the technical details, and minimises
 translation between the technical language in which the code is written and the domain language spoken by the business,
 users, stakeholders, project management, etc.
