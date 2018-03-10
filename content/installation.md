@@ -69,15 +69,6 @@ Or, if you prefer [Yarn](https://yarnpkg.com/en/):
 yarn add --dev cucumber
 ```
 
-# Cucumber versioning
-
-Cucumber tries to follow the [SemVer](http://semver.org/) specification for
-release numbers. Essentially, that means that:
-
-- If only the right-hand (patch) number in the release changes, you don't need to worry.
-- If the middle number (minor) number in the release changes, you don't need to worry.
-- If the left-hand (major) number changes, you can expect that things might break.
-
 # Ruby
 
 Cucumber for Ruby is a ruby gem. Depending on your project structure there are
@@ -142,3 +133,12 @@ Run the generator:
 ```shell
 rails generate cucumber:install
 ```
+
+# Cucumber versioning
+
+Cucumber tries to follow the [SemVer](http://semver.org/) specification for
+release numbers. Essentially, that means that:
+
+- If only the right-hand (patch) number in the release changes, you don't need to worry.
+- If the middle number (minor) number in the release changes, you don't need to worry.
+- If the left-hand (major) number changes, you can expect that things might break.
