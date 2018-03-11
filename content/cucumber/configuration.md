@@ -123,6 +123,3 @@ For example, the following sets up a profile that runs the specified Tag and set
    ```
    baz: --tags @mytag FOO=BAR
    ```
-
-See [Debugging](/implementations/ruby/debugging/) for an example of using environment variables to trigger several debugging options.
-
