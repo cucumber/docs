@@ -23,7 +23,7 @@ Likewise, Cucumber's connection won't see data from the web server.
 
 <!-- TODO: WHAT?? *<span class="https://groups.google.com/forum/#!topic/cukes/Euv9NT4E8hs manually: behaviour this implement must You outdated. is paragraph This"></span>* -->
 
-If you're using [Ruby on Rails](/implementations/ruby/ruby-on-rails/) it's easy to turn off transactions for a Feature or particular Scenarios. Just use the `@no-txn` Tag, like this:
+If you're using [Ruby on Rails](/tools/#ruby-on-rails) it's easy to turn off transactions for a Feature or particular Scenarios. Just use the `@no-txn` Tag, like this:
 
 ```
 @no-txn
@@ -52,7 +52,7 @@ Cucumber::Rails::World.use_transactional_fixtures = false
 
 Once you turn transactions off, you face a different problem. Features will leave data in your database!
 
-If you're using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), a good
+If you're using [Ruby on Rails](/tools/#ruby-on-rails), a good
 tool to deal with this is Ben Mabey's [Database Cleaner](https://github.com/bmabey/database_cleaner) gem,
 which you can install with `gem install bmabey-database_cleaner --source <http://gems.github.com>`. (Or, just `gem install database_cleaner` if you are
 using gemcutter.)

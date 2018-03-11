@@ -105,8 +105,3 @@ So, if you have several profiles with similar values, you might do this:
    ie: BROWSER=IE
    ```
 
-## Autotest Profiles
-
-cucumber.yml - [Autotest Integration](/wiki/autotest-integration)
- uses two profiles: `autotest` and `autotest-all`.
-These profile names should be reserved for that service.

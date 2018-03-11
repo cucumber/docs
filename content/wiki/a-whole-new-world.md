@@ -76,7 +76,7 @@ World(MyHelper, MyOtherHelpers)
 
 This will `extend` each new World object with those modules.
 
-If you use [Ruby on Rails](/implementations/ruby/ruby-on-rails/), there is already a World set up for you, so you will get
+If you use [Ruby on Rails](/tools/#ruby-on-rails), there is already a World set up for you, so you will get
 an instance of `Cucumber::Rails::World`, which is a subclass of `ActionDispatch::IntegrationTest`. This gives you access to a lot of Rails' helper methods.
 
 # Related blog posts
