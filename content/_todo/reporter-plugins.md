@@ -13,7 +13,7 @@ points throughout the run of Features.
 This page documents built-in formatter plugins as well common third-party plugins.
 Available plugins may vary per programming language.
 
-## Cucumber plugins
+# Cucumber plugins
 There are several reporter plugins built into Cucumber:
 
 * progress
@@ -24,7 +24,7 @@ There are several reporter plugins built into Cucumber:
 
 * etc.
 
-## Third-party plugins
+# Third-party plugins
 
 * [Cucumber Pro](https://app.cucumber.pro/projects/cucumber-ruby/documents/master/features/docs/extending_cucumber/custom_formatter.feature)
 
