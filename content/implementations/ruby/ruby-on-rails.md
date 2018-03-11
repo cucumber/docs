@@ -77,7 +77,7 @@ This will generate a simple plain text Feature with associated Steps.
 **Important**: The generated Feature will fail, unless you have set up a layout in your app. This is because Webrat fails to parse HTML
 that isn't well formed (i.e. has a single `<html>` root node). [Here is a simple layout](https://github.com/aslakhellesoy/cucumber-rails-test/raw/master/app/views/layouts/application.html.erb) you can use, but I hope you have a better one yourself.
 
-## Run Features
+## Run Cucumber
 
 If working on a fresh Rails project, first set up the (empty) database:
 
@@ -87,7 +87,7 @@ rake db:migrate
 
 (Otherwise Cucumber fails with the error `no such file to load -- YourProjectName/db/schema.rb`.)
 
-Then run the Features:
+Then run Cucumber:
 
 ```
 rake cucumber
@@ -105,7 +105,7 @@ rake db:migrate
 rake cucumber
 ```
 
-## Other ways of running Features
+## Other ways of running Cucumber
 
 You can also run specific Features directly with Cucumber:
 
@@ -123,7 +123,7 @@ default: --format pretty
 html: --format html --out features.html
 ```
 
-Remember that you need `AUTOFEATURE=true` for autospec to include Cucumber features. See [Running Features](/cucumber/#running-cucumber)
+Remember that you need `AUTOFEATURE=true` for autospec to include Cucumber features. See [Running Cucumber](/cucumber/#running-cucumber)
 and [autotest integration](/wiki/autotest-integration) for more info.
 
 For autospec, change `autotest` in the above block to `autospec`:
