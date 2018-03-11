@@ -5,7 +5,7 @@ title: Additional Configuration
 description: cucumber.yml, environment variables
 ---
 
-You can specify commonly-used command line arguments for Cucmber in a `cucumber.yml` or `cucumber.yaml` file.
+You can specify commonly-used command line arguments for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
 This file must be in a `.config` subdirectory, or `config` subdirectory of your current working directory.
 
 # Defining Profiles
