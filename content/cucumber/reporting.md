@@ -66,7 +66,7 @@ instead of `io.cucumber.pro.JsonReporter:default`.
 Use NuGet to install the plugin into your SpecFlow project:
 
 ```shell
-Install-Package Cucumber.Pro.SpecFlowPlugin
+PM> Install-Package Cucumber.Pro.SpecFlowPlugin
 ```
 {{% /block %}}
 
@@ -78,12 +78,12 @@ the following contents (replace `***` with actual values).
 ```yaml
 cucumberpro:
   # The name of the Cucumber Pro project.
-  # You can leave this blank if your Cucumber Pro project name is identical to 
+  # You can leave this blank if your Cucumber Pro project name is identical to the 
   # CI project name, and you you're using one of Bamboo, Circle CI, TFS, Travis
   # or Wercker.
   projectname: ***
   # The URL of the Cucumber Pro server.
-  # Leave this blank if you are publishing to https://app.cucumber.pro/
+  # You can leave this blank if you are publishing to https://app.cucumber.pro/
   url: ***
 ```
 
@@ -186,8 +186,24 @@ cucumberpro:
     timeout: 5000
 ```
 
-If you want to override some of these settings globally, you can do so in a file named
-`/usr/local/etc/cucumber/cucumber.yml` on the CI server.
+You can make some of the settings global by creating a file wit global settings.
+The plugin will load the configuration in all the following files (if they exist):
+
+{{% block "java" %}}
+* `/usr/local/etc/cucumber/cucumber.yml`
+* `~/.cucumber/cucumber.yml`
+* `~/cucumber.yml`
+* `./cucumber.yml` (relative to the git root)
+* `./.cucumber/cucumber.yml` (relative to the git root)
+{{% /block %}}
+
+{{% block "dot-net" %}}
+* `C:\cucumber\cucumber.yml`
+* `My Documents\.cucumber\cucumber.yml`
+* `My Documents\cucumber.yml`
+* `cucumber.yml` (relative to the git root)
+* `.cucumber\cucumber.yml` (relative to the git root)
+{{% /block %}}
 
 Every setting can also be overridden with environment variables. For example, if you want
 the plugin to log more verbosely:
