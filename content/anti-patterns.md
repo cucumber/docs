@@ -1,6 +1,9 @@
 ---
 title: Anti-patterns
-polyglot: true
+polyglot:
+  - java
+  - javascript
+  - ruby
 ---
 
 There are several anti-patterns, which we will describe here. We will also give you hints on how to avoid them!
