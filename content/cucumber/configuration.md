@@ -1,8 +1,8 @@
 ---
-menu:
-- reference
 source: https://github.com/cucumber/cucumber/wiki/cucumber.yml/
-title: cucumber.yml
+source: https://github.com/cucumber/cucumber/wiki/Environment-Variables/
+title: Additional Configuration
+description: cucumber.yml, environment variables
 ---
 
 You can specify commonly-used command line arguments for Cucmber in a `cucumber.yml` or `cucumber.yaml` file.
@@ -76,7 +76,7 @@ progress output and HTML output.
 
 ## Preprocessing with ERb
 
-The `cucumber.yml` file is preprocessed by ERb. This allows you to use Ruby code
+The `cucumber.yml` file is preprocessed by ERb (Embedded RuBy). This allows you to use Ruby code
 to generate values in the `cucumber.yml` file.
 
 So, if you have several profiles with similar values, you might do this:
@@ -92,7 +92,7 @@ So, if you have several profiles with similar values, you might do this:
 
 ## Environment Variables
 
-[Environment Variables](/cucumber/environment-variables/) can be used in the profile argument list, just as you would normally specify one on the command-line.
+Environment Variables can be used in the profile argument list, just as you would normally specify one on the command-line.
 
 ```yaml
 
@@ -104,4 +104,25 @@ So, if you have several profiles with similar values, you might do this:
    bvt: --tags @bvt
    ie: BROWSER=IE
    ```
+
+When [running Cucumber](/cucumber/#running-cucumber), it can sometimes be handy to pass special
+values to Cucumber for your [step definitions](/cucumber/#step-definitions) to use.
+
+You can easily do this on the command line:
+
+   ```
+   cucumber FOO=BAR --format progress features
+   ```
+
+You can now pick up `ENV\['FOO']` in Ruby (for example, in `env.rb`, or a Step Definition) and perform actions according to the value.
+
+You can also do this in `cucumber.yml`.
+
+For example, the following sets up a profile that runs the specified Tag and sets an environment variable:
+
+   ```
+   baz: --tags @mytag FOO=BAR
+   ```
+
+See [Debugging](/implementations/ruby/debugging/) for an example of using environment variables to trigger several debugging options.
 
