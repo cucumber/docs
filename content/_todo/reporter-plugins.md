@@ -1,19 +1,36 @@
 ---
-menu:
-- all
-- wiki
-source: https://github.com/cucumber/cucumber/wiki/Custom-Formatters/
-title: Custom Formatters
+title: Reporter plugins
+polyglot:
+  - java
+  - javascript
+  - ruby
 ---
 
 As Cucumber runs your Features, it calls out to any number of listener objects
 to let them know how it's progressing. These listeners are notified at various
 points throughout the run of Features.
 
-https://app.cucumber.pro/projects/cucumber-ruby/documents/master/features/docs/extending_cucumber/custom_formatter.feature
+This page documents built-in formatter plugins as well common third-party plugins.
+Available plugins may vary per programming language.
 
-# Other Formatters
+## Cucumber plugins
+There are several reporter plugins built into Cucumber:
 
+* progress
+
+* pretty
+
+* html
+
+* etc.
+
+## Third-party plugins
+
+* [Cucumber Pro](https://app.cucumber.pro/projects/cucumber-ruby/documents/master/features/docs/extending_cucumber/custom_formatter.feature)
+
+* Masterthought
+
+{{% block "ruby" %}}
 1. TeamCity - prints Cucumber results in a format for interpretation by a [TeamCity](http://www.jetbrains.com/teamcity/index.html) build agent.
    1. [teamcity_formatter](https://github.com/kevinrood/teamcity_formatter) - Compatible with Cucumber 2.
    2. [cucumber_teamcity](https://github.com/ankurcha/cucumber_teamcity/) - Tested with Cucumber 1.3.18 and TeamCity 8.x.
@@ -28,3 +45,6 @@ https://app.cucumber.pro/projects/cucumber-ruby/documents/master/features/docs/e
 10. [cucumber_statistics](https://github.com/alienfast/cucumber_statistics) - Tracks timing and displays results in a single HTML page with outliers highlighted in a table sortable by various metrics.
 11. [cucumber_characteristics](https://github.com/singram/cucumber_characteristics) - Generates HTML/JSON reports on overall test timings, as well as timings and usage of Steps, Features, and Examples. Also lists unused and ambiguous (Cucumber 1.x) Steps. Compatible with Cucumber 1.x and 2.1+ and Ruby 1.9+.
 12. [allure-cucumber](https://github.com/allure-framework/allure-cucumber) - [Allure](https://github.com/allure-framework) adaptor for Cucumber. This formatter generates the XML files for Allure reporting framework.
+
+{{% /block %}}
+
