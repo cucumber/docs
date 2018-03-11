@@ -1,6 +1,4 @@
 ---
-menu:
-  - gherkin
 title: Gherkin Reference
 ---
 

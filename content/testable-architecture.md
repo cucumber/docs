@@ -1,6 +1,6 @@
 ---
 title: Testable Architecture
-description: Designing for testability
+description: How to have fast and reliable tests
 ---
 
 **Automated tests** and **executable specifications** can only work with software that has a **testable architecture**.

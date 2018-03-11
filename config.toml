@@ -102,7 +102,7 @@ pygmentsUseClasses = true
 [[menu.bdd]]
     weight = 20
     name = "Example Mapping"
-    identifier = "Three amigos agreeing on what to build"
+    identifier = "Breaking down user stories into examples"
     url = "/example-mapping/"
 [[menu.bdd]]
     weight = 30
