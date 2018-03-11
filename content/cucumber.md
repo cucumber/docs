@@ -49,14 +49,26 @@ Given('I have {int} cukes in my belly', function (cukes) {
 });
 ```
 
+{{% text "javascript" %}}
+{{% warn %}}
+Please note that if you use arrow functions, you won't be able to share state between steps!
+
+```javascript
+// Don't do this!
+Given('I have {int} cukes in my belly', cukes => {
+  console.log(`Cukes: ${cukes}`)
+})
+```
+{{% /warn %}}
+{{% /text %}}
+
 {{% text "java" %}}
-Java Step Definitions are written in regular classes which don't need to extend
-or implement anything. They can be written either using lambda expressions or
+Java step definitions are written in regular Java classes. They can be written either using lambda expressions or
 method annotations.
 
 **Lambda Expressions (Java 8)**
 
-If you use the `cucumber-java8` module, you can write the [Step Definitions](/cucumber/#step-definitions)
+If you use the `cucumber-java8` module, you can write the [step definitions](/cucumber/#step-definitions)
 using lambdas:
 
 ```java
@@ -73,6 +85,8 @@ public class MyStepdefs implements En {
 }
 ```
 
+Note that your class will have to implement an interface to use the Cucumber keywords.
+
 **Annotated methods (Java 6 and onwards)**
 
 If you use the `cucumber-java` module, you can write them using annotated methods:
@@ -87,19 +101,9 @@ public class MyStepdefs {
     }
 }
 ```
+
+In this case your class will not have to extend or implement anything.
 {{% /text %}}
-
-{{% warn %}}
-Please note that if you use arrow functions, you won't be able
-to share state between steps!
-
-```javascript
-// Don't do this!
-Given('I have {int} cukes in my belly', cukes => {
-  console.log(`Cukes: ${cukes}`)
-})
-```
-{{% /warn %}}
 
 In the example above Cucumber extracts the text `48` from the step, converts it to an `int`
 and passes it as an argument to the {{% stepdef-body %}}.
@@ -109,7 +113,7 @@ The number of parameters in the {{% stepdef-body %}} has to match the number of 
 # Data Tables
 
 {{% text "java" %}}
-The simplest way to pass a `List<String>` to a Step Definition is to use commas:
+The simplest way to pass a `List<String>` to a step definition is to use commas:
 
 ```gherkin
 Given the following animals: cow, horse, sheep
@@ -125,8 +129,7 @@ public void the_following_animals(List<String> animals) {
 
 See the `@Delimiter` annotation for details about how to define a delimiter different than `,`.
 
-
-If you prefer to use a Data Table to define a list you can do that too:
+If you prefer to use a DataTable to define a list, you can do that too:
 
 ```gherkin
 Given the following animals:
@@ -144,13 +147,7 @@ public void the_following_animals(List<String> animals) {
 ```
 
 In this case, the `DataTable` is automatically flattened to a `List<String>`
-by Cucumber (using `DataTable.asList(String.class)`) before invoking the Step
-Definition.
-
-To automatically transform DataTables in your feature file, you can change the DataTable to a List or Map:
-List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V> where E,K,V must be a scalar (String, Integer, Date, enum etc).
-To transform to a List<YourType>, the field names for YourType must match the column names in your feature file (except for spaces and capitalization).
-
+by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
 {{% /text %}}
 
 # Steps
@@ -170,7 +167,7 @@ Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}
 
 ## Matching steps
 
-1. Cucumber matches a step against a Step Definition's `Regexp`
+1. Cucumber matches a step against a step definition's `Regexp`
 2. Cucumber gathers any capture groups or variables
 3. Cucumber passes them to the step definition's {{% text "ruby" %}}`Proc` (or “function”){{% /text %}}{{% text "javascript" %}}function{{% /text %}}{{% text "java" %}}method{{% /text %}} and executes it
 
@@ -180,10 +177,9 @@ All step definitions are loaded (and defined) before Cucumber starts to execute 
 
 Once execution begins, for each step, Cucumber will look for a registered step definition with a matching `Regexp`. If it finds one, it will execute it, passing all capture groups and variables from the Regexp as arguments to the method or function.
 
-The specific preposition/adverb used has **no** significance when Cucumber is registering or looking up Step Definitions.
+The specific preposition/adverb used has **no** significance when Cucumber is registering or looking up step definitions.
 
-Also, check out [Multiline step arguments](/gherkin/#step-arguments) for more info on how to pass entire tables or bigger strings to your step definitions.
-
+Also, check out [multiline step arguments](/gherkin/#step-arguments) for more info on how to pass entire tables or bigger strings to your step definitions.
 
 ### Step Results
 
@@ -312,7 +308,7 @@ end
 
 {{% tip "Think twice before you use Before" %}}
 Whatever happens in a `Before` hook is invisible to people who only read the features.
-You should consider using [Background](/gherkin/#background) as a more explicit
+You should consider using a [background](/gherkin/#background) as a more explicit
 alternative, especially if the setup should be readable by non-technical people.
 Only use a `Before` hook for low-level logic such as starting a browser or deleting
 data from a database.
@@ -440,7 +436,7 @@ end
 {{% text "ruby" %}}
 `Around` hooks will run "around" a scenario. This can be used to wrap the execution of a scenario in a block. The `Around` hook receives a `Scenario` object and a block (`Proc`) object. The scenario will be executed when you invoke `block.call`.
 
-The following example will cause Scenarios tagged with `@fast` to fail if the execution takes longer than 0.5 seconds:
+The following example will cause scenarios tagged with `@fast` to fail if the execution takes longer than 0.5 seconds:
 {{% /text %}}
 
 ```ruby
@@ -563,9 +559,9 @@ end
 ```
 
 {{% text "ruby" %}}
-This Hook will run _only once_: after support has been loaded, and before any Features are loaded.
+This Hook will run _only once_: after support has been loaded, and before any features are loaded.
 
-You can use this Hook to extend Cucumber. For example you could affect how Features are loaded, or register custom formatters programmatically.
+You can use this Hook to extend Cucumber. For example you could affect how features are loaded, or register custom formatters programmatically.
 {{% /text %}}
 
 {{% text "java" %}}Cucumber-JVM does not support `AfterConfiguration` hooks.{{% /text %}}
@@ -611,7 +607,7 @@ Tags that are placed above a `Feature` will be inherited by `Scenario`, `Scenari
 
 Tags that are placed above a `Scenario Outline` will be inherited by `Examples`.
 
-## Tag expressions
+## Tag Expressions
 
 Tag expressions provide a simple query language to select scenarios based on
 [boolean expressions](https://en.wikipedia.org/wiki/Boolean_expression).
@@ -709,9 +705,9 @@ Feature: Convert transaction
 You can use a custom Cucumber reporting plugin that will turn tags into links pointing to
 documents in your external tool.
 
-### Development process
+### Development Process
 
-Another creative way to use Tags is to keep track of where in the development process a certain Feature is:
+Another creative way to use Tags is to keep track of where in the development process a certain feature is:
 
 ```gherkin
 @qa_ready
@@ -742,7 +738,7 @@ The following command will run the `authenticate_user` feature. Any feature in a
 cucumber --require features features/authentication/authenticate_user.feature
 ```
 
-Otherwise, to run all Features:
+Otherwise, to run all features:
 
 ```
 cucumber
@@ -783,7 +779,7 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 {{% /block %}}
 
-You can also run features using a build tool.
+You can also run features using a [build tool](/tools/#build-tools).
 
 # Configuration
 
@@ -796,13 +792,13 @@ Configuration options can be passed to on the command-line.
 {{% block "ruby" %}}
 For example:
 
-To run the Scenario defined at line 44 of the `authenticate_user` Feature, format it as HTML, and pipe it to the `features.html` file for viewing in a browser:
+To run the scenario defined at line 44 of the `authenticate_user` feature, format it as HTML, and pipe it to the `features.html` file for viewing in a browser:
 
 ```shell
 cucumber features/authenticate_user.feature:44 --format html > features.html
 ```
 
-To run the Scenario(s) named `"Failed login"`:
+To run the scenario(s) named `"Failed login"`:
 
 ```shell
 cucumber features --name "Failed login"
@@ -856,7 +852,7 @@ Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotati
 These will executed before and after all scenarios. Using these is not recommended, as it limits the portability between different runners;
 they may not execute correctly when using the commandline, [IntelliJ IDEA](https://www.jetbrains.com/help/idea/cucumber.html) or
 [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse). Instead it is recommended to use Cucumbers `Before`
-+and `After` [hooks](#hooks).
+and `After` [hooks](#hooks).
 {{% /note %}}
 
 The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit

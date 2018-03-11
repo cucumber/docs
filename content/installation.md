@@ -4,8 +4,8 @@ title: Installation
 
 # Java
 
-Cucumber-JVM is published as several JAR files in the central Maven repository.
-Install by adding dependencies to build files:
+Cucumber-JVM is published in the central Maven repository.
+You can install it by adding dependencies to your project.
 
 {{% note "Dependencies"%}}
 Make sure the Cucumber version is the same for all Cucumber dependencies.
@@ -13,8 +13,8 @@ Make sure the Cucumber version is the same for all Cucumber dependencies.
 
 ## With Maven
 
-If you are going to use the lambda expressions API to write the Step
-Definitions, you need to add the following dependency to your  `pom.xml`:
+If you are going to use the lambda expressions API (Java 8) to write the step
+definitions, add the following dependency to your  `pom.xml`:
 
 ```xml
 <dependency>
@@ -25,7 +25,7 @@ Definitions, you need to add the following dependency to your  `pom.xml`:
 </dependency>
 ```
 
-Otherwise, to write them using annotated methods, you need to add the following dependency to your  `pom.xml`:
+Otherwise, to write them using annotated methods, add the following dependency to your  `pom.xml`:
 
 ```xml
 <dependency>
@@ -47,11 +47,6 @@ If you plan to use Cucumber with JUnit, add the following dependency to the `pom
 </dependency>
 ```
 
-While it's not required, we strongly recommend you include one of the
-[Dependency Injection](/cucumber/state/#dependency-injection-in-java) modules as well. This allows
-you to share state between [Step Definitions](/cucumber/#step-definitions)
-without resorting to static variables (a common source of flickering Scenarios).
-
 ## With Gradle
 
 Add the following dependencies to `build.gradle`:
@@ -67,15 +62,19 @@ repositories {
 }
 ```
 
-You can now use cucumber's [CLI Runner](/cucumber/#from-the-command-line) to execute by adding a `cucumber` task to `build.gradle`.
+To use lambda expressions (Java 8) to write the step definitions, replace `java` with `java8`.
+
+If you plan to use Cucumber with JUnit, add a JUnit dependency to `build.gradle`.
+
+You can now use Cucumber's [CLI Runner](/cucumber/#from-the-command-line) to execute by adding a `cucumber` task to `build.gradle`.
 
 For more information, see [Running Cucumber](/cucumber/#running-cucumber).
 
 ## Snapshot releases
 
-If you want to take advantage of functionality that has been committed to the git `master` branch, but hasn't been released to the public maven repo yet, you can use `SNAPSHOT` builds from the [sonatype snapshot repo](https://oss.sonatype.org/content/repositories/snapshots/io/cucumber/).
+To take advantage of functionality that has been committed to the git `master` branch, but hasn't been released to the central Maven repo yet, you can use `SNAPSHOT` builds from the [sonatype snapshot repo](https://oss.sonatype.org/content/repositories/snapshots/io/cucumber/).
 
-If you are using Maven, just add the following to your `pom.xml`:
+If you are using Maven, add the sonatype repository to your `pom.xml`:
 
 ```xml
 <repository>
@@ -87,15 +86,13 @@ If you are using Maven, just add the following to your `pom.xml`:
 </repository>
 ```
 
-Then, add a dependency to the snapshot version.
-
-For example:
+Then, add a dependency to the snapshot version to your `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
-    <version>2.1.1-SNAPSHOT</version>
+    <version>{{% version "cucumberjvm-snapshot" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -104,10 +101,16 @@ You can find the current snapshot version number [here](https://github.com/cucum
 
 If you are using Gradle, check the [build.gradle](https://github.com/cucumber/cucumber-java-skeleton/blob/master/build.gradle) file in the cucumber-java-skeleton project.
 
+## Dependency Injection
+
+While it's not required, we strongly recommend you include one of the
+[dependency injection](/cucumber/state/#dependency-injection-in-java) modules as well. This allows
+you to share state between [step definitions](/cucumber/#step-definitions)
+without resorting to static variables (a common source of flickering Scenarios).
+
 # Javascript
 
-Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works
-with both Node.js and browsers.
+Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works with both Node.js and browsers.
 
 ## With Node.js
 
@@ -125,8 +128,7 @@ yarn add --dev cucumber
 
 # Ruby
 
-Cucumber for Ruby is a ruby gem. Depending on your project structure there are
-several ways to install it:
+Cucumber for Ruby is a ruby gem. Depending on your project structure there are several ways to install it:
 
 ## With Rubygems
 
