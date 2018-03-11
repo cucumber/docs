@@ -30,7 +30,7 @@ not one of them.
 
 You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided.
 
-Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading [Ruby on Rails](/implementations/ruby/ruby-on-rails/). To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database. The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
+Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading [Ruby on Rails](/tools/#ruby-on-rails). To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database. The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
 
 Note that in this document I often use the terms *testing* and *test* where [BDD practitioners](http://dannorth.net/introducing-bdd) prefer the terms *behaviour* and *expectation*. When I use the word test in a BDD context I am in fact discussing expressing and verifying expected behaviour.
 
