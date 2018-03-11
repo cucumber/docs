@@ -134,7 +134,7 @@ end
 This will run all the Features with the pretty formatter.
 Note, how we use the `cucumber_opts` accessor to define our arguments passed to Cucumber.
 
-If you are using [Ruby on Rails](/implementations/ruby/ruby-on-rails/), this task is defined for you already.
+If you are using [Ruby on Rails](#ruby-on-rails), this task is defined for you already.
 
 Now you can run Cucumber with Rake:
 
@@ -142,7 +142,7 @@ Now you can run Cucumber with Rake:
 rake features
 ```
 
-# Using Profiles in Rake Tasks
+#### Using Profiles in Rake Tasks
 
 For complex Feature runs that are tested often, it is nice to save the command line arguments as [Cucumber profiles](/cucumber/cucumber.yml).
 
@@ -164,7 +164,7 @@ namespace :features do
 end
 ```
 
-# Guarding Your Production Boxes From Cucumber
+#### Guarding Your Production Boxes From Cucumber
 
 Since Rake tasks are used on development and productions systems, it is generally a good idea to place a guard around your Cucumber task so your productions boxes don't need to install Cucumber.
 
@@ -190,3 +190,10 @@ rescue LoadError
 end
 ```
 
+### Ruby-on-Rails
+
+#### Rails 3.x and above
+
+Go to Cucumber-Rails' [README](https://github.com/cucumber/cucumber-rails/blob/master/README.md) for installation instructions and ignore this page.
+
+As of Cucumber-Rails version 0.5.0 and above, Cucumber-Rails **only** supports Rails 3.x and above (Rails 2 is **not** supported).
