@@ -1,12 +1,6 @@
 ---
-menu:
-- reference
 source: https://github.com/cucumber/cucumber/wiki/RSpec-Expectations/
 title: Checking Assertions
-polyglot:
-  - java
-  - javascript
-  - ruby
 ---
 
 Your `Then` steps should make assertions comparing expected results to actual results
@@ -15,50 +9,13 @@ from your application.
 Cucumber does not come with an assertion library. Instead, use the assertion methods
 from a unit testing tool.
 
-{{% block "ruby" %}}
+# Java
 
-We recommend using RSpec for assertions.
-
-Add the `rspec-expectations` gem to your `Gemfile`.
-Cucumber will automatically load RSpec's matchers and expectation methods to be
-available in your Step Definitions. For example:
-
-```ruby
-Given /^a nice new bike$/ do
-  expect(bike).to be_shiny
-end
-```
-
-If you want to configure RSpec, you'll need to also add the `rspec-core` gem
-to your `Gemfile`. Then, you can add to your `features/support/env.rb`
-configuration, such as:
-
-```ruby
-RSpec.configure do |config|
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
-  end
-end
-```
-
----
-
-If you prefer to use `Test::Unit`'s `assert` methods you can mix them into
-your [`World`](/wiki/a-whole-new-world).
-
-```ruby
-require 'test/unit/assertions'
-
-World(Test::Unit::Assertions)
-```
-
-{{% /block %}}
-
-{{% block "java" %}}
+## JUnit
 
 We recommend using [JUnit](http://junit.org/junit4/)'s `assert*` methods.
 
-If you are using Maven, just add the following to your `pom.xml`:
+If you are using Maven, add the following to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -99,11 +56,11 @@ public class Example {
 
 For more examples of how to use JUnit assertions, see the [JUnit Wiki](https://github.com/junit-team/junit4/wiki/Assertions).
 
----
+## TestNG
 
 You can also use [TestNG](http://testng.org/doc/)'s assertions'.
 
-If you are using Maven, just add the following to your `pom.xml`:
+If you are using Maven, add the following to your `pom.xml`:
 ```xml
 <dependency>
     <groupId>org.testng</groupId>
@@ -122,10 +79,12 @@ If you are using Maven, just add the following to your `pom.xml`:
 TestNG assertions are similar JUnit.
 For a more extensive example of how to use TestNG with Cucumber, see the [java-calculator-testng example](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng).
 
-For more information on how to use TestNG assertions, see the [TestNG documentation](http://testng.org/doc/documentation-main.html#success-failure)
-{{% /block %}}
+For more information on how to use TestNG assertions, see the [TestNG documentation](http://testng.org/doc/documentation-main.html#success-failure).
 
-{{% block "javascript" %}}
+# JavaScript
+
+## Node.js
+
 We recommend using Node.js' built-in [assert](https://nodejs.org/dist/latest-v8.x/docs/api/assert.html) module.
 
 ```javascript
@@ -137,7 +96,7 @@ Then('the result should be {word}', function (expected) {
 })
 ```
 
----
+## Chai
 
 You can use any other assertion library if you wish. Here is an example using [Chai](http://chaijs.com/):
 
@@ -149,4 +108,41 @@ Then('the result should be {word}', function (expected) {
 })
 ```
 
-{{% /block %}}
+# Ruby
+
+## RSpec
+
+We recommend using RSpec for assertions.
+
+Add the `rspec-expectations` gem to your `Gemfile`.
+Cucumber will automatically load RSpec's matchers and expectation methods to be
+available in your Step Definitions. For example:
+
+```ruby
+Given /^a nice new bike$/ do
+  expect(bike).to be_shiny
+end
+```
+
+If you want to configure RSpec, you'll need to also add the `rspec-core` gem
+to your `Gemfile`. Then, you can add to your `features/support/env.rb`
+configuration, such as:
+
+```ruby
+RSpec.configure do |config|
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+end
+```
+
+## Test::Unit
+
+If you prefer to use `Test::Unit`'s `assert` methods you can mix them into
+your `World`].
+
+```ruby
+require 'test/unit/assertions'
+
+World(Test::Unit::Assertions)
+```
