@@ -885,7 +885,7 @@ Some of the runners provide additional mechanisms for passing options to Cucumbe
 {{% /block %}}
 
 {{% block "ruby" %}}
-You can also define common command-line options in a [`cucumber.yml`](/cucumber/cucumber.yml/) file.
+You can also define common command-line options in a [`cucumber.yml`](/cucumber/configuration/) file.
 {{% /block %}}
 
 {{% block "javascript" %}}

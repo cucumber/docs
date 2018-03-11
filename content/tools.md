@@ -69,7 +69,8 @@ Steps:
 4.  Run the following maven from the directory path where the `pom.xml` file is located:
 
     ```shell
-    mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\featurefiles"
+    mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions \
+       --plugin pretty path\to\featurefiles"
     ```
 
 ### Gradle
@@ -132,6 +133,7 @@ end
 ```
 
 This will run all the Features with the pretty formatter.
+
 Note, how we use the `cucumber_opts` accessor to define our arguments passed to Cucumber.
 
 If you are using [Ruby on Rails](#ruby-on-rails), this task is defined for you already.
@@ -144,7 +146,7 @@ rake features
 
 #### Using Profiles in Rake Tasks
 
-For complex Feature runs that are tested often, it is nice to save the command line arguments as [Cucumber profiles](/cucumber/cucumber.yml).
+For complex Feature runs that are tested often, it is nice to save the command line arguments as [Cucumber profiles](/cucumber/configuration/#defining-profiles).
 
 Once you have some profiles defined, you can use them in your Rake tasks, like so:
 
@@ -194,6 +196,6 @@ end
 
 #### Rails 3.x and above
 
-Go to Cucumber-Rails' [README](https://github.com/cucumber/cucumber-rails/blob/master/README.md) for installation instructions and ignore this page.
+Go to Cucumber-Rails' [README](https://github.com/cucumber/cucumber-rails/blob/master/README.md) for installation instructions.
 
 As of Cucumber-Rails version 0.5.0 and above, Cucumber-Rails **only** supports Rails 3.x and above (Rails 2 is **not** supported).
