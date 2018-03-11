@@ -565,7 +565,7 @@ end
 {{% text "ruby" %}}
 This Hook will run _only once_: after support has been loaded, and before any Features are loaded.
 
-You can use this Hook to extend Cucumber. For example you could affect how Features are loaded, or register [Custom Formatters](/implementations/ruby/custom-formatters/) programmatically.
+You can use this Hook to extend Cucumber. For example you could affect how Features are loaded, or register custom formatters programmatically.
 {{% /text %}}
 
 {{% text "java" %}}Cucumber-JVM does not support `AfterConfiguration` hooks.{{% /text %}}
