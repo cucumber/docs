@@ -31,7 +31,12 @@ It offers several [packages](https://atom.io/packages/search?q=cucumber) you can
 
 ### TextMate
 
+[TextMate](https://macromates.com/) is a text editor for macOS.
 See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) documentation.
+
+### Visual Studio Code
+[Visual Studio Code](https://code.visualstudio.com/) is a code editor for Windows, Linux, or macOS.
+You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete).
 
 # Build Tools
 You can run Cucumber using build tools, rather than from the command line.
