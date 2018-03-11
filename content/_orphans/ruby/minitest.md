@@ -3,7 +3,7 @@ source: https://github.com/cucumber/cucumber/wiki/Using-MiniTest/
 title: Using MiniTest
 ---
 
-You can also use [minitest](https://github.com/seattlerb/minitest) `assert` methods by defining your own [World](/state/#world-object-in-ruby) block:
+You can also use [minitest](https://github.com/seattlerb/minitest) `assert` methods by defining your own `World` block:
 
 # Minitest 5
 
