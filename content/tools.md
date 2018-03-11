@@ -26,18 +26,20 @@ Step Definitions and so on.
 
 ### Atom
 
+[Atom](https://atom.io/) is a text editor for macOS 10.9 or later.
+It offers several [packages](https://atom.io/packages/search?q=cucumber) you can use with Cucumber.
+
 ### TextMate
 
 See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) documentation.
 
-
 # Build Tools
 You can run Cucumber using build tools, rather than from the command line.
 
-# Java build tools
+## Java build tools
 The most widely used build tools for Java are Maven and Gradle.
 
-## Maven
+### Maven
 
 To run Cucumber with [Maven](https://maven.apache.org/), make sure that:
 
@@ -65,7 +67,7 @@ Steps:
     mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\featurefiles"
     ```
 
-## Gradle
+### Gradle
 
 To run Cucumber with [Gradle](https://gradle.org/):
 
@@ -108,9 +110,9 @@ task cucumber() {
 gradle cucumber
 ```
 
-# Ruby build tools
+## Ruby build tools
 
-## Rake
+### Rake
 
 This requires a `Rakefile` with a `features` task definition. For example:
 
