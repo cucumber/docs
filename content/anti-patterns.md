@@ -1,9 +1,6 @@
 ---
 title: Anti-patterns
-polyglot:
-  - java
-  - javascript
-  - ruby
+polyglot: true
 ---
 
 There are several anti-patterns, which we will describe here. We will also give you hints on how to avoid them!
@@ -121,21 +118,24 @@ And I have a brand new Mustang
 ## Support for conjunction steps
 
 Sometimes you may want to combine several steps into one, to make your scenarios easier to read.
+For instance, if you need to set up several preconditions in your `Given` state.
 
 {{% block "ruby" %}}
-It is possible to [call steps from step definitions](/implementations/ruby/calling-steps-from-step-definitions/).
+While it is possible to call steps from step definitions in Cucumber-Ruby, this is not recommended.
 {{% /block %}}
 
 {{% block "java" %}}
-In Cucumber-JVM calling steps from step definitions is not supported. This is *by design*; the best tool to achieve composition and reuse is the host programming language.
-To use several (smaller) steps inside a bigger step, extract each small step to a regular method, and call these methods from the bigger step.
+In Cucumber-JVM calling steps from step definitions is not supported; this is *by design*.
 {{% /block %}}
 
 {{% block "javascript" %}}
-<!--- TODO Is / is not supported in cucumber-js? If not, what options does js provide?--->
+In Cucumber-js calling steps from step definitions is not supported; this is *by design*.
 {{% /block %}}
 
-To make your life easier, strive to keep your steps atomic!
+The best way to achieve composition and reuse, is to use the features of your programming language. If you want to combine
+several actions into one step, extract individual (helper) methods and call these methods from your step definition.
+
+To make your life easier, strive to keep your steps atomic as much as possible.
 
 # More information
 For more information on anti-patterns, see [Cucumber Anti-Patterns (blog)](http://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns).
