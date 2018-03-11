@@ -21,8 +21,8 @@ State can make your steps more tightly coupled and harder to reuse.
 
 Cucumber runs scenarios in a `World`. By default, the `World` is just an instance of `Object`.
 
-All [Step Definitions](/cucumber/#step-definitions) will run in the context of the current World instance; A new instance
-is created for each scenario. This means that `self` in a Step Definition block will be the World instance. Any `@instance_variable`
+All [step definitions](/cucumber/#step-definitions) will run in the context of the current World instance; a new instance
+is created for each scenario. This means that `self` in a step definition block will be the World instance. Any `@instance_variable`
 instantiated in a step definition will be assigned to the World, and can be accessed from other step definitions.
 
 If you want to add any behaviour to the world, like helper methods, or logging, you can do this in `support/env.rb`:
@@ -37,7 +37,9 @@ end
 World(CustomWorld)
 ```
 
-Now you can call `a_helper` from your step definitions. Note that every scenario is run in a separate instance of the world,
+Now you can call `a_helper` from your step definitions.
+
+Note that every scenario is run in a separate instance of the world,
 so there is no implicit state-sharing from scenario to scenario.
 
 You can also include modules in your World:
@@ -217,9 +219,9 @@ An alternative approach is to use database transactions.
 
 You can wrap a transaction (if your database supports it) *around* each Scenario.
 
-(This might lead to faster Scenarios, but it comes at a cost.
+This might lead to faster Scenarios, but it comes at a cost.
 You won't be able to perform a post-mortem, and you won't be able to
-use [Browser Automation](/browser-automation/)).
+use [Browser Automation](/browser-automation/).
 
 You simply tell Cucumber to start a transaction in a `Before`[Hook](/cucumber/#hooks), and later
 roll it back in an `After`[Hook](/cucumber/#hooks).
@@ -245,8 +247,8 @@ Feature: Let's write a lot of stuff to the DB
 
 The [`cucumber-spring`](#dependency-injection-in-java) module contains `@txn` Hooks in the `cucumber.api.spring` package.
 
-This package isn't on your glue path by default, so you have to add it yourself in your
-Configuration Options.
+This package isn't on your glue path by default; you have to add it yourself in your
+Cucumber Options.
 
 ```java
 @RunWith(Cucumber.class)
@@ -259,7 +261,87 @@ See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/exam
 
 # Browsers, beware
 
-If you're using a [Browser Automation](/browser-automation/) tool that talks to your application over HTTP the transactional approach
-will not work if your [Step Definitions](/cucumber/#step-definitions) and the web application serving HTTP request each have their own database connection.
+If you're using a [browser automation](/browser-automation/) tool that talks to your application over HTTP, the
+transactional approach will not work if your [step definitions](/cucumber/#step-definitions) and the web application serving
+HTTP request each have their own database connection.
+With transactions on, transactions are **never** committed to the database (but rolled back at the end of each Scenario).
+Therefore, the web server's connection will never see data from Cucumber, and therefore your browser won't either.
+Likewise, Cucumber's connection won't see data from the web server.
 
-If this is the case you should use the brute-force approach where the data is explicitly deleted before each Scenario.
+In this case, you will have to turn off database transactions and make sure the data is explicitly deleted before each Scenario.
+
+## Ruby on Rails
+
+### Turn of transactions
+If you're using [Ruby on Rails](/tools/#ruby-on-rails) it's easy to turn off transactions for a feature or particular scenarios. Just use the `@no-txn` tag, like this:
+
+```
+@no-txn
+Feature: Lots of Scenarios with transactions off.
+```
+
+Or this:
+
+```
+Feature: ...
+  @no-txn
+  Scenario: One Scenario with transactions off.
+```
+
+With Rails, you can also turn off transaction globally in your `features/support/env.rb`:
+
+```
+Cucumber::Rails::World.use_transactional_fixtures = false
+```
+
+### Cleaning Your Database
+
+If you're using [Ruby on Rails](/tools/#ruby-on-rails), a good tool to deal with this is Ben Mabey's
+[Database Cleaner](https://github.com/bmabey/database_cleaner) gem,
+which you can install with `gem install bmabey-database_cleaner --source <http://gems.github.com>`.
+(Or, just `gem install database_cleaner` if you are using gemcutter.)
+
+You can use this very effectively with the `@no-txn` tag. For example, add something like the following somewhere in e.g. `features/support/db_cleaner.rb`:
+
+```
+require 'database_cleaner'
+DatabaseCleaner.clean_with :truncation # clean once to ensure clean slate
+DatabaseCleaner.strategy = :truncation
+
+Before('@no-txn') do
+  DatabaseCleaner.start
+end
+
+After('@no-txn') do
+  DatabaseCleaner.clean
+end
+```
+
+## DatabaseCleaner without Rails
+
+If you're not using Rails, you can recreate the entire `@no-txn` behaviour using `DatabaseCleaner` with the following code:
+
+```
+# With this you should be able to just tag the stories that need to use truncation.
+# Otherwise, the transaction strategy will be used all the other times.
+
+require 'database_cleaner'
+DatabaseCleaner.clean_with :truncation # clean once to ensure clean slate
+DatabaseCleaner.strategy = :transaction # use transactions by default
+
+Before('@no-txn') do
+  DatabaseCleaner.strategy = :truncation
+end
+
+Before do
+  DatabaseCleaner.start
+end
+
+After do
+  DatabaseCleaner.clean
+end
+
+After('@no-txn') do
+  DatabaseCleaner.strategy = :transaction
+end
+```
