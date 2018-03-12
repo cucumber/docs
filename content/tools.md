@@ -9,24 +9,27 @@ Using Cucumber in your project is easier with the right tools.
 Most popular text editors support Gherkin syntax highlighting.
 
 Some IDEs also have advanced support for Cucumber, such as running Cucumber
-from within the IDE, Displaying results, navigating between Gherkin steps and
-Step Definitions and so on.
+from within the IDE, displaying results, navigating between Gherkin steps and
+step definitions and so on.
 
 ## Java IDEs
 
 ### IntelliJ IDEA
 
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/help/cucumber.html)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) has the [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
+
+You can find more information on using Cucumber with IntelliJ IDEA in the [IntelliJ IDEA Cucumber help pages](https://www.jetbrains.com/idea/help/cucumber.html)
 
 ### Eclipse
 
-- [Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse)
+- [Eclipse](https://www.eclipse.org/) has the [Cucumber Eclipse plugin](https://cucumber.github.io/cucumber-eclipse/)
 
 ## Editors
 
 ### Atom
 
-[Atom](https://atom.io/) is a text editor for macOS 10.9 or later.
+[Atom](https://github.com/atom/atom) is a text editor for macOS, Windows or Linux.
+
 It offers several [packages](https://atom.io/packages/search?q=cucumber) you can use with Cucumber.
 
 ### TextMate
@@ -36,13 +39,14 @@ See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) doc
 
 ### Visual Studio Code
 [Visual Studio Code](https://code.visualstudio.com/) is a code editor for Windows, Linux, or macOS.
+
 You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete).
 
 # Build Tools
 You can run Cucumber using build tools, rather than from the command line.
 
 ## Java build tools
-The most widely used build tools for Java are Maven and Gradle.
+The most widely used build tools for Java are [Maven](#maven) and [Gradle](#gradle).
 
 ### Maven
 
@@ -66,7 +70,7 @@ Steps:
     ```
 
 3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` folders respectively.
-4.  Run the following maven from the directory path where the `pom.xml` file is located:
+4.  Run the following Maven from the directory path where the `pom.xml` file is located:
 
     ```shell
     mvn clean install -DCucumberOptions="--glue package_name_of_step_definitions --plugin pretty path\to\featurefiles"
@@ -83,7 +87,6 @@ To run Cucumber with [Gradle](https://gradle.org/):
 Steps:
 
 1.  Create a new Gradle project or look at  [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
-
 2.  Add the following dependency to `build.gradle`
 
 ```
@@ -93,7 +96,6 @@ dependencies {
 ```
 
 3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` respectively in a `gradle.cucumber` package.
-
 4. Add the following Gradle `cucumber` task in `build.gradle`
 
 ```
@@ -109,7 +111,7 @@ task cucumber() {
 }
 ```
 
-4.  Run the following gradle task from the directory path where `build.gradle` file is located:
+5.  Run the following gradle task from the directory path where `build.gradle` file is located:
 
 ```shell
 gradle cucumber
