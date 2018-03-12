@@ -1,6 +1,4 @@
 ---
-menu: reference
-renderer: Cucumber::Website::Reference
 title: Browser Automation
 polyglot:
   - java

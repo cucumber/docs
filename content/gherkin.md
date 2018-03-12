@@ -1,6 +1,4 @@
 ---
-menu:
-  - gherkin
 title: Gherkin Reference
 ---
 
@@ -57,7 +55,7 @@ The main keywords are:
 
 - `Feature`
 - `Scenario`
-- `Given`, `When`, `Then`, `And`, `But`  (Steps)
+- `Given`, `When`, `Then`, `And`, `But`  (steps)
 - `Background`
 - `Scenario Outline`
 - `Examples`
@@ -79,7 +77,7 @@ A `.feature` file describes a single feature of the system, or a
 particular aspect of a feature. It's a way to provide a high-level description
 of a software feature, and to group related scenarios.
 
-The `.feature` file starts with the keyword **Feature**, a *name* (on the same line),
+The `.feature` file starts with the keyword `Feature`, a *name* (on the same line),
 followed by an optional (but highly recommended!) free format *description* of the feature which can span multiple lines.
 The free format description ends when the first scenario starts.
 
@@ -90,10 +88,10 @@ and a list of business rules (general acceptance criteria).
 In addition to a *name* and a *description*, features contain a list of [scenarios](#scenario)
 or [scenario outlines](#scenario-outlines) with examples, and an optional [background](#background).
 
-A Scenario starts with the word **Scenario** on a new line.
+A scenario starts with the word `Scenario` on a new line.
 
 Every scenario consists of a list of steps, which must start with one of the
-keywords **Given**, **When**, **Then**, **But**, or **And**. Cucumber treats them all the same, but you shouldn't!
+keywords `Given`, `When`, `Then`, `But`, or `And`. Cucumber treats them all the same, but you shouldn't!
 The different keywords help you write scenarios that are easy to read and understand.
 
 Here is an example:
@@ -245,7 +243,7 @@ Cucumber executes each step in a scenario, one at a time, in the sequence you’
 When Cucumber tries to execute a step, it looks for a matching step definition to execute.
 
 Keywords are not taken into account when looking for a match. This means you cannot have a
-`Given`, `When`, `Then`, `And` or `But` step with the same text as another Step.
+`Given`, `When`, `Then`, `And` or `But` step with the same text as another step.
 
 Cucumber considers the following steps duplicates:
 ```Gherkin
@@ -309,10 +307,10 @@ The client needs to actually remember this stuff when reading the scenarios. If 
 
 Use colorful names, and try to tell a story. The human brain keeps track of stories much better than it keeps track of names like `"User A"`, `"User B"`, `"Site 1"`, and so on.
 
-- Keep your Scenarios **short**, and don't have too many.
+- Keep your scenarios **short**, and don't have too many.
 
 If the `Background` section has scrolled off the screen, the reader no longer has a full overview of whats happening.
-Think about using higher-level Steps, or splitting the `*.feature` file.
+Think about using higher-level steps, or splitting the `*.feature` file.
 
 # Scenario Outlines
 
@@ -346,7 +344,7 @@ Scenario Outline: eating
 
 The `Scenario Outline` steps provide a template which is never directly run. A `Scenario Outline` is run once for each row in the `Examples` section beneath it (not counting the first row).
 
-The way this works is via placeholders. Placeholders must be contained within `< >` in the Scenario outline's steps.
+The way this works is via placeholders. Placeholders must be contained within `< >` in the scenario outline's steps.
 
 For example:
 
@@ -368,7 +366,7 @@ Examples:
   |  12   |  5  |  7   |
 ```
 
-The Scenario that is actually run is:
+The scenario that is actually run is:
 
 ```gherkin
 Scenario Outline: eating
@@ -400,7 +398,7 @@ Scenario Outline: Password validation
 
 In this feature, it isn't clear why certain passwords are valid or invalid.
 
-By reformatting the `Examples` into two tables with descriptive text, the Scenario Outline becomes much more effective (p.75):
+By reformatting the `Examples` into two tables with descriptive text, the scenario outline becomes much more effective (p.75):
 
 ```gherkin
 Feature: Account Creation
@@ -486,7 +484,7 @@ Egenskap: Summering
     Så skal resultatet være 13
 ```
 
-A `# language:` header on the first line of a Feature file tells Cucumber what spoken language to use - for example `# language: fr` for French. If you omit this header, Cucumber will default to English (`en`).
+A `# language:` header on the first line of a feature file tells Cucumber what spoken language to use - for example `# language: fr` for French. If you omit this header, Cucumber will default to English (`en`).
 
 ## Listing the available languages
 
@@ -510,7 +508,7 @@ It's easy!
 - Add your language's keywords to [gherkin-languages.json](https://github.com/cucumber/cucumber/blob/master/gherkin/gherkin-languages.json)
 - Commit and push your changes - then send a [pull request](https://help.github.com/articles/using-pull-requests/).
 
-That's it! When a new release of gherkin is made you can specify in a `# language: xx` header in your Feature files.
+That's it! When a new release of gherkin is made you can specify in a `# language: xx` header in your feature files.
 
 ## Adding examples for a new language
 

@@ -8,7 +8,7 @@ title: Continuous Integration
 Using Cucumber in a [Continuous Integration](http://martinfowler.com/articles/continuousIntegration.html) (CI) environment is relatively straightforward.
 
 The `cucumber` executable will exit with an [exit status](http://en.wikipedia.org/wiki/Exit_status)
-different from `0` if one or more Scenarios are failing. This is all your CI
+different from `0` if one or more scenarios are failing. This is all your CI
 server needs to know.
 
 First, you have to make sure your CI server executes Cucumber.
@@ -18,7 +18,7 @@ Most CI setups invoke some kind of build tool. Common build tools are:
 * [Ant](http://ant.apache.org)
 * [Maven](http://maven.apache.org)
 
-We recommend you executing Cucumber from one of these on a CI server.
+We recommend executing Cucumber from one of these on a CI server.
 
 # Rake
 
@@ -30,12 +30,12 @@ that Rake executes your Cucumber task.
 Many CI servers can interpret XML files produced by the [Ant JUnit task](https://ant.apache.org/manual/Tasks/junit.html)
 and display them as HTML. Some can even create reports over time.
 
-If you're using such a CI server, we recommend you use Cucumber with the `junit` formatter.
+If you're using such a CI server, we recommend you use Cucumber with the `JUnit` formatter.
 
-> Example. To get started using Cucumber in [Jenkins](http://jenkins-ci.org/), just add a build step running
+> To get started using Cucumber in [Jenkins](http://jenkins-ci.org/), just add a build step running
 > `cucumber -f junit --out WORKSPACE` and then check the
 > 'Publish JUnit test result report', and enter `\*.xml` in the 'Test report XMLs' field.
-> Save and run. (Later improve by using a rake task and placing your output in a subfolder).
+> Save and run. (Later improve by using a Rake task and placing your output in a subfolder).
 
 If you're using Ant, you can run Cucumber with the [`exec`](https://ant.apache.org/manual/Tasks/exec.html) task.
 
