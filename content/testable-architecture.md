@@ -3,11 +3,11 @@ title: Testable Architecture
 description: How to have fast and reliable tests
 ---
 
-**Automated tests** and **executable specifications** can only work with software that has a **testable architecture**.
+Automated tests and executable specifications can only work with software that has a testable architecture.
 A testable architecture enables fast and reliable tests that are easy to write, execute and maintain.
 
-# Fast tests
-Fast tests enable the developers to run them frequently to obtain **fast feedback** on what they are building, without
+# Fast feedback
+Fast tests enable the developers to run them frequently to obtain fast feedback on what they are building, without
 losing focus or flow.
 
 # Testability
@@ -42,11 +42,11 @@ a web server that plugs into a port to display a UI in a browser. All the IO ten
 By testing the core business logic directly though the ports, we can eliminate a lot of slow and brittle IO.
 
 This architectural patterns is called **ports and adapters pattern** (or [hexagonal architecture](http://a.cockburn.us/1807)).
-It enables you to connect your scenarios and unit tests at a lower level, while the **contract tests** give you the confidence to do that.
+It enables you to connect your scenarios and unit tests at a lower level, while the contract tests give you the confidence to do that.
 
 # Full stack
 You’ll want to run *some* tests that go through the whole depth of your stack, to get complete confidence.
-Diagnosing where the problem is in a full-stack, **end-to-end test** is really hard, because it can be anywhere.
+Diagnosing where the problem is in a full-stack, end-to-end test is really hard, because it can be anywhere.
 These tests are brittle because one change can break all of them. They are also slow,
 as there is IO involved when going through a a browser, web service or database.
 
@@ -55,9 +55,9 @@ Focus on having different kinds of tests; lots and lots of unit tests.
 A few tests that don’t go through all the heavy infrastructure components and just a few tests that go through the UI.
 This is called the [test pyramid](https://martinfowler.com/bliki/TestPyramid.html).
 
-# More information:
+# More information
 
-For an example of how to implement fast tests (in node.js), see [subsecondtdd on GitHub](https://github.com/subsecondtdd/todo-subsecond)
+For an example of how to implement fast tests (in node.js), see [subsecondtdd on GitHub](https://github.com/subsecondtdd/todo-subsecond).
 
 Or have a look at Aslak's [talk at Devlin 2017](https://skillsmatter.com/skillscasts/9971-testable-software-architecture-with-aslak-hellesoy)
 - or the [slides](https://speakerdeck.com/aslakhellesoy/testable-architecture-at-devlin-2017) - about this subject.

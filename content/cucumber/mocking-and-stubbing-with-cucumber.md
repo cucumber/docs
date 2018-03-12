@@ -9,14 +9,14 @@ polyglot: false
 Mocking is usually discouraged when using Cucumber; ideally you would exercise as much of your stack as possible.
 There are cases when using mocking can come in handy. For example, if your system depends on a third party.
 If you have a dependency on an external system, we recommend using [stubs instead of mocks](http://martinfowler.com/articles/mocksArentStubs.html).
-You **can** set up mocks with expectations in your [Step Definitions](/cucumber/#step-definitions).
+You **can** set up mocks with expectations in your [step definitions](/cucumber/#step-definitions).
 
 # Ruby
 
 ## RSpec 2.x
 
 Starting with Cucumber 0.8.4, you can use all of RSpec's supported mocking frameworks (RSpec, Mocha, RR, Flexmock).
-Just `require 'cucumber/rspec/doubles'` ([Test-Double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
+Just `require 'cucumber/rspec/doubles'` ([test-double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
 
 Perhaps place your stub action within a block as below:
 
@@ -47,7 +47,7 @@ You can use [MockServer](http://www.mock-server.com/) for mocking any system you
 
 [WireMock](http://wiremock.org/) is a simulator for HTTP-based APIs, similar to MockServer.
 
-# Javascript
+# JavaScript
 
 If you are using cucumber-js, there are many test frameworks to choose from.
-Which one you use, may depend on other javascript frameworks your project is using and / or personal preference.
+Which one you use, may depend on other JavaScript frameworks your project is using and / or personal preference.
