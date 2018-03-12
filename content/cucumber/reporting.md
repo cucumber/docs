@@ -5,7 +5,7 @@ polyglot:
   - dot-net
 ---
 
-Cucumber user reporter plugins to produce reports that contain information about
+Cucumber uses reporter plugins to produce reports that contain information about
 what scenarios have passed or failed.
 
 Some plugins are built-in, others have to be installed separately. You can also
