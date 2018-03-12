@@ -7,7 +7,7 @@ polyglot: false
 ---
 
 It's important to prevent state created by one scenario from leaking into others.
-Leaking state makes your Scenarios brittle, and difficult to run in isolation.
+Leaking state makes your scenarios brittle, and difficult to run in isolation.
 
 * Avoid using global or static variables.
 
@@ -47,7 +47,7 @@ To use PicoContainer, add the following dependency:
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-picocontainer</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -63,7 +63,7 @@ To use Spring, add the following dependency:
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-spring</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -78,7 +78,7 @@ To use Guice, add the following dependency:
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-guice</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -94,7 +94,7 @@ To use OpenEJB, add the following dependency:
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-openejb</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -109,7 +109,7 @@ To use Weld, add the following dependency:
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-weld</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -124,7 +124,7 @@ To use Needle, add the following dependency:
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-needle</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
