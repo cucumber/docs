@@ -33,7 +33,7 @@ If you are using Maven, add the following to your `pom.xml`:
 ```
 
 {{% note "Cucumber version"%}}
-Make sure to use the same version for `cucumber-junit` that you are using for `cucumber-java` or cucumber-java8`.
+Make sure to use the same version for `cucumber-junit` that you are using for `cucumber-java` or `cucumber-java8`.
 {{% /note %}}
 
 {{% note "JUnit 5"%}}
@@ -96,7 +96,7 @@ Then('the result should be {word}', function (expected) {
 })
 ```
 
-## Chai
+## Other Assertion Libraries
 
 You can use any other assertion library if you wish. Here is an example using [Chai](http://chaijs.com/):
 
@@ -112,11 +112,11 @@ Then('the result should be {word}', function (expected) {
 
 ## RSpec
 
-We recommend using RSpec for assertions.
+We recommend using [RSpec](http://rspec.info/) for assertions.
 
 Add the `rspec-expectations` gem to your `Gemfile`.
 Cucumber will automatically load RSpec's matchers and expectation methods to be
-available in your Step Definitions. For example:
+available in your step definitions. For example:
 
 ```ruby
 Given /^a nice new bike$/ do

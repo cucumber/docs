@@ -36,17 +36,6 @@ Otherwise, to write them using annotated methods, add the following dependency t
 </dependency>
 ```
 
-If you plan to use Cucumber with JUnit, add the following dependency to the `pom.xml`:
-
-```xml
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-junit</artifactId>
-    <version>{{% version "cucumberjvm" %}}</version>
-    <scope>test</scope>
-</dependency>
-```
-
 ## With Gradle
 
 Add the following dependencies to `build.gradle`:
@@ -63,8 +52,6 @@ repositories {
 ```
 
 To use lambda expressions (Java 8) to write the step definitions, replace `java` with `java8`.
-
-If you plan to use Cucumber with JUnit, add a JUnit dependency to `build.gradle`.
 
 You can now use Cucumber's [CLI Runner](/cucumber/#from-the-command-line) to execute by adding a `cucumber` task to `build.gradle`.
 
@@ -100,6 +87,11 @@ Then, add a dependency to the snapshot version to your `pom.xml`:
 You can find the current snapshot version number [here](https://github.com/cucumber/cucumber-jvm/blob/master/pom.xml).
 
 If you are using Gradle, check the [build.gradle](https://github.com/cucumber/cucumber-java-skeleton/blob/master/build.gradle) file in the cucumber-java-skeleton project.
+
+## Assertion library
+
+Cucumber does not come with an assertion library. Instead, use the assertion methods
+from a [unit testing tool](/cucumber/checking-assertions/#java).
 
 ## Dependency Injection
 
