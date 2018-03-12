@@ -41,7 +41,7 @@ The available dependency injection modules are:
 
 ### PicoContainer
 
-To use PicoContainer, add the following dependency:
+To use PicoContainer, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -52,12 +52,17 @@ To use PicoContainer, add the following dependency:
 </dependency>
 ```
 
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '{{% version "cucumberjvm" %}}}'
+```
+
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
 For more information, please see [sharing state using Picocontainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
 
 ### Spring
 
-To use Spring, add the following dependency:
+To use Spring, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -68,11 +73,16 @@ To use Spring, add the following dependency:
 </dependency>
 ```
 
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-spring', version: '{{% version "cucumberjvm" %}}}'
+```
+
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
 
 ### Guice
 
-To use Guice, add the following dependency:
+To use Guice, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -83,12 +93,17 @@ To use Guice, add the following dependency:
 </dependency>
 ```
 
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-guice', version: '{{% version "cucumberjvm" %}}}'
+```
+
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
 For more information, please see [sharing state using Guice](http://www.thinkcode.se/blog/2017/08/16/sharing-state-between-steps-in-cucumberjvm-using-guice).
 
 ### OpenEJB
 
-To use OpenEJB, add the following dependency:
+To use OpenEJB, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -99,11 +114,16 @@ To use OpenEJB, add the following dependency:
 </dependency>
 ```
 
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-openejb', version: '{{% version "cucumberjvm" %}}}'
+```
+
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
 
 ### Weld
 
-To use Weld, add the following dependency:
+To use Weld, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -114,11 +134,16 @@ To use Weld, add the following dependency:
 </dependency>
 ```
 
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-weld', version: '{{% version "cucumberjvm" %}}}'
+```
+
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
 
 ### Needle
 
-To use Needle, add the following dependency:
+To use Needle, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -127,6 +152,11 @@ To use Needle, add the following dependency:
     <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
+```
+
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-needle', version: '{{% version "cucumberjvm" %}}}'
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).

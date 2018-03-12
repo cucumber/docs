@@ -53,7 +53,7 @@ repositories {
 
 To use lambda expressions (Java 8) to write the step definitions, replace `java` with `java8`.
 
-You can now use Cucumber's [CLI Runner](/cucumber/#from-the-command-line) to execute by adding a `cucumber` task to `build.gradle`.
+You can now use Cucumber's [CLI Runner](/cucumber/#from-the-command-line) to execute by [adding a cucumber task](/tools/#gradle) to `build.gradle`.
 
 For more information, see [Running Cucumber](/cucumber/#running-cucumber).
 
