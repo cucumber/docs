@@ -74,9 +74,9 @@ With this setup, Cucumber will now use both the `bvt` profile and `html_report`
 profile, testing all Features and Scenarios tagged with `@bvt`, along with the
 progress output and HTML output.
 
-## Preprocessing with ERb
+## Preprocessing with ERB
 
-The `cucumber.yml` file is preprocessed by ERb (Embedded RuBy). This allows you to use Ruby code
+The `cucumber.yml` file is preprocessed by [ERB (Embedded RuBy)](http://ruby-doc.org/stdlib-2.5.0/libdoc/erb/rdoc/ERB.html). This allows you to use Ruby code
 to generate values in the `cucumber.yml` file.
 
 So, if you have several profiles with similar values, you might do this:
@@ -108,7 +108,7 @@ Environment Variables can be used in the profile argument list, just as you woul
 When [running Cucumber](/cucumber/#running-cucumber), it can sometimes be handy to pass special
 values to Cucumber for your [step definitions](/cucumber/#step-definitions) to use.
 
-You can easily do this on the command line:
+You can do this on the command line:
 
    ```
    cucumber FOO=BAR --format progress features

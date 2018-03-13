@@ -19,7 +19,7 @@ State can make your steps more tightly coupled and harder to reuse.
 
 ## World object in Ruby
 
-Cucumber runs scenarios in a `World`. By default, the `World` is just an instance of `Object`.
+Cucumber runs scenarios in a `World`. By default, the `World` is an instance of `Object`.
 
 All [step definitions](/cucumber/#step-definitions) will run in the context of the current World instance; a new instance
 is created for each scenario. This means that `self` in a step definition block will be the World instance. Any `@instance_variable`
@@ -274,7 +274,7 @@ In this case, you will have to turn off database transactions and make sure the 
 ## Ruby on Rails
 
 ### Turn of transactions
-If you're using [Ruby on Rails](/tools/#ruby-on-rails) it's easy to turn off transactions for a feature or particular scenarios. Just use the `@no-txn` tag, like this:
+If you're using [Ruby on Rails](/tools/#ruby-on-rails) it's easy to turn off transactions for a feature or particular scenarios. Use the `@no-txn` tag, like this:
 
 ```
 @no-txn
@@ -300,8 +300,7 @@ Cucumber::Rails::World.use_transactional_fixtures = false
 
 If you're using [Ruby on Rails](/tools/#ruby-on-rails), a good tool to deal with this is Ben Mabey's
 [Database Cleaner](https://github.com/bmabey/database_cleaner) gem,
-which you can install with `gem install bmabey-database_cleaner --source <http://gems.github.com>`.
-(Or, just `gem install database_cleaner` if you are using gemcutter.)
+which you can install with `gem install database_cleaner`.
 
 You can use this very effectively with the `@no-txn` tag. For example, add something like the following somewhere in e.g. `features/support/db_cleaner.rb`:
 
@@ -324,7 +323,7 @@ end
 If you're not using Rails, you can recreate the entire `@no-txn` behaviour using `DatabaseCleaner` with the following code:
 
 ```
-# With this you should be able to just tag the stories that need to use truncation.
+# With this you should be able to tag the stories that need to use truncation.
 # Otherwise, the transaction strategy will be used all the other times.
 
 require 'database_cleaner'
