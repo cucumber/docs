@@ -162,7 +162,7 @@ Examples:
 - It's okay to call into the layer "inside" the UI layer here (talking to the domain model).
 - Log in a user (this is an exception to the no-interaction recommendation; things that "happened earlier" are okay).
 
-{{% note "Rails users"%}}
+{{% note "Rails users" %}}
 We recommend using a [`Given` with a multiline table argument](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/manage_lorries.feature) to [set up records](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/step_definitions/lorry_steps.rb) instead of fixtures.
 This way, you can read the Scenario and make sense out of it without having to look elsewhere (at the fixtures).
 {{% /note %}}
@@ -206,12 +206,12 @@ If you have several `Given`s, `When`s, or `Then`s, you *could* write:
 
 ```gherkin
 Scenario: Multiple Givens
-Given one thing
-Given another thing
-Given yet another thing
-When I open my eyes
-Then I see something
-Then I don't see something else
+  Given one thing
+  Given another thing
+  Given yet another thing
+  When I open my eyes
+  Then I see something
+  Then I don't see something else
 ```
 
 Or, you could make it read more fluidly by writing:
