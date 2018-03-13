@@ -11,91 +11,31 @@ title: Cucumber Backgrounder
 
 ## Introduction
 
-Cucumber is a tool that implements a [Behaviour Driven Development
-(BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development)
-[workflow](http://en.wikipedia.org/wiki/Workflow). This document deals
-principally with initial set up and first use of the ***Cucumber-Rails*** and
-***Cucumber*** [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as
-its background the Ruby on Rails (RoR) [web application
-framework](http://en.wikipedia.org/wiki/Web_application_framework). Detailed
-discussion of [Behaviour
-Driven](http://en.wikipedia.org/wiki/Behavior_driven_development) (BDD), [Test
-Driven](http://en.wikipedia.org/wiki/Test-driven_development) (TDD), and Panic
-Driven Development aka [Cowboy
-Coding](http://cowboyprogramming.com/2007/01/11/delving-into-cowboy-programming/)
-can be found elsewhere. Of course, there are still some
-[skeptics](http://steve-yegge.blogspot.ca/2006/09/good-agile-bad-agile_27.html)
-on this whole Agile thing. But, if you are reading this then you probably are
-not one of them.
+Cucumber is a tool that implements a [Behaviour Driven Development (BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development)
+[workflow](http://en.wikipedia.org/wiki/Workflow).
+This document deals principally with initial set up and first use of the ***Cucumber-Rails*** and
+***Cucumber*** [Rubygems](http://en.wikipedia.org/wiki/RubyGems). It takes as its background the Ruby on Rails
+[web application framework](http://en.wikipedia.org/wiki/Web_application_framework).
+Detailed discussion of [Behaviour Driven Development (BDD)](http://en.wikipedia.org/wiki/Behavior_driven_development) and
+[Test Driven Development (TDD)](http://en.wikipedia.org/wiki/Test-driven_development) can be found elsewhere.
 
-You will find some familiarity with the Ruby language helpful and of the RoR framework somewhat less so. This article is aimed at the near novice and is somewhat long in consequence. If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility. Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided.
+You will find some familiarity with the Ruby language helpful and of the Rails framework somewhat less so.
+This article is aimed at the near novice and is somewhat long in consequence.
+If you are familiar with BDD/TDD concepts or are an experienced Rubist you will find some of the contents so obvious as to question its utility.
+Others, particularly those new to Ruby, may not have your advantages and it is for these readers that this material is provided.
 
-Details regarding installing the Cucumber Rubygem and its recommended support tools for RoR are found on this wiki under the heading [Ruby on Rails](/tools/#ruby-on-rails). To experiment with Cucumber and Cucumber-Rails I recommend that you create a new RoR project and use the default SQLite3 database. The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to RoR.
+Details regarding installing the Cucumber Rubygem and it's recommended support tools for Rails are found under the heading [Ruby on Rails](/tools/#ruby-on-rails).
+To experiment with Cucumber and Cucumber-Rails, we recommend that you create a new Rails project and use the default SQLite3 database.
+The official guide to [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) is a useful introduction to Rails.
 
-Note that in this document I often use the terms *testing* and *test* where [BDD practitioners](http://dannorth.net/introducing-bdd) prefer the terms *behaviour* and *expectation*. When I use the word test in a BDD context I am in fact discussing expressing and verifying expected behaviour.
+Note that in this document we often use the terms *testing* and *test* where [BDD practitioners](http://dannorth.net/introducing-bdd) prefer the terms *behaviour* and *expectation*.
+When we use the word test in a BDD context, we am in fact discussing expressing and verifying expected behaviour.
 
-## Where to Start?
+## Getting started with Cucumber in Ruby on Rails
 
-Before anything else make sure that you have the [cucumber-rails](https://github.com/cucumber/cucumber-rails) installed properly into your RoR project. Now we can really get started.
+Make sure that you have the [cucumber-rails](https://github.com/cucumber/cucumber-rails) installed properly into your Rails project.
 
-```Gherkin
-Feature: Design and Build a Ruby on Rails web app using Behaviour Driven Development (BDD)
-In order to reduce rework and produce a web app at low cost and high speed
-A developer
-Should employ a BDD methodology and agile tools
-
-Scenario: Cucumber should be installed and configured
-Given I have installed the gem named "rails"
-  And I have installed the gem named "cucumber-rails"
-  And I have generated a RoR project named "my_project"
-  And the present working directory is the Rails root directory of "my_project"
-  And I have the file cucumber.yml in the config directory of "my_project"
-  And the file cucumber.yml contains a valid default profile
-
-When I run "rails g cucumber"
-
-Then I should create the directory ./features
-  And I should create the file ./features/features.feature
-  And I should create the directory ./features/step_definitions
-.  .  .
-  And I should create the file ./config/environments/environment/cucumber.rb
-  And I should create the file ./config/cucumber.yml
-  And I should modify ./config/database.yml
-  .  .  .
-```
-
-The above is an example of the form that Feature files often take ( *sadly* ).
-
-
-These lines, called Feature or Scenario *Steps* or *Statements*, are the user
-interface to Cucumber testing. (The Steps above are written in the imperative
-style simply for illustrative purposes.)
-
-**Never put statements that look anything like these in a Feature file!** ( (*But you will.* )
-
-In practice, all those `Then`/`And` Steps should be combined into one simple Declarative Style statement. For example: `I should create the Cucumber environment`.
-
-The messy details of what comprises a “Cucumber environment” are placed in the Step Definition files.
-
-Instead, a Feature should look more like this:
-
-```Gherkin
-Feature: Design and Build a Ruby on Rails web app using Behaviour Driven Development (BDD)
-In order to produce a web app at low cost and high speed
-A developer
-Should employ Ruby on Rails with Cucumber BDD tools
-
-Scenario: Cucumber-Rails should be installed and configured
-  Given I am in a rails project root
-    And I have installed cucumber-rails
-    And I do not have a cucumber environment
-  When I run the cucumber-rails generator
-  Then I should have a cucumber environment
-```
-
-We will return to how to write Features and Steps later.
-
-For the moment, we deal with the logical arrangement of Cucumber files within the context of an RoR project. The root level of the archetypal RoR-4.0 project directory tree looks like this:
+Let's get started with the logical arrangement of Cucumber files within the context of an Rails project. The root level of the archetypal Rails-4.0 project directory tree looks like this:
 
 ```
 MyProject
@@ -126,125 +66,45 @@ features
     └── env.rb
 ```
 
-If you are not using Rails and Cucumber-Rails in your project then you can accomplish much the same thing by creating the directory tree from the command line (`mkdir -p features/step_definitions`) and similarly adding the support directory (`mkdir -p features/support`).
-
-People returning to Cucumber who are familiar with earlier versions will note the absence of most of the files `cucumber-rails` used to provide, leaving only `features/support/env.rb`. Conspicuous by its absence is `features/step_definitions/web_steps.rb`. [Since version 1.1.0, you are required to provide all of your web steps from your own resources.](http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off) (see [wayback machine archive](http://web.archive.org/web/20130424133851/http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off)). But the old, deprecated, Step Definitions can still be found if you read the referenced blog entry.
-
-**It is a really good idea to read the contents of `./features/support/env.rb` before doing anything else with cucumber and again after every update to `cucumber-rails`.**
+If you are not using Rails and Cucumber-Rails in your project, then you can accomplish much the same thing by creating the directory tree from the command line (`mkdir -p features/step_definitions`) and adding the support directory (`mkdir -p features/support`).
 
 Once the `features/` directory structure is in place, you're ready to begin testing with Cucumber.
 
-## Where do I put Tests?
+## Creating your tests
 
 Cucumber divides testing into two parts:
 
-1. The outward-facing *Features*, which contain *Scenario Steps*, and
-2. the inward-facing *Step Definitions*.
+1. The business-facing feature files, which contain scenarios, and
+2. the code-facing step definitions.
 
-**Features** are descriptions of desired outcomes (**Then**) following upon specific events (**When**) under predefined conditions (**Given**). They are typically used in conjunction with end-user input and, in some cases, may be entirely under end-user (in the form of a domain expert) control. Feature files are given the extension `.feature`.
+`Scenarios` are descriptions of desired outcomes (`Then`) following upon specific events (`When`) under predefined conditions (`Given`).
+They are typically used in conjunction with end-user input and, in some cases, may be entirely under end-user (in the form of a domain expert) control. Feature files are given the extension `.feature`.
 
-[Step Definitions](/cucumber/#step-definitions), or *stepdefs*, are keyed by their snippets of text from the Scenario's statements, and invoke blocks of Ruby and Rails code that usually contain API methods and assertion statements from whatever test system you have installed (MiniTest/TestUnit, RSpec, Shoulda, etc.).
+[Step Definitions](/cucumber/#step-definitions), or *stepdefs*, are keyed by their snippets of text from the Scenario's statements, and invoke blocks of code that usually contain methods and assertion statements from your assertion library.
 
-Given that Cucumber originally evolved out of RSpec stories, it is unsurprising that the Cucumber-Rails generator once assumed that RSpec was available. This has long since ceased to be the case.
-
-What the generator does now is detect if the RSpec gems are installed. If so then the rails generator builds the environment files to suit and if not then it ignores RSpec and configures for test-unit instead. In fact, the availability of options is increasing over time.
+The Cucumber-Rails will detect whether the RSpec gems are installed. If so, then the rails generator builds the environment files to suit. If not, it ignores RSpec and configures for test-unit instead.
 
 To see what is available in the version of Cucumber-Rails that you have installed use the command: `rails g cucumber:install --help` or `script/generate cucumber --help`.
 
-A particular source of potential confusion is that the term ***Steps***, when used loosely, has two (closely related but vitally distinct) meanings, depending on context.
+A particular source of potential confusion is that the term **step**, when used loosely, has two (closely related but vitally distinct) meanings, depending on context.
 
-Inside `*.feature` files, Steps are the textual descriptions which form the body of a Scenario. These are prefaced with the keywords **Given**, **When**, **Then**, **And**, or **But**. (Note: the capitalization of these five names is significant). Alternatively, one may simply use `*` character to stand in place of any of these keywords.
+Inside `*.feature` files, steps are the textual descriptions which form the body of a scenario. These are prefaced with the keywords `Given`, `When`, `Then`, `And`, or `But`. Alternatively, you can use `*` character to stand in place of any of these keywords.
 
 ```
 Scenario: Cucumber should be installed and configured
 Given I have installed the gem named "rails"
     * I have installed the gem named "cucumber-rails"
-    * I have generated a RoR project named "my_project"
+    * I have generated a Rails project named "my_project"
 . . .
 ```
 
-Inside a `step_definitions.rb` file, Steps—which, strictly speaking, should always be called Step Definitions (and are now often simply called *stepdefs* or even just *defs*)—refer to the *matcher* methods, which may be given any of the same names (Given, When, Then, And, or But), each provided with a matcher *"string"* or */regexp/* that corresponds to one or more Scenario Steps.
+Inside a `step_definitions.rb` file, refer to the *matcher* methods, translate each step from your scenario to the corresponding actions in your programming language.
 
-Note that the method name does NOT form part of the matcher. A `Given` clause can match a `When` Step Definition matcher. Over time, clauses from Features have come to be referred to simply as *Features*, while *Steps* now refers almost exclusively to Step Definitions.
+You can have all of your step definitions in one file, or in multiple files. Over time, it will be easiest to split them into meaningful groups in different files.
 
-As shown above, the generated `features/` directory tree is fairly shallow. One can put every Feature into a single file in the `features/` directory, and every Step in a single file in the `step_definitions/` directory (or even in the `features/` directory itself) if one so chooses. Alternatively, one can choose to have one or more `*.feature` files for each Feature, together with one or more Step files for each `*.feature` file, or any combination thereof.
+**It is considered an anti-pattern to relate `step_definition` files to specific feature files!**
 
-However, Cucumber is programmed with the flexibility to support a much more expressive directory structure. For instance:
-
-```
-|__ features
-|   |__ entities
-|   |   |__ entity.feature
-|   |   |__ step_definitions
-|   |       |__ anything.rb
-|   |       |__ entity_steps.rb
-|   |__ locations
-|   |   |__ location.feature
-|   |   |__ step_definitions
-|   |       |__location_steps.rb
-|   |__ sites
-|   |   |__ step_definitions
-|   |__ step_definitions
-|   |   |__ local_assert_steps.rb
-|   |   |__ local_crud_response_steps.rb
-|   |   |__ local_email_steps.rb
-|   |   |__ local_file_steps.rb
-|   |   |__ local_script_steps.rb
-|   |   |__ local_steps.rb
-|   |   |__ local_web_steps.rb
-`   |   |__ local_xml_file_steps.rb   
-    |__ support
-        |__ env.rb
-        |__ local_env.rb
-        |__ local_transforms.rb
-```
-
-In this case, the bland initial setup has been divided into sub-directories, informed by model-centric testing.
-
-This could equally well have been broken up in to model/view/controller hierarchies, like so:
-
-```
-|__ features
-|   |__ models
-|   |  |__entities
-|   |     |__entity.feature
-|   |        |__step_definitions
-|   |           |__anything.rb
-|   |           |__entity_steps.rb
-|   |__views
-|   |  |__entity_new
-|   |  |__step_definitions
-|   |     |__entity_new_steps.rb
-|   |__step_definitions
-`   |  |__local_steps.rb
-    |__ support
-       |__env.rb
-       |__local_env.rb
-       |__local_transforms.rb
-```
-
-Or, like this:
-
-```
-|__ features
-|   |__invoicing.feature
-|   |__product.feature
-|   |__step_definitions
-|   |  |__local_steps.rb
-|   |  |__model_steps.rb
-|   |  |__service_steps.rb
-|   |  |__web_steps.rb
-|   |__user.feature
-`   |__user_auth.feature
-    |__support
-       |__env.rb
-       |__local_env.rb
-       |__local_transforms.rb
-```
-
-**It is considered an anti-pattern to relate `step_definition` files to specific Feature files!**
-
-As always, there are exceptions and contrary opinions to the “standard” or “orthodox” practice. Nonetheless, it is probably best to start out following the recommendation against Feature-specific Step Definition files. Thereafter, you may depart from it, but only when you are experienced enough to evaluate the trade-offs between approaches.
+As always, there are exceptions and contrary opinions to the “standard” or “orthodox” practice. Nonetheless, it is probably best to start out following the recommendation against feature-specific step definition files. Thereafter, you may depart from it, but only when you are experienced enough to evaluate the trade-offs between approaches.
 
 Be aware that, regardless of the directory structure employed, Cucumber effectively flattens the `features/` directory tree when running tests. By this I mean that anything ending in `.rb` under the start point for a Cucumber Feature run (the default case) or specified with the `-r` option is searched for Feature matches.
 
@@ -259,7 +119,7 @@ Note that if the `-r` option is passed, then **ONLY** that directory tree will b
 
 ## How do I Write Tests?
 
-Constructing ones first tests (or “Features”, as BDD purists prefer) is often accompanied by what can only be described as *[writer's block](http://en.wikipedia.org/wiki/Writer%27s_block)*. The question of "Where to begin?" seems to be a particular roadblock for some.
+Constructing ones first tests (or `Scenario`) is often accompanied by what can only be described as *[writer's block](http://en.wikipedia.org/wiki/Writer%27s_block)*. The question of "Where to begin?" seems to be a particular roadblock for some.
 
 If you truly have no idea where to start, I suggest that you consider what you are writing, presumably a web application, and what the initial point of contact between it and a user is, the home page. You can do worse than simply starting with:
 
@@ -987,7 +847,7 @@ language support for Feature and Step Definition. Obtaining some of these featur
 requires the installation of additional gems such as
 [cucumber-sinatra](http://rubygems.org/gems/cucumber-sinatra).
 
-Readers should always consider that the information contained herein may be out of date and therefore incomplete or erroneous in some respects. However, any such defects will usually be confined to specific implementation details and should not detract greatly from the validity of the overall presentation. Nonetheless please make a note whenever you see code like `script/generate blah` in the examples and notes below that the Rails generator syntax has changed to `rails g blah` since RoR v.3.0. Also bear in mind that with post RoR-2 projects **`bundle exec`** generally must preface most, if not all, of the command line examples given.
+Readers should always consider that the information contained herein may be out of date and therefore incomplete or erroneous in some respects. However, any such defects will usually be confined to specific implementation details and should not detract greatly from the validity of the overall presentation. Nonetheless please make a note whenever you see code like `script/generate blah` in the examples and notes below that the Rails generator syntax has changed to `rails g blah` since Rails v.3.0. Also bear in mind that with post Rails-2 projects **`bundle exec`** generally must preface most, if not all, of the command line examples given.
 
 *2015-07-22 - Eventually I found this so distracting that I added the following aliases to my ~/.bashrc file:*
 
