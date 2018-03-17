@@ -1,11 +1,11 @@
 ---
 source: https://github.com/cucumber/cucumber/wiki/cucumber.yml/
 source: https://github.com/cucumber/cucumber/wiki/Environment-Variables/
-title: Additional Configuration
+title: Cucumber Configuration
 description: cucumber.yml, environment variables
 ---
 
-You can specify commonly-used command line arguments for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
+You can specify configuration options for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
 This file must be in a `.config` subdirectory, or `config` subdirectory of your current working directory.
 
 # Defining Profiles
@@ -92,7 +92,7 @@ So, if you have several profiles with similar values, you might do this:
 
 ## Environment Variables
 
-Environment Variables can be used in the profile argument list, just as you would normally specify one on the command-line.
+You can use environment variables in the profile argument list, just as you would normally specify them on the command-line.
 
 ```yaml
 

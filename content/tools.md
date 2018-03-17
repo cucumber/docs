@@ -87,7 +87,7 @@ To run Cucumber with [Gradle](https://gradle.org/):
 
 Steps:
 
-1.  Create a new Gradle project or look at  [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
+1.  Create a new Gradle project or look at [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
 2.  Add the following dependency to `build.gradle`
 
 ```
@@ -122,7 +122,7 @@ gradle cucumber
 
 ### Rake
 
-Using Rake requires a `Rakefile` with a `features` task definition.  For example:
+Using Rake requires a `Rakefile` with a `features` task definition. For example:
 
 ```ruby
 require 'rubygems'
@@ -172,7 +172,7 @@ end
 
 Since Rake tasks are used on development and productions systems, it is generally a good idea to place a guard around your Cucumber task so your productions boxes don't need to install Cucumber.
 
-Below is an example of how to do this.  This example is the Rake task that Cucumber generates for Rails projects, but the same idea applies to any project using Cucumber and Rake:
+Below is an example of how to do this. This example is the Rake task that Cucumber generates for Rails projects, but the same idea applies to any project using Cucumber and Rake:
 
 ```ruby
 require 'rubygems'
