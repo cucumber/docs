@@ -37,7 +37,7 @@ Make sure to use the same version for `cucumber-junit` that you are using for `c
 {{% /note %}}
 
 {{% note "JUnit 5"%}}
-At the moment, JUnit 5 is not yet supported by Cucumber.
+JUnit 5 is not supported by Cucumber.
 {{% /note %}}
 
 Below is an example using `assertEquals`:

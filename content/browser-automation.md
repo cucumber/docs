@@ -6,15 +6,17 @@ polyglot:
   - ruby
 ---
 
-Cucumber is not a Browser Automation tool, but it works well with the following Browser Automation tools.
+Cucumber is not a browser automation tool, but it works well with the following browser automation tools.
 
 # Selenium WebDriver
 
 WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver's goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.
 
+[Selenium-WebDriver](https://docs.seleniumhq.org/docs/03_webdriver.jsp#setting-up-webdriver-project) can be used in multiple programming languages, including Java, JavaScript and Ruby.
+
 Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting [Selenium-Web driver by example](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example).
 
- We can express the example as the following Scenario:
+We can express the example as the following scenario:
 
 ```gherkin
 Scenario: Finding some cheese
@@ -60,6 +62,30 @@ public class ExampleSteps {
 }
 ```
 
+```javascript
+var driver = new webdriver.Builder().build();
+driver.get('http://www.google.com');
+
+var element = driver.findElement(webdriver.By.name('q'));
+element.sendKeys('Cheese!');
+element.submit();
+
+driver.getTitle().then(function(title) {
+  console.log('Page title is: ' + title);
+});
+
+driver.wait(function() {
+  return driver.getTitle().then(function(title) {
+    return title.toLowerCase().lastIndexOf('cheese!', 0) === 0;
+  });
+}, 3000);
+
+driver.getTitle().then(function(title) {
+  console.log('Page title is: ' + title);
+});
+
+driver.quit();
+```
 
 ```ruby
 require 'rubygems'
@@ -86,7 +112,96 @@ end
 
 More information on [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/).
 
-# Watir Webdriver
+# Browser Automation Tools for Java
+
+Some browser automation tools are specific to Java.
+
+## Serenity BDD
+
+Serenity BDD is an open source reporting library that helps you write better
+structured, more maintainable automated acceptance criteria. Serenity also produces
+rich meaningful test reports (or "living documentation") that report not only the
+test results, but also which features have been tested.
+
+{{% text "java" %}}
+A detailed tutorial on using Cucumber-JVM with Serenity can be found
+[here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html).
+{{% /text %}}
+
+The above scenario might be written for Serenity like this:
+
+```ruby
+# Serenity only works with Java for now.
+```
+
+```java
+package com.example.features.steps;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import net.serenitybdd.demos.todos.pages.GoogleHomePage;
+import net.serenitybdd.demos.todos.pages.SearchResultsPage;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class SearchSteps {
+
+    GoogleHomePage googleHomePage;
+    SearchResultsPage searchResultsPage;
+
+    @Given("^I am on the Google search page$")
+    public void i_am_on_the_Google_search_page() throws Throwable {
+        googleHomePage.open();
+    }
+
+    @When("^I search for \"([^\"]*)\"$")
+    public void i_search_for(String searchTerm) throws Throwable {
+        googleHomePage.searchBy(searchTerm);
+    }
+
+    @Then("^the page title should start with \"([^\"]*)\"$")
+    public void the_page_title_should_start_with(String expectedTitleStart) throws Throwable {
+        assertThat(searchResultsPage.getTitle().toLowerCase())
+                 .startsWith(expectedTitleStart.toLowerCase());
+    }
+}
+```
+
+In this example, the `WebDriver` interaction is delegated to `PageObject` subclasses.
+Serenity has built-in support for PageObjects, which might look like this:
+
+```java
+@DefaultUrl("http://www.google.com")
+public class GoogleHomePage extends PageObject {
+
+    public static final String FOOTER_TO_APPEAR = "#foot";
+
+    @FindBy(name = "q")
+    private WebElementFacade searchField;
+
+    public void searchBy(String searchTerm) {
+        // Enter something to search for and submit the form
+        searchField.type(searchTerm)
+                   .then()
+                   .sendKeys(Keys.RETURN);
+
+        // Google's search page is rendered dynamically with JavaScript.
+        // Wait for the footer to appear to know that the search is complete.
+        waitFor(FOOTER_TO_APPEAR);
+    }
+}
+
+public class SearchResultsPage extends PageObject {}
+```
+
+More information on [Serenity](http://serenity-bdd.info).
+
+# Browser Automation Tools for Ruby
+
+Some browser automation tools are specific to Ruby.
+
+## Watir Webdriver
 
 Watir, pronounced _water_, is an open-source (BSD) family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
 
@@ -145,92 +260,7 @@ end
 
 More information on [Watir](http://watir.com).
 
-# Serenity BDD
-
-Serenity BDD is an open source reporting library that helps you write better
-structured, more maintainable automated acceptance criteria. Serenity also produces
-rich meaningful test reports (or "living documentation") that report not only the
-test results, but also which Features have been tested.
-
-{{% text "java" %}}
-A detailed tutorial on using Cucumber-JVM with Serenity can be found
-[here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html).
-{{% /text %}}
-
-The above scenario might be written for Serenity like this:
-
-```ruby
-# Serenity only works with Java for now.
-```
-
-```java
-package com.example.features.steps;
-
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import net.serenitybdd.demos.todos.pages.GoogleHomePage;
-import net.serenitybdd.demos.todos.pages.SearchResultsPage;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
-public class SearchSteps {
-
-    GoogleHomePage googleHomePage;
-    SearchResultsPage searchResultsPage;
-
-    @Given("^I am on the Google search page$")
-    public void i_am_on_the_Google_search_page() throws Throwable {
-        googleHomePage.open();
-    }
-
-    @When("^I search for \"([^\"]*)\"$")
-    public void i_search_for(String searchTerm) throws Throwable {
-        googleHomePage.searchBy(searchTerm);
-    }
-
-    @Then("^the page title should start with \"([^\"]*)\"$")
-    public void the_page_title_should_start_with(String expectedTitleStart) throws Throwable {
-        assertThat(searchResultsPage.getTitle().toLowerCase())
-                 .startsWith(expectedTitleStart.toLowerCase());
-    }
-}
-```
-
-In this example, the `WebDriver` interaction is delegated to `PageObject` subclasses.
-Serenity has built-in support for `PageObject`s, which might look like this:
-
-```ruby
-# Serenity only works with Java for now.
-```
-
-```java
-@DefaultUrl("http://www.google.com")
-public class GoogleHomePage extends PageObject {
-
-    public static final String FOOTER_TO_APPEAR = "#foot";
-
-    @FindBy(name = "q")
-    private WebElementFacade searchField;
-
-    public void searchBy(String searchTerm) {
-        // Enter something to search for and submit the form
-        searchField.type(searchTerm)
-                   .then()
-                   .sendKeys(Keys.RETURN);
-
-        // Google's search page is rendered dynamically with JavaScript.
-        // Wait for the footer to appear to know that the search is complete.
-        waitFor(FOOTER_TO_APPEAR);
-    }
-}
-
-public class SearchResultsPage extends PageObject {}
-```
-
-More information on [Serenity](http://serenity-bdd.info).
-
-# Capybara
+## Capybara
 
 <!-- TODO -->
 
@@ -240,7 +270,7 @@ More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 ## Multiple Browsers
 
-Cucumber can run your Scenarios with different browsers, based on a configuration property loaded at runtime:
+Cucumber can run your scenarios with different browsers, based on a configuration property loaded at runtime:
 
 
 ```ruby
@@ -288,7 +318,7 @@ mvn test -Ddriver=chrome
 
 ## Re-using the browser window
 
-Closing and re-opening the browser window between Scenarios will slow them down.
+Closing and re-opening the browser window between scenarios will slow them down.
 
 To reuse them, you can use the [`SharedDriver`](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java)
 wrapper rather than calling `WebDriver` directly.

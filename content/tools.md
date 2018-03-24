@@ -79,7 +79,7 @@ Steps:
 
 ### Gradle
 
-To run Cucumber with [Gradle](https://gradle.org/):
+To run Cucumber with [Gradle](https://gradle.org/), make sure that:
 
 - Gradle is installed
 - The environment variable `GRADLE_HOME` is correctly configured
@@ -97,7 +97,7 @@ dependencies {
 ```
 
 3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` respectively in a `gradle.cucumber` package.
-4. Add the following Gradle `cucumber` task in `build.gradle`
+4.  Add the following Gradle `cucumber` task in `build.gradle`
 
 ```
 task cucumber() {

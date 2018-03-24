@@ -143,8 +143,6 @@ If there are multiple `Given` or `When` steps underneath each other, you can use
 Cucumber does not differentiate between the keywords; this means that a step definition will match regardless of the keyword used.
 However, we strongly recommend that you do! These words have been carefully selected for their purpose, and you should know what the purpose is to get into the BDD mindset.
 
-Robert C. Martin has written a [great post](https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd) about BDD's Given-When-Then concept where he thinks of them as a finite state machine.
-
 ### Given
 
 `Given` steps are used to describe the initial context of the system---the *scene* of the scenario.

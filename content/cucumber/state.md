@@ -3,7 +3,7 @@ title: State
 ---
 
 It's important to prevent state created by one scenario from leaking into others.
-Leaking state makes your Scenarios brittle, and difficult to run in isolation.
+Leaking state makes your scenarios brittle, and difficult to run in isolation.
 
 * Avoid using global or static variables.
 
@@ -112,15 +112,20 @@ The available dependency injection modules are:
 
 ### PicoContainer
 
-To use PicoContainer, add the following dependency:
+To use PicoContainer, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-picocontainer</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}}</version>
     <scope>test</scope>
 </dependency>
+```
+
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '{{% version "cucumberjvm" %}}}'
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
@@ -128,30 +133,40 @@ For more information, please see [sharing state using Picocontainer](http://www.
 
 ### Spring
 
-To use Spring, add the following dependency:
+To use Spring, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-spring</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
+```
+
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-spring', version: '{{% version "cucumberjvm" %}}}'
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
 
 ### Guice
 
-To use Guice, add the following dependency:
+To use Guice, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-guice</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
+```
+
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-guice', version: '{{% version "cucumberjvm" %}}}'
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
@@ -159,45 +174,60 @@ For more information, please see [sharing state using Guice](http://www.thinkcod
 
 ### OpenEJB
 
-To use OpenEJB, add the following dependency:
+To use OpenEJB, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-openejb</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
+```
+
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-openejb', version: '{{% version "cucumberjvm" %}}}'
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
 
 ### Weld
 
-To use Weld, add the following dependency:
+To use Weld, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-weld</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
+```
+
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-weld', version: '{{% version "cucumberjvm" %}}}'
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
 
 ### Needle
 
-To use Needle, add the following dependency:
+To use Needle, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-needle</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
+```
+
+Or, if you are using Gradle, add:
+```
+compile group: 'io.cucumber', name: 'cucumber-needle', version: '{{% version "cucumberjvm" %}}}'
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).

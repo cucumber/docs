@@ -85,7 +85,7 @@ public class MyStepdefs implements En {
 }
 ```
 
-Note that your class will have to implement an interface to use the Cucumber keywords.
+Note that your class will have to implement the interface `cucumber.api.java8.En` to use the Cucumber keywords.
 
 **Annotated methods (Java 6 and onwards)**
 
@@ -105,12 +105,14 @@ public class MyStepdefs {
 In this case your class will not have to extend or implement anything.
 {{% /text %}}
 
+# Step Arguments
+
 In the example above Cucumber extracts the text `48` from the step, converts it to an `int`
 and passes it as an argument to the {{% stepdef-body %}}.
 
 The number of parameters in the {{% stepdef-body %}} has to match the number of {{% expression-parameter %}}s in the expression. (If there is a mismatch, Cucumber will throw an error).
 
-# Data Tables
+## Data Tables
 
 {{% text "java" %}}
 The simplest way to pass a `List<String>` to a step definition is to use commas:
@@ -127,7 +129,7 @@ public void the_following_animals(List<String> animals) {
 }
 ```
 
-See the `@Delimiter` annotation for details about how to define a delimiter different than `,`.
+See the [`@Delimiter` annotation](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/api/Delimiter.java) for details about how to define a delimiter different than `,`.
 
 If you prefer to use a DataTable to define a list, you can do that too:
 
@@ -164,7 +166,6 @@ In this step, you're "calling" the above step definition with one argument: the 
 
 Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}{{% text "java" %}}`*.feature`{{% /text %}}{{% text "javascript" %}}`*.feature`{{% /text %}} files.
 
-
 ## Matching steps
 
 1. Cucumber matches a step against a step definition's `Regexp`
@@ -191,15 +192,15 @@ When Cucumber finds a matching step definition it will execute it. If the block 
 
 #### Undefined
 
-When Cucumber can't find a matching step definition, the step gets marked as yellow, and all subsequent steps in the scenario are skipped. If you use `--strict`, this will cause Cucumber to exit with `1`.
+When Cucumber can't find a matching step definition, the step gets marked as undefined (yellow), and all subsequent steps in the scenario are skipped. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
 #### Pending
 
-When a step definition's method or function invokes the `pending` method, the step is marked as yellow (as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
+When a step definition's method or function invokes the `pending` method, the step is marked as pending (yellow, as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
 
 #### Failed Steps
 
-When a step definition's method or function is executed and raises an error, the step is marked as red. What you return from a step definition has no significance whatsoever.
+When a step definition's method or function is executed and raises an error, the step is marked as failed (red). What you return from a step definition has no significance whatsoever.
 
 Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java" %}}`null`{{% /text %}}{{% text "javascript" %}}`null`{{% /text %}} or `false` will **not** cause a step definition to fail.
 
@@ -452,6 +453,8 @@ end
 
 ## Step hooks
 
+### BeforeStep
+
 ### AfterStep
 
 {{% block "ruby" %}}
@@ -531,9 +534,10 @@ end
 
 ## Running a hook only once
 
+{{% text "ruby" %}}
 If you have a hook you only want to run once, use a global variable:
 
-{{% text "ruby" %}}
+
 ```ruby
 Before do
   $dunit ||= false  # have to define a variable before we can reference its value
@@ -544,10 +548,13 @@ end
 ```
 {{% /text %}}
 
+{{% block "java" %}}Cucumber-JVM does not support running a hook only once.{{% /block %}}
+{{% block "javascript" %}}Cucumber.js does not support running a hook only once.{{% /block %}}
+
 ## AfterConfiguration
 
 {{% text "ruby" %}}
-You may also provide an `AfterConfiguration` Hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`).
+You may also provide an `AfterConfiguration` hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`).
 
 Example:
 {{% /text %}}
@@ -559,9 +566,9 @@ end
 ```
 
 {{% text "ruby" %}}
-This Hook will run _only once_: after support has been loaded, and before any features are loaded.
+This hook will run _only once_: after support has been loaded, and before any features are loaded.
 
-You can use this Hook to extend Cucumber. For example you could affect how features are loaded, or register custom formatters programmatically.
+You can use this hook to extend Cucumber. For example you could affect how features are loaded, or register custom formatters programmatically.
 {{% /text %}}
 
 {{% text "java" %}}Cucumber-JVM does not support `AfterConfiguration` hooks.{{% /text %}}
@@ -747,10 +754,7 @@ cucumber
 {{% /block %}}
 
 {{% block "java" %}}
-
-**CLI Runner**
-
-The Command-Line Interface Runner (CLI Runner) is an executable Java class that can be run from the command-line, or from any build tool (such as Maven, Gradle or Ant), or an IDE.
+The **Command-Line Interface Runner (CLI Runner)** is an executable Java class that can be run from the command-line.
 
 ```
 java cucumber.api.cli.Main
@@ -779,7 +783,7 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 {{% /block %}}
 
-You can also run features using a [build tool](/tools/#build-tools).
+You can also run features using a [build tool](/tools/#build-tools) or an [IDE](/tools/#editors-and-ides).
 
 # Configuration
 

@@ -36,9 +36,26 @@ Otherwise, to write them using annotated methods, add the following dependency t
 </dependency>
 ```
 
+You can now run Cucumber [from the command line](/cucumber/#from-the-command-line) or [run Cucumber with Maven](/tools/#maven).
+
 ## With Gradle
 
-Add the following dependencies to `build.gradle`:
+If you are going to use the lambda expressions API (Java 8) to write the step
+definitions, add the following dependencies to `build.gradle`:
+
+```
+dependencies {
+    testCompile 'io.cucumber:cucumber-java8:{{% version "cucumberjvm" %}}'
+    testCompile 'io.cucumber:cucumber-junit:{{% version "cucumberjvm" %}}'
+}
+
+repositories {
+    mavenCentral()
+}
+```
+
+
+Otherwise, to write them using annotated methods, add the following dependencies to `build.gradle`:
 
 ```
 dependencies {
@@ -51,11 +68,7 @@ repositories {
 }
 ```
 
-To use lambda expressions (Java 8) to write the step definitions, replace `java` with `java8`.
-
-You can now use Cucumber's [CLI Runner](/cucumber/#from-the-command-line) to execute by adding a `cucumber` task to `build.gradle`.
-
-For more information, see [Running Cucumber](/cucumber/#running-cucumber).
+You can now run Cucumber [from the command line](/cucumber/#from-the-command-line) to execute by [adding a cucumber task](/tools/#gradle) to `build.gradle`.
 
 ## Snapshot releases
 
@@ -111,6 +124,8 @@ Add `cucumber` as a development dependency:
 ```shell
 npm install --save-dev cucumber
 ```
+
+## With Yarn
 
 Or, if you prefer [Yarn](https://yarnpkg.com/en/):
 
