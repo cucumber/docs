@@ -22,4 +22,4 @@ Find more information on how to use Cucumber under the **Guides** menu.
 Or [learn about Behaviour Driven Development](/bdd/).
 
 # Get help
-If you need help, there are several ways to [contact the Cucumber community]((/about/get-in-touch/)).
+If you need help, there are several ways to [contact the Cucumber community](/about/get-in-touch/).
