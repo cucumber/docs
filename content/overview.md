@@ -23,7 +23,7 @@ keywords in your own language.
 
 There are a few conventions:
 
-- Each Gherkin source file contains a description of a single feature
+- Each Gherkin source file contains a description of a single [feature](/gherkin/#feature)
 - Each Gherkin source file uses the `.feature` extension
 
 # What is Cucumber?
@@ -33,10 +33,10 @@ It can read your specifications from plain-language text files called features,
 examine them for scenarios to test, and run the scenarios against your system.
 
 Each scenario is a list of steps for Cucumber to work through. In order for Cucumber
-to understand the feature files, they must follow some basic syntax rules; this set of rules is called [Gherkin](/gherkin/).
+to understand the feature files, they must follow some basic syntax rules, called [Gherkin](/gherkin/).
 
 Along with the [features](/gherkin/#feature), you give Cucumber a set of [step definitions](/cucumber/#step-definitions). These
-files map (or "glue") each business-readable language step into programming code to carry
+map (or "glue") each business-readable language step into runnable programming code to carry
 out what action should be performed by the step.
 
 In a mature test suite, the step definition itself will probably just be one or two lines of code that delegate to a library of support code, specific to the domain of your application.
@@ -67,9 +67,9 @@ acceptance tests: as a communication and collaboration tool. The easy
 readability of Cucumber tests draws business stakeholders into the process,
 helping you really explore and understand the requirements.
 
-Related test cases in Cucumber are grouped into *Features*. Each test case in a feature is called a *Scenario*. Each scenario contains several steps.
+Related test cases in Cucumber are grouped into `Features`. Each test case in a feature is called a `Scenario`. Each scenario contains several steps.
 
-The business-facing parts of a Cucumber test suite, stored in feature files, must be written according to syntax rules—known as Gherkin—so that Cucumber can read them. Under the hood, step definitions translate the business-facing language of steps into runnable programming code.
+The business-facing parts of a Cucumber test suite, stored in feature files, must be written according to syntax rules — known as [Gherkin](/gherkin/) — so that Cucumber can read them. Under the hood, step definitions translate the business-facing language of steps into runnable programming code.
 
  <!-- ![Cucumber-stack](docs/images/Cucumber_Stack.png) -->
 

@@ -5,16 +5,21 @@ menu:
 title: Documentation
 ---
 
-Welcome to the Cucumber documentation...
+Welcome to the Cucumber documentation. We aim to help make using Cucumber and BDD as easy as possible.
 
-- [Install Cucumber](/installation/)
+# Get started
+To get started with Cucumber, see how you can [install Cucumber](/installation/),
+or try the [10 minute tutorial](/10-minute-tutorial/) in Java, JavaScript or Ruby.
 
-- [Learn about Behaviour Driven Development](/bdd/)
+Or maybe you are looking for a [another language?](/cucumber/implementations/)
 
-- [Look up Gherkin Syntax](/gherkin/)
+# Learn more
 
-- [Look up Cucumber Syntax](/cucumber/)
+If you already using Cucumber, you can lookup [Gherkin syntax](/gherkin/) or [Cucumber Syntax](/cucumber/).
 
-- [Looking for a language other than Java, Javascript or Ruby?](/cucumber/implementations/)
+Find more information on how to use Cucumber under the **Guides** menu.
 
-- [Need help?](/about/get-in-touch/)
+Or [learn about Behaviour Driven Development](/bdd/).
+
+# Get help
+If you need help, there are several ways to [contact the Cucumber community](/about/get-in-touch/).
