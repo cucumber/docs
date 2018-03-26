@@ -25,7 +25,7 @@ We recommend executing Cucumber from one of these on a CI server.
 If your CI server is [using Rake](/tools/#rake), just make sure
 that Rake executes your Cucumber task.
 
-# Ant, Maven, and JUnit output
+# Ant JUnit output
 
 Many CI servers can interpret XML files produced by the [Ant JUnit task](https://ant.apache.org/manual/Tasks/junit.html)
 and display them as HTML. Some can even create reports over time.
@@ -37,7 +37,7 @@ If you're using such a CI server, we recommend you use Cucumber with the `JUnit`
 > 'Publish JUnit test result report', and enter `\*.xml` in the 'Test report XMLs' field.
 > Save and run. (Later improve by using a Rake task and placing your output in a subfolder).
 
-If you're using Ant, you can run Cucumber with the [`exec`](https://ant.apache.org/manual/Tasks/exec.html) task.
+If you're using [Ant](http://ant.apache.org/), you can run Cucumber with the [`exec`](https://ant.apache.org/manual/Tasks/exec.html) task.
 
 # Jenkins
 
