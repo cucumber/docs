@@ -8,6 +8,19 @@ title: Debugging
 
 > TODO: Review for length
 
+If you are testing with intent then you should be using something similar to the
+[debugger gem](http://rubygems.org/gems/debugger/). Projects using Ruby-2.0+ can use the **[ByeBug](https://rubygems.org/gems/byebug/)** gem instead.
+
+If you are working on a project that uses an older version of Ruby then a really neat method to drop into an interactive
+debugging session *inside a Cucumber Step Definition* using debugger's predecessor, ruby-debug, was provided by
+[Scott Taylor on the rspec mailing list](http://www.ruby-forum.com/topic/175732#769713)
+( *The technique should still work with debugger but I have not yet tested it* ).
+Just put these statements inside the Step Definition at the point that you wish to debug:
+`require 'rubygems'; require 'debugger'; debugger`. When that code interrupts then type `irb` and you open an
+interactive debugging session wherein you can step forwards and backwards inside the code under test to determine exactly
+where the breakage is happening. Alternatively, you can add `require 'rubygems'; require 'debugger';`
+to your `support/local_env.rb` file (see below) and just put `debugger` wherever you desire it inside any Step Definition.
+
 Adding the following as the contents of `features/support/debugging.rb` can be helpful in debugging failing Steps:
 
 ```ruby

@@ -45,7 +45,7 @@ Feature: Some terse yet descriptive text of what is desired
 
 The feature starts on the first line with the keyword `Feature`. The lines below are unparsed (i.e. free format) text, which you can use to
 describe this feature. The keyword `Scenario` starts a scenario, followed by the steps for the scenario. The next scenario is started by the keyword `Scenario` again.
-The text after the keyword `Scenario` -but still on the same line- is also free format text to describe your scenario.
+The text after the keyword `Scenario` - but still on the same line - is also free format text to describe your scenario.
 
 ## Keywords
 
@@ -114,7 +114,8 @@ independent of your file and directory structure.
 
 Some parts of Gherkin documents do not have to start with a keyword.
 
-On the lines following a `Feature`, `Scenario`, `Scenario Outline`, or `Examples`, you can write anything you like, as long as no line starts with a keyword.
+On the lines following a `Feature`, `Scenario`, `Scenario Outline`, or `Examples`, you can write anything you like, as
+long as no line starts with a keyword.
 
 ## Scenario
 
@@ -140,8 +141,10 @@ This is done with steps.
 A step typically starts with `Given`, `When`, or `Then`.
 
 If there are multiple `Given` or `When` steps underneath each other, you can use `And` or `But`.
-Cucumber does not differentiate between the keywords; this means that a step definition will match regardless of the keyword used.
-However, we strongly recommend that you do! These words have been carefully selected for their purpose, and you should know what the purpose is to get into the BDD mindset.
+The five keywords are all equivalent to one another and completely interchangeable. Cucumber does not differentiate
+between the keywords; this means that a step definition will match regardless of the keyword used.
+However, we strongly recommend that you do! These words have been carefully selected for their purpose, and you should
+know what the purpose is to get into the BDD mindset.
 
 ### Given
 
@@ -151,7 +154,8 @@ It is typically something that happened in the *past*.
 When Cucumber executes a `Given` step, it will configure the system to be in a well-defined state,
 such as creating and configuring objects or adding data to the test database.
 
-The purpose of `Given`'s is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` steps).
+The purpose of `Given`'s is to **put the system in a known state** before the user (or external system) starts interacting
+with the system (in the `When` steps).
 Avoid talking about user interaction in `Given`'s. If you were creating use cases, `Given`'s would be your preconditions.
 
 It's okay to have several `Given` steps (just use `And` or `But` for number 2 and upwards to make it more readable).
@@ -164,7 +168,7 @@ Examples:
 
 {{% note "Rails users"%}}
 We recommend using a [`Given` with a multiline table argument](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/manage_lorries.feature) to [set up records](https://github.com/aslakhellesoy/cucumber-rails-test/blob/master/features/step_definitions/lorry_steps.rb) instead of fixtures.
-This way, you can read the Scenario and make sense out of it without having to look elsewhere (at the fixtures).
+This way, you can read the scenario and make sense out of it without having to look elsewhere (at the fixtures).
 {{% /note %}}
 
 ### When
@@ -173,7 +177,7 @@ The purpose of `When`'s is to **describe the key action** the user performs (or,
 
 `When` steps are used to describe an event, or an *action*. This can be a person interacting with the system, or it can be an event triggered by another system.
 
-It's strongly recommended you only have a single `When` step per Scenario. If you feel compelled to add more, it's usually a sign that you should split the scenario up into multiple scenarios.
+It's strongly recommended you only have a single `When` step per scenario. If you feel compelled to add more, it's usually a sign that you should split the scenario up into multiple scenarios.
 
 Examples:
 

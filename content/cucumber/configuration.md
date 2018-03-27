@@ -3,6 +3,8 @@ source: https://github.com/cucumber/cucumber/wiki/cucumber.yml/
 source: https://github.com/cucumber/cucumber/wiki/Environment-Variables/
 title: Cucumber Configuration
 description: cucumber.yml, environment variables
+polyglot:
+  - ruby
 ---
 
 You can specify configuration options for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
@@ -24,6 +26,14 @@ The example above generates two profiles:
 
 1. `html_report`, with a list of command-line options that specify new output formats, and
 2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/#tags) with `@bvt`.
+
+{{% text "ruby" %}}
+Cucumber-Rails creates a `cucumber.yml` file in the project config directory containing a number of predefined profiles,
+one of which is the default profile. When Cucumber is run from the command line, it is usually necessary to provide both
+the directory name containing the root directory of the tree containing feature files and the directory name containing
+references to the necessary library files. In a typical project, `cucumber --require features features/some/path` will suffice.
+Repetitious usages can be added to user-defined profiles contained in the project's `cucumber.yml` file.
+{{% /text %}}
 
 ## Executing Profiles
 
@@ -122,3 +132,24 @@ For example, the following sets up a profile that runs the specified Tag and set
    ```
    baz: --tags @mytag FOO=BAR
    ```
+
+{{% text "ruby" %}}
+Local Cucumber customisation code in `support/env.rb` itself as that file is typically
+overwritten by `script/generate cucumber:install | rails g cucumber`. Customisations that
+must be loaded before the rest of Cucumber initialises must be placed at the beginning of the `env.rb file`.
+
+Every file ending in `.rb` that is found in features/support is loaded by Cucumber. Therefore, if you place local
+customisations in any `.rb` file in that directory, they will get loaded. However, be advised that Cucumber's
+`--dry-run` option only excludes files in `features/support` that match the regexp `/env\\..\*/` (*note that the trailing dot is significant*).
+So a file with local customisations called `my_locals.rb` will be loaded regardless.
+
+If you put custom files inside `features/support` that you do not wish loaded when you do a dry-run with Cucumber,
+then those files must be prefaced with the string `env.`. For example, `features/support/env.local.rb` will not be loaded
+when `cucumber --dry-run` is run, but that `features/support/local_env.rb` will be. That might result in some very
+obscure errors if `features/support/local_env.rb`contains code dependent upon elements found in `env.rb`.
+
+As a matter of good practice you should always run `script/generate cucumber | rails g cucumber:install` whenever you
+install an updated version of Cucumber or cucumber-rails. However, this overwrites `features/support/env.rb`.
+In order to keep any custom configurations from your `env.rb` file, check in your `env.rb` along with the rest of your version
+controlled files and be prepared to diff and merge changes to `env.rb` between versions of Cucumber-Rails.
+{{% /text %}}

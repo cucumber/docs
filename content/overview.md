@@ -35,11 +35,12 @@ examine them for scenarios to test, and run the scenarios against your system.
 Each scenario is a list of steps for Cucumber to work through. In order for Cucumber
 to understand the feature files, they must follow some basic syntax rules, called [Gherkin](/gherkin/).
 
-Along with the [features](/gherkin/#feature), you give Cucumber a set of [step definitions](/cucumber/#step-definitions). These
-map (or "glue") each business-readable language step into runnable programming code to carry
-out what action should be performed by the step.
+Along with the [features](/gherkin/#feature), you give Cucumber a set of [step definitions](/cucumber/#step-definitions).
+These map (or "glue") each business-readable language step into runnable programming code to carry out what action
+should be performed by the step.
 
-In a mature test suite, the step definition itself will probably just be one or two lines of code that delegate to a library of support code, specific to the domain of your application.
+In a mature test suite, the step definition itself will probably just be one or two lines of code that delegate to a
+library of support code, specific to the domain of your application.
 
 Cucumber is also a *collaboration tool*.
 Software teams work best when the developers and business stakeholders are
@@ -53,27 +54,35 @@ imaginations and helps them see other scenarios they hadn’t previously
 considered.
 
 When the team writes their acceptance tests collaboratively, they can develop
-their own ubiquitous language for talking about their problem domain. This helps
- avoid misunderstandings.
+their own ubiquitous language for talking about their problem domain. This helps avoid misunderstandings.
 
 After discovering examples as a team, developers and testers formalise those examples into Gherkin documents.
 
 # How does Cucumber work with BDD?
 
 Cucumber was designed specifically to help business stakeholders get involved in
-writing acceptance tests; the acceptance tests can easily be
+writing acceptance tests; the tests can easily be
 read and written by anyone on the team. This reveals the true value of
 acceptance tests: as a communication and collaboration tool. The easy
 readability of Cucumber tests draws business stakeholders into the process,
 helping you really explore and understand the requirements.
 
-Related test cases in Cucumber are grouped into `Features`. Each test case in a feature is called a `Scenario`. Each scenario contains several steps.
+Cucumber divides acceptance testing into two parts:
 
-The business-facing parts of a Cucumber test suite, stored in feature files, must be written according to syntax rules — known as [Gherkin](/gherkin/) — so that Cucumber can read them. Under the hood, step definitions translate the business-facing language of steps into runnable programming code.
+1. The business-facing feature files, which contain scenarios, and
+2. the code-facing step definitions.
+
+Related test cases in Cucumber are grouped into `Features`. Each test case in a feature is called a `Scenario`. Each scenario contains several steps.
+`Scenarios` are descriptions of desired outcomes (`Then`) following upon specific events (`When`) under predefined conditions (`Given`).
+
+The business-facing parts of a Cucumber test suite (the feature files), must be written according to syntax rules —
+known as [Gherkin](/gherkin/) — so that Cucumber can read them. Under the hood, [step definitions](/cucumber/#step-definitions)
+translate the business-facing language of steps into runnable programming code. The step definitions invoke blocks of code
+that usually contain methods and assertion statements from your [assertion library](/cucumber/#checking-assertions).
 
  <!-- ![Cucumber-stack](docs/images/Cucumber_Stack.png) -->
 
-Here is an example of a Cucumber Feature:
+Here is an example of a Cucumber feature:
 
 ```gherkin
 Feature: Sign up Sign up should be quick and friendly**
@@ -95,7 +104,8 @@ Then I should be told that the email is already registered
 And I should be offered the option to recover my password
 ```
 
-Anyone from the team can read this feature file, understand what the system does, and how the system works. This helps to analyze a system's functionality, and in come up with more scenarios where the system can be tested thoroughly.
+Anyone from the team can read this feature file, understand what the system does, and how the system works.
+This helps to analyze a system's functionality, and in come up with more scenarios where the system can be tested thoroughly.
 
 In this way, we say that the story functions as a *living document*. As the
 behavior of the system evolves over time, the team is forced to evolve the

@@ -135,7 +135,7 @@ yarn add --dev cucumber
 
 # Ruby
 
-Cucumber for Ruby is a ruby gem. Depending on your project structure there are several ways to install it:
+Cucumber for Ruby is a Ruby gem. Depending on your project structure there are several ways to install it:
 
 ## With Rubygems
 
@@ -173,6 +173,11 @@ Then, initialize a `features/` directory:
 cucumber --init
 ```
 
+[Bundler](http://gembundler.com/) is a utility gem that manages project specific RubyGem dependencies such that each
+Rails project is unaffected by the gem requirements of another.
+If you use Bundler to support multiple gem versions in multiple Rails projects on a single development host then you must
+run Cucumber using the preface `bundle exec`. For example: `bundle exec cucumber -pnone features`.
+
 ## With Ruby on Rails
 
 [Cucumber-Rails](https://github.com/cucumber/cucumber-rails) is a generator that
@@ -205,6 +210,9 @@ Run the generator:
 ```shell
 rails generate cucumber:install
 ```
+
+Cucumber-Rails will detect whether the RSpec gems are installed. If so, then the rails generator builds the environment files to suit.
+If not, it ignores RSpec and configures for test-unit instead.
 
 # Cucumber versioning
 

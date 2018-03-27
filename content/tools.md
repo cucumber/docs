@@ -120,7 +120,13 @@ gradle cucumber
 
 ## Ruby build tools
 
+Cucumber can be run in several ways.
+Be aware that `rake cucumber`, `cucumber features`, and `autotest` with `ENV AUTOFEATURE=true` do not necessarily produce
+the same results given the same features and step definitions.
+
 ### Rake
+
+Running `rake cucumber` from the command line provides the simplest method to run Cucumber tests.
 
 Using Rake requires a `Rakefile` with a `features` task definition. For example:
 
@@ -145,6 +151,31 @@ Now you can run Cucumber with Rake:
 ```shell
 rake features
 ```
+
+The rake script provided with Cucumber performs much of the background magic required to get the test database and requisite
+libraries properly loaded.
+In fact, an important habit to acquire is to run Cucumber as a `rake` task immediately after performing a migration.
+This ensures that the test database schema is kept in sync with the development database schema.
+You can achieve the same effect by running `rake db:test:prepare` before your first Cucumber run following a migration
+but developing the habit of just running `rake cucumber` or `rake cucumber:wip` is probably the better course.
+
+The Cucumber Rake task recognises the `@wip` Tag, so `rake cucumber:wip` will run only those scenarios tagged with **@wip**.
+
+For example, given a feature file containing:
+
+```
+Feature: .  .  .
+
+  Scenario: A
+
+  @wip
+  Scenario: B
+
+  Scenario: C
+```
+
+Then running the command `rake cucumber:wip` will run the Steps contained inside Scenario B only,
+while running `rake cucumber:ok` will run the Steps within all Scenarios other than B.
 
 #### Using Profiles in Rake Tasks
 
