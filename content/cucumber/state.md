@@ -66,7 +66,7 @@ end
 World(CustomWorld)
 ```
 
-Several other frameworks such as Webrat or RSpec have modules that provide special methods that you can include in your `World` this way.
+Several other frameworks such as Rspec or Webrat have modules that provide special methods that you can include in your `World` this way.
 
 If you don't want to define your own `World` class (and just use the default `Object` instances), you can still include modules
 in your `World` instances without polluting `Object` with a global include:

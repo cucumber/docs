@@ -11,12 +11,11 @@ This file must be in a `.config` subdirectory, or `config` subdirectory of your 
 # Defining Profiles
 
 ```yaml
-
-1. config/cucumber.yml
-   ## ##YAML Template
-   html_report: --format progress --format html --out=features_report.html
-   bvt: --tags @bvt
-   ```
+config/cucumber.yml
+## ##YAML Template
+html_report: --format progress --format html --out=features_report.html
+bvt: --tags @bvt
+```
 
 Defining a template requires a name and then the command-line options that you
 want to execute with this profile.
