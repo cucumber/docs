@@ -78,7 +78,7 @@ Related test cases in Cucumber are grouped into `Features`. Each test case in a 
 The business-facing parts of a Cucumber test suite (the feature files), must be written according to syntax rules —
 known as [Gherkin](/gherkin/) — so that Cucumber can read them. Under the hood, [step definitions](/cucumber/#step-definitions)
 translate the business-facing language of steps into runnable programming code. The step definitions invoke blocks of code
-that usually contain methods and assertion statements from your [assertion library](/cucumber/#checking-assertions).
+that usually contain methods and assertion statements from your [assertion library](/cucumber/checking-assertions).
 
  <!-- ![Cucumber-stack](docs/images/Cucumber_Stack.png) -->
 
