@@ -580,17 +580,17 @@ public class Stepdefs {
     private String actualAnswer;
 
     @Given("^today is Sunday$")
-    public void today_is_Sunday() throws Exception {
+    public void today_is_Sunday() {
         this.today = "Sunday";
     }
 
     @When("^I ask whether is's Friday yet$")
-    public void i_ask_whether_is_s_Friday_yet() throws Exception {
+    public void i_ask_whether_is_s_Friday_yet() {
         this.actualAnswer = IsItFriday.isItFriday(today);
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
-    public void i_should_be_told(String expectedAnswer) throws Exception {
+    public void i_should_be_told(String expectedAnswer) {
         assertEquals(expectedAnswer, actualAnswer);
     }
 }
