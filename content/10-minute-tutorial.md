@@ -67,7 +67,7 @@ Both of these commands should print a version number.
 
 {{% block "java" %}}
 We'll start by creating a new project directory with the `cucumber-archetype` Maven plugin.
-Open a terminal and run the following command:
+Open a terminal, go to the directory where you want to create your project, and run the following command:
 
 ```shell
 mvn archetype:generate                      \
@@ -79,7 +79,20 @@ mvn archetype:generate                      \
    -Dpackage=hellocucumber                  \
    -Dversion=1.0.0-SNAPSHOT                 \
    -DinteractiveMode=false
+```
 
+Note: provide all of the options used above in a single command, using only a space in between the options (i.e. make sure to remove the enters and backslashes `\`)
+
+You should get something like the following result:
+```
+[INFO] Project created from Archetype in dir: <directory where you created the project>/cucumber
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+```
+
+Change into the directory that was just created by running the following command:
+```
 cd hellocucumber
 ```
 
@@ -87,6 +100,13 @@ Open the project in IntelliJ IDEA:
 
 * **File -> Open... -> (Select the pom.xml)**
 * Select **Open as Project**
+
+If you prefer, you can also create a project with the Cucumber archetype in your IDE:
+In IntelliJ IDEA, go to **File -> New -> Project...**. On the left, select **Maven** (if not already selected).
+Check the option **Create from archetype** and click **Add archetype**.
+Provide the GroupId (`io.cucumber`), ArtifactId (`cucumber-archetype`) and Version (`{{% version "cucumberarchetype" %}} `), and click **OK**.
+The cucumber-archetype should now be added to the list of archetypes. Select it (if necessary) and click ** Next**. Provide a GroupId and ArtifactId for *your* project, and click **Next**.
+Click **Next**, **Next** and **Finish**; the project should open automatically.
 
 {{% /block %}}
 
@@ -358,19 +378,19 @@ Feature: Is it Friday yet?
 You can implement missing steps with the snippets below:
 
 @Given("^today is Sunday$")
-public void today_is_Sunday() throws Exception {
+public void today_is_Sunday() {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
 
 @When("^I ask whether is's Friday yet$")
-public void i_ask_whether_is_s_Friday_yet() throws Exception {
+public void i_ask_whether_is_s_Friday_yet() {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
 
 @Then("^I should be told \"([^\"]*)\"$")
-public void i_should_be_told(String arg1) throws Exception {
+public void i_should_be_told(String arg1) {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
