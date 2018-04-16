@@ -81,8 +81,6 @@ mvn archetype:generate                      \
    -DinteractiveMode=false
 ```
 
-Note: provide all of the options used above in a single command, using only a space in between the options (i.e. make sure to remove the enters and backslashes `\`)
-
 You should get something like the following result:
 ```
 [INFO] Project created from Archetype in dir: <directory where you created the project>/cucumber
@@ -101,12 +99,19 @@ Open the project in IntelliJ IDEA:
 * **File -> Open... -> (Select the pom.xml)**
 * Select **Open as Project**
 
-If you prefer, you can also create a project with the Cucumber archetype in your IDE:
-In IntelliJ IDEA, go to **File -> New -> Project...**. On the left, select **Maven** (if not already selected).
-Check the option **Create from archetype** and click **Add archetype**.
-Provide the GroupId (`io.cucumber`), ArtifactId (`cucumber-archetype`) and Version (`{{% version "cucumberarchetype" %}} `), and click **OK**.
-The cucumber-archetype should now be added to the list of archetypes. Select it (if necessary) and click ** Next**. Provide a GroupId and ArtifactId for *your* project, and click **Next**.
-Click **Next**, **Next** and **Finish**; the project should open automatically.
+{{% note "Creating a project with the Cucumber archetype in your IDE"%}}
+If you prefer, you can also create a project with the Cucumber archetype in your IDE.
+
+In IntelliJ IDEA:
+- Go to **File -> New -> Project...**.
+- On the left, select **Maven** (if not already selected).
+- Check the option **Create from archetype** and click **Add archetype**.
+- Provide the GroupId (`io.cucumber`), ArtifactId (`cucumber-archetype`) and Version (`{{% version "cucumberarchetype" %}} `), and click **OK**.
+The cucumber-archetype should now be added to the list of archetypes.
+- Select it (if necessary) and click ** Next**.
+- Provide a GroupId and ArtifactId for *your* project, and click **Next**.
+- Click **Next**, **Next** and **Finish**; the project should open automatically.
+{{% /note %}}
 
 {{% /block %}}
 
@@ -256,8 +261,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 ```
 
-If you prefer, you can also run Cucumber from your IDE. Right-click the `RunCucumberTest`
-class file and selecting **Run Test** from the context menu.
+{{% note "Running Cucumber from your IDE"%}}
+If you prefer, you can also run Cucumber from your IDE.
+In IntelliJ IDEA, right-click the `RunCucumberTest` class file and selecting **Run Test** from the context menu.
+
+{{% /note %}}
 
 {{% /block %}}
 
