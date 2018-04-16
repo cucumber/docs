@@ -388,6 +388,7 @@ public void i_should_be_told(String arg1) {
 
 {{% block "javascript" %}}
 ```shell
+UUU
 
 Warnings:
 
