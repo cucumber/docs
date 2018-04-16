@@ -9,8 +9,8 @@ pygmentsUseClasses = true
 
 [[menu.cucumber]]
     weight = 10
-    name = "Introduction and Overview"
-    identifier = "A gentle introduction to Cucumber"
+    name = "Introduction"
+    identifier = "New to Cucumber? Start here!"
     url = "/overview/"
 [[menu.cucumber]]
     weight = 20

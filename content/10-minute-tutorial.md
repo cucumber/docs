@@ -292,7 +292,7 @@ Try running an [Example Mapping](/example-mapping/) workshop in your team to des
 together.
 {{% /tip %}}
 
-In Cucumber, an example is called a [Scenario](/gherkin/#Scenario). 
+In Cucumber, an example is called a [Scenario](/gherkin/#example). 
 Scenarios are defined in `.feature` files, which are stored in the 
 {{% text "java" %}}`src/test/resources/hellocucumber`{{% /text %}}
 {{% text "javascript" %}}`features`{{% /text %}}
@@ -323,10 +323,10 @@ It's a good idea to use a name similar to the file name.
 The second line is a brief description of the feature. Cucumber does not
 execute this line, it's just documentation.
 
-The fourth line, `Scenario: Sunday is not Friday` is a [Scenario](/gherkin#Scenario), which
+The fourth line, `Scenario: Sunday is not Friday` is a [Scenario](/gherkin#example), which
 is a *concrete example* illustrating how the software should behave.
 
-The last three lines starting with `Given`, `When` and `Then` are the [steps](/gherkin#Scenario)
+The last three lines starting with `Given`, `When` and `Then` are the [steps](/gherkin#example)
 of our Scenario. This is what Cucumber will execute.
 
 # See Scenario reported as undefined
