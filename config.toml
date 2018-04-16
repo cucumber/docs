@@ -19,14 +19,19 @@ pygmentsUseClasses = true
     url = "/installation/"
 [[menu.cucumber]]
     weight = 30
-    name = "Tutorial"
-    identifier = "Get started in just 10 minutes"
-    url = "/10-minute-tutorial/"
+    name = "Configuration"
+    identifier = "Make Cucumber work for you"
+    url = "/cucumber/configuration/"
 [[menu.cucumber]]
-    weight = 30
+    weight = 40
     name = "Implementations"
     identifier = "Use Cucumber in the language of your choice"
     url = "/cucumber/implementations/"
+[[menu.cucumber]]
+    weight = 50
+    name = "Tutorial"
+    identifier = "Get started in just 10 minutes"
+    url = "/10-minute-tutorial/"
 
 [[menu.cucumber]]
     weight = 70
