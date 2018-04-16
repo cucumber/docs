@@ -15,7 +15,7 @@ In this quick tutorial you will learn how to:
 * Learn the basic workflow of BDD
 
 We'll use Cucumber to develop a small library that can figure out whether it's
-Friday yet. 
+Friday yet.
 
 Before we begin, you will need the following:
 
@@ -94,7 +94,7 @@ Change into the directory that was just created by running the following command
 cd hellocucumber
 ```
 
-Open the project in IntelliJ IDEA: 
+Open the project in IntelliJ IDEA:
 
 * **File -> Open... -> (Select the pom.xml)**
 * Select **Open as Project**
@@ -269,10 +269,10 @@ Cucumber's output is telling us that it didn't find anything to run.
 
 # Write a Scenario
 
-When we do Behaviour-Driven Development with Cucumber we use *concrete examples* 
+When we do Behaviour-Driven Development with Cucumber we use *concrete examples*
 to specify *what* we want the software to do. Scenarios are written *before*
 production code. They start their life as an *executable specification*. As
-the production code emerges, Scenarios take on a role as *living documentation* and 
+the production code emerges, Scenarios take on a role as *living documentation* and
 *automated tests*.
 
 {{% tip "Example Mapping"%}}
@@ -280,8 +280,8 @@ Try running an [Example Mapping](/example-mapping/) workshop in your team to des
 together.
 {{% /tip %}}
 
-In Cucumber, an example is called a [Scenario](/gherkin/#example). 
-Scenarios are defined in `.feature` files, which are stored in the 
+In Cucumber, an example is called a [Scenario](/gherkin/#example).
+Scenarios are defined in `.feature` files, which are stored in the
 {{% text "java" %}}`src/test/resources/hellocucumber`{{% /text %}}
 {{% text "javascript" %}}`features`{{% /text %}}
 {{% text "ruby" %}}`features`{{% /text %}}
@@ -298,7 +298,7 @@ with the following contents:
 ```gherkin
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
-  
+
   Scenario: Sunday isn't Friday
     Given today is Sunday
     When I ask whether is's Friday yet
@@ -341,7 +341,7 @@ cucumber
 ```
 {{% /block %}}
 
-Cucumber is telling us we have one `undefined` Scenario and three `undefined` steps. 
+Cucumber is telling us we have one `undefined` Scenario and three `undefined` steps.
 It's also suggesting some snippets of code that we can use to **define** these steps:
 
 {{% block "java" %}}
@@ -361,10 +361,11 @@ Feature: Is it Friday yet?
 1 Scenarios (1 undefined)
 3 Steps (3 undefined)
 0m0.040s
-
+```
 
 You can implement missing steps with the snippets below:
 
+```java
 @Given("^today is Sunday$")
 public void today_is_Sunday() {
     // Write code here that turns the phrase above into concrete actions
@@ -387,7 +388,6 @@ public void i_should_be_told(String arg1) {
 
 {{% block "javascript" %}}
 ```shell
-UUU
 
 Warnings:
 
@@ -399,7 +399,7 @@ Warnings:
            // Write code here that turns the phrase above into concrete actions
            return 'pending';
          });
-       
+
    ? When I ask whether is's Friday yet
        Undefined. Implement with the following snippet:
 
@@ -407,7 +407,7 @@ Warnings:
            // Write code here that turns the phrase above into concrete actions
            return 'pending';
          });
-       
+
    ? Then I should be told "Nope"
        Undefined. Implement with the following snippet:
 
@@ -415,7 +415,7 @@ Warnings:
            // Write code here that turns the phrase above into concrete actions
            return 'pending';
          });
-       
+
 
 1 Scenario (1 undefined)
 3 steps (3 undefined)
@@ -453,7 +453,7 @@ end
 ```
 {{% /block %}}
 
-Copy each of the three snippets for the undefined steps and paste them into 
+Copy each of the three snippets for the undefined steps and paste them into
 {{% text "java" %}}`src/test/java/hellocucumber/Stepdefs.java`{{% /text %}}
 {{% text "javascript" %}}`features/step_definitions/stepdefs.js`{{% /text %}}
 {{% text "ruby" %}}`features/step_definitions/stepdefs.js`{{% /text %}}.
@@ -527,7 +527,7 @@ Feature: Is it Friday yet?
 ```
 {{% /block %}}
 
-Cucumber found our step definitions and executed them. They are currently marked as 
+Cucumber found our step definitions and executed them. They are currently marked as
 *pending*, which means we need to make them do something useful.
 
 # See Scenario reported as failing
@@ -539,8 +539,8 @@ The next step is to do what the comments in the step definitions is telling us t
 Try to use the same words in the code as in the steps.
 
 {{% tip "Ubiquitous Language"%}}
-If the words in your steps originated from conversations during an 
-[Example Mapping](/example-mapping/) session, you're building a 
+If the words in your steps originated from conversations during an
+[Example Mapping](/example-mapping/) session, you're building a
 [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html),
 which is a great way to make your production code and test easier to understand
 and maintain.
@@ -687,10 +687,10 @@ Feature: Is it Friday yet?
     Given today is Sunday              # features/step_definitions/stepdefs.rb:4
     When I ask whether is's Friday yet # features/step_definitions/stepdefs.rb:8
     Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:12
-      
+
       expected: "Nope"
            got: nil
-      
+
       (compared using ==)
        (RSpec::Expectations::ExpectationNotMetError)
       ./features/step_definitions/stepdefs.rb:13:in `"I should be told {string}"'
