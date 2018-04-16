@@ -82,7 +82,7 @@ mvn archetype:generate                      \
 ```
 
 You should get something like the following result:
-```
+```shell
 [INFO] Project created from Archetype in dir: <directory where you created the project>/cucumber
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -90,7 +90,7 @@ You should get something like the following result:
 ```
 
 Change into the directory that was just created by running the following command:
-```
+```shell
 cd hellocucumber
 ```
 
@@ -98,20 +98,6 @@ Open the project in IntelliJ IDEA:
 
 * **File -> Open... -> (Select the pom.xml)**
 * Select **Open as Project**
-
-{{% note "Creating a project with the Cucumber archetype in your IDE"%}}
-If you prefer, you can also create a project with the Cucumber archetype in your IDE.
-
-In IntelliJ IDEA:
-- Go to **File -> New -> Project...**.
-- On the left, select **Maven** (if not already selected).
-- Check the option **Create from archetype** and click **Add archetype**.
-- Provide the GroupId (`io.cucumber`), ArtifactId (`cucumber-archetype`) and Version (`{{% version "cucumberarchetype" %}} `), and click **OK**.
-The cucumber-archetype should now be added to the list of archetypes.
-- Select it (if necessary) and click ** Next**.
-- Provide a GroupId and ArtifactId for *your* project, and click **Next**.
-- Click **Next**, **Next** and **Finish**; the project should open automatically.
-{{% /note %}}
 
 {{% /block %}}
 
@@ -185,7 +171,7 @@ const { Given, When, Then } = require('cucumber');
 {{% block "ruby" %}}
 We'll start by creating a new directory and an empty Ruby project.
 
-```
+```shell
 mkdir hellocucumber
 cd hellocucumber
 ```
@@ -239,7 +225,7 @@ cucumber
 You should see something like the following:
 
 {{% block "java" %}}
-```
+```shell
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -261,16 +247,10 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 ```
 
-{{% note "Running Cucumber from your IDE"%}}
-If you prefer, you can also run Cucumber from your IDE.
-In IntelliJ IDEA, right-click the `RunCucumberTest` class file and selecting **Run Test** from the context menu.
-
-{{% /note %}}
-
 {{% /block %}}
 
 {{% block "javascript" %}}
-```
+```shell
 0 Scenarios
 0 steps
 0m00.000s
@@ -278,7 +258,7 @@ In IntelliJ IDEA, right-click the `RunCucumberTest` class file and selecting **R
 {{% /block %}}
 
 {{% block "ruby" %}}
-```
+```shell
 0 scenarios
 0 steps
 0m0.000s
@@ -365,7 +345,7 @@ Cucumber is telling us we have one `undefined` Scenario and three `undefined` st
 It's also suggesting some snippets of code that we can use to **define** these steps:
 
 {{% block "java" %}}
-```
+```shell
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -406,7 +386,7 @@ public void i_should_be_told(String arg1) {
 {{% /block %}}
 
 {{% block "javascript" %}}
-```
+```shell
 UUU
 
 Warnings:
@@ -444,7 +424,7 @@ Warnings:
 {{% /block %}}
 
 {{% block "ruby" %}}
-```
+```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
@@ -483,7 +463,7 @@ Copy each of the three snippets for the undefined steps and paste them into
 Run Cucumber again. This time the output is a little different:
 
 {{% block "java" %}}
-```
+```shell
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -511,7 +491,7 @@ cucumber.api.PendingException: TODO: implement me
 {{% /block %}}
 
 {{% block "javascript" %}}
-```
+```shell
 P--
 
 Warnings:
@@ -529,7 +509,7 @@ Warnings:
 {{% /block %}}
 
 {{% block "ruby" %}}
-```
+```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
@@ -650,7 +630,7 @@ end
 Run Cucumber again:
 
 {{% block "java" %}}
-```
+```shell
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -681,7 +661,7 @@ hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
 {{% /block %}}
 
 {{% block "javascript" %}}
-```
+```shell
 ..F
 
 Failures:
@@ -699,7 +679,7 @@ Failures:
 {{% /block %}}
 
 {{% block "ruby" %}}
-```
+```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
@@ -757,7 +737,7 @@ end
 Run Cucumber again:
 
 {{% block "java" %}}
-```
+```shell
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -777,7 +757,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "javascript" %}}
-```
+```shell
 ...
 
 1 Scenario (1 passed)
@@ -787,7 +767,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "ruby" %}}
-```
+```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
