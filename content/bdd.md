@@ -1,82 +1,90 @@
 ---
-title:
+title: Behaviour-Driven Development
 ---
 
-Behaviour-Driven development (or BDD) is a software development technique that encourages collaboration between developers,
-QA and non-technical or business participants in a software project.
+Behaviour-Driven Development (BDD) is a set of practices that aim to reduce 
+some common wasteful activities in software development:
 
-BDD focuses on obtaining a clear understanding of desired software behaviour through discussion with stakeholders.
-It extends [Test-Driven Development (or TDD)](#test-driven-development) by writing test cases in a natural language that
-non-programmers can read. Behaviour-driven developers use their native language in combination with the ubiquitous language
-of Domain-Driven Design (DDD) to describe the purpose and benefit of their code.
-This allows the developers to focus on why the code should be created, rather than the technical details, and minimises
-translation between the technical language in which the code is written and the domain language spoken by the business,
-users, stakeholders, project management, etc.
+* Rework caused by misunderstood or vague requirements
+* Technical debt caused by reluctance to refactor code
+* Slow feedback cycles caused by silos and hand-overs
 
-**"Behaviour-driven development is about implementing an application by describing its behavior from the perspective of
-its stakeholders"** -- Dan North
+BDD aims to narrow the communication gaps between team members, foster better understanding of
+the customer and promote continuous communication with real world *examples*.
 
-The main intention of a BDD framework is to avoid communication gaps between team members, foster better understanding of
-the customer and promote continuous communication with real world examples.
+Examples describe how the software is *intended to behave*, often illustrating a particular business rule or requirement.
+
+{{% note "A simple example" %}}
+> Liz should be asked to guess again when she guesses "joke"
+
+This example is from a word guessing game. It's illustrating a rule
+stipulating that a guess must be 5 letters. 
+{{% /note %}}
+
+BDD can be split in two parts - *Deliberate Discovery* and *Test-Driven Development*.
+
+# Deliberate Discovery
+
+There are many reasons why software projects go wrong. A very common reason
+is that different people in the organisation or on the team have very different
+understandings of how the software should behave, and what problems it's trying
+to solve.
+
+> Ignorance is the single greatest impediment to throughput. --Dan North
+> https://dannorth.net/2010/08/30/introducing-deliberate-discovery/
+
+Teams that *deliberately* seek to discover what they are ignorant about *before* 
+development starts are more productive, because there is less rework.
+
+The most effective way to do this is through conversation and collaboration between
+key stakeholders, such as:
+
+* Product owners
+* Business analysts
+* Domain experts
+* Users
+* Programmers
+* UX designers
+* Testers
+* Ops engineers
+* And probably some
+
+The Cucumber way to do this is [Example Mapping](https://cucumber.io/blog/2015/12/08/example-mapping-introduction), a
+simple technique for coming up with examples together.
+
+When people in different roles have conversations about concrete examples
+they will often discover a lot about the problem domain.
+
+The examples they produce together can then become automated tests and living
+documentation of how the system behaves.
 
 # Test-Driven Development
 
-Test-Driven development (TDD) is a software development process that relies on the repetition of a very short development cycle.
-Requirements are turned into very specific test cases, then the software is improved to pass the new tests.
-This is opposed to software development that allows software to be added that isn't proven to meet requirements.
-Begin by writing a very small test for code that does not yet exist. Run the test and, naturally, it fails.
-Now write just enough code to make that test pass. Once the test passes, observe the resulting design and re-factor as needed.
-It is natural at this point to judge the design as too simple to handle all of the responsibilities this code will have.
+TDD is a software development technique where automated tests are written 
+*before* the code. Developers use those tests to *drive* the development.
 
-As the code base gradually increases in size, more and more attention is consumed by the re-factoring step. The design is constantly evolving and under constant review, though it is not predetermined. This process is known as emergent design, and is one of the most significant by-products of Test Driven Development.
+TODO: Red-Green-Refactor diagram
 
-TDD follows this cycle:
+TDD can be practiced at different levels of granularity, from acceptance tests
+to unit tests. The BDD flavour of TDD uses natural language to describe tests. 
+They can be understood by non-programmers and are often based on examples created 
+collaboratively using Example Mapping.
 
-  * **RED**: Write a test and run it (Test will fail, as it's not implemented yet)
-  * **GREEN**: Write the simplest implementation to make the test pass
-  * **REFACTOR**: Refactor the code to improve quality
+[Gherkin](/gherkin) is a simple syntax for such natural language tests, and
+Cucumber is the tool that can execute them.
 
-**Note**: TDD is not about testing; it is the process of approaching your design and forcing you to think about the desired
+{{% note "Test after is not BDD" %}}
+Many people write tests after the code is written, even with Cucumber. This is
+not BDD or TDD, because the tests do not *drive* the implementation when they
+are written afterwards.
+{{% /note %}}
+
+{{% note "TDD/BDD is not about testing" %}}
+A common misunderstanding of TDD and BDD is that it is a 
+testing technique. It's not. As the name suggests, BDD is about software *development*.
+
+It is the process of approaching your design and forcing you to think about the desired
 outcome and API before you code.
 
-# Behaviour-Driven Development
-
-When using BDD to drive your application development, follow a process similar to the TDD cycle described above.
-
-## Implementing step definitions
-We recommend implementing step definitions one by one. This will help you keep track of where you are with your implementation.
-
-## A failing step
-Once a new scenario or step definition is written, you should prove that it fails by running it against the, as yet,
-non-existent application code. Then (and *only* then) should you write the least application code that gets your test to pass.
-
-## Implementing the functionality
-The application code that you write should literally be the minimum that will satisfy the requirement.
-(particularly if this code is totally unsuited for production use). This way, you are
-forced to add additional scenarios to drive out exactly what is acceptable. This pressure forces application code to
-evolve strictly to meet those requirements.
-
-If you pre-empt the design process by writing more sophisticated
-code than is called for, then you will inevitably fail to provide Scenario coverage for some of that code. You will also
-write code that will never *ever* be used. This *will* happen and it *will* bite you at some point.
-Keep the *[YAGNI](http://en.wikipedia.org/wiki/You_ain%27t_gonna_need_it)* principle in mind at all times.
-The value of this approach is that you will rarely (*never*) have untested
-code anywhere in your application. More importantly, if you rigorously adhere to this methodology, then your application
-will contain the minimal code that satisfies required features.
-Whenever you find yourself led down this garden path to the creeping
-*[featuritis](http://en.wikipedia.org/wiki/Feature_creep)* plant ask: ***If the user did not ask for it then exactly why are we writing it?***
-
-Before writing any line of code, whether it be feature, step, or application, think carefully about what you are actually
-trying to accomplish and keep in mind this statement by Dave Thomas of *The Pragmatic Programmer* fame.
-
-> When faced with two or more alternatives that deliver roughly the same value, take the path that makes future change easier.
-
-## A passing step
-Now that you have a passing step, without changing the step definition's logic, change the test criteria within it to something that will fail,
-and prove to yourself that it fails again! Once you have assured yourself that your test is passing for the right reason,
-reset the criteria so that the test passes again. Once this cycle is complete, move on to the next step or scenario.
-
-## Prevent regression
-You may rest secure in the knowledge that if changes anywhere in your project break anything then you will know of this
-immediately upon running your test suite.
-More importantly, you will know exactly what is broken and where it is broken when you break it.
+Automated tests are a by-product of TDD and BDD.
+{{% /note %}}

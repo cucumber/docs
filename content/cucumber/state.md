@@ -265,7 +265,7 @@ roll it back in an `After`[hook](/cucumber/#hooks).
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
 [tagged hooks](/cucumber/#tagged-hooks) using a tag named `@txn`.
 
-To enable it, you must tag every [feature](/gherkin/#feature) or [scenario](/gherkin/#scenario) that requires
+To enable it, you must tag every [feature](/gherkin/#feature) or [scenario](/gherkin/#example) that requires
 transactions with `@txn`:
 
 ```gherkin
