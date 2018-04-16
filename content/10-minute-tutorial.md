@@ -12,7 +12,7 @@ In this quick tutorial you will learn how to:
 * Write your first Scenario using the Gherkin syntax
 * Write your first step definition in {{% text "java" %}}Java{{% /text %}}{{% text "javascript" %}}JavaScript{{% /text %}}{{% text "ruby" %}}Ruby{{% /text %}}
 * Run Cucumber
-* Learn the basic workflow of BDD
+* Learn the basic workflow of Behaviour-Driven Development (BDD)
 
 We'll use Cucumber to develop a small library that can figure out whether it's
 Friday yet.

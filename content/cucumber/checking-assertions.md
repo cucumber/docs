@@ -136,6 +136,16 @@ RSpec.configure do |config|
 end
 ```
 
+Realize that tests/assertions/expectations either “pass” or “fail” (raise an error), and that “fail” is **not** the same as `false`.
+Anything besides “fail” is a pass.
+
+When, in RSpec, `something.should_be 0` and it is not, then what is returned is an error exception, not a Boolean value.
+In Cucumber, one writes `fail if false` and not simply `false`.
+This is because `false` might be the expected successful outcome of a test, and thus not an error.
+
+Sometimes however, we wish to test how our application handles an exception and therefore do not want that exception
+to be handled by Cucumber. For that situation use the `@allow-rescue` [tag](/cucumber/#tags).
+
 ## Test::Unit
 
 If you prefer to use `Test::Unit`'s `assert` methods you can mix them into

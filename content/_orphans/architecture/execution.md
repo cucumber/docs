@@ -44,7 +44,7 @@ The specifications are transformed to an AST (Abstract Syntax Tree).
 
 The ASTs are compiled into a list of `TestCase`s. During this phase,
 `Scenario Outline`s and their `Example`s are exploded into multiple
-`TestCase`s.  Background Steps are copied into each `TestCase`.
+`TestCase`s. Background Steps are copied into each `TestCase`.
 
 # 5. Linking `StepDefinition`s into executable `TestCase`s
 

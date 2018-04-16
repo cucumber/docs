@@ -714,12 +714,66 @@ documents in your external tool.
 
 ### Development Process
 
-Another creative way to use Tags is to keep track of where in the development process a certain feature is:
+Another creative way to use tags is to keep track of where in the development process a certain feature is:
 
 ```gherkin
 @qa_ready
 Feature: Index projects
 ```
+
+{{% text "ruby" %}}
+As distributed, Cucumber-Rails builds a Rake task that recognizes the *`@wip`* tag.
+However, any string may be used as a tag and any scenario or entire feature can have multiple tags associated with it.
+
+The default profile contained in the distributed `config/cucumber.yml` contains these lines:
+
+```
+<%
+.  .  .
+std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'progress'} --strict --tags ~@wip"
+%>
+default: <%= std_opts %> features
+.  .  .
+```
+
+Note the trailing option `--tags ~@wip`.  Cucumber provides for negating tags by prefacing the `--tags` argument with a tilde character (**`~`**).
+This tells Cucumber to not process features and scenarios with this tag. If you do not specify a different profile (`cucumber -p profilename`), then the default profile will be used.
+If the default profile is used, then the `--tags ~@wip` will cause Cucumber to skip any scenario with this tag. This will override the `--tags=@authen` option passed in the command line, and so you will see this:
+
+```
+$ cucumber --tags=@authent
+Using the default profile...
+
+0 scenarios
+0 steps
+0m0.000s
+```
+
+Since version 0.6.0, one can no longer overcome this default setting by adding the `--tags=@wip` to the Cucumber argument
+list on the command line, because now all `--tags` options are ANDed together.  Thus the combination of `--tags @wip` **AND** `--tags ~@wip` fails everywhere.
+
+You either must create a special profile in `config/cucumber.yml` to deal with this, or alter the default profile to suit your needs.
+
+The `@wip` tags are a special case. If any scenario tagged as `@wip` passes all of its steps without error, and the
+`--wip` option is also passed, Cucumber reports the run as failing (because Scenarios that are marked as a work in progress are not *supposed* to pass!)
+
+Note as well that the `--strict` and `--wip` options are mutually exclusive.
+
+The number of occurrences of a particular tag in your features may be controlled by appending a colon followed by a
+number to the end of the tag name passed to the `--tags` option, like so:
+
+```
+$ cucumber --tags=@wip:3 features/log\*
+```
+
+The existence of more than the specified number of occurrences of that tag in all the features that are exercised during
+a particular Cucumber run will produce a warning message. If the `--strict` option is passed as well, as is the case with
+the default profile, then instead of a warning the run will fail.
+
+Limiting the number of occurrences is commonly used in conjunction with the `@wip` tag to restrict the number of
+unspecified scenarios to manageable levels. Those following [Kanban](http://en.wikipedia.org/wiki/kanban) or
+[Lean Software Development](http://en.wikipedia.org/wiki/Lean_software_development) based methodologies will find this useful.
+{{% /text %}}
 
 # Running Cucumber
 
@@ -737,6 +791,25 @@ It is possible to [configure](#configuration) how Cucumber should run features.
 
 The most common option is to run Cucumber from the command line.
 
+By default, Cucumber will treat anything ending in
+{{% text "java" %}}`.java`{{% /text %}}
+{{% text "javascript" %}}`.js`{{% /text %}}
+{{% text "ruby" %}}`.rb`{{% /text %}} under the root
+{{% text "java, javascript" %}}resource{{% /text %}}
+{{% text "ruby" %}}library{{% /text %}} directory as a step definition file.
+
+Thus, a step contained in
+{{% text "java" %}}`features/models/entities/step-definitions/anything.java`{{% /text %}}
+{{% text "javascript" %}}`features/models/entities/step-definitions/anything.js`{{% /text %}}
+{{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
+can be used in a feature file contained in
+{{% text "java, javascript" %}}`features/views/entity-new`{{% /text %}}
+{{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
+, provided that:
+
+- Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
+- explicitly required on the command line
+
 {{% block "ruby" %}}
 
 The following command will run the `authenticate_user` feature. Any feature in a sub-directory of `features/` directory must `require` features.
@@ -744,6 +817,9 @@ The following command will run the `authenticate_user` feature. Any feature in a
 ```
 cucumber --require features features/authentication/authenticate_user.feature
 ```
+
+Note that if the `--require` option is passed, then **ONLY** that directory tree will be searched for step definition matches.
+You may specify the `--require` option multiple times if you need to include step definitions from directories that do not share a convenient root.
 
 Otherwise, to run all features:
 
@@ -885,7 +961,7 @@ Some of the runners provide additional mechanisms for passing options to Cucumbe
 {{% /block %}}
 
 {{% block "ruby" %}}
-You can also define common command-line options in a [`cucumber.yml`](/cucumber/cucumber.yml/) file.
+You can also define common command-line options in a [`cucumber.yml`](/cucumber/configuration/) file.
 {{% /block %}}
 
 {{% block "javascript" %}}
