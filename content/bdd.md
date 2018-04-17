@@ -30,8 +30,7 @@ is that different people in the organisation or on the team have very different
 understandings of how the software should behave, and what problems it's trying
 to solve.
 
-> Ignorance is the single greatest impediment to throughput. --Dan North
-> https://dannorth.net/2010/08/30/introducing-deliberate-discovery/
+> Ignorance is the single greatest impediment to throughput. - [Dan North](https://dannorth.net/2010/08/30/introducing-deliberate-discovery/)
 
 Teams that *deliberately* seek to discover what they are ignorant about *before* 
 development starts are more productive, because there is less rework.
@@ -47,7 +46,7 @@ key stakeholders, such as:
 * UX designers
 * Testers
 * Ops engineers
-* And probably some
+* And probably some others
 
 The Cucumber way to do this is [Example Mapping](https://cucumber.io/blog/2015/12/08/example-mapping-introduction), a
 simple technique for coming up with examples together.
@@ -60,10 +59,10 @@ documentation of how the system behaves.
 
 # Test-Driven Development
 
-TDD is a software development technique where automated tests are written 
+Test-Driven Development (TDD) is a software development technique where automated tests are written
 *before* the code. Developers use those tests to *drive* the development.
 
-TODO: Red-Green-Refactor diagram
+![Red-Green-Refactor diagram](/img/TDD-cycle.png)
 
 TDD can be practiced at different levels of granularity, from acceptance tests
 to unit tests. The BDD flavour of TDD uses natural language to describe tests. 
@@ -80,8 +79,8 @@ are written afterwards.
 {{% /note %}}
 
 {{% note "TDD/BDD is not about testing" %}}
-A common misunderstanding of TDD and BDD is that it is a 
-testing technique. It's not. As the name suggests, BDD is about software *development*.
+A common misunderstanding of TDD and BDD is that they are
+testing techniques. They're not. As the name suggests, TDD and BDD are about software *development*.
 
 It is the process of approaching your design and forcing you to think about the desired
 outcome and API before you code.
