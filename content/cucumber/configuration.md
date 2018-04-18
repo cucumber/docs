@@ -8,7 +8,7 @@ polyglot:
 ---
 
 You can specify configuration options for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
-This file must be in a `.config` subdirectory, or `config` subdirectory of your current working directory.
+This file must be in a `.config` directory, or `config` subdirectory of your current working directory.
 
 # Defining Profiles
 
