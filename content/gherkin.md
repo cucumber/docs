@@ -14,12 +14,12 @@ level is two spaces. Here is an example:
 Feature: Guess the word
 
   # The first example has two steps
-  Example: Maker starts a game
+  Scenario: Maker starts a game
     When the Maker starts a game
     Then the Maker waits for a Breaker to join
 
   # The second example has three steps
-  Example: Breaker joins a game
+  Scenario: Breaker joins a game
     Given the Maker has started a game with the word "silky"
     When the Breaker joins the Maker's game
     Then the Breaker must guess a word with 5 characters
@@ -30,7 +30,7 @@ a code block, called a [step definition](/cucumber/#step-definitions).
 
 # Keywords
 
-Each line that isn't a blank line has to start with a Gherkin *keyword*, followed by any text you like. The only exceptions are the feature and example descriptions.
+Each line that isn't a blank line has to start with a Gherkin *keyword*, followed by any text you like. The only exceptions are the feature and scenario descriptions.
 
 The primary keywords are:
 
@@ -54,7 +54,7 @@ Gherkin is localised for many [spoken languages](#spoken-languages); each has th
 ## Feature
 
 The purpose of the `Feature` keyword is to provide a high-level description
-of a software feature, and to group related examples.
+of a software feature, and to group related scenarios.
 
 The first primary keyword in a Gherkin document must always be `Feature`, followed
 by a `:` and a short text that describes the feature.
@@ -76,7 +76,7 @@ The name and the description have no special meaning to Cucumber. Their purpose 
 a place for you to document important aspects of the feature, such as a brief explanation
 and a list of business rules (general acceptance criteria).
 
-The free format description ends when the first example starts.
+The free format description ends when the first scenario starts.
 
 You can place [tags](/cucumber/#tags) above `Feature` to group related features,
 independent of your file and directory structure.
@@ -93,11 +93,11 @@ You can write anything you like, as long as no line starts with a keyword.
 This is a *concrete example* that *illustrates* a business rule. It consists of
 a list of [steps](#steps).
 
-You can have as many steps as you like, but we recommend you keep the number at 3-5 per example.
+You can have as many steps as you like, but we recommend you keep the number at 3-5 per scenario.
 If they become longer than that, they lose their expressive power as specification and documentation.
 
-In addition to being a specification and documentation, an example is also a *test*.
-As a whole, your examples are an *executable specification* of the system.
+In addition to being a specification and documentation, a scenario is also a *test*.
+As a whole, your scenarios are an *executable specification* of the system.
 
 Examples follow this same pattern:
 
@@ -109,7 +109,7 @@ Examples follow this same pattern:
 
 Each step starts with `Given`, `When`, `Then`, `And`, or `But`.
 
-Cucumber executes each step in an example one at a time, in the sequence you’ve written them in.
+Cucumber executes each step in a scenario one at a time, in the sequence you’ve written them in.
 When Cucumber tries to execute a step, it looks for a matching step definition to execute.
 
 Keywords are not taken into account when looking for a step definition. This means you cannot have a
@@ -216,17 +216,17 @@ Example: Multiple Givens
 
 ## Background
 
-Occasionally you'll find yourself repeating the same `Given` steps in all of the examples in a feature.
+Occasionally you'll find yourself repeating the same `Given` steps in all of the scenarios in a feature.
 
-Since it is repeated in every example, this is an indication that those steps
-are not *essential* to describe the examples; they are *incidental details*. You can literally move such `Given` steps to the background, by grouping them under a `Background` section.
+Since it is repeated in every scenario, this is an indication that those steps
+are not *essential* to describe the scenarios; they are *incidental details*. You can literally move such `Given` steps to the background, by grouping them under a `Background` section.
 
-A `Background` allows you to add some context to the examples in the feature. It can contain one or 
+A `Background` allows you to add some context to the scenarios in the feature. It can contain one or
 more `Given` steps.
 
-A `Background` is run before *each* scenario, but after any [Before hooks](/cucumber/#hooks). In your feature file, put the `Background` before the first example.
+A `Background` is run before *each* scenario, but after any [Before hooks](/cucumber/#hooks). In your feature file, put the `Background` before the first `Scenario`.
 
-Example:
+For example:
 
 ```gherkin
 Feature: Multiple site support
@@ -271,56 +271,51 @@ For a less explicit alternative to `Background`, check out [tagged hooks](/cucum
 If the `Background` section has scrolled off the screen, the reader no longer has a full overview of whats happening.
 Think about using higher-level steps, or splitting the `*.feature` file.
 
-## Combinations
+## Scenario Outline
 
-The `Combinations` keyword can be used to run the same `Example` multiple times,
+The `Scenario Outline` keyword can be used to run the same `Scenario` multiple times,
 with different combinations of values.
 
-Copying and pasting examples to use different values quickly becomes tedious and repetitive:
+Copying and pasting scenarios to use different values quickly becomes tedious and repetitive:
 
 ```gherkin
-Example: eat 5 out of 12
+Scenario: eat 5 out of 12
   Given there are 12 cucumbers
   When I eat 5 cucumbers
   Then I should have 7 cucumbers
 
-Example: eat 5 out of 20
+Scenario: eat 5 out of 20
   Given there are 20 cucumbers
   When I eat 5 cucumbers
   Then I should have 15 cucumbers
 ```
 
-We can collapse these two similar examples into a *combinatorial example*.
+We can collapse these two similar scenarios into a `Scenario Outline`.
 
-{{% note "Scenario Outlines" %}}
-Combinatorial Examples were originally called `Scenario Outline`.
-As of Gherkin 6.0.0, `Example`, `Scenario` and `Scenario Outline` are all synonyms.
-{{% /note %}}
-
-Combinatorial examples allow us to more concisely express these examples through the use 
+Scenario outlines allow us to more concisely express these scenarios through the use
 of a template with `< >`-delimited parameters:
 
 ```gherkin
-Example: eating
+Scenario Outline: eating
   Given there are <start> cucumbers
   When I eat <eat> cucumbers
   Then I should have <left> cucumbers
 
-  Combinations:
+  Examples:
     | start | eat | left |
     |    12 |   5 |    7 |
     |    20 |   5 |   15 |
 ```
 
-When an `Example` is followed by a `Combinations` section, its steps are interpreted as a template 
-which is never directly run. Instead, the `Example` is run *once for each row* in 
-the `Combinations` section beneath it (not counting the first header row).
+When a `Scenario Outline` is followed by a `Examples` section, its steps are interpreted as a template
+which is never directly run. Instead, the `Scenario Outline` is run *once for each row* in
+the `Examples` section beneath it (not counting the first header row).
 
-The steps can use `<>` delimited *combination parameters* that reference headers in the combinations table.
+The steps can use `<>` delimited *parameters* that reference headers in the examples table.
 Cucumber will replace these parameters with values from the table *before* it tries
 to match the step against a step definition.
 
-You can also combination parameters in [multiline step arguments](#step-arguments).
+You can also use parameters in [multiline step arguments](#step-arguments).
 
 # Step Arguments
 
@@ -329,8 +324,7 @@ For this purpose Gherkin has `Doc Strings` and `Data Tables`:
 
 ## Doc Strings
 
-`Doc Strings` are handy for passing a larger piece of text to a step definition. 
-The syntax is inspired from Python's Docstring syntax.
+`Doc Strings` are handy for passing a larger piece of text to a step definition.
 
 The text should be offset by delimiters consisting of three double-quote marks on lines of their own:
 ```gherkin
@@ -362,7 +356,7 @@ Given the following users exist:
 Just like Doc Strings, Data Tables will be passed to the step definition as the last argument.
 
 Cucumber provides a rich API for manipulating tables from within step definitions.
-See the [Data Table API reference](http://localhost:61328/cucumber/#data-tables) reference for 
+See the [Data Table API reference](https://github.com/cucumber/cucumber/tree/master/datatable) reference for
 more details.
 
 # Spoken Languages

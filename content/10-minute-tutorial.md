@@ -315,11 +315,11 @@ The fourth line, `Scenario: Sunday is not Friday` is a [Scenario](/gherkin#examp
 is a *concrete example* illustrating how the software should behave.
 
 The last three lines starting with `Given`, `When` and `Then` are the [steps](/gherkin#example)
-of our Scenario. This is what Cucumber will execute.
+of our scenario. This is what Cucumber will execute.
 
 # See Scenario reported as undefined
 
-Now that we have a Scenario, we can ask Cucumber to execute it.
+Now that we have a scenario, we can ask Cucumber to execute it.
 
 {{% block "java" %}}
 ```shell
@@ -341,7 +341,7 @@ cucumber
 ```
 {{% /block %}}
 
-Cucumber is telling us we have one `undefined` Scenario and three `undefined` steps.
+Cucumber is telling us we have one `undefined` scenario and three `undefined` steps.
 It's also suggesting some snippets of code that we can use to **define** these steps:
 
 {{% block "java" %}}
@@ -459,7 +459,7 @@ Copy each of the three snippets for the undefined steps and paste them into
 {{% text "javascript" %}}`features/step_definitions/stepdefs.js`{{% /text %}}
 {{% text "ruby" %}}`features/step_definitions/stepdefs.js`{{% /text %}}.
 
-# See Scenario reported as pending
+# See scenario reported as pending
 
 Run Cucumber again. This time the output is a little different:
 
@@ -531,7 +531,7 @@ Feature: Is it Friday yet?
 Cucumber found our step definitions and executed them. They are currently marked as
 *pending*, which means we need to make them do something useful.
 
-# See Scenario reported as failing
+# See scenario reported as failing
 
 The next step is to do what the comments in the step definitions is telling us to do:
 
@@ -708,9 +708,9 @@ cucumber features/is_it_friday_yet.feature:4 # Scenario: Sunday is not Friday
 
 That's progress! The first two steps are passing, but the last one is failing.
 
-# See Scenario reported as passing
+# See scenario reported as passing
 
-Let's do the simplest possible thing to make the Scenario pass. In this case,
+Let's do the simplest possible thing to make the scenario pass. In this case,
 that's simply to make our function return `Nope`:
 
 {{% block "java" %}}
@@ -792,5 +792,5 @@ the BDD process to develop a very simple function. The next natural steps would
 be:
 
 * Move the `{{% text "java" %}}isItFriday{{% /text %}}{{% text "javascript" %}}isItFriday{{% /text %}}{{% text "ruby" %}}is_it_friday{{% /text %}}` function out from the test code into production code (refactoring)
-* Write another Scenario - `Friday is Friday` perhaps?
-* Follow the same process as outlined above, until both Scenarios are green
+* Write another scenario - `Friday is Friday` perhaps?
+* Follow the same process as outlined above, until both scenarios are green

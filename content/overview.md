@@ -16,27 +16,26 @@ Cucumber is a tool that supports [BDD](/bdd).
 
 Cucumber reads executable specifications written in plain text and and validates that the
 software does what those specifications say. The specifications consists of multiple
-*examples*, for example:
+*examples* or scenario, for example:
 
 ```gherkin
-Example: Breaker guesses a word
+Scenario: Breaker guesses a word
   Given the Maker has chosen a word
   When the Breaker makes a guess
   Then the Maker is asked to score
 ```
 
-Each example is a list of *steps* for Cucumber to work through. Cucumber verifies
+Each scenario is a list of *steps* for Cucumber to work through. Cucumber verifies
 that the software conforms with the specification and generates a report indicating
-✅ success or ❌ failure for each example.
-
+✅ success or ❌ failure for each scenario.
 
 In order for Cucumber
-to understand the examples, they must follow some basic syntax rules, called [Gherkin](/gherkin/).
+to understand the scenarios, they must follow some basic syntax rules, called [Gherkin](/gherkin/).
 
 # What is Gherkin?
 
 Gherkin is a simple set of grammar rules that makes plain text structured enough
-for Cucumber to understand. The example above is written in Gherkin. 
+for Cucumber to understand. The scenario above is written in Gherkin.
 
 Gherkin serves multiple purposes:
 
@@ -72,7 +71,7 @@ Gherkin step into runnable programming code to carry out what action should be p
 
 Step definitions make the specification hard-wired to the implementation.
 
-TODO: Illustration (Feature) - (Step Defs) -> (System)
+<!-- TODO: Illustration (Feature) - (Step Defs) -> (System) -->
 
 Step definitions can be written in many programming languages. Here is an example
 using JavaScript:
