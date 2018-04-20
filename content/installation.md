@@ -115,7 +115,7 @@ without resorting to static variables (a common source of flickering Scenarios).
 
 # Javascript
 
-Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works with both Node.js and browsers.
+Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works with both [Node.js](https://nodejs.org/en/) and browsers.
 
 ## With Node.js
 
@@ -169,7 +169,7 @@ cucumber --help
 
 Then, initialize a `features/` directory:
 
-```
+```shell
 cucumber --init
 ```
 
