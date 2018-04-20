@@ -57,16 +57,21 @@ In general, it should be brief and to the point.
 
 * Every page should start with an informational/motivational paragraph
 * Paragraphs should be short enough to be readable, but long enough to develop an idea.
-* Every page should start with a `h1` heading. Sections use `h2`. Subsections use `h3`
+* Every page should start with a `h1` heading. Sections use `h2`. Subsections use `h3`.
 * Break long lines. Insert a new line at around column 80. This is important because review comments can only be added to a line.
 * Write in present tense
-* Use unemotional language, but try to make it a little entertaining (this is hard)
+* Use unemotional language, but try to make it a little entertaining (this is hard!)
 * Write in a platform-neutral way as much as possible
   * Cucumber is implemented in several languages, and the docs should not assume a particular platform
   * Some good examples of cross-platform/language docs are [Stripe](https://stripe.com/docs/api) and [.NET](https://msdn.microsoft.com/en-us/library/system.array(v=vs.110).aspx)
-* Use [codetabs](https://github.com/GitbookIO/plugin-codetabs) for all code examples (except Gherkin)
-  * If you're only familiar with one programming language - just add a single tab - someone
+* Use [code blocks](#language-specific-source-code-and-paragraphs) for all code examples (except Gherkin)
+  * If you're only familiar with one programming language - just add an example for that language - someone
     else will fill the gaps for the other languages!
+  * You can ask for help with the other languages in the help channel for that Slack, or in your GitHub pull request / issue.
+* Use [language blocks](#Language-specific-text-fragments) for text that is only relevant for (a) specific language(s)
+  * If you're only familiar with one programming language - just add text for that language - someone
+    else will fill the gaps for the other languages!
+  * You can ask for help with the other languages in the help channel for that Slack, or in your GitHub pull request / issue.
 * All documents should use [British English](https://en.wikipedia.org/wiki/British_English)
   * Contributions in [American English](https://en.wikipedia.org/wiki/American_English) is fine - editors will do the translation.
 * Use links to external sites sparingly
@@ -167,4 +172,4 @@ a particular programming language:
 
 ## Working locally
 
-For information on how to work locally, please see the README.md in [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io).
+For information on how to work locally, please see the [README.md](https://github.com/cucumber/docs.cucumber.io).
