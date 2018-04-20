@@ -18,11 +18,6 @@ pygmentsUseClasses = true
     identifier = "Java, JavaScript, Ruby and more"
     url = "/installation/"
 [[menu.cucumber]]
-    weight = 30
-    name = "Configuration"
-    identifier = "Make Cucumber work for you"
-    url = "/cucumber/configuration/"
-[[menu.cucumber]]
     weight = 40
     name = "Implementations"
     identifier = "Use Cucumber in the language of your choice"

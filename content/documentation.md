@@ -15,7 +15,7 @@ Or maybe you are looking for a [another language?](/cucumber/implementations/)
 
 # Learn more
 
-If you already using Cucumber, you can lookup [Gherkin syntax](/gherkin/) or [Cucumber Syntax](/cucumber/).
+If you already using Cucumber, you can lookup [Gherkin reference](/gherkin/) or [Cucumber reference](/cucumber/).
 
 Find more information on how to use Cucumber under the **Guides** menu.
 

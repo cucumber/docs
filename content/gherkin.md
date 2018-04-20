@@ -1,6 +1,6 @@
 Gherkin uses a set of special keywords to give structure and meaning to
-executable specifications. Each keyword is translated to many spoken languages,
-and in this reference we'll cover English.
+executable specifications. Each keyword is translated to many spoken languages;
+in this reference we'll use English.
 
 Most lines in a Gherkin document start with one of the [keywords](#keywords).
 
@@ -132,7 +132,7 @@ Then my account should have a balance of £430
 
 ### Given
 
-`Given` steps are used to describe the initial context of the system---the *scene* of the scenario.
+`Given` steps are used to describe the initial context of the system - the *scene* of the scenario.
 It is typically something that happened in the *past*.
 
 When Cucumber executes a `Given` step, it will configure the system to be in a well-defined state,
@@ -190,7 +190,7 @@ While it might be tempting to implement `Then` steps to just look in the databas
 
 ### And, But
 
-If you have several `Given`s, `When`s, or `Then`s, you *could* write:
+If you have several `Given`'s, `When`'s, or `Then`s, you *could* write:
 
 ```gherkin
 Example: Multiple Givens
@@ -260,15 +260,14 @@ For a less explicit alternative to `Background`, check out [tagged hooks](/cucum
 ## Tips for using Background
 
 * Don't use `Background` to set up **complicated state**, unless that state is actually something the client needs to know.
-  * For example, if the user and site names don't matter to the client, use a higher-level step such as 
+  * For example, if the user and site names don't matter to the client, use a higher-level step such as
 `Given I am logged in as a site owner`.
 * Keep your `Background` section **short**.
   * The client needs to actually remember this stuff when reading the scenarios. If the `Background` is more than 4 lines long, consider moving some of the irrelevant details into higher-level steps.
 * Make your `Background` section **vivid**.
   * Use colourful names, and try to tell a story. The human brain keeps track of stories much better than it keeps track of names like `"User A"`, `"User B"`, `"Site 1"`, and so on.
 * Keep your scenarios **short**, and don't have too many.
-
-If the `Background` section has scrolled off the screen, the reader no longer has a full overview of whats happening.
+  * If the `Background` section has scrolled off the screen, the reader no longer has a full overview of whats happening.
 Think about using higher-level steps, or splitting the `*.feature` file.
 
 ## Scenario Outline
@@ -320,7 +319,7 @@ You can also use parameters in [multiline step arguments](#step-arguments).
 # Step Arguments
 
 In some cases you might want to pass more data to a step than fits on a single line.
-For this purpose Gherkin has `Doc Strings` and `Data Tables`:
+For this purpose Gherkin has `Doc Strings` and `Data Tables`.
 
 ## Doc Strings
 
@@ -344,7 +343,7 @@ The indentation inside the triple quotes, however, is significant. Each line of 
 
 ## Data Tables
 
-Data Tables are handy for passing a list of values to a step definition:
+`Data Tables` are handy for passing a list of values to a step definition:
 
 ```gherkin
 Given the following users exist:
@@ -353,7 +352,7 @@ Given the following users exist:
   | Julien | julien@cucumber.io | @jbpros         |
   | Matt   | matt@cucumber.io   | @mattwynne      |
 ```
-Just like Doc Strings, Data Tables will be passed to the step definition as the last argument.
+Just like `Doc Strings`, `Data Tables` will be passed to the step definition as the last argument.
 
 Cucumber provides a rich API for manipulating tables from within step definitions.
 See the [Data Table API reference](https://github.com/cucumber/cucumber/tree/master/datatable) reference for

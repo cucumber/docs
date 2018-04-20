@@ -12,10 +12,11 @@ Ok, now that you know that BDD is about discovery, collaboration and examples
 
 # What is Cucumber?
 
-Cucumber is a tool that supports [BDD](/bdd). 
+Cucumber is a tool that supports [Behaviour-Driven Development(BDD)](/bdd).
 
 Cucumber reads executable specifications written in plain text and and validates that the
 software does what those specifications say. The specifications consists of multiple
+*examples*, or *scenarios*. For example:
 *examples* or scenario, for example:
 
 ```gherkin
@@ -83,5 +84,5 @@ When("{maker} starts a game", function(maker) {
 ```
 
 {{% note "Who should write step definitions?" %}}
-The same people who write Gherkin should be writing step definitions.
+The same people who write Gherkin should be writing step definitions. This is another reason the Gherkin is best written by developers and/or testers.
 {{% /note %}}

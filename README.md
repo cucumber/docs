@@ -44,7 +44,7 @@ The easiest way to contribute content is to add or modify content in the
 [Netlify CMS](https://cucumber.netlify.com/admin).
 
 Alternatively, you can clone this repo and edit Markdown files in a text
-editor on your local machine
+editor on your local machine.
 
 ## Working locally
 
@@ -103,7 +103,7 @@ Whenever you make a change to the content, the server will automatically rebuild
 
     make 
 
-If you are getting old errors, you might need to clean your files
+If you are getting old errors, you might need to clean your files:
 
     make clean
 
@@ -118,7 +118,7 @@ If you make changes to the `sass`, it will be rebuilt if you run the following:
     yarn        # install dependencies
     yarn build  # rebuild cucumber.css
 
-A rebuild of the CSS will trigger a reload of the browser, just like with content.
+A rebuild of the CSS will trigger a reload of the browser, like with changes to the content.
 
 ## Architecture
 
@@ -133,14 +133,11 @@ new commits, either via a `git push`, or by modifying contents in the CMS.
 The [Netlify CMS](https://www.netlifycms.org/) saves contents straight to GitHub
 using the GitHub API.
 
-We might experiment with [other CMS systems](https://headlesscms.org/) if Netlify
-CMS doesn't fit with our workflow.
-
 ## Continuous Deployment
 
 GitHub will notify Netlify for every `git push` thanks to a [webhook](https://github.com/cucumber/docs.cucumber.io/settings/hooks).
 
-Netlify will then build the site
+Netlify will then build the site and
 [deploy](https://app.netlify.com/sites/cucumber/deploys) it if the build is successful.
 
 The build will check for broken links and other problems. Internal and external links are checked by [HTMLProofer](https://github.com/gjtorikian/html-proofer).

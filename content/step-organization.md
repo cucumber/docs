@@ -7,21 +7,15 @@ polyglot:
   - ruby
 ---
 
-How do you name your step definition files? What do you put in each step definition? What *don't* you put in there?
-
-Here are some guidelines that will lead to better scenarios.
-
-# Organizing your step definitions
-A particular source of potential confusion is that the term **step**, when used loosely, has two (closely related but vitally distinct) meanings,
-depending on context.
-
-You can have all of your step definitions in one file, or in multiple files.
-Over time, it will be easiest to split them into meaningful groups in different files.
+You can have all of your step definitions in one file, or in multiple files. When you start with your project, all your step definitions will probably be in one file.
+As your project grows, it will be easiest to split them into meaningful groups in different files.
 This will make your project easier to maintain.
 
+{{% note "How Cucumber finds your features and step definitions" %}}
 Be aware that, regardless of the directory structure employed, Cucumber effectively flattens the `features/` directory tree when running tests.
-By this I mean that anything ending in `.rb` under the start point for a Cucumber Feature run (the default case) or specified with the `-r`
-option is searched for Feature matches.
+This means that anything ending in {{% text "java" %}}`.java`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}}
+under the starting point for a Cucumber run is searched for `Feature` matches.
+This is either the default case or the location specified with the {{% text "java" %}}relevant{{% /text %}}{{% text "javascript" %}}relevant{{% /text %}}{{% text "ruby" %}}`-r`{{% /text %}} option.
 
 # Grouping steps
 
