@@ -26,7 +26,7 @@ Scenario: Finding some cheese
 ```
 
 ```java
-package class.exmple;
+package class.example;
 
 public class ExampleSteps {
 
@@ -93,17 +93,17 @@ require 'selenium-webdriver'
 
 Given(/^I am on the Google search page$/) do
   driver = Selenium::WebDriver.for :firefox
-  driver.get "http:\\google.com"
+  driver.get "http://google.com"
 end
 
 When(/^I search for "([^"]*)"$/) do
-  element = driver.find_element(:name => "q")
+  element = driver.find_element(name: "q")
   element.send_keys "Cheese!"
   element.submit
 end
 
 Then(/^the page title should start with "([^"]*)"$/) do
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  wait = Selenium::WebDriver::Wait.new(timeout: 10)
   wait.until { driver.title.downcase.start_with? "cheese!" }
   puts "Page title is #{driver.title}"
     browser.close
@@ -215,9 +215,9 @@ require "watir"
 describe "google.com" do
   let(:browser) { @browser ||= Watir::Browser.new :firefox }
   before { browser.goto "http://google.com" }
-  browser.text_field(:name => "q").set "watir"
+  browser.text_field(name: "q").set "watir"
   browser.button.click
-  browser.div(:id => "resultStats").wait_until_present
+  browser.div(id: "resultStats").wait_until_present
   browser.title.should == "watir - Google Search"
   after { browser.close }
 end
@@ -240,7 +240,7 @@ require "rspec/expectations"
 Given(/^I have entered "([^"]*)" into the query$/) do |term|
   @browser ||= Watir::Browser.new :firefox
   @browser.goto "google.com"
-  @browser.text_field(:name => "q").set term
+  @browser.text_field(name: "q").set term
 end
 
 When(/^I click "([^"]*)"$/) do
@@ -248,7 +248,7 @@ When(/^I click "([^"]*)"$/) do
 end
 
 Then(/^I should see some results$/) do
-  @browser.div(:id => "resultStats").wait_until_present
+  @browser.div(id: "resultStats").wait_until_present
   @browser.close
 end
 ```
