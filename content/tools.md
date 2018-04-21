@@ -1,5 +1,10 @@
 ---
 title: Tools
+polyglot:
+polyglot:
+  - java
+  - javascript
+  - ruby
 ---
 
 Using Cucumber in your project is easier with the right tools.
@@ -12,17 +17,19 @@ Some IDEs also have advanced support for Cucumber, such as running Cucumber
 from within the IDE, displaying results, navigating between Gherkin steps and
 step definitions and so on.
 
-## Java IDEs
+{{% block "java" %}}
 
-### IntelliJ IDEA
+**IntelliJ IDEA**
 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) has the [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
 
 You can find more information on using Cucumber with IntelliJ IDEA in the [IntelliJ IDEA Cucumber help pages](https://www.jetbrains.com/idea/help/cucumber.html)
 
-### Eclipse
+**Eclipse**
 
 - [Eclipse](https://www.eclipse.org/) has the [Cucumber Eclipse plugin](https://cucumber.github.io/cucumber-eclipse/)
+
+{{% /block %}}
 
 ## Editors
 
@@ -45,10 +52,10 @@ You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstud
 # Build Tools
 You can run Cucumber using build tools, rather than from the command line.
 
-## Java build tools
-The most widely used build tools for Java are [Maven](#maven) and [Gradle](#gradle).
+{{% block "java" %}}
+The most widely used build tools for Java are Maven and Gradle.
 
-### Maven
+**Maven**
 
 To run Cucumber with [Maven](https://maven.apache.org/), make sure that:
 
@@ -77,7 +84,7 @@ Steps:
        --plugin pretty path\to\featurefiles"
     ```
 
-### Gradle
+**Gradle**
 
 To run Cucumber with [Gradle](https://gradle.org/), make sure that:
 
@@ -118,13 +125,15 @@ task cucumber() {
 gradle cucumber
 ```
 
-## Ruby build tools
+{{% /block %}}
+
+{{% block "ruby" %}}
 
 Cucumber can be run in several ways.
 Be aware that `rake cucumber`, `cucumber features`, and `autotest` with `ENV AUTOFEATURE=true` do not necessarily produce
 the same results given the same features and step definitions.
 
-### Rake
+**Rake**
 
 Running `rake cucumber` from the command line provides the simplest method to run Cucumber tests.
 
@@ -144,7 +153,7 @@ This will run all the Features with the pretty formatter.
 
 Note, how we use the `cucumber_opts` accessor to define our arguments passed to Cucumber.
 
-If you are using [Ruby on Rails](#ruby-on-rails), this task is defined for you already.
+If you are using Ruby on Rails, this task is defined for you already.
 
 Now you can run Cucumber with Rake:
 
@@ -177,7 +186,7 @@ Feature: .  .  .
 Then running the command `rake cucumber:wip` will run the Steps contained inside Scenario B only,
 while running `rake cucumber:ok` will run the Steps within all Scenarios other than B.
 
-#### Using Profiles in Rake Tasks
+**Using Profiles in Rake Tasks**
 
 For complex Feature runs that are tested often, it is nice to save the command line arguments as [Cucumber profiles](/cucumber/configuration/#defining-profiles).
 
@@ -199,7 +208,7 @@ namespace :features do
 end
 ```
 
-#### Guarding Your Production Boxes From Cucumber
+**Guarding Your production machines From Cucumber**
 
 Since Rake tasks are used on development and productions systems, it is generally a good idea to place a guard around your Cucumber task so your productions boxes don't need to install Cucumber.
 
@@ -225,10 +234,12 @@ rescue LoadError
 end
 ```
 
-### Ruby-on-Rails
+**Ruby-on-Rails**
 
-#### Rails 3.x and above
+**Rails 3.x and above**
 
 Go to Cucumber-Rails' [README](https://github.com/cucumber/cucumber-rails/blob/master/README.md) for installation instructions.
 
 As of Cucumber-Rails version 0.5.0 and above, Cucumber-Rails **only** supports Rails 3.x and above (Rails 2 is **not** supported).
+
+{{% /block %}}
