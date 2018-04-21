@@ -1,24 +1,16 @@
 # Cucumber Documentation
 
 This repository contains the source code for the Cucumber Documentation website.
-It is currently live at [https://cucumber.netlify.com](https://cucumber.netlify.com),
-and the plan is to move it to [https://docs.cucumber.io](https://docs.cucumber.io) once
-it is good enough to replace the existing documentation.
+It is currently live at [https://docs.cucumber.io](https://docs.cucumber.io).
 
 Please make ALL contributions to the documentation in [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io).
 
-## Current status
-We are working to add and update all of the old documentation (see below) to this repo.
-
-All *relevant* documentation from the old documentation has been added to this project.
+## Old documentation
+All *relevant* documentation from the old documentation has been added to this project and updated where needed.
 Some files have been deleted; this does not necessarily mean that those files should not exist,
 just that there was not enough info there to justify leaving them.
 
-**This work is currently being done and has been merged to master**.
-
-## Old documentation
-
-For various reasons, old Cucumber documentation is scattered around different places:
+For various reasons, old Cucumber documentation was scattered around different places:
 
 * 2008 onwards: [Cucumber wiki (primarily Ruby)](https://github.com/cucumber/cucumber/wiki)
 * 2008 onwards: Misc README files for different implementations:
@@ -33,9 +25,8 @@ For various reasons, old Cucumber documentation is scattered around different pl
   * [source](https://github.com/cucumber/cucumber)
   * See [SUMMARY.md](https://github.com/cucumber/cucumber/blob/master/SUMMARY.md) for the outline
 
-The goal is to move the documentation to this repo.
-
-When the new website is ready to go live, we should replace contents on old pages
+## Current status
+With the new website being live, we're working on replacing the contents on old pages
 with a link and/or redirect to the new location, so that external links to the old documentation remain useful.
 
 ## Contributing Content
