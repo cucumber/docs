@@ -112,11 +112,11 @@ end
 
 More information on [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/).
 
-{{% text "java" %}}
-
 # Browser Automation Tools for Java
 
 ## Serenity BDD
+
+{{% text "java" %}}
 
 Serenity BDD is an open source reporting library that helps you write better
 structured, more maintainable automated acceptance criteria. Serenity also produces
@@ -193,11 +193,11 @@ More information on [Serenity](http://serenity-bdd.info).
 
 {{% /text %}}
 
-{{% text "ruby" %}}
-
 # Browser Automation Tools for Ruby
 
 ## Watir
+
+{{% text "ruby" %}}
 
 Watir (pronounced _water_), is an open-source (BSD), family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
 
@@ -253,9 +253,13 @@ Then(/^I should see some results$/) do
 end
 ```
 
+{{% /text %}}
+
 More information on [Watir](http://watir.com).
 
 ## Capybara
+
+{{% text "ruby" %}}
 
 Cucumber-Rails is pre-configured with support for view integration testing using [Capybara](https://github.com/jnicklas/capybara)
 (`script/generate cucumber --capybara`).
@@ -269,6 +273,8 @@ This behaviour can be overridden in `./features/support/env.rb`.
 
 More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
+{{% /text %}}
+
 # Tips and Tricks
 
 ## Multiple Browsers
@@ -281,8 +287,6 @@ Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: browser)
 end
 ```
-
-{{% /text %}}
 
 ```java
 import org.openqa.selenium.WebDriver;
@@ -321,10 +325,8 @@ If you are using Serenity, simply pass the `driver` system property (no extra co
 ```
 mvn test -Ddriver=chrome
 ```
-
+{{% /text %}}
 ## Example Projects
 
 - [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
 - [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)
-
-{{% /text %}}
