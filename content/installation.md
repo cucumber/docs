@@ -173,17 +173,19 @@ Then, initialize a `features/` directory:
 cucumber --init
 ```
 
-[Bundler](http://gembundler.com/) is a utility gem that manages project specific RubyGem dependencies such that each
-Rails project is unaffected by the gem requirements of another.
-If you use Bundler to support multiple gem versions in multiple Rails projects on a single development host then you must
-run Cucumber using the preface `bundle exec`. For example: `bundle exec cucumber -pnone features`.
+[Bundler](http://gembundler.com/) is a utility gem that manages project
+specific RubyGem dependencies such that each Rails project is unaffected by
+the gem requirements of another.  If you use Bundler to support multiple gem
+versions in multiple Rails projects on a single development host then you must
+run Cucumber using the preface `bundle exec`. For example: `bundle exec
+cucumber -pnone features`.
 
 ## With Ruby on Rails
 
-[Cucumber-Rails](https://github.com/cucumber/cucumber-rails) is a generator that
-generates and modifies files in a Rails project so it can be used with Cucumber.
+[Cucumber-Rails](https://github.com/cucumber/cucumber-rails) is a gem that Rails projects can  use to install cucumber and create its configuration.
 
-Add `cucumber-rails` to your `Gemfile`:
+Add `cucumber-rails` to your `Gemfile`: (note: you do not need to add
+cucumber)
 
 ```ruby
 group :test do
@@ -211,8 +213,9 @@ Run the generator:
 rails generate cucumber:install
 ```
 
-Cucumber-Rails will detect whether the RSpec gems are installed. If so, then the rails generator builds the environment files to suit.
-If not, it ignores RSpec and configures for test-unit instead.
+Cucumber-Rails will detect whether the RSpec gems are installed. If so, then
+the rails generator builds the environment files to suit.  If not, it ignores
+RSpec and configures for test-unit instead.
 
 # Cucumber versioning
 
