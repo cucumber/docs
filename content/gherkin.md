@@ -60,7 +60,8 @@ The first primary keyword in a Gherkin document must always be `Feature`, follow
 by a `:` and a short text that describes the feature.
 
 You can add free-form text underneath `Feature` to add more description.
-These description lines are ignored by Cucumber:
+
+These description lines are ignored by Cucumber at runtime, but are available for reporting (They are included by default in html reports).
 
 ```gherkin
 Feature: Guess the word
@@ -72,11 +73,11 @@ Feature: Guess the word
   Example: Maker starts a game
 ```
 
-The name and the description have no special meaning to Cucumber. Their purpose is to provide
+The name and the Optional description have no special meaning to Cucumber. Their purpose is to provide
 a place for you to document important aspects of the feature, such as a brief explanation
 and a list of business rules (general acceptance criteria).
 
-The free format description ends when the first scenario starts.
+The free format description for `Feature` ends when you start a line with the Keyword `Scenario` or `Scenario Outline`.
 
 You can place [tags](/cucumber/#tags) above `Feature` to group related features,
 independent of your file and directory structure.
@@ -84,7 +85,7 @@ independent of your file and directory structure.
 ## Descriptions
 
 Free-form descriptions (as described above for `Feature`) can also be placed underneath
-`Example`, `Background`, and `Combinations`.
+`Example`, `Background`, `Scenario` and `Scenario Outline`.
 
 You can write anything you like, as long as no line starts with a keyword.
 
@@ -138,7 +139,7 @@ It is typically something that happened in the *past*.
 When Cucumber executes a `Given` step, it will configure the system to be in a well-defined state,
 such as creating and configuring objects or adding data to a test database.
 
-The purpose of `Given`'s is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` steps).
+The purpose of `Given` steps is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` steps).
 Avoid talking about user interaction in `Given`'s. If you were creating use cases, `Given`'s would be your preconditions.
 
 It's okay to have several `Given` steps (just use `And` or `But` for number 2 and upwards to make it more readable).
@@ -178,7 +179,7 @@ The [step definition](/cucumber/#step-definitions) of a `Then` step should use a
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
-The observations should be on *observable* output. That is, something that comes *out* of the system (report, user interface, message), and not something deeply buried inside it (like a database).
+An observation _should_ be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not something deeply buried inside it (like a database).
 
 Examples:
 
@@ -186,7 +187,9 @@ Examples:
 - Receive an invitation
 - Card should be swallowed
 
-While it might be tempting to implement `Then` steps to just look in the database - resist the temptation! You should only verify outcome that is observable for the user (or external system), and databases usually are not.
+While it might be tempting to implement `Then` steps to just look in the database - resist the temptation!
+
+You should only verify outcome that is observable for the user (or external system), and databases usually are not.
 
 ### And, But
 
@@ -226,6 +229,8 @@ more `Given` steps.
 
 A `Background` is run before *each* scenario, but after any [Before hooks](/cucumber/#hooks). In your feature file, put the `Background` before the first `Scenario`.
 
+You can only have one set of `Background` steps per feature. If you need different `Background` steps for different features, then it's indicative of you needing to isolate your test cases into 2 or more features.
+
 For example:
 
 ```gherkin
@@ -259,7 +264,7 @@ For a less explicit alternative to `Background`, check out [tagged hooks](/cucum
 
 ## Tips for using Background
 
-* Don't use `Background` to set up **complicated state**, unless that state is actually something the client needs to know.
+* Don't use `Background` to set up a **complicated state**, unless that state is actually something the client needs to know.
   * For example, if the user and site names don't matter to the client, use a higher-level step such as
 `Given I am logged in as a site owner`.
 * Keep your `Background` section **short**.
@@ -306,7 +311,7 @@ Scenario Outline: eating
     |    20 |   5 |   15 |
 ```
 
-When a `Scenario Outline` is followed by a `Examples` section, its steps are interpreted as a template
+A `Scenario Outline` must contain an `Examples` section. Its steps are interpreted as a template
 which is never directly run. Instead, the `Scenario Outline` is run *once for each row* in
 the `Examples` section beneath it (not counting the first header row).
 
@@ -373,7 +378,7 @@ Here is a Gherkin scenario written in Norwegian:
 Funksjonalitet: Gjett et ord
 
   Eksempel: Ordmaker starter et spill
-    Nor Ordmaker starter et spill
+    Når Ordmaker starter et spill
     Så må Ordmaker vente på at Gjetter blir med
 
   Example: Gjetter blir med
