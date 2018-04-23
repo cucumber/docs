@@ -28,7 +28,7 @@ it on your machine.
 
 Build and serve the website:
 
-    ./docker_shell hugo serve
+    ./docker_shell.sh hugo serve
 
 Open a browser:
 
@@ -42,8 +42,8 @@ Try editing one of the pages under `content` and see for yourself!
 
 When you are done editing, build the site and check links:
 
-    ./docker_shell make clean
-    ./docker_shell make
+    ./docker_shell.sh make clean
+    ./docker_shell.sh make
 
 ### Modify theme
 
