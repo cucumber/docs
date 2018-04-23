@@ -461,7 +461,7 @@ end
 Copy each of the three snippets for the undefined steps and paste them into
 {{% text "java" %}}`src/test/java/hellocucumber/Stepdefs.java`{{% /text %}}
 {{% text "javascript" %}}`features/step_definitions/stepdefs.js`{{% /text %}}
-{{% text "ruby" %}}`features/step_definitions/stepdefs.js`{{% /text %}}.
+{{% text "ruby" %}}`features/step_definitions/stepdefs.rb`{{% /text %}}.
 
 # See scenario reported as pending
 
