@@ -38,10 +38,18 @@ body
   overflow-y: auto
   flex-direction: column
 
+.is-huge
+  height: 128px
+  max-height: 128px
+  max-width: 128px
+  min-height: 128px
+  min-width: 128px
+  width: 128px
+
 // Override Bulma's minireset.sass so the TOC is indented
 li
   padding-left: 8px
-  
+
 .content
   // Override Bulma's content.sass style to ensure tabs render properly
   li + li
@@ -57,4 +65,3 @@ pre
 
 .cucumber-logo-text
   width: 50%
-

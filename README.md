@@ -47,17 +47,7 @@ When you are done editing, build the site and check links:
 
 ### Modify theme
 
-
-Edit files under `themes/cucumber-hugo`. Changes to the CSS should be made in
-`themes/cucumber-hugo/static/css/cucumber.sass`.
-
-If you make changes to the `sass`, it will be rebuilt if you run the following:
-
-    cd themes/cucumber-hugo
-    yarn        # install dependencies
-    yarn build  # rebuild cucumber.css
-
-A rebuild of the CSS will trigger a reload of the browser, like with changes to the content.
+See the [theme README][themes/cucumber-hugo/README.md]
 
 ## Architecture
 
