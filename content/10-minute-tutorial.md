@@ -179,6 +179,8 @@ cd hellocucumber
 Create a `Gemfile` with the following contents:
 
 ```ruby
+source "https://rubygems.org"
+
 group :test do
   gem 'cucumber', '~> {{% version "cucumberruby" %}}'
   gem 'rspec', '~> {{% version "rspec" %}}'
