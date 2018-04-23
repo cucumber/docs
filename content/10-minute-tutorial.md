@@ -278,8 +278,8 @@ the production code emerges, Scenarios take on a role as *living documentation* 
 *automated tests*.
 
 {{% tip "Example Mapping"%}}
-Try running an [Example Mapping](/example-mapping/) workshop in your team to design examples
-together.
+Try running an [Example Mapping](/example-mapping/) workshop in your team to
+design examples together.
 {{% /tip %}}
 
 In Cucumber, an example is called a [Scenario](/gherkin/#example).
@@ -313,11 +313,12 @@ It's a good idea to use a name similar to the file name.
 The second line is a brief description of the feature. Cucumber does not
 execute this line, it's just documentation.
 
-The fourth line, `Scenario: Sunday is not Friday` is a [Scenario](/gherkin#example), which
-is a *concrete example* illustrating how the software should behave.
+The fourth line, `Scenario: Sunday is not Friday` is a
+[Scenario](/gherkin#example), which is a *concrete example* illustrating how
+the software should behave.
 
-The last three lines starting with `Given`, `When` and `Then` are the [steps](/gherkin#example)
-of our scenario. This is what Cucumber will execute.
+The last three lines starting with `Given`, `When` and `Then` are the
+[steps](/gherkin#example) of our scenario. This is what Cucumber will execute.
 
 # See Scenario reported as undefined
 
@@ -343,8 +344,9 @@ cucumber
 ```
 {{% /block %}}
 
-Cucumber is telling us we have one `undefined` scenario and three `undefined` steps.
-It's also suggesting some snippets of code that we can use to **define** these steps:
+Cucumber is telling us we have one `undefined` scenario and three `undefined`
+steps.  It's also suggesting some snippets of code that we can use to
+**define** these steps:
 
 {{% block "java" %}}
 ```shell
