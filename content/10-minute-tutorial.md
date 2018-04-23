@@ -615,8 +615,11 @@ Then('I should be told {string}', function (expectedAnswer) {
 
 {{% block "ruby" %}}
 ```ruby
-def is_it_friday?(day)
+module FridayStepHelper
+  def is_it_friday?(day)
+  end
 end
+World FridayStepHelper
 
 Given("today is Sunday") do
   @today = 'Sunday'
@@ -626,9 +629,10 @@ When("I ask whether is's Friday yet") do
   @actual_answer = is_it_friday?(@today)
 end
 
-Then("I should be told {string}") do |expected_answer|
+Then("I should be told {string}§:w") do |expected_answer|
   expect(@actual_answer).to eq(expected_answer)
 end
+
 ```
 {{% /block %}}
 
