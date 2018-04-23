@@ -28,7 +28,7 @@ it on your machine.
 
 Build and serve the website:
 
-    ./docker_shell.sh hugo serve
+    ./docker_shell.sh
 
 Open a browser:
 
