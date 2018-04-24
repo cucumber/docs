@@ -7,41 +7,6 @@ pygmentsUseClassic = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
-[[menu.cucumber]]
-    weight = 10
-    name = "Introduction"
-    identifier = "New to Cucumber? Start here!"
-    url = "/overview/"
-[[menu.cucumber]]
-    weight = 20
-    name = "Installation"
-    identifier = "Java, JavaScript, Ruby and more"
-    url = "/installation/"
-[[menu.cucumber]]
-    weight = 40
-    name = "Implementations"
-    identifier = "Use Cucumber in the language of your choice"
-    url = "/cucumber/implementations/"
-[[menu.cucumber]]
-    weight = 50
-    name = "Tutorial"
-    identifier = "Get started in just 10 minutes"
-    url = "/10-minute-tutorial/"
-
-[[menu.cucumber]]
-    weight = 70
-    name = "---"
-[[menu.cucumber]]
-    weight = 90
-    name = "Gherkin Reference"
-    identifier = "Cucumber syntax: Given, When, Then"
-    url = "/gherkin/"
-[[menu.cucumber]]
-    weight = 100
-    name = "Cucumber Reference"
-    identifier = "Using Cucumber: Step Definitions, Hooks, Tags"
-    url = "/cucumber/"
-
 [[menu.guides]]
     weight = 01
     name = "Tools"

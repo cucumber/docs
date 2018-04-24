@@ -1,3 +1,9 @@
+---
+title: Gherkin Reference
+subtitle: "Cucumber syntax: Given, When, Then"
+menu:
+  cucumber:
+---
 Gherkin uses a set of special keywords to give structure and meaning to
 executable specifications. Each keyword is translated to many spoken languages;
 in this reference we'll use English.
@@ -23,7 +29,7 @@ Feature: Guess the word
     Given the Maker has started a game with the word "silky"
     When the Breaker joins the Maker's game
     Then the Breaker must guess a word with 5 characters
-``` 
+```
 
 The trailing portion (after the keyword) of each step is matched to
 a code block, called a [step definition](/cucumber/#step-definitions).
@@ -335,7 +341,7 @@ Given a blog post named "Random" with Markdown body
   consectetur adipiscing elit.
   """
 ```
-In your step definition, there’s no need to find this text and match it in your pattern. 
+In your step definition, there’s no need to find this text and match it in your pattern.
 It will automatically be passed as the last argument in the step definition.
 
 Indentation of the opening `"""` is unimportant, although common practice is two spaces in from the enclosing step.
@@ -382,8 +388,8 @@ Funksjonalitet: Gjett et ord
     Så må Gjetter gjette et ord på 5 bokstaver
 ```
 
-A `# language:` header on the first line of a feature file tells Cucumber what 
-spoken language to use - for example `# language: fr` for French. 
+A `# language:` header on the first line of a feature file tells Cucumber what
+spoken language to use - for example `# language: fr` for French.
 If you omit this header, Cucumber will default to English (`en`).
 
 Some Cucumber implementations also let you set the default language in the

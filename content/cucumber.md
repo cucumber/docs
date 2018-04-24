@@ -1,8 +1,8 @@
 ---
-source: https://github.com/cucumber/cucumber/wiki/Step-Definitions/
-source: https://github.com/cucumber/cucumber/wiki/Hooks/
-source: https://github.com/cucumber/cucumber/wiki/Tags/
 title: Cucumber Reference
+subtitle: "Using Cucumber: Step Definitions, Hooks, Tags"
+menu:
+  cucumber:
 polyglot:
   - java
   - javascript
@@ -777,7 +777,7 @@ unspecified scenarios to manageable levels. Those following [Kanban](http://en.w
 
 # Running Cucumber
 
-Cucumber is a 
+Cucumber is a
 {{% text "java" %}}JUnit extension.{{% /text %}}
 {{% text "javascript,ruby" %}}command line tool.{{% /text %}}
 It is launched by running

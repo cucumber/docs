@@ -1,5 +1,8 @@
 ---
 title: Introduction
+subtitle: New to Cucumber? Start here!
+menu:
+  cucumber:
 ---
 
 {{% note "Before you get started" %}}
@@ -67,7 +70,7 @@ and **approve** the Gherkin documents after a developer or tester has translated
 
 # Step Definitions
 
-In addition to [feature files](/gherkin/#feature), Cucumber needs a set of [step definitions](/cucumber/#step-definitions). Step definitions map (or "glue") each 
+In addition to [feature files](/gherkin/#feature), Cucumber needs a set of [step definitions](/cucumber/#step-definitions). Step definitions map (or "glue") each
 Gherkin step into runnable programming code to carry out what action should be performed by the step.
 
 Step definitions make the specification hard-wired to the implementation.
