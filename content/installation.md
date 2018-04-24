@@ -1,5 +1,8 @@
 ---
 title: Installation
+subtitle: Java, JavaScript, Ruby and more
+menu:
+  cucumber:
 ---
 
 Cucumber is available for most mainstream programming languages.

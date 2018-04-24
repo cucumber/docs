@@ -1,8 +1,8 @@
 ---
-menu:
-- implementations
-nav: docs
 title: Cucumber implementations
+subtitle: Use Cucumber in the language of your choice
+menu:
+  cucumber:
 ---
 
 # Cucumber implementations

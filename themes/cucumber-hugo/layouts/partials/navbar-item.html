@@ -10,8 +10,13 @@
         <a class="navbar-item" href="{{.URL}}">
           <p>
             <strong>{{.Name}}</strong>
-            <br>
-            <small>{{.Identifier}}</small>
+            {{ if .Page }}
+              <br>
+              <small>{{.Page.Params.subtitle}}</small>
+            {{ else }}
+              <br>
+              <small>{{.Identifier}}</small>
+            {{ end }}
           </p>
         </a>
       {{ end }}
