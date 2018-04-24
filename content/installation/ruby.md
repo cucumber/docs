@@ -1,3 +1,7 @@
+---
+title: Cucumber.rb installation
+---
+
 Cucumber for Ruby is a Ruby gem. Depending on your project structure there are several ways to install it:
 
 # Rubygems

@@ -11,7 +11,7 @@ These implementations are supported by the Cucumber Core Team, and documented on
 Their source code is hosted under the [cucumber](https://github.com/cucumber) GitHub organisation.
 
 <div class="columns">
-  {{% install-button devicon="devicon-java-plain-wordmark" href="java" text="Cucumber.java" %}}
+  {{% install-button devicon="devicon-java-plain-wordmark" href="java" text="Cucumber.jvm" %}}
   {{% install-button devicon="devicon-javascript-plain" href="javascript" text="Cucumber.js" %}}
   {{% install-button devicon="devicon-ruby-plain-wordmark" href="ruby" text="Cucumber.rb" %}}
   {{% install-button devicon="devicon-cplusplus-line" href="https://github.com/cucumber/cucumber-cpp" text="Cucumber.cpp" %}}

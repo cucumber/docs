@@ -1,3 +1,7 @@
+---
+title: Cucumber.jvm installation
+---
+
 Cucumber-JVM is published in the central Maven repository.
 You can install it by adding dependencies to your project.
 

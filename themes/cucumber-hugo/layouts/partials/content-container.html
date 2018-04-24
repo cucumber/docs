@@ -5,12 +5,20 @@
   <div class="column">
     <div style="height: auto">
       <h1 class="title is-1">{{ .Title }}</h1>
+      <h2>{{ .Page.File.Path }}</h2>
       {{ if .Page.Params.polyglot }}
         {{ partial "language-tabs.html" . }}
       {{ end }}
       <div class="content">
         {{ .Content }}
       </div>
+    </div>
+    <hr>
+    <div>
+      <p>
+        You can help us improve this documentation.
+        <a href="https://github.com/cucumber/docs.cucumber.io/edit/master/content/{{ .Page.File.Path }}">Edit this page</a>.
+      </p>
     </div>
   </div>
 </div>
