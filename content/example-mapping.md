@@ -1,6 +1,9 @@
 ---
 title: Example Mapping
-description: Breaking down user stories into examples
+subtitle: Design examples, break down requirements
+menu:
+  bdd:
+    weight: 20
 ---
 
 Before you pull a user story into development, it’s crucial to have a conversation to clarify and confirm the acceptance criteria.

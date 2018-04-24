@@ -1,8 +1,12 @@
 ---
-title: Behaviour-Driven Development
+title: BDD Overview
+subtitle: Basic principles and practices of BDD
+menu:
+  bdd:
+    weight: 1
 ---
 
-Behaviour-Driven Development (BDD) is a set of practices that aim to reduce 
+Behaviour-Driven Development (BDD) is a set of practices that aim to reduce
 some common wasteful activities in software development:
 
 * Rework caused by misunderstood or vague requirements
@@ -18,7 +22,7 @@ Examples describe how the software is *intended to behave*, often illustrating a
 > Liz should be asked to guess again when she guesses "joke"
 
 This example is from a word guessing game. It's illustrating a rule
-stipulating that a guess must be 5 letters. 
+stipulating that a guess must be 5 letters.
 {{% /note %}}
 
 BDD can be split in two parts - *Deliberate Discovery* and *Test-Driven Development*.
@@ -32,7 +36,7 @@ to solve.
 
 > Ignorance is the single greatest impediment to throughput. - [Dan North](https://dannorth.net/2010/08/30/introducing-deliberate-discovery/)
 
-Teams that *deliberately* seek to discover what they are ignorant about *before* 
+Teams that *deliberately* seek to discover what they are ignorant about *before*
 development starts are more productive, because there is less rework.
 
 The most effective way to do this is through conversation and collaboration between
@@ -65,8 +69,8 @@ Test-Driven Development (TDD) is a software development technique where automate
 ![Red-Green-Refactor diagram](/img/TDD-cycle.png)
 
 TDD can be practiced at different levels of granularity, from acceptance tests
-to unit tests. The BDD flavour of TDD uses natural language to describe tests. 
-They can be understood by non-programmers and are often based on examples created 
+to unit tests. The BDD flavour of TDD uses natural language to describe tests.
+They can be understood by non-programmers and are often based on examples created
 collaboratively using Example Mapping.
 
 [Gherkin](/gherkin) is a simple syntax for such natural language tests, and
