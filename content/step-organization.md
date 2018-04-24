@@ -1,6 +1,9 @@
 ---
-source: https://github.com/cucumber/cucumber/wiki/Step-Organization/
-title: Step organization
+title: Step Organization
+subtitle: "How to organize your step"
+menu:
+  guides:
+    weight: 10
 polyglot:
   - java
   - javascript

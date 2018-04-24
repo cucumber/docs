@@ -7,53 +7,6 @@ pygmentsUseClassic = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
-[[menu.guides]]
-    weight = 01
-    name = "Tools"
-    identifier = "Editors, IDEs and build tools"
-    url = "/tools/"
-[[menu.guides]]
-    weight = 05
-    name = "Checking Assertions"
-    identifier = "How to determine success or failure"
-    url = "/cucumber/checking-assertions/"
-[[menu.guides]]
-    weight = 10
-    name = "Step Organization"
-    identifier = "How to organize your steps"
-    url = "/step-organization/"
-[[menu.guides]]
-    weight = 20
-    name = "State"
-    identifier = "Sharing state, isolated state"
-    url = "/cucumber/state/"
-[[menu.guides]]
-    weight = 30
-    name = "Browser Automation"
-    identifier = "Selenium WebDriver, Capybara and more"
-    url = "/browser-automation/"
-[[menu.guides]]
-    weight = 40
-    name = "Testable Architecture"
-    identifier = "How to have fast and reliable tests"
-    url = "/testable-architecture/"
-[[menu.guides]]
-    weight = 50
-    name = "Mocking and Stubbing"
-    identifier = "Using mocking and stubbing with Cucumber"
-    url = "/cucumber/mocking-and-stubbing-with-cucumber/"
-[[menu.guides]]
-    weight = 60
-    name = "Continuous Integration"
-    identifier = "Integration with Jenkins, Ant"
-    url = "/cucumber/continuous-integration/"
-[[menu.guides]]
-    weight = 70
-    name = "Anti-patterns"
-    identifier = "Several anti-patterns and how to avoid them"
-    url = "/anti-patterns/"
-
-
 [[menu.bdd]]
     weight = 1
     name = "Overview"
