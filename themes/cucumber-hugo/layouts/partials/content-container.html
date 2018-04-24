@@ -5,7 +5,6 @@
   <div class="column">
     <div style="height: auto">
       <h1 class="title is-1">{{ .Title }}</h1>
-      <h2>{{ .Page.File.Path }}</h2>
       {{ if .Page.Params.polyglot }}
         {{ partial "language-tabs.html" . }}
       {{ end }}
