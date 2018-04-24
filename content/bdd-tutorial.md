@@ -1,5 +1,9 @@
 ---
 title: BDD Tutorial
+subtitle: Build an application, guided by Cucumber
+menu:
+  bdd:
+    weight: 10
 ---
 Behaviour-Driven Development (BDD) is a **collaborative** approach to software development that bridges the communication gap between business and IT. BDD helps teams communicate requirements with more precision, discover defects early and produce software that remains maintainable over time.
 
@@ -31,7 +35,7 @@ This technique is called Outside-in because programmers typically start with the
 
 Andrew Premdas, one of the first adopters of Cucumber, says it well:
 
-    Your cucumber features should drive your implementation, not reflect it.
+> Your cucumber features should drive your implementation, not reflect it.
 
 This means Cucumber features should be written before the code implementing the feature.
 

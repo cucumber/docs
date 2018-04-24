@@ -1,8 +1,9 @@
 ---
-menu:
-- about
-source: https://github.com/cucumber/cucumber/wiki/Contributing/
 title: Contributing
+subtitle: Help us make Cucumber better
+menu:
+  support:
+    weight: 20
 polyglot:
   - java
   - javascript
