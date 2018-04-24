@@ -21,13 +21,13 @@ If you are using Maven, add the following to your `pom.xml`:
 <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>4.12</version>
+    <version>{{% version "junit" %}}</version>
     <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -65,13 +65,13 @@ If you are using Maven, add the following to your `pom.xml`:
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>{{ site.versions.testng }}</version>
+    <version>{{% version "testng" %}}</version>
     <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-testng</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
