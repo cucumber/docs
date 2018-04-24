@@ -30,7 +30,7 @@ Build and serve the website:
 
     ./docker_shell.sh
 
-or you can just use docker-compose to bring up the container:
+or you can use docker-compose to bring up the container:
 
     docker-compose up
 
