@@ -1,9 +1,9 @@
 <div class="columns section">
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter is-hidden-mobile">
     {{.TableOfContents}}
   </div>
   <div class="column">
-    <div style="height: auto">
+    <div>
       <h1 class="title is-1">{{ .Title }}</h1>
       {{ if .Page.Params.polyglot }}
         {{ partial "language-tabs.html" . }}
@@ -11,6 +11,13 @@
       <div class="content">
         {{ .Content }}
       </div>
+    </div>
+    <hr>
+    <div>
+      <p>
+        You can help us improve this documentation.
+        <a href="https://github.com/cucumber/docs.cucumber.io/edit/master/content/{{ .Page.File.Path }}">Edit this page</a>.
+      </p>
     </div>
   </div>
 </div>
