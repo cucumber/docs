@@ -29,7 +29,7 @@ State can make your steps more tightly coupled and harder to reuse.
 
 In Ruby, Cucumber runs scenarios in a `World`. By default, the `World` is an instance of `Object`.
 
-All [step definitions](/cucumber/#step-definitions) will run in the context of the current `World` instance; a new instance
+All [step definitions](/cucumber/api/#step-definitions) will run in the context of the current `World` instance; a new instance
 is created for each scenario. This means that `self` in a step definition block will be the `World` instance. Any `@instance_variable`
 instantiated in a step definition will be assigned to the `World`, and can be accessed from other step definitions.
 
@@ -103,7 +103,7 @@ Cucumber-js also uses a `World` as an isolated context for each scenario. You ca
 
 ## Dependency Injection
 If your programming language is Java, you will be writing glue code
-([step definitions](/cucumber/#step-definitions) and [hooks](/cucumber/#hooks)) in plain old Java classes.
+([step definitions](/cucumber/api/#step-definitions) and [hooks](/cucumber/api/#hooks)) in plain old Java classes.
 
 Cucumber will create a new instance of each of your glue code classes before each scenario.
 
@@ -248,9 +248,9 @@ There are several options to remove state from your database, to prevent leaking
 ## The Before Hook Approach
 
 The recommended approach to clean a database between scenarios is to use a
-`Before` [hook](/cucumber/#hooks) to remove all data *before* a scenario starts.
+`Before` [hook](/cucumber/api/#hooks) to remove all data *before* a scenario starts.
 
-This is usually better than using an `After` [hook](/cucumber/#hooks), as it allows
+This is usually better than using an `After` [hook](/cucumber/api/#hooks), as it allows
 you to perform a post-mortem inspection of the database if a scenario fails.
 
 An alternative approach is to use database transactions.
@@ -263,11 +263,11 @@ This might lead to faster scenarios, but it comes at a cost.
 You won't be able to perform a post-mortem, and you won't be able to
 use [browser automation](#browser-automation-and-transactions).
 
-To use this approach, you need to tell Cucumber to start a transaction in a `Before`[hook](/cucumber/#hooks), and later
-roll it back in an `After`[hook](/cucumber/#hooks).
+To use this approach, you need to tell Cucumber to start a transaction in a `Before`[hook](/cucumber/api/#hooks), and later
+roll it back in an `After`[hook](/cucumber/api/#hooks).
 
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
-[tagged hooks](/cucumber/#tagged-hooks) using a tag named `@txn`.
+[tagged hooks](/cucumber/api/#tagged-hooks) using a tag named `@txn`.
 
 To enable it, you must tag every [feature](/gherkin/#feature) or [scenario](/gherkin/#example) that requires
 transactions with `@txn`:
@@ -302,7 +302,7 @@ See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/exam
 # Browser Automation and Transactions
 
 If you're using a [browser automation](/browser-automation/) tool that talks to your application over HTTP, the
-transactional approach will not work if your [step definitions](/cucumber/#step-definitions) and the web application serving
+transactional approach will not work if your [step definitions](/cucumber/api/#step-definitions) and the web application serving
 HTTP request each have their own database connection.
 With transactions on, transactions are **never** committed to the database (but rolled back at the end of each Scenario).
 Therefore, the web server's connection will never see data from Cucumber, and therefore your browser won't either.

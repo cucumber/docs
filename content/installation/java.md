@@ -34,7 +34,7 @@ Otherwise, to write them using annotated methods, add the following dependency t
 </dependency>
 ```
 
-You can now run Cucumber [from the command line](/cucumber/#from-the-command-line) or [run Cucumber with Maven](/tools-java/#maven).
+You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) or [run Cucumber with Maven](/tools-java/#maven).
 
 # Gradle
 
@@ -65,7 +65,7 @@ repositories {
 }
 ```
 
-You can now run Cucumber [from the command line](/cucumber/#from-the-command-line) to execute by [adding a cucumber task](/tools-java/#gradle) to `build.gradle`.
+You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) to execute by [adding a cucumber task](/tools-java/#gradle) to `build.gradle`.
 
 # Snapshot releases
 
@@ -107,5 +107,5 @@ from a [unit testing tool](/cucumber/checking-assertions/#java).
 
 While it's not required, we strongly recommend you include one of the
 [dependency injection](/cucumber/state/#dependency-injection) modules as well. This allows
-you to share state between [step definitions](/cucumber/#step-definitions)
+you to share state between [step definitions](/cucumber/api/#step-definitions)
 without resorting to static variables (a common source of flickering Scenarios).

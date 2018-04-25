@@ -147,7 +147,7 @@ In Cucumber, one writes `fail if false` and not simply `false`.
 This is because `false` might be the expected successful outcome of a test, and thus not an error.
 
 Sometimes however, we wish to test how our application handles an exception and therefore do not want that exception
-to be handled by Cucumber. For that situation use the `@allow-rescue` [tag](/cucumber/#tags).
+to be handled by Cucumber. For that situation use the `@allow-rescue` [tag](/cucumber/api/#tags).
 
 ## Test::Unit
 
