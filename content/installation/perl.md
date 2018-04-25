@@ -5,7 +5,7 @@ img: /img/perl.png
 implementation: semi-official
 menu:
   installation:
-    weight: 80
+    weight: 1190
 ---
 
 Please see the [Cucumber-Perl website](https://github.com/pjlsergeant/test-bdd-cucumber-perl).

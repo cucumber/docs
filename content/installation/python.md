@@ -5,7 +5,7 @@ img: /img/python.png
 implementation: semi-official
 menu:
   installation:
-    weight: 64
+    weight: 1170
 ---
 
 Please see the [Behave website](http://behave.readthedocs.io/).

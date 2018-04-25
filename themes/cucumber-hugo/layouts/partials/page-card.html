@@ -29,6 +29,9 @@
             {{ if eq .Params.implementation "unofficial"}}
               <span class="tag is-dark is-pulled-right">unofficial</span>
             {{end}}
+            {{ if eq .Params.implementation "unmaintained"}}
+              <span class="tag is-danger is-pulled-right">unmaintained</span>
+            {{end}}
           </p>
         </div>
       </div>

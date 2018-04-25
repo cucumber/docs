@@ -5,7 +5,7 @@ svg: installation/ocaml.svg
 implementation: official
 menu:
   installation:
-    weight: 50
+    weight: 1125
 ---
 
 Please see the [Cucumber OCaml website](https://github.com/cucumber/cucumber.ml).

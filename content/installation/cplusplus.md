@@ -5,7 +5,7 @@ svg: installation/cplusplus.svg
 implementation: official
 menu:
   installation:
-    weight: 40
+    weight: 1130
 ---
 
 Please see the [Cucumber.cpp website](https://github.com/cucumber/cucumber-cpp).

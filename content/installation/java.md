@@ -1,11 +1,11 @@
 ---
 title: Cucumber-jvm
 subtitle: Java, Java8, Kotlin, etc
-svg: installation/jvm.svg
+svg: installation/java.svg
 implementation: official
 menu:
   installation:
-    weight: 10
+    weight: 1110
 ---
 Cucumber-jvm is published in the central Maven repository.
 You can install it by adding dependencies to your project.

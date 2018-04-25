@@ -5,7 +5,7 @@ svg: installation/android.svg
 implementation: official
 menu:
   installation:
-    weight: 60
+    weight: 1140
 ---
 
 Please see the [Cucumber-JVM installation docs](/installation/jvm).

@@ -5,7 +5,7 @@ svg: installation/ruby.svg
 implementation: official
 menu:
   installation:
-    weight: 30
+    weight: 1120
 ---
 
 Cucumber for Ruby is a Ruby gem. Depending on your project structure there are several ways to install it:

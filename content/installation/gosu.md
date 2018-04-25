@@ -1,0 +1,13 @@
+---
+title: Cucumber-Gosu
+subtitle: Gosu
+img: /img/gosu.png
+implementation: unmaintained
+menu:
+  installation:
+    weight: 1305
+---
+
+**This package is currently in need of new maintainers.**
+
+Please see the [Cucumber-Gosu](https://github.com/cucumber/cucumber-jvm-gosu).

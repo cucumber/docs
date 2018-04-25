@@ -5,7 +5,7 @@ svg: installation/javascript.svg
 implementation: official
 menu:
   installation:
-    weight: 20
+    weight: 1115
 ---
 
 Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works with both [Node.js](https://nodejs.org/en/) and browsers.

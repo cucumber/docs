@@ -1,0 +1,13 @@
+---
+title: Cucumber-Scala
+subtitle: Scala
+img: /img/scala.png
+implementation: unmaintained
+menu:
+  installation:
+    weight: 1315
+---
+
+**This package is currently in need of new maintainers.**
+
+Please see the [Cucumber-Scala](https://github.com/cucumber/cucumber-jvm-scala).
