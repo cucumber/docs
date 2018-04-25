@@ -68,7 +68,7 @@ method annotations.
 
 **Lambda Expressions (Java 8)**
 
-If you use the `cucumber-java8` module, you can write the [step definitions](/cucumber/#step-definitions)
+If you use the `cucumber-java8` module, you can write the [step definitions](/cucumber/api/#step-definitions)
 using lambdas:
 
 ```java
@@ -474,7 +474,7 @@ To run a particular hook only for certain scenarios, you can associate a
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
-Hook with a [tag expression](/cucumber/#tag-expressions).
+Hook with a [tag expression](/cucumber/api/#tag-expressions).
 
 {{% block "java" %}}
 Annotated method style:
@@ -859,7 +859,7 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 {{% /block %}}
 
-You can also run features using a [build tool](/tools/#build-tools) or an [IDE](/tools/#editors-and-ides).
+You can also run features using a build tool or an [IDE](/tools/#editors-and-ides).
 
 # Configuration
 

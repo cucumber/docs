@@ -34,7 +34,7 @@ If you are certain you have found a bug, just register a ticket with the relevan
 ## Help us help you
 
 You will likely use Cucumber combined with various web frameworks, many different dependencies and your own code.
-You can [run Cucumber](/cucumber/#running-cucumber) in different ways, and many things can go wrong - and quite often it has nothing to do with Cucumber at all.
+You can [run Cucumber](/cucumber/api/#running-cucumber) in different ways, and many things can go wrong - and quite often it has nothing to do with Cucumber at all.
 
 The only way we can fix a bug is to reproduce it first. If reproducing the bug requires setting up a project, please write a Cucumber Feature that demonstrates the bug. When you have done that, mention it in your Issue or send a Pull Request.
 

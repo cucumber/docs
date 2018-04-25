@@ -90,7 +90,7 @@ and reload it at the end. Next time, it will be the same.
 
 Alternatively, you can do it on a per-Feature level and per-database table level. I have so far found the second approach to be the quickest and most flexible.
 
-The per-Feature and per-table approach can be accomplished using [Hooks](/cucumber/#hooks).
+The per-Feature and per-table approach can be accomplished using [Hooks](/cucumber/api/#hooks).
 Here are is the code that I currently have in `support/hooks.rb`:
 
 ```

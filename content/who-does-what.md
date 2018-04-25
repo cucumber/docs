@@ -7,7 +7,7 @@ menu:
 ---
 
 Who should be writing [Gherkin](/gherkin/) documents, and who should write
-[step definitions](/cucumber/#step-definitions)?
+[step definitions](/cucumber/api/#step-definitions)?
 
 Product owners, business analysts, programmers and testers are often confused
 about who should take on what responsibilities.
