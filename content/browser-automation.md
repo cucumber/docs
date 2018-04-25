@@ -1,5 +1,9 @@
 ---
 title: Browser Automation
+subtitle: Selenium WebDriver, Capybara and more
+menu:
+  guides:
+    weight: 30
 polyglot:
   - java
   - javascript

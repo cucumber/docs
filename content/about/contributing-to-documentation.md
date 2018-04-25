@@ -1,9 +1,9 @@
 ---
-menu:
-- about
-source: https://github.com/cucumber/cucumber/docs
 title: Contributing to Documentation
-status: check and update content
+subtitle: Help us make these docs better
+menu:
+  support:
+    weight: 30
 ---
 
 The Cucumber documentation is open source and anyone is welcome to contribute.
@@ -139,7 +139,7 @@ Wrap `{{% block %}}` shortcodes around paragraphs and fenced code blocks:
 
     {{% block "ruby" %}}
     Put this in your `hello.rb`:
-    
+
     ```ruby
     puts "hello"
     ```
@@ -165,7 +165,7 @@ Wrap `{{% block %}}` shortcodes around paragraphs and fenced code blocks:
 Use the `{{% text %}}` shortcode around text fragments that should only be displayed for
 a particular programming language:
 
-    The preferred build tool is 
+    The preferred build tool is
     {{% text "ruby" %}}Rake{{% /text %}}
     {{% text "javascript" %}}Yarn{{% /text %}}
     {{% text "java" %}}Maven{{% /text %}}.

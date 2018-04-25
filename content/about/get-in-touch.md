@@ -1,8 +1,9 @@
 ---
-menu:
-- about
-source: https://github.com/cucumber/cucumber/wiki/Get-in-touch/
 title: Get in touch
+subtitle: Support forums, chat rooms
+menu:
+  support:
+    weight: 10
 ---
 
 If you need help using Cucumber, you have several options.

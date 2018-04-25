@@ -1,5 +1,9 @@
 ---
 title: Who Does What?
+subtitle: Roles and responsibilities in a BDD team
+menu:
+  bdd:
+    weight: 40
 ---
 
 Who should be writing [Gherkin](/gherkin/) documents, and who should write
@@ -136,4 +140,3 @@ and
 
 have identical meaning, so it’s better to pick one and use the same line in
 every Scenario where you need to be logged in.
-

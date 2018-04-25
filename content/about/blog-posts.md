@@ -1,8 +1,9 @@
 ---
-menu:
-- about
-source: https://github.com/cucumber/cucumber/wiki/Tutorials-and-Related-Blog-Posts/
 title: Blog Posts about Cucumber
+subtitle: Community blogs
+menu:
+  support:
+    weight: 60
 ---
 
 Here is a list of Cucumber-related blog posts and tutorials.
