@@ -37,6 +37,7 @@ ENV PATH="/root/go/src/github.com/gohugoio/hugo:${PATH}"
 WORKDIR /app
 RUN pip install --upgrade pip
 RUN pip install Pygments
+RUN gem install bundler
 RUN gem install html-proofer -v 3.8.0
 
 EXPOSE 1313

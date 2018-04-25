@@ -1,2 +1,2 @@
 #!/bin/sh
-docker run -p 1313:1313 --volume $(pwd):/app -it cucumber/hugo:d37f116e8662c671283a116b35f21991 $@
+docker run -p 1313:1313 --volume $(pwd):/app -it cucumber/hugo:1e65815e43ac30f7d52080356fd0893a $@
