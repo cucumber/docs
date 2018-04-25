@@ -629,7 +629,7 @@ When("I ask whether is's Friday yet") do
   @actual_answer = is_it_friday?(@today)
 end
 
-Then("I should be told {string}§:w") do |expected_answer|
+Then("I should be told {string}") do |expected_answer|
   expect(@actual_answer).to eq(expected_answer)
 end
 
