@@ -53,6 +53,4 @@ docker_push:
 	docker push $(DOCKER_IMAGE)
 .PHONY: docker_push
 
-clean:
-	git clean -dfx
 .PHONY: build

@@ -1,5 +1,11 @@
 ---
-title: Cucumber.rb installation
+title: Cucumber.rb
+subtitle: Ruby, Ruby on Rails
+devicon: devicon-ruby-plain-wordmark
+implementation: official
+menu:
+  installation:
+    weight: 30
 ---
 
 Cucumber for Ruby is a Ruby gem. Depending on your project structure there are several ways to install it:

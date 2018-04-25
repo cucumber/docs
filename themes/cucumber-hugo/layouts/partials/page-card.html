@@ -2,13 +2,30 @@
   <div class="card" style="height: 100%">
     <div class="card-content">
       <div class="media">
-        <div class="media-content">
-          <p class="title is-4">{{.Title}}</p>
+        <div class="media-left">
+          {{if .Params.devicon}}
+          <figure class="imag">
+            <span class="icon is-large" style="font-size: 4rem">
+              <i class="{{.Params.devicon}}"></i>
+            </span>
+          </figure>
+          {{end}}
         </div>
-      </div>
-
-      <div class="content">
-        {{.Params.subtitle}}
+        <div class="media-content">
+          <p class="title is-5">{{.Title}}</p>
+          <p class="subtitle is-6">{{.Params.subtitle}}</p>
+          <p>
+            {{ if eq .Params.implementation "official"}}
+              <span class="tag is-success is-pulled-right">official</span>
+            {{end}}
+            {{ if eq .Params.implementation "semi-official"}}
+              <span class="tag is-info is-pulled-right">semi-official</span>
+            {{end}}
+            {{ if eq .Params.implementation "unofficial"}}
+              <span class="tag is-dark is-pulled-right">unofficial</span>
+            {{end}}
+          </p>
+        </div>
       </div>
     </div>
   </div>

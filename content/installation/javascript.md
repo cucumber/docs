@@ -1,5 +1,11 @@
 ---
-title: Cucumber.js installation
+title: Cucumber.js
+subtitle: Node.js and browsers
+devicon: devicon-javascript-plain
+implementation: official
+menu:
+  installation:
+    weight: 20
 ---
 
 Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works with both [Node.js](https://nodejs.org/en/) and browsers.
