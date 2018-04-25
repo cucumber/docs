@@ -1,13 +1,13 @@
 ---
-title: Cucumber.jvm
-subtitle: Java, Kotlin, Scala etc
+title: Cucumber-jvm
+subtitle: Java, Java8, Kotlin, etc
 devicon: devicon-java-plain
 implementation: official
 menu:
   installation:
     weight: 10
 ---
-Cucumber-JVM is published in the central Maven repository.
+Cucumber-jvm is published in the central Maven repository.
 You can install it by adding dependencies to your project.
 
 {{% note "Dependencies"%}}
