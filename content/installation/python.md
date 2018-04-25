@@ -1,7 +1,7 @@
 ---
 title: Behave
 subtitle: Python
-devicon: devicon-python-plain-wordmark
+img: /img/python.png
 implementation: semi-official
 menu:
   installation:

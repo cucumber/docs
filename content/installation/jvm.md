@@ -1,7 +1,7 @@
 ---
 title: Cucumber-jvm
 subtitle: Java, Java8, Kotlin, etc
-devicon: devicon-java-plain
+svg: installation/jvm.svg
 implementation: official
 menu:
   installation:

@@ -1,7 +1,7 @@
 ---
 title: Behat
 subtitle: PHP
-devicon: devicon-php-plain
+svg: installation/php.svg
 implementation: semi-official
 menu:
   installation:

@@ -1,7 +1,7 @@
 ---
 title: Cucumber.rb
 subtitle: Ruby, Ruby on Rails
-devicon: devicon-ruby-plain-wordmark
+svg: installation/ruby.svg
 implementation: official
 menu:
   installation:

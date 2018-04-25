@@ -1,6 +1,7 @@
 ---
-title: Test::BDD:Cucumber
+title: Test::BDD-Cucumber
 subtitle: Perl
+img: /img/perl.png
 implementation: semi-official
 menu:
   installation:

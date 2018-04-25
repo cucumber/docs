@@ -1,6 +1,7 @@
 ---
 title: Cucumber-Tcl
 subtitle: Tcl
+svg: installation/tcl.svg
 implementation: official
 menu:
   installation:

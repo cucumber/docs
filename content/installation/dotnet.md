@@ -1,7 +1,7 @@
 ---
 title: SpecFlow
 subtitle: C#, F#
-devicon: devicon-dot-net-plain-wordmark
+svg: installation/dotnet.svg
 implementation: semi-official
 menu:
   installation:

@@ -1,7 +1,7 @@
 ---
 title: Cucumber.js
 subtitle: Node.js and browsers
-devicon: devicon-javascript-plain
+svg: installation/javascript.svg
 implementation: official
 menu:
   installation:

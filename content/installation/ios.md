@@ -1,6 +1,7 @@
 ---
 title: Cucumberish
 subtitle: iOS, Swift, ObjC
+svg: installation/ios.svg
 implementation: semi-official
 menu:
   installation:

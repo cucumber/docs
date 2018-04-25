@@ -2,15 +2,20 @@
   <div class="card" style="height: 100%">
     <div class="card-content">
       <div class="media">
+        {{if .Params.img}}
         <div class="media-left">
-          {{if .Params.devicon}}
-          <figure class="imag">
-            <span class="icon is-large" style="font-size: 4rem">
-              <i class="{{.Params.devicon}}"></i>
-            </span>
+          <figure class="image is-64x64">
+            <img src="{{.Params.img}}">
           </figure>
-          {{end}}
         </div>
+        {{end}}
+        {{if .Params.svg}}
+        <div class="media-left">
+          <figure class="image is-64x64">
+            {{ readFile .Params.svg | safeHTML }}
+          </figure>
+        </div>
+        {{end}}
         <div class="media-content">
           <p class="title is-5">{{.Title}}</p>
           <p class="subtitle is-6">{{.Params.subtitle}}</p>

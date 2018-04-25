@@ -1,6 +1,7 @@
 ---
 title: Cucumber-Lua
 subtitle: Lua
+svg: installation/lua.svg
 implementation: official
 menu:
   installation:

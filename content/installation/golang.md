@@ -1,7 +1,7 @@
 ---
 title: Godog
 subtitle: Go
-devicon: devicon-go-line
+svg: installation/golang.svg
 implementation: semi-official
 menu:
   installation:

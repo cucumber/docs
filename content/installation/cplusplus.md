@@ -1,7 +1,7 @@
 ---
 title: Cucumber.cpp
 subtitle: C++
-devicon: devicon-cplusplus-line
+svg: installation/cplusplus.svg
 implementation: official
 menu:
   installation:

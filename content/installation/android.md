@@ -1,7 +1,7 @@
 ---
-title: Android
+title: Android™
 subtitle: Java
-devicon: devicon-android-plain
+svg: installation/android.svg
 implementation: official
 menu:
   installation:

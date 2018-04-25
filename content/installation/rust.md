@@ -1,6 +1,7 @@
 ---
 title: Cucumber-Rust
 subtitle: Rust
+svg: installation/rust.svg
 implementation: unofficial
 menu:
   installation:
