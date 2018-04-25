@@ -8,4 +8,4 @@ menu:
     weight: 1140
 ---
 
-Please see the [Cucumber-JVM installation docs](/installation/jvm).
+Please see the [Cucumber-JVM installation docs](/installation/java).
