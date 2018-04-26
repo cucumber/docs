@@ -8,7 +8,7 @@ menu:
 
 Using Cucumber in your project is easier with the right tools.
 
-# Editors and IDEs
+# Editors
 
 Most popular text editors support Gherkin syntax highlighting.
 
@@ -32,9 +32,9 @@ See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) doc
 
 You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete).
 
-## Java IDEs
+# IDEs
 
-See [Java IDEs](/tools/java#ides).
+* [Java IDEs](/tools/java#ides).
 
 # Build Tools
 You can run Cucumber using build tools, rather than from the command line.
