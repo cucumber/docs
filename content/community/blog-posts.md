@@ -11,7 +11,7 @@ Here is a list of Cucumber-related blog posts and tutorials.
 
 Do keep in mind that blogs can become dated quickly with a fast-moving project like Cucumber. Cucumber's documentation should be considered the canonical documentation source with the, hopefully, most up-to-date information. Some very old blog posts may refer to the "RSpec Story Runner", since Cucumber started out as a rewrite of that project.
 
-See also [Related Tools](/about/related-tools/).
+See also [Related Tools](/community/related-tools/).
 
 |                                                                                                                                                                                                                                                                         |                                                                                                                                                       |                    |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|

@@ -15,7 +15,7 @@ Please follow these guidelines if you want to contribute to Cucumber or help the
 
 # You have a question
 
-Before you [get in touch](/about/get-in-touch), try searching the [mailing list](https://groups.google.com/forum/#!forum/cukes) for similar questions and possible solutions.
+Before you [get in touch](/community/get-in-touch), try searching the [mailing list](https://groups.google.com/forum/#!forum/cukes) for similar questions and possible solutions.
 Or have a look on [StackOverflow](https://stackoverflow.com/questions/tagged/cucumber). Similar questions come up now and again. You might be able to find the answer yourself.
 
 It's impossible to give a meaningful answer to "Cucumber doesn't work - what's wrong?" -style questions. You have to tell us [more](#help-us-help-you).
@@ -30,7 +30,7 @@ This way you don't waste time by reporting a bug that has already been fixed.
 gem update cucumber
 ```
 
-If you are certain you have found a bug, just register a ticket with the relevant project. If you're not sure, please [get in touch](/about/get-in-touch).
+If you are certain you have found a bug, just register a ticket with the relevant project. If you're not sure, please [get in touch](/community/get-in-touch).
 
 ## Help us help you
 
@@ -63,7 +63,7 @@ Start by creating a ticket. Then, create a Cucumber Feature and start implementi
 
 # You want to update the documentation
 
-If you would like to contribute to the documentation, please see [Contributing to documentation](/about/contributing-to-documentation/).
+If you would like to contribute to the documentation, please see [Contributing to documentation](/community/contributing-to-documentation/).
 
 # You want to contribute but don't know how
 
