@@ -1,7 +1,6 @@
 ---
 title: Gherkin
 subtitle: Cucumber's syntax for executable specifications
-menu:
-  main:
-    weight: 1140
+weight: 1140
+menu: main
 ---

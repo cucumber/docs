@@ -1,7 +1,6 @@
 ---
 title: Cucumber
 subtitle: Technical documentation
-menu:
-  main:
-    weight: 1130
+weight: 1130
+menu: main
 ---

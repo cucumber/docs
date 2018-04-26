@@ -3,9 +3,7 @@ title: Cucumber-jvm
 subtitle: Java
 svg: installation/java.svg
 implementation: official
-menu:
-  installation:
-    weight: 1110
+weight: 1110
 ---
 Cucumber-jvm is published in the central Maven repository.
 You can install it by adding dependencies to your project.

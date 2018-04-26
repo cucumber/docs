@@ -3,9 +3,7 @@ title: Test::BDD-Cucumber
 subtitle: Perl
 img: /img/perl.png
 implementation: semi-official
-menu:
-  installation:
-    weight: 1190
+weight: 1190
 ---
 
 Please see the [Cucumber-Perl website](https://github.com/pjlsergeant/test-bdd-cucumber-perl).

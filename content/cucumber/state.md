@@ -1,9 +1,6 @@
 ---
 title: State
 subtitle: Sharing state, isolated state
-menu:
-  guides:
-    weight: 20
 ---
 
 It's important to prevent state created by one scenario from leaking into others.

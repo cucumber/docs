@@ -1,9 +1,6 @@
 ---
 title: Checking Assertions
 subtitle: "How to determine success or failure"
-menu:
-  guides:
-    weight: 5
 ---
 
 Your `Then` steps should make assertions comparing expected results to actual results

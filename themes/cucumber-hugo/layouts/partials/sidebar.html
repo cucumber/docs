@@ -1,6 +1,4 @@
-{{if .Site.Params.oldtoc }}
-  {{.TableOfContents}}
-{{else}}
+
 <nav class="panel">
   {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
@@ -33,4 +31,3 @@
     {{ end }}
   {{ end }}
 </nav>
-{{end}}

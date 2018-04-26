@@ -3,9 +3,7 @@ title: Cucumber-Scala
 subtitle: Scala
 img: /img/scala.png
 implementation: unmaintained
-menu:
-  installation:
-    weight: 1315
+weight: 1315
 ---
 
 **This package is currently in need of new maintainers.**

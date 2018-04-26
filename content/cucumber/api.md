@@ -1,8 +1,6 @@
 ---
 title: Cucumber Reference
 subtitle: "Using Cucumber: Step Definitions, Hooks, Tags"
-menu:
-  cucumber:
 polyglot:
   - java
   - javascript

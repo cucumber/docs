@@ -1,8 +1,6 @@
 ---
 title: 10 Minute Tutorial
 subtitle: Get started in just 10 minutes
-menu:
-  cucumber:
 polyglot:
   - java
   - javascript

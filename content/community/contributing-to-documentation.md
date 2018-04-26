@@ -1,10 +1,6 @@
 ---
 title: Contributing to Documentation
 subtitle: Help us make these docs better
-menu:
-  about:
-    parent: main
-    weight: 30
 ---
 
 The Cucumber documentation is open source and anyone is welcome to contribute.

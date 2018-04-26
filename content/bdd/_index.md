@@ -1,7 +1,6 @@
 ---
 title: BDD
 subtitle: Behaviour-Driven Development
-menu:
-  main:
-    weight: 1180
+weight: 1180
+menu: main
 ---

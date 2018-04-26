@@ -9,9 +9,8 @@
         {{ .Content }}
       </div>
 
-      {{ $weightParam := printf "menu.%s.weight" .Params.menu }}
       <div class="columns">
-        {{ range $index, $page := .Pages.ByParam $weightParam }}
+        {{ range $index, $page := .Pages.ByWeight }}
           {{ if eq (mod (sub $index 3) 3) 0 }}
       </div>
       <div class="columns">

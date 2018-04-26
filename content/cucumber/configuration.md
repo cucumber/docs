@@ -1,8 +1,6 @@
 ---
-source: https://github.com/cucumber/cucumber/wiki/cucumber.yml/
-source: https://github.com/cucumber/cucumber/wiki/Environment-Variables/
 title: Cucumber Configuration
-description: cucumber.yml, environment variables
+subtitle: cucumber.yml, environment variables
 polyglot:
   - ruby
 ---

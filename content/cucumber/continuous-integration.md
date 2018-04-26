@@ -1,9 +1,6 @@
 ---
 title: Continuous Build
 subtitle: Running Cucumber on a build server
-menu:
-  guides:
-    weight: 60
 ---
 
 Using Cucumber in a [Continuous Integration](http://martinfowler.com/articles/continuousIntegration.html) (CI) environment is relatively straightforward.

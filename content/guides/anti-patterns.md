@@ -1,9 +1,6 @@
 ---
 title: Anti-patterns
 subtitle: Avoid common mistakes and pitfalls
-menu:
-  guides:
-    weight: 70
 polyglot:
   - java
   - javascript

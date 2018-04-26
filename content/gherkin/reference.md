@@ -1,8 +1,6 @@
 ---
 title: Gherkin Reference
 subtitle: "Cucumber syntax: Given, When, Then"
-menu:
-  cucumber:
 ---
 Gherkin uses a set of special keywords to give structure and meaning to
 executable specifications. Each keyword is translated to many spoken languages;

@@ -1,9 +1,6 @@
 ---
 title: Related tools
 subtitle: Third-party tools
-menu:
-  support:
-    weight: 70
 ---
 
 People have written tools on top of Cucumber. These are the known third-party tools that work together with Cucumber:

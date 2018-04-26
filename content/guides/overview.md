@@ -1,8 +1,6 @@
 ---
 title: Introduction
 subtitle: New to Cucumber? Start here!
-menu:
-  cucumber:
 ---
 
 {{% note "Before you get started" %}}

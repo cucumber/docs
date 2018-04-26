@@ -1,10 +1,6 @@
 ---
 title: Blog Posts about Cucumber
 subtitle: Community blogs
-menu:
-  about:
-    parent: main
-    weight: 60
 ---
 
 Here is a list of Cucumber-related blog posts and tutorials.

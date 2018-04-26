@@ -1,9 +1,6 @@
 ---
 title: Mocking and Stubbing with Cucumber
 subtitle: Decoupling your scenarios from infrastructure
-menu:
-  guides:
-    weight: 50
 ---
 
 Mocking is usually discouraged when using Cucumber; ideally you would exercise as much of your stack as possible.

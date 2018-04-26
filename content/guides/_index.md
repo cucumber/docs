@@ -1,6 +1,5 @@
 ---
 title: Guides
-menu:
-  main:
-    weight: 1120
+weight: 1120
+menu: main
 ---
