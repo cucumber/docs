@@ -53,4 +53,6 @@ docker_push:
 	docker push $(DOCKER_IMAGE)
 .PHONY: docker_push
 
-.PHONY: build
+clean:
+	rm -rf public
+.PHONY: clean
