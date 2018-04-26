@@ -1,6 +1,6 @@
 ---
 title: Cucumber-jvm
-subtitle: Java, Java8, Kotlin, etc
+subtitle: Java
 svg: installation/java.svg
 implementation: official
 menu:
