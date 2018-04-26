@@ -1,0 +1,36 @@
+{{if .Site.Params.oldtoc }}
+  {{.TableOfContents}}
+{{else}}
+<nav class="panel">
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.main }}
+    <a href="{{.URL}}" class="panel-block {{ if eq $currentPage .Page }}is-active{{ end }}">
+      <span class="panel-icon">
+        <i class="fas fa-book" aria-hidden="true"></i>
+      </span>
+      {{ .Name }}
+    </a>
+    {{ $weightParam := printf "menu.%s.weight" .Page.Params.menu }}
+    {{ range .Page.Pages.ByParam $weightParam }}
+      {{ if eq $currentPage . }}
+        <a href="{{.URL}}" style="padding-left: 1.5em" class="panel-block {{ if eq $currentPage . }}is-active{{ end }}">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          {{ .Name }}
+        </a>
+
+        {{ $headings := findRE "<h1.*?>(.|\n])+?</h1>" .Content }}
+        {{ range $headings }}
+            <a href="#{{ . | replaceRE "&rsquo;" " " | replaceRE "\\." " " | htmlUnescape | plainify | urlize  }}" style="padding-left: 3em" class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              {{ . | htmlUnescape | plainify }}
+            </a>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</nav>
+{{end}}

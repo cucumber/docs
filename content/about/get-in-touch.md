@@ -2,7 +2,8 @@
 title: Get in touch
 subtitle: Support forums, chat rooms
 menu:
-  support:
+  about:
+    parent: main
     weight: 10
 ---
 

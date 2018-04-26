@@ -2,7 +2,8 @@
 title: Projects using Cucumber
 subtitle: Get some inspiration
 menu:
-  support:
+  about:
+    parent: main
     weight: 80
 ---
 

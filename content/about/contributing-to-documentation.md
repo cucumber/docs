@@ -2,7 +2,8 @@
 title: Contributing to Documentation
 subtitle: Help us make these docs better
 menu:
-  support:
+  about:
+    parent: main
     weight: 30
 ---
 

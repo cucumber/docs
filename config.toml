@@ -6,3 +6,7 @@ theme = "cucumber-hugo"
 pygmentsUseClassic = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+
+[params]
+  # TODO: Remove when new menu is ready
+  oldtoc = true

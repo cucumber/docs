@@ -1,8 +1,8 @@
 <div class="columns section">
-  <div class="column is-one-fifth is-hidden-mobile">
-    {{.TableOfContents}}
+  <div class="column is-one-quarter is-hidden-mobile">
+    {{ partial "sidebar.html" . }}
   </div>
-  <div class="column is-three-fifths">
+  <div class="column is-three-quarters">
     <div>
       <h1 class="title is-1">{{ .Title }}</h1>
       {{ if .Page.Params.polyglot }}
@@ -19,7 +19,5 @@
         <a href="https://github.com/cucumber/docs.cucumber.io/edit/master/content/{{ .Page.File.Path }}">Edit this page</a>.
       </p>
     </div>
-  </div>
-  <div class="column is-one-fifth is-hidden-mobile">
   </div>
 </div>

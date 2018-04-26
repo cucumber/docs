@@ -2,7 +2,8 @@
 title: Contributing
 subtitle: Help us make Cucumber better
 menu:
-  support:
+  about:
+    parent: main
     weight: 20
 polyglot:
   - java

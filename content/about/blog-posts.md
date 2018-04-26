@@ -2,7 +2,8 @@
 title: Blog Posts about Cucumber
 subtitle: Community blogs
 menu:
-  support:
+  about:
+    parent: main
     weight: 60
 ---
 

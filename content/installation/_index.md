@@ -1,6 +1,8 @@
 ---
-title: Install Cucumber
-menu: installation
+title: Installation
+menu:
+  main:
+    weight: 1110
 ---
 
 Cucumber is available for most mainstream programming languages.
