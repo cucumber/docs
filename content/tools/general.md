@@ -34,10 +34,10 @@ You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstud
 
 ## Java IDEs
 
-See [Java IDEs](/tools-java/#ides).
+See [Java IDEs](/tools/java#ides).
 
 # Build Tools
 You can run Cucumber using build tools, rather than from the command line.
 
-* [Java build tools](/tools-java/#build-tools)
-* [Ruby build tools](/tools-ruby/#build-tools)
+* [Java build tools](/tools/java#build-tools)
+* [Ruby build tools](/tools/ruby#build-tools)

@@ -13,7 +13,7 @@ Cucumber can be used to implement automated tests based on scenarios described i
 
 # Step Definitions
 
-When Cucumber executes a [step](/gherkin/#steps) in a scenario, it will look for a matching *step definition* to execute.
+When Cucumber executes a [step](/gherkin/reference#steps) in a scenario, it will look for a matching *step definition* to execute.
 Step definitions connect Gherkin steps to code.
 
 A step definition is
@@ -180,7 +180,7 @@ Once execution begins, for each step, Cucumber will look for a registered step d
 
 The specific preposition/adverb used has **no** significance when Cucumber is registering or looking up step definitions.
 
-Also, check out [multiline step arguments](/gherkin/#step-arguments) for more info on how to pass entire tables or bigger strings to your step definitions.
+Also, check out [multiline step arguments](/gherkin/reference#step-arguments) for more info on how to pass entire tables or bigger strings to your step definitions.
 
 ### Step Results
 
@@ -309,7 +309,7 @@ end
 
 {{% tip "Think twice before you use Before" %}}
 Whatever happens in a `Before` hook is invisible to people who only read the features.
-You should consider using a [background](/gherkin/#background) as a more explicit
+You should consider using a [background](/gherkin/reference#background) as a more explicit
 alternative, especially if the setup should be readable by non-technical people.
 Only use a `Before` hook for low-level logic such as starting a browser or deleting
 data from a database.
@@ -859,7 +859,7 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 {{% /block %}}
 
-You can also run features using a build tool or an [IDE](/tools/#editors-and-ides).
+You can also run features using a build tool or an [IDE](/tools/general#editors-and-ides).
 
 # Configuration
 

@@ -9,4 +9,4 @@ pygmentsUseClasses = true
 
 [params]
   # TODO: Remove when new menu is ready
-  oldtoc = true
+  oldtoc = false

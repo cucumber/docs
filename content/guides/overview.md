@@ -49,7 +49,7 @@ Gherkin serves multiple purposes:
 
 ![Single source of Truth](/img/single-source-of-truth-256x256.png)
 
-The Cucumber grammar exists in different flavours for many [spoken languages](/gherkin/#spoken-languages)
+The Cucumber grammar exists in different flavours for many [spoken languages](/gherkin/reference#spoken-languages)
 so that your team can use the keywords in your own language.
 
 Gherkin documents are stored in `.feature` text files and are typically versioned in source control
@@ -64,13 +64,13 @@ If Cucumber is used solely as a test automation tool (test after) it can be done
 testers or developers.
 
 It is usually counterproductive to let product owners and business analysts write Gherkin.
-Instead, we recommend they participate in [Example Mapping](/example-mapping) sessions
+Instead, we recommend they participate in [Example Mapping](/bdd/example-mapping) sessions
 and **approve** the Gherkin documents after a developer or tester has translated it to Gherkin.
 {{% /note %}}
 
 # Step Definitions
 
-In addition to [feature files](/gherkin/#feature), Cucumber needs a set of [step definitions](/cucumber/api/#step-definitions). Step definitions map (or "glue") each
+In addition to [feature files](/gherkin/reference#feature), Cucumber needs a set of [step definitions](/cucumber/api/#step-definitions). Step definitions map (or "glue") each
 Gherkin step into runnable programming code to carry out what action should be performed by the step.
 
 Step definitions make the specification hard-wired to the implementation.

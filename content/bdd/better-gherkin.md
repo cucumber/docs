@@ -1,9 +1,8 @@
 ---
-source: https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder/
 title: Writing better Gherkin
 ---
 
-There are everal ways to make your Gherkin better.
+There are several ways to make your Gherkin better.
 
 # Describe behaviour
 

@@ -93,7 +93,7 @@ World(MyHelper, MyOtherHelpers)
 
 This will `extend` each new `World` object with those modules.
 
-If you use [Ruby on Rails](/tools-ruby/#ruby-on-rails), there is already a `World` set up for you, so you will get
+If you use [Ruby on Rails](/tools/ruby#ruby-on-rails), there is already a `World` set up for you, so you will get
 an instance of `Cucumber::Rails::World`, which is a subclass of `ActionDispatch::IntegrationTest`. This gives you access to a lot of Rails' helper methods.
 
 For more information, have a look at [Building a better World](http://drnicwilliams.com/2009/04/15/cucumber-building-a-better-world-object/) (blog post).
@@ -269,7 +269,7 @@ roll it back in an `After`[hook](/cucumber/api/#hooks).
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
 [tagged hooks](/cucumber/api/#tagged-hooks) using a tag named `@txn`.
 
-To enable it, you must tag every [feature](/gherkin/#feature) or [scenario](/gherkin/#example) that requires
+To enable it, you must tag every [feature](/gherkin/reference#feature) or [scenario](/gherkin/reference#example) that requires
 transactions with `@txn`:
 
 ```gherkin
@@ -301,7 +301,7 @@ See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/exam
 
 # Browser Automation and Transactions
 
-If you're using a [browser automation](/browser-automation/) tool that talks to your application over HTTP, the
+If you're using a [browser automation](/guides/browser-automation) tool that talks to your application over HTTP, the
 transactional approach will not work if your [step definitions](/cucumber/api/#step-definitions) and the web application serving
 HTTP request each have their own database connection.
 With transactions on, transactions are **never** committed to the database (but rolled back at the end of each Scenario).
@@ -311,7 +311,7 @@ Likewise, Cucumber's connection won't see data from the web server.
 In this case, you will have to turn off database transactions and make sure the data is explicitly deleted before each Scenario.
 
 ## Turn of transactions
-If you're using [Ruby on Rails](/tools-ruby/#ruby-on-rails) it's easy to turn off transactions for a feature or particular scenarios. Use the `@no-txn` tag, like this:
+If you're using [Ruby on Rails](/tools/ruby#ruby-on-rails) it's easy to turn off transactions for a feature or particular scenarios. Use the `@no-txn` tag, like this:
 
 ```
 @no-txn
@@ -335,7 +335,7 @@ Cucumber::Rails::World.use_transactional_fixtures = false
 
 ## Cleaning Your Database
 
-If you're using [Ruby on Rails](/tools-ruby/#ruby-on-rails), a good tool to deal with this is Ben Mabey's
+If you're using [Ruby on Rails](/tools/ruby#ruby-on-rails), a good tool to deal with this is Ben Mabey's
 [Database Cleaner](https://github.com/bmabey/database_cleaner) gem,
 which you can install with `gem install database_cleaner`.
 

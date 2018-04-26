@@ -51,7 +51,7 @@ For example, in a Curriculum Vitae application, we might have:
 The first three files would define all the `Given`, `When`, and `Then` step definitions related to creating, reading, updating, and deleting the various {{% text "ruby" %}}models.{{% /text %}}{{% text "java" %}}types of objects.{{% /text %}}{{% text "javascript" %}}types of objects.{{% /text %}}
 The last file would define step definitions related to logging in and out, and the different things a certain user is allowed to do in the system.
 
-If you follow this pattern you also avoid the [Feature-coupled step definitions](/anti-patterns/#feature-coupled-step-definitions) anti-pattern.
+If you follow this pattern you also avoid the [Feature-coupled step definitions](/guides/anti-patterns#feature-coupled-step-definitions) anti-pattern.
 
 # Writing step definitions
 Don't write step definitions for steps that are not present in one of your scenarios.

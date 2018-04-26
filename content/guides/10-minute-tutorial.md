@@ -281,11 +281,11 @@ the production code emerges, Scenarios take on a role as *living documentation* 
 *automated tests*.
 
 {{% tip "Example Mapping"%}}
-Try running an [Example Mapping](/example-mapping/) workshop in your team to
+Try running an [Example Mapping](/bdd/example-mapping) workshop in your team to
 design examples together.
 {{% /tip %}}
 
-In Cucumber, an example is called a [Scenario](/gherkin/#example).
+In Cucumber, an example is called a [Scenario](/gherkin/reference#example).
 Scenarios are defined in `.feature` files, which are stored in the
 {{% text "java" %}}`src/test/resources/hellocucumber`{{% /text %}}
 {{% text "javascript" %}}`features`{{% /text %}}
@@ -317,11 +317,11 @@ The second line is a brief description of the feature. Cucumber does not
 execute this line, it's just documentation.
 
 The fourth line, `Scenario: Sunday is not Friday` is a
-[Scenario](/gherkin#example), which is a *concrete example* illustrating how
+[Scenario](/gherkin/reference#example), which is a *concrete example* illustrating how
 the software should behave.
 
 The last three lines starting with `Given`, `When` and `Then` are the
-[steps](/gherkin#example) of our scenario. This is what Cucumber will execute.
+[steps](/gherkin/reference#example) of our scenario. This is what Cucumber will execute.
 
 # See Scenario reported as undefined
 
@@ -548,7 +548,7 @@ Try to use the same words in the code as in the steps.
 
 {{% tip "Ubiquitous Language"%}}
 If the words in your steps originated from conversations during an
-[Example Mapping](/example-mapping/) session, you're building a
+[Example Mapping](/bdd/example-mapping) session, you're building a
 [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html),
 which is a great way to make your production code and test easier to understand
 and maintain.

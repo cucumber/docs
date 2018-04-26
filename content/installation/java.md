@@ -39,7 +39,7 @@ Otherwise, to write them using annotated methods, add the following dependency t
 </dependency>
 ```
 
-You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) or [run Cucumber with Maven](/tools-java/#maven).
+You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) or [run Cucumber with Maven](/tools/java#maven).
 
 # Gradle
 
@@ -70,7 +70,7 @@ repositories {
 }
 ```
 
-You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) to execute by [adding a cucumber task](/tools-java/#gradle) to `build.gradle`.
+You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) to execute by [adding a cucumber task](/tools/java#gradle) to `build.gradle`.
 
 # Snapshot releases
 

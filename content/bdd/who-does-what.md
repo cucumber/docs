@@ -25,7 +25,7 @@ process and more.
 
 These conversations can produce great tests, because each amigo sees
 the product from a different perspective. For this reason it is *essential* that all of these roles have conversations to discover examples *together*.
-[Example Mapping](/example-mapping/) and Event Storming are great collaborative analysis techniques for discovering examples.
+[Example Mapping](/bdd/example-mapping) and Event Storming are great collaborative analysis techniques for discovering examples.
 
 Finally, there is no reason to limit these meetings to three people—or to hold only one such meeting at the beginning of the project. Continually refine your features and collaborate with everyone to best understand how to talk about, develop, and test your application.
 
