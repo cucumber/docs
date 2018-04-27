@@ -32,12 +32,3 @@
   * See what people search for
     * And don't find - great for finding weak spots
     * What's there, but not found
-
-## Menus
-* Installation
-* Guides & Tutorials
-* Cucumber API
-* Gherkin Reference
-* Behaviour-Driven Development
-* Tools
-* Community
