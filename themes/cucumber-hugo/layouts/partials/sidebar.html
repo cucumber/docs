@@ -2,9 +2,11 @@
   {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
     <a href="{{.URL}}" class="panel-block {{ if eq $currentPage .Page }}is-active{{ end }}">
+      {{if .Page.Params.iconClass}}
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="{{.Page.Params.iconClass}}" aria-hidden="true"></i>
       </span>
+      {{end}}
       {{ .Name }}
     </a>
     {{ if or (eq $currentPage.Parent .Page) (eq $currentPage .Page) }}
@@ -22,7 +24,7 @@
           {{ range $headings }}
             <a href="#{{ . | replaceRE "&rsquo;" " " | replaceRE "\\." " " | htmlUnescape | plainify | urlize  }}" style="padding-left: 3em" class="panel-block">
               <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true"></i>
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
               </span>
               {{ . | htmlUnescape | plainify }}
             </a>
