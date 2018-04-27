@@ -1,17 +1,21 @@
+{{ $currentPage := . }}
 <nav class="panel">
-  {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
+    {{ $expandChildren := (not .Page.Params.collapseChildren) }}
     <a href="{{.URL}}" class="panel-block {{ if eq $currentPage .Page }}is-active{{ end }}">
       {{if .Page.Params.iconClass}}
       <span class="panel-icon">
         <i class="{{.Page.Params.iconClass}}" aria-hidden="true"></i>
       </span>
       {{end}}
-      {{ .Name }}
+      {{ .Name }} {{ if $expandChildren}}EXP{{end}}
     </a>
-    {{ if or (eq $currentPage.Parent .Page) (eq $currentPage .Page) }}
-      {{ $weightParam := printf "menu.%s.weight" .Page.Params.menu }}
-      {{ range .Page.Pages.ByParam $weightParam }}
+
+    {{ range .Page.Pages.ByWeight }}
+      {{ $currentFilePage := (eq $currentPage .)}}
+      {{ $siblingOfCurrentFilePage := (eq $currentPage.Parent .Parent)}}
+      {{ $childOfCurrentDirPage := (eq $currentPage .Parent)}}
+      {{ if or $currentFilePage (and $siblingOfCurrentFilePage $expandChildren) (and $childOfCurrentDirPage $expandChildren) }}
         <a href="{{.URL}}" style="padding-left: 1.5em" class="panel-block {{ if eq $currentPage . }}is-active{{ end }}">
           <span class="panel-icon">
             <i class="fas fa-book" aria-hidden="true"></i>

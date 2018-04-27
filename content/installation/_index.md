@@ -3,6 +3,7 @@ title: Installation
 weight: 1110
 menu: main
 iconClass: fas fa-download
+collapseChildren: true
 ---
 
 Cucumber is available for most mainstream programming languages.
