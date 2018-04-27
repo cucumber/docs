@@ -47,7 +47,7 @@ When you are done editing, build the site and check links:
 
 ### Modify theme
 
-See the [theme README][themes/cucumber-hugo/README.md]
+See the [theme README](themes/cucumber-hugo/README.md)
 
 ## Architecture
 
