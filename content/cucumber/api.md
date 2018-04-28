@@ -857,7 +857,7 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 {{% /block %}}
 
-You can also run features using a build tool or an [IDE](/tools/general#ides).
+You can also run features using a [build tool](/tools/general#build-tools) or an [IDE](/tools/general#ides).
 
 # Configuration
 

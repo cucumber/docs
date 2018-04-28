@@ -31,7 +31,7 @@ You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstud
 
 # IDEs
 
-* [Java IDEs](/tools/java#ides).
+* [Java IDEs](/tools/java#ides)
 
 # Build Tools
 You can run Cucumber using build tools, rather than from the command line.
