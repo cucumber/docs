@@ -1,8 +1,6 @@
 ---
-title: Cucumber Configuration
-subtitle: cucumber.yml, environment variables
-polyglot:
-  - ruby
+title: Ruby Configuration
+subtitle: Additional Cucumber configuration in Ruby (cucumber.yml & profiles)
 ---
 
 You can specify configuration options for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
