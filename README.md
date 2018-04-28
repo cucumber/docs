@@ -44,6 +44,7 @@ When you are done editing, build the site and check links:
 
     ./docker_shell.sh make clean
     ./docker_shell.sh make
+    ./docker_shell.sh make htmlproofer
 
 ### Modify theme
 
