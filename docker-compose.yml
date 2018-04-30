@@ -1,0 +1,10 @@
+version: '2'
+services:
+  web:
+    image: cucumber/hugo:d37f116e8662c671283a116b35f21991
+    container_name: docs.cucumber.io
+    volumes:
+      - '.:/app'
+    ports:
+      - '1313:1313'
+    command: hugo serve --bind 0.0.0.0
