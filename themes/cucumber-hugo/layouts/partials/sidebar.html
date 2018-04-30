@@ -1,5 +1,8 @@
-{{ $currentPage := . }}
 <nav class="panel">
+  <div class="panel-block">
+    {{ partial "doc-search.html" . }}
+  </div>
+  {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
     {{ $expandChildren := (not .Page.Params.collapseChildren) }}
     <a href="{{.URL}}" class="panel-block {{ if eq $currentPage .Page }}is-active{{ end }}">
