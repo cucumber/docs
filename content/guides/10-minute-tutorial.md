@@ -1,10 +1,7 @@
 ---
 title: 10 Minute Tutorial
 subtitle: Get started in just 10 minutes
-polyglot:
-  - java
-  - javascript
-  - ruby
+polyglot: true
 ---
 
 In this quick tutorial you will learn how to:

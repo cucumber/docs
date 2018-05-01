@@ -5,10 +5,7 @@ menu:
   about:
     parent: main
     weight: 20
-polyglot:
-  - java
-  - javascript
-  - ruby
+polyglot: true
 ---
 
 Please follow these guidelines if you want to contribute to Cucumber or help the Cucumber team reproduce a problem.

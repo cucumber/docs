@@ -1,10 +1,7 @@
 ---
 title: Anti-patterns
 subtitle: Avoid common mistakes and pitfalls
-polyglot:
-  - java
-  - javascript
-  - ruby
+polyglot: true
 ---
 
 There are several anti-patterns, which we will describe here. We will also give you hints on how to avoid them!

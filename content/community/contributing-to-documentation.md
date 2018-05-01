@@ -113,22 +113,17 @@ look good.
 
 # Polyglot pages
 
-All pages with source code should be polyglot, meaning there should be source code
-for all supported programming languages. See `themes/cucumber-hugo/layouts/partials/language-tabs.html`
-for a list of supported languages.
+Pages can contain variations of the same content that conditionally displays
+text or source code for a particular programming language.
 
-The front-matter should also declare that this is a polyglot page so that the
-programming language tabs are displayed at the top of the page:
+A language select will be displayed if the page specifies `polyglot: true`
+in the front-matter.
 
-```yaml
-polyglot:
-  - java
-  - javascript
-  - ruby
-```
+The following languages are currently supported:
 
-When a tab is selected, only source code and language-specific text for the selected
-language will be displayed.
+* Java
+* JavaScript
+* Ruby
 
 ## Language-specific source code and paragraphs
 

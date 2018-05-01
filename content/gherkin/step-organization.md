@@ -1,10 +1,7 @@
 ---
 title: Step Organization
 subtitle: "How to organize your step"
-polyglot:
-  - java
-  - javascript
-  - ruby
+polyglot: true
 ---
 
 You can have all of your step definitions in one file, or in multiple files. When you start with your project, all your step definitions will probably be in one file.

@@ -61,10 +61,17 @@ function showOnly(language) {
   // Remember
   localStorage.setItem('language', language)
 
-  // Activate tab for language
-  each(document, '.tabs li', function(a) { removeClass(a, 'is-active') })
-  var tab = document.querySelector('[data-language="' + language + '"]')
-  addClass(tab, 'is-active')
+  // Activate select for language
+  var select = document.querySelector('#language-select select')
+  if(select) {
+    each(document, '#language-select .icon', function(e) {
+      if(e.dataset.language === language) {
+        removeClass(e, 'is-hidden')
+      } else {
+        addClass(e, 'is-hidden')
+      }
+    })
+  }
 
   // Hide all code elements
   for(var i=0; i<showHideSelectors.length; i++) {
@@ -95,18 +102,22 @@ ready(function() {
     })
   })
 
-  var firstLi = document.querySelector('.tabs li')
-  if(firstLi) {
-    var language = localStorage.getItem('language') || firstLi.getAttribute('data-language')
-    showOnly(language)
-  }
-  
+  each(document, 'select', function(select) {
+    select.addEventListener('change', function () {
+      var language = select.value
+      showOnly(language)
+    })
+  })
+
+  var language = localStorage.getItem('language') || 'java'
+  showOnly(language)
+
   // Toggle navbar menu
   var burger = document.querySelector('.navbar-burger')
   if(burger) {
     burger.addEventListener('click', function() {
       var navbarMenu = document.getElementById(burger.dataset.target)
-      
+
       toggleClass(burger, 'is-active')
       toggleClass(navbarMenu, 'is-active')
     })
