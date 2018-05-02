@@ -324,7 +324,7 @@ end
 ```
 
 {{% block "ruby" %}}
-Here is an example in which we exit at the first failure (which could be useful in some cases like [Continuous Integration](/cucumber/continuous-integration/), where fast feedback is important).
+Here is an example in which we exit at the first failure (which could be useful in some cases like [Continuous Integration](/guides/continuous-integration), where fast feedback is important).
 {{% /block %}}
 
 ```ruby
