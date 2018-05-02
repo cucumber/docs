@@ -30,7 +30,7 @@ Feature: Guess the word
 ```
 
 The trailing portion (after the keyword) of each step is matched to
-a code block, called a [step definition](/cucumber/api/#step-definitions).
+a code block, called a [step definition](/cucumber/step-definitions).
 
 # Keywords
 
@@ -171,14 +171,14 @@ Most software does something people could do manually (just not as efficiently).
 Try hard to come up with examples that don't make any assumptions about
 technology or user interface. Imagine it's 1922, when there were no computers.
 
-Implementation details should be hidden in the [step definitions](/cucumber/api/#step-definitions).
+Implementation details should be hidden in the [step definitions](/cucumber/step-definitions).
 {{% /note %}}
 
 ### Then
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
-The [step definition](/cucumber/api/#step-definitions) of a `Then` step should use an *assertion* to
+The [step definition](/cucumber/step-definitions) of a `Then` step should use an *assertion* to
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 

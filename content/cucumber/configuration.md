@@ -112,7 +112,7 @@ You can use environment variables in the profile argument list, just as you woul
    ```
 
 When [running Cucumber](/cucumber/api/#running-cucumber), it can sometimes be handy to pass special
-values to Cucumber for your [step definitions](/cucumber/api/#step-definitions) to use.
+values to Cucumber for your [step definitions](/cucumber/step-definitions) to use.
 
 You can do this on the command line:
 
@@ -150,3 +150,12 @@ install an updated version of Cucumber or cucumber-rails. However, this overwrit
 In order to keep any custom configurations from your `env.rb` file, check in your `env.rb` along with the rest of your version
 controlled files and be prepared to diff and merge changes to `env.rb` between versions of Cucumber-Rails.
 {{% /text %}}
+
+{{% block "java" %}}
+public class MyConfiguration extends cucumber.api.Configuration {
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+        // Register custom parameter types and data table types here.
+    }
+}
+{{% /block %}}
