@@ -376,7 +376,7 @@ To run a particular hook only for certain scenarios, you can associate a
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
-Hook with a [tag expression](/cucumber/api/#tag-expressions).
+Hook with a [tag expression](/cucumber/tag-expressions).
 
 {{% block "java" %}}
 Annotated method style:
@@ -515,38 +515,6 @@ Tags are inherited by child elements.
 Tags that are placed above a `Feature` will be inherited by `Scenario`, `Scenario Outline`, or `Examples`.
 
 Tags that are placed above a `Scenario Outline` will be inherited by `Examples`.
-
-## Tag Expressions
-
-Tag expressions provide a simple query language to select scenarios based on
-[boolean expressions](https://en.wikipedia.org/wiki/Boolean_expression).
-
-Tag expressions are used for two different purposes:
-
-* [Running a subset of scenarios](#running-a-subset-of-scenarios)
-* [Scoping hooks to a subset of scenarios](#tagged-hooks)
-
-The simplest possible tag expression is simply a tag, for example:
-
-```shell
-@wip
-```
-
-You can combine tags to form more advanced expressions using boolean logic:
-
-```shell
-@wip and not @slow
-@smoke and @fast
-@gui or @database
-@gui and @database
-```
-
-For even more advanced tag expressions you can use parenthesis for clarity, or
-to change operator precedence:
-
-```shell
-(@smoke or @ui) and (not @slow)
-```
 
 ## Running a subset of scenarios
 
