@@ -1,5 +1,6 @@
 ---
 title: Ruby Tools
+weight: 1200
 ---
 
 This page describes tools commonly used with Ruby.

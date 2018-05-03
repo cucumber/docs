@@ -1,5 +1,6 @@
 ---
 title: Java Tools
+weight: 1100
 ---
 
 This page describes tools commonly used with Java.
