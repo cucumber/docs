@@ -1,6 +1,7 @@
 ---
 title: Testable Architecture
 subtitle: How to have fast and reliable tests
+weight: 1400
 ---
 
 Automated tests and executable specifications can only work with software that has a testable architecture.

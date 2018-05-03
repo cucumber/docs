@@ -2,6 +2,7 @@
 title: 10 Minute Tutorial
 subtitle: Get started in just 10 minutes
 polyglot: true
+weight: 1100
 ---
 
 In this quick tutorial you will learn how to:

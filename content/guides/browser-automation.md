@@ -5,6 +5,7 @@ polyglot:
   - java
   - javascript
   - ruby
+weight: 1300
 ---
 
 Cucumber is not a browser automation tool, but it works well with the following browser automation tools.

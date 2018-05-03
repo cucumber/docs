@@ -2,6 +2,7 @@
 title: Anti-patterns
 subtitle: Avoid common mistakes and pitfalls
 polyglot: true
+weight: 1600
 ---
 
 There are several anti-patterns, which we will describe here. We will also give you hints on how to avoid them!

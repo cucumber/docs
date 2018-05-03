@@ -1,6 +1,7 @@
 ---
 title: BDD Tutorial
 subtitle: Build an application, guided by Cucumber
+weight: 1200
 ---
 Behaviour-Driven Development (BDD) is a **collaborative** approach to software development that bridges the communication gap between business and IT. BDD helps teams communicate requirements with more precision, discover defects early and produce software that remains maintainable over time.
 

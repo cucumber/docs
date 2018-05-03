@@ -1,6 +1,7 @@
 ---
 title: Introduction
 subtitle: New to Cucumber? Start here!
+weight: 1000
 ---
 
 {{% note "Before you get started" %}}
