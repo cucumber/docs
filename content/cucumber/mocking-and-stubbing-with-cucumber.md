@@ -1,15 +1,12 @@
 ---
-menu:
-- reference
-source: https://github.com/cucumber/cucumber/wiki/Mocking-and-Stubbing-with-Cucumber/
 title: Mocking and Stubbing with Cucumber
-polyglot: false
+subtitle: Decoupling your scenarios from infrastructure
 ---
 
 Mocking is usually discouraged when using Cucumber; ideally you would exercise as much of your stack as possible.
 There are cases when using mocking can come in handy. For example, if your system depends on a third party.
 If you have a dependency on an external system, we recommend using [stubs instead of mocks](http://martinfowler.com/articles/mocksArentStubs.html).
-You **can** set up mocks with expectations in your [step definitions](/cucumber/#step-definitions).
+You **can** set up mocks with expectations in your [step definitions](/cucumber/step-definitions).
 
 # Ruby
 

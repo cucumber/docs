@@ -12,43 +12,15 @@
   </div>
 
   <div class="navbar-menu" id="navbarMenu">
-    <div class="navbar-start">
-      {{ partial "navbar-item" (dict "Menu" .Site.Menus.cucumber "NavbarTitle" "Cucumber" ) }}
-      {{ partial "navbar-item" (dict "Menu" .Site.Menus.guides        "NavbarTitle" "Guides"        ) }}
-      {{ partial "navbar-item" (dict "Menu" .Site.Menus.bdd           "NavbarTitle" "BDD"           ) }}
-      {{ partial "navbar-item" (dict "Menu" .Site.Menus.support       "NavbarTitle" "Community"           ) }}
-
-      <div id="search-navbar-item" class="navbar-item has-dropdown" style="padding: 10px 0 0 0">
-        <div class="field">
-          <p class="control has-icons-left">
-            <input id="search-input" type="text" class="input">
-            <span class="icon is-small is-left">
-              <i class="fa fa-search"></i>
-            </span>
-          </p>
-        </div>
-        <div class="navbar-dropdown is-boxed" id="search-hit-dropdown">
-          <a class="navbar-item" href="/" id="search-hit-item-template" style="display: none">
-            <p>
-              <strong class="js-title">Result</strong>
-              <br>
-              <small class="js-description">Details</small>
-            </p>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
     <div class="navbar-end">
       <a class="navbar-item" href="https://github.com/cucumber/cucumber">
         <span class="icon">
-          <i class="fa fa-github"></i>
+          <i class="fab fa-github"></i>
         </span>
       </a>
       <a class="navbar-item" href="https://twitter.com/cucumberbdd">
         <span class="icon">
-          <i class="fa fa-twitter"></i>
+          <i class="fab fa-twitter"></i>
         </span>
       </a>
     </div>

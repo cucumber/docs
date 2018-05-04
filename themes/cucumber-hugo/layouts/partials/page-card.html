@@ -1,0 +1,40 @@
+<a href="{{.URL}}">
+  <div class="card" style="height: 100%">
+    <div class="card-content">
+      <div class="media">
+        {{if .Params.img}}
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="{{.Params.img}}" alt="Logo">
+          </figure>
+        </div>
+        {{end}}
+        {{if .Params.svg}}
+        <div class="media-left">
+          <figure class="image is-64x64">
+            {{ readFile .Params.svg | safeHTML }}
+          </figure>
+        </div>
+        {{end}}
+        <div class="media-content">
+          <p class="title is-5">{{.Title}}</p>
+          <p class="subtitle is-6">{{.Params.subtitle}}</p>
+          <p>
+            {{ if eq .Params.implementation "official"}}
+              <span class="tag is-success is-pulled-right">official</span>
+            {{end}}
+            {{ if eq .Params.implementation "semi-official"}}
+              <span class="tag is-info is-pulled-right">semi-official</span>
+            {{end}}
+            {{ if eq .Params.implementation "unofficial"}}
+              <span class="tag is-dark is-pulled-right">unofficial</span>
+            {{end}}
+            {{ if eq .Params.implementation "unmaintained"}}
+              <span class="tag is-danger is-pulled-right">unmaintained</span>
+            {{end}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

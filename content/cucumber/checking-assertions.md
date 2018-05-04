@@ -1,6 +1,6 @@
 ---
-source: https://github.com/cucumber/cucumber/wiki/RSpec-Expectations/
 title: Checking Assertions
+subtitle: "How to determine success or failure"
 ---
 
 Your `Then` steps should make assertions comparing expected results to actual results
@@ -21,13 +21,13 @@ If you are using Maven, add the following to your `pom.xml`:
 <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>4.12</version>
+    <version>{{% version "junit" %}}</version>
     <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -65,13 +65,13 @@ If you are using Maven, add the following to your `pom.xml`:
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>{{ site.versions.testng }}</version>
+    <version>{{% version "testng" %}}</version>
     <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-testng</artifactId>
-    <version>{{ site.versions.cucumber_jvm }}</version>
+    <version>{{% version "cucumberjvm" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -144,7 +144,7 @@ In Cucumber, one writes `fail if false` and not simply `false`.
 This is because `false` might be the expected successful outcome of a test, and thus not an error.
 
 Sometimes however, we wish to test how our application handles an exception and therefore do not want that exception
-to be handled by Cucumber. For that situation use the `@allow-rescue` [tag](/cucumber/#tags).
+to be handled by Cucumber. For that situation use the `@allow-rescue` [tag](/cucumber/api/#tags).
 
 ## Test::Unit
 

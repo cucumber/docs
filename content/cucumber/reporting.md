@@ -1,8 +1,6 @@
 ---
 title: Reporting
-polyglot:
-  - java
-  - dot-net
+polyglot: true
 ---
 
 Cucumber uses reporter plugins to produce reports that contain information about
@@ -17,12 +15,12 @@ build your own.
 
 ## Cucumber Pro
 
-This {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}} plugin publishes 
+This {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}} plugin publishes
 results to [Cucumber Pro](https://cucumber.io/pro).
 
 ### Requirements
 
-Your project must be stored in a Git repository, and you must be using one of the 
+Your project must be stored in a Git repository, and you must be using one of the
 following CI servers:
 
 * [Bamboo](https://www.atlassian.com/software/bamboo)
@@ -78,7 +76,7 @@ the following contents (replace `***` with actual values).
 ```yaml
 cucumberpro:
   # The name of the Cucumber Pro project.
-  # You can leave this blank if your Cucumber Pro project name is identical to the 
+  # You can leave this blank if your Cucumber Pro project name is identical to the
   # CI project name, and you you're using one of Bamboo, Circle CI, TFS, Travis
   # or Wercker.
   projectname: ***
@@ -99,11 +97,11 @@ Authentication is not required on a privately hosted Cucumber Pro Appliance.
 
 ### Activation
 
-The plugin will activate itself automatically if it detects that it's running 
+The plugin will activate itself automatically if it detects that it's running
 in one of the supported CI environments. When you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}} from your workstation the plugin will **not**
 be activated, and will not publish results.
 
-When you configure the plugin for the first time you can force-activate the plugin 
+When you configure the plugin for the first time you can force-activate the plugin
 from your work station by defining the following environment variables:
 
 * `GIT_COMMIT` - you can find it by running `git rev-parse HEAD`
@@ -114,16 +112,16 @@ This is useful for verifying that you have configured the plugin correctly.
 ### Profiles
 
 If you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}}
-several times as part of your build (with different options, 
-perhaps different tags), you can specify a different *profile name* for each run. 
+several times as part of your build (with different options,
+perhaps different tags), you can specify a different *profile name* for each run.
 This allows Cucumber Pro to show separate results for each profile.
 
 The profile name can be specified in the `CUCUMBERPRO_PROFILE` environment variable,
-which you would typically define in a wrapper script that launches 
+which you would typically define in a wrapper script that launches
 {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}}.
 
 {{% block "java" %}}
-The profile name can also be specified by appending a colon and a profile name to the 
+The profile name can also be specified by appending a colon and a profile name to the
 plugin class name:
 
 ```java
@@ -161,7 +159,7 @@ cucumberpro:
   # *DO NOT DO THIS* - as it would allow anyone with read acceess to your repository to publish results.
   token:
 
-  # The plugin sends your local environment variables to Cucumber Pro so it can detect the CI build number, 
+  # The plugin sends your local environment variables to Cucumber Pro so it can detect the CI build number,
   # git branch/tag and other information about the build. This mask is a regular expression for filtering
   # out sensitive values that should not be sent to Cucumber Pro.
   envmask: SECRET|KEY|TOKEN|PASSWORD|PWD
@@ -181,7 +179,7 @@ cucumberpro:
     # Set this to false if you want the build to break in case Cucumber Pro is unavailable.
     ignoreerror: true
 
-    # If the http connection for publishing results takes longer than this (milliseconds), 
+    # If the http connection for publishing results takes longer than this (milliseconds),
     # time out the connection.
     timeout: 5000
 ```
