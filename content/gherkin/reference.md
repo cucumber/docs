@@ -183,7 +183,7 @@ The [step definition](/cucumber/step-definitions) of a `Then` step should use an
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
-An observation _should_ be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not something deeply buried inside it (like a database).
+An observation *should* be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not something deeply buried inside it (like a database).
 
 Examples:
 
