@@ -61,4 +61,4 @@ This is called the [test pyramid](https://martinfowler.com/bliki/TestPyramid.htm
 For an example of how to implement fast tests (in node.js), see [subsecondtdd on GitHub](https://github.com/subsecondtdd/todo-subsecond).
 
 Or have a look at Aslak's [talk at Devlin 2017](https://skillsmatter.com/skillscasts/9971-testable-software-architecture-with-aslak-hellesoy)
-- or the [slides](https://speakerdeck.com/aslakhellesoy/testable-architecture-at-devlin-2017) - about this subject.
+- or the [slides](https://speakerdeck.com/aslakhellesoy/testable-architecture-devlin-2017) - about this subject.
