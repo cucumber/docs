@@ -82,7 +82,7 @@ Given(/^I have a CV and I'm on the edit description page$/, function () {
 
 ```ruby
 Given /I have a CV and I'm on the edit description page/ do
-  @employee = Employee.create!(:name => 'Sally')
+  @employee = Employee.create!(name: 'Sally')
   @employee.create_cv
   visits("/employees/#{@employee.id}/descriptions/new")
 end
