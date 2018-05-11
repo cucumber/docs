@@ -129,7 +129,7 @@ expression.
 # Snippets
 
 When Cucumber encounters a [Gherkin step](/gherkin/reference#steps) without a
-matching step definition, it will print a step
+matching step definition, it will print a 
 step definition snippet with a matching [Cucumber Expression](/cucumber/cucumber-expressions).
 You can use this as a starting point for new step definitions.
 
