@@ -270,7 +270,7 @@ Unless instructed otherwise the Cucumber-Rails install generator will set up the
 
 While Capybara is the preferred testing method for HTML views in cucumber-rails it does not play well with Rails' own
 built-in `MiniTest/Test::Unit`. In particular, whenever Capybara is required into a Cucumber World then the `response.body`
-method of `Rails Test::Unit` is removed. Capybara depends upon Nokigiri and Nokogiri prefers to use XML rather than CSS tags.
+method of `Rails Test::Unit` is removed. Capybara depends upon Nokogiri and Nokogiri prefers to use XML rather than CSS tags.
 This behaviour can be overridden in `./features/support/env.rb`.
 
 More information on [Capybara](http://teamcapybara.github.io/capybara/).
