@@ -40,21 +40,23 @@ public class ExampleSteps {
 
    @When("^I search for \"(.*)\"$")
      public void search_for(String query) {
-        WebElement element = driver.findElelment(By.name("q"));
-        //Enter Something to search for
+        WebElement element = driver.findElement(By.name("q"));
+        // Enter something to search for
         element.sendKeys(query);
-        //Now submit the form. WebDriver will find the form for us from the element
+        // Now submit the form. WebDriver will find the form for us from the element
         element.submit();
    }
 
    @Then("^ the page title should start with \"(.*)\"$")
    public void checkTitle() {
-       //Google's search is rendered dynamically with JavaScript.
-       //Wait for the page to load timeout after ten seconds
-       new WebDriverWait(driver,'10')).untill(new ExpectedCondition<Boolean> {
-       public Boolean apply(WebDriver d) {
-       return d.getTitle().toLowerCase.startsWith("cheese");
-       //Should see: "cheese! -Google Search"
+       // Google's search is rendered dynamically with JavaScript
+       // Wait for the page to load timeout after ten seconds
+       new WebDriverWait(driver,'10').until(new ExpectedCondition<Boolean>() {
+           public Boolean apply(WebDriver d) {
+               return d.getTitle().toLowerCase().startsWith("cheese");
+               // Should see: "cheese! -Google Search"
+           }
+       });
     }
 
     @After()
@@ -310,7 +312,7 @@ public class WebDriverFactory {
 }
 ```
 
-Then, simply define the `browser` property when you run Cucumber:
+Then, define the `browser` property when you run Cucumber:
 {{% text "ruby" %}}
 ```
 browser=chrome cucumber
