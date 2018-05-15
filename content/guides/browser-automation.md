@@ -54,7 +54,7 @@ public class ExampleSteps {
        new WebDriverWait(driver,'10').until(new ExpectedCondition<Boolean>() {
            public Boolean apply(WebDriver d) {
                return d.getTitle().toLowerCase().startsWith("cheese");
-               //Should see: "cheese! -Google Search"
+               // Should see: "cheese! -Google Search"
            }
        });
     }
@@ -312,7 +312,7 @@ public class WebDriverFactory {
 }
 ```
 
-Then, simply define the `browser` property when you run Cucumber:
+Then, define the `browser` property when you run Cucumber:
 {{% text "ruby" %}}
 ```
 browser=chrome cucumber
