@@ -52,9 +52,11 @@ public class ExampleSteps {
        //Google's search is rendered dynamically with JavaScript.
        //Wait for the page to load timeout after ten seconds
        new WebDriverWait(driver,'10')).untill(new ExpectedCondition<Boolean> {
-       public Boolean apply(WebDriver d) {
-       return d.getTitle().toLowerCase.startsWith("cheese");
-       //Should see: "cheese! -Google Search"
+           public Boolean apply(WebDriver d) {
+               return d.getTitle().toLowerCase.startsWith("cheese");
+               //Should see: "cheese! -Google Search"
+           }
+       }
     }
 
     @After()
