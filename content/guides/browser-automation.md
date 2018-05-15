@@ -30,6 +30,17 @@ Scenario: Finding some cheese
 ```java
 package class.example;
 
+import cucumber.api.java.After;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
 public class ExampleSteps {
 
     private final WebDriver driver = new FirefoxDriver();
@@ -197,6 +208,8 @@ More information on [Serenity](http://serenity-bdd.info).
 
 {{% /text %}}
 
+{{% text "javascript,ruby" %}}Serenity only works with Java.{{% /text %}}
+
 # Browser Automation Tools for Ruby
 
 ## Watir
@@ -256,10 +269,11 @@ Then(/^I should see some results$/) do
   @browser.close
 end
 ```
+More information on [Watir](http://watir.com).
 
 {{% /text %}}
 
-More information on [Watir](http://watir.com).
+{{% text "java,javascript" %}}Watir only works with Ruby.{{% /text %}}
 
 ## Capybara
 
@@ -278,6 +292,8 @@ This behaviour can be overridden in `./features/support/env.rb`.
 More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 {{% /text %}}
+
+{{% text "java,javascript" %}}Capybara only works with Ruby.{{% /text %}}
 
 # Tips and Tricks
 
@@ -330,7 +346,12 @@ If you are using Serenity, simply pass the `driver` system property (no extra co
 mvn test -Ddriver=chrome
 ```
 {{% /text %}}
+
 ## Example Projects
 
+{{% text "java" %}}
+Here are a few example project using Java:
 - [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
 - [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)
+
+{{% /text %}}
