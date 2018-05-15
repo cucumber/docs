@@ -19,7 +19,6 @@ Cucumber is a tool that supports [Behaviour-Driven Development(BDD)](/bdd).
 Cucumber reads executable specifications written in plain text and and validates that the
 software does what those specifications say. The specifications consists of multiple
 *examples*, or *scenarios*. For example:
-*examples* or scenario, for example:
 
 ```gherkin
 Scenario: Breaker guesses a word
