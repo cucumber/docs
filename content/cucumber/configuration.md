@@ -1,13 +1,75 @@
 ---
 title: Cucumber Configuration
-subtitle: cucumber.yml, environment variables
+subtitle: cucumber.yml, type registry
 polyglot: true
 ---
 
+
+# Type Registry Configuration
+
+{{% block "java" %}}
+The type registry is used to configure parameter and data table types. It can be configured by placing an implementation 
+of `cucumber.api.TypeRegistryConfigurer` on the glue path.
+
+
+```java
+public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
+
+    @Override
+    public Locale locale() {
+        return ENGLISH;
+    }
+
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+        typeRegistry.defineParameterType(new ParameterType<Integer>(
+            "digit",
+            "[0-9]",
+            Integer.class,
+            new Transformer<Integer>() {
+                @Override
+                public Integer transform(String s) throws Throwable {
+                    return Integer.parseInt(s);
+                }
+            })
+        );
+
+        typeRegistry.defineDataTableType(new DataTableType(
+            ItemQuantity.class,
+            new TableCellTransformer<ItemQuantity>() {
+                @Override
+                public ItemQuantity transform(String s) {
+                    return new ItemQuantity(s);
+                }
+            })
+        );
+    }
+}
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+ TODO:
+{{% /block %}}
+
+{{% block "javascript" %}}
+ TODO:
+{{% /block %}}
+
+# Profiles
+
+{{% block "java" %}}
+  Profiles are not available in Java
+{{% /block %}}
+
+{{% block "javascript" %}}
+ TODO:
+{{% /block %}}
+
+{{% block "ruby" %}}
 You can specify configuration options for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
 This file must be in a `.config` directory, or `config` subdirectory of your current working directory.
 
-# Defining Profiles
 
 ```yaml
 config/cucumber.yml
@@ -22,17 +84,15 @@ want to execute with this profile.
 The example above generates two profiles:
 
 1. `html_report`, with a list of command-line options that specify new output formats, and
-2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/api/#tags) with `@bvt`.
+2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/api#tags) with `@bvt`.
 
-{{% text "ruby" %}}
 Cucumber-Rails creates a `cucumber.yml` file in the project config directory containing a number of predefined profiles,
 one of which is the default profile. When Cucumber is run from the command line, it is usually necessary to provide both
 the directory name containing the root directory of the tree containing feature files and the directory name containing
 references to the necessary library files. In a typical project, `cucumber --require features features/some/path` will suffice.
 Repetitious usages can be added to user-defined profiles contained in the project's `cucumber.yml` file.
-{{% /text %}}
 
-## Executing Profiles
+<b>Profile can be executed</b>
 
 ```bash
 \[user@system project] cucumber --profile html_report
@@ -55,7 +115,7 @@ output.
 \[user@system project] cucumber -p html_report -p bvt
 ```
 
-## Default Profile
+<b>Default Profile</b>
 
 Chances are you’ll want to execute Cucumber with a particular profile most of the time.
 The Cucumber configuration file uses a `default` profile to provide this functionality.
@@ -80,7 +140,7 @@ With this setup, Cucumber will now use both the `bvt` profile and `html_report`
 profile, testing all Features and Scenarios tagged with `@bvt`, along with the
 progress output and HTML output.
 
-## Preprocessing with ERB
+<b>Preprocessing with ERB</b>
 
 The `cucumber.yml` file is preprocessed by [ERB (Embedded RuBy)](http://ruby-doc.org/stdlib-2.5.0/libdoc/erb/rdoc/ERB.html). This allows you to use Ruby code
 to generate values in the `cucumber.yml` file.
@@ -95,8 +155,8 @@ So, if you have several profiles with similar values, you might do this:
    default: <%= common %> features
    html_report: <%= common %> --format html --out=features_report.html features
    ```
-
-## Environment Variables
+      
+<b>Environment Variables</b>
 
 You can use environment variables in the profile argument list, just as you would normally specify them on the command-line.
 
@@ -111,7 +171,7 @@ You can use environment variables in the profile argument list, just as you woul
    ie: BROWSER=IE
    ```
 
-When [running Cucumber](/cucumber/api/#running-cucumber), it can sometimes be handy to pass special
+When [running Cucumber](/cucumber/api#running-cucumber), it can sometimes be handy to pass special
 values to Cucumber for your [step definitions](/cucumber/step-definitions) to use.
 
 You can do this on the command line:
@@ -130,7 +190,8 @@ For example, the following sets up a profile that runs the specified Tag and set
    baz: --tags @mytag FOO=BAR
    ```
 
-{{% text "ruby" %}}
+<b>Env.rb</b>
+
 Local Cucumber customisation code in `support/env.rb` itself as that file is typically
 overwritten by `script/generate cucumber:install | rails g cucumber`. Customisations that
 must be loaded before the rest of Cucumber initialises must be placed at the beginning of the `env.rb file`.
@@ -149,15 +210,4 @@ As a matter of good practice you should always run `script/generate cucumber | r
 install an updated version of Cucumber or cucumber-rails. However, this overwrites `features/support/env.rb`.
 In order to keep any custom configurations from your `env.rb` file, check in your `env.rb` along with the rest of your version
 controlled files and be prepared to diff and merge changes to `env.rb` between versions of Cucumber-Rails.
-{{% /text %}}
-
-{{% block "java" %}}
-```java
-public class MyConfiguration extends cucumber.api.Configuration {
-    @Override
-    public void configureTypeRegistry(TypeRegistry typeRegistry) {
-        // Register custom parameter types and data table types here.
-    }
-}
-```
 {{% /block %}}

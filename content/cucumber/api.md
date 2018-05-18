@@ -525,7 +525,7 @@ mvn test
 Or changing your JUnit runner class:
 
 ```java
-@Cucumber.Options(tags = "@smoke and @fast")
+@CucumberOptions(tags = "@smoke and @fast")
 public class RunCucumberTest {}
 ```
 
@@ -639,7 +639,7 @@ It is launched by running
 {{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
 {{% text "javascript" %}}`cucumber` from the command line, or a build script.{{% /text %}}
 
-It is possible to [configure](#configuration) how Cucumber should run features.
+It is possible to [configure](/cucumber/configuration) how Cucumber should run features.
 
 ## From the command line
 
@@ -715,13 +715,88 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 You can also run features using a [build tool](/tools/general#build-tools) or an [IDE](/tools/general#ides).
 
-# Configuration
 
-Cucumber provides several configuration options.
+## JUnit
 
-## Command-line
+{{% block "java" %}}
+To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency to your pom.
 
-Configuration options can be passed to on the command-line.
+```xml
+<dependencies>
+  [...]
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>${cucumber.version}</version>
+        <scope>test</scope>
+    </dependency>
+  [...]
+</dependencies>
+```
+
+Create an empty class that uses the Cucumber JUnit runner.
+
+```java
+package com.example;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+public class RunCukesTest {
+}
+```
+
+This will execute all scenarios in same package as the runner, by default glue code is also assumed to be in the same 
+package. 
+
+The `@CucumberOptions` can be used to provide
+[additional configuration](#list-configuration-options) to the runner. 
+
+
+For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
+
+```java
+package mypackage;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "html:target/cucumber"})
+public class RunCukesTest {
+}
+```
+
+Usually, this class will be empty. You can, however, specify several JUnit rules.
+
+{{% note "Supported JUnit annotations"%}}
+Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotations.
+These will executed before and after all scenarios. Using these is not recommended, as it limits the portability between different runners;
+they may not execute correctly when using the commandline, [IntelliJ IDEA](https://www.jetbrains.com/help/idea/cucumber.html) or
+[Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse). Instead it is recommended to use Cucumbers `Before`
+and `After` [hooks](#hooks).
+{{% /note %}}
+
+The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
+Listeners and Reporters can all be expected to work.
+
+For more information on JUnit, see the [JUnit web site](http://www.junit.org).
+{{% /block %}}
+
+{{% block "ruby" %}}
+Ruby can't be run by JUnit
+{{% /block %}}
+
+{{% block "javascript" %}}
+Javascript can't be run by JUnit
+{{% /block %}}
+
+# Options
+
+Cucumber provides several options that can be passed to on the command-line.
 
 {{% block "ruby" %}}
 For example:
@@ -763,36 +838,6 @@ Or:
 ```
 mvn test -Dcucumber.options="--help"
 ```
-
-For example, if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
-
-```java
-package mypackage;
-
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "html:target/cucumber"})
-public class RunCukesTest {
-}
-```
-
-Usually, this class will be empty. You can, however, specify several JUnit rules.
-
-{{% note "Supported JUnit annotations"%}}
-Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotations.
-These will executed before and after all scenarios. Using these is not recommended, as it limits the portability between different runners;
-they may not execute correctly when using the commandline, [IntelliJ IDEA](https://www.jetbrains.com/help/idea/cucumber.html) or
-[Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse). Instead it is recommended to use Cucumbers `Before`
-and `After` [hooks](#hooks).
-{{% /note %}}
-
-The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
-Listeners and Reporters can all be expected to work.
-
-For more information on JUnit, see the [JUnit web site](http://www.junit.org).
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -815,7 +860,7 @@ Some of the runners provide additional mechanisms for passing options to Cucumbe
 {{% /block %}}
 
 {{% block "ruby" %}}
-You can also define common command-line options in a [`cucumber.yml`](/cucumber/configuration/) file.
+You can also define common command-line options in a [`cucumber.yml`](/cucumber/configuration) file.
 {{% /block %}}
 
 {{% block "javascript" %}}
