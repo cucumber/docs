@@ -150,7 +150,7 @@ public void i_have_red_balls(int int1) {
 
 {{% block "ruby" %}}
 ```ruby
-Given("I have {int} red balls") do |int1|
+Given('I have {int} red balls') do |int1|
 end
 ```
 {{% /block %}}
@@ -176,7 +176,7 @@ public void i_have_red_balls(int int1, Color color) {
 
 {{% block "ruby" %}}
 ```ruby
-Given("I have {int} {color} balls") do |int1, color|
+Given('I have {int} {color} balls') do |int1, color|
 end
 ```
 {{% /block %}}
