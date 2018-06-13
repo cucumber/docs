@@ -792,12 +792,97 @@ Feature: Is it Friday yet?
 
 Congratulations! You've got your first green Cucumber scenario.
 
+# Evaluate a scenario
+Now that we've forced a scenario to pass, let's write one that passes or fails based on logic. Let's update our statement to evaluate whether or not `today` is equal to `"Friday"`.
+
+{{% block "javascript" %}}
+```javascript
+function isItFriday(today) {
+  return (today === "Friday") ? "TGIF" : "Nope";
+}
+```
+{{% /block %}}
+
+Run Cucumber again:
+
+{{% block "javascript" %}}
+```shell
+...
+1 scenario (1 passed)
+3 steps (3 passed)
+0m00.001s
+```
+{{% /block %}}
+
+# Multiple scenarios
+We've seen what happens when it *isn't* Friday, but what about when it *is* Friday? Fortunately, we've already written the statement to evaluate whether or not `today` is equal to `"Friday"` and return `"TGIF"` if it is. So, let's write a scenario where today is Friday!
+
+Update the `is-it-friday-yet.feature` file.
+```gherkin
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday
+    Given today is Sunday
+    When I ask whether it's Friday yet
+    Then I should be told "Nope"
+
+  Scenario: Friday is Friday
+    Given today is Friday
+    When I ask whether it's Friday yet
+    Then I should be told "TGIF"
+```
+
+{{% block "javascript" %}}
+Update the `stepdefs.js` file.
+```javascript
+const assert = require('assert');
+const { Given, When, Then } = require('cucumber');
+
+function isItFriday(today) {
+  return (today === "Friday") ? "TGIF" : "Nope";
+}
+
+// These two Given functions are very similar but, as written, require separate functions
+Given('today is Sunday', function () {
+  this.today = 'Sunday';
+});
+Given('today is Friday', function () {
+  this.today = 'Friday';
+});
+
+// This is a shared function and should be moved to a shared.js file
+When('I ask whether it\'s Friday yet', function () {
+  this.actualAnswer = isItFriday(this.today);
+});
+
+// This is also a shared function that uses a variable, {string}
+// This should also be moved to a shared.js file
+Then('I should be told {string}', function (expectedAnswer) {
+  assert.equal(this.actualAnswer, expectedAnswer);
+});
+```
+{{% /block %}}
+
+Run Cucumber again:
+
+{{% block "javascript" %}}
+```shell
+......
+2 scenarios (2 passed)
+6 steps (6 passed)
+0m00.002s
+```
+{{% /block %}}
+
+# Using variables and examples
+So, we all know that there are more days in the week than just Sunday and Friday. Let's update our scenario to use variables and evaluate more possibilities.
+
+```gherkin
+
+```
+
 # Summary
 
 In this brief tutorial you've seen how to install Cucumber, and how to follow
-the BDD process to develop a very simple function. The next natural steps would
-be:
-
-* Move the `{{% text "java" %}}isItFriday{{% /text %}}{{% text "javascript" %}}isItFriday{{% /text %}}{{% text "ruby" %}}is_it_friday{{% /text %}}` function out from the test code into production code (refactoring)
-* Write another scenario - `Friday is Friday` perhaps?
-* Follow the same process as outlined above, until both scenarios are green
+the BDD process to develop a very simple function.
