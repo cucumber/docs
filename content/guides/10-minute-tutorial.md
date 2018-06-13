@@ -876,13 +876,63 @@ Run Cucumber again:
 {{% /block %}}
 
 # Using variables and examples
-So, we all know that there are more days in the week than just Sunday and Friday. Let's update our scenario to use variables and evaluate more possibilities.
+So, we all know that there are more days in the week than just Sunday and Friday. Let's update our scenario to use variables and evaluate more possibilities. We'll use variables and examples to evaluate Friday, Sunday, and anything else!
 
+Update the `is-it-friday-yet.feature` file. Notice how we go from `Scenario` to `Scenario Outline` when we start using `Examples`.
 ```gherkin
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario Outline: Today is or is not Friday
+    Given today is <day>
+    When I ask whether it's Friday yet
+    Then I should be told <answer>
+
+  Examples:
+    | day | answer |
+    | "Friday" | "TGIF" |
+    | "Sunday" | "Nope" |
+    | "anything else!" | "Nope" |
+```
+
+{{% block "javascript" %}}
+Update the `stepdefs.js` file to use the `<day>` and `<answer>` variables.
+```javascript
+const assert = require('assert');
+const { Given, When, Then } = require('cucumber');
+
+function isItFriday(today) {
+  return (today === "Friday") ? "TGIF" : "Nope";
+}
+
+Given('today is {string}', function (givenDay) {
+  this.today = givenDay;
+});
+
+When('I ask whether it\'s Friday yet', function () {
+  this.actualAnswer = isItFriday(this.today);
+});
+
+Then('I should be told {string}', function (expectedAnswer) {
+  assert.equal(this.actualAnswer, expectedAnswer);
+});
 
 ```
+{{% /block %}}
+
+Run Cucumber again:
+
+{{% block "javascript" %}}
+```shell
+.........
+
+3 scenarios (3 passed)
+9 steps (9 passed)
+0m00.001s
+```
+{{% /block %}}
 
 # Summary
 
-In this brief tutorial you've seen how to install Cucumber, and how to follow
-the BDD process to develop a very simple function.
+In this brief tutorial you've seen how to install Cucumber, how to follow
+the BDD process to develop a very simple function, and how to use that function to evaluate multiple scenarios!
