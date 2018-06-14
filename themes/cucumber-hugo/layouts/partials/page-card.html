@@ -28,11 +28,21 @@
           {{ if .Params.subtitle }}
           <p class="subtitle is-6">{{.Params.subtitle}}</p>
           {{end}}
-          {{ if .Params.twitter }}
-            <p class="subtitle is-6">
-              <a href="https://twitter.com/{{.Params.twitter}}">@{{.Params.twitter}} <i class="fab fa-twitter" aria-hidden="true"></i></a>
-            </p>
+          {{ if (or (.Params.twitter) (.Params.linkedin)) }}
+            <div class="subtitle is-6">
+            {{ if .Params.twitter }}
+              <p>
+                <a href="https://twitter.com/{{.Params.twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i> @{{.Params.twitter}}</a>
+              </p>
+            {{end}}
+            {{ if .Params.linkedin }}
+              <p>
+                <a href="http://linkedin.com/in/{{.Params.linkedin}}"><i class="fab fa-linkedin" aria-hidden="true"></i> {{.Params.linkedin}}</a>
+              </p>
+            {{end}}
+            </div>
           {{end}}
+          {{ if .Params.implementation }}
           <p>
             {{ if eq .Params.implementation "official"}}
               <span class="tag is-success is-pulled-right">official</span>
@@ -47,6 +57,7 @@
               <span class="tag is-danger is-pulled-right">unmaintained</span>
             {{end}}
           </p>
+          {{end}}
         </div>
       </div>
       {{if eq .Dir "team/"}}
