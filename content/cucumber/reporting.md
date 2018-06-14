@@ -18,9 +18,9 @@ Available plugins may vary per programming language.
 
 There are several reporter plugins built into Cucumber:
 
-* progress
-* pretty
-* html
+* `progress`
+* `pretty`
+* `html`
 * etc.
 
 # Other reporter plugins
