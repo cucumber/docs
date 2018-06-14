@@ -153,9 +153,16 @@ controlled files and be prepared to diff and merge changes to `env.rb` between v
 
 {{% block "java" %}}
 ```java
-public class MyConfiguration extends cucumber.api.Configuration {
+public class MyConfiguration implements cucumber.api.TypeRegistryConfigurer {
+
     @Override
-    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+    public Locale locale()
+    {
+      return null; // Define locale. e.g.: java.util.Locale.getDefault();
+    }
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry)
+    {
         // Register custom parameter types and data table types here.
     }
 }
