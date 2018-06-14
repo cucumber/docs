@@ -1,6 +1,6 @@
 ---
 title: Jayson Smith
-twitter: [@thatengjayson](https://twitter.com/thatengjayson)
+twitter: thatengjayson
 weight: 10
 ---
 
