@@ -59,6 +59,6 @@ On the other hand, do not lose sight that every step called as such in a step de
 [Gherkin](/gherkin/) and therefore must conform to the same syntax as used in feature files.
 
 In fact, it is recommended to refactor step definitions into helper methods for greater flexibility and easier reuse.
-The method can reside in the same `.rb` file as the step definition.
+The method can reside in the same {{% text "java" %}}`.java`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}} file as the step definition.
 
 This makes your project a lot easier to understand for people who join your project at a later date; which also makes your project easier to maintain.

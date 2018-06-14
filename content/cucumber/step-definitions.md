@@ -129,7 +129,7 @@ expression.
 # Snippets
 
 When Cucumber encounters a [Gherkin step](/gherkin/reference#steps) without a
-matching step definition, it will print a step
+matching step definition, it will print a 
 step definition snippet with a matching [Cucumber Expression](/cucumber/cucumber-expressions).
 You can use this as a starting point for new step definitions.
 
@@ -150,7 +150,7 @@ public void i_have_red_balls(int int1) {
 
 {{% block "ruby" %}}
 ```ruby
-Given("I have {int} red balls") do |int1|
+Given('I have {int} red balls') do |int1|
 end
 ```
 {{% /block %}}
@@ -176,7 +176,7 @@ public void i_have_red_balls(int int1, Color color) {
 
 {{% block "ruby" %}}
 ```ruby
-Given("I have {int} {color} balls") do |int1, color|
+Given('I have {int} {color} balls') do |int1, color|
 end
 ```
 {{% /block %}}

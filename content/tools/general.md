@@ -1,6 +1,7 @@
 ---
 title: Tools
 subtitle: "Editors, IDEs and build tools"
+weight: 1000
 ---
 
 Using Cucumber in your project is easier with the right tools.

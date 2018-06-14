@@ -91,9 +91,9 @@ So, if you have several profiles with similar values, you might do this:
 
 1. config/cucumber.yml
    ## ##YAML Template
-   &lt;% common = "--tags ~@wip --strict" %>
-   default: &lt;%= common %> features
-   html_report: &lt;%= common %> --format html --out=features_report.html features
+   <% common = "--tags ~@wip --strict" %>
+   default: <%= common %> features
+   html_report: <%= common %> --format html --out=features_report.html features
    ```
 
 ## Environment Variables
@@ -152,10 +152,12 @@ controlled files and be prepared to diff and merge changes to `env.rb` between v
 {{% /text %}}
 
 {{% block "java" %}}
+```java
 public class MyConfiguration extends cucumber.api.Configuration {
     @Override
     public void configureTypeRegistry(TypeRegistry typeRegistry) {
         // Register custom parameter types and data table types here.
     }
 }
+```
 {{% /block %}}

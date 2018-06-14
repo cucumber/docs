@@ -163,4 +163,4 @@ This expression would match the following examples:
     I have 42 {what} cucumbers in my belly (amazing!)
 
 There is currently no way to escape a `/` character - it will always be interpreted
-as optional text.
+as alternative text.

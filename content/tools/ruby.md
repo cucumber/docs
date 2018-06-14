@@ -1,5 +1,6 @@
 ---
 title: Ruby Tools
+weight: 1200
 ---
 
 This page describes tools commonly used with Ruby.
@@ -102,7 +103,7 @@ begin
     t.cucumber_opts = "--format pretty"
   end
 
-  task :features => 'db:test:prepare'
+  task features: 'db:test:prepare'
 rescue LoadError
   desc 'Cucumber rake task not available'
   task :features do

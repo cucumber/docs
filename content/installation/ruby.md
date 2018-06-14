@@ -21,9 +21,7 @@ gem install cucumber
 Add `cucumber` to your `Gemfile`:
 
 ```ruby
-group :test do
-  gem 'cucumber'
-end
+gem 'cucumber'
 ```
 
 Install the gem:
@@ -58,7 +56,7 @@ Add `cucumber-rails` to your `Gemfile`:
 
 ```ruby
 group :test do
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', require: false
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
 end

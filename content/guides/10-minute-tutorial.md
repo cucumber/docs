@@ -2,6 +2,7 @@
 title: 10 Minute Tutorial
 subtitle: Get started in just 10 minutes
 polyglot: true
+weight: 1100
 ---
 
 In this quick tutorial you will learn how to:
@@ -301,7 +302,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday
     Given today is Sunday
-    When I ask whether is's Friday yet
+    When I ask whether it's Friday yet
     Then I should be told "Nope"
 ```
 
@@ -357,7 +358,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # null
-    When I ask whether is's Friday yet # null
+    When I ask whether it's Friday yet # null
     Then I should be told "Nope"       # null
 
 1 Scenarios (1 undefined)
@@ -374,7 +375,7 @@ public void today_is_Sunday() {
     throw new PendingException();
 }
 
-@When("^I ask whether is's Friday yet$")
+@When("^I ask whether it's Friday yet$")
 public void i_ask_whether_is_s_Friday_yet() {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
@@ -403,10 +404,10 @@ Warnings:
            return 'pending';
          });
 
-   ? When I ask whether is's Friday yet
+   ? When I ask whether it's Friday yet
        Undefined. Implement with the following snippet:
 
-         When('I ask whether is\'s Friday yet', function () {
+         When('I ask whether it\'s Friday yet', function () {
            // Write code here that turns the phrase above into concrete actions
            return 'pending';
          });
@@ -433,7 +434,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday is not Friday       # features/is_it_friday_yet.feature:4
     Given today is Sunday              # features/is_it_friday_yet.feature:5
-    When I ask whether is's Friday yet # features/is_it_friday_yet.feature:6
+    When I ask whether it's Friday yet # features/is_it_friday_yet.feature:6
     Then I should be told "Nope"       # features/is_it_friday_yet.feature:7
 
 1 scenario (1 undefined)
@@ -446,7 +447,7 @@ Given("today is Sunday") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("I ask whether is's Friday yet") do
+When("I ask whether it's Friday yet") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
@@ -480,7 +481,7 @@ Feature: Is it Friday yet?
 	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:12)
 	at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
 
-    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
 1 Scenarios (1 pending)
@@ -502,7 +503,7 @@ Warnings:
 1) Scenario: Sunday is not Friday # features/is_it_friday_yet.feature:4
    ? Given today is Sunday # features/step_definitions/stepdefs.js:3
        Pending
-   - When I ask whether is's Friday yet # features/step_definitions/stepdefs.js:8
+   - When I ask whether it's Friday yet # features/step_definitions/stepdefs.js:8
    - Then I should be told "Nope" # features/step_definitions/stepdefs.js:13
 
 1 Scenario (1 pending)
@@ -521,7 +522,7 @@ Feature: Is it Friday yet?
       TODO (Cucumber::Pending)
       ./features/step_definitions/stepdefs.rb:2:in `"today is Sunday"'
       features/is_it_friday_yet.feature:5:in `Given today is Sunday'
-    When I ask whether is's Friday yet # features/step_definitions/stepdefs.rb:5
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:5
     Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:9
 
 1 scenario (1 pending)
@@ -575,7 +576,7 @@ public class Stepdefs {
         this.today = "Sunday";
     }
 
-    @When("^I ask whether is's Friday yet$")
+    @When("^I ask whether it's Friday yet$")
     public void i_ask_whether_is_s_Friday_yet() {
         this.actualAnswer = IsItFriday.isItFriday(today);
     }
@@ -601,7 +602,7 @@ Given('today is Sunday', function () {
   this.today = 'Sunday'
 });
 
-When('I ask whether is\'s Friday yet', function () {
+When('I ask whether it\'s Friday yet', function () {
   this.actualAnswer = isItFriday(this.today)
 });
 
@@ -623,7 +624,7 @@ Given("today is Sunday") do
   @today = 'Sunday'
 end
 
-When("I ask whether is's Friday yet") do
+When("I ask whether it's Friday yet") do
   @actual_answer = is_it_friday?(@today)
 end
 
@@ -647,7 +648,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
-    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
       java.lang.AssertionError: expected:<Nope> but was:<null>
 	at org.junit.Assert.fail(Assert.java:88)
@@ -675,7 +676,7 @@ Failures:
 
 1) Scenario: Sunday is not Friday # features/is_it_friday_yet.feature:4
    ✔ Given today is Sunday # features/step_definitions/stepdefs.js:8
-   ✔ When I ask whether is's Friday yet # features/step_definitions/stepdefs.js:12
+   ✔ When I ask whether it's Friday yet # features/step_definitions/stepdefs.js:12
    ✖ Then I should be told "Nope" # features/step_definitions/stepdefs.js:16
        AssertionError [ERR_ASSERTION]: undefined == 'Nope'
            at World.<anonymous> (/private/tmp/tutorial/hellocucumber/features/step_definitions/stepdefs.js:17:10)
@@ -692,7 +693,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday is not Friday       # features/is_it_friday_yet.feature:4
     Given today is Sunday              # features/step_definitions/stepdefs.rb:4
-    When I ask whether is's Friday yet # features/step_definitions/stepdefs.rb:8
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:8
     Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:12
 
       expected: "Nope"
@@ -754,7 +755,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
-    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
 1 Scenarios (1 passed)
@@ -780,7 +781,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday is not Friday       # features/is_it_friday_yet.feature:4
     Given today is Sunday              # features/step_definitions/stepdefs.rb:5
-    When I ask whether is's Friday yet # features/step_definitions/stepdefs.rb:9
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:9
     Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:13
 
 1 scenario (1 passed)

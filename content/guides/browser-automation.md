@@ -5,6 +5,7 @@ polyglot:
   - java
   - javascript
   - ruby
+weight: 1300
 ---
 
 Cucumber is not a browser automation tool, but it works well with the following browser automation tools.
@@ -27,7 +28,18 @@ Scenario: Finding some cheese
 ```
 
 ```java
-package class.exmple;
+package class.example;
+
+import cucumber.api.java.After;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class ExampleSteps {
 
@@ -39,21 +51,23 @@ public class ExampleSteps {
 
    @When("^I search for \"(.*)\"$")
      public void search_for(String query) {
-        WebElement element = driver.findElelment(By.name("q"));
-        //Enter Something to search for
+        WebElement element = driver.findElement(By.name("q"));
+        // Enter something to search for
         element.sendKeys(query);
-        //Now submit the form. WebDriver will find the form for us from the element
+        // Now submit the form. WebDriver will find the form for us from the element
         element.submit();
    }
 
    @Then("^ the page title should start with \"(.*)\"$")
    public void checkTitle() {
-       //Google's search is rendered dynamically with JavaScript.
-       //Wait for the page to load timeout after ten seconds
-       new WebDriverWait(driver,'10')).untill(new ExpectedCondition<Boolean> {
-       public Boolean apply(WebDriver d) {
-       return d.getTitle().toLowerCase.startsWith("cheese");
-       //Should see: "cheese! -Google Search"
+       // Google's search is rendered dynamically with JavaScript
+       // Wait for the page to load timeout after ten seconds
+       new WebDriverWait(driver,'10').until(new ExpectedCondition<Boolean>() {
+           public Boolean apply(WebDriver d) {
+               return d.getTitle().toLowerCase().startsWith("cheese");
+               // Should see: "cheese! -Google Search"
+           }
+       });
     }
 
     @After()
@@ -92,19 +106,19 @@ driver.quit();
 require 'rubygems'
 require 'selenium-webdriver'
 
-Given("^I am on the Google search page$") do
+Given(/^I am on the Google search page$/) do
   driver = Selenium::WebDriver.for :firefox
-  driver.get "http:\\google.com"
+  driver.get "http://google.com"
 end
 
-When("^I search for "([^"]*)"$") do
-  element = driver.find_element(:name => "q")
+When(/^I search for "([^"]*)"$/) do
+  element = driver.find_element(name: "q")
   element.send_keys "Cheese!"
   element.submit
 end
 
-Then("^the page title should start with "([^"]*)"$") do
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+Then(/^the page title should start with "([^"]*)"$/) do
+  wait = Selenium::WebDriver::Wait.new(timeout: 10)
   wait.until { driver.title.downcase.start_with? "cheese!" }
   puts "Page title is #{driver.title}"
     browser.close
@@ -115,25 +129,19 @@ More information on [Selenium Webdriver](http://docs.seleniumhq.org/projects/web
 
 # Browser Automation Tools for Java
 
-Some browser automation tools are specific to Java.
-
 ## Serenity BDD
+
+{{% text "java" %}}
 
 Serenity BDD is an open source reporting library that helps you write better
 structured, more maintainable automated acceptance criteria. Serenity also produces
 rich meaningful test reports (or "living documentation") that report not only the
 test results, but also which features have been tested.
 
-{{% text "java" %}}
 A detailed tutorial on using Cucumber-JVM with Serenity can be found
 [here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html).
-{{% /text %}}
 
 The above scenario might be written for Serenity like this:
-
-```ruby
-# Serenity only works with Java for now.
-```
 
 ```java
 package com.example.features.steps;
@@ -198,13 +206,17 @@ public class SearchResultsPage extends PageObject {}
 
 More information on [Serenity](http://serenity-bdd.info).
 
+{{% /text %}}
+
+{{% text "javascript,ruby" %}}Serenity only works with Java.{{% /text %}}
+
 # Browser Automation Tools for Ruby
 
-Some browser automation tools are specific to Ruby.
+## Watir
 
-## Watir Webdriver
+{{% text "ruby" %}}
 
-Watir, pronounced _water_, is an open-source (BSD) family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
+Watir (pronounced _water_), is an open-source (BSD), family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
 
 Watir drives browsers the same way people do. It clicks links, fills in forms, presses buttons. Watir also checks results, such as whether expected text appears on the page.
 
@@ -215,14 +227,14 @@ Now let's jump in to a sample UI testing program using Watir:
 ```ruby
 require "rubygems"
 require "rspec"
-require "watir-webdriver"
+require "watir"
 
 describe "google.com" do
   let(:browser) { @browser ||= Watir::Browser.new :firefox }
   before { browser.goto "http://google.com" }
-  browser.text_field(:name => "q").set "watir"
+  browser.text_field(name: "q").set "watir"
   browser.button.click
-  browser.div(:id => "resultStats").wait_until_present
+  browser.div(id: "resultStats").wait_until_present
   browser.title.should == "watir - Google Search"
   after { browser.close }
 end
@@ -239,29 +251,33 @@ Feature: Search In order to use Google users must be able to search for content
 ```
 
 ```ruby
-require "watir-webdriver"
+require "watir"
 require "rspec/expectations"
 
-Given /^I have entered "([^"]*)" into the query$/ do |term|
+Given(/^I have entered "([^"]*)" into the query$/) do |term|
   @browser ||= Watir::Browser.new :firefox
   @browser.goto "google.com"
-  @browser.text_field(:name => "q").set term
+  @browser.text_field(name: "q").set term
 end
 
-When /^I click "([^"]*)"$/ do |button_name|
+When(/^I click "([^"]*)"$/) do
  @browser.button.click
 end
 
-Then /^I should see some results$/ do
-  @browser.div(:id => "resultStats").wait_until_present
-  @browser.div(:id => "resultStats").should exist
+Then(/^I should see some results$/) do
+  @browser.div(id: "resultStats").wait_until_present
   @browser.close
 end
 ```
-
 More information on [Watir](http://watir.com).
 
+{{% /text %}}
+
+{{% text "java,javascript" %}}Watir only works with Ruby.{{% /text %}}
+
 ## Capybara
+
+{{% text "ruby" %}}
 
 Cucumber-Rails is pre-configured with support for view integration testing using [Capybara](https://github.com/jnicklas/capybara)
 (`script/generate cucumber --capybara`).
@@ -270,10 +286,14 @@ Unless instructed otherwise the Cucumber-Rails install generator will set up the
 
 While Capybara is the preferred testing method for HTML views in cucumber-rails it does not play well with Rails' own
 built-in `MiniTest/Test::Unit`. In particular, whenever Capybara is required into a Cucumber World then the `response.body`
-method of `Rails Test::Unit` is removed. Capybara depends upon Nokigiri and Nokogiri prefers to use XML rather than CSS tags.
+method of `Rails Test::Unit` is removed. Capybara depends upon Nokogiri and Nokogiri prefers to use XML rather than CSS tags.
 This behaviour can be overridden in `./features/support/env.rb`.
 
 More information on [Capybara](http://teamcapybara.github.io/capybara/).
+
+{{% /text %}}
+
+{{% text "java,javascript" %}}Capybara only works with Ruby.{{% /text %}}
 
 # Tips and Tricks
 
@@ -281,11 +301,10 @@ More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 Cucumber can run your scenarios with different browsers, based on a configuration property loaded at runtime:
 
-
 ```ruby
 Capybara.register_driver :selenium do |app|
   browser = (ENV['browser'] || 'firefox').to_sym
-  Capybara::Selenium::Driver.new(app, :browser => browser)
+  Capybara::Selenium::Driver.new(app, browser: browser)
 end
 ```
 
@@ -309,12 +328,14 @@ public class WebDriverFactory {
 }
 ```
 
-Then, simply define the `browser` property when you run Cucumber:
-
+Then, define the `browser` property when you run Cucumber:
+{{% text "ruby" %}}
 ```
 browser=chrome cucumber
 ```
+{{% /text %}}
 
+{{% text "java" %}}
 ```
 mvn test -Dbrowser=chrome
 ```
@@ -324,15 +345,13 @@ If you are using Serenity, simply pass the `driver` system property (no extra co
 ```
 mvn test -Ddriver=chrome
 ```
-
-## Re-using the browser window
-
-Closing and re-opening the browser window between scenarios will slow them down.
-
-To reuse them, you can use the [`SharedDriver`](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java)
-wrapper rather than calling `WebDriver` directly.
+{{% /text %}}
 
 ## Example Projects
 
+{{% text "java" %}}
+Here are a few example project using Java:
 - [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
 - [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)
+
+{{% /text %}}
