@@ -1,7 +1,6 @@
 ---
 title: Dmitry Ledentsov
 twitter: dmlled
-weight: 10
 ---
 
 I'm a Cucumber user and fan, and have started a Cucumber wire adapter [cucumber-tcl-wire](https://github.com/cucumber/cucumber-tcl-wire)

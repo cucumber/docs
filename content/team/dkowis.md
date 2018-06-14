@@ -1,7 +1,6 @@
 ---
 title: David Kowis
 twitter: beepdog
-weight: 10
 ---
 
 I started contributing early in the life of cucumber-jvm by basically building the [cucumber-jvm-jruby backend](https://github.com/cucumber/cucumber-jvm-jruby)

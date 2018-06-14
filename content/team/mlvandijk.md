@@ -1,7 +1,6 @@
 ---
 title: Marit van Dijk
 twitter: MaritvanDijk77
-weight: 10
 ---
 
 Cucumber-JVM user as of January 2017, with both Java and Kotlin.
