@@ -8,4 +8,4 @@ weight: 1310
 
 **This package is currently in need of new maintainers.**
 
-Please see the [Cucumber-Groovy](https://github.com/cucumber/cucumber-jvm-groovy).
+Please see [Cucumber-Groovy](https://github.com/cucumber/cucumber-jvm-groovy).

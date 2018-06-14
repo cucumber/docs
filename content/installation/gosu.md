@@ -8,4 +8,4 @@ weight: 1305
 
 **This package is currently in need of new maintainers.**
 
-Please see the [Cucumber-Gosu](https://github.com/cucumber/cucumber-jvm-gosu).
+Please see [Cucumber-Gosu](https://github.com/cucumber/cucumber-jvm-gosu).
