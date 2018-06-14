@@ -1,6 +1,8 @@
 ---
 title: Reporting
-polyglot: true
+polyglot:
+- java
+- dot-net
 ---
 
 Cucumber uses reporter plugins to produce reports that contain information about
@@ -9,7 +11,17 @@ what scenarios have passed or failed.
 Some plugins are built-in, others have to be installed separately. You can also
 build your own.
 
+This page documents built-in formatter plugins as well common third-party plugins.
+Available plugins may vary per programming language.
+
 # Built-in reporter plugins
+
+There are several reporter plugins built into Cucumber:
+
+* `progress`
+* `pretty`
+* `html`
+* etc.
 
 # Other reporter plugins
 
@@ -221,3 +233,22 @@ Alternatively, you can specify a Java system property (in Maven, Gradle or other
 -Dcucumberpro.logging=DEBUG
 ```
 {{% /block %}}
+
+## Third-party plugins
+There are also many third-party plugins:
+
+* Masterthought
+* TeamCity - prints Cucumber results in a format for interpretation by a [TeamCity](http://www.jetbrains.com/teamcity/index.html) build agent.
+   * [teamcity_formatter](https://github.com/kevinrood/teamcity_formatter) - Compatible with Cucumber 2.
+   * [cucumber_teamcity](https://github.com/ankurcha/cucumber_teamcity/) - Tested with Cucumber 1.3.18 and TeamCity 8.x.
+* [TextmateFormatter](https://github.com/raldred/cucumber_textmate/) prints Cucumber results as HTML with enhanced styling and Javascript for Textmate (Included in the Cucumber core since 0.4.5)
+* [SlowHandCuke](https://github.com/moredip/SlowHandCuke) - Simple tweak to the Pretty formatter to display the currently running Step as it is running
+* [timestamped-scenarios](https://github.com/moredip/timestamped-scenarios) - Append test run timestamps to each Scenario name as it is being output.
+* [Fivemat](https://github.com/tpope/fivemat) - Cucumber formatter that gives each test file its own line of dots.
+* [Fuubar](https://github.com/martinciu/fuubar-cucumber) - The insta-failing progress bar formatter
+* [Viewcumber](https://github.com/versapay/viewcumber) - Cucumber formatter which generates an HTML website to browse your Scenarios and view screen capture of every single Step.
+* [cucumber_timing_presenter](https://github.com/distributedlife/cucumber_timing_presenter) - formatter that calculates timing metrics as well as two graphs showing impact of Step time on overall build time.
+* [Bilgerat](https://github.com/mdsol/bilgerat) - formatter that sends failure messages to [HipChat](https://www.hipchat.com/) rooms.
+* [cucumber_statistics](https://github.com/alienfast/cucumber_statistics) - Tracks timing and displays results in a single HTML page with outliers highlighted in a table sortable by various metrics.
+* [cucumber_characteristics](https://github.com/singram/cucumber_characteristics) - Generates HTML/JSON reports on overall test timings, as well as timings and usage of Steps, Features, and Examples. Also lists unused and ambiguous (Cucumber 1.x) Steps. Compatible with Cucumber 1.x and 2.1+ and Ruby 1.9+.
+* [allure-cucumber](https://github.com/allure-framework/allure-cucumber) - [Allure](https://github.com/allure-framework) adaptor for Cucumber. This formatter generates the XML files for Allure reporting framework.
