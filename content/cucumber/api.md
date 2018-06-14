@@ -17,23 +17,7 @@ The number of parameters in the {{% stepdef-body %}} has to match the number of 
 ## Data Tables
 
 {{% text "java" %}}
-The simplest way to pass a `List<String>` to a step definition is to use commas:
-
-```gherkin
-Given the following animals: cow, horse, sheep
-```
-
-and declare the argument as a `List<String>`:
-
-```java
-@Given("the following animals: (.*)")
-public void the_following_animals(List<String> animals) {
-}
-```
-
-See the [`@Delimiter` annotation](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/api/Delimiter.java) for details about how to define a delimiter different than `,`.
-
-If you prefer to use a DataTable to define a list, you can do that too:
+The simplest way to pass a `List<String>` to a step definition is to use a data table:
 
 ```gherkin
 Given the following animals:
@@ -42,7 +26,7 @@ Given the following animals:
   | sheep |
 ```
 
-Declare the argument as a `List<String>`, but don't define any capture groups in the pattern:
+Declare the argument as a `List<String>`, but don't define any capture groups in the expression:
 
 ```java
 @Given("the following animals:")
