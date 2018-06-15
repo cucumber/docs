@@ -803,6 +803,14 @@ function isItFriday(today) {
 ```
 {{% /block %}}
 
+{{% block "ruby" %}}
+```ruby
+def is_it_friday?(day)
+  answer = (day == 'Friday') ? 'TGIF' : 'Nope'
+end
+```
+{{% /block %}}
+
 Run Cucumber again:
 
 {{% block "javascript" %}}
@@ -811,6 +819,22 @@ Run Cucumber again:
 1 scenario (1 passed)
 3 steps (3 passed)
 0m00.001s
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```shell
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # features/is_it_friday_yet.feature:4
+    Given today is Sunday              # features/step_definitions/stepdefs.rb:8
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:12
+    Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:16
+
+1 scenario (1 passed)
+3 steps (3 passed)
+0m0.049s
 ```
 {{% /block %}}
 
@@ -864,6 +888,35 @@ Then('I should be told {string}', function (expectedAnswer) {
 ```
 {{% /block %}}
 
+{{% block "ruby" %}}
+```ruby
+module FridayStepHelper
+  def is_it_friday?(day)
+    answer = (day == 'Friday') ? 'TGIF' : 'Nope'
+  end
+end
+World FridayStepHelper
+
+Given("today is Sunday") do
+  @today = 'Sunday'
+end
+
+Given("today is Friday") do
+  @today = 'Friday'
+end
+
+# Then is a shared function
+When("I ask whether it's Friday yet") do
+  @actual_answer = is_it_friday?(@today)
+end
+
+# Then is a shared function
+Then("I should be told {string}") do |expected_answer|
+  expect(@actual_answer).to eq(expected_answer)
+end
+```
+{{% /block %}}
+
 Run Cucumber again:
 
 {{% block "javascript" %}}
@@ -872,6 +925,27 @@ Run Cucumber again:
 2 scenarios (2 passed)
 6 steps (6 passed)
 0m00.002s
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```shell
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # features/is_it_friday_yet.feature:4
+    Given today is Sunday              # features/step_definitions/stepdefs.rb:8
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:17
+    Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:22
+
+  Scenario: Friday is Friday           # features/is_it_friday_yet.feature:9
+    Given today is Friday              # features/step_definitions/stepdefs.rb:12
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:17
+    Then I should be told "TGIF"       # features/step_definitions/stepdefs.rb:22
+
+2 scenarios (2 passed)
+6 steps (6 passed)
+0m0.040s
 ```
 {{% /block %}}
 
