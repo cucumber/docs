@@ -1,10 +1,7 @@
 ---
-source: https://github.com/cucumber/cucumber/wiki/cucumber.yml/
-source: https://github.com/cucumber/cucumber/wiki/Environment-Variables/
 title: Cucumber Configuration
-description: cucumber.yml, environment variables
-polyglot:
-  - ruby
+subtitle: cucumber.yml, environment variables
+polyglot: true
 ---
 
 You can specify configuration options for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
@@ -25,7 +22,7 @@ want to execute with this profile.
 The example above generates two profiles:
 
 1. `html_report`, with a list of command-line options that specify new output formats, and
-2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/#tags) with `@bvt`.
+2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/api/#tags) with `@bvt`.
 
 {{% text "ruby" %}}
 Cucumber-Rails creates a `cucumber.yml` file in the project config directory containing a number of predefined profiles,
@@ -94,9 +91,9 @@ So, if you have several profiles with similar values, you might do this:
 
 1. config/cucumber.yml
    ## ##YAML Template
-   &lt;% common = "--tags ~@wip --strict" %>
-   default: &lt;%= common %> features
-   html_report: &lt;%= common %> --format html --out=features_report.html features
+   <% common = "--tags ~@wip --strict" %>
+   default: <%= common %> features
+   html_report: <%= common %> --format html --out=features_report.html features
    ```
 
 ## Environment Variables
@@ -114,8 +111,8 @@ You can use environment variables in the profile argument list, just as you woul
    ie: BROWSER=IE
    ```
 
-When [running Cucumber](/cucumber/#running-cucumber), it can sometimes be handy to pass special
-values to Cucumber for your [step definitions](/cucumber/#step-definitions) to use.
+When [running Cucumber](/cucumber/api/#running-cucumber), it can sometimes be handy to pass special
+values to Cucumber for your [step definitions](/cucumber/step-definitions) to use.
 
 You can do this on the command line:
 
@@ -153,3 +150,14 @@ install an updated version of Cucumber or cucumber-rails. However, this overwrit
 In order to keep any custom configurations from your `env.rb` file, check in your `env.rb` along with the rest of your version
 controlled files and be prepared to diff and merge changes to `env.rb` between versions of Cucumber-Rails.
 {{% /text %}}
+
+{{% block "java" %}}
+```java
+public class MyConfiguration extends cucumber.api.Configuration {
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+        // Register custom parameter types and data table types here.
+    }
+}
+```
+{{% /block %}}

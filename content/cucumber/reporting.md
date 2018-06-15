@@ -1,8 +1,8 @@
 ---
 title: Reporting
 polyglot:
-  - java
-  - dot-net
+- java
+- dot-net
 ---
 
 Cucumber uses reporter plugins to produce reports that contain information about
@@ -11,18 +11,28 @@ what scenarios have passed or failed.
 Some plugins are built-in, others have to be installed separately. You can also
 build your own.
 
+This page documents built-in formatter plugins as well common third-party plugins.
+Available plugins may vary per programming language.
+
 # Built-in reporter plugins
+
+There are several reporter plugins built into Cucumber:
+
+* `progress`
+* `pretty`
+* `html`
+* etc.
 
 # Other reporter plugins
 
 ## Cucumber Pro
 
-This {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}} plugin publishes 
+This {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}} plugin publishes
 results to [Cucumber Pro](https://cucumber.io/pro).
 
 ### Requirements
 
-Your project must be stored in a Git repository, and you must be using one of the 
+Your project must be stored in a Git repository, and you must be using one of the
 following CI servers:
 
 * [Bamboo](https://www.atlassian.com/software/bamboo)
@@ -78,7 +88,7 @@ the following contents (replace `***` with actual values).
 ```yaml
 cucumberpro:
   # The name of the Cucumber Pro project.
-  # You can leave this blank if your Cucumber Pro project name is identical to the 
+  # You can leave this blank if your Cucumber Pro project name is identical to the
   # CI project name, and you you're using one of Bamboo, Circle CI, TFS, Travis
   # or Wercker.
   projectname: ***
@@ -99,11 +109,11 @@ Authentication is not required on a privately hosted Cucumber Pro Appliance.
 
 ### Activation
 
-The plugin will activate itself automatically if it detects that it's running 
+The plugin will activate itself automatically if it detects that it's running
 in one of the supported CI environments. When you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}} from your workstation the plugin will **not**
 be activated, and will not publish results.
 
-When you configure the plugin for the first time you can force-activate the plugin 
+When you configure the plugin for the first time you can force-activate the plugin
 from your work station by defining the following environment variables:
 
 * `GIT_COMMIT` - you can find it by running `git rev-parse HEAD`
@@ -114,16 +124,16 @@ This is useful for verifying that you have configured the plugin correctly.
 ### Profiles
 
 If you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}}
-several times as part of your build (with different options, 
-perhaps different tags), you can specify a different *profile name* for each run. 
+several times as part of your build (with different options,
+perhaps different tags), you can specify a different *profile name* for each run.
 This allows Cucumber Pro to show separate results for each profile.
 
 The profile name can be specified in the `CUCUMBERPRO_PROFILE` environment variable,
-which you would typically define in a wrapper script that launches 
+which you would typically define in a wrapper script that launches
 {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}}.
 
 {{% block "java" %}}
-The profile name can also be specified by appending a colon and a profile name to the 
+The profile name can also be specified by appending a colon and a profile name to the
 plugin class name:
 
 ```java
@@ -161,7 +171,7 @@ cucumberpro:
   # *DO NOT DO THIS* - as it would allow anyone with read acceess to your repository to publish results.
   token:
 
-  # The plugin sends your local environment variables to Cucumber Pro so it can detect the CI build number, 
+  # The plugin sends your local environment variables to Cucumber Pro so it can detect the CI build number,
   # git branch/tag and other information about the build. This mask is a regular expression for filtering
   # out sensitive values that should not be sent to Cucumber Pro.
   envmask: SECRET|KEY|TOKEN|PASSWORD|PWD
@@ -181,7 +191,7 @@ cucumberpro:
     # Set this to false if you want the build to break in case Cucumber Pro is unavailable.
     ignoreerror: true
 
-    # If the http connection for publishing results takes longer than this (milliseconds), 
+    # If the http connection for publishing results takes longer than this (milliseconds),
     # time out the connection.
     timeout: 5000
 ```
@@ -223,3 +233,22 @@ Alternatively, you can specify a Java system property (in Maven, Gradle or other
 -Dcucumberpro.logging=DEBUG
 ```
 {{% /block %}}
+
+## Third-party plugins
+There are also many third-party plugins:
+
+* Masterthought
+* TeamCity - prints Cucumber results in a format for interpretation by a [TeamCity](http://www.jetbrains.com/teamcity/index.html) build agent.
+   * [teamcity_formatter](https://github.com/kevinrood/teamcity_formatter) - Compatible with Cucumber 2.
+   * [cucumber_teamcity](https://github.com/ankurcha/cucumber_teamcity/) - Tested with Cucumber 1.3.18 and TeamCity 8.x.
+* [TextmateFormatter](https://github.com/raldred/cucumber_textmate/) prints Cucumber results as HTML with enhanced styling and Javascript for Textmate (Included in the Cucumber core since 0.4.5)
+* [SlowHandCuke](https://github.com/moredip/SlowHandCuke) - Simple tweak to the Pretty formatter to display the currently running Step as it is running
+* [timestamped-scenarios](https://github.com/moredip/timestamped-scenarios) - Append test run timestamps to each Scenario name as it is being output.
+* [Fivemat](https://github.com/tpope/fivemat) - Cucumber formatter that gives each test file its own line of dots.
+* [Fuubar](https://github.com/martinciu/fuubar-cucumber) - The insta-failing progress bar formatter
+* [Viewcumber](https://github.com/versapay/viewcumber) - Cucumber formatter which generates an HTML website to browse your Scenarios and view screen capture of every single Step.
+* [cucumber_timing_presenter](https://github.com/distributedlife/cucumber_timing_presenter) - formatter that calculates timing metrics as well as two graphs showing impact of Step time on overall build time.
+* [Bilgerat](https://github.com/mdsol/bilgerat) - formatter that sends failure messages to [HipChat](https://www.hipchat.com/) rooms.
+* [cucumber_statistics](https://github.com/alienfast/cucumber_statistics) - Tracks timing and displays results in a single HTML page with outliers highlighted in a table sortable by various metrics.
+* [cucumber_characteristics](https://github.com/singram/cucumber_characteristics) - Generates HTML/JSON reports on overall test timings, as well as timings and usage of Steps, Features, and Examples. Also lists unused and ambiguous (Cucumber 1.x) Steps. Compatible with Cucumber 1.x and 2.1+ and Ruby 1.9+.
+* [allure-cucumber](https://github.com/allure-framework/allure-cucumber) - [Allure](https://github.com/allure-framework) adaptor for Cucumber. This formatter generates the XML files for Allure reporting framework.

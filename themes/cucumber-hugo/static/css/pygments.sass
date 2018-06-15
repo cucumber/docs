@@ -7,9 +7,9 @@
     code
       padding: 0.75em 1em
       display: inline-block
-      width: 100%
+      min-width: 100%
 
-      .n, .o
+      .n
         color: $black
 
       .c, .cm, .c1
@@ -23,6 +23,10 @@
 
       .nt
         color: $orange
+
+    code.language-java
+      .s
+        color: $green
 
     code.language-gherkin
       .s
@@ -38,10 +42,9 @@
     code.language-shell
       background-color: $black
       color: $cucumber-grey-lighter
-      
+
       .c1
         color: $orange
 
       .nb
         color: $cucumber-grey-lighter
-

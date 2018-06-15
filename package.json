@@ -1,6 +1,16 @@
 {
-  "devDependencies": {
-    "gherkin": "^5.0.0",
-    "lunr": "^2.1.4"
+  "name": "docs.cucumber.io",
+  "version": "1.0.0",
+  "description": "docs.cucumber.io",
+  "main": "index.js",
+  "repository": "git@github.com:cucumber/docs.cucumber.io.git",
+  "author": "Cucumber Ltd <cukebot@cucumber.io>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "algolia": "atomic-algolia"
+  },
+  "dependencies": {
+    "gherkin": "^5.0.0"
   }
 }

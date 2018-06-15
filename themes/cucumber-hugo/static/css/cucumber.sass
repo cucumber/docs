@@ -22,39 +22,17 @@ $code: $black !default
 @import "../../node_modules/bulma/bulma"
 @import "./pygments"
 
-// Scrollable TOC/content columns
-html
-  height: 100%
+.is-huge
+  height: 128px
+  max-height: 128px
+  max-width: 128px
+  min-height: 128px
+  min-width: 128px
+  width: 128px
 
-body
-  height: 100%
-
-.columns
-  height: 100%
-
-.column
-  height: 100%
-  display: flex
-  overflow-y: auto
-  flex-direction: column
+.algolia-autocomplete
+  width: 100%
 
 // Override Bulma's minireset.sass so the TOC is indented
 li
   padding-left: 8px
-  
-.content
-  // Override Bulma's content.sass style to ensure tabs render properly
-  li + li
-    margin-top: 0
-
-  // div.text-java, div.text-javascript, div.text-ruby
-  //   p:last-child
-  //     margin-bottom: 1em !important
-
-pre
-  code
-    padding: 0
-
-.cucumber-logo-text
-  width: 50%
-

@@ -16,7 +16,7 @@ class HeaderCheck < HTMLProofer::Check
     count = 0
     @html.css('h1,h2,h3,h4,h5').each do |node|
       check_not_hidden(node)
-      
+
       css_class = node.attributes['class'].value rescue nil
       if css_class == 'title is-1'
         # Ignore <h1 class="title is-1"> generated from front matter
@@ -34,7 +34,7 @@ class HeaderCheck < HTMLProofer::Check
       depth = node_depth
     end
   end
-  
+
   def check_not_hidden(node)
     p = node
     while p
@@ -59,7 +59,7 @@ at_exit do
   puts orphans
 end
 
-class OrphanCheck < HTMLProofer::Check  
+class OrphanCheck < HTMLProofer::Check
   def run
     if @path === 'public/documentation/index.html'
       $linked_pages = @html.css('a').map do |node|

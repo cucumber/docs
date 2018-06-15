@@ -1,0 +1,32 @@
+<div class="columns section">
+  <div class="column is-one-quarter is-hidden-mobile">
+    {{ partial "sidebar.html" . }}
+  </div>
+  <div class="column is-three-quarters">
+    <div>
+      <h1 class="title is-1">{{ .Title }}</h1>
+      <div class="content">
+        {{ .Content }}
+      </div>
+
+      <div class="columns">
+        {{ range $index, $page := .Pages.ByWeight }}
+          {{ if eq (mod (sub $index 3) 3) 0 }}
+      </div>
+      <div class="columns">
+          {{ end }}
+        <div class="column is-one-third">
+          {{ partial "page-card.html" $page }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <hr>
+    <div>
+      <p>
+        You can help us improve this documentation.
+        <a href="https://github.com/cucumber/docs.cucumber.io/edit/master/content/{{ .Page.File.Path }}">Edit this page</a>.
+      </p>
+    </div>
+  </div>
+</div>
