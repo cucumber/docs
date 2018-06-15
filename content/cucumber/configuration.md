@@ -7,8 +7,6 @@ polyglot: true
 
 # Type Registry
 
-You can define your own parameter types and data table types.
-
 {{% block "java" %}}
 The type registry is used to configure parameter types and data table types. It can be configured by placing an implementation
 of `cucumber.api.TypeRegistryConfigurer` on the glue path.
@@ -80,6 +78,8 @@ The parameter type "person" is not defined.
 {{% /block %}}
 
 {{% block "javascript" %}}
+You can define your own parameter types and data table types.
+
 For more information on how to use `Parameter Type` with Cucumber-js, please see the [parameter_types.feature](https://github.com/cucumber/cucumber-js/blob/master/features/parameter_types.feature).
 
 For more information on how to use `Data Tables` with Cucumber-js, please see the [cucumber-js documentation](https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/data_table_interface.md).
