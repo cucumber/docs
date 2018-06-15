@@ -47,8 +47,8 @@ function toggleClass(el, className) {
 ////// Show/hide polyglot content
 
 var showHideSelectors = [
-  '.language-dot-net',
-  '.text-dot-net',
+  '.language-dotnet',
+  '.text-dotnet',
   '.language-java',
   '.text-java',
   '.language-javascript',
@@ -72,12 +72,12 @@ function showOnly(language) {
     each(document, selector, function(el) {
       if(hasClass(el, 'text-'+language) || hasClass(el, 'language-'+language)) {
         removeClass(el, 'is-hidden')
-        if(el.nodeName == 'CODE' && el.parentElement.nodeName == 'PRE') {
+        if(el.nodeName === 'CODE' && el.parentElement.nodeName === 'PRE') {
           removeClass(el.parentElement, 'is-hidden')
         }
       } else {
         addClass(el, 'is-hidden')
-        if(el.nodeName == 'CODE' && el.parentElement.nodeName == 'PRE') {
+        if(el.nodeName === 'CODE' && el.parentElement.nodeName === 'PRE') {
           addClass(el.parentElement, 'is-hidden')
         }
       }
@@ -100,9 +100,6 @@ ready(function() {
     var language = localStorage.getItem('language') || firstLi.getAttribute('data-language')
     showOnly(language)
   }
-
-  var language = localStorage.getItem('language') || 'java'
-  showOnly(language)
 
   // Toggle navbar menu
   var burger = document.querySelector('.navbar-burger')

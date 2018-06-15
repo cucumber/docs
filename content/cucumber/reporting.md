@@ -23,14 +23,12 @@ There are several reporter plugins built into Cucumber:
 * `html`
 * etc.
 
-# Other reporter plugins
+# Cucumber Pro plugin
 
-## Cucumber Pro
-
-This {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}} plugin publishes
+This {{% text "java" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}} plugin publishes
 results to [Cucumber Pro](https://cucumber.io/pro).
 
-### Requirements
+## Requirements
 
 Your project must be stored in a Git repository, and you must be using one of the
 following CI servers:
@@ -42,7 +40,7 @@ following CI servers:
 * [Travis CI](https://travis-ci.org/)
 * [Wercker](http://www.wercker.com/)
 
-### Installation
+## Installation
 
 {{% block "java" %}}
 Add the following dependency to your `pom.xml`:
@@ -72,7 +70,7 @@ instead of `io.cucumber.pro.JsonReporter:default`.
 
 {{% /block %}}
 
-{{% block "dot-net" %}}
+{{% block "dotnet" %}}
 Use NuGet to install the plugin into your SpecFlow project:
 
 ```shell
@@ -80,7 +78,7 @@ PM> Install-Package Cucumber.Pro.SpecFlowPlugin
 ```
 {{% /block %}}
 
-### Configuration
+## Configuration
 
 Create a file called `cucumber.yml` in the root directory of your git repository with
 the following contents (replace `***` with actual values).
@@ -97,7 +95,7 @@ cucumberpro:
   url: ***
 ```
 
-### Authentication
+## Authentication
 
 If you are publishing to https://app.cucumber.pro/ you also have to define
 an environment variable named `CUCUMBERPRO_TOKEN` in your CI project. The value
@@ -107,10 +105,10 @@ to define environment variables.
 
 Authentication is not required on a privately hosted Cucumber Pro Appliance.
 
-### Activation
+## Activation
 
 The plugin will activate itself automatically if it detects that it's running
-in one of the supported CI environments. When you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}} from your workstation the plugin will **not**
+in one of the supported CI environments. When you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}} from your workstation the plugin will **not**
 be activated, and will not publish results.
 
 When you configure the plugin for the first time you can force-activate the plugin
@@ -121,16 +119,16 @@ from your work station by defining the following environment variables:
 
 This is useful for verifying that you have configured the plugin correctly.
 
-### Profiles
+## Profiles
 
-If you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}}
+If you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}}
 several times as part of your build (with different options,
 perhaps different tags), you can specify a different *profile name* for each run.
 This allows Cucumber Pro to show separate results for each profile.
 
 The profile name can be specified in the `CUCUMBERPRO_PROFILE` environment variable,
 which you would typically define in a wrapper script that launches
-{{% text "java" %}}Cucumber{{% /text %}}{{% text "dot-net" %}}SpecFlow{{% /text %}}.
+{{% text "java" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}}.
 
 {{% block "java" %}}
 The profile name can also be specified by appending a colon and a profile name to the
@@ -151,7 +149,7 @@ public class RunCucumberTest {
 ```
 {{% /block %}}
 
-### Advanced configuration
+## Advanced configuration
 
 The `cucumber.yml` configuration file has more options that can be overridden for
 finer grained control. The defaults are as follows:
@@ -207,7 +205,7 @@ The plugin will load the configuration in all the following files (if they exist
 * `./.cucumber/cucumber.yml` (relative to the git root)
 {{% /block %}}
 
-{{% block "dot-net" %}}
+{{% block "dotnet" %}}
 * `C:\cucumber\cucumber.yml`
 * `My Documents\.cucumber\cucumber.yml`
 * `My Documents\cucumber.yml`
@@ -219,7 +217,7 @@ Every setting can also be overridden with environment variables. For example, if
 the plugin to log more verbosely:
 
 ```
-# Linux / OS X
+# Linux / MacOS
 export CUCUMBERPRO_LOGGING=DEBUG
 
 # Windows
@@ -234,7 +232,7 @@ Alternatively, you can specify a Java system property (in Maven, Gradle or other
 ```
 {{% /block %}}
 
-## Third-party plugins
+# Third-party plugins
 There are also many third-party plugins:
 
 * Masterthought
