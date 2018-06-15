@@ -98,7 +98,7 @@ Profiles are not available in Java.
 {{% /block %}}
 
 {{% block "javascript" %}}
-For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature)
+For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature).
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -156,7 +156,7 @@ Profiles are not available in Java.
 {{% /block %}}
 
 {{% block "javascript" %}}
-For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature)
+For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature).
 {{% /block %}}
 
 {{% block "ruby" %}}
