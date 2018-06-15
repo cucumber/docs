@@ -87,13 +87,8 @@ For more information on how to use `Data Tables` with Cucumber-js, please see th
 
 ## Recommended location
 
-The recommended location to define custom parameter types, would be in
-{{% block "ruby" %}}features/support/parameter_types.rb.{{% /block %}}
-{{% block "javascript" %}}features/support/parameter_types.js.{{% /block %}}
-{{% block "java" %}}src/test/<your-project>/TypeRegistryConfiguration.java{{% /block %}}
-This is just a convention though; Cucumber will pick them up from any file
-{{% block "ruby, javascript" %}} under features.{{% /block %}}
-{{% block "java" %}} on the glue path.{{% /block %}}
+The recommended location to define custom parameter types, would be in{{% block "ruby" %}} features/support/parameter_types.rb.{{% /block %}}{{% block "javascript" %}} features/support/parameter_types.js.{{% /block %}}{{% block "java" %}} src/test/com/example/TypeRegistryConfiguration.java{{% /block %}}
+This is just a convention though; Cucumber will pick them up from any file{{% block "ruby, javascript" %}} under features.{{% /block %}}{{% block "java" %}} on the glue path.{{% /block %}}
 
 # Profiles
 
@@ -152,6 +147,7 @@ output.
 ```bash
 \[user@system project] cucumber -p html_report -p bvt
 ```
+{{% /block %}}
 
 ## Default Profile
 {{% block "java" %}}
@@ -162,6 +158,7 @@ Profiles are not available in Java.
 For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature)
 {{% /block %}}
 
+{{% block "ruby" %}}
 Chances are you’ll want to execute Cucumber with a particular profile most of the time.
 The Cucumber configuration file uses a `default` profile to provide this functionality.
 When you specify a `default` profile, you are telling Cucumber to use the `default` command-line options whenever you don't explicitly specify a different profile.
@@ -184,6 +181,7 @@ Using the same example, perhaps we want the `html_report` profile to be our defa
 With this setup, Cucumber will now use both the `bvt` profile and `html_report`
 profile, testing all Features and Scenarios tagged with `@bvt`, along with the
 progress output and HTML output.
+{{% /block %}}
 
 ## Preprocessing with ERB
 
