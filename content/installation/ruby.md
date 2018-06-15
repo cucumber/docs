@@ -49,10 +49,10 @@ run Cucumber using the preface `bundle exec`. For example: `bundle exec cucumber
 
 ## Ruby on Rails
 
-[Cucumber-Rails](https://github.com/cucumber/cucumber-rails) is a generator that
-generates and modifies files in a Rails project so it can be used with Cucumber.
+[Cucumber-Rails](https://github.com/cucumber/cucumber-rails) is a gem that Rails projects can use to install cucumber and create its configuration.
 
 Add `cucumber-rails` to your `Gemfile`:
+(*Note*: you do not need to add Cucumber)
 
 ```ruby
 group :test do
