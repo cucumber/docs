@@ -1,7 +1,11 @@
 ---
 title: 10 Minute Tutorial
 subtitle: Get started in just 10 minutes
-polyglot: true
+polyglot:
+ - java
+ - javascript
+ - ruby
+
 weight: 1100
 ---
 

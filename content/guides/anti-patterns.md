@@ -1,7 +1,11 @@
 ---
 title: Anti-patterns
 subtitle: Avoid common mistakes and pitfalls
-polyglot: true
+polyglot:
+ - java
+ - javascript
+ - ruby
+
 weight: 1600
 ---
 

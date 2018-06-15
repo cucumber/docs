@@ -116,7 +116,11 @@ look good.
 Pages can contain variations of the same content that conditionally displays
 text or source code for a particular programming language.
 
-A language select will be displayed if the page specifies `polyglot: true`
+A language select will be displayed if the page specifies `polyglot:
+ - java
+ - javascript
+ - ruby
+`
 in the front-matter.
 
 The following languages are currently supported:

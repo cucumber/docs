@@ -1,7 +1,11 @@
 ---
 title: Cucumber Configuration
 subtitle: cucumber.yml, environment variables
-polyglot: true
+polyglot:
+ - java
+ - javascript
+ - ruby
+
 ---
 
 You can specify configuration options for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.

@@ -2,7 +2,7 @@
 title: Reporting
 polyglot:
 - java
-- dot-net
+- dotnet
 ---
 
 Cucumber uses reporter plugins to produce reports that contain information about

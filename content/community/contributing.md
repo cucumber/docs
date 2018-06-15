@@ -1,7 +1,10 @@
 ---
 title: Contributing
 subtitle: Help us make Cucumber better
-polyglot: true
+polyglot:
+ - java
+ - javascript
+ - ruby
 ---
 
 Please follow these guidelines if you want to contribute to Cucumber or help the Cucumber team reproduce a problem.
