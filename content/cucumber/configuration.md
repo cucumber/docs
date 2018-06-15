@@ -5,13 +5,15 @@ polyglot: true
 ---
 
 
-# Type Registry Configuration
+# Type Registry
+
+You can define your own parameter types and data table types.
 
 {{% block "java" %}}
 The type registry is used to configure parameter types and data table types. It can be configured by placing an implementation
 of `cucumber.api.TypeRegistryConfigurer` on the glue path.
 
-For instance, the following `TypeRegistryConfiguration.java` registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity.
+For instance, the following `TypeRegistryConfiguration.java` registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity:
 
 ```java
 public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
@@ -64,7 +66,6 @@ end
 
 Here's an example of how to use this in a step definition:
 ```ruby
-#                      <---------> same as parameter type's regexp
 Then /^a user {person} should have {int} followers$/ do |person, count|
   assert(person.is_a?(Person))
 end
@@ -87,7 +88,7 @@ For more information on how to use `Data Tables` with Cucumber-js, please see th
 
 ## Recommended location
 
-The recommended location to define custom parameter types, would be in{{% block "ruby" %}} features/support/parameter_types.rb.{{% /block %}}{{% block "javascript" %}} features/support/parameter_types.js.{{% /block %}}{{% block "java" %}} src/test/com/example/TypeRegistryConfiguration.java{{% /block %}}
+The recommended location to define custom parameter types, would be in{{% block "ruby" %}} `features/support/parameter_types.rb`.{{% /block %}}{{% block "javascript" %}} `features/support/parameter_types.js`.{{% /block %}}{{% block "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /block %}}
 This is just a convention though; Cucumber will pick them up from any file{{% block "ruby, javascript" %}} under features.{{% /block %}}{{% block "java" %}} on the glue path.{{% /block %}}
 
 # Profiles
