@@ -727,6 +727,7 @@ static String isItFriday(String today) {
 }
 ```
 {{% /block %}}
+
 {{% block "javascript" %}}
 ```javascript
 function isItFriday(today) {
