@@ -1,6 +1,6 @@
 ---
 title: Cucumber Configuration
-subtitle: cucumber.yml, type registry
+subtitle: How to configure Cucumber
 polyglot: true
 ---
 
@@ -8,9 +8,10 @@ polyglot: true
 # Type Registry Configuration
 
 {{% block "java" %}}
-The type registry is used to configure parameter and data table types. It can be configured by placing an implementation 
+The type registry is used to configure parameter types and data table types. It can be configured by placing an implementation
 of `cucumber.api.TypeRegistryConfigurer` on the glue path.
 
+For instance, the following `TypeRegistryConfiguration.java` registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity.
 
 ```java
 public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
@@ -49,27 +50,64 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 {{% /block %}}
 
 {{% block "ruby" %}}
- TODO:
+A `Parameter Type` lets you transform an argument from a string to another type before it's passed to the step definition.
+
+For example, let's define our own "Person" type:
+
+```ruby
+ParameterType(
+  name: 'person'
+  regexp: /[A-Z][a-z]+/,
+  transformer: -> (name) { Person.new(name) }
+end
+```
+
+Here's an example of how to use this in a step definition:
+```ruby
+#                      <---------> same as parameter type's regexp
+Then /^a user {person} should have {int} followers$/ do |person, count|
+  assert(person.is_a?(Person))
+end
+```
+{{% /block %}}
+
+{{% block "java, ruby" %}}
+If you are using a type that has not yet been defined, you will an error similar to:
+```shell
+The parameter type "person" is not defined.
+```
 {{% /block %}}
 
 {{% block "javascript" %}}
- TODO:
+For more information on how to use `Parameter Type` with Cucumber-js, please see the [parameter_types.feature](https://github.com/cucumber/cucumber-js/blob/master/features/parameter_types.feature).
+
+For more information on how to use `Data Tables` with Cucumber-js, please see the [cucumber-js documentation](https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/data_table_interface.md).
+
 {{% /block %}}
+
+## Recommended location
+
+The recommended location to define custom parameter types, would be in
+{{% block "ruby" %}}features/support/parameter_types.rb.{{% /block %}}
+{{% block "javascript" %}}features/support/parameter_types.js.{{% /block %}}
+{{% block "java" %}}src/test/<your-project>/TypeRegistryConfiguration.java{{% /block %}}
+This is just a convention though; Cucumber will pick them up from any file
+{{% block "ruby, javascript" %}} under features.{{% /block %}}
+{{% block "java" %}} on the glue path.{{% /block %}}
 
 # Profiles
 
 {{% block "java" %}}
-  Profiles are not available in Java
+Profiles are not available in Java.
 {{% /block %}}
 
 {{% block "javascript" %}}
- TODO:
+For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature)
 {{% /block %}}
 
 {{% block "ruby" %}}
 You can specify configuration options for Cucumber in a `cucumber.yml` or `cucumber.yaml` file.
 This file must be in a `.config` directory, or `config` subdirectory of your current working directory.
-
 
 ```yaml
 config/cucumber.yml
@@ -92,7 +130,7 @@ the directory name containing the root directory of the tree containing feature 
 references to the necessary library files. In a typical project, `cucumber --require features features/some/path` will suffice.
 Repetitious usages can be added to user-defined profiles contained in the project's `cucumber.yml` file.
 
-<b>Profile can be executed</b>
+To execute the profile, use:
 
 ```bash
 \[user@system project] cucumber --profile html_report
@@ -115,7 +153,14 @@ output.
 \[user@system project] cucumber -p html_report -p bvt
 ```
 
-<b>Default Profile</b>
+## Default Profile
+{{% block "java" %}}
+Profiles are not available in Java.
+{{% /block %}}
+
+{{% block "javascript" %}}
+For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature)
+{{% /block %}}
 
 Chances are you’ll want to execute Cucumber with a particular profile most of the time.
 The Cucumber configuration file uses a `default` profile to provide this functionality.
@@ -140,7 +185,13 @@ With this setup, Cucumber will now use both the `bvt` profile and `html_report`
 profile, testing all Features and Scenarios tagged with `@bvt`, along with the
 progress output and HTML output.
 
-<b>Preprocessing with ERB</b>
+## Preprocessing with ERB
+
+{{% block "java, javascript" %}}
+ERB (Embedded RuBy) is a Ruby specific tool.
+{{% /block %}}
+
+{{% block "ruby" %}}
 
 The `cucumber.yml` file is preprocessed by [ERB (Embedded RuBy)](http://ruby-doc.org/stdlib-2.5.0/libdoc/erb/rdoc/ERB.html). This allows you to use Ruby code
 to generate values in the `cucumber.yml` file.
@@ -155,9 +206,18 @@ So, if you have several profiles with similar values, you might do this:
    default: <%= common %> features
    html_report: <%= common %> --format html --out=features_report.html features
    ```
-      
-<b>Environment Variables</b>
+{{% /block %}}
 
+# Environment Variables
+{{% block "java" %}}
+Cucumber-jvm does not support configuration of Cucumber with an `env` file.
+{{% /block %}}
+
+{{% block "javascript" %}}
+Cucumber-js does not support configuration of Cucumber with an `env` file.
+{{% /block %}}
+
+{{% block "ruby" %}}
 You can use environment variables in the profile argument list, just as you would normally specify them on the command-line.
 
 ```yaml
@@ -189,8 +249,6 @@ For example, the following sets up a profile that runs the specified Tag and set
    ```
    baz: --tags @mytag FOO=BAR
    ```
-
-<b>Env.rb</b>
 
 Local Cucumber customisation code in `support/env.rb` itself as that file is typically
 overwritten by `script/generate cucumber:install | rails g cucumber`. Customisations that
