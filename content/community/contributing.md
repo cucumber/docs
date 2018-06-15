@@ -1,10 +1,6 @@
 ---
 title: Contributing
 subtitle: Help us make Cucumber better
-menu:
-  about:
-    parent: main
-    weight: 20
 polyglot: true
 ---
 

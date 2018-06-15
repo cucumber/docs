@@ -1,10 +1,6 @@
 ---
 title: Get in touch
 subtitle: Support forums, chat rooms
-menu:
-  about:
-    parent: main
-    weight: 10
 ---
 
 If you need help using Cucumber, you have several options.

@@ -1,9 +1,6 @@
 ---
 title: BDD Overview
 subtitle: Basic principles and practices of BDD
-menu:
-  bdd:
-    weight: 1
 ---
 
 Behaviour-Driven Development (BDD) is a set of practices that aim to reduce

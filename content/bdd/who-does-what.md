@@ -1,9 +1,6 @@
 ---
 title: Who Does What?
 subtitle: Roles and responsibilities in a BDD team
-menu:
-  bdd:
-    weight: 40
 ---
 
 Who should be writing [Gherkin](/gherkin/) documents, and who should write
