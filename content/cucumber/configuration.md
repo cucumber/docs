@@ -2,6 +2,12 @@
 title: Cucumber Configuration
 subtitle: How to configure Cucumber
 polyglot: true
+subtitle: cucumber.yml, environment variables
+polyglot:
+ - java
+ - javascript
+ - ruby
+
 ---
 
 

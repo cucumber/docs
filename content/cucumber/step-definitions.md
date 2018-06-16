@@ -1,7 +1,11 @@
 ---
 title: Step Definitions
 subtitle: Connecting Gherkin steps to code
-polyglot: true
+polyglot:
+ - java
+ - javascript
+ - ruby
+
 weight: 2
 ---
 

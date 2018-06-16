@@ -1,7 +1,10 @@
 ---
 title: Cucumber Reference
 subtitle: "Using Cucumber: Step Definitions, Hooks, Tags"
-polyglot: true
+polyglot:
+ - java
+ - javascript
+ - ruby
 ---
 
 Cucumber can be used to implement automated tests based on scenarios described in your Gherkin feature files.

@@ -3,7 +3,7 @@ title: Ruby Tools
 weight: 1200
 ---
 
-This page describes tools commonly used with Ruby.
+This page describes tools for a Ruby or Ruby on Rails environment.
 
 # Build tools
 
@@ -112,10 +112,32 @@ rescue LoadError
 end
 ```
 
-## Ruby-on-Rails
+## Ruby on Rails
 
-### Rails 3.x and above
+### cucumber-rails
 
-Go to Cucumber-Rails' [README](https://github.com/cucumber/cucumber-rails/blob/master/README.md) for installation instructions.
+[cucumber-rails](https://github.com/cucumber/cucumber-rails) is a RubyGem which
+brings Ruby on Rails Generators for Cucumber with special support for Capybara
+and DatabaseCleaner.
 
-As of Cucumber-Rails version 0.5.0 and above, Cucumber-Rails **only** supports Rails 3.x and above (Rails 2 is **not** supported).
+#### Installing
+
+The `cucumber:install` generator sets up Cucumber in your Rails project. It
+generates the necessary files in the `features/` directory. After
+running this generator you will also get a new rake task called `cucumber`.
+
+For more details, see `rails generate cucumber:install --help`.
+
+#### Usage
+
+By default, `cucumber-rails` runs `DatabaseCleaner.start` and
+`DatabaseCleaner.clean` before and after your Cucumber scenarios. This default
+behavior can be disabled. See the
+[cucumber-rails README](https://github.com/cucumber/cucumber-rails) for details.
+
+#### Resources
+
+To learn more of the tools being integrated and assisted by `cucumber-rails`,
+see the READMEs of
+[DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) and
+[Capybara](https://github.com/teamcapybara/capybara).

@@ -30,6 +30,11 @@
           {{end}}
           {{ if (or (.Params.twitter) (.Params.linkedin)) }}
             <div class="subtitle is-6">
+            {{if eq .Dir "team/"}}
+              <p>
+                <a href="https://github.com/{{.File.BaseFileName}}"><i class="fab fa-github" aria-hidden="true"></i> {{.File.BaseFileName}}</a>
+              </p>
+            {{end}}
             {{ if .Params.twitter }}
               <p>
                 <a href="https://twitter.com/{{.Params.twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i> @{{.Params.twitter}}</a>

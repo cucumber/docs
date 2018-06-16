@@ -47,8 +47,8 @@ function toggleClass(el, className) {
 ////// Show/hide polyglot content
 
 var showHideSelectors = [
-  '.language-dot-net',
-  '.text-dot-net',
+  '.language-dotnet',
+  '.text-dotnet',
   '.language-java',
   '.text-java',
   '.language-javascript',
@@ -61,17 +61,10 @@ function showOnly(language) {
   // Remember
   localStorage.setItem('language', language)
 
-  // Activate select for language
-  var select = document.querySelector('#language-select select')
-  if(select) {
-    each(document, '#language-select .icon', function(e) {
-      if(e.dataset.language === language) {
-        removeClass(e, 'is-hidden')
-      } else {
-        addClass(e, 'is-hidden')
-      }
-    })
-  }
+  // Activate tab for language
+  each(document, '.tabs li', function(a) { removeClass(a, 'is-active') })
+  var tab = document.querySelector('[data-language="' + language + '"]')
+  addClass(tab, 'is-active')
 
   // Hide all code elements
   for(var i=0; i<showHideSelectors.length; i++) {
@@ -79,12 +72,12 @@ function showOnly(language) {
     each(document, selector, function(el) {
       if(hasClass(el, 'text-'+language) || hasClass(el, 'language-'+language)) {
         removeClass(el, 'is-hidden')
-        if(el.nodeName == 'CODE' && el.parentElement.nodeName == 'PRE') {
+        if(el.nodeName === 'CODE' && el.parentElement.nodeName === 'PRE') {
           removeClass(el.parentElement, 'is-hidden')
         }
       } else {
         addClass(el, 'is-hidden')
-        if(el.nodeName == 'CODE' && el.parentElement.nodeName == 'PRE') {
+        if(el.nodeName === 'CODE' && el.parentElement.nodeName === 'PRE') {
           addClass(el.parentElement, 'is-hidden')
         }
       }
@@ -102,15 +95,11 @@ ready(function() {
     })
   })
 
-  each(document, 'select', function(select) {
-    select.addEventListener('change', function () {
-      var language = select.value
-      showOnly(language)
-    })
-  })
-
-  var language = localStorage.getItem('language') || 'java'
-  showOnly(language)
+  var firstLi = document.querySelector('.tabs li')
+  if(firstLi) {
+    var language = localStorage.getItem('language') || firstLi.getAttribute('data-language')
+    showOnly(language)
+  }
 
   // Toggle navbar menu
   var burger = document.querySelector('.navbar-burger')

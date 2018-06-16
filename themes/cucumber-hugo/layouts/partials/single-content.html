@@ -6,7 +6,7 @@
     <div>
       <h1 class="title is-1">{{ .Title }}</h1>
       {{ if .Page.Params.polyglot }}
-        {{ partial "language-select" . }}
+        {{ partial "language-tabs.html" . }}
       {{ end }}
       <div class="content">
         {{ .Content }}

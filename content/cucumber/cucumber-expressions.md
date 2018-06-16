@@ -1,7 +1,11 @@
 ---
 title: Cucumber Expressions
 subtitle: Linking step definitions to Gherkin steps
-polyglot: true
+polyglot:
+ - java
+ - javascript
+ - ruby
+
 weight: 4
 markup: mmark
 ---
