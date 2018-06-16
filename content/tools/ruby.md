@@ -66,7 +66,7 @@ while running `rake cucumber:ok` will run the Steps within all Scenarios other t
 
 ### Using Profiles in Rake Tasks
 
-For complex Feature runs that are tested often, it is nice to save the command line arguments as [Cucumber profiles](/cucumber/configuration/#defining-profiles).
+For complex Feature runs that are tested often, it is nice to save the command line arguments as [Cucumber profiles](/cucumber/configuration#profiles).
 
 Once you have some profiles defined, you can use them in your Rake tasks, like so:
 
