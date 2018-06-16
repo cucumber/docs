@@ -149,7 +149,7 @@ to be handled by Cucumber. For that situation use the `@allow-rescue` [tag](/cuc
 ## Test::Unit
 
 If you prefer to use `Test::Unit`'s `assert` methods you can mix them into
-your `World`].
+your `World`.
 
 ```ruby
 require 'test/unit/assertions'
