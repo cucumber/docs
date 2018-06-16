@@ -19,7 +19,7 @@ Expression           | Description
 `@fast`              | Scenarios tagged with `@fast`
 `@wip and not @slow` | Scenarios tagged with `@wip` that aren't also tagged with `@slow`
 `@smoke and @fast`   | Scenarios tagged with both `@smoke` and `@fast`
-`@gui or @database`  | Scenarios tagged with either `@gui` and `@database`
+`@gui or @database`  | Scenarios tagged with either `@gui` or `@database`
 
 For even more advanced tag expressions you can use parenthesis for clarity, or
 to change operator precedence:
