@@ -995,6 +995,30 @@ Then('I should be told {string}', function (expectedAnswer) {
 ```
 {{% /block %}}
 
+{{% block "ruby" %}}
+Update the `stepdefs.rb` file to use the `<day>` and `<answer>` variables.
+```ruby
+module FridayStepHelper
+  def is_it_friday?(day)
+    answer = (day == 'Friday') ? 'TGIF' : 'Nope'
+  end
+end
+World FridayStepHelper
+
+Given("today is {string}") do |given_day|
+  @today = given_day
+end
+
+When("I ask whether it's Friday yet") do
+  @actual_answer = is_it_friday?(@today)
+end
+
+Then("I should be told {string}") do |expected_answer|
+  expect(@actual_answer).to eq(expected_answer)
+end
+```
+{{% /block %}}
+
 Run Cucumber again:
 
 {{% block "javascript" %}}
@@ -1007,7 +1031,43 @@ Run Cucumber again:
 ```
 {{% /block %}}
 
+{{% block "ruby" %}}
+```ruby
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario Outline: Today is or is not Friday # features/is_it_friday_yet.feature:4
+    Given today is <day>                      # features/is_it_friday_yet.feature:5
+    When I ask whether it's Friday yet        # features/is_it_friday_yet.feature:6
+    Then I should be told <answer>            # features/is_it_friday_yet.feature:7
+
+    Examples:
+      | day              | answer |
+      | "Friday"         | "TGIF" |
+      | "Sunday"         | "Nope" |
+      | "anything else!" | "Nope" |
+
+3 scenarios (3 passed)
+9 steps (9 passed)
+0m0.021s
+```
+{{% /block %}}
+
 # Summary
 
+{{% block "javascript" %}}
 In this brief tutorial you've seen how to install Cucumber, how to follow
 the BDD process to develop a very simple function, and how to use that function to evaluate multiple scenarios!
+{{% /block %}}
+
+{{% block "ruby" %}}
+In this brief tutorial you've seen how to install Cucumber, how to follow
+the BDD process to develop a very simple function, and how to use that function to evaluate multiple scenarios!
+{{% /block %}}
+
+{{% block "java" %}}
+In this brief tutorial you’ve seen how to install Cucumber, and how to follow the BDD process to develop a very simple function. The next natural steps would be:
+- Move the isItFriday function out from the test code into production code (refactoring)
+- Write another scenario - Friday is Friday perhaps?
+- Follow the same process as outlined above, until both scenarios are green
+{{% /block %}}
