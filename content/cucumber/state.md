@@ -9,8 +9,8 @@ Leaking state makes your scenarios brittle, and difficult to run in isolation.
 To prevent leaking state between scenarios:
 
 * Avoid using global or static variables.
-
-* Make sure you clean your database between scenarios.
+* Make sure you clean your database in a `Before` hook.
+* If you share a browser between scenarios, delete cookies in a `Before` hook.
 
 # Sharing state between steps
 
