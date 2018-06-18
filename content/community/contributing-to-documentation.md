@@ -140,7 +140,7 @@ The following languages are currently supported:
 
 ## Language-specific source code and paragraphs
 
-Wrap `{{% block ``%}}` shortcodes around paragraphs and fenced code blocks:
+Wrap `{{%/* block */%}}` shortcodes around paragraphs and fenced code blocks:
 
     {{% block "ruby" %}}
     Put this in your `hello.rb`:
@@ -169,13 +169,15 @@ Please note that you cannot use headers inside language blocks. If you are writi
 
 ## Language-specific text fragments
 
-Use the `{{% text %}}` shortcode around text fragments that should only be displayed for
+Use the `{{%/* text */%}}` shortcode around text fragments that should only be displayed for
 a particular programming language:
+
 
     The preferred build tool is
     {{% text "ruby" %}}Rake{{% /text %}}
     {{% text "javascript" %}}Yarn{{% /text %}}
     {{% text "java" %}}Maven{{% /text %}}.
+
 
 ## Working locally
 
