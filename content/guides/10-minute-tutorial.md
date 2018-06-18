@@ -893,7 +893,7 @@ Then('I should be told {string}', function (expectedAnswer) {
 ```ruby
 module FridayStepHelper
   def is_it_friday?(day)
-    answer = (day == 'Friday') ? 'TGIF' : 'Nope'
+    day == 'Friday' ? 'TGIF' : 'Nope'
   end
 end
 World FridayStepHelper
@@ -1000,7 +1000,7 @@ Update the `stepdefs.rb` file to use the `<day>` and `<answer>` variables.
 ```ruby
 module FridayStepHelper
   def is_it_friday?(day)
-    answer = (day == 'Friday') ? 'TGIF' : 'Nope'
+    day == 'Friday' ? 'TGIF' : 'Nope'
   end
 end
 World FridayStepHelper
