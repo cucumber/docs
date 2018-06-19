@@ -62,7 +62,7 @@ For example, let's define our own "Person" type:
 
 ```ruby
 ParameterType(
-  name: 'person'
+  name: 'person',
   regexp: /[A-Z][a-z]+/,
   transformer: -> (name) { Person.new(name) }
 end
