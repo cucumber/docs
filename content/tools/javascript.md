@@ -9,12 +9,12 @@ This page describes tools commonly used with JavaScript.
 The most widely used  build tool for JavaScript are [npm](#npm) and [Yarn](#yarn).
 
 ## npm
-To use Cucumber with [npm](https://docs.npmjs.com/), make sure that:
+To use Cucumber with [npm](https://www.npmjs.com/), make sure that:
 
 - npm is installed
 
 ## Yarn
 
-To run Cucumber with [Yarn](https://yarnpkg.com/lang/en/docs/), make sure that:
+To run Cucumber with [Yarn](https://yarnpkg.com/en/), make sure that:
 
 - Yarn is installed
