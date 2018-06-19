@@ -165,19 +165,18 @@ Wrap `{{%/* block %}}` shortcodes around paragraphs and fenced code blocks:
     ```
     {{% /block */%}}
 
-Please note that you cannot use headers inside language blocks. If you are writing a page with content for a specific language, perhaps it should be a separate page.
+Please note that you cannot use headers *inside* language blocks. If you are writing a page with content for a specific language,
+perhaps it should be a separate page. Or use a header per language.
 
 ## Language-specific text fragments
 
 Use the `{{%/* text */%}}` shortcode around text fragments that should only be displayed for
 a particular programming language:
 
-
     The preferred build tool is
     {{%/* text "ruby" %}}Rake{{% /text %}}
     {{% text "javascript" %}}Yarn{{% /text %}}
     {{% text "java" %}}Maven{{% /text */%}}.
-
 
 ## Working locally
 
