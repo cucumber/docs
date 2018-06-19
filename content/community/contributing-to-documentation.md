@@ -140,7 +140,7 @@ The following languages are currently supported:
 
 ## Language-specific source code and paragraphs
 
-Wrap `{{%/* block */%}}` shortcodes around paragraphs and fenced code blocks:
+Wrap `{{%/* block %}}` shortcodes around paragraphs and fenced code blocks:
 
     {{% block "ruby" %}}
     Put this in your `hello.rb`:
@@ -148,22 +148,22 @@ Wrap `{{%/* block */%}}` shortcodes around paragraphs and fenced code blocks:
     ```ruby
     puts "hello"
     ```
-    {{% /block %}}
+    {{% /block */%}}
 
-    {{% block "javascript" %}}
+    {{%/* block "javascript" %}}
     Put this in your `hello.js`:
 
     ```javascript
     console.log("hello")
     ```
-    {{% /block %}}
+    {{% /block */%}}
 
-    {{% block "java" %}}
+    {{%/* block "java" %}}
     Put this in your `Hello.java`:
     ```java
     System.out.println("hello")
     ```
-    {{% /block %}}
+    {{% /block */%}}
 
 Please note that you cannot use headers inside language blocks. If you are writing a page with content for a specific language, perhaps it should be a separate page.
 
@@ -174,9 +174,9 @@ a particular programming language:
 
 
     The preferred build tool is
-    {{% text "ruby" %}}Rake{{% /text %}}
+    {{%/* text "ruby" %}}Rake{{% /text %}}
     {{% text "javascript" %}}Yarn{{% /text %}}
-    {{% text "java" %}}Maven{{% /text %}}.
+    {{% text "java" %}}Maven{{% /text */%}}.
 
 
 ## Working locally
