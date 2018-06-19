@@ -3,7 +3,7 @@ title: JavaScript Tools
 weight: 1200
 ---
 
-This page describes tools commonly used with Java.
+This page describes tools commonly used with JavaScript.
 
 # Build tools
 The most widely used  build tool for JavaScript are [npm](#npm) and [Yarn](#yarn).
