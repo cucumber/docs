@@ -12,7 +12,7 @@ You can have all of your step definitions in one file, or in multiple files. Whe
 As your project grows, it will be easiest to split them into meaningful groups in different files.
 This will make your project easier to maintain.
 
-{{% note "How Cucumber finds your features and step definitions" %}}
+# How Cucumber finds your features and step definitions
 Be aware that, regardless of the directory structure employed, Cucumber effectively flattens the `features/` directory tree when running tests.
 This means that anything ending in {{% text "java" %}}`.java`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}}
 under the starting point for a Cucumber run is searched for `Feature` matches.
@@ -22,7 +22,7 @@ This is either the default case or the location specified with the {{% text "jav
 
 Technically it doesn't matter how you name your step definition files, or which step definitions you put in a file.
 You *could* have one giant file and put all your step definitions in there. But that would get very messy, and hard to maintain.
-Instead, we recommend creating a separate {{% text "ruby" %}}`*_steps.rb`{{% /text %}}{{% text "java" %}}`Steps.java`{{% /text %}}{{% text "javascript" %}}`*_steps.js`{{% /text %}} file for each domain concept.
+Instead, we recommend creating a separate{{% text "ruby" %}} `*_steps.rb`{{% /text %}}{{% text "java" %}} `Steps.java`{{% /text %}}{{% text "javascript" %}} `*_steps.js`{{% /text %}} file for each domain concept.
 
 A good rule of thumb is to have one file for each major {{% text "ruby" %}}model/database table.{{% /text %}}{{% text "java" %}}domain object.{{% /text %}}{{% text "javascript" %}}domain object.{{% /text %}}
 
