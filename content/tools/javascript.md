@@ -13,16 +13,13 @@ To use Cucumber with [npm](https://www.npmjs.com/), make sure that:
 
 - npm is installed
 
-Cucumber.js is available as an npm module. You can install it with:
+Cucumber.js is available as an npm module.
+
+Add `cucumber` as a development dependency:
 
 ```shell
-npm install cucumber
-```
-
-To add it directly to your `package.json`, use:
-
-```shell
-npm install cucumber --save-dev
+# NPM
+npm install --save-dev cucumber
 ```
 
 ## Yarn
@@ -30,3 +27,10 @@ npm install cucumber --save-dev
 To run Cucumber with [Yarn](https://yarnpkg.com/en/), make sure that:
 
 - Yarn is installed
+
+Add `cucumber` as a development dependency:
+
+```shell
+# Yarn
+yarn add --dev cucumber
+```
