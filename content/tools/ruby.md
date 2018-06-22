@@ -1,6 +1,6 @@
 ---
 title: Ruby Tools
-weight: 1200
+weight: 1300
 ---
 
 This page describes tools for a Ruby or Ruby on Rails environment.
