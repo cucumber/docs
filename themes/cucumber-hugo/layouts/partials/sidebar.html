@@ -20,7 +20,8 @@
       {{ $siblingOfCurrentFilePage := (eq $currentPage.Parent .Parent)}}
       {{ $childOfCurrentDirPage := (eq $currentPage .Parent)}}
       {{ if or $currentFilePage (and $siblingOfCurrentFilePage $expandChildren) (and $childOfCurrentDirPage $expandChildren) }}
-        <a href="{{.URL}}" style="padding-left: 1.5em" class="panel-block {{ if eq $currentPage . }}is-active{{ end }}">
+        {{ $pageUrl := (cond (isset .Params "external_url") .Params.external_url .URL) }}
+        <a href="{{$pageUrl}}" style="padding-left: 1.5em" class="panel-block {{ if eq $currentPage . }}is-active{{ end }}">
           <span class="panel-icon">
             <i class="fas fa-book" aria-hidden="true"></i>
           </span>

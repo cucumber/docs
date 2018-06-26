@@ -1,6 +1,9 @@
 {{if ne .Dir "team/"}}
 <a href="{{.URL}}">
 {{end}}
+{{if .Params.external_url}}
+<a href="{{.Params.external_url}}">
+{{end}}
   <div class="card" style="height: 100%">
     <div class="card-content">
       <div class="media">
@@ -71,7 +74,17 @@
       </div>
       {{end}}
     </div>
+    {{if .Params.card_image}}
+    <div class="card-image">
+      <figure class="image">
+        <img src="{{.Params.card_image}}" alt="Logo">
+      </figure>
+    </div>
+    {{end}}
   </div>
+{{if .Params.external_url}}
+</a>
+{{end}}
 {{if ne .Dir "team/"}}
 </a>
 {{end}}
