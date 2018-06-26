@@ -167,7 +167,7 @@ Given("I have {int} red balls", function (int1) {
 {{% /block %}}
 
 Suggested snippets will use your own [parameter types](/cucumber/cucumber-expressions#parameter-types)
-if they match part of your step. If a [color](/cucumber/cucumber-expressions#custom-parameter-types) 
+if they match parts of your undefined step. If a [color](/cucumber/cucumber-expressions#custom-parameter-types) 
 parameter type exists, Cucumber would use that in the suggested expression:
 
 {{% block "java" %}}
