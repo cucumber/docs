@@ -31,7 +31,7 @@ but we can also write a more generic expression, with an `int` *output parameter
     I have {int} cucumbers in my belly
 
 When the text is matched against that expression, the number `42` is extracted
-from the `{int}` output parameter and passed as an argument to the [step definition](/cucumber/step-definitions)).
+from the `{int}` output parameter and passed as an argument to the [step definition](/cucumber/step-definitions).
 
 The following text would not match the expression:
 
