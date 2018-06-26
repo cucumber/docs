@@ -1,6 +1,6 @@
 ---
-title: Blog Posts about Cucumber
-subtitle: Community blogs
+title: Community blog posts
+subtitle: Random selection of BDD/Cucumber blog posts
 ---
 
 Here is a list of Cucumber-related blog posts and tutorials.

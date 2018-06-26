@@ -6,4 +6,3 @@ external_url: https://cucumber.io/training
 weight: 4
 ---
 
-Our training rocks
