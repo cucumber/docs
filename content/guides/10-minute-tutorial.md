@@ -793,55 +793,8 @@ Feature: Is it Friday yet?
 
 Congratulations! You've got your first green Cucumber scenario.
 
-# Evaluate a scenario
-Now that we've forced a scenario to pass, let's write one that passes or fails based on logic. Let's update our statement to evaluate whether or not `today` is equal to `"Friday"`.
-
-{{% block "javascript" %}}
-```javascript
-function isItFriday(today) {
-  return (today === "Friday") ? "TGIF" : "Nope";
-}
-```
-{{% /block %}}
-
-{{% block "ruby" %}}
-```ruby
-def is_it_friday?(day)
-  answer = (day == 'Friday') ? 'TGIF' : 'Nope'
-end
-```
-{{% /block %}}
-
-Run Cucumber again:
-
-{{% block "javascript" %}}
-```shell
-...
-1 scenario (1 passed)
-3 steps (3 passed)
-0m00.001s
-```
-{{% /block %}}
-
-{{% block "ruby" %}}
-```shell
-Feature: Is it Friday yet?
-  Everybody wants to know when it's Friday
-
-  Scenario: Sunday isn't Friday        # features/is_it_friday_yet.feature:4
-    Given today is Sunday              # features/step_definitions/stepdefs.rb:8
-    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:12
-    Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:16
-
-1 scenario (1 passed)
-3 steps (3 passed)
-0m0.049s
-```
-{{% /block %}}
-
-# Multiple scenarios
-We've seen what happens when it *isn't* Friday, but what about when it *is* Friday? Fortunately, we've already written the statement to evaluate whether or not `today` is equal to `"Friday"` and return `"TGIF"` if it is. So, let's write a scenario where today is Friday!
-
+# Add a failing test
+The next thing to test for would be that we also get the correct result when it *is* Friday. 
 Update the `is-it-friday-yet.feature` file.
 ```gherkin
 Feature: Is it Friday yet?
@@ -858,67 +811,153 @@ Feature: Is it Friday yet?
     Then I should be told "TGIF"
 ```
 
-{{% block "javascript" %}}
-Update the `stepdefs.js` file.
-```javascript
-const assert = require('assert');
-const { Given, When, Then } = require('cucumber');
+When we run this test, it will fail. 
 
-function isItFriday(today) {
-  return (today === "Friday") ? "TGIF" : "Nope";
+{{% block "java" %}}
+```
+    Given today is "Sunday"            # Stepdefs.today_is(String)
+    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
+
+  Scenario: Friday is Friday           # hellocucumber/is_it_friday.feature:9
+    Given today is "Friday"            # Stepdefs.today_is(String)
+    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
+      org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:26)
+	at ✽.I should be told "TGIF"(hellocucumber/is_it_friday.feature:12)
+
+
+org.junit.ComparisonFailure: 
+Expected :TGIF
+Actual   :Nope
+ <Click to see difference>
+
+
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:26)
+	at ✽.I should be told "TGIF"(hellocucumber/is_it_friday.feature:12)
+```
+{{% /block %}}
+
+That is because we haven't implemented the logic yet! Let's do that next.
+
+# Make it pass
+We should update our statement to actually evaluate whether or not `today` is equal to `"Friday"`.
+
+{{% block "java" %}}
+```java
+static String isItFriday(String today) {
+    if (today.equals("Friday") {
+        return "TGIF";
+    }
+    return "Nope";
 }
+```
+{{% /block %}}
 
-// These two Given functions are very similar but, as written, require separate functions
-Given('today is Sunday', function () {
-  this.today = 'Sunday';
-});
-Given('today is Friday', function () {
-  this.today = 'Friday';
-});
-
-// This is a shared function and should be moved to a shared.js file
-When('I ask whether it\'s Friday yet', function () {
-  this.actualAnswer = isItFriday(this.today);
-});
-
-// This is also a shared function that uses a variable, {string}
-// This should also be moved to a shared.js file
-Then('I should be told {string}', function (expectedAnswer) {
-  assert.equal(this.actualAnswer, expectedAnswer);
-});
+{{% block "javascript" %}}
+```javascript
+function isItFriday(today) {
+  if (today === "Friday") {
+    return "TGIF"; }
+  else {
+    return "Nope";
+  }
+}
 ```
 {{% /block %}}
 
 {{% block "ruby" %}}
 ```ruby
-module FridayStepHelper
-  def is_it_friday?(day)
-    day == 'Friday' ? 'TGIF' : 'Nope'
+def is_it_friday(day)
+  if day == 'Friday'
+    'TGIF'
+  else
+    'Nope'
   end
-end
-World FridayStepHelper
-
-Given("today is Sunday") do
-  @today = 'Sunday'
-end
-
-Given("today is Friday") do
-  @today = 'Friday'
-end
-
-# Then is a shared function
-When("I ask whether it's Friday yet") do
-  @actual_answer = is_it_friday?(@today)
-end
-
-# Then is a shared function
-Then("I should be told {string}") do |expected_answer|
-  expect(@actual_answer).to eq(expected_answer)
 end
 ```
 {{% /block %}}
 
 Run Cucumber again:
+
+{{% block "java" %}}
+```shell
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Friday is Friday           # hellocucumber/is_it_friday_yet.feature:9
+    Given today is Friday              # Stepdefs.today_is_Sunday()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
+
+1 Scenarios (1 passed)
+3 Steps (3 passed)
+0m0.255s
+```
+{{% /block %}}
+
+{{% block "javascript" %}}
+```shell
+...
+1 scenario (1 passed)
+3 steps (3 passed)
+0m00.001s
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```shell
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Friday is Friday           # features/is_it_friday_yet.feature:9
+    Given today is Friday              # features/step_definitions/stepdefs.rb:12
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:17
+    Then I should be told "TGIF"       # features/step_definitions/stepdefs.rb:22
+
+1 scenario (1 passed)
+3 steps (3 passed)
+0m0.049s
+```
+{{% /block %}}
+
+
+
+Run Cucumber again:
+
+{{% block "java" %}}
+```shell
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Friday is Friday           # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Friday              # Stepdefs.today_is_Sunday()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
+
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # Stepdefs.today_is_Sunday()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
+
+2 scenarios (2 passed)
+6 steps (6 passed)
+0m0.255s
+```
+{{% /block %}}
 
 {{% block "javascript" %}}
 ```shell
@@ -1021,6 +1060,37 @@ end
 
 Run Cucumber again:
 
+{{% block "java" %}}
+```shell
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario Outline: Today is or is not Friday # hellocucumber/is_it_friday_yet.feature:4
+    Given today is <day>                      # hellocucumber/is_it_friday_yet.feature:5
+    When I ask whether it's Friday yet        # hellocucumber/is_it_friday_yet.feature:6
+    Then I should be told <answer>            # hellocucumber/is_it_friday_yet.feature:7
+
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # Stepdefs.today_is_Sunday()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
+
+    Examples:
+      | day              | answer |
+      | "Friday"         | "TGIF" |
+      | "Sunday"         | "Nope" |
+      | "anything else!" | "Nope" |
+
+3 scenarios (3 passed)
+9 steps (9 passed)
+0m0.255s
+```
+{{% /block %}}
+
 {{% block "javascript" %}}
 ```shell
 .........
@@ -1053,21 +1123,12 @@ Feature: Is it Friday yet?
 ```
 {{% /block %}}
 
+# Refactoring
+Now that we have working code, we should do some refactoring:
+* We should move the {{% text "java" %}}`isItFriday` method{{% /text %}}{{% text "javascript" %}}`isItFriday` function{{% /text %}}{{% text "ruby" %}}`is_it_friday` function{{% /text %}} out from the test code into production code.
+* We could at some point extract helper methods from our step definition, for functions we use in several places.
+
 # Summary
 
-{{% block "javascript" %}}
 In this brief tutorial you've seen how to install Cucumber, how to follow
 the BDD process to develop a very simple function, and how to use that function to evaluate multiple scenarios!
-{{% /block %}}
-
-{{% block "ruby" %}}
-In this brief tutorial you've seen how to install Cucumber, how to follow
-the BDD process to develop a very simple function, and how to use that function to evaluate multiple scenarios!
-{{% /block %}}
-
-{{% block "java" %}}
-In this brief tutorial you’ve seen how to install Cucumber, and how to follow the BDD process to develop a very simple function. The next natural steps would be:
-- Move the isItFriday function out from the test code into production code (refactoring)
-- Write another scenario - Friday is Friday perhaps?
-- Follow the same process as outlined above, until both scenarios are green
-{{% /block %}}
