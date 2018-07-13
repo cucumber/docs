@@ -24,7 +24,7 @@ If you'd like to go more in depth, try one of the following:
 
 - [Cucumber School (online training)](/professional/school)
 
-- [BDD Kickstart (classroom training)](/professtional/training)
+- [BDD Kickstart (classroom training)](/professional/training)
 
 # Where can I get help?
 For questions, you can [get in touch](/community/get-in-touch) with the community.
