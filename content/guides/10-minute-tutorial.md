@@ -793,9 +793,10 @@ Feature: Is it Friday yet?
 
 Congratulations! You've got your first green Cucumber scenario.
 
-# Add a failing test
-The next thing to test for would be that we also get the correct result when it *is* Friday. 
-Update the `is-it-friday-yet.feature` file.
+# Add another failing test
+The next thing to test for would be that we also get the correct result when it *is* Friday.
+
+Update the `is-it-friday-yet.feature` file:
 ```gherkin
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -811,7 +812,7 @@ Feature: Is it Friday yet?
     Then I should be told "TGIF"
 ```
 
-When we run this test, it will fail. 
+When we run this test, it will fail: 
 
 {{% block "java" %}}
 ```
@@ -842,6 +843,7 @@ Actual   :Nope
 	at ✽.I should be told "TGIF"(hellocucumber/is_it_friday.feature:12)
 ```
 {{% /block %}}
+
 
 That is because we haven't implemented the logic yet! Let's do that next.
 
@@ -882,55 +884,6 @@ def is_it_friday(day)
 end
 ```
 {{% /block %}}
-
-Run Cucumber again:
-
-{{% block "java" %}}
-```shell
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running hellocucumber.RunCucumberTest
-Feature: Is it Friday yet?
-  Everybody wants to know when it's Friday
-
-  Scenario: Friday is Friday           # hellocucumber/is_it_friday_yet.feature:9
-    Given today is Friday              # Stepdefs.today_is_Sunday()
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
-    Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
-
-1 Scenarios (1 passed)
-3 Steps (3 passed)
-0m0.255s
-```
-{{% /block %}}
-
-{{% block "javascript" %}}
-```shell
-...
-1 scenario (1 passed)
-3 steps (3 passed)
-0m00.001s
-```
-{{% /block %}}
-
-{{% block "ruby" %}}
-```shell
-Feature: Is it Friday yet?
-  Everybody wants to know when it's Friday
-
-  Scenario: Friday is Friday           # features/is_it_friday_yet.feature:9
-    Given today is Friday              # features/step_definitions/stepdefs.rb:12
-    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:17
-    Then I should be told "TGIF"       # features/step_definitions/stepdefs.rb:22
-
-1 scenario (1 passed)
-3 steps (3 passed)
-0m0.049s
-```
-{{% /block %}}
-
-
 
 Run Cucumber again:
 
@@ -1102,7 +1055,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "ruby" %}}
-```ruby
+```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
@@ -1125,7 +1078,9 @@ Feature: Is it Friday yet?
 
 # Refactoring
 Now that we have working code, we should do some refactoring:
+
 * We should move the {{% text "java" %}}`isItFriday` method{{% /text %}}{{% text "javascript" %}}`isItFriday` function{{% /text %}}{{% text "ruby" %}}`is_it_friday` function{{% /text %}} out from the test code into production code.
+
 * We could at some point extract helper methods from our step definition, for functions we use in several places.
 
 # Summary
