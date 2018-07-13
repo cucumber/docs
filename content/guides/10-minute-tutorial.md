@@ -1011,7 +1011,7 @@ Given("today is {string}") do |given_day|
 end
 
 When("I ask whether it's Friday yet") do
-  @actual_answer = is_it_friday?(@today)
+  @actual_answer = is_it_friday(@today)
 end
 
 Then("I should be told {string}") do |expected_answer|
