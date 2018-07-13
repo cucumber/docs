@@ -969,7 +969,11 @@ const assert = require('assert');
 const { Given, When, Then } = require('cucumber');
 
 function isItFriday(today) {
-  return (today === "Friday") ? "TGIF" : "Nope";
+  if (today === "Friday") {
+    return "TGIF"; }
+  else {
+    return "Nope";
+  }
 }
 
 Given('today is {string}', function (givenDay) {
