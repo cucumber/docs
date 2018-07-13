@@ -812,10 +812,10 @@ Feature: Is it Friday yet?
     Then I should be told "TGIF"
 ```
 
-When we run this test, it will fail: 
+When we run this test, it will fail.
 
 {{% block "java" %}}
-```
+```shell
     Given today is "Sunday"            # Stepdefs.today_is(String)
     When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
