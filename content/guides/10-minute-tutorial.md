@@ -991,10 +991,15 @@ Then('I should be told {string}', function (expectedAnswer) {
 Update the `stepdefs.rb` file to use the `<day>` and `<answer>` variables.
 ```ruby
 module FridayStepHelper
-  def is_it_friday?(day)
-    day == 'Friday' ? 'TGIF' : 'Nope'
+  def is_it_friday(day)
+    if day == 'Friday'
+      'TGIF'
+    else
+      'Nope'
+    end  
   end
 end
+
 World FridayStepHelper
 
 Given("today is {string}") do |given_day|
