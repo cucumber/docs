@@ -812,6 +812,34 @@ Feature: Is it Friday yet?
     Then I should be told "TGIF"
 ```
 
+We'll need to add a step definition to set `today` to "Friday":
+
+{{% block "java" %}}
+```java
+@Given("^today is Friday$")
+    public void today_is_Friday() {
+        this.today = "Friday";
+    }
+```
+{{% /block %}}
+
+{{% block "javascript" %}}
+```javascript
+Given('today is Friday', function () {
+  this.today = 'Friday'
+});
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```ruby
+Given("today is Friday") do
+  @today = 'Friday'
+end
+```
+{{% /block %}}
+
+
 When we run this test, it will fail.
 
 {{% block "java" %}}
@@ -858,11 +886,6 @@ static String isItFriday(String today) {
     }
     return "Nope";
 }
-// then in the Stepdefs class
-@Given("^today is Friday$")
-    public void today_is_Friday() {
-        this.today = "Friday";
-    }
 ```
 {{% /block %}}
 
@@ -875,9 +898,6 @@ function isItFriday(today) {
     return "Nope";
   }
 }
-Given('today is Friday', function () {
-  this.today = 'Friday'
-});
 ```
 {{% /block %}}
 
@@ -889,10 +909,6 @@ def is_it_friday(day)
   else
     'Nope'
   end
-end
-
-Given("today is Friday") do
-  @today = 'Friday'
 end
 ```
 {{% /block %}}
