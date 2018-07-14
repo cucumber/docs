@@ -831,7 +831,7 @@ When we run this test, it will fail.
 	at ✽.I should be told "TGIF"(hellocucumber/is_it_friday.feature:12)
 
 
-org.junit.ComparisonFailure: 
+org.junit.ComparisonFailure:
 Expected :TGIF
 Actual   :Nope
  <Click to see difference>
@@ -858,6 +858,11 @@ static String isItFriday(String today) {
     }
     return "Nope";
 }
+// then in the Stepdefs class
+@Given("^today is Friday$")
+    public void today_is_Friday() {
+        this.today = "Friday";
+    }
 ```
 {{% /block %}}
 
@@ -870,6 +875,9 @@ function isItFriday(today) {
     return "Nope";
   }
 }
+Given('today is Friday', function () {
+  this.today = 'Friday'
+});
 ```
 {{% /block %}}
 
@@ -881,6 +889,10 @@ def is_it_friday(day)
   else
     'Nope'
   end
+end
+
+Given("today is Friday") do
+  @today = 'Friday'
 end
 ```
 {{% /block %}}
