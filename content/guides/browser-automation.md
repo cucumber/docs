@@ -59,7 +59,7 @@ public class ExampleSteps {
    }
 
    @Then("^ the page title should start with \"(.*)\"$")
-   public void checkTitle() {
+   public void checkTitle(String titleStartsWith) {
        // Google's search is rendered dynamically with JavaScript
        // Wait for the page to load timeout after ten seconds
        new WebDriverWait(driver,'10').until(new ExpectedCondition<Boolean>() {
