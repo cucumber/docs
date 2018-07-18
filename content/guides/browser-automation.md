@@ -44,7 +44,7 @@ import cucumber.api.java.en.When;
 public class ExampleSteps {
 
     private final WebDriver driver = new FirefoxDriver();
-    @Given("^I am on the Google search page$"\)
+    @Given("^I am on the Google search page$")
     public void I_visit_google() {
     driver.get("https:\\www.google.com");
    }
