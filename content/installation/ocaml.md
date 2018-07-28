@@ -26,7 +26,7 @@ this means you will need to build and install libgherkin.so in
 
 Cucumber.ml uses the [Dune build
 system](https://github.com/ocaml/dune) and [Opam package
-manager](https://opam.ocaml.org/). for OCaml. You will need to have
+manager](https://opam.ocaml.org/) for OCaml. You will need to have
 these installed before you can build Cucumber.ml.
 
 Once you have checked out the code and have the above prerequisites
