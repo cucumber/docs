@@ -6,11 +6,16 @@ implementation: official
 weight: 1125
 ---
 
+[Cucumber.ml](https://github.com/cucumber/cucumber.ml) is an
+implementation written in and useful for
+[OCaml](http://www.ocaml.org/) projects.
+
 # Prerequisites
 
-There are a few complications when working with Cucumber.ml. The first
-and the most important is that Cucumber.ml delegates its Gherkin
-parsing to the
+There are a few complications when working with
+[Cucumber.ml](https://github.com/cucumber/cucumber.ml). The first and
+the most important is that Cucumber.ml delegates its Gherkin parsing
+to the
 [gherkin-c](https://github.com/cucumber/cucumber/tree/master/gherkin/c)
 implementation using OCaml's foreign function interface. This means
 that, before you can use Cucumber.ml, you will need to compile and
