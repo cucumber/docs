@@ -12,35 +12,31 @@ implementation written in and useful for
 
 # Prerequisites
 
-There are a few complications when working with
-[Cucumber.ml](https://github.com/cucumber/cucumber.ml). The first and
-the most important is that Cucumber.ml delegates its Gherkin parsing
-to the
+There are a few actions you will need to take before you can use
+Cucumber.ml:
+
+  * Compile and install
+    [gherkin-c](https://github.com/cucumber/cucumber/tree/master/gherkin/c)
+    as a shared object on your system
+  * Install [Opam package manager](https://opam.ocaml.org/) for OCaml
+  * Install [Dune build system](https://github.com/ocaml/dune) via Opam
+
+Cucumber.ml delegates its Gherkin parsing to the
 [gherkin-c](https://github.com/cucumber/cucumber/tree/master/gherkin/c)
 implementation using OCaml's foreign function interface. This means
 that, before you can use Cucumber.ml, you will need to compile and
-install the gherkin-c as a shared library on your system. On Linux,
-this means you will need to build and install libgherkin.so in
-/usr/lib and copy the gherkin-c header files into
-/usr/include/gherkin.
+install gherkin-c as a shared library with its header files on your
+system.
 
-Cucumber.ml uses the [Dune build
-system](https://github.com/ocaml/dune) and [Opam package
-manager](https://opam.ocaml.org/) for OCaml. You will need to have
-these installed before you can build Cucumber.ml.
+Once you have the above prerequisites installed and checked out the
+Cucumber.ml code, all you need to do is:
 
-Once you have checked out the code and have the above prerequisites
-installed, all you need to do is:
-
-```
+```shell
 dune build && dune install
 ```
 
-This will install the cucumber package into your local Opam
-repository. From there you can write your step definitions in OCaml
-and run your feature files against them. For more information on how
-to use Cucumber.ml, please see the Cucumber.ml README file on the
-repository.
+This will install the `cucumber` package into your local Opam
+repository. 
 
 One of the more unusual aspects of Cucumber.ml is that it assumes that
 once you start executing your step definitions that it will control
