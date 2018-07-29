@@ -35,8 +35,9 @@ Cucumber.ml code, all you need to do is:
 dune build && dune install
 ```
 
-This will install the `cucumber` package into your local Opam
-repository. 
+This will install the `cucumber` Opam package into your local Opam
+repository.  For more information, please read the
+[README](https://github.com/cucumber/cucumber.ml) file.
 
 One of the more unusual aspects of Cucumber.ml is that it assumes that
 once you start executing your step definitions that it will control
