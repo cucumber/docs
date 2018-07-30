@@ -12,7 +12,7 @@ implementation written in and useful for
 
 # Prerequisites
 
-There are a few actions you will need to take before you can use
+There are a few prerequisites before you can use
 Cucumber.ml:
 
   * Compile and install
@@ -28,8 +28,8 @@ that, before you can use Cucumber.ml, you will need to compile and
 install gherkin-c as a shared library with its header files on your
 system.
 
-Once you have the above prerequisites installed and checked out the
-Cucumber.ml code, all you need to do is:
+Next, check out the
+[Cucumber.ml project](https://github.com/cucumber/cucumber.ml) and do the following:
 
 ```shell
 dune build && dune install
@@ -37,13 +37,13 @@ dune build && dune install
 
 This will install the `cucumber` Opam package into your local Opam
 repository.  For more information, please read the
-[README](https://github.com/cucumber/cucumber.ml) file.
+[README file](https://github.com/cucumber/cucumber.ml/blob/master/README.md).
 
-One of the more unusual aspects of Cucumber.ml is that it assumes that
-once you start executing your step definitions that it will control
-the command line arguments. This can be surprising so please be aware
+**Note:** Cucumber.ml assumes that
+once you start executing your step definitions it will control
+the command line arguments. This can be surprising, so please be aware
 of it. Basically, the executable created by the compilation process is
-the cucumber runner and it is that executable which will run your step
+the Cucumber runner and it is that executable which will run your step
 definitions.
 
 Please see the [Cucumber OCaml
