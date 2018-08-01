@@ -69,6 +69,18 @@ Cucumber::Core::Test::Action.class_eval do
   end
 end
 
+# Store the current scenario name as an instance variable, to make it
+# available to the other hooks.
+Before do |scenario|
+  case scenario
+  when Cucumber::Ast::Scenario
+    @scenario_name = scenario.name
+  when Cucumber::Ast::OutlineTable::ExampleRow
+    @scenario_name = scenario.scenario_outline.name
+  end
+  Rails.logger.info("[Cucumber] starting the #{@scenario_name}")
+end
+
 # `STEP=1 cucumber` to pause after each step
 AfterStep do |scenario|
   next unless ENV['STEP']
@@ -83,22 +95,12 @@ AfterStep do |scenario|
   STDIN.getc
 end
 
-Before do |scenario|
-  case scenario
-  when Cucumber::Ast::Scenario
-    @scenario_name = scenario.name
-  when Cucumber::Ast::OutlineTable::ExampleRow
-    @scenario_name = scenario.scenario_outline.name
-  end
-  Rails.logger.info("[Cucumber] starting the #{@scenario_name}")
-end
-
 AfterStep do |scenario|
   CucumberCounters.step_counter += 1
   step = CucumberCounters.step_counter
   file_name = format('tmp/capybara/step_%03d.png', step)
   Rails.logger.info("[Cucumber] after step: #{@scenario_name}, step: #{step}")
-  next unless scenario.source_tag_names.include? '@intermittent'
+  next unless scenario.source_tag_names.include?('@intermittent')
   begin
     Capybara.page.save_screenshot(file_name, full: true)
     Rails.logger.info("[Cucumber] Screenshot #{step} saved")
@@ -107,23 +109,23 @@ AfterStep do |scenario|
   end
 end
 
-# rubocop:disable Lint/HandleExceptions
 AfterStep do
   begin
     execute_script "$(window).unbind('beforeunload')"
-  rescue
+  rescue => e
+    Rails.logger.error("An error was encountered and rescued")
+    Rails.logger.error(e.backtrace)
   end
 end
-# rubocop:enable Lint/HandleExceptions
 
 def dismiss_nav_warning
   execute_script "$(window).unbind('beforeunload')"
-  loop_until_jquery_inactive
+  wait_until_jquery_inactive
 end
 
-def loop_until_jquery_inactive
-  Timeout.timeout(Capybara.default_max_wait_time) do
-    loop until page.evaluate_script('jQuery.active').zero?
+def wait_until_jquery_inactive
+  Capybara.using_wait_time(Capybara.default_max_wait_time) do
+    page.evaluate_script('jQuery.active').zero?
   end
 end
 ```
