@@ -2,7 +2,7 @@
 | (
   [ to_entries[]
     | [
-        "<h5>", (.value.name|@html), " (", (.key|@html), ")", "</h5>\n",
+        "<h3>", (.value.name|@html), " (", (.key|@html), ")", "</h3>\n",
         "<table class=\"table is-size-7\">\n",
         "  <thead>\n",
         "    <tr>\n",
