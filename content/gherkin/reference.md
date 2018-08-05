@@ -42,7 +42,7 @@ The primary keywords are:
 - `Example` (`Scenario` and `Scenario Outline` are synonyms)
 - `Given`, `When`, `Then`, `And`, `But`  (steps)
 - `Background`
-- `Combinations` (`Examples` is a synonym)
+- `Examples`
 
 There are a few secondary keywords as well:
 
