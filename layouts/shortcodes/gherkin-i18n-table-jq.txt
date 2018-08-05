@@ -1,22 +1,18 @@
 . as $root
 | (
-  [
-    to_entries[] | [
-      "<a href='#gherkin-dialect-", (.value.name|ascii_downcase|@html), "'>", (.value.name|@html), "</a>, "
-    ] | add
-  ] +
   [ 
     to_entries[]
     | [
-        "<h3 id='gherkin-dialect-", (.value.name|ascii_downcase|@html) ,"'>", (.value.name|@html), " (", (.key|@html), ")", "</h3>\n",
-        "<table class=\"table is-size-6\">\n",
+        "<a class='panel-block' data-target='#gherkin-dialect-", (.key|@html), "-content'>\n", (.value.name|@html), " (", (.key|@html), ")", "</a>\n",
+        "<div id='gherkin-dialect-", (.key|@html), "-content' class='panel-block collapsed'>\n",
+        " <table class=\"table is-size-6\">\n",
         "  <thead>\n",
         "    <tr>\n",
         "      <th>English Keyword</th>\n",
         "      <th>", (.value.name|@html), " equivalent(s)</th>\n",
         "    </tr>\n",
         "  </thead>\n",
-        "  <tbody>\n" 
+        "  <tbody>\n"
       ] + (
           [ .value
             | {"feature","background","scenario","scenarioOutline","examples","given","when","then","and","but"}
@@ -27,9 +23,13 @@
           ]
       ) + [
         "   </tbody>\n",
-        "  </table>\n"
+        "  </table>\n",
+        " </div>\n"
       ]
     | add
   ]
   | add
   )
+| "<div class=\"panel collapsible\">\n"	
++ .
++ "</div>\n"
