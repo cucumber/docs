@@ -95,6 +95,14 @@ ready(function() {
     })
   })
 
+  each(document, '.panel.collapsible > a', function(a) {
+    var targetSelector = a.getAttribute('data-target');
+    a.addEventListener('click', function() {
+      var el = document.querySelector(targetSelector);
+      el.classList.toggle('collapsed');
+    })
+  })
+
   var firstLi = document.querySelector('.tabs li')
   if(firstLi) {
     var language = localStorage.getItem('language') || firstLi.getAttribute('data-language')

@@ -1,39 +1,36 @@
 . as $root
 | (
-  [ to_entries[]
+  [ 
+    to_entries | sort_by(.value.name)[]
     | [
-        "    <tr>\n", 
-        "      <td>", (.value.name|@html), " (", (.key|@html), ")", "</td>\n" 
+        "  <a class=\"panel-block\" data-target=\"#gherkin-dialect-", (.key|@html), "-content\">\n", (.value.name|@html), " (", (.key|@html), ")", "</a>\n",
+        "  <div id=\"gherkin-dialect-", (.key|@html), "-content\" class=\"panel-block collapsed\">\n",
+        "   <table class=\"table is-size-6\">\n",
+        "     <thead>\n",
+        "      <tr>\n",
+        "       <th>English Keyword</th>\n",
+        "       <th>", (.value.name|@html), " equivalent(s)</th>\n",
+        "      </tr>\n",
+        "     </thead>\n",
+        "     <tbody>\n"
       ] + (
           [ .value
             | {"feature","background","scenario","scenarioOutline","examples","given","when","then","and","but"}
             | to_entries[]
-            | "      <td>\n",
-                ([ .value[] | "        <code>", @html, "</code><br>\n"  ] | add),
-              "      </td>\n"
+            | "       <tr>\n",
+              "         <td><code>", ([ .key ] | add), "</code></th>\n",
+              "         <td>", ([ .value[] | "<code>", @html, "</code><br>"] | add), "</td>\n",
+              "       </tr>\n"
           ]
-      ) + ["    </tr>\n"]
+      ) + [
+        "     </tbody>\n",
+        "   </table>\n",
+        "  </div>\n"
+      ]
     | add
   ]
   | add
   )
-| "<table class=\"table is-size-7\">\n"
-+ "  <thead>\n"
-+ "    <tr>\n"
-+ "      <th>Language</th>\n"
-+ "      <th><code>Feature</code></th>\n"
-+ "      <th><code>Background</code></th>\n"
-+ "      <th><code>Scenario</code></th>\n"
-+ "      <th><code>Scenario Outline</code></th>\n"
-+ "      <th><code>Examples</code></th>\n"
-+ "      <th><code>Given</code></th>\n"
-+ "      <th><code>When</code></th>\n"
-+ "      <th><code>Then</code></th>\n"
-+ "      <th><code>And</code></th>\n"
-+ "      <th><code>But</code></th>\n"
-+ "    </tr>\n"
-+ "  </thead>\n"
-+ "  <tbody>\n"
-+ .
-+ "  </tbody>\n"
-+ "</table>\n"
+| "<div class=\"panel collapsible\">\n"	
++   .
++ "</div>\n"

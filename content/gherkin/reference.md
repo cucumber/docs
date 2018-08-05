@@ -399,5 +399,8 @@ Some Cucumber implementations also let you set the default language in the
 configuration, so you don't need to place the `# language` header in every file.
 
 ## Gherkin Dialects
+In order to allow Gherkin to be written in a number of languages, the English keywords have also been translated. To improve readability and flow, some languages may have more than one translation for any given keyword.
+
+A list of the currently supported languages and their keywords can be found below.
 
 {{% gherkin-i18n-table %}}
