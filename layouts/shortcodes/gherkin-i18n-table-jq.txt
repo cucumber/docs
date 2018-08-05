@@ -1,8 +1,14 @@
 . as $root
 | (
-  [ to_entries[]
+  [
+    to_entries[] | [
+      "<a href='#gherkin-dialect-", (.value.name|ascii_downcase|@html), "'>", (.value.name|@html), "</a>, "
+    ] | add
+  ] +
+  [ 
+    to_entries[]
     | [
-        "<h3>", (.value.name|@html), " (", (.key|@html), ")", "</h3>\n",
+        "<h3 id='gherkin-dialect-", (.value.name|ascii_downcase|@html) ,"'>", (.value.name|@html), " (", (.key|@html), ")", "</h3>\n",
         "<table class=\"table is-size-6\">\n",
         "  <thead>\n",
         "    <tr>\n",
