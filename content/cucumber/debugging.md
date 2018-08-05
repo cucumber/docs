@@ -135,7 +135,7 @@ By setting an environment variable, you can tell Cucumber to use various debuggi
 {{% block "java" %}}
 In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. The example below uses IntelliJ, but Eclipse will have similar functionality.
 
-1. Set a conditional breakpoint in the method `cucumber.runtime.Utils#invoke`, at the line `return targetMethod.invoke(target, args)` (line 40 in `cucumber-jvm` v1.2.5) and specify the following snippet as the condition (see also [Breakpoints](https://www.jetbrains.com/help/idea/2017.1/breakpoints-2.html) for more details on how to set one on IDEA):
+1. Set a conditional breakpoint in the method `cucumber.runtime.Utils#invoke`, at the line `return targetMethod.invoke(target, args)` (line 40 in `cucumber-jvm` v1.2.5) and specify the following snippet as the condition (see also [Breakpoints](https://www.jetbrains.com/help/idea/breakpoints.html) for more details on how to set one on IDEA):
 
         Package pkg = target.getClass().getPackage();
         if (pkg == null) {
