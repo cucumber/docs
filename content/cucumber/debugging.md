@@ -129,7 +129,7 @@ def wait_until_jquery_inactive
   end
 end
 ```
-By setting an environment variable, you can cause Cucumber to use various debugging tools, and you can combine them by setting multiple environment variables.
+By setting an environment variable, you can tell Cucumber to use various debugging tools, and you can combine them by setting multiple environment variables.
 {{% /block %}}
 
 {{% block "java" %}}
