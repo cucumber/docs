@@ -3,33 +3,23 @@
   [ to_entries[]
     | [
         "<h3>", (.value.name|@html), " (", (.key|@html), ")", "</h3>\n",
-        "<table class=\"table is-size-7\">\n",
+        "<table class=\"table is-size-6\">\n",
         "  <thead>\n",
         "    <tr>\n",
-        "      <th><code>Feature</code></th>\n",
-        "      <th><code>Background</code></th>\n",
-        "      <th><code>Scenario</code></th>\n",
-        "      <th><code>Scenario Outline</code></th>\n",
-        "      <th><code>Examples</code></th>\n",
-        "      <th><code>Given</code></th>\n",
-        "      <th><code>When</code></th>\n",
-        "      <th><code>Then</code></th>\n",
-        "      <th><code>And</code></th>\n",
-        "      <th><code>But</code></th>\n",
+        "      <th>English Keyword</th>\n",
+        "      <th>", (.value.name|@html), " equivalent(s)</th>\n",
         "    </tr>\n",
         "  </thead>\n",
-        "  <tbody>\n",
-        "    <tr>\n" 
+        "  <tbody>\n" 
       ] + (
           [ .value
             | {"feature","background","scenario","scenarioOutline","examples","given","when","then","and","but"}
             | to_entries[]
-            | "      <td>\n",
-                ([ .value[] | "        <code>", @html, "</code><br>\n"  ] | add),
-              "      </td>\n"
+            | "  <tr>\n",
+              "   <td><code>", ([ .key ] | add), "</code></th>\n",
+              "   <td>", ([ .value[] | "        <code>", @html, "</code><br>\n"  ] | add), "</td>\n"
           ]
       ) + [
-        "    </tr>\n",
         "   </tbody>\n",
         "  </table>\n"
       ]
