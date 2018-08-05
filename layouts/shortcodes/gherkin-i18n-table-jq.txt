@@ -1,7 +1,7 @@
 . as $root
 | (
   [ 
-    to_entries[]
+    to_entries | sort_by(.value.name)[]
     | [
         "<a class='panel-block' data-target='#gherkin-dialect-", (.key|@html), "-content'>\n", (.value.name|@html), " (", (.key|@html), ")", "</a>\n",
         "<div id='gherkin-dialect-", (.key|@html), "-content' class='panel-block collapsed'>\n",
