@@ -135,23 +135,25 @@ By setting an environment variable, you can tell Cucumber to use various debuggi
 {{% block "java" %}}
 In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. The example below uses IntelliJ, but Eclipse will have similar functionality.
 
-1. Set a conditional breakpoint in the method `cucumber.runtime.Utils#invoke`, at the line `return targetMethod.invoke(target, args)` (line 40 in `cucumber-jvm` v1.2.5) and specify the following snippet as the condition (see also [Breakpoints](https://www.jetbrains.com/help/idea/breakpoints.html) for more details on how to set one on IDEA):
+1. Set a conditional breakpoint on th epart of the code you want to debug. 
+This might be the line you are currently getting an Exception (see your stacktrace). 
+Or, if you don't know where to start, you can set a breakpoint in the method `cucumber.runtime.Utils#invoke`, at the line `return targetMethod.invoke(target, args)` (line 26 in `cucumber-jvm` master at the time of writing) and specify the following snippet as the condition: 
+```java
+Package pkg = target.getClass().getPackage();
+  if (pkg == null) {
+    return false;
+  }
+  return !target.getClass().getPackage().getName().startsWith("cucumber");
+```
+For more details on how to set a breakpoint in your IDE, see:
+* [Breakpoints - IntelliJ](https://www.jetbrains.com/help/idea/breakpoints.html)
+* [Debugging - Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
 
-        Package pkg = target.getClass().getPackage();
-        if (pkg == null) {
-            return false;
-        }
-        return !target.getClass().getPackage().getName().startsWith("cucumber");
- 
 2. Run your [RunCukesTest](https://github.com/cucumber/cucumber-java-skeleton/blob/master/src/test/java/skeleton/RunCukesTest.java) in debug mode
 3. Assuming you haven't set any other breakpoints, the execution will stop at `Utils#invoke`
 4. Now you can either:
    - *Step into* to start debugging the method implementing the first step of the scenario
    - Or *Resume* the execution to run the current step and jump to the next one
 5. And so on..
-{{% /block %}}
-
-{{% block "javascript" %}}
-TBD.
 {{% /block %}}
 
