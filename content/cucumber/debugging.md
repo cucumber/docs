@@ -146,8 +146,8 @@ In order to debug your scenarios on the JVM, you can step through the the steps 
 2. Run your [RunCukesTest](https://github.com/cucumber/cucumber-java-skeleton/blob/master/src/test/java/skeleton/RunCukesTest.java) in debug mode
 3. Assuming you haven't set any other breakpoints, the execution will stop at `Utils#invoke`
 4. Now you can either:
-   - _Step into_ to start debugging the method implementing the first step of the scenario
-   - Or _Resume_ the execution to run the current step and jump to the next one
+   - *Step into* to start debugging the method implementing the first step of the scenario
+   - Or *Resume* the execution to run the current step and jump to the next one
 5. And so on..
 {{% /block %}}
 
