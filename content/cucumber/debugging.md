@@ -131,9 +131,12 @@ By setting an environment variable, you can tell Cucumber to use various debuggi
 {{% block "java" %}}
 In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. 
 
-1. Set a conditional breakpoint on the part of the code you want to debug. 
+1. Set a conditional breakpoint on the part of the code you want to debug.
+
 This might be the line you are currently getting an Exception (see your stacktrace). 
+
 Or, if you don't know where to start, you can set a breakpoint in the method [`cucumber.runtime.Utils#invoke`](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/runtime/Utils.java), at the line `return targetMethod.invoke(target, args)` (line 26 in `cucumber-jvm` master at the time of writing) and specify the following snippet as the condition: 
+
 ```java
 Package pkg = target.getClass().getPackage();
   if (pkg == null) {
