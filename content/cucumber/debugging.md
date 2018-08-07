@@ -6,10 +6,6 @@ polyglot:
  - ruby
 
 ---
-
-
-# Debugging failing Cucumber steps
-
 {{% block "ruby" %}}
 (The code given below calls on [the logging facilities of Ruby on Rails](https://guides.rubyonrails.org/debugging_rails_applications.html#the-logger). If you're not using Rails, replace those calls with `puts` or `warn`.)
 
@@ -133,11 +129,11 @@ By setting an environment variable, you can tell Cucumber to use various debuggi
 {{% /block %}}
 
 {{% block "java" %}}
-In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. The example below uses IntelliJ, but Eclipse will have similar functionality.
+In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. 
 
-1. Set a conditional breakpoint on th epart of the code you want to debug. 
+1. Set a conditional breakpoint on the part of the code you want to debug. 
 This might be the line you are currently getting an Exception (see your stacktrace). 
-Or, if you don't know where to start, you can set a breakpoint in the method `cucumber.runtime.Utils#invoke`, at the line `return targetMethod.invoke(target, args)` (line 26 in `cucumber-jvm` master at the time of writing) and specify the following snippet as the condition: 
+Or, if you don't know where to start, you can set a breakpoint in the method [`cucumber.runtime.Utils#invoke`](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/runtime/Utils.java), at the line `return targetMethod.invoke(target, args)` (line 26 in `cucumber-jvm` master at the time of writing) and specify the following snippet as the condition: 
 ```java
 Package pkg = target.getClass().getPackage();
   if (pkg == null) {
@@ -146,7 +142,9 @@ Package pkg = target.getClass().getPackage();
   return !target.getClass().getPackage().getName().startsWith("cucumber");
 ```
 For more details on how to set a breakpoint in your IDE, see:
+
 * [Breakpoints - IntelliJ](https://www.jetbrains.com/help/idea/breakpoints.html)
+
 * [Debugging - Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
 
 2. Run your [RunCukesTest](https://github.com/cucumber/cucumber-java-skeleton/blob/master/src/test/java/skeleton/RunCukesTest.java) in debug mode
