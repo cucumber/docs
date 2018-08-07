@@ -144,10 +144,6 @@ Package pkg = target.getClass().getPackage();
   }
   return !target.getClass().getPackage().getName().startsWith("cucumber");
 ```
-
-For more details on how to set a breakpoint in your IDE, see:
-   - [Breakpoints (IntelliJ)](https://www.jetbrains.com/help/idea/breakpoints.html)
-   - [Debugging (Eclipse)](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
    
 2. Run your [RunCukesTest](https://github.com/cucumber/cucumber-java-skeleton/blob/master/src/test/java/skeleton/RunCukesTest.java) in debug mode
 3. Assuming you haven't set any other breakpoints, the execution will stop at `Utils#invoke`
@@ -155,4 +151,8 @@ For more details on how to set a breakpoint in your IDE, see:
    - *Step into* to start debugging the method implementing the first step of the scenario
    - Or *Resume* the execution to run the current step and jump to the next one
 5. And so on..
+
+For more details on how to set a breakpoint in your IDE, see:
+   - [Breakpoints (IntelliJ)](https://www.jetbrains.com/help/idea/breakpoints.html)
+   - [Debugging (Eclipse)](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
 {{% /block %}}
