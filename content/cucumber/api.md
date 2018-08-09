@@ -270,7 +270,7 @@ After(function (scenario) {
 
 ```ruby
 After do |scenario|
-})
+end
 ```
 
 {{% /block %}}
