@@ -65,7 +65,7 @@ ParameterType(
   name: 'person',
   regexp: /[A-Z][a-z]+/,
   transformer: -> (name) { Person.new(name) }
-end
+)
 ```
 
 Here's an example of how to use this in a step definition:
