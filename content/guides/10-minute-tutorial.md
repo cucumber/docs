@@ -139,12 +139,6 @@ Open `package.json` in a text editor and change the `test` section so it looks l
 }
 ```
 
-Install Cucumber:
-
-```shell
-npm install
-```
-
 Prepare the file structure:
 
 ```shell
@@ -214,7 +208,7 @@ mvn test
 {{% block "javascript" %}}
 ```shell
 # Run via NPM
-npm run test
+npm test
 
 # Run standalone
 ./node_modules/.bin/cucumber-js
@@ -336,7 +330,7 @@ mvn test
 
 {{% block "javascript" %}}
 ```shell
-npm run test
+npm test
 ```
 {{% /block %}}
 
@@ -603,15 +597,15 @@ function isItFriday(today) {
 }
 
 Given('today is Sunday', function () {
-  this.today = 'Sunday'
+  this.today = 'Sunday';
 });
 
 When('I ask whether it\'s Friday yet', function () {
-  this.actualAnswer = isItFriday(this.today)
+  this.actualAnswer = isItFriday(this.today);
 });
 
 Then('I should be told {string}', function (expectedAnswer) {
-  assert.equal(this.actualAnswer, expectedAnswer)
+  assert.equal(this.actualAnswer, expectedAnswer);
 });
 ```
 {{% /block %}}
@@ -735,7 +729,7 @@ static String isItFriday(String today) {
 {{% block "javascript" %}}
 ```javascript
 function isItFriday(today) {
-  return 'Nope'
+  return 'Nope';
 }
 ```
 {{% /block %}}
@@ -830,7 +824,7 @@ We'll need to add a step definition to set `today` to "Friday":
 {{% block "javascript" %}}
 ```javascript
 Given('today is Friday', function () {
-  this.today = 'Friday'
+  this.today = 'Friday';
 });
 ```
 {{% /block %}}
@@ -897,8 +891,8 @@ static String isItFriday(String today) {
 ```javascript
 function isItFriday(today) {
   if (today === "Friday") {
-    return "TGIF"; }
-  else {
+    return "TGIF"; 
+  } else {
     return "Nope";
   }
 }
@@ -1002,8 +996,8 @@ const { Given, When, Then } = require('cucumber');
 
 function isItFriday(today) {
   if (today === "Friday") {
-    return "TGIF"; }
-  else {
+    return "TGIF";
+  } else {
     return "Nope";
   }
 }
