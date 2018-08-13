@@ -373,7 +373,7 @@ The language you choose for Gherkin should be the same language your users and
 domain experts use when they talk about the domain. Translating between
 two languages should be avoided.
 
-This is why Gherkin has been translates to over 70 languages.
+This is why Gherkin has been translated to over 70 languages.
 
 Here is a Gherkin scenario written in Norwegian:
 
