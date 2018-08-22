@@ -815,9 +815,9 @@ We'll need to add a step definition to set `today` to "Friday":
 {{% block "java" %}}
 ```java
 @Given("^today is Friday$")
-    public void today_is_Friday() {
-        this.today = "Friday";
-    }
+public void today_is_Friday() {
+    this.today = "Friday";
+}
 ```
 {{% /block %}}
 
