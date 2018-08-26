@@ -39,7 +39,7 @@ Each line that isn't a blank line has to start with a Gherkin *keyword*, followe
 The primary keywords are:
 
 - `Feature`
-- `Example` (`Scenario` and `Scenario Outline` are synonyms)
+- `Example` (`Scenario` is a synonym)
 - `Given`, `When`, `Then`, `And`, `But`  (steps)
 - `Background`
 - `Examples`
@@ -97,6 +97,8 @@ You can write anything you like, as long as no line starts with a keyword.
 
 This is a *concrete example* that *illustrates* a business rule. It consists of
 a list of [steps](#steps).
+
+The keyword `Scenario` is a synonym of the keyword `Example`.
 
 You can have as many steps as you like, but we recommend you keep the number at 3-5 per scenario.
 If they become longer than that, they lose their expressive power as specification and documentation.
