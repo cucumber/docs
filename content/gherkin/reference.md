@@ -93,7 +93,7 @@ Free-form descriptions (as described above for `Feature`) can also be placed und
 
 You can write anything you like, as long as no line starts with a keyword.
 
-## Example
+## Example (a.k.a Scenario)
 
 This is a *concrete example* that *illustrates* a business rule. It consists of
 a list of [steps](#steps).
