@@ -39,7 +39,7 @@ Each line that isn't a blank line has to start with a Gherkin *keyword*, followe
 The primary keywords are:
 
 - `Feature`
-- `Example` (`Scenario` is a synonym)
+- `Example` (a.k.a `Scenario`)
 - `Given`, `When`, `Then`, `And`, `But`  (steps)
 - `Background`
 - `Examples`
