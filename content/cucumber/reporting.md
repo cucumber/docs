@@ -194,7 +194,7 @@ cucumberpro:
     timeout: 5000
 ```
 
-You can make some of the settings global by creating a file wit global settings.
+You can make some of the settings global by creating a file with global settings.
 The plugin will load the configuration in all the following files (if they exist):
 
 {{% block "java" %}}
