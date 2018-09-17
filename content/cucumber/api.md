@@ -772,6 +772,53 @@ import org.junit.runner.RunWith;
 public class RunCukesTest {
 }
 ```
+For example if you want to check whether all feature file steps has corresponding step definitions, you can specify it like this: 
+
+```java
+package mypackage;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(dryRun=true)
+public class RunCukesTest {
+}
+```
+dryRun default value is false.
+
+For example if you want console output from Cucumber in a readable format, you can specify it like this: 
+
+```java
+package mypackage;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(monochrome =true)
+public class RunCukesTest {
+}
+```
+monochrome default value is false.
+
+For example if you want to skip undefined steps from execution, you can specify it like this: 
+
+```java
+package mypackage;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(strict = false)
+public class RunCukesTest {
+}
+```
+strict default value is false. 
 
 Usually, this class will be empty. You can, however, specify several JUnit rules.
 
