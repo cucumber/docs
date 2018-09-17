@@ -786,7 +786,7 @@ import org.junit.runner.RunWith;
 public class RunCukesTest {
 }
 ```
-dryRun default value is false.
+The default option for `dryRun` is `false`.
 
 For example if you want console output from Cucumber in a readable format, you can specify it like this: 
 
@@ -798,11 +798,11 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(monochrome =true)
+@CucumberOptions(monochrome=true)
 public class RunCukesTest {
 }
 ```
-monochrome default value is false.
+The default option for `monochrome` is `false`.
 
 For example if you want to skip undefined steps from execution, you can specify it like this: 
 
@@ -814,11 +814,11 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(strict = false)
+@CucumberOptions(strict=false)
 public class RunCukesTest {
 }
 ```
-strict default value is false. 
+The default option for `strict` is `false`.
 
 Usually, this class will be empty. You can, however, specify several JUnit rules.
 
