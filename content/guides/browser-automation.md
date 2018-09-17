@@ -58,7 +58,7 @@ public class ExampleSteps {
         element.submit();
    }
 
-   @Then("^ the page title should start with \"(.*)\"$")
+   @Then("^the page title should start with \"(.*)\"$")
    public void checkTitle(String titleStartsWith) {
        // Google's search is rendered dynamically with JavaScript
        // Wait for the page to load timeout after ten seconds
