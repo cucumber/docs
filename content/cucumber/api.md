@@ -533,17 +533,6 @@ public class RunCucumberTest {}
 ```
 {{% /block %}}
 
-## Ignoring a subset of scenarios
-
-You can tell Cucumber to ignore scenarios with a particular tags:
-
-{{% block "java" %}} Using JUnit runner class: {{% /block %}}
-
-
- ```java
-@CucumberOptions(tags = "~@smoke")
-public class RunCucumberTest {}
-```
 {{% block "javascript" %}}
 ```shell
 # You can omit the quotes if the expression is a single tag
@@ -555,6 +544,18 @@ public class RunCucumberTest {}
 ```shell
 # You can omit the quotes if the expression is a single tag
 cucumber --tags "@smoke and @fast"
+```
+{{% /block %}}
+
+## Ignoring a subset of scenarios
+
+You can tell Cucumber to ignore scenarios with a particular tags:
+
+{{% block "java" %}} Using JUnit runner class:
+
+ ```java
+@CucumberOptions(tags = "~@smoke")
+public class RunCucumberTest {}
 ```
 {{% /block %}}
 
