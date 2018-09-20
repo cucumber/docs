@@ -539,6 +539,7 @@ You can tell Cucumber to ignore scenarios with a particular tags:
 
 {{% block "java" %}} Using JUnit runner class: {{% /block %}}
 
+
  ```java
 @CucumberOptions(tags = "~@smoke")
 public class RunCucumberTest {}
