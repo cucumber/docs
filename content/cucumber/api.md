@@ -531,6 +531,16 @@ Or changing your JUnit runner class:
 @CucumberOptions(tags = "@smoke and @fast")
 public class RunCucumberTest {}
 ```
+## Ignoring a subset of scenarios
+
+You can tell Cucumber to ignore scenarios with a particular tags:
+
+Using JUnit runner class:
+
+ ```java
+@CucumberOptions(tags = "~@smoke")
+public class RunCucumberTest {}
+```
 
 {{% /block %}}
 
