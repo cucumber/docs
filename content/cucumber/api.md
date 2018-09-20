@@ -537,13 +537,12 @@ public class RunCucumberTest {}
 
 You can tell Cucumber to ignore scenarios with a particular tags:
 
-Using JUnit runner class:
+{{% block "java" %}} Using JUnit runner class: {{% /block %}}
 
  ```java
 @CucumberOptions(tags = "~@smoke")
 public class RunCucumberTest {}
 ```
-
 {{% block "javascript" %}}
 ```shell
 # You can omit the quotes if the expression is a single tag
