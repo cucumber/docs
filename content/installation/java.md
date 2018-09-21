@@ -110,6 +110,5 @@ from a [unit testing tool](/cucumber/checking-assertions/#java).
 
 While it's not required, we strongly recommend you include one of the
 [dependency injection](/cucumber/state/#dependency-injection) modules as well. This allows
-
 you to share state between [step definitions](/cucumber/step-definitions)
 without resorting to static variables (a common source of flickering scenarios).
