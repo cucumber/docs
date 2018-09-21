@@ -549,6 +549,7 @@ cucumber --tags "@smoke and @fast"
 
 ## Ignoring a subset of scenarios
 
+{{% text "java" %}}
 You can tell Cucumber to ignore scenarios with a particular tags:
 
 {{% block "java" %}} Using JUnit runner class:
@@ -558,6 +559,7 @@ You can tell Cucumber to ignore scenarios with a particular tags:
 public class RunCucumberTest {}
 ```
 {{% /block %}}
+{{% /text %}}
 
 {{% tip "Filtering by line" %}}
 Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option.
