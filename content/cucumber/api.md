@@ -549,7 +549,7 @@ cucumber --tags "@smoke and @fast"
 
 ## Ignoring a subset of scenarios
 
-You can tell Cucumber to ignore scenarios with a particular tags:
+You can tell Cucumber to ignore scenarios with a particular tag:
 
 {{% block "java" %}} Using JUnit runner class:
 
