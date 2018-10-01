@@ -613,7 +613,7 @@ Then('I should be told {string}', function (expectedAnswer) {
 {{% block "ruby" %}}
 ```ruby
 module FridayStepHelper
-  def is_it_friday?(day)
+  def is_it_friday(day)
   end
 end
 World FridayStepHelper
@@ -623,7 +623,7 @@ Given("today is Sunday") do
 end
 
 When("I ask whether it's Friday yet") do
-  @actual_answer = is_it_friday?(@today)
+  @actual_answer = is_it_friday(@today)
 end
 
 Then("I should be told {string}") do |expected_answer|
@@ -735,7 +735,7 @@ function isItFriday(today) {
 {{% /block %}}
 {{% block "ruby" %}}
 ```ruby
-def is_it_friday?(day)
+def is_it_friday(day)
   'Nope'
 end
 ```
