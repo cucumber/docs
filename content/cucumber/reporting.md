@@ -1,5 +1,6 @@
 ---
 title: Reporting
+subtitle: "Built-in reporter plugins, Cucumber Pro, Third-party plugins"
 polyglot:
 - java
 - dotnet
@@ -11,7 +12,7 @@ what scenarios have passed or failed.
 Some plugins are built-in, others have to be installed separately. You can also
 build your own.
 
-This page documents built-in formatter plugins as well common third-party plugins.
+This page documents built-in formatter plugins, the Cucumber Pro plugin, and some common third-party plugins.
 Available plugins may vary per programming language.
 
 # Built-in reporter plugins
@@ -21,7 +22,9 @@ There are several reporter plugins built into Cucumber:
 * `progress`
 * `pretty`
 * `html`
-* etc.
+* `json`
+* `rerun`
+* `junit`
 
 # Cucumber Pro plugin
 
@@ -250,3 +253,4 @@ There are also many third-party plugins:
 * [cucumber_statistics](https://github.com/alienfast/cucumber_statistics) - Tracks timing and displays results in a single HTML page with outliers highlighted in a table sortable by various metrics.
 * [cucumber_characteristics](https://github.com/singram/cucumber_characteristics) - Generates HTML/JSON reports on overall test timings, as well as timings and usage of Steps, Features, and Examples. Also lists unused and ambiguous (Cucumber 1.x) Steps. Compatible with Cucumber 1.x and 2.1+ and Ruby 1.9+.
 * [allure-cucumber](https://github.com/allure-framework/allure-cucumber) - [Allure](https://github.com/allure-framework) adaptor for Cucumber. This formatter generates the XML files for Allure reporting framework.
+* [Cluecumber](https://github.com/trivago/cluecumber-report-plugin) - Maven plugin for clear and concise Cucumber reporting.
