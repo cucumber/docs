@@ -5,6 +5,8 @@ polyglot:
  - java
  - javascript
  - ruby
+
+weight: 2
 ---
 
 Cucumber can be used to implement automated tests based on scenarios described in your Gherkin feature files.
@@ -12,7 +14,7 @@ Cucumber can be used to implement automated tests based on scenarios described i
 
 # Step Arguments
 
-In the example above Cucumber extracts the text `48` from the step, converts it to an `int`
+In the example given in [step definitions](/cucumber/step-definitions) Cucumber extracts the text `48` from the step, converts it to an `int`
 and passes it as an argument to the {{% stepdef-body %}}.
 
 The number of parameters in the {{% stepdef-body %}} has to match the number of {{% expression-parameter %}}s in the expression. (If there is a mismatch, Cucumber will throw an error).

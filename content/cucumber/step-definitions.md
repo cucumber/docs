@@ -6,7 +6,7 @@ polyglot:
  - javascript
  - ruby
 
-weight: 2
+weight: 1
 ---
 
 A Step Definition is a
