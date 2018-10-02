@@ -42,7 +42,7 @@ The user interface defines how we can interact with our system. It will also hav
 a web server that plugs into a port to display a UI in a browser. All the IO tends to happen outside of these ports.
 By testing the core business logic directly though the ports, we can eliminate a lot of slow and brittle IO.
 
-This architectural patterns is called **ports and adapters pattern** (or [hexagonal architecture](http://a.cockburn.us/1807)).
+This architectural patterns is called **ports and adapters pattern** (or [hexagonal architecture](https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture)).
 It enables you to connect your scenarios and unit tests at a lower level, while the contract tests give you the confidence to do that.
 
 # Full stack
