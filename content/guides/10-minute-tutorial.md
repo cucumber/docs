@@ -41,12 +41,11 @@ Before we begin, you will need the following:
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
    - [IntelliJ IDEA Kotlin plugin](https://plugins.jetbrains.com/plugin/6954-kotlin)
-- [Eclipse](https://www.eclipse.org/) (a fine alternative if you don't use IntelliJ)
+- [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ)
    - [Cucumber Eclipse](https://cucumber.github.io/cucumber-eclipse/)
    - [Kotlin Eclipse](https://github.com/JetBrains/kotlin-eclipse)
 
 {{% /block %}}
-
 
 {{% block "javascript" %}}
 
@@ -121,12 +120,12 @@ Open the project in IntelliJ IDEA:
 
 {{% block "kotlin" %}}
 
-To use Kotlin in our project, we need to take some extra steps.
+To use Kotlin in our project, we need to take some extra steps:
 
-First, add a directory named `kotlin` in your `src/test` directory and mark it as `Test Sources Root`.
+* Add a directory named `kotlin` in your `src/test` directory and mark it as `Test Sources Root`.
 In IntelliJ, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
-Next, create the `hellocucumber` package inside the `kotlin` directory.
-Then, create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package. Copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
+* Create the `hellocucumber` package inside the `kotlin` directory.
+* Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package and copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
 IntelliJ will offer to translate the Java code to Kotlin code. Happily accept.
 
 Your `RunCucumberTest.kt` class should now look like this:
@@ -143,8 +142,8 @@ class RunCucumberTest {
 }
 ```
 
-Now delete the `RunCucumberTest.java` class (or even the whole `java` directory).
-Finally, create a Kotlin class called `StepDefs` inside the `hellocucumber` package.
+* Now delete the `RunCucumberTest.java` class (or even the whole `java` directory).
+* Finally, create a Kotlin class called `StepDefs` inside the `hellocucumber` package.
 
 {{% /block %}}
 
@@ -974,6 +973,15 @@ public void today_is_Friday() {
 ```
 {{% /block %}}
 
+{{% block "kotlin" %}}
+```kotlin
+@Given("^today is Friday$")
+fun today_is_Friday() {
+    this.today = "Friday"
+}
+```
+{{% /block %}}
+
 {{% block "javascript" %}}
 ```javascript
 Given('today is Friday', function () {
@@ -1040,6 +1048,14 @@ static String isItFriday(String today) {
 ```
 {{% /block %}}
 
+{{% block "kotlin" %}}
+```kotlin
+fun isItFriday(today: String): String {
+    return if (today == "Friday") "TGIF" else "Nope"
+}
+```
+{{% /block %}}
+
 {{% block "javascript" %}}
 ```javascript
 function isItFriday(today) {
@@ -1066,7 +1082,7 @@ end
 
 Run Cucumber again:
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -1144,6 +1160,7 @@ Feature: Is it Friday yet?
 We need to replace the step definitions for `today is Sunday` and `today is Friday` with one step definition that takes the value of `<day>` as a String.
 Update the {{% text "java" %}}`stepdefs.java`{{% /text %}}{{% text "javascript" %}}`stepdefs.js`{{% /text %}}{{% text "ruby" %}}`stepdefs.rb`{{% /text %}} file as follows:
 
+{{% block "java" %}}
 ```java
 package hellocucumber;
 
@@ -1178,7 +1195,46 @@ public class Stepdefs {
     }
 }
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
+```kotlin
+package hellocucumber
+
+import cucumber.api.java.en.Then
+import cucumber.api.java.en.Given
+import cucumber.api.java.en.When
+import junit.framework.Assert.assertEquals
+
+internal object IsItFriday {
+    fun isItFriday(today: String): String {
+        return if (today == "Friday") "TGIF" else "Nope"
+    }
+}
+
+class StepDefs {
+    lateinit var today: String
+    lateinit var actualAnswer: String
+
+    @Given("^today is \"([^\"]*)\"$")
+    fun today_is(today: String) {
+        this.today = today
+    }
+
+    @When("^I ask whether it's Friday yet$")
+    fun i_ask_whether_is_s_Friday_yet() {
+        this.actualAnswer = IsItFriday.isItFriday(today)
+    }
+
+    @Then("^I should be told \"([^\"]*)\"$")
+    fun i_should_be_told(expectedAnswer: String) {
+        assertEquals(expectedAnswer, actualAnswer)
+    }
+}
+```
+{{% /block %}}
+
+{{% block "javascript" %}}
 ```javascript
 const assert = require('assert');
 const { Given, When, Then } = require('cucumber');
@@ -1204,7 +1260,9 @@ Then('I should be told {string}', function (expectedAnswer) {
 });
 
 ```
+{{% /block %}}
 
+{{% block "ruby" %}}
 ```ruby
 module FridayStepHelper
   def is_it_friday(day)
@@ -1233,7 +1291,7 @@ end
 
 Run Cucumber again:
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -1299,9 +1357,9 @@ Feature: Is it Friday yet?
 # Refactoring
 Now that we have working code, we should do some refactoring:
 
-* We should move the {{% text "java" %}}`isItFriday` method{{% /text %}}{{% text "javascript" %}}`isItFriday` function{{% /text %}}{{% text "ruby" %}}`is_it_friday` function{{% /text %}} out from the test code into production code.
+* We should move the {{% text "java" %}}`isItFriday` method{{% /text %}}{{% text "kotlin,javascript,ruby" %}}`isItFriday` function{{% /text %}} out from the test code into production code.
 
-* We could at some point extract helper methods from our step definition, for {{% text "java" %}}methods{{% /text %}}{{% text "javascript,ruby" %}}functions{{% /text %}} we use in several places.
+* We could at some point extract helper methods from our step definition, for {{% text "java" %}}methods{{% /text %}}{{% text "kotlin,javascript,ruby" %}}functions{{% /text %}} we use in several places.
 
 # Summary
 
