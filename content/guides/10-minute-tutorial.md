@@ -4,8 +4,8 @@ subtitle: Get started in just 10 minutes
 polyglot:
  - java
  - javascript
- - kotlin
  - ruby
+ - kotlin
 
 weight: 1100
 ---
@@ -126,7 +126,7 @@ To use Kotlin in our project, we need to take some extra steps:
 In IntelliJ, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
 * Create the `hellocucumber` package inside the `kotlin` directory.
 * Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package and copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
-IntelliJ will offer to translate the Java code to Kotlin code. Happily accept.
+IntelliJ will offer to translate the Java code to Kotlin code.
 
 Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
@@ -386,7 +386,7 @@ cucumber
 
 Cucumber is telling us we have one `undefined` scenario and three `undefined`
 steps.  It's also suggesting some snippets of code that we can use to
-**define** these steps:
+*define* these steps:
 
 {{% block "java,kotlin" %}}
 ```shell
@@ -549,7 +549,7 @@ cucumber.api.PendingException: TODO: implement me
 {{% /block %}}
 
 {{% block "kotlin" %}}
-```kotlin
+```shell
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -790,7 +790,7 @@ hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
 {{% /block %}}
 
 {{% block "kotlin" %}}
-```kotlin
+```shell
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -860,7 +860,7 @@ That's progress! The first two steps are passing, but the last one is failing.
 # See scenario reported as passing
 
 Let's do the simplest possible thing to make the scenario pass. In this case,
-that's simply to make our function return `Nope`:
+that's simply to make our {{% stepdef-body %}} return `Nope`:
 
 {{% block "java" %}}
 ```java
@@ -1288,6 +1288,7 @@ Then("I should be told {string}") do |expected_answer|
   expect(@actual_answer).to eq(expected_answer)
 end
 ```
+{{% /block %}}
 
 Run Cucumber again:
 
@@ -1357,11 +1358,11 @@ Feature: Is it Friday yet?
 # Refactoring
 Now that we have working code, we should do some refactoring:
 
-* We should move the {{% text "java" %}}`isItFriday` method{{% /text %}}{{% text "kotlin,javascript,ruby" %}}`isItFriday` function{{% /text %}} out from the test code into production code.
+* We should move the `isItFriday` {{% stepdef-body %}} out from the test code into production code.
 
-* We could at some point extract helper methods from our step definition, for {{% text "java" %}}methods{{% /text %}}{{% text "kotlin,javascript,ruby" %}}functions{{% /text %}} we use in several places.
+* We could at some point extract helper methods from our step definition, for {{% text "java" %}}methods{{% /text %}}{{% text "kotlin,javascript" %}}functions{{% /text %}}{{% text "ruby" %}}blocks{{% /text %}} we use in several places.
 
 # Summary
 
 In this brief tutorial you've seen how to install Cucumber, how to follow
-the BDD process to develop a very simple function, and how to use that function to evaluate multiple scenarios!
+the BDD process to develop a very simple {{% stepdef-body %}}, and how to use that {{% stepdef-body %}} to evaluate multiple scenarios!
