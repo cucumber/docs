@@ -25,7 +25,7 @@ Before we begin, you will need the following:
 
 {{% block "java" %}}
 
-- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) (Java 9 is not yet supported by Cucumber)
+- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) (Java 9 and higher are not yet supported by Cucumber)
 - [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
@@ -174,7 +174,7 @@ mkdir hellocucumber
 cd hellocucumber
 ```
 
-Create a `Gemfile` with the following contents:
+Create a `Gemfile` with the following content:
 
 ```ruby
 source "https://rubygems.org"
@@ -272,7 +272,7 @@ Cucumber's output is telling us that it didn't find anything to run.
 When we do Behaviour-Driven Development with Cucumber we use *concrete examples*
 to specify *what* we want the software to do. Scenarios are written *before*
 production code. They start their life as an *executable specification*. As
-the production code emerges, Scenarios take on a role as *living documentation* and
+the production code emerges, scenarios take on a role as *living documentation* and
 *automated tests*.
 
 {{% tip "Example Mapping"%}}
@@ -280,7 +280,7 @@ Try running an [Example Mapping](/bdd/example-mapping) workshop in your team to
 design examples together.
 {{% /tip %}}
 
-In Cucumber, an example is called a [Scenario](/gherkin/reference#example).
+In Cucumber, an example is called a [scenario](/gherkin/reference#example).
 Scenarios are defined in `.feature` files, which are stored in the
 {{% text "java" %}}`src/test/resources/hellocucumber`{{% /text %}}
 {{% text "javascript" %}}`features`{{% /text %}}
@@ -293,7 +293,7 @@ Create an empty file called
 {{% text "java" %}}`src/test/resources/hellocucumber/is_it_friday_yet.feature`{{% /text %}}
 {{% text "javascript" %}}`features/is_it_friday_yet.feature`{{% /text %}}
 {{% text "ruby" %}}`features/is_it_friday_yet.feature`{{% /text %}}
-with the following contents:
+with the following content:
 
 ```gherkin
 Feature: Is it Friday yet?
@@ -312,13 +312,13 @@ The second line is a brief description of the feature. Cucumber does not
 execute this line, it's just documentation.
 
 The fourth line, `Scenario: Sunday is not Friday` is a
-[Scenario](/gherkin/reference#example), which is a *concrete example* illustrating how
+[scenario](/gherkin/reference#example), which is a *concrete example* illustrating how
 the software should behave.
 
 The last three lines starting with `Given`, `When` and `Then` are the
 [steps](/gherkin/reference#example) of our scenario. This is what Cucumber will execute.
 
-# See Scenario reported as undefined
+# See scenario reported as undefined
 
 Now that we have a scenario, we can ask Cucumber to execute it.
 
@@ -363,11 +363,10 @@ Feature: Is it Friday yet?
 1 Scenarios (1 undefined)
 3 Steps (3 undefined)
 0m0.040s
-```
+
 
 You can implement missing steps with the snippets below:
 
-```java
 @Given("^today is Sunday$")
 public void today_is_Sunday() {
     // Write code here that turns the phrase above into concrete actions
@@ -972,7 +971,7 @@ Feature: Is it Friday yet?
 # Using variables and examples
 So, we all know that there are more days in the week than just Sunday and Friday. Let's update our scenario to use variables and evaluate more possibilities. We'll use variables and examples to evaluate Friday, Sunday, and anything else!
 
-Update the `is-it-friday-yet.feature` file. Notice how we go from `Scenario` to `Scenario Outline` when we start using `Examples`.
+Update the `is-it-friday-yet.feature` file. Notice how we go from `Scenario` to `Scenario Outline` when we start using multiple `Examples`.
 ```gherkin
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -989,8 +988,44 @@ Feature: Is it Friday yet?
     | "anything else!" | "Nope" |
 ```
 
-{{% block "javascript" %}}
-Update the `stepdefs.js` file to use the `<day>` and `<answer>` variables.
+We need to replace the step definitions for `today is Sunday` and `today is Friday` with one step definition that takes the value of `<day>` as a String.
+Update the {{% text "java" %}}`stepdefs.java`{{% /text %}}{{% text "javascript" %}}`stepdefs.js`{{% /text %}}{{% text "ruby" %}}`stepdefs.rb`{{% /text %}} file as follows:
+
+```java
+package hellocucumber;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+import cucumber.api.java.en.Then;
+import static org.junit.Assert.*;
+
+class IsItFriday {
+    static String isItFriday(String today) {
+        return null;
+    }
+}
+
+public class Stepdefs {
+    private String today;
+    private String actualAnswer;
+
+    @Given("^today is \"([^\"]*)\"$")
+    public void today_is(String today) {
+        this.today = today;
+    }
+
+    @When("^I ask whether it's Friday yet$")
+    public void i_ask_whether_is_s_Friday_yet() {
+        this.actualAnswer = IsItFriday.isItFriday(today);
+    }
+
+    @Then("^I should be told \"([^\"]*)\"$")
+    public void i_should_be_told(String expectedAnswer) {
+        assertEquals(expectedAnswer, actualAnswer);
+    }
+}
+```
+
 ```javascript
 const assert = require('assert');
 const { Given, When, Then } = require('cucumber');
@@ -1016,10 +1051,7 @@ Then('I should be told {string}', function (expectedAnswer) {
 });
 
 ```
-{{% /block %}}
 
-{{% block "ruby" %}}
-Update the `stepdefs.rb` file to use the `<day>` and `<answer>` variables.
 ```ruby
 module FridayStepHelper
   def is_it_friday(day)
@@ -1045,7 +1077,6 @@ Then("I should be told {string}") do |expected_answer|
   expect(@actual_answer).to eq(expected_answer)
 end
 ```
-{{% /block %}}
 
 Run Cucumber again:
 
@@ -1117,7 +1148,7 @@ Now that we have working code, we should do some refactoring:
 
 * We should move the {{% text "java" %}}`isItFriday` method{{% /text %}}{{% text "javascript" %}}`isItFriday` function{{% /text %}}{{% text "ruby" %}}`is_it_friday` function{{% /text %}} out from the test code into production code.
 
-* We could at some point extract helper methods from our step definition, for functions we use in several places.
+* We could at some point extract helper methods from our step definition, for {{% text "java" %}}methods{{% /text %}}{{% text "javascript,ruby" %}}functions{{% /text %}} we use in several places.
 
 # Summary
 
