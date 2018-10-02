@@ -4,6 +4,7 @@ subtitle: Get started in just 10 minutes
 polyglot:
  - java
  - javascript
+ - kotlin
  - ruby
 
 weight: 1100
@@ -13,7 +14,7 @@ In this quick tutorial you will learn how to:
 
 * Install Cucumber
 * Write your first Scenario using the Gherkin syntax
-* Write your first step definition in {{% text "java" %}}Java{{% /text %}}{{% text "javascript" %}}JavaScript{{% /text %}}{{% text "ruby" %}}Ruby{{% /text %}}
+* Write your first step definition in {{% text "java" %}}Java{{% /text %}}{{% text "javascript" %}}JavaScript{{% /text %}}{{% text "kotlin" %}}Kotlin{{% /text %}}{{% text "ruby" %}}Ruby{{% /text %}}
 * Run Cucumber
 * Learn the basic workflow of Behaviour-Driven Development (BDD)
 
