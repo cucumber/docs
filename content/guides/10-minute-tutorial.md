@@ -1000,7 +1000,10 @@ import static org.junit.Assert.*;
 
 class IsItFriday {
     static String isItFriday(String today) {
-        return null;
+	if (today.equals("Friday")) {
+	    return "TGIF";
+	}
+    return "Nope";
     }
 }
 
