@@ -120,10 +120,128 @@ Open the project in IntelliJ IDEA:
 
 {{% block "kotlin" %}}
 
+To use Kotlin, we need to add it to our project:
+
 * Add a directory named `kotlin` in your `src/test` directory and mark it as `Test Sources Root`.
 In IntelliJ, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
 * Create the `hellocucumber` package inside the `kotlin` directory.
-* Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package and copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
+* Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package. IntelliJ might tell you that Kotlin is not configured; click **"Configure"**.
+Your `pom.xml` should now look like this:
+```shell
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>hellocucumber</groupId>
+    <artifactId>hellocucumber</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>2.3.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>2.3.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <source>src/test/java</source>
+                                <source>src/test/kotlin</source>
+                            </sourceDirs>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Werror</compilerArgument>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kotlin.version>1.2.71</kotlin.version>
+    </properties>
+</project>
+```
+* Copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
 IntelliJ will offer to translate the Java code to Kotlin code.
 
 Your `RunCucumberTest.kt` class should now look like this:
@@ -140,8 +258,10 @@ class RunCucumberTest {
 }
 ```
 
-* Now delete the `RunCucumberTest.java` class (or even the whole `java` directory).
-* Finally, create a Kotlin class called `StepDefs` inside the `hellocucumber` package.
+* Now you can delete the `RunCucumberTest.java` class.
+* Create a Kotlin class called `StepDefs` inside the `hellocucumber` package.
+* Copy the import statements from `StepDefs.java` to `StepDefs.kt`; you'll need them later.
+* Finally, delete the `StepDefs.java` class (or even the `java` directory).
 
 {{% /block %}}
 
@@ -504,12 +624,40 @@ Copy each of the three snippets for the undefined steps and paste them into
 {{% block "kotlin" %}}
 
 Unfortunately, Cucumber does not generate snippets in Kotlin. But fortunately IntelliJ can convert the Java code to Kotlin code for you.
-You will also need to add the following import statements:
+You might also need to add the following import statements (if you hadn't already).
+
+Your `StepDefs.kt` file should now look like this:
 ```kotlin
+package hellocucumber
+
 import cucumber.api.PendingException
-import cucumber.api.java.en.Then
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.When
+import cucumber.api.java.en.Then
+import org.junit.Assert.*
+
+class StepDefs {
+    @Given("^today is Sunday$")
+    @Throws(Exception::class)
+    fun today_is_Sunday() {
+        // Write code here that turns the phrase above into concrete actions
+        throw PendingException()
+    }
+
+    @When("^I ask whether it's Friday yet$")
+    @Throws(Exception::class)
+    fun i_ask_whether_it_s_Friday_yet() {
+        // Write code here that turns the phrase above into concrete actions
+        throw PendingException()
+    }
+
+    @Then("^I should be told \"([^\"]*)\"$")
+    @Throws(Exception::class)
+    fun i_should_be_told(arg1: String) {
+        // Write code here that turns the phrase above into concrete actions
+        throw PendingException()
+    }
+}
 ```
 
 {{% /block %}}
@@ -1001,6 +1149,11 @@ When we run this test, it will fail.
 
 {{% block "java" %}}
 ```shell
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/isitfriday.feature:4
     Given today is "Sunday"            # Stepdefs.today_is(String)
     When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
@@ -1029,6 +1182,43 @@ Actual   :Nope
 ```
 {{% /block %}}
 
+{{% block "kotlin" %}}
+```shell
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/isitfriday.feature:4
+    Given today is Sunday              # StepDefs.today_is_Sunday()
+    When I ask whether it's Friday yet # StepDefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "Nope"       # StepDefs.i_should_be_told(String)
+
+  Scenario: Friday is Friday           # hellocucumber/isitfriday.feature:9
+    Given today is Friday              # StepDefs.today_is_Friday()
+    When I ask whether it's Friday yet # StepDefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "TGIF"       # StepDefs.i_should_be_told(String)
+      org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at hellocucumber.StepDefs.i_should_be_told(StepDefs.kt:40)
+        at ✽.I should be told "TGIF"(hellocucumber/isitfriday.feature:12)
+
+
+Failed scenarios:
+hellocucumber/isitfriday.feature:9 # Friday is Friday
+
+2 Scenarios (1 failed, 1 passed)
+6 Steps (1 failed, 5 passed)
+0m0.100s
+
+org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at hellocucumber.StepDefs.i_should_be_told(StepDefs.kt:40)
+        at ✽.I should be told "TGIF"(hellocucumber/isitfriday.feature:12)
+
+```
+{{% /block %}}
 
 That is because we haven't implemented the logic yet! Let's do that next.
 
