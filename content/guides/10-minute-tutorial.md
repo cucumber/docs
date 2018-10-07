@@ -120,8 +120,6 @@ Open the project in IntelliJ IDEA:
 
 {{% block "kotlin" %}}
 
-To use Kotlin in our project, we need to take some extra steps:
-
 * Add a directory named `kotlin` in your `src/test` directory and mark it as `Test Sources Root`.
 In IntelliJ, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
 * Create the `hellocucumber` package inside the `kotlin` directory.
