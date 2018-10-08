@@ -869,6 +869,28 @@ Actual   :Nope
 ```
 {{% /block %}}
 
+{{% block "javascript" %}}
+```shell
+.....F
+
+Failures:
+
+1) Scenario: Friday is Friday # features/is_it_friday_yet.feature:9
+   ✔ Given today is Friday # features/step_definitions/stepdefs.js:8
+   ✔ When I ask whether it's Friday yet # features/step_definitions/stepdefs.js:16
+   ✖ Then I should be told "TGIF" # features/step_definitions/stepdefs.js:20
+       AssertionError [ERR_ASSERTION]: 'Nope' == 'TGIF'
+           + expected - actual
+
+           -Nope
+           +TGIF
+
+           at World.<anonymous> (/private/tmp/tutorial/hellocucumber/features/step_definitions/stepdefs.js:21:10)
+
+2 scenarios (1 failed, 1 passed)
+6 steps (1 failed, 5 passed)
+```
+{{% /block %}}
 
 That is because we haven't implemented the logic yet! Let's do that next.
 
