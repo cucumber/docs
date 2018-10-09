@@ -53,6 +53,8 @@ var showHideSelectors = [
   '.text-java',
   '.language-javascript',
   '.text-javascript',
+  '.language-kotlin',
+  '.text-kotlin',
   '.language-ruby',
   '.text-ruby',
 ]
