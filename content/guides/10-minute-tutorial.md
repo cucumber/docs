@@ -1182,6 +1182,60 @@ Actual   :Nope
 ```
 {{% /block %}}
 
+{{% block "javascript" %}}
+```shell
+.....F
+
+Failures:
+
+1) Scenario: Friday is Friday # features/is_it_friday_yet.feature:9
+   ✔ Given today is Friday # features/step_definitions/stepdefs.js:8
+   ✔ When I ask whether it's Friday yet # features/step_definitions/stepdefs.js:16
+   ✖ Then I should be told "TGIF" # features/step_definitions/stepdefs.js:20
+       AssertionError [ERR_ASSERTION]: 'Nope' == 'TGIF'
+           + expected - actual
+
+           -Nope
+           +TGIF
+
+           at World.<anonymous> (/private/tmp/tutorial/hellocucumber/features/step_definitions/stepdefs.js:21:10)
+
+2 scenarios (1 failed, 1 passed)
+6 steps (1 failed, 5 passed)
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```shell
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # features/is_it_friday_yet.feature:4
+    Given today is Sunday              # features/step_definitions/stepdefs.rb:12
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:16
+    Then I should be told "Nope"       # features/step_definitions/stepdefs.rb:20
+
+  Scenario: Friday is Friday           # features/is_it_friday_yet.feature:9
+    Given today is Friday              # features/step_definitions/stepdefs.rb:8
+    When I ask whether it's Friday yet # features/step_definitions/stepdefs.rb:16
+    Then I should be told "TGIF"       # features/step_definitions/stepdefs.rb:20
+
+      expected: "TGIF"
+           got: "Nope"
+
+      (compared using ==)
+       (RSpec::Expectations::ExpectationNotMetError)
+      ./features/step_definitions/stepdefs.rb:21:in `"I should be told {string}"'
+      features/is_it_friday_yet.feature:12:in `Then I should be told "TGIF"'
+
+Failing Scenarios:
+cucumber features/is_it_friday_yet.feature:9 # Scenario: Friday is Friday
+
+2 scenarios (1 failed, 1 passed)
+6 steps (1 failed, 5 passed)
+```
+{{% /block %}}
+
 {{% block "kotlin" %}}
 ```shell
 Running hellocucumber.RunCucumberTest
