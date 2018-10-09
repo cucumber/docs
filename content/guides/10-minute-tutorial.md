@@ -5,6 +5,7 @@ polyglot:
  - java
  - javascript
  - ruby
+ - kotlin
 
 weight: 1100
 ---
@@ -13,7 +14,7 @@ In this quick tutorial you will learn how to:
 
 * Install Cucumber
 * Write your first Scenario using the Gherkin syntax
-* Write your first step definition in {{% text "java" %}}Java{{% /text %}}{{% text "javascript" %}}JavaScript{{% /text %}}{{% text "ruby" %}}Ruby{{% /text %}}
+* Write your first step definition in {{% text "java" %}}Java{{% /text %}}{{% text "javascript" %}}JavaScript{{% /text %}}{{% text "kotlin" %}}Kotlin{{% /text %}}{{% text "ruby" %}}Ruby{{% /text %}}
 * Run Cucumber
 * Learn the basic workflow of Behaviour-Driven Development (BDD)
 
@@ -30,6 +31,19 @@ Before we begin, you will need the following:
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
 - [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ)
    - [Cucumber Eclipse](https://cucumber.github.io/cucumber-eclipse/)
+
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
+- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) (Java 9 and higher are not yet supported by Cucumber)
+- [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
+   - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
+   - [IntelliJ IDEA Kotlin plugin](https://plugins.jetbrains.com/plugin/6954-kotlin)
+- [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ)
+   - [Cucumber Eclipse](https://cucumber.github.io/cucumber-eclipse/)
+   - [Kotlin Eclipse](https://github.com/JetBrains/kotlin-eclipse)
 
 {{% /block %}}
 
@@ -68,7 +82,7 @@ Both of these commands should print a version number.
 
 # Create an empty Cucumber project
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 We'll start by creating a new project directory with the `cucumber-archetype` Maven plugin.
 Open a terminal, go to the directory where you want to create your project, and run the following command:
 
@@ -101,6 +115,153 @@ Open the project in IntelliJ IDEA:
 
 * **File -> Open... -> (Select the pom.xml)**
 * Select **Open as Project**
+
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
+To use Kotlin, we need to add it to our project:
+
+* Add a directory named `kotlin` in your `src/test` directory and mark it as `Test Sources Root`.
+In IntelliJ, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
+* Create the `hellocucumber` package inside the `kotlin` directory.
+* Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package. IntelliJ might tell you that Kotlin is not configured; click **"Configure"**.
+Your `pom.xml` should now look like this:
+```shell
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>hellocucumber</groupId>
+    <artifactId>hellocucumber</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>2.3.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>2.3.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <source>src/test/java</source>
+                                <source>src/test/kotlin</source>
+                            </sourceDirs>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Werror</compilerArgument>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kotlin.version>1.2.71</kotlin.version>
+    </properties>
+</project>
+```
+* Copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
+IntelliJ will offer to translate the Java code to Kotlin code.
+
+Your `RunCucumberTest.kt` class should now look like this:
+```kotlin
+package hellocucumber
+
+import cucumber.api.CucumberOptions
+import cucumber.api.junit.Cucumber
+import org.junit.runner.RunWith
+
+@RunWith(Cucumber::class)
+@CucumberOptions(plugin = arrayOf("pretty"))
+class RunCucumberTest {
+}
+```
+
+* Now you can delete the `RunCucumberTest.java` class.
+* Create a Kotlin class called `StepDefs` inside the `hellocucumber` package.
+* Copy the import statements from `StepDefs.java` to `StepDefs.kt`; you'll need them later.
+* Finally, delete the `StepDefs.java` class (or even the `java` directory).
 
 {{% /block %}}
 
@@ -199,7 +360,7 @@ You now have a simple project with Cucumber installed.
 
 To make sure everything works together correctly, let's run Cucumber.
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 mvn test
 ```
@@ -223,7 +384,7 @@ cucumber
 
 You should see something like the following:
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -289,7 +450,7 @@ directory (or a subdirectory).
 One concrete example would be that *Sunday isn't Friday*.
 
 Create an empty file called
-{{% text "java" %}}`src/test/resources/hellocucumber/is_it_friday_yet.feature`{{% /text %}}
+{{% text "java,kotlin" %}}`src/test/resources/hellocucumber/is_it_friday_yet.feature`{{% /text %}}
 {{% text "javascript" %}}`features/is_it_friday_yet.feature`{{% /text %}}
 {{% text "ruby" %}}`features/is_it_friday_yet.feature`{{% /text %}}
 with the following content:
@@ -321,7 +482,7 @@ The last three lines starting with `Given`, `When` and `Then` are the
 
 Now that we have a scenario, we can ask Cucumber to execute it.
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 mvn test
 ```
@@ -343,9 +504,9 @@ cucumber
 
 Cucumber is telling us we have one `undefined` scenario and three `undefined`
 steps.  It's also suggesting some snippets of code that we can use to
-**define** these steps:
+*define* these steps:
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -456,8 +617,50 @@ end
 
 Copy each of the three snippets for the undefined steps and paste them into
 {{% text "java" %}}`src/test/java/hellocucumber/Stepdefs.java`{{% /text %}}
+{{% text "kotlin" %}}`src/test/kotlin/hellocucumber/Stepdefs.kt`{{% /text %}}
 {{% text "javascript" %}}`features/step_definitions/stepdefs.js`{{% /text %}}
 {{% text "ruby" %}}`features/step_definitions/stepdefs.rb`{{% /text %}}.
+
+{{% block "kotlin" %}}
+
+Unfortunately, Cucumber does not generate snippets in Kotlin. But fortunately IntelliJ can convert the Java code to Kotlin code for you.
+You might also need to add the following import statements (if you hadn't already).
+
+Your `StepDefs.kt` file should now look like this:
+```kotlin
+package hellocucumber
+
+import cucumber.api.PendingException
+import cucumber.api.java.en.Given
+import cucumber.api.java.en.When
+import cucumber.api.java.en.Then
+import org.junit.Assert.*
+
+class StepDefs {
+    @Given("^today is Sunday$")
+    @Throws(Exception::class)
+    fun today_is_Sunday() {
+        // Write code here that turns the phrase above into concrete actions
+        throw PendingException()
+    }
+
+    @When("^I ask whether it's Friday yet$")
+    @Throws(Exception::class)
+    fun i_ask_whether_it_s_Friday_yet() {
+        // Write code here that turns the phrase above into concrete actions
+        throw PendingException()
+    }
+
+    @Then("^I should be told \"([^\"]*)\"$")
+    @Throws(Exception::class)
+    fun i_should_be_told(arg1: String) {
+        // Write code here that turns the phrase above into concrete actions
+        throw PendingException()
+    }
+}
+```
+
+{{% /block %}}
 
 # See scenario reported as pending
 
@@ -488,6 +691,36 @@ Feature: Is it Friday yet?
 cucumber.api.PendingException: TODO: implement me
 	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:12)
 	at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```shell
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # StepDefs.today_is_Sunday()
+      cucumber.api.PendingException: TODO: implement me
+        at hellocucumber.StepDefs.today_is_Sunday(StepDefs.kt:14)
+        at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
+
+    When I ask whether it's Friday yet # StepDefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "Nope"       # StepDefs.i_should_be_told(String)
+
+1 Scenarios (1 pending)
+3 Steps (2 skipped, 1 pending)
+0m0.107s
+
+cucumber.api.PendingException: TODO: implement me
+        at hellocucumber.StepDefs.today_is_Sunday(StepDefs.kt:14)
+        at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.351 sec
 ```
 {{% /block %}}
 
@@ -586,6 +819,43 @@ public class Stepdefs {
 ```
 {{% /block %}}
 
+{{% block "kotlin" %}}
+```kotlin
+package hellocucumber
+
+import cucumber.api.java.en.Then
+import cucumber.api.java.en.Given
+import cucumber.api.java.en.When
+import junit.framework.Assert.assertEquals
+
+internal object IsItFriday {
+    fun isItFriday(today: String): String {
+        return ""
+    }
+}
+
+class StepDefs {
+    lateinit var today: String
+    lateinit var actualAnswer: String
+
+    @Given("^today is Sunday$")
+    fun today_is_Sunday() {
+        this.today = "Sunday"
+    }
+
+    @When("^I ask whether it's Friday yet$")
+    fun i_ask_whether_is_s_Friday_yet() {
+        this.actualAnswer = IsItFriday.isItFriday(today)
+    }
+
+    @Then("^I should be told \"([^\"]*)\"$")
+    fun i_should_be_told(expectedAnswer: String) {
+        assertEquals(expectedAnswer, actualAnswer)
+    }
+}
+```
+{{% /block %}}
+
 {{% block "javascript" %}}
 ```javascript
 const assert = require('assert');
@@ -665,6 +935,27 @@ hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
 ```
 {{% /block %}}
 
+{{% block "kotlin" %}}
+```shell
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # StepDefs.today_is_Sunday()
+    When I ask whether it's Friday yet # StepDefs.i_ask_whether_is_s_Friday_yet()
+    Then I should be told "Nope"       # StepDefs.i_should_be_told(String)
+      junit.framework.ComparisonFailure: expected:<[Nope]> but was:<[]>
+        at junit.framework.Assert.assertEquals(Assert.java:100)
+        at junit.framework.Assert.assertEquals(Assert.java:107)
+        at hellocucumber.StepDefs.i_should_be_told(StepDefs.kt:30)
+        at ✽.I should be told "Nope"(hellocucumber/is_it_friday_yet.feature:7)
+```
+{{% /block %}}
+
 {{% block "javascript" %}}
 ```shell
 ..F
@@ -715,12 +1006,20 @@ That's progress! The first two steps are passing, but the last one is failing.
 # See scenario reported as passing
 
 Let's do the simplest possible thing to make the scenario pass. In this case,
-that's simply to make our function return `Nope`:
+that's simply to make our {{% stepdef-body %}} return `Nope`:
 
 {{% block "java" %}}
 ```java
 static String isItFriday(String today) {
     return "Nope";
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+fun isItFriday(today: String): String {
+    return "Nope"
 }
 ```
 {{% /block %}}
@@ -742,7 +1041,7 @@ end
 
 Run Cucumber again:
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -820,6 +1119,15 @@ public void today_is_Friday() {
 ```
 {{% /block %}}
 
+{{% block "kotlin" %}}
+```kotlin
+@Given("^today is Friday$")
+fun today_is_Friday() {
+    this.today = "Friday"
+}
+```
+{{% /block %}}
+
 {{% block "javascript" %}}
 ```javascript
 Given('today is Friday', function () {
@@ -841,6 +1149,11 @@ When we run this test, it will fail.
 
 {{% block "java" %}}
 ```shell
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/isitfriday.feature:4
     Given today is "Sunday"            # Stepdefs.today_is(String)
     When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
@@ -869,6 +1182,43 @@ Actual   :Nope
 ```
 {{% /block %}}
 
+{{% block "kotlin" %}}
+```shell
+Running hellocucumber.RunCucumberTest
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday        # hellocucumber/isitfriday.feature:4
+    Given today is Sunday              # StepDefs.today_is_Sunday()
+    When I ask whether it's Friday yet # StepDefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "Nope"       # StepDefs.i_should_be_told(String)
+
+  Scenario: Friday is Friday           # hellocucumber/isitfriday.feature:9
+    Given today is Friday              # StepDefs.today_is_Friday()
+    When I ask whether it's Friday yet # StepDefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "TGIF"       # StepDefs.i_should_be_told(String)
+      org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at hellocucumber.StepDefs.i_should_be_told(StepDefs.kt:40)
+        at ✽.I should be told "TGIF"(hellocucumber/isitfriday.feature:12)
+
+
+Failed scenarios:
+hellocucumber/isitfriday.feature:9 # Friday is Friday
+
+2 Scenarios (1 failed, 1 passed)
+6 Steps (1 failed, 5 passed)
+0m0.100s
+
+org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
+        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at hellocucumber.StepDefs.i_should_be_told(StepDefs.kt:40)
+        at ✽.I should be told "TGIF"(hellocucumber/isitfriday.feature:12)
+
+```
+{{% /block %}}
 
 That is because we haven't implemented the logic yet! Let's do that next.
 
@@ -882,6 +1232,14 @@ static String isItFriday(String today) {
         return "TGIF";
     }
     return "Nope";
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+fun isItFriday(today: String): String {
+    return if (today == "Friday") "TGIF" else "Nope"
 }
 ```
 {{% /block %}}
@@ -912,7 +1270,7 @@ end
 
 Run Cucumber again:
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -990,6 +1348,7 @@ Feature: Is it Friday yet?
 We need to replace the step definitions for `today is Sunday` and `today is Friday` with one step definition that takes the value of `<day>` as a String.
 Update the {{% text "java" %}}`stepdefs.java`{{% /text %}}{{% text "javascript" %}}`stepdefs.js`{{% /text %}}{{% text "ruby" %}}`stepdefs.rb`{{% /text %}} file as follows:
 
+{{% block "java" %}}
 ```java
 package hellocucumber;
 
@@ -1024,7 +1383,46 @@ public class Stepdefs {
     }
 }
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
+```kotlin
+package hellocucumber
+
+import cucumber.api.java.en.Then
+import cucumber.api.java.en.Given
+import cucumber.api.java.en.When
+import junit.framework.Assert.assertEquals
+
+internal object IsItFriday {
+    fun isItFriday(today: String): String {
+        return if (today == "Friday") "TGIF" else "Nope"
+    }
+}
+
+class StepDefs {
+    lateinit var today: String
+    lateinit var actualAnswer: String
+
+    @Given("^today is \"([^\"]*)\"$")
+    fun today_is(today: String) {
+        this.today = today
+    }
+
+    @When("^I ask whether it's Friday yet$")
+    fun i_ask_whether_is_s_Friday_yet() {
+        this.actualAnswer = IsItFriday.isItFriday(today)
+    }
+
+    @Then("^I should be told \"([^\"]*)\"$")
+    fun i_should_be_told(expectedAnswer: String) {
+        assertEquals(expectedAnswer, actualAnswer)
+    }
+}
+```
+{{% /block %}}
+
+{{% block "javascript" %}}
 ```javascript
 const assert = require('assert');
 const { Given, When, Then } = require('cucumber');
@@ -1050,7 +1448,9 @@ Then('I should be told {string}', function (expectedAnswer) {
 });
 
 ```
+{{% /block %}}
 
+{{% block "ruby" %}}
 ```ruby
 module FridayStepHelper
   def is_it_friday(day)
@@ -1076,10 +1476,11 @@ Then("I should be told {string}") do |expected_answer|
   expect(@actual_answer).to eq(expected_answer)
 end
 ```
+{{% /block %}}
 
 Run Cucumber again:
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -1145,11 +1546,11 @@ Feature: Is it Friday yet?
 # Refactoring
 Now that we have working code, we should do some refactoring:
 
-* We should move the {{% text "java" %}}`isItFriday` method{{% /text %}}{{% text "javascript" %}}`isItFriday` function{{% /text %}}{{% text "ruby" %}}`is_it_friday` function{{% /text %}} out from the test code into production code.
+* We should move the `isItFriday` {{% stepdef-body %}} out from the test code into production code.
 
-* We could at some point extract helper methods from our step definition, for {{% text "java" %}}methods{{% /text %}}{{% text "javascript,ruby" %}}functions{{% /text %}} we use in several places.
+* We could at some point extract helper methods from our step definition, for {{% text "java" %}}methods{{% /text %}}{{% text "kotlin,javascript" %}}functions{{% /text %}}{{% text "ruby" %}}blocks{{% /text %}} we use in several places.
 
 # Summary
 
 In this brief tutorial you've seen how to install Cucumber, how to follow
-the BDD process to develop a very simple function, and how to use that function to evaluate multiple scenarios!
+the BDD process to develop a very simple {{% stepdef-body %}}, and how to use that {{% stepdef-body %}} to evaluate multiple scenarios!
