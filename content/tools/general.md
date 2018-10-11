@@ -25,6 +25,10 @@ It offers several [packages](https://atom.io/packages/search?q=cucumber) you can
 [TextMate](https://macromates.com/) is a text editor for macOS.
 See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) documentation.
 
+## Tidy Gherkin
+
+[Tidy Gherkin](https://chrome.google.com/webstore/detail/tidy-gherkin/nobemmencanophcnicjhfhnjiimegjeo?hl=en-GB) is a Google Chrome browser extension, that helps in step definition generation, Gherkin step and table formatting.
+
 ## Visual Studio Code
 [Visual Studio Code](https://code.visualstudio.com/) is a code editor for Windows, Linux, or macOS.
 
