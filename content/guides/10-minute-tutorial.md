@@ -95,7 +95,7 @@ mvn archetype:generate                      \
    -DartifactId=hellocucumber               \
    -Dpackage=hellocucumber                  \
    -Dversion=1.0.0-SNAPSHOT                 \
-   -DinteractiveMode=false
+   -DinteractiveMode=false                  \
 ```
 
 You should get something like the following result:
@@ -1388,15 +1388,15 @@ Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
   Scenario Outline: Today is or is not Friday
-    Given today is <day>
+    Given today is "<day>"
     When I ask whether it's Friday yet
-    Then I should be told <answer>
+    Then I should be told "<answer>"
 
   Examples:
     | day | answer |
-    | "Friday" | "TGIF" |
-    | "Sunday" | "Nope" |
-    | "anything else!" | "Nope" |
+    | Friday | TGIF |
+    | Sunday | Nope |
+    | anything else! | Nope |
 ```
 
 We need to replace the step definitions for `today is Sunday` and `today is Friday` with one step definition that takes the value of `<day>` as a String.
