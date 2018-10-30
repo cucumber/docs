@@ -308,17 +308,17 @@ The `test_run_started` event is fired at the beginning of the test run. It has o
   of these objects responds to the following instance methods:
     - `#all_locations`: Returns an array with the location of each element (feature, scenario, and step) in the feature
       file for the test case.
-    - `#all_source`: Returns an array of the features, scenarios, and steps in the test case, as strings, less the keywords
+    - `#all_source`: Returns an array of the features, scenarios, and steps in the test case, as strings, without the keywords
     - `#around_hooks`: Returns an array of the Around hooks associated with that test case
     - `#feature`: Returns the name of the feature for the test case
-    - `#keyword`: Returns the keyword associated with the test case (`"Feature"`, `"Scenario"`, etc.)
+    - `#keyword`: Returns the Gherkin keyword associated with the test case (`"Feature"`, `"Scenario"`, etc.)
     - `#language`: Returns the language indicated for the test case, as a `Gherkin::Dialect` object
     - `#location`: Returns the location of the first scenario in the test case
     - `#name`: Returns the name of the feature for the test case
-    - `#source`: Returns the names of the features and scenarios in the test case, as strings, less the keywords
+    - `#source`: Returns the names of the features and scenarios in the test case, as strings, without the keywords
     - `#step_count`: Returns the integer number of steps in the test case
     - `#tags`: Returns an array of tags for the test case
-    - `#test_steps`: Returns an array of the steps in the test case, less the keywords
+    - `#test_steps`: Returns an array of the steps in the test case, without the keywords
 
 #### test_run_finished
 The `test_run_finished` event is fired after the test run has finished. It has no additional attributes or methods
@@ -345,7 +345,7 @@ The `step_activated` event is fired when a test step has been activated. It has 
     - `#location`: The step definition file where the step is defined
     - `#step_arguments`: The arguments passed to the step
     - `#step_definition`: The `Cucumber::Glue::StepDefinition` object (described above) corresponding to the step
-    - `#text_length`: The integer length, in characters, of the step text
+    - `#text_length`: The number of characters in the step text
 
 #### test_step_started
 The `test_step_started` event is fired just before each `Cucumber::Core::Test::Step` is started. It has one attribute:
@@ -355,8 +355,8 @@ The `test_step_started` event is fired just before each `Cucumber::Core::Test::S
       in the form `features/file.feature:line`
     - `#location`: The feature file in which the step appears and the location of the step within that file, in the same
       form as described under `#action_location`
-    - `#source`: The Gherkin source of the feature file in which the step appears, less keywords
-    - `#text`: The text of the step, less its keyword
+    - `#source`: The Gherkin source of the feature file in which the step appears, without keywords
+    - `#text`: The text of the step, without the Gherkin keyword
 
 #### test_step_finished
 The `test_step_finished` event is fired after each `Cucumber::Core::Test::Step` has finished running. It has two attributes:
