@@ -3,6 +3,7 @@ title: Reporting
 subtitle: "Built-in reporter plugins, Cucumber Pro, Third-party plugins"
 polyglot:
 - java
+- ruby
 - dotnet
 ---
 
