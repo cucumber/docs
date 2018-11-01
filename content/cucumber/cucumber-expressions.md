@@ -159,9 +159,9 @@ Alternative text only works when there is no whitespace between the alternative 
 # Escaping
 
 If you ever need to match `()` or `{}` literally, you can escape the
-opening `(` or `{` with a backslash:
+opening `(` or `{` with a double backslash:
 
-    I have 42 \{what} cucumber(s) in my belly \(amazing!)
+    I have 42 \\{what} cucumber(s) in my belly \\(amazing!)
 
 This expression would match the following examples:
 
