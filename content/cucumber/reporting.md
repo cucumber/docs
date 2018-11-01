@@ -246,7 +246,9 @@ cucumber --format CustomFormatter
 
 ## Formatter API
 Cucumber uses an event-based API for its formatters. These formatters respond to several defined events, with
-event handlers defined in the `#initialize` method of the formatter. A sample formatter could look like this:
+event handlers defined in the formatter's constructor. A sample formatter could look like this:
+
+{{% block "ruby" %}}
 
 ```ruby
 class CustomFormatter
@@ -269,6 +271,7 @@ class CustomFormatter
   end
 end
 ```
+{{% /block %}}
 
 ### Configuration object
 The formatter initializer is passed a `Cucumber::Configuration` object. This is the 
@@ -297,7 +300,7 @@ attribute:
     - `#backtrace_line`: The file, line, and step definition that will appear in a backtrace, as in:
       `features/step_definitions/cuke_steps.rb:5:in "this step passes"`
     - `#expression`: The expression used in the step definition, as in `"I have {int} cukes in my belly"` (when a
-      Cucumber expression is used) or `/I have (\d+) cukes in my belly/` (when a regular expression is used)
+      Cucumber expression is used) or `/^I have (\d+) cukes in my belly$/` (when a regular expression is used)
     - `#file`: The file where the step definition occurs, as a string, as in `"features/step_definitions/cuke_steps.rb"`
     - `#file_colon_line`: The file and line where the step definition occurs, as a string, as in
       `"features/step_definitions/cuke_steps.rb:5"`
