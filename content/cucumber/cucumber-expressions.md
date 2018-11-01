@@ -167,6 +167,16 @@ This expression would match the following examples:
 
     I have 42 {what} cucumber in my belly (amazing!)
     I have 42 {what} cucumbers in my belly (amazing!)
+You may have to escape the \ character itself with another \, depending on your programming language.
+For Example, 
+In java, you have to use escape character \ with another backslash.
+
+    I have 42 \\{what} cucumber(s) in my belly \\(amazing!)
+    
+Then this expression would match the following example:
+
+    I have 42 {what} cucumber in my belly (amazing!)
+    I have 42 {what} cucumbers in my belly (amazing!)
 
 There is currently no way to escape a `/` character - it will always be interpreted
 as alternative text.
