@@ -271,49 +271,10 @@ end
 ```
 
 ### Configuration object
-The formatter initializer is passed a `Cucumber::Configuration` object. This is the configuration for the test run,
-including default configurations and options passed in at the command line. It can be useful to access these options
-so that your formatter can modify its behavior in response to user directives.
-
-The configuration object responds to a number of useful methods, including the following:
-* `#all_files_to_load`: An array of the paths to the files being loaded, as strings
-* `#autoload_code_paths`: An array of the directories that are autoloaded by Cucumber, for example, `features/support`
-* `#custom_profiles`: An array containing any custom profiles that have been added to the test run
-* `#dry_run?`: A boolean indicating whether the `--dry-run` option has been specified (`false` by default)
-* `#duration?`: A boolean indicating whether the `--duration` option has been specified (`true` by default)
-* `#error_stream`: The `IO` object or file to which errors will be written
-* `#expand?`: A boolean indicating whether the `--expand` option has been specified (`false` by default)
-* `#fail_fast?`: A boolean indicating whether the `--fail-fast` option has been specified (`false` by default)
-* `#feature_dirs`: An array of the directories containing features, including default directories and others
-  specified as options to the test run
-* `#feature_files`: An array of the paths of feature files to be included in the test run
-* `#filters`: An array of filters specified in the options
-* `#formats`: An array of the formatters used with the output stream as the final element
-* `#guess?`: A boolean indicating whether the `--guess` option has been specified (`false` by default)
-* `#name_regexps`: An array of regular expressions indicating which features to run (passed in using the `--name` option
-  or in the `cucumber.yml` config file)
-* `#out_stream`: The `IO` object or file to which formatter output will be written
-* `#paths`: The paths to the files being run
-* `#profiles`: An array of the profiles being used for the test run
-* `#randomize?`: A boolean indicating whether the features are to be run in random order (`false` by default)
-* `#retry_attempts`: The number of times flaky tests are to be rerun if the `--retry` option is used
-* `#seed`: The seed used to randomize test runs if the `--order=random` option is used
-* `#skip_profile_information?`: A boolean indicating whether profile information should be skipped (`nil` by default)
-* `#snippet_generators`: An array of the snippet generators used, by default containing `Cucumber::Glue::Snippet::Generator`
-  objects
-* `#snippet_type`: A symbol indicating the type of snippet to be used (`:cucumber_expression` by default)
-* `#snippets?`: A boolean indicating whether snippets are to be generated for undefined steps (`true` by default)
-* `#source?`: A boolean indicating whether the file and line of the step definition should be printed with the output for
-  each step (`true` by default)
-* `#step_defs_to_load`: An array of the step definition files to be loaded for the test run
-* `#strict`: The `strict` setting to be applied to the test run (by default an instance of `Cucumber::Core::Test::Result::StrictConfiguration`)
-* `#support_to_load`: An array of the paths to support files to be loaded for the test run
-* `#tag_expressions`: An array of the tag expressions indicated at the command line or in the `cucumber.yml` config
-  file (empty by default)
-* `#tag_limits`: A hash of tag limits to be used (empty by default)
-* `#to_hash`: The options hash being used for the test run
-* `#wip?`: A boolean indicating whether the `--wip` option has been specified (`false` by default)
-* `#with_options`: A new config object merging existing options with a new options hash passed in as an argument
+The formatter initializer is passed a `Cucumber::Configuration` object. This is the 
+[configuration for the test run](https://docs.cucumber.io/cucumber/configuration/),
+including default configurations and [options](https://docs.cucumber.io/cucumber/api/) passed in at the command line.
+It can be useful to access these options so that your formatter can modify its behavior in response to user directives.
 
 ### Event objects
 Every time an event is fired, an event object is passed to the corresponding handler. Each event object belongs to
