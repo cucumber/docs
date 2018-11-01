@@ -237,14 +237,11 @@ Alternatively, you can specify a Java system property (in Maven, Gradle or other
 {{% /block %}}
 
 # Custom formatters
-The Cucumber formatter API is easily extensible. A formatter can be any class implementing the event-based formatter
-API. The formatter class should live in the `features/support` directory, or alternatively, may be required when you
-run Cucumber using the `--dir` flag. To use your custom formatter, run Cucumber using the `--format` flag:
+The Cucumber formatter API is readily extensible. A formatter can be any class implementing the event-based formatter
+API. The formatter class should live in the `features/support` directory. To use your custom formatter, run Cucumber
+using the `--format` flag:
 ```
-# Assumes CustomFormatter class is housed in the features/support directory
 cucumber --format CustomFormatter
-# Requires the directory containing the custom formatter
-cucumber --format CustomFormatter --dir formatters
 ```
 
 ## Formatter API
