@@ -238,18 +238,16 @@ Alternatively, you can specify a Java system property (in Maven, Gradle or other
 
 # Custom formatters
 The Cucumber formatter API is readily extensible. A formatter can be any class implementing the event-based formatter
-API. The formatter class should live in the `features/support` directory. To use your custom formatter, run Cucumber
-using the `--format` flag:
+API. {{% text "ruby" %}}The formatter class should live in the `features/support` directory. {{% /text %}}To use your custom formatter, run Cucumber using the `--format` flag:
 ```
 cucumber --format CustomFormatter
 ```
 
 ## Formatter API
 Cucumber uses an event-based API for its formatters. These formatters respond to several defined events, with
-event handlers defined in the formatter's constructor. A sample formatter could look like this:
-
+event handlers defined in the formatter's constructor. 
 {{% block "ruby" %}}
-
+A sample formatter could look like this:
 ```ruby
 class CustomFormatter
   attr_reader :io
@@ -274,17 +272,18 @@ end
 {{% /block %}}
 
 ### Configuration object
-The formatter initializer is passed a `Cucumber::Configuration` object. This is the 
+The formatter initializer is passed a {{% text "java,dotnet" %}}Cucumber configuration{{% /text %}}{{% text "ruby" %}}`Cucumber::Configuration`{{% /text %}} object. This is the 
 [configuration for the test run](https://docs.cucumber.io/cucumber/configuration/),
 including default configurations and [options](https://docs.cucumber.io/cucumber/api/) passed in at the command line.
-It can be useful to access these options so that your formatter can modify its behavior in response to user directives.
+It can be useful to access these options, so that your formatter can modify its behavior in response to user directives.
 
 ### Event objects
 Every time an event is fired, an event object is passed to the corresponding handler. Each event object belongs to
-a class corresponding to its name; for instance, the `gherkin_source_read` event creates a
-`Cucumber::Events::GherkinSourceRead` object. Each of these objects provides a different API to access relevant
-data such as Gherkin source, feature and step names, and passed/failed status of a step or test case. All events
-inherit the methods `#attributes`, `#event_id`, and `#to_h` from the parent class.
+a class corresponding to its name. {{% text "ruby" %}}For instance, the `gherkin_source_read` event creates a
+`Cucumber::Events::GherkinSourceRead` object.{{% /text %}} Each of these objects provides a different API to access relevant
+data such as Gherkin source, feature and step names, and passed/failed status of a step or test case. {{% text "ruby" %}}All events inherit the methods `#attributes`, `#event_id`, and `#to_h` from the parent class.{{% /text %}}
+
+**Note:** Following are the event objects for Cucumber Ruby; other programming languages might have slightly different events.
 
 #### gherkin_source_read
 The `gherkin_source_read` event is fired after the contents of a new feature file have been read. It has two
@@ -297,33 +296,33 @@ The `step_definition_registered` event is fired after each step definition has b
 attribute:
 * `step_definition`: The `Cucumber::Glue::StepDefinition` object that has just been registered. This object responds
   to the following instance methods:
-    - `#backtrace_line`: The file, line, and step definition that will appear in a backtrace, as in:
+- `#backtrace_line`: The file, line, and step definition that will appear in a backtrace, as in:
       `features/step_definitions/cuke_steps.rb:5:in "this step passes"`
-    - `#expression`: The expression used in the step definition, as in `"I have {int} cukes in my belly"` (when a
+- `#expression`: The expression used in the step definition, as in `"I have {int} cukes in my belly"` (when a
       Cucumber expression is used) or `/^I have (\d+) cukes in my belly$/` (when a regular expression is used)
-    - `#file`: The file where the step definition occurs, as a string, as in `"features/step_definitions/cuke_steps.rb"`
-    - `#file_colon_line`: The file and line where the step definition occurs, as a string, as in
+- `#file`: The file where the step definition occurs, as a string, as in `"features/step_definitions/cuke_steps.rb"`
+- `#file_colon_line`: The file and line where the step definition occurs, as a string, as in
       `"features/step_definitions/cuke_steps.rb:5"`
-    - `#location`: Alias of `#file_colon_line`
-    - `#to_hash`: A hash of data about the step definition, such as `{:source=>{:type=>"cucumber expression", :expression=>"I fail"}, :regexp=>{:source=>"^I fail$", :flags=>""}}`
+- `#location`: Alias of `#file_colon_line`
+- `#to_hash`: A hash of data about the step definition, such as `{:source=>{:type=>"cucumber expression", :expression=>"I fail"}, :regexp=>{:source=>"^I fail$", :flags=>""}}`
 
 #### test_run_started
 The `test_run_started` event is fired at the beginning of the test run. It has one attribute:
 * `test_cases`: The test cases included in the test run. This is an array of `Cucumber::Core::Test::Case` objects. Each
   of these objects responds to the following instance methods:
-    - `#all_locations`: Returns an array with the location of each element (feature, scenario, and step) in the feature
+- `#all_locations`: Returns an array with the location of each element (feature, scenario, and step) in the feature
       file for the test case.
-    - `#all_source`: Returns an array of the features, scenarios, and steps in the test case, as strings, without the keywords
-    - `#around_hooks`: Returns an array of the Around hooks associated with that test case
-    - `#feature`: Returns the name of the feature for the test case
-    - `#keyword`: Returns the Gherkin keyword associated with the test case (`"Feature"`, `"Scenario"`, etc.)
-    - `#language`: Returns the language indicated for the test case, as a `Gherkin::Dialect` object
-    - `#location`: Returns the location of the first scenario in the test case
-    - `#name`: Returns the name of the feature for the test case
-    - `#source`: Returns the names of the features and scenarios in the test case, as strings, without the keywords
-    - `#step_count`: Returns the integer number of steps in the test case
-    - `#tags`: Returns an array of tags for the test case
-    - `#test_steps`: Returns an array of the steps in the test case, without the keywords
+- `#all_source`: Returns an array of the features, scenarios, and steps in the test case, as strings, without the keywords
+- `#around_hooks`: Returns an array of the Around hooks associated with that test case
+- `#feature`: Returns the name of the feature for the test case
+- `#keyword`: Returns the Gherkin keyword associated with the test case (`"Feature"`, `"Scenario"`, etc.)
+- `#language`: Returns the language indicated for the test case, as a `Gherkin::Dialect` object
+- `#location`: Returns the location of the first scenario in the test case
+- `#name`: Returns the name of the feature for the test case
+- `#source`: Returns the names of the features and scenarios in the test case, as strings, without the keywords
+- `#step_count`: Returns the integer number of steps in the test case
+- `#tags`: Returns an array of tags for the test case
+- `#test_steps`: Returns an array of the steps in the test case, without the keywords
 
 #### test_run_finished
 The `test_run_finished` event is fired after the test run has finished. It has no additional attributes or methods
@@ -344,24 +343,24 @@ The `test_case_finished` event is fired when a `Cucumber::Core::Test::Case` has 
 The `step_activated` event is fired when a test step has been activated. It has two attributes:
 * `test_step`: The `Cucumber::Core::Test::Step` object (described above) that has been activated
 * `step_match`: A `Cucumber::StepMatch` object. This object responds to the following instance methods:
-    - `#args`: The arguments passed to the step
-    - `#backtrace_line`: The backtrace line from the step definition including the file, line, and step expression
-    - `#format_args`: The text of the step
-    - `#location`: The step definition file where the step is defined
-    - `#step_arguments`: The arguments passed to the step
-    - `#step_definition`: The `Cucumber::Glue::StepDefinition` object (described above) corresponding to the step
-    - `#text_length`: The number of characters in the step text
+- `#args`: The arguments passed to the step
+- `#backtrace_line`: The backtrace line from the step definition including the file, line, and step expression
+- `#format_args`: The text of the step
+- `#location`: The step definition file where the step is defined
+- `#step_arguments`: The arguments passed to the step
+- `#step_definition`: The `Cucumber::Glue::StepDefinition` object (described above) corresponding to the step
+- `#text_length`: The number of characters in the step text
 
 #### test_step_started
 The `test_step_started` event is fired just before each `Cucumber::Core::Test::Step` is started. It has one attribute:
 * `test_step`: The `Cucumber::Core::Test::Step` object that has just started. This object responds to the following
   methods that may be useful for the purposes of your formatter:
-    - `#action_location`: The feature file in which the step appears and the location of its scenario within that file,
+- `#action_location`: The feature file in which the step appears and the location of its scenario within that file,
       in the form `features/file.feature:line`
-    - `#location`: The feature file in which the step appears and the location of the step within that file, in the same
+- `#location`: The feature file in which the step appears and the location of the step within that file, in the same
       form as described under `#action_location`
-    - `#source`: The Gherkin source of the feature file in which the step appears, without keywords
-    - `#text`: The text of the step, without the Gherkin keyword
+- `#source`: The Gherkin source of the feature file in which the step appears, without keywords
+- `#text`: The text of the step, without the Gherkin keyword
 
 #### test_step_finished
 The `test_step_finished` event is fired after each `Cucumber::Core::Test::Step` has finished running. It has two attributes:
