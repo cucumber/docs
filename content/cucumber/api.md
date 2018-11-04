@@ -533,7 +533,6 @@ Or changing your JUnit runner class:
 @CucumberOptions(tags = "@smoke and @fast")
 public class RunCucumberTest {}
 ```
-
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -547,6 +546,32 @@ public class RunCucumberTest {}
 ```shell
 # You can omit the quotes if the expression is a single tag
 cucumber --tags "@smoke and @fast"
+```
+{{% /block %}}
+
+## Ignoring a subset of scenarios
+
+You can tell Cucumber to ignore scenarios with a particular tag:
+
+{{% block "java" %}} Using JUnit runner class:
+
+ ```java
+@CucumberOptions(tags = "~@smoke")
+public class RunCucumberTest {}
+```
+{{% /block %}}
+
+{{% block "javascript" %}}
+```shell
+# You can omit the quotes if the expression is a single tag
+./node_modules/.bin/cucumber.js --tags "~@smoke"
+```
+{{% /block %}}
+
+{{% block "ruby" %}}
+```shell
+# You can omit the quotes if the expression is a single tag
+cucumber --tags "~@smoke"
 ```
 {{% /block %}}
 
@@ -774,7 +799,7 @@ import org.junit.runner.RunWith;
 public class RunCukesTest {
 }
 ```
-For example if you want to check whether all feature file steps has corresponding step definitions, you can specify it like this: 
+For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this: 
 
 ```java
 package mypackage;
