@@ -169,8 +169,7 @@ This expression would match the following examples:
     I have 42 {what} cucumbers in my belly (amazing!)
     
 You may have to escape the `\` character itself with another `\`, depending on your programming language.
-For Example, 
-In java, you have to use escape character `\` with another backslash.
+For example, in Java, you have to use escape character `\` with another backslash.
 
     I have 42 \\{what} cucumber(s) in my belly \\(amazing!)
     
