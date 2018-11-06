@@ -365,7 +365,7 @@ To run a particular hook only for certain scenarios, you can associate a
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
-Hook with a [tag expression](/cucumber/tag-expressions).
+Hook with a [tag expression](#tag-expressions).
 
 {{% block "java" %}}
 Annotated method style:
