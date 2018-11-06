@@ -467,7 +467,14 @@ You can use this hook to extend Cucumber. For example you could affect how featu
 
 # Tags
 
-Tags are a great way to organise your features and scenarios. Consider this example:
+Tags are a great way to organise your features and scenarios. 
+
+They can be used for two purposes:
+
+* [Running a subset of scenarios](#running-a-subset-of-scenarios)
+* [Scoping hooks to a subset of scenarios](#tagged-hooks)
+
+Consider the following example:
 
 ```gherkin
 @billing
@@ -556,7 +563,7 @@ You can tell Cucumber to ignore scenarios with a particular tag:
 {{% block "java" %}} Using JUnit runner class:
 
  ```java
-@CucumberOptions(tags = "~@smoke")
+@CucumberOptions(tags = "not @smoke")
 public class RunCucumberTest {}
 ```
 {{% /block %}}
@@ -564,20 +571,38 @@ public class RunCucumberTest {}
 {{% block "javascript" %}}
 ```shell
 # You can omit the quotes if the expression is a single tag
-./node_modules/.bin/cucumber.js --tags "~@smoke"
+./node_modules/.bin/cucumber.js --tags "not @smoke"
 ```
 {{% /block %}}
 
 {{% block "ruby" %}}
 ```shell
 # You can omit the quotes if the expression is a single tag
-cucumber --tags "~@smoke"
+cucumber --tags "not @smoke"
 ```
 {{% /block %}}
 
 {{% tip "Filtering by line" %}}
 Another way to run a subset of scenarios is to use the `file.feature:line` pattern or the `--scenario` option.
 {{% /tip %}}
+
+### Tag expressions
+A tag expression is simply an *infix boolean expression*. Below are some examples:
+
+{.table .is-bordered}
+Expression           | Description
+---------------------|---------------------------------------------------------:
+`@fast`              | Scenarios tagged with `@fast`
+`@wip and not @slow` | Scenarios tagged with `@wip` that aren't also tagged with `@slow`
+`@smoke and @fast`   | Scenarios tagged with both `@smoke` and `@fast`
+`@gui or @database`  | Scenarios tagged with either `@gui` or `@database`
+
+For even more advanced tag expressions you can use parenthesis for clarity, or
+to change operator precedence:
+
+```
+(@smoke or @ui) and (not @slow)
+```
 
 ## Using tags for documentation
 
