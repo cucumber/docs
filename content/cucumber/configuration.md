@@ -260,14 +260,15 @@ overwritten by `script/generate cucumber:install | rails g cucumber`. Customisat
 must be loaded before the rest of Cucumber initialises must be placed at the beginning of the `env.rb file`.
 
 Every file ending in `.rb` that is found in features/support is loaded by Cucumber. Therefore, if you place local
-customisations in any `.rb` file in that directory, they will get loaded. However, be advised that Cucumber's
-`--dry-run` option only excludes files in `features/support` that match the regexp `/env\\..\*/` (*note that the trailing dot is significant*).
-So a file with local customisations called `my_locals.rb` will be loaded regardless.
+customisations in any `.rb` file in that directory, they will get loaded. However, be advised that in
+Cucumber < 4.x, the `--dry-run` option only excludes files in `features/support` that match the regexp `/env\\..\*/`
+(*note that the trailing dot is significant*). So a file with local customisations called `my_locals.rb` will be loaded regardless.
+In Cucumber 4.x, all support files, including `env.rb` files, are loaded.
 
 If you put custom files inside `features/support` that you do not wish loaded when you do a dry-run with Cucumber,
-then those files must be prefaced with the string `env.`. For example, `features/support/env.local.rb` will not be loaded
-when `cucumber --dry-run` is run, but that `features/support/local_env.rb` will be. That might result in some very
-obscure errors if `features/support/local_env.rb`contains code dependent upon elements found in `env.rb`.
+you can use the `--exclude` flag to ensure they aren't loaded. In Cucumber versions < 4.x, you can also prefix the filenames
+with `env`, as in `env.local.rb`. Note that a file called `local_env.rb`, for example, does not match the regex
+above and therefore will be loaded in all versions of Cucumber unless specifically excluded.
 
 As a matter of good practice you should always run `script/generate cucumber | rails g cucumber:install` whenever you
 install an updated version of Cucumber or cucumber-rails. However, this overwrites `features/support/env.rb`.
