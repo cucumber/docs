@@ -5,6 +5,7 @@ polyglot:
  - java
  - javascript
  - ruby
+ - kotlin
 
 weight: 1
 ---
@@ -52,6 +53,14 @@ public class MyStepdefs implements En {
     }
 }
 ```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+You can also use Kotlin to implement your step definitions.
+```kotlin
+// todo
+```
+
 {{% /block %}}
 
 {{% block "ruby" %}}

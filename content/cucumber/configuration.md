@@ -7,13 +7,13 @@ polyglot:
  - java
  - javascript
  - ruby
-
+ - kotlin
 ---
 
 
 # Type Registry
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 The type registry is used to configure parameter types and data table types. It can be configured by placing an implementation
 of `cucumber.api.TypeRegistryConfigurer` on the glue path.
 
@@ -53,6 +53,9 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
     }
 }
 ```
+```kotlin
+// todo
+```
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -76,7 +79,7 @@ end
 ```
 {{% /block %}}
 
-{{% block "java, ruby" %}}
+{{% block "java,kotlin,ruby" %}}
 If you are using a type that has not yet been defined, you will an error similar to:
 ```shell
 The parameter type "person" is not defined.
@@ -94,13 +97,17 @@ For more information on how to use `Data Tables` with Cucumber-js, please see th
 
 ## Recommended location
 
-The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}
-This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java" %}} on the glue path.{{% /text %}}
+The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/com/example/TypeRegistryConfiguration.kt`.{{% /text %}}
+This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java,kotlin" %}} on the glue path.{{% /text %}}
 
 # Profiles
 
 {{% block "java" %}}
 Profiles are not available in Java.
+{{% /block %}}
+
+{{% block "kotlin" %}}
+Profiles are not available in Kotlin.
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -161,6 +168,10 @@ output.
 Profiles are not available in Java.
 {{% /block %}}
 
+{{% block "kotlin" %}}
+Profiles are not available in Kotlin.
+{{% /block %}}
+
 {{% block "javascript" %}}
 For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature).
 {{% /block %}}
@@ -192,7 +203,7 @@ progress output and HTML output.
 
 ## Preprocessing with ERB
 
-{{% block "java, javascript" %}}
+{{% block "java,kotlin,javascript" %}}
 ERB (Embedded RuBy) is a Ruby specific tool.
 {{% /block %}}
 
@@ -214,7 +225,7 @@ So, if you have several profiles with similar values, you might do this:
 {{% /block %}}
 
 # Environment Variables
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 Cucumber-jvm does not support configuration of Cucumber with an `env` file.
 {{% /block %}}
 

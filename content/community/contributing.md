@@ -5,6 +5,7 @@ polyglot:
  - java
  - javascript
  - ruby
+ - kotlin
 ---
 
 Please follow these guidelines if you want to contribute to Cucumber or help the Cucumber team reproduce a problem.

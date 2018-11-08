@@ -123,6 +123,7 @@ A language select will be displayed if the page specifies the following in the f
  - java
  - javascript
  - ruby
+ - kotlin
  - dotnet
  ```
 
@@ -131,6 +132,7 @@ The following languages are currently supported:
 * Java
 * JavaScript
 * Ruby
+* Kotlin (optional)
 * .Net (optional; some pages only)
 
 * If possible, we'd prefer for you to add information for Java, JavaScript and Ruby.

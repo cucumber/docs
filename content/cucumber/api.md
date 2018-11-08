@@ -5,6 +5,7 @@ polyglot:
  - java
  - javascript
  - ruby
+ - kotlin
 
 weight: 2
 ---

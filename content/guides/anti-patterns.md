@@ -5,6 +5,7 @@ polyglot:
  - java
  - javascript
  - ruby
+ - kotlin
 
 weight: 1600
 ---
@@ -30,6 +31,17 @@ features/
    +--edit_work_experience_steps.java
    +--edit_languages_steps.java
    +--edit_education_steps.java
+```
+
+```kotlin
+features/
++--edit_work_experience.feature
++--edit_languages.feature
++--edit_education.feature
++--steps/
+   +--edit_work_experience_steps.kt
+   +--edit_languages_steps.kt
+   +--edit_education_steps.kt
 ```
 
 ```javascript
@@ -63,6 +75,7 @@ Scenario: add description
   When I press "Save"
   Then I should see "Cucumber BDD tool" under "Descriptions"
 ```
+The{{% text "kotlin" %}}`edit_work_experience_steps.kt`{{% /text %}}
 The{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
 {{% text "javascript" %}}`edit_work_experience_steps.js`{{% /text %}}
 {{% text "ruby" %}}`edit_work_experience_steps.rb`{{% /text %}}could be implemented like this:
@@ -73,6 +86,10 @@ The{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
         Employee employee = new Employee("Sally");
         employee.createCV();
     }
+```
+
+```kotlin
+// todo
 ```
 
 ```javascript
@@ -130,7 +147,7 @@ For instance, if you need to set up several preconditions in your `Given` state.
 While it is possible to call steps from step definitions in Cucumber-Ruby, this is not recommended.
 {{% /block %}}
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 In Cucumber-JVM calling steps from step definitions is not supported; this is *by design*.
 {{% /block %}}
 

@@ -3,6 +3,9 @@ title: Reporting
 subtitle: "Built-in reporter plugins, Cucumber Pro, Third-party plugins"
 polyglot:
 - java
+- javascript
+- ruby
+- kotlin
 - dotnet
 ---
 
@@ -28,7 +31,7 @@ There are several reporter plugins built into Cucumber:
 
 # Cucumber Pro plugin
 
-This {{% text "java" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}} plugin publishes
+This {{% text "java,kotlin,javascript,ruby" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}} plugin publishes
 results to [Cucumber Pro](https://cucumber.io/pro).
 
 ## Requirements
@@ -45,7 +48,7 @@ following CI servers:
 
 ## Installation
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 Add the following dependency to your `pom.xml`:
 
 ```xml
@@ -66,6 +69,10 @@ Enable the plugin in the JUnit class you use to run Cucumber:
 @CucumberOptions(plugin = {"io.cucumber.pro.JsonReporter:default"})
 public class RunCucumberTest {
 }
+```
+
+```kotlin
+// todo
 ```
 
 If you're on Cucumber-JVM 1.2.5 or older, use `io.cucumber.pro.JsonReporter12:default`
@@ -111,7 +118,7 @@ Authentication is not required on a privately hosted Cucumber Pro Appliance.
 ## Activation
 
 The plugin will activate itself automatically if it detects that it's running
-in one of the supported CI environments. When you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}} from your workstation the plugin will **not**
+in one of the supported CI environments. When you run {{% text "java,kotlin,javascript,ruby" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}} from your workstation the plugin will **not**
 be activated, and will not publish results.
 
 When you configure the plugin for the first time you can force-activate the plugin
@@ -124,16 +131,16 @@ This is useful for verifying that you have configured the plugin correctly.
 
 ## Profiles
 
-If you run {{% text "java" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}}
+If you run {{% text "java,kotlin,javascript,ruby" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}}
 several times as part of your build (with different options,
 perhaps different tags), you can specify a different *profile name* for each run.
 This allows Cucumber Pro to show separate results for each profile.
 
 The profile name can be specified in the `CUCUMBERPRO_PROFILE` environment variable,
 which you would typically define in a wrapper script that launches
-{{% text "java" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}}.
+{{% text "java,kotlin,javascript,ruby" %}}Cucumber{{% /text %}}{{% text "dotnet" %}}SpecFlow{{% /text %}}.
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 The profile name can also be specified by appending a colon and a profile name to the
 plugin class name:
 
@@ -144,11 +151,19 @@ public class RunCucumberTest {
 }
 ```
 
+```kotlin
+// todo
+```
+
 ```java
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"io.cucumber.pro.JsonReporter:default"}, tags = "not @ui and not @smoke")
 public class RunCucumberTest {
 }
+```
+
+```kotlin
+// todo
 ```
 {{% /block %}}
 
@@ -200,7 +215,7 @@ cucumberpro:
 You can make some of the settings global by creating a file with global settings.
 The plugin will load the configuration in all the following files (if they exist):
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 * `/usr/local/etc/cucumber/cucumber.yml`
 * `~/.cucumber/cucumber.yml`
 * `~/cucumber.yml`
@@ -227,7 +242,7 @@ export CUCUMBERPRO_LOGGING=DEBUG
 SET CUCUMBERPRO_LOGGING=DEBUG
 ```
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 Alternatively, you can specify a Java system property (in Maven, Gradle or other build tool):
 
 ```
