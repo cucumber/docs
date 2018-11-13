@@ -72,7 +72,7 @@ Each scenarios should be *independent*; you should be able to run them in any or
 
 Each scenario should *test exactly one thing* so that when it fails, it fails for a clear reason. This means you wouldn't reuse one scenario inside another scenario.
 
-If your scenarios use the same or similar steps, or or perform similar actions on your system, you can extract [helper methods](#how-to-i-use-helper-methods) to do those things.
+If your scenarios use the same or similar steps, or or perform similar actions on your system, you can extract [helper methods](#how-to-use-helper-methods) to do those things.
 
 ### How to use helper methods
 We will illustrate the use of helper methods with an example. For instance, let's say you need to login to your application.
