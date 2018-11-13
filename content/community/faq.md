@@ -11,10 +11,10 @@ polyglot:
 # Getting started and help
 
 ## How do I get started with Cucumber?
-If you'd like to just get started, try the [10-minute tutorial](/guides/10-minute-tutorial).
+To get started from scratch, try the [10-minute tutorial](/guides/10-minute-tutorial).
 {{% block "java" %}}
 If you'd prefer to get started with a working project (or if you are having trouble getting the tutorial to work),
-you can get started with the [cucumber java-skeleton](). This project is designed to work "out of the box".
+you can get started with the [cucumber java-skeleton](https://github.com/cucumber/cucumber-java-skeleton). This project is designed to work "out of the box".
 {{% /block %}}
 
 You can read these docs to learn more about [Gherkin](/gherkin/reference),[Cucumber](/cucumber/api) and [BDD](/bdd/overview).
@@ -39,6 +39,9 @@ How to install Cucumber, depends on which programming language you are using.
 You can find information on how to install your flavour of Cucumber on the [installation](/installation) page.
 
 ## Which version of Cucumber should I use?
+In general, it is recommended to use the most recently released version of Cucumber for your programming language.
+Each release will fix known bugs and/or add new features.
+
 You can find the most recent version of Cucumber either in the [10-minute tutorial](/guides/10-minute-tutorial), the [installation](/installation) page or on GitHub.
 {{% block "java" %}}
 Note that with cucumber-jvm v2.x, the groupId has changed from `info.cukes` to `io.cucumber`.
@@ -51,7 +54,7 @@ Running though CLI (how to) - see:
 https://groups.google.com/forum/#!topic/cukes/bM_ZHHwks8U
 https://www.jeroenreijn.com/2017/10/running-cucumber-from-the-command-line.html
 
-## Cucumber says my steps are undefined, but I have!
+## Cucumber says my steps are undefined, but I have implemented step definitions!
 If Cucumber is telling you that your steps are undefined, when you do have step definitions, this means that Cucumber cannot *find* your step definitions. 
 You'll need to make sure to specify the path to your step definitions (glue path) correctly.
 
