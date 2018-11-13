@@ -57,10 +57,12 @@ Parameter Type  | Description
 `{float}`       | Matches floats, for example `3.6`, `.8` or `-9.2`.
 `{word}`        | Matches words without whitespace, for example `banana` (but not `banana split`)
 `{string}`      | Matches single-quoted or double-quoted strings, for example `"banana split"` or `'banana split'` (but not `banana split`). Only the text between the quotes will be extracted. The quotes themselves are discarded.
+`{}` anonymous  | Matches anything (`/.*/`). 
 
 {{% block "java,kotlin" %}}
 On the JVM, there are additional parameter types for `biginteger`, `bigdecimal`,
-`byte`, `short`, `long` and `double`.
+`byte`, `short`, `long` and `double`. The anonymous parameter type will be 
+converted to the parameter type of the step definition.
 {{% /block %}}
 
 # Custom Parameter types
@@ -169,6 +171,16 @@ opening `(` or `{` with a backslash:
     I have 42 \{what} cucumber(s) in my belly \(amazing!)
 
 This expression would match the following examples:
+
+    I have 42 {what} cucumber in my belly (amazing!)
+    I have 42 {what} cucumbers in my belly (amazing!)
+    
+You may have to escape the `\` character itself with another `\`, depending on your programming language.
+For example, in Java, you have to use escape character `\` with another backslash.
+
+    I have 42 \\{what} cucumber(s) in my belly \\(amazing!)
+    
+Then this expression would match the following example:
 
     I have 42 {what} cucumber in my belly (amazing!)
     I have 42 {what} cucumbers in my belly (amazing!)

@@ -67,9 +67,18 @@ dependencies {
     testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
 }
 ```
+3. Add the following configuration to `build.gradle`
 
-3.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` respectively in a `gradle.cucumber` package.
-4.  Add the following Gradle `cucumber` task in `build.gradle`
+```
+configurations {
+    cucumberRuntime {
+        extendsFrom testRuntime
+    }
+}
+```
+
+4.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` respectively in a `gradle.cucumber` package.
+5.  Add the following Gradle `cucumber` task in `build.gradle`
 
 ```
 task cucumber() {
@@ -84,7 +93,7 @@ task cucumber() {
 }
 ```
 
-5.  Run the following gradle task from the directory path where `build.gradle` file is located:
+6.  Run the following gradle task from the directory path where `build.gradle` file is located:
 
 ```shell
 gradle cucumber
