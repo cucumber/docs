@@ -49,17 +49,13 @@ If you cannot find a version newer than 1.2.5, change the groupId in your depend
 {{% /block %}}
 
 ## How do I run Cucumber?
-issues with runners / how to run
-Running though CLI (how to) - see:
-https://groups.google.com/forum/#!topic/cukes/bM_ZHHwks8U
-https://www.jeroenreijn.com/2017/10/running-cucumber-from-the-command-line.html
+For information on how to run Cucumber, see [Running Cucumber](/cucumber/api/#running-cucumber).
+
+For additional configuration options, see [Configuration](/cucumber/configuration/).
 
 ## Cucumber says my steps are undefined, but I have implemented step definitions!
 If Cucumber is telling you that your steps are undefined, when you do have step definitions, this means that Cucumber cannot *find* your step definitions. 
 You'll need to make sure to specify the path to your step definitions (glue path) correctly.
-
-// todo:
-where does it look for the glue by default, how to set where to find the glue) - so many StackOverflow questions...
 
 {{% block "java" %}}
 By default Cucumber-JVM will search in the package (or sub-packages) of the runner class.
@@ -72,9 +68,10 @@ You can also tell Cucumber-JVM explicitly which packages (and sub-packages) to s
 
 ## How to call other steps or scenarios?
 Each scenarios should be independent; you should be able to run them in any order or in parallel without one scenario interfering with another.
-Each scenario should test exactly one thing so that when it fails, it fails for a clear reason.
-This means you wouldn't reuse one scenario inside another scenario.
-If your scenarios use the same or similar steps, or or perform similar actions on your system, you can extract helper methods to do those things.
+
+Each scenario should test exactly one thing so that when it fails, it fails for a clear reason. This means you wouldn't reuse one scenario inside another scenario.
+
+If your scenarios use the same or similar steps, or or perform similar actions on your system, you can extract *helper methods* to do those things.
 
 For example, let's say you need to login to your application. 
 If you want to (re)use this action as a step or part of another step, write a method for login.
@@ -109,7 +106,7 @@ Then the user will be notified
 This way, if the implementation of how the user is notified changes, you will only have to change the step definition (or the helper method called by that step definition),
 rather than the step itself **and** all underlying code.
 
-For more information, have a look at [Writing maintainable automated acceptance tests (pdf).](http://dhemery.com/pdf/writing_maintainable_automated_acceptance_tests.pdf)
+For more information, have a look at [Writing better Gherkin](/bdd/better-gherkin/)and/or [Writing maintainable automated acceptance tests (pdf).](http://dhemery.com/pdf/writing_maintainable_automated_acceptance_tests.pdf)
 
 ## How can I specify my test cases in Excel / csv?
 One of the goals of Cucumber is to have *executable specifications*. 
@@ -121,18 +118,18 @@ For instance, if you have a form where you need to populate lots of different fi
 
 ## How can I make Cucumber conditionally skip steps
 Each scenario should test one thing and fail for one particular reason.
-This means there is no reason to skip steps.
+This means there should be  no reason to skip steps.
 
 If there seems to be a reason you'd want to skip steps conditionally, you probably have an anti-pattern.
-For instance, you might not be in control of your test environment or test data.
-The best thing would be to fix the root cause.
+For instance, you might be trying to test multiple things in one scenario or you might not be in control of the state of your test environment or test data.
+The best thing to do here is to fix the root cause.
 
 ## Taking a screenshot after (failed) steps
 Taking a screenshot when a scenario fails, might help you to figure out what went wrong.
 To take a screenshot on failure, you can configure an after hook.
 
 Note that taking a screenshot after every step is considered an anti-pattern. 
-You should be able to rely on your test automation; you shouldn't need to check every step of your scenario with a screenshot.
+You should be able to rely on your test automation, without having to check every step of your scenario with a screenshot.
 Your automation should be stable and tests should fail for a clear reason.
     
 # How do I share state between steps?
