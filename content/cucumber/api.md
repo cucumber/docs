@@ -5,7 +5,6 @@ polyglot:
  - java
  - javascript
  - ruby
-markup: mmark
 
 weight: 2
 ---
@@ -590,7 +589,6 @@ Another way to run a subset of scenarios is to use the `file.feature:line` patte
 ### Tag expressions
 A tag expression is simply an *infix boolean expression*. Below are some examples:
 
-{.table .is-bordered}
 Expression           | Description
 ---------------------|---------------------------------------------------------:
 `@fast`              | Scenarios tagged with `@fast`
