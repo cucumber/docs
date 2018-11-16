@@ -139,72 +139,7 @@ rich meaningful test reports (or "living documentation") that report not only th
 test results, but also which features have been tested.
 
 A detailed tutorial on using Cucumber-JVM with Serenity can be found
-[here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html).
-
-The above scenario might be written for Serenity like this:
-
-```java
-package com.example.features.steps;
-
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import net.serenitybdd.demos.todos.pages.GoogleHomePage;
-import net.serenitybdd.demos.todos.pages.SearchResultsPage;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
-public class SearchSteps {
-
-    GoogleHomePage googleHomePage;
-    SearchResultsPage searchResultsPage;
-
-    @Given("^I am on the Google search page$")
-    public void i_am_on_the_Google_search_page() throws Throwable {
-        googleHomePage.open();
-    }
-
-    @When("^I search for \"([^\"]*)\"$")
-    public void i_search_for(String searchTerm) throws Throwable {
-        googleHomePage.searchBy(searchTerm);
-    }
-
-    @Then("^the page title should start with \"([^\"]*)\"$")
-    public void the_page_title_should_start_with(String expectedTitleStart) throws Throwable {
-        assertThat(searchResultsPage.getTitle().toLowerCase())
-                 .startsWith(expectedTitleStart.toLowerCase());
-    }
-}
-```
-
-In this example, the `WebDriver` interaction is delegated to `PageObject` subclasses.
-Serenity has built-in support for PageObjects, which might look like this:
-
-```java
-@DefaultUrl("http://www.google.com")
-public class GoogleHomePage extends PageObject {
-
-    public static final String FOOTER_TO_APPEAR = "#foot";
-
-    @FindBy(name = "q")
-    private WebElementFacade searchField;
-
-    public void searchBy(String searchTerm) {
-        // Enter something to search for and submit the form
-        searchField.type(searchTerm)
-                   .then()
-                   .sendKeys(Keys.RETURN);
-
-        // Google's search page is rendered dynamically with JavaScript.
-        // Wait for the footer to appear to know that the search is complete.
-        waitFor(FOOTER_TO_APPEAR);
-    }
-}
-
-public class SearchResultsPage extends PageObject {}
-```
-
-More information on [Serenity](http://serenity-bdd.info).
+[here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html), and more information on Serenity can be found on their [official website](http://serenity-bdd.info).
 
 {{% /text %}}
 
