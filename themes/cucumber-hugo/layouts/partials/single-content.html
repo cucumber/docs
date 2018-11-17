@@ -10,10 +10,7 @@
       {{ end }}
       <div class="content">
        {{- with .Content -}}
-      </div>
-
-      <div>
-         {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1} ${3}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a>` | safeHTML }}
+       {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1} ${3}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a>` | safeHTML }}
       </div>
      {{- end -}}
     </div>
