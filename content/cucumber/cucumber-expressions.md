@@ -60,9 +60,14 @@ Parameter Type  | Description
 
 {{% block "java" %}}
 On the JVM, there are additional parameter types for `biginteger`, `bigdecimal`,
-`byte`, `short`, `long` and `double`. The anonymous parameter type will be 
-converted to the parameter type of the step definition.
-{{% /block %}}
+`byte`, `short`, `long` and `double`. 
+
+The anonymous parameter type will be converted to the parameter type of the step definition using an object mapper. 
+Cucumber comes with a built-in object mapper that can handle most basic types. Aside from `Enum` it supports conversion 
+to `BigInteger`, `BigDecimal`, `Byte`, `Short`, `Integer`, `Long`, `Float`, `Double` and `String`.
+
+To automatically convert to other types it is recommended to install an object mapper. See [configuration](/cucumber/configuration)
+to learn how.{{% /block %}}
 
 # Custom Parameter types
 
