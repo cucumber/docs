@@ -798,7 +798,7 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 
@@ -812,7 +812,7 @@ The `@CucumberOptions` can be used to provide
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
 
 ```java
-package mypackage;
+package com.example;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -820,13 +820,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty", "html:target/cucumber"})
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this: 
 
 ```java
-package mypackage;
+package com.example;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -834,7 +834,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(dryRun=true)
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 The default option for `dryRun` is `false`.
@@ -842,7 +842,7 @@ The default option for `dryRun` is `false`.
 For example if you want console output from Cucumber in a readable format, you can specify it like this: 
 
 ```java
-package mypackage;
+package com.example;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -850,7 +850,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome=true)
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 The default option for `monochrome` is `false`.
@@ -858,7 +858,7 @@ The default option for `monochrome` is `false`.
 For example if you want to skip undefined steps from execution, you can specify it like this: 
 
 ```java
-package mypackage;
+package com.example;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -866,7 +866,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(strict=false)
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 The default option for `strict` is `false`.
