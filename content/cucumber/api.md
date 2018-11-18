@@ -6,7 +6,6 @@ polyglot:
  - javascript
  - ruby
  - kotlin
-markup: mmark
 
 weight: 2
 ---
@@ -703,7 +702,7 @@ The most common option is to run Cucumber from the command line.
 
 By default, Cucumber will treat anything ending in
 {{% text "java" %}}`.java`{{% /text %}}
-{{% text "java" %}}`.kt`{{% /text %}}
+{{% text "kotlin" %}}`.kt`{{% /text %}}
 {{% text "javascript" %}}`.js`{{% /text %}}
 {{% text "ruby" %}}`.rb`{{% /text %}} under the root
 {{% text "java,kotlin,javascript" %}}resource{{% /text %}}

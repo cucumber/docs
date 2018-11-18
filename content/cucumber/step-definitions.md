@@ -76,6 +76,25 @@ class MyStepdefs : En {
 
 {{% /block %}}
 
+{{% block "kotlin" %}}
+
+```kotlin
+package foo
+import cucumber.api.java8.En
+
+class MyStepdefs : En {
+
+    init {
+        Given("I have {int} cukes in my belly") { cukes: Int -> 
+                prinln("Cukes: $cukes")
+        }
+    }
+
+}
+```
+
+{{% /block %}}
+
 {{% block "ruby" %}}
 ```ruby
 Given('I have {int} cukes in my belly') do |cukes|

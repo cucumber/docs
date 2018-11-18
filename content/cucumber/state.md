@@ -290,7 +290,7 @@ Cucumber Options.
 ```java
 @RunWith(Cucumber.class)
 @CucumberOptions(glue = {"your.own.glue.code", "cucumber.api.spring"})
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 

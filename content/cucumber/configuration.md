@@ -21,6 +21,17 @@ of `cucumber.api.TypeRegistryConfigurer` on the glue path.
 For instance, the following class registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity:
 
 ```java
+package com.example;
+
+import cucumber.api.TypeRegistry;
+import cucumber.api.TypeRegistryConfigurer;
+import io.cucumber.cucumberexpressions.ParameterType;
+import io.cucumber.datatable.DataTableType;
+
+import java.util.Locale;
+
+import static java.util.Locale.ENGLISH;
+
 public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 
     @Override
@@ -30,20 +41,102 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 
     @Override
     public void configureTypeRegistry(TypeRegistry typeRegistry) {
-        typeRegistry.defineParameterType(new ParameterType<Integer>(
+        typeRegistry.defineParameterType(new ParameterType<>(
             "digit",
             "[0-9]",
             Integer.class,
-            new Transformer<Integer>() {
-                @Override
-                public Integer transform(String s) throws Throwable {
-                    return Integer.parseInt(s);
-                }
-            })
+            (String s) -> Integer.parseInt(s))
         );
 
         typeRegistry.defineDataTableType(new DataTableType(
             ItemQuantity.class,
+            (String s) -> new ItemQuantity(s))
+        );
+    }
+}
+```
+
+```kotlin
+package com.example
+
+import cucumber.api.TypeRegistryConfigurer
+import cucumber.api.TypeRegistry
+import io.cucumber.datatable.DataTableType
+import io.cucumber.datatable.TableEntryTransformer
+import java.util.Locale
+import java.util.Locale.ENGLISH
+
+class TypeRegistryConfiguration : TypeRegistryConfigurer {
+
+    override fun locale(): Locale {
+        return ENGLISH
+    }
+
+    override fun configureTypeRegistry(typeRegistry: TypeRegistry) {
+        typeRegistry.defineParameterType(ParameterType(
+                LambdaStepdefs.Person::class.java,
+                TableEntryTransformer<LambdaStepdefs.Person>
+                { map: Map<String, String> ->
+                    val person = LambdaStepdefs.Person()
+                    person.first = map.get("first")
+                    person.last = map.get("last")
+                    person
+                }))
+    }
+}
+```
+
+Using the TypeRegistryConfiguration it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this 
+example) will handle the conversion of anonymous parameter types and data table entries.
+
+```java
+package com.example;
+
+import cucumber.api.TypeRegistry;
+import cucumber.api.TypeRegistryConfigurer;
+import io.cucumber.cucumberexpressions.ParameterByTypeTransformer;
+import io.cucumber.datatable.TableCellByTypeTransformer;
+import io.cucumber.datatable.TableEntryByTypeTransformer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.lang.reflect.Type;
+import java.util.Locale;
+import java.util.Map;
+
+import static java.util.Locale.ENGLISH;
+
+public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
+
+    @Override
+    public Locale locale() {
+        return ENGLISH;
+    }
+
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+        Transformer transformer = new Transformer();
+        typeRegistry.setDefaultDataTableCellTransformer(transformer);
+        typeRegistry.setDefaultDataTableEntryTransformer(transformer);
+        typeRegistry.setDefaultParameterTransformer(transformer);
+    }
+
+    private class Transformer implements ParameterByTypeTransformer, TableEntryByTypeTransformer, TableCellByTypeTransformer {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        @Override
+        public Object transform(String s, Type type) {
+            return objectMapper.convertValue(s, objectMapper.constructType(type));
+        }
+
+        @Override
+        public <T> T transform(Map<String, String> map, Class<T> aClass, TableCellByTypeTransformer tableCellByTypeTransformer) {
+            return objectMapper.convertValue(map, aClass);
+        }
+
+        @Override
+        public <T> T transform(String s, Class<T> aClass) {
+            return objectMapper.convertValue(s, aClass);
+        }
             (String s) -> new ItemQuantity(s))
         );
     }
