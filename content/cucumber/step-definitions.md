@@ -12,6 +12,7 @@ weight: 1
 
 A Step Definition is a
 {{% text "java" %}}Java method{{% /text %}}
+{{% text "kotlin" %}}Kotlin function{{% /text %}}
 {{% text "javascript" %}}JavaScript function{{% /text %}}
 {{% text "ruby" %}}Ruby block{{% /text %}}
 with an [expression](#expressions) that links it to one or more [Gherkin steps](/gherkin/reference#steps).
@@ -32,7 +33,7 @@ package foo;
 import cucumber.api.java.en.Given;
 
 public class MyStepdefs {
-    @Given("I have (\\d+) cukes in my belly")
+    @Given("I have {int} cukes in my belly")
     public void i_have_n_cukes_in_my_belly(int cukes) {
         System.out.format("Cukes: %n\n", cukes);
     }
@@ -47,7 +48,7 @@ import cucumber.api.java8.En;
 
 public class MyStepdefs implements En {
     public MyStepdefs() {
-        Given("I have (\\d+) cukes in my belly", (Integer cukes) -> {
+        Given("I have {int} cukes in my belly", (Integer cukes) -> {
             System.out.format("Cukes: %n\n", cukes);
         });
     }
@@ -57,8 +58,20 @@ public class MyStepdefs implements En {
 
 {{% block "kotlin" %}}
 You can also use Kotlin to implement your step definitions.
+
 ```kotlin
-// todo
+package foo
+import cucumber.api.java8.En
+
+class MyStepdefs : En {
+
+    init {
+        Given("I have {int} cukes in my belly") { cukes: Int -> 
+                prinln("Cukes: $cukes")
+        }
+    }
+
+}
 ```
 
 {{% /block %}}
@@ -87,8 +100,16 @@ A step definition's *expression* can either be a [Regular Expression](https://en
 
 {{% block "java" %}}
 ```java
-@Given("I have (\\d+) cukes in my belly")
+@Given("I have {int} cukes in my belly")
 public void i_have_n_cukes_in_my_belly(int cukes) {
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+Given("I have {int} cukes in my belly") { cukes: Int -> 
+        prinln("Cukes: $cukes")
 }
 ```
 {{% /block %}}
@@ -161,6 +182,13 @@ public void i_have_red_balls(int int1) {
 ```
 {{% /block %}}
 
+{{% block "kotlin" %}}
+```kotlin
+@Given("I have {int} red balls") { balls: Int ->
+}
+```
+{{% /block %}}
+
 {{% block "ruby" %}}
 ```ruby
 Given('I have {int} red balls') do |int1|
@@ -183,6 +211,13 @@ parameter type exists, Cucumber would use that in the suggested expression:
 ```java
 @Given("I have {int} {color} balls")
 public void i_have_red_balls(int int1, Color color) {
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+@Given("I have {int} {color} balls") { balls: Int, color: Color ->
 }
 ```
 {{% /block %}}
