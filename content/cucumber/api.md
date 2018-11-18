@@ -591,7 +591,6 @@ Another way to run a subset of scenarios is to use the `file.feature:line` patte
 ### Tag expressions
 A tag expression is simply an *infix boolean expression*. Below are some examples:
 
-{.table .is-bordered}
 Expression           | Description
 ---------------------|---------------------------------------------------------:
 `@fast`              | Scenarios tagged with `@fast`
@@ -689,12 +688,12 @@ unspecified scenarios to manageable levels. Those following [Kanban](http://en.w
 # Running Cucumber
 
 Cucumber is a
-{{% text "java" %}}JUnit extension.{{% /text %}}
+{{% text "java,kotlin" %}}JUnit extension.{{% /text %}}
 {{% text "javascript,ruby" %}}command line tool.{{% /text %}}
 It is launched by running
-{{% text "java" %}}JUnit from your build tool or your IDE.{{% /text %}}
+{{% text "java,kotlin" %}}JUnit from your build tool or your IDE.{{% /text %}}
 {{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
-{{% text "javascript" %}}`cucumber` from the command line, or a build script.{{% /text %}}
+{{% text "ruby" %}}`cucumber` from the command line, or a build script.{{% /text %}}
 
 It is possible to [configure](/cucumber/configuration) how Cucumber should run features.
 
@@ -704,17 +703,19 @@ The most common option is to run Cucumber from the command line.
 
 By default, Cucumber will treat anything ending in
 {{% text "java" %}}`.java`{{% /text %}}
+{{% text "java" %}}`.kt`{{% /text %}}
 {{% text "javascript" %}}`.js`{{% /text %}}
 {{% text "ruby" %}}`.rb`{{% /text %}} under the root
-{{% text "java, javascript" %}}resource{{% /text %}}
+{{% text "java,kotlin,javascript" %}}resource{{% /text %}}
 {{% text "ruby" %}}library{{% /text %}} directory as a step definition file.
 
 Thus, a step contained in
 {{% text "java" %}}`features/models/entities/step-definitions/anything.java`{{% /text %}}
+{{% text "kotlin" %}}`features/models/entities/step-definitions/anything.kt`{{% /text %}}
 {{% text "javascript" %}}`features/models/entities/step-definitions/anything.js`{{% /text %}}
 {{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
 can be used in a feature file contained in
-{{% text "java, javascript" %}}`features/views/entity-new`{{% /text %}}
+{{% text "java,kotlin,javascript" %}}`features/views/entity-new`{{% /text %}}
 {{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
 , provided that:
 
@@ -740,7 +741,7 @@ cucumber
 
 {{% /block %}}
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 The **Command-Line Interface Runner (CLI Runner)** is an executable Java class that can be run from the command-line.
 
 ```
@@ -775,7 +776,7 @@ You can also run features using a [build tool](/tools/general#build-tools) or an
 
 ## JUnit
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency to your pom.
 
 ```xml
@@ -801,7 +802,21 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-public class RunCukesTest {
+@CucumberOptions()
+public class RunCucumberTest {
+}
+```
+
+```kotlin
+package com.example
+
+import cucumber.api.CucumberOptions
+import cucumber.api.junit.Cucumber
+import org.junit.runner.RunWith
+
+@RunWith(Cucumber::class)
+@CucumberOptions()
+class RunCucumberTest {
 }
 ```
 
@@ -815,7 +830,7 @@ The `@CucumberOptions` can be used to provide
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
 
 ```java
-package mypackage;
+package com.example;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -823,13 +838,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty", "html:target/cucumber"})
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
-For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this:
+For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this: 
 
 ```java
-package mypackage;
+package com.example;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -837,7 +852,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(dryRun=true)
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 The default option for `dryRun` is `false`.
@@ -845,7 +860,7 @@ The default option for `dryRun` is `false`.
 For example if you want console output from Cucumber in a readable format, you can specify it like this: 
 
 ```java
-package mypackage;
+package com.example;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -853,7 +868,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome=true)
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 The default option for `monochrome` is `false`.
@@ -861,7 +876,7 @@ The default option for `monochrome` is `false`.
 For example if you want to skip undefined steps from execution, you can specify it like this: 
 
 ```java
-package mypackage;
+package com.example;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -869,7 +884,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(strict=false)
-public class RunCukesTest {
+public class RunCucumberTest {
 }
 ```
 The default option for `strict` is `false`.
