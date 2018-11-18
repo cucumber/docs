@@ -89,7 +89,11 @@ The{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
 ```
 
 ```kotlin
-// todo
+@Given("^I have a CV and I'm on the edit description page$")
+fun I_have_a_CV_and_Im_on_the_edit_description_page() {
+    val employee = Employee("Sally")
+    employee.createCV()
+}
 ```
 
 ```javascript
