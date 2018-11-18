@@ -686,12 +686,12 @@ unspecified scenarios to manageable levels. Those following [Kanban](http://en.w
 # Running Cucumber
 
 Cucumber is a
-{{% text "java" %}}JUnit extension.{{% /text %}}
+{{% text "java,kotlin" %}}JUnit extension.{{% /text %}}
 {{% text "javascript,ruby" %}}command line tool.{{% /text %}}
 It is launched by running
-{{% text "java" %}}JUnit from your build tool or your IDE.{{% /text %}}
+{{% text "java,kotlin" %}}JUnit from your build tool or your IDE.{{% /text %}}
 {{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
-{{% text "javascript" %}}`cucumber` from the command line, or a build script.{{% /text %}}
+{{% text "ruby" %}}`cucumber` from the command line, or a build script.{{% /text %}}
 
 It is possible to [configure](/cucumber/configuration) how Cucumber should run features.
 
@@ -701,17 +701,19 @@ The most common option is to run Cucumber from the command line.
 
 By default, Cucumber will treat anything ending in
 {{% text "java" %}}`.java`{{% /text %}}
+{{% text "java" %}}`.kt`{{% /text %}}
 {{% text "javascript" %}}`.js`{{% /text %}}
 {{% text "ruby" %}}`.rb`{{% /text %}} under the root
-{{% text "java, javascript" %}}resource{{% /text %}}
+{{% text "java,kotlin,javascript" %}}resource{{% /text %}}
 {{% text "ruby" %}}library{{% /text %}} directory as a step definition file.
 
 Thus, a step contained in
 {{% text "java" %}}`features/models/entities/step-definitions/anything.java`{{% /text %}}
+{{% text "kotlin" %}}`features/models/entities/step-definitions/anything.kt`{{% /text %}}
 {{% text "javascript" %}}`features/models/entities/step-definitions/anything.js`{{% /text %}}
 {{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
 can be used in a feature file contained in
-{{% text "java, javascript" %}}`features/views/entity-new`{{% /text %}}
+{{% text "java,kotlin,javascript" %}}`features/views/entity-new`{{% /text %}}
 {{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
 , provided that:
 
@@ -737,7 +739,7 @@ cucumber
 
 {{% /block %}}
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 The **Command-Line Interface Runner (CLI Runner)** is an executable Java class that can be run from the command-line.
 
 ```
@@ -772,7 +774,7 @@ You can also run features using a [build tool](/tools/general#build-tools) or an
 
 ## JUnit
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency to your pom.
 
 ```xml
@@ -798,7 +800,21 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
+@CucumberOptions()
 public class RunCucumberTest {
+}
+```
+
+```kotlin
+package com.example
+
+import cucumber.api.CucumberOptions
+import cucumber.api.junit.Cucumber
+import org.junit.runner.RunWith
+
+@RunWith(Cucumber::class)
+@CucumberOptions()
+class RunCucumberTest {
 }
 ```
 
