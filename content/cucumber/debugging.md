@@ -5,6 +5,7 @@ polyglot:
  - java
  - kotlin
  - ruby
+ - kotlin
 
 ---
 {{% block "ruby" %}}
