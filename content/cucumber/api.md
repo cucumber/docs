@@ -394,7 +394,6 @@ AfterStep((Scenario scenario) -> {
 });
 ```
 
-```
 {{% /block %}}
 {{% block "javascript" %}}Cucumber.js does not support `AfterStep` hooks.{{% /block %}}
 
