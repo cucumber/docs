@@ -352,6 +352,7 @@ pass, the following step and its hooks will be skipped.
 
 {{% text "ruby" %}}Cucumber-Ruby does not support `BeforeStep` hooks.{{% /text %}}
 
+{{% text "java" %}}
 ```java
 @BeforeStep
 public void doSomethingBeforeStep(Scenario scenario){
@@ -365,6 +366,7 @@ BeforeStep((Scenario scenario) -> {
     
 });
 ```
+{{% /text %}}
 
 {{% text "javascript" %}}Cucumber.js does not support `BeforeStep` hooks.{{% /text %}}
 
