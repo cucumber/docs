@@ -9,8 +9,9 @@
         {{ partial "language-tabs.html" . }}
       {{ end }}
       <div class="content">
-        {{ .Content }}
+       {{- with .Content -}}{{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" aria-label="Anchor"> 🔗&#xFE0E;</a>${3}` | safeHTML }}
       </div>
+     {{- end -}}
     </div>
     <hr>
     <div>
