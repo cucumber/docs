@@ -6,4 +6,4 @@ implementation: official
 weight: 1140
 ---
 
-Please see the [Cucumber-JVM installation docs](/installation/java).
+Please see the [Cucumber-Android project on GitHub](https://github.com/cucumber/cucumber-android).
