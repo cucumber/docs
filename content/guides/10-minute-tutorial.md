@@ -534,7 +534,7 @@ public void today_is_Sunday() {
 }
 
 @When("^I ask whether it's Friday yet$")
-public void i_ask_whether_is_s_Friday_yet() {
+public void i_ask_whether_it_s_Friday_yet() {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
 }
@@ -681,7 +681,7 @@ Feature: Is it Friday yet?
 	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:12)
 	at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
 
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
 1 Scenarios (1 pending)
