@@ -409,3 +409,6 @@ In order to allow Gherkin to be written in a number of languages, the English ke
 A list of the currently supported languages and their keywords can be found below.
 
 {{% gherkin-i18n-table %}}
+
+## Gherkin Rule
+The **Rule** keyword is optional and it is simply a grouping construct. It can be used to group Scenarios that are related to the same Rule.
