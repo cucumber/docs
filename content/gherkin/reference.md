@@ -96,7 +96,7 @@ Free-form descriptions (as described above for `Feature`) can also be placed und
 You can write anything you like, as long as no line starts with a keyword.
 
 ## Rule
-The Rule keyword is an optional keyword. It can be used to group scenarios that exemplify the same rule.
+The `Rule` keyword is an optional keyword. It can be used to group scenarios that exemplify the same rule.
 
 ## Example
 
