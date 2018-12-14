@@ -39,6 +39,7 @@ Each line that isn't a blank line has to start with a Gherkin *keyword*, followe
 The primary keywords are:
 
 - `Feature`
+- `Rule`
 - `Example` (or `Scenario`)
 - `Given`, `When`, `Then`, `And`, `But`  (steps)
 - `Background`
@@ -93,6 +94,9 @@ Free-form descriptions (as described above for `Feature`) can also be placed und
 `Example`, `Background`, `Scenario` and `Scenario Outline`.
 
 You can write anything you like, as long as no line starts with a keyword.
+
+## Rule
+The Rule keyword is an optional keyword. It can be used to group scenarios that exemplify the same rule.
 
 ## Example
 
@@ -409,6 +413,3 @@ In order to allow Gherkin to be written in a number of languages, the English ke
 A list of the currently supported languages and their keywords can be found below.
 
 {{% gherkin-i18n-table %}}
-
-## Gherkin Rule
-The **Rule** keyword is optional and it is simply a grouping construct. It can be used to group Scenarios that are related to the same Rule.
