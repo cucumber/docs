@@ -44,6 +44,7 @@ The primary keywords are:
 - `Background`
 - `Scenario Outline` (or `Scenario Template`)
 - `Examples`
+- `Rule`
 
 There are a few secondary keywords as well:
 
@@ -82,7 +83,7 @@ The name and the optional description have no special meaning to Cucumber. Their
 a place for you to document important aspects of the feature, such as a brief explanation
 and a list of business rules (general acceptance criteria).
 
-The free format description for `Feature` ends when you start a line with the keyword `Scenario` or `Scenario Outline`.
+The free format description for `Feature` ends when you start a line with the keyword `Rule`, `Example` or `Scenario Outline` (or their alias keywords).
 
 You can place [tags](/cucumber/api/#tags) above `Feature` to group related features,
 independent of your file and directory structure.
@@ -90,7 +91,7 @@ independent of your file and directory structure.
 ## Descriptions
 
 Free-form descriptions (as described above for `Feature`) can also be placed underneath
-`Example`, `Background`, `Scenario` and `Scenario Outline`.
+`Example`/`Scenario`, `Background`, `Scenario Outline` and `Rule`.
 
 You can write anything you like, as long as no line starts with a keyword.
 
@@ -330,6 +331,60 @@ to match the step against a step definition.
 
 You can also use parameters in [multiline step arguments](#step-arguments).
 
+## Rule
+
+The `Rule` entity is a rather new idiom in Gherkin (since Gherkin v6).
+Each `Rule` is intended to represent one *business rule* that should be implemented.
+A `Rule` is used to group together several `Example` (aka: `Scenario`) / `Scenario Outline`
+that belong to this *business rule*. In addition, a `Rule` may contain a `Background` section.
+
+Rule parent:
+
+- `Feature` (cardinality: one)
+
+Rule children:
+
+- `Description` (cardinality: optional, `0 .. 1`)
+- `Background` (cardinality: optional, `0 .. 1`)
+- `Example`/`Scenario` (cardinality: many, `0 .. N`)
+- `Scenario Outline`/`Scenario Template` (cardinality: many, `0 .. N`)
+
+Rule constraints:
+
+- A `Rule` should have at least one child (that is neither `Description` nor `Background`).
+
+Rule supports:
+
+- `Tags`: Allows to select a `Rule`(s) as part of a runnable set for a test runner.
+- Grouping: Of `Example`/`Scenario`, `Scenario Outline` (and `Background`)
+
+Example:
+
+```gherkin
+# -- FILE: features/gherkin.rule_example.feature
+Feature: Highlander
+
+  Rule: There can be only One
+
+    Background:
+      Given there are 3 ninjas
+
+    Example: Only One -- More than one alive
+      Given there are more than one ninjas alive
+      When 2 ninjas meet, they will fight
+      Then one ninja dies (but not me)
+      And there is one ninja less alive
+
+    Example: Only One -- One alive
+      Given there is only 1 ninja alive
+      Then he (or she) will live forever ;-)
+
+  Rule: There can be Two (in some cases)
+
+    Example: Two -- Dead and Reborn as Phoenix
+      ...
+```
+
 # Step Arguments
 
 In some cases you might want to pass more data to a step than fits on a single line.
@@ -371,6 +426,7 @@ Just like `Doc Strings`, `Data Tables` will be passed to the step definition as 
 Cucumber provides a rich API for manipulating tables from within step definitions.
 See the [Data Table API reference](https://github.com/cucumber/cucumber/tree/master/datatable) reference for
 more details.
+
 
 # Spoken Languages
 
