@@ -427,7 +427,6 @@ Cucumber provides a rich API for manipulating tables from within step definition
 See the [Data Table API reference](https://github.com/cucumber/cucumber/tree/master/datatable) reference for
 more details.
 
-
 # Spoken Languages
 
 The language you choose for Gherkin should be the same language your users and
