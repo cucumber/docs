@@ -411,7 +411,7 @@ Annotated method style:
 
 ```java
 @After("@browser and not @headless")
-public void doSomethingAfter(){
+public void doSomethingAfter(Scenario scenario){
 }
 ```
 
