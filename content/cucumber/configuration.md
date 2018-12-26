@@ -137,103 +137,10 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
         public <T> T transform(String s, Class<T> aClass) {
             return objectMapper.convertValue(s, aClass);
         }
-            (String s) -> new ItemQuantity(s))
-        );
     }
 }
 ```
 
-```kotlin
-package com.example
-
-import cucumber.api.TypeRegistryConfigurer
-import cucumber.api.TypeRegistry
-import io.cucumber.datatable.DataTableType
-import io.cucumber.datatable.TableEntryTransformer
-import java.util.Locale
-import java.util.Locale.ENGLISH
-
-class TypeRegistryConfiguration : TypeRegistryConfigurer {
-
-    override fun locale(): Locale {
-        return ENGLISH
-    }
-
-    override fun configureTypeRegistry(typeRegistry: TypeRegistry) {
-        typeRegistry.defineParameterType(ParameterType(
-                LambdaStepdefs.Person::class.java,
-                TableEntryTransformer<LambdaStepdefs.Person>
-                { map: Map<String, String> ->
-                    val person = LambdaStepdefs.Person()
-                    person.first = map.get("first")
-                    person.last = map.get("last")
-                    person
-                }))
-    }
-}
-```
-
-Using the TypeRegistryConfiguration it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this 
-example) will handle the conversion of anonymous parameter types and data table entries.
-
-```java
-package com.example;
-
-import cucumber.api.TypeRegistry;
-import cucumber.api.TypeRegistryConfigurer;
-import io.cucumber.cucumberexpressions.ParameterByTypeTransformer;
-import io.cucumber.datatable.TableCellByTypeTransformer;
-import io.cucumber.datatable.TableEntryByTypeTransformer;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.lang.reflect.Type;
-import java.util.Locale;
-import java.util.Map;
-
-import static java.util.Locale.ENGLISH;
-
-public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
-
-    @Override
-    public Locale locale() {
-        return ENGLISH;
-    }
-
-    @Override
-    public void configureTypeRegistry(TypeRegistry typeRegistry) {
-        Transformer transformer = new Transformer();
-        typeRegistry.setDefaultDataTableCellTransformer(transformer);
-        typeRegistry.setDefaultDataTableEntryTransformer(transformer);
-        typeRegistry.setDefaultParameterTransformer(transformer);
-    }
-
-    private class Transformer implements ParameterByTypeTransformer, TableEntryByTypeTransformer, TableCellByTypeTransformer {
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        @Override
-        public Object transform(String s, Type type) {
-            return objectMapper.convertValue(s, objectMapper.constructType(type));
-        }
-
-        @Override
-        public <T> T transform(Map<String, String> map, Class<T> aClass, TableCellByTypeTransformer tableCellByTypeTransformer) {
-            return objectMapper.convertValue(map, aClass);
-        }
-
-        @Override
-        public <T> T transform(String s, Class<T> aClass) {
-            return objectMapper.convertValue(s, aClass);
-        }
-            new TableCellTransformer<ItemQuantity>() {
-                @Override
-                public ItemQuantity transform(String s) {
-                    return new ItemQuantity(s);
-                }
-            })
-        );
-    }
-}
-```
 
 ```kotlin
 package com.example
