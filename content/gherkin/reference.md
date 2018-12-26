@@ -333,32 +333,12 @@ You can also use parameters in [multiline step arguments](#step-arguments).
 
 ## Rule
 
-The `Rule` entity is a rather new idiom in Gherkin (since Gherkin v6).
+The `Rule` keyword has been added in Gherkin v6. Note that Gherkin 6 has not yet been incorporated into all implementation of Cucumber.
 Each `Rule` is intended to represent one *business rule* that should be implemented.
-A `Rule` is used to group together several `Example` (aka: `Scenario`) / `Scenario Outline`
+A `Rule` is used to group together several scenarios 
 that belong to this *business rule*. In addition, a `Rule` may contain a `Background` section.
 
-Rule parent:
-
-- `Feature` (cardinality: one)
-
-Rule children:
-
-- `Description` (cardinality: optional, `0 .. 1`)
-- `Background` (cardinality: optional, `0 .. 1`)
-- `Example`/`Scenario` (cardinality: many, `0 .. N`)
-- `Scenario Outline`/`Scenario Template` (cardinality: many, `0 .. N`)
-
-Rule constraints:
-
-- A `Rule` should have at least one child (that is neither `Description` nor `Background`).
-
-Rule supports:
-
-- `Tags`: Allows to select a `Rule`(s) as part of a runnable set for a test runner.
-- Grouping: Of `Example`/`Scenario`, `Scenario Outline` (and `Background`)
-
-Example:
+For example:
 
 ```gherkin
 # -- FILE: features/gherkin.rule_example.feature
