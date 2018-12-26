@@ -39,6 +39,7 @@ Each line that isn't a blank line has to start with a Gherkin *keyword*, followe
 The primary keywords are:
 
 - `Feature`
+- `Rule` (as of Gherkin 6)
 - `Example` (or `Scenario`)
 - `Given`, `When`, `Then`, `And`, `But`  (steps)
 - `Background`
@@ -82,7 +83,7 @@ The name and the optional description have no special meaning to Cucumber. Their
 a place for you to document important aspects of the feature, such as a brief explanation
 and a list of business rules (general acceptance criteria).
 
-The free format description for `Feature` ends when you start a line with the keyword `Scenario` or `Scenario Outline`.
+The free format description for `Feature` ends when you start a line with the keyword `Rule`, `Example` or `Scenario Outline` (or their alias keywords).
 
 You can place [tags](/cucumber/api/#tags) above `Feature` to group related features,
 independent of your file and directory structure.
@@ -90,9 +91,44 @@ independent of your file and directory structure.
 ## Descriptions
 
 Free-form descriptions (as described above for `Feature`) can also be placed underneath
-`Example`, `Background`, `Scenario` and `Scenario Outline`.
+`Example`/`Scenario`, `Background`, `Scenario Outline` and `Rule`.
 
 You can write anything you like, as long as no line starts with a keyword.
+
+## Rule
+
+The `Rule` keyword has been added in Gherkin v6. (Note that Gherkin 6 has not yet been incorporated into all implementation of Cucumber!)
+The purpose of the `Rule` keyword is to represent one *business rule* that should be implemented.
+It provides additional information for a feature. 
+A `Rule` is used to group together several scenarios 
+that belong to this *business rule*. A `Rule` may contain a `Background` section, and should contain one or more scenarios that illustrate the particular rule.
+
+For example:
+
+```gherkin
+# -- FILE: features/gherkin.rule_example.feature
+Feature: Highlander
+
+  Rule: There can be only One
+
+    Background:
+      Given there are 3 ninjas
+
+    Example: Only One -- More than one alive
+      Given there are more than one ninjas alive
+      When 2 ninjas meet, they will fight
+      Then one ninja dies (but not me)
+      And there is one ninja less alive
+
+    Example: Only One -- One alive
+      Given there is only 1 ninja alive
+      Then he (or she) will live forever ;-)
+
+  Rule: There can be Two (in some cases)
+
+    Example: Two -- Dead and Reborn as Phoenix
+      ...
+```
 
 ## Example
 
