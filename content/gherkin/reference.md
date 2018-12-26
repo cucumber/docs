@@ -95,6 +95,41 @@ Free-form descriptions (as described above for `Feature`) can also be placed und
 
 You can write anything you like, as long as no line starts with a keyword.
 
+## Rule
+
+The `Rule` keyword has been added in Gherkin v6. (Note that Gherkin 6 has not yet been incorporated into all implementation of Cucumber!)
+The purpose of the `Rule` keyword is to represent one *business rule* that should be implemented.
+It provides additional information for a feature. 
+A `Rule` is used to group together several scenarios 
+that belong to this *business rule*. A `Rule` may contain a `Background` section, and should contain one or more scenarios that illustrate the particular rule.
+
+For example:
+
+```gherkin
+# -- FILE: features/gherkin.rule_example.feature
+Feature: Highlander
+
+  Rule: There can be only One
+
+    Background:
+      Given there are 3 ninjas
+
+    Example: Only One -- More than one alive
+      Given there are more than one ninjas alive
+      When 2 ninjas meet, they will fight
+      Then one ninja dies (but not me)
+      And there is one ninja less alive
+
+    Example: Only One -- One alive
+      Given there is only 1 ninja alive
+      Then he (or she) will live forever ;-)
+
+  Rule: There can be Two (in some cases)
+
+    Example: Two -- Dead and Reborn as Phoenix
+      ...
+```
+
 ## Example
 
 This is a *concrete example* that *illustrates* a business rule. It consists of
@@ -330,41 +365,6 @@ Cucumber will replace these parameters with values from the table *before* it tr
 to match the step against a step definition.
 
 You can also use parameters in [multiline step arguments](#step-arguments).
-
-## Rule
-
-The `Rule` keyword has been added in Gherkin v6. Note that Gherkin 6 has not yet been incorporated into all implementation of Cucumber.
-The purpose of the `Rule` keyword is to represent one *business rule* that should be implemented.
-It provides additional information for a feature. 
-A `Rule` is used to group together several scenarios 
-that belong to this *business rule*. A `Rule` may contain a `Background` section, and should contain one or more scenarios that illustrate the particular rule.
-
-For example:
-
-```gherkin
-# -- FILE: features/gherkin.rule_example.feature
-Feature: Highlander
-
-  Rule: There can be only One
-
-    Background:
-      Given there are 3 ninjas
-
-    Example: Only One -- More than one alive
-      Given there are more than one ninjas alive
-      When 2 ninjas meet, they will fight
-      Then one ninja dies (but not me)
-      And there is one ninja less alive
-
-    Example: Only One -- One alive
-      Given there is only 1 ninja alive
-      Then he (or she) will live forever ;-)
-
-  Rule: There can be Two (in some cases)
-
-    Example: Two -- Dead and Reborn as Phoenix
-      ...
-```
 
 # Step Arguments
 
