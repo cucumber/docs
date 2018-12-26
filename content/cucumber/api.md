@@ -432,7 +432,7 @@ Before({tags: '@browser and not @headless'}, function () {
 
 {{% block "ruby" %}}
 ```ruby
-Before('@browser and not @headless' do
+Before('@browser and not @headless') do
 end
 ```
 {{% /block %}}
