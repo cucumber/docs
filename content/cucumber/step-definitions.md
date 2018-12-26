@@ -57,7 +57,6 @@ public class MyStepdefs implements En {
 {{% /block %}}
 
 {{% block "kotlin" %}}
-You can also use Kotlin to implement your step definitions.
 
 ```kotlin
 package foo
