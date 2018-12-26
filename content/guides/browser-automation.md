@@ -78,6 +78,10 @@ public class ExampleSteps {
 }
 ```
 
+```kotlin
+// todo
+```
+
 ```javascript
 var driver = new webdriver.Builder().build();
 driver.get('http://www.google.com');
@@ -287,7 +291,9 @@ mvn test -Ddriver=chrome
 
 {{% text "java" %}}
 Here are a few example project using Java:
+
 - [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
+
 - [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)
 
 {{% /text %}}
