@@ -334,9 +334,10 @@ You can also use parameters in [multiline step arguments](#step-arguments).
 ## Rule
 
 The `Rule` keyword has been added in Gherkin v6. Note that Gherkin 6 has not yet been incorporated into all implementation of Cucumber.
-Each `Rule` is intended to represent one *business rule* that should be implemented.
+The purpose of the `Rule` keyword is to represent one *business rule* that should be implemented.
+It provides additional information for a feature. 
 A `Rule` is used to group together several scenarios 
-that belong to this *business rule*. In addition, a `Rule` may contain a `Background` section.
+that belong to this *business rule*. A `Rule` may contain a `Background` section, and one or more scenarios.
 
 For example:
 
