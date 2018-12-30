@@ -115,6 +115,7 @@ Lambdas are specific to Java and Kotlin.
 {{% block "java,kotlin" %}}
 To use lambdas to define your step definitions, make sure to use the `cucumber-java8` dependency, instead of the `cucumber-java` dependency.
 You can find the required dependencies [here](https://docs.cucumber.io/installation/java/).
+{{% /block %}}
 
 {{% block "java" %}}
 For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java8-calculator/src/test/java/cucumber/examples/java/calculator/RpnCalculatorStepdefs.java).
