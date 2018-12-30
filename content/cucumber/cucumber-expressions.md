@@ -93,7 +93,12 @@ typeRegistry.defineParameterType(new ParameterType<>(
 
 {{% block "kotlin" %}}
 ```kotlin
-// TODO: See Java example
+typeRegistry.defineParameterType(ParameterType<Color>(
+    "color",                            // name
+    "red|blue|yellow",                  // regexp
+    Color::class.java,                  // type
+    { s: String -> Color.getColor(s) }  // transformer function
+))
 ```
 {{% /block %}}
 
