@@ -86,7 +86,7 @@ class TypeRegistryConfiguration : TypeRegistryConfigurer {
 }
 ```
 
-Using the TypeRegistryConfiguration it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this 
+Using the TypeRegistryConfiguration it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this
 example) will handle the conversion of anonymous parameter types and data table entries.
 
 ```java
@@ -170,7 +170,7 @@ class TypeRegistryConfiguration : TypeRegistryConfigurer {
         typeRegistry.setDefaultDataTableEntryTransformer(transformer)
         typeRegistry.setDefaultParameterTransformer(transformer)
     }
-    
+
     class Transformer : ParameterByTypeTransformer, TableEntryByTypeTransformer, TableCellByTypeTransformer {
         val objectMapper: ObjectMapper = ObjectMapper()
 
@@ -361,7 +361,7 @@ So, if you have several profiles with similar values, you might do this:
 
 # Environment Variables
 {{% block "java,kotlin" %}}
-Cucumber-jvm does not support configuration of Cucumber with an `env` file.
+Cucumber-JVM does not support configuration of Cucumber with an `env` file.
 {{% /block %}}
 
 {{% block "javascript" %}}

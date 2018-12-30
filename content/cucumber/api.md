@@ -344,8 +344,33 @@ end
 {{% block "javascript" %}}Cucumber.js does not support `Around` hooks.{{% /block %}}
 
 ## Step hooks
-
+{{% text "java" %}}
+Step hooks invoked before and after a step. The hooks have 'invoke around' semantics. Meaning that if a `BeforeStep`
+hook is executed the `AfterStep` hooks will also be executed regardless of the result of the step. If a step did not 
+pass, the following step and its hooks will be skipped.
+{{% /text %}}
 ### BeforeStep
+
+{{% text "ruby" %}}Cucumber-Ruby does not support `BeforeStep` hooks.{{% /text %}}
+
+{{% text "java" %}}
+```java
+@BeforeStep
+public void doSomethingBeforeStep(Scenario scenario){
+}
+```
+
+Lambda style:
+
+```java
+BeforeStep((Scenario scenario) -> {
+    
+});
+```
+{{% /text %}}
+
+{{% text "javascript" %}}Cucumber.js does not support `BeforeStep` hooks.{{% /text %}}
+
 
 ### AfterStep
 
@@ -356,7 +381,21 @@ end
 ```
 {{% /block %}}
 
-{{% block "java" %}}Cucumber-JVM does not support `AfterStep` hooks.{{% /block %}}
+{{% block "java" %}}
+```java
+@AfterStep
+public void doSomethingAfterStep(Scenario scenario){
+}
+```
+
+Lambda style:
+
+```java
+AfterStep((Scenario scenario) -> {
+});
+```
+
+{{% /block %}}
 {{% block "javascript" %}}Cucumber.js does not support `AfterStep` hooks.{{% /block %}}
 
 ## Tagged hooks
@@ -373,7 +412,7 @@ Annotated method style:
 
 ```java
 @After("@browser and not @headless")
-public void doSomethingAfter(){
+public void doSomethingAfter(Scenario scenario){
 }
 ```
 
@@ -394,7 +433,7 @@ Before({tags: '@browser and not @headless'}, function () {
 
 {{% block "ruby" %}}
 ```ruby
-Before('@browser and not @headless' do
+Before('@browser and not @headless') do
 end
 ```
 {{% /block %}}

@@ -45,26 +45,84 @@ Each release will fix known bugs and/or add new features.
 
 You can find the most recent version of Cucumber either in the [10-minute tutorial](/guides/10-minute-tutorial), the [installation](/installation) page or on [GitHub](https://github.com/cucumber).
 {{% block "java" %}}
-Note that with cucumber-jvm v2.x, the `groupId` has changed from `info.cukes` to `io.cucumber`.
+Note that with Cucumber-JVM v2.x, the `groupId` has changed from `info.cukes` to `io.cucumber`.
 If you cannot find a version newer than 1.2.5, change the groupId in your dependencies.
 {{% /block %}}
 
 ## How do I run Cucumber?
 For information on how to run Cucumber, see [Running Cucumber](/cucumber/api/#running-cucumber).
 
-For additional configuration options, see [Configuration](/cucumber/configuration/).
+## What are the configuration options for running Cucumber?
+For information about configuration options, see [Configuration](/cucumber/configuration/).
+
+{{% block "java,kotlin" %}}
+When running Cucumber with JUnit, you can specify several options on how JUnit should run your tests.
+Check the section on [JUnit](https://docs.cucumber.io/cucumber/api/#junit) for more information.
+
+For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/api/CucumberOptions.java).
+{{% /block %}}
 
 ## Cucumber says my steps are undefined, but I have implemented step definitions!
 If Cucumber is telling you that your steps are undefined, when you have defined step definitions, this means that Cucumber cannot *find* your step definitions.
 You'll need to make sure to specify the path to your step definitions (glue path) correctly.
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 By default Cucumber-JVM will search in the package (or sub-packages) of the runner class.
 You can also tell Cucumber-JVM explicitly which packages (and sub-packages) to search, with:
  ```java
  @CucumberOptions(glue = {"<package>", "<package>", "<etc>"})
  public class RunCucumberTest{}
 ```
+ ```kotlin
+ @CucumberOptions(glue = {"<package>", "<package>", "<etc>"})
+ public class RunCucumberTest{}
+```
+{{% /block %}}
+
+## Cucumber expressions vs regex
+For more information about Cucumber expressions, see the section on [Cucumber expressions](/cucumber/cucumber-expressions/).
+You can still use regular expression (regex) also, but you cannot use Cucumber expressions and regular expressions in the same step definition.
+
+{{% block "java,kotlin" %}}
+Cucumber expressions were added in Cucumber-JVM version 3.0.0.
+
+Note that a step definition using regex will start with `^` and end with `$`, while a step definition using Cucumber expressions will not.
+
+An example using regex:
+```java
+    @Given("^today is ([0-9]{4}-[0-9]{2}-[0-9]{2})$")
+    public void today_is(Date date) {
+        calculator = new DateCalculator(date);
+    }
+```
+
+An example using Cucumber expressions:
+```java
+    @When("I add {int} and {int}")
+    public void adding(int arg1, int arg2) {
+        calc.push(arg1);
+        calc.push(arg2);
+        calc.push("+");
+    }
+```
+{{% /block %}}
+
+## How do I use lambdas to define step definitions?
+{{% block "ruby,javascript" %}}
+Lambdas are specific to Java and Kotlin.
+{{% /block %}}
+
+{{% block "java,kotlin" %}}
+To use lambdas to define your step definitions, make sure to use the `cucumber-java8` dependency, instead of the `cucumber-java` dependency.
+You can find the required dependencies [here](https://docs.cucumber.io/installation/java/).
+{{% /block %}}
+
+{{% block "java" %}}
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java8-calculator/src/test/java/cucumber/examples/java/calculator/RpnCalculatorStepdefs.java).
+{{% /block %}}
+
+{{% block "kotlin" %}}
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/kotlin-java8/src/test/kotlin/cucumber/runtime/kotlin/test/LambdaStepdefs.kt).
 {{% /block %}}
 
 ## How do I call other steps or scenarios?
@@ -128,6 +186,10 @@ For instance, you might be trying to test multiple things in one scenario or you
 
 The best thing to do here is to fix the root cause.
 
+## How can I make Cucumber run the skipped steps after a failed step
+Cucumber skips all steps after a failed step by design. Once a step has failed, the test has failed and there should be no reason to perform the next steps.
+If you have a need to run the additional steps, likely your scenario is testing too many different things at once. Consider splitting your scenario into smaller tests.
+
 ## Taking a screenshot after (failed) steps
 Taking a screenshot when a scenario fails, might help you to figure out what went wrong.
 To take a screenshot on failure, you can configure an [after hook](/cucumber/api/#after).
@@ -135,6 +197,18 @@ To take a screenshot on failure, you can configure an [after hook](/cucumber/api
 Note that taking a screenshot after *every step* is considered an anti-pattern.
 You should be able to rely on your test automation, without having to check every step of your scenario with a screenshot.
 Your automation should be stable and tests should fail for a clear reason.
+
+## Getting weird characters in the console output
+If you are getting some weird additional characters in the output of your steps, like `[32m`, this is a problem with escaping ANSI color codes.
+{{% block "ruby,javascript" %}}
+This is a problem that may occur when using Java.
+{{% /block %}}
+
+{{% block "java,kotlin" %}}
+In order to prevent this problem, you can set the option `monochrome` to `true.
+
+If you are using Eclipse, you might try this [plugin](https://marketplace.eclipse.org/content/ansi-escape-console).
+{{% /block %}}
 
 # How do I share state between steps?
 {{% block "ruby,javascript" %}}
