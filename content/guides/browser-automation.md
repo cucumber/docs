@@ -79,7 +79,7 @@ public class ExampleSteps {
 ```
 
 ```kotlin
-// todo
+// TODO: See Java example
 ```
 
 ```javascript
