@@ -45,7 +45,7 @@ Each release will fix known bugs and/or add new features.
 
 You can find the most recent version of Cucumber either in the [10-minute tutorial](/guides/10-minute-tutorial), the [installation](/installation) page or on [GitHub](https://github.com/cucumber).
 {{% block "java" %}}
-Note that with cucumber-jvm v2.x, the `groupId` has changed from `info.cukes` to `io.cucumber`.
+Note that with cucumber-JVM v2.x, the `groupId` has changed from `info.cukes` to `io.cucumber`.
 If you cannot find a version newer than 1.2.5, change the groupId in your dependencies.
 {{% /block %}}
 
@@ -57,7 +57,7 @@ For information about configuration options, see [Configuration](/cucumber/confi
 
 {{% block "java,kotlin" %}}
 When running Cucumber with JUnit, you can specify several options on how JUnit should run your tests.
-Check the section on [JUnit]((https://docs.cucumber.io/cucumber/api/#junit)) for more information.
+Check the section on [JUnit](https://docs.cucumber.io/cucumber/api/#junit) for more information.
 
 For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/api/CucumberOptions.java).
 {{% /block %}}
