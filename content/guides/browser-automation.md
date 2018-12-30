@@ -45,6 +45,7 @@ import cucumber.api.java.en.When;
 public class ExampleSteps {
 
     private final WebDriver driver = new FirefoxDriver();
+
     @Given("^I am on the Google search page$")
     public void I_visit_google() {
     driver.get("https:\\www.google.com");
@@ -79,7 +80,53 @@ public class ExampleSteps {
 ```
 
 ```kotlin
-// todo
+import cucumber.api.java.After
+import cucumber.api.java.en.Given
+import cucumber.api.java.en.Then
+import cucumber.api.java.en.When
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.support.ui.ExpectedCondition
+import org.openqa.selenium.support.ui.WebDriverWait
+
+class ExampleSteps {
+
+    private val driver = FirefoxDriver()
+
+    init {
+        @Given("^I am on the Google search page$")
+        fun I_visit_google() {
+            driver.get("https:\\www.google.com")
+        }
+
+        @When("^I search for \"(.*)\"$")
+        fun search_for(query: String) {
+            val element = driver.findElement(By.name("q"))
+            // Enter something to search for
+            element.sendKeys(query)
+            // Now submit the form. WebDriver will find the form for us from the element
+            element.submit()
+        }
+
+        @Then("^the page title should start with \"(.*)\"$")
+        fun checkTitle(titleStartsWith: String) {
+            // Google's search is rendered dynamically with JavaScript
+            // Wait for the page to load timeout after ten seconds
+            WebDriverWait(driver, 10L).until(object : ExpectedCondition<Boolean> {
+                override fun apply(d: WebDriver?): Boolean? {
+                    return d!!.title.toLowerCase().startsWith("cheese")
+                    // Should see: "cheese! -Google Search"
+                }
+            })
+        }
+
+        @After
+        fun closeBrowser() {
+            driver.quit()
+        }
+    }
+}
 ```
 
 ```javascript
