@@ -272,7 +272,7 @@ So, if you have several profiles with similar values, you might do this:
 
 # Environment Variables
 {{% block "java" %}}
-Cucumber-jvm does not support configuration of Cucumber with an `env` file.
+Cucumber-JVM does not support configuration of Cucumber with an `env` file.
 {{% /block %}}
 
 {{% block "javascript" %}}

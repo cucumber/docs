@@ -1,6 +1,6 @@
 ---
 title: Kotlin
-subtitle: Cucumber-jvm with Kotlin
+subtitle: Cucumber-JVM with Kotlin
 svg: installation/kotlin.svg
 implementation: official
 weight: 1145
