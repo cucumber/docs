@@ -93,7 +93,7 @@ typeRegistry.defineParameterType(new ParameterType<>(
 
 {{% block "kotlin" %}}
 ```kotlin
-// todo
+// TODO: See Java example
 ```
 {{% /block %}}
 
