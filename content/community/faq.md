@@ -45,7 +45,7 @@ Each release will fix known bugs and/or add new features.
 
 You can find the most recent version of Cucumber either in the [10-minute tutorial](/guides/10-minute-tutorial), the [installation](/installation) page or on [GitHub](https://github.com/cucumber).
 {{% block "java" %}}
-Note that with cucumber-JVM v2.x, the `groupId` has changed from `info.cukes` to `io.cucumber`.
+Note that with Cucumber-JVM v2.x, the `groupId` has changed from `info.cukes` to `io.cucumber`.
 If you cannot find a version newer than 1.2.5, change the groupId in your dependencies.
 {{% /block %}}
 
