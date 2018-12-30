@@ -79,6 +79,34 @@ You can also tell Cucumber-JVM explicitly which packages (and sub-packages) to s
 ```
 {{% /block %}}
 
+## Cucumber expressions vs regex
+For more information about Cucumber expressions, see the section on [Cucumber expressions](/cucumber/cucumber-expressions/).
+You can still use regular expression (regex) also, but you cannot use Cucumber expressions and regular expressions in the same step definition.
+
+{{% block "java,kotlin" %}}
+Cucumber expressions were added in Cucumber-JVM version 3.0.0.
+
+Note that a step definition using regex will start with `^` and end with `$`, while a step definition using Cucumber expressions will not.
+
+An example using regex:
+```java
+    @Given("^today is ([0-9]{4}-[0-9]{2}-[0-9]{2})$")
+    public void today_is(Date date) {
+        calculator = new DateCalculator(date);
+    }
+```
+
+An example using Cucumber expressions:
+```java
+    @When("I add {int} and {int}")
+    public void adding(int arg1, int arg2) {
+        calc.push(arg1);
+        calc.push(arg2);
+        calc.push("+");
+    }
+```
+{{% /block %}}
+
 ## How do I use lambdas to define step definitions?
 {{% block "ruby,javascript" %}}
 Lambdas are specific to Java and Kotlin.
