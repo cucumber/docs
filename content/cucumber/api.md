@@ -165,8 +165,9 @@ Before(() -> {
 Lambda style:
 
 ```kotlin
-Before(() -> {
-});
+Before { scenario: Scenario ->
+    // doSomething
+}
 ```
 {{% /block %}}
 
@@ -247,9 +248,9 @@ Before(10, () -> {
 
 {{% block "kotlin" %}}
 ```kotlin
-Before(10, () -> {
+Before(10) { scenario: Scenario ->
     // Do something before each scenario
-});
+}
 ```
 {{% /block %}}
 
@@ -289,8 +290,9 @@ After((Scenario scenario) -> {
 Lambda style:
 
 ```kotlin
-After((scenario: Scenario) -> {
-});
+After { scenario: Scenario ->
+    // doSomething
+}
 ```
 
 {{% /block %}}
@@ -416,9 +418,9 @@ BeforeStep((Scenario scenario) -> {
 Lambda style:
 
 ```kotlin
-BeforeStep((scenario: Scenario) -> {
-
-});
+BeforeStep { scenario: Scenario ->
+    // doSomething
+}
 ```
 {{% /text %}}
 
@@ -453,8 +455,9 @@ AfterStep((Scenario scenario) -> {
 Lambda style:
 
 ```kotlin
-AfterStep((scenario: Scenario) -> {
-});
+AfterStep { scenario: Scenario ->
+    // doSomething
+}
 ```
 
 {{% /block %}}
@@ -491,8 +494,9 @@ After("@browser and not @headless", (Scenario scenario) -> {
 Lambda style:
 
 ```kotlin
-After("@browser and not @headless", (scenario: Scenario) -> {
-});
+After (arrayOf(@browser and not @headless")) { scenario: Scenario ->
+    driver.quit()
+}
 ```
 {{% /block %}}
 
