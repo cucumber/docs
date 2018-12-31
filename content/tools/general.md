@@ -33,6 +33,7 @@ You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstud
 # IDEs
 
 * [Java IDEs](/tools/java#ides)
+* {Ruby IDEs](/tools/ruby#ides)
 * [CukeTest](http://cuketest.com) is a Gherkin editor and Cucumber.js development tool.
 
 # Build Tools

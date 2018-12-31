@@ -71,9 +71,3 @@ RestAssured is an API automation tool for Java.
 For more information see the [official website](http://rest-assured.io/).
 {{% /block %}}
 
-## Karate
-Karate is an API automation tool for Java.
-
-{{% block "java" %}}
-For more information see the [Karate project on GitHub](https://github.com/intuit/karate).
-{{% /block %}}
