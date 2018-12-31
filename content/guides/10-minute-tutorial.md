@@ -242,7 +242,7 @@ Your `pom.xml` should now look like this:
 </project>
 ```
 * Copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
-IntelliJ will offer to translate the Java code to Kotlin code.
+If you are using IntelliJ, it will offer to translate the Java code to Kotlin code. Otherwise you'll have to write your own.
 
 Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
@@ -273,7 +273,7 @@ To use Kotlin in our project, we need to take some extra steps:
 In IntelliJ, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
 * Create the `hellocucumber` package inside the `kotlin` directory.
 * Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package and copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
-IntelliJ will offer to translate the Java code to Kotlin code.
+If you are using IntelliJ, it will offer to translate the Java code to Kotlin code. Otherwise you'll have to write your own.
 
 Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
