@@ -1,6 +1,7 @@
 ---
 title: Projects using Cucumber
 subtitle: Get some inspiration
+weight: 80
 ---
 
 Here is a list of projects using Cucumber:

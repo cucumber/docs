@@ -1,6 +1,7 @@
 ---
 title: Community blog posts
 subtitle: Random selection of BDD/Cucumber blog posts
+weight: 20
 ---
 
 Here is a list of Cucumber-related blog posts and tutorials.

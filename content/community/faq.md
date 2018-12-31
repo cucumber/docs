@@ -6,6 +6,7 @@ polyglot:
  - javascript
  - ruby
  - kotlin
+weight: 50
 ---
 
 # Getting started and help

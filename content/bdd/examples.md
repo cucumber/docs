@@ -1,5 +1,6 @@
 ---
 title: Examples
+subtitle: "Guidelines on how to use examples"
 ---
 
 Good BDD examples are *concrete* rather than *abstract*. They mention names of 
