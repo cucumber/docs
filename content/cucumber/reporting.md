@@ -73,7 +73,7 @@ public class RunCucumberTest {
 
 ```kotlin
 @RunWith(Cucumber::class)
-@CucumberOptions(plugin = arrayOf("io.cucumber.pro.JsonReporter:default"))
+@CucumberOptions(plugin = ["io.cucumber.pro.JsonReporter:default"])
 class RunCucumberTest
 ```
 
@@ -155,7 +155,7 @@ public class RunCucumberTest {
 
 ```kotlin
 @RunWith(Cucumber::class)
-@CucumberOptions(plugin = arrayOf("io.cucumber.pro.JsonReporter:smoke"), tags = arrayOf("@ui and @smoke"))
+@CucumberOptions(plugin = ["io.cucumber.pro.JsonReporter:smoke"], tags = ["@ui and @smoke"])
 class RunCucumberTest
 ```
 
@@ -168,7 +168,7 @@ public class RunCucumberTest {
 
 ```kotlin
 @RunWith(Cucumber::class)
-@CucumberOptions(plugin = arrayOf("io.cucumber.pro.JsonReporter:default"), tags = arrayOf("not @ui and not @smoke"))
+@CucumberOptions(plugin = ["io.cucumber.pro.JsonReporter:default"], tags = ["not @ui and not @smoke"])
 class RunCucumberTest
 ```
 

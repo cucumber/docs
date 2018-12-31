@@ -253,7 +253,7 @@ import cucumber.api.junit.Cucumber
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
-@CucumberOptions(plugin = arrayOf("pretty"))
+@CucumberOptions(plugin = ["pretty"])
 class RunCucumberTest {
 }
 ```
@@ -284,7 +284,7 @@ import cucumber.api.junit.Cucumber
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
-@CucumberOptions(plugin = arrayOf("pretty"))
+@CucumberOptions(plugin = ["pretty"])
 class RunCucumberTest {
 }
 ```
@@ -832,12 +832,12 @@ public class Stepdefs {
 
     @Given("^today is Sunday$")
     public void today_is_Sunday() {
-        this.today = "Sunday";
+        today = "Sunday";
     }
 
     @When("^I ask whether it's Friday yet$")
     public void i_ask_whether_is_s_Friday_yet() {
-        this.actualAnswer = IsItFriday.isItFriday(today);
+        actualAnswer = IsItFriday.isItFriday(today);
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
@@ -857,11 +857,11 @@ import cucumber.api.java.en.Given
 import cucumber.api.java.en.When
 import junit.framework.Assert.assertEquals
 
-internal object IsItFriday {
-    fun isItFriday(today: String): String {
-        return ""
-    }
+
+fun isItFriday(today: String): String {
+    return ""
 }
+
 
 class StepDefs {
     lateinit var today: String
@@ -869,12 +869,12 @@ class StepDefs {
 
     @Given("^today is Sunday$")
     fun today_is_Sunday() {
-        this.today = "Sunday"
+        today = "Sunday"
     }
 
     @When("^I ask whether it's Friday yet$")
     fun i_ask_whether_is_s_Friday_yet() {
-        this.actualAnswer = IsItFriday.isItFriday(today)
+        actualAnswer = IsItFriday.isItFriday(today)
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
@@ -1480,11 +1480,11 @@ import cucumber.api.java.en.Given
 import cucumber.api.java.en.When
 import junit.framework.Assert.assertEquals
 
-internal object IsItFriday {
-    fun isItFriday(today: String): String {
-        return if (today == "Friday") "TGIF" else "Nope"
-    }
+
+fun isItFriday(today: String): String {
+    return if (today == "Friday") "TGIF" else "Nope"
 }
+
 
 class StepDefs {
     lateinit var today: String
