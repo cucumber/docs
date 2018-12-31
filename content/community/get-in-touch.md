@@ -1,6 +1,7 @@
 ---
 title: Get in touch
 subtitle: Support forums, chat rooms
+weight: 70
 ---
 
 If you need help using Cucumber, you have several options.

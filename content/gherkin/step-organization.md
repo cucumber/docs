@@ -1,6 +1,6 @@
 ---
 title: Step Organization
-subtitle: "How to organize your step"
+subtitle: "How to organize your steps"
 polyglot:
  - java
  - javascript

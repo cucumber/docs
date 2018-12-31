@@ -1,5 +1,6 @@
 ---
 title: Writing better Gherkin
+subtitle: "Some guidelines to writing better Gherkin"
 ---
 
 There are several ways to make your Gherkin better.

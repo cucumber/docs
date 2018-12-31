@@ -1,11 +1,12 @@
 ---
 title: Things that are not Cucumber problems
-subtitle: "Things that are not Cucumber problems"
+subtitle: "Help with other tools"
 polyglot:
  - java
  - javascript
  - ruby
  - kotlin
+weight: 60
 ---
 
 Cucumber is frequently used alongside other tools. As much as we would like to help you, if you are having trouble with any of these tools it's better to contact those communities directly.
