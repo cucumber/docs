@@ -13,14 +13,30 @@ Cucumber is frequently used alongside other tools. As much as we would like to h
 This page lists some of the tools often used with Cucumber and where to find help for those tools.
 If you cannot find the tool you are looking for, try the [related tools](/tools/related-tools) page.
 
+# IDE Plugins
+Note that if you are using a newer version of Cucumber, the plugin you are using might not have been updated yet.
+
+## IntelliJ
+{{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
+{{% block "java,kotlin" %}}
+If you are having issues with the "Cucumber for Java" plugin, please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
+If not, you can create an issue yourself.
+{{% /block %}}
+
+## Eclipse
+{{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
+{{% block "java,kotlin" %}}
+You can find the [Cucumber Eclipse Plugin on GitHub](https://github.com/cucumber/cucumber-eclipse). It is an open source plugin.
+{{% /block %}}
+
 # Browser automation
 For some help using Cucumber with browser automation, you can check the documentation on [browser automation](/guides/browser-automation).
 If you are having trouble with a particular browser automation tool, you might need to contact the relevant community directly.
 
-# Selenium
+## Selenium
 If you need help with Selenium, please try the [Selenium website](https://www.seleniumhq.org/), or contact the Selenium community on [Slack](https://seleniumhq.herokuapp.com/).
 
-# Serenity BDD
+## Serenity BDD
 {{% text "javascript,ruby" %}}Serenity only works with Java.{{% /text %}}
 
 {{% block "java,kotlin" %}}
@@ -46,18 +62,3 @@ More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 {{% text "java,javascript" %}}Capybara only works with Ruby.{{% /text %}}
 
-# IDE Plugins
-Note that if you are using a newer version of Cucumber, the plugin you are using might not have been updated yet.
-
-## IntelliJ
-{{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
-{{% block "java,kotlin" %}}
-If you are having issues with the "Cucumber for Java" plugin, please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
-If not, you can create an issue yourself.
-{{% /block %}}
-
-## Eclipse
-{{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
-{{% block "java,kotlin" %}}
-You can find the [Cucumber Eclipse Plugin on GitHub](https://github.com/cucumber/cucumber-eclipse). It is an open source plugin.
-{{% /block %}}
