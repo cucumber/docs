@@ -62,3 +62,18 @@ More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 {{% text "java,javascript" %}}Capybara only works with Ruby.{{% /text %}}
 
+# API automation
+
+## RestAssured
+RestAssured is an API automation tool for Java.
+
+{{% block "java" %}}
+For more information see the [official website](http://rest-assured.io/).
+{{% /block %}}
+
+## Karate
+Karate is an API automation tool for Java.
+
+{{% block "java" %}}
+For more information see the [Karate project on GitHub](https://github.com/intuit/karate).
+{{% /block %}}
