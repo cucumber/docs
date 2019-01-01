@@ -79,7 +79,7 @@ The documentation is stored in the [docs.cucumber.io project on Github](https://
 
 # Menu structure
 Pages are displayed in their own section; this is the directory where the file is located.
-Pages in a section are in alphabetical order by default, but can be overridden by specifying `weight`.
+Pages in a section are in alphabetical order by default, but this can be overridden by specifying `weight`.
 
 # Page structure
 * YAML front matter (with title and summary)
