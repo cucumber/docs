@@ -50,6 +50,18 @@ Note that with Cucumber-JVM v2.x, the `groupId` has changed from `info.cukes` to
 If you cannot find a version newer than 1.2.5, change the groupId in your dependencies.
 {{% /block %}}
 
+## Upgrading
+Cucumber tries to follow the [SemVer](http://semver.org/) specification for release numbers. Essentially, that means that:
+
+* If only the right-hand (patch) number in the release changes, you don't need to worry.
+* If the middle number (minor) number in the release changes, you don't need to worry.
+* If the left-hand (major) number changes, you can expect that things might break.
+
+You can read the [history file](https://github.com/cucumber/cucumber/blob/master/History.md) to learn about the changes in every release.
+
+Implementations of Cucumber in a particular language, should have a `CHANGELOG.md`, describing the changed made per version.
+
+
 ## How do I run Cucumber?
 For information on how to run Cucumber, see [Running Cucumber](/cucumber/api/#running-cucumber).
 
