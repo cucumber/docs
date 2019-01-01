@@ -3,7 +3,9 @@ title: Debugging
 subtitle: How to debug failing Cucumber steps
 polyglot:
  - java
+ - kotlin
  - ruby
+ - kotlin
 
 ---
 {{% block "ruby" %}}
@@ -128,7 +130,7 @@ end
 By setting an environment variable, you can tell Cucumber to use various debugging tools, and you can combine them by setting multiple environment variables.
 {{% /block %}}
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. 
 
 1. Set a conditional breakpoint on the part of the code you want to debug.
@@ -145,6 +147,9 @@ Package pkg = target.getClass().getPackage();
   return !target.getClass().getPackage().getName().startsWith("cucumber");
 ```
    
+```kotlin
+// todo
+```   
 2. Run your [RunCukesTest](https://github.com/cucumber/cucumber-java-skeleton/blob/master/src/test/java/skeleton/RunCukesTest.java) in debug mode
 3. Assuming you haven't set any other breakpoints, the execution will stop at `Utils#invoke`
 4. Now you can either:

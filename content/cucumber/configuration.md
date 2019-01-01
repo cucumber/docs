@@ -7,17 +7,18 @@ polyglot:
  - java
  - javascript
  - ruby
+ - kotlin
 
 ---
 
 
 # Type Registry
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 The type registry is used to configure parameter types and data table types. It can be configured by placing an implementation
 of `cucumber.api.TypeRegistryConfigurer` on the glue path.
 
-For instance, the following `TypeRegistryConfiguration.java` registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity:
+For instance, the following class registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity:
 
 ```java
 package com.example;
@@ -55,7 +56,37 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 }
 ```
 
-Using the TypeRegistryConfiguration it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this 
+```kotlin
+package com.example
+
+import cucumber.api.TypeRegistryConfigurer
+import cucumber.api.TypeRegistry
+import io.cucumber.datatable.DataTableType
+import io.cucumber.datatable.TableEntryTransformer
+import java.util.Locale
+import java.util.Locale.ENGLISH
+
+class TypeRegistryConfiguration : TypeRegistryConfigurer {
+
+    override fun locale(): Locale {
+        return ENGLISH
+    }
+
+    override fun configureTypeRegistry(typeRegistry: TypeRegistry) {
+        typeRegistry.defineParameterType(ParameterType(
+                LambdaStepdefs.Person::class.java,
+                TableEntryTransformer<LambdaStepdefs.Person>
+                { map: Map<String, String> ->
+                    val person = LambdaStepdefs.Person()
+                    person.first = map.get("first")
+                    person.last = map.get("last")
+                    person
+                }))
+    }
+}
+```
+
+Using the TypeRegistryConfiguration it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this
 example) will handle the conversion of anonymous parameter types and data table entries.
 
 ```java
@@ -110,6 +141,54 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 }
 ```
 
+
+```kotlin
+package com.example
+
+import cucumber.api.TypeRegistryConfigurer
+import cucumber.api.TypeRegistry
+import io.cucumber.cucumberexpressions.ParameterByTypeTransformer
+import io.cucumber.datatable.TableCellByTypeTransformer
+import io.cucumber.datatable.TableEntryByTypeTransformer
+import com.fasterxml.jackson.databind.ObjectMapper
+
+import java.lang.reflect.Type
+import java.util.Locale
+import java.util.Map
+
+import static java.util.Locale.ENGLISH
+
+class TypeRegistryConfiguration : TypeRegistryConfigurer {
+
+    override fun locale(): Locale {
+        return ENGLISH
+    }
+
+    override fun configureTypeRegistry(typeRegistry: TypeRegistry) {
+        var transformer = Transformer()
+        typeRegistry.setDefaultDataTableCellTransformer(transformer)
+        typeRegistry.setDefaultDataTableEntryTransformer(transformer)
+        typeRegistry.setDefaultParameterTransformer(transformer)
+    }
+
+    class Transformer : ParameterByTypeTransformer, TableEntryByTypeTransformer, TableCellByTypeTransformer {
+        val objectMapper: ObjectMapper = ObjectMapper()
+
+        override fun transform(s: String, type: Type) {
+            return objectMapper.convertValue(s, objectMapper.constructType(type))
+        }
+
+        override fun transform(map: Map<String, String>, aClass: Class<T> , tableCellByTypeTransformer: TableCellByTypeTransformer): T  {
+            return objectMapper.convertValue(map, aClass)
+        }
+
+        override fun transform(s: String, aClass: Class<T>): T {
+            return objectMapper.convertValue(s, aClass)
+        }
+    }
+}
+```
+
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -133,7 +212,7 @@ end
 ```
 {{% /block %}}
 
-{{% block "java, ruby" %}}
+{{% block "java,kotlin,ruby" %}}
 If you are using a type that has not yet been defined, you will an error similar to:
 ```shell
 The parameter type "person" is not defined.
@@ -151,13 +230,19 @@ For more information on how to use `Data Tables` with Cucumber-js, please see th
 
 ## Recommended location
 
-The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}
+The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/com/example/TypeRegistryConfiguration.kt`.{{% /text %}}
 This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java" %}} on the glue path.{{% /text %}}
+The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/com/example/TypeRegistryConfiguration.kt`.{{% /text %}}
+This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java,kotlin" %}} on the glue path.{{% /text %}}
 
 # Profiles
 
 {{% block "java" %}}
 Profiles are not available in Java.
+{{% /block %}}
+
+{{% block "kotlin" %}}
+Profiles are not available in Kotlin.
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -218,6 +303,10 @@ output.
 Profiles are not available in Java.
 {{% /block %}}
 
+{{% block "kotlin" %}}
+Profiles are not available in Kotlin.
+{{% /block %}}
+
 {{% block "javascript" %}}
 For more information on how to use profiles with Cucumber-js, please see the [profiles.feature](https://github.com/cucumber/cucumber-js/blob/master/features/profiles.feature).
 {{% /block %}}
@@ -249,7 +338,7 @@ progress output and HTML output.
 
 ## Preprocessing with ERB
 
-{{% block "java, javascript" %}}
+{{% block "java,kotlin,javascript" %}}
 ERB (Embedded RuBy) is a Ruby specific tool.
 {{% /block %}}
 
@@ -271,7 +360,7 @@ So, if you have several profiles with similar values, you might do this:
 {{% /block %}}
 
 # Environment Variables
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 Cucumber-JVM does not support configuration of Cucumber with an `env` file.
 {{% /block %}}
 
