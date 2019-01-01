@@ -59,7 +59,7 @@ Cucumber tries to follow the [SemVer](http://semver.org/) specification for rele
 
 You can read the [history file](https://github.com/cucumber/cucumber/blob/master/History.md) to learn about the changes in every release.
 
-Implementations of Cucumber in a particular language, should have a `CHANGELOG.md`, describing the changed made per version.
+Implementations of Cucumber in a particular language, should have a `CHANGELOG.md`, describing the changes made per version.
 
 
 ## How do I run Cucumber?
