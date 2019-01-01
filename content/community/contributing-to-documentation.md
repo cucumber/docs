@@ -28,7 +28,7 @@ The more general contribution process is described in the [Cucumber Community Co
 
 It's great to get feedback on your writing. Start out with small changes, then wait for feedback from other contributors on the pull request.
 
-You can hop into the Cucumber [Slack](https://cucumber.io/support#slack) channel `#docs` to discuss or ask questions.
+You can hop into the [Cucumber Slack](https://cucumber.io/support#slack) channel `#docs` to discuss or ask questions.
 
 # What to contribute
 A great way to start contributing is to answer a question on [Slack](https://cucumber.io/support#slack) or the [mailing list](https://groups.google.com/group/cukes).
