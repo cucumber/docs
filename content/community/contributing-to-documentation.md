@@ -83,7 +83,7 @@ Pages in a section are in alphabetical order by default, but can be overridden b
 
 # Page structure
 * YAML front matter (with title and summary)
-  * Pages containing code or language specific text, should be marked as [polyglot pages](#polyglot-pages)
+  * Pages containing code or language-specific text, should be marked as [polyglot pages](#polyglot-pages)
   * Specify a `weight` to give their (relative) order in the menu (see #menu-structure)
 * Introduction paragraph
 * Paragraphs
