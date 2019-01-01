@@ -5,6 +5,12 @@ weight: 1300
 
 This page describes tools for a Ruby or Ruby on Rails environment.
 
+# IDEs
+
+
+## RubyMine
+[RubyMine](https://www.jetbrains.com/help/ruby/meet-rubymine.html) is a Ruby and Rails IDE.
+
 # Build tools
 
 Cucumber can be run in several ways.

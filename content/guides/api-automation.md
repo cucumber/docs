@@ -17,7 +17,7 @@ In general, API's change less frequently than the UI; keeping your automation up
 # RestAssured
 RestAssured is an API automation tool for Java.
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 You can use RestAssured in your step definitions to make API calls and verify responses.
 For more information see the [official website](http://rest-assured.io/).
 {{% /block %}}
@@ -25,6 +25,13 @@ For more information see the [official website](http://rest-assured.io/).
 # Karate
 Karate is an API automation tool for Java.
 
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 For more information see the [Karate project on GitHub](https://github.com/intuit/karate).
+{{% /block %}}
+
+# RubyMine
+[RubyMine](https://www.jetbrains.com/help/ruby/meet-rubymine.html) is a Ruby and Rails IDE providing a range of developer tools for Ruby.
+
+{{% block "ruby" %}}
+RubyMine can be used to [test RESTful Web Services](https://www.jetbrains.com/help/ruby/testing-restful-web-services.html).
 {{% /block %}}
