@@ -17,7 +17,7 @@ Once your first pull request has been accepted, you will be promoted to a **comm
 gain write access to the [GitHub](https://github.com/cucumber/docs.cucumber.io) repository.
 As a **committer** you should still use pull requests.
 
-Each pull request should only modify/add a single topic. Please don't lump many unrelated document changes into the same pull request. If you want to modify/add multiple topics, please open one pull request per topic.
+Each pull request should only modify/add a single topic. Please don't lump many unrelated document changes into the same pull request. If you want to modify or add multiple topics, please open one pull request per topic.
 
 The title should explain which docs you are modifying/creating and why.
 For example `[docs] Add tags.md` or `[docs] Modify tags.md to explain boolean expressions`.
