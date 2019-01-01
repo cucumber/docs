@@ -455,7 +455,7 @@ To list the keywords of a particular language, use the language code:
 cucumber --i18n <language_code>
 ```
 
-For example, to see the keywords in french:
+For example, to see the keywords in French:
 ```shell
 cucumber --i18n fr
 ```
