@@ -185,7 +185,7 @@ An specific shortcode was created for the stepdef body:
 When using this shortcode, it will be replaced in the text with the word `method` or `function`, depending on the programming language.
 
 ### Expression parameter
-An specific shortcode was created for the expression parameter:
+A specific shortcode was created for the expression parameter:
 
     {{%/* expression-parameter */%}}
 
