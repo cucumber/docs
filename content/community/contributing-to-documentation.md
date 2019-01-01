@@ -36,7 +36,7 @@ You can add the answer to a question to the docs, if it is currently missing.
 
 You can also add the question to the [FAQ page](https://docs.cucumber.io/community/faq/), with a link to the relevant part of the documentation.
 
-Another option is to look for issues marked `Good first issue` and/or `Help wanted` in the [docs.cucumber.io project on Github](https://github.com/cucumber/docs.cucumber.io).
+Another option is to look for issues marked `Good first issue` and/or `Help wanted` in the [docs.cucumber.io project on GitHub](https://github.com/cucumber/docs.cucumber.io).
 If you have any questions about these issues, you can add comment on the issue itself or contact us on Slack.
 
 ## General writing style
