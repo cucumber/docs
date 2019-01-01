@@ -97,7 +97,6 @@ A language select will be displayed if the page specifies the following in the f
  - ruby
  - kotlin
  - dotnet
- - kotlin
  ```
 
 The following languages are currently supported:
@@ -107,7 +106,6 @@ The following languages are currently supported:
 * Ruby
 * Kotlin (optional)
 * .Net (optional; some pages only)
-* Kotlin (optional)
 
 * If possible, we'd prefer for you to add information for Java, JavaScript and Ruby.
   * If you're only familiar with one programming language, just add an example for that language; someone
