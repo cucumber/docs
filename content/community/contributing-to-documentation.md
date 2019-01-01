@@ -178,7 +178,7 @@ To do so, list the relevant languages separated by a comma (`,`):
 Additional shortcodes are defined in `layouts/shortcodes`.
 
 ### Method vs function
-An specific shortcode was created for the stepdef body:
+A specific shortcode was created for the stepdef body:
 
     {{%/* stepdef-body */%}}
 
