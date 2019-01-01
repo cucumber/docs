@@ -440,7 +440,29 @@ Some Cucumber implementations also let you set the default language in the
 configuration, so you don't need to place the `# language` header in every file.
 
 ## Gherkin Dialects
-In order to allow Gherkin to be written in a number of languages, the English keywords have also been translated. To improve readability and flow, some languages may have more than one translation for any given keyword.
+In order to allow Gherkin to be written in a number of languages, the keywords have been translated into multiple languages. To improve readability and flow, some languages may have more than one translation for any given keyword.
+
+### List translation options
+You can get information about the translations from the command line.
+
+To see a listing of available languages:
+```shell
+cucumber --i18n help
+```
+
+To list the keywords of a particular language, use the language code:
+```shell
+cucumber --i18n <language_code>
+```
+
+For example, to see the keywords in french:
+```shell
+cucumber --i18n fr
+```
+
+### Overview
+You can find all translation of Gherkin [on GitHub](https://github.com/cucumber/cucumber/blob/master/gherkin/gherkin-languages.json).
+This is also the place to add or update translations.
 
 A list of the currently supported languages and their keywords can be found below.
 
