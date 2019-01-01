@@ -5,6 +5,7 @@ polyglot:
   - java
   - javascript
   - ruby
+  - kotlin
 weight: 1300
 ---
 
@@ -64,8 +65,7 @@ public class ExampleSteps {
        // Wait for the page to load timeout after ten seconds
        new WebDriverWait(driver,10L).until(new ExpectedCondition<Boolean>() {
            public Boolean apply(WebDriver d) {
-               return d.getTitle().toLowerCase().startsWith("cheese");
-               // Should see: "cheese! -Google Search"
+               return d.getTitle().toLowerCase().startsWith(titleStartsWith);
            }
        });
     }
@@ -74,6 +74,48 @@ public class ExampleSteps {
      public void closeBrowser() {
        driver.quit();
      }
+}
+```
+
+```kotlin
+package class.example;
+
+import cucumber.api.Scenario
+import cucumber.api.java8.En
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.support.ui.WebDriverWait
+
+class ExampleSteps: En {
+
+    lateinit var driver: WebDriver
+
+    init {
+        Given("^I am on the Google search page$") {
+            driver.get("https:\\www.google.com")
+        }
+
+        When("^I search for \"(.*)\"$") { query: String ->
+            val element: WebElement = driver.findElement(By.name("q"));
+            // Enter something to search for
+            element.sendKeys(query)
+            // Now submit the form. WebDriver will find the form for us from the element
+            element.submit()
+        }
+
+        Then("^the page title should start with \"(.*)\"$") { titleStartsWith: String ->
+            // Google's search is rendered dynamically with JavaScript
+            // Wait for the page to load timeout after ten seconds
+            WebDriverWait(driver, 10L).until { d ->
+                d.title.toLowerCase().startsWith(titleStartsWith)
+            }
+        }
+
+        After { scenario: Scenario ->
+            driver.quit()
+        }
+    }
 }
 ```
 

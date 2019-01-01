@@ -5,6 +5,7 @@ polyglot:
  - java
  - javascript
  - ruby
+ - kotlin
 weight: 30
 ---
 
@@ -41,7 +42,7 @@ When asking a question, or filing a bug report, please tell us:
 - Which version of Cucumber you are using: `cucumber --version`.
 - Any other dependencies you have.
 - How you are running Cucumber and which options you provided (i.e. which commands you ran)
-- What the output, error message and full {{% text "ruby" %}}backtrace{{% /text %}}{{% text "java" %}}stacktrace{{% /text %}}{{% text "javascript" %}}stacktrace{{% /text %}} was.
+- What the output, error message and full {{% text "ruby" %}}backtrace{{% /text %}}{{% text "java,kotlin,javascript" %}}stacktrace{{% /text %}} was.
 {{% text "ruby" %}}Feed Cucumber with `--backtrace --verbose` and rake with `--trace`.{{% /text %}}
 - What your expected output is.
 - What relevant code you have. Don't *describe* your code; show your actual code. You can use <http://gist.github.com/>, rather than pasting code in emails.
