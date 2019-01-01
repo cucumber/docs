@@ -1,12 +1,13 @@
 ---
 title: Contributing to Documentation
 subtitle: Help us make these docs better
+
 weight: 40
 ---
 
-The Cucumber documentation is open source and anyone is welcome to contribute.
+The Cucumber documentation is open source and anyone is welcome to contribute. In fact, we'd really appreciate your help!
 
-Each page provides a link to easily edit the content of that page. You can also make your changes to the [docs.cucumber.io](https://github.com/cucumber/docs.cucumber.io) project.
+Each page provides a link to easily edit the content of that page. You can also make your changes to the [docs.cucumber.io project on Github](https://github.com/cucumber/docs.cucumber.io).
 
 # Process
 
@@ -16,7 +17,7 @@ Once your first pull request has been accepted, you will be promoted to a **comm
 gain write access to the [GitHub](https://github.com/cucumber/docs.cucumber.io) repository.
 As a **committer** you should still use pull requests.
 
-Each pull request should only modify/add a single topic. Please don't lump many unrelated document changes into the same pull request.
+Each pull request should only modify/add a single topic. Please don't lump many unrelated document changes into the same pull request. If you want to modify/add multiple topics, please open one pull request per topic.
 
 The title should explain which docs you are modifying/creating and why.
 For example `[docs] Add tags.md` or `[docs] Modify tags.md to explain boolean expressions`.
@@ -25,58 +26,67 @@ The more general contribution process is described in the [Cucumber Community Co
 
 # Discuss the documentation
 
-It's great to get feedback on your writing. Start out with small changes, then wait for feedback from other contributors in the pull request.
+It's great to get feedback on your writing. Start out with small changes, then wait for feedback from other contributors on the pull request.
 
-You can hop into the Cucumber [Slack](https://cucumber.io/support#slack) channel `#docs` or [Gitter](https://cucumber.io/support#gitter) chat rooms to discuss.
-
-Otherwise - there is always the friendly [Cucumber Google group](mailto:cukes-devs@googlegroups.com).
+You can hop into the Cucumber [Slack](https://cucumber.io/support#slack) channel `#docs` to discuss or ask questions.
 
 # What to contribute
-A great way to start contributing is to answer a [mailing list](https://groups.google.com/group/cukes) question by improving
-the docs, and then reply on the mailing list with a link to your contribution. Or to add the answer to a question to the docs, if it is currently missing.
+A great way to start contributing is to answer a question on [Slack](https://cucumber.io/support#slack) or the [mailing list](https://groups.google.com/group/cukes).
+You can add the answer to a question to the docs, if it is currently missing.
 
-In general, it should be brief and to the point.
+You can also add the question to the [FAQ page](https://docs.cucumber.io/community/faq/), with a link to the relevant part of the documentation.
+
+Another option is to look for issues marked `Good first issue` and/or `Help wanted` in the [docs.cucumber.io project on Github](https://github.com/cucumber/docs.cucumber.io).
+If you have any questions about these issues, you can add comment on the issue itself or contact us on Slack.
+
+## General writing style
+In general, the documentation should be brief and to the point.
 
 > Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away - Antoine de Saint Exupéry
 
-## General writing style
-
+Some guidelines:
 * Every page should start with an informational/motivational paragraph
 * Paragraphs should be short enough to be readable, but long enough to develop an idea
-* Every page should start with a `h1` heading. Sections use `h2`. Subsections use `h3`
+* Every page should start with a `h1` heading. Sections use `h2`; subsections use `h3`
 * Break long lines. Insert a new line at around column 80. This is important because review comments can only be added to a line.
 * Write in present tense
-* Use unemotional language, but try to make it a little entertaining (this is hard!)
-* Write in a platform-neutral way as much as possible
-  * Cucumber is implemented in several languages, and the docs should not assume a particular platform
-  * Some good examples of cross-platform/language docs are [Stripe](https://stripe.com/docs/api) and [.NET](https://msdn.microsoft.com/en-us/library/system.array(v=vs.110).aspx)
-* Use [code blocks](#language-specific-source-code-and-paragraphs) for all code examples (except Gherkin)
-* Use [language blocks](#Language-specific-text-fragments) for text that is only relevant for (a) specific language(s)
-  * If you're only familiar with one programming language, just add an example for that language; someone
-    else will fill the gaps for the other languages!
-  * You can ask for help with the other languages in the help channel for that language on Slack, or in your GitHub pull request / issue
-* All documents should use [British English](https://en.wikipedia.org/wiki/British_English)
-  * Contributions in [American English](https://en.wikipedia.org/wiki/American_English) is fine - editors will do the translation.
+* Use neutral language, but try to make it a little entertaining (this is hard!)
+* Write in a platform-neutral way as much as possible. Cucumber is implemented in several languages, and the docs should not assume a particular platform
+* Use [code blocks](#language-specific-source-code-and-paragraphs) for all code examples (except Gherkin) and paragraphs related to one or more specific languages
+* Use [language blocks](#Language-specific-text-fragments) for text that is only relevant for one or more specific languages
+* Mark [Polyglot pages](#polyglot-pages) as needed
+* All documents should use [British English](https://en.wikipedia.org/wiki/British_English). Contributions in [American English](https://en.wikipedia.org/wiki/American_English) is fine - editors will do the translation.
 * Use links to external sites sparingly
 * Do not use copyrighted material (images, text or other)
 * Illustrations are great, but please use lo-fi drawings; Cucumber's design team will recreate illustrations according to Cucumber's [brand guidelines](https://github.com/cucumber-ltd/brand)
+* Try to keep your contribution *consistent* with the current documentation. For instance:
+  * Use consistent wording and formatting
+  * Use backticks around keywords; in this case keywords can be written with upper case, e.g. `Step Definition`
+  * Use lower case when referring to concepts in a sentences: e.g. "step definition" instead of "Step Definition"
 
 ## Tutorial writing style {#tutorial-style}
 
 * Assume the reader has little or no knowledge of the topic
 * Use a conversational style
+* Make sure each step in the tutorial is clearly described
+* If needed, describe what the result of each step should be
 
 # Toolchain
 The documentation is written in [Markdown](http://toolchain.gitbook.com/syntax/markdown.html)
 (simple markup).
 
-The documentation is stored in [the cucumber/docs.cucumber.io GitHub repository](https://github.com/cucumber/docs.cucumber.io).
+The documentation is stored in the [docs.cucumber.io project on Github](https://github.com/cucumber/docs.cucumber.io).
+
+# Menu structure
+Pages are displayed in their own section; this is the directory where the file is located.
+Pages in a section are in alphabetical order by default, but can be overridden by specifying `weight`.
 
 # Page structure
-
 * YAML front matter (with title and summary)
+  * Pages containing code or language specific text, should be marked as [polyglot pages](#polyglot-pages)
+  * Specify a `weight` to give their (relative) order in the menu (see #menu-structure)
 * Introduction paragraph
-* Subtitles
+* Paragraphs
 
 The page's title from the YAML front-matter is rendered as a `<h1>` header
 at the top of the page. Start the body with a paragraph, not a header. If you start with a header, the
@@ -97,7 +107,6 @@ A language select will be displayed if the page specifies the following in the f
  - ruby
  - kotlin
  - dotnet
- - kotlin
  ```
 
 The following languages are currently supported:
@@ -107,9 +116,8 @@ The following languages are currently supported:
 * Ruby
 * Kotlin (optional)
 * .Net (optional; some pages only)
-* Kotlin (optional)
 
-* If possible, we'd prefer for you to add information for Java, JavaScript and Ruby.
+* Whenever possible, we prefer to have information for Java, JavaScript and Ruby.
   * If you're only familiar with one programming language, just add an example for that language; someone
     else will fill the gaps for the other languages!
   * You can ask for help with the other languages in the help channel for that language on Slack, or in your GitHub pull request / issue
@@ -148,7 +156,7 @@ Wrap `{{%/* block %}}` shortcodes around paragraphs and fenced code blocks:
     {{% /block */%}}
 
 Please note that you cannot use headers *inside* language blocks! If you are writing a page with content for a specific language,
-perhaps it should be a separate page. Or use a header per language.
+perhaps it should be a separate page. Alternatively, you can use a header per language.
 
 ## Language-specific text fragments
 
@@ -162,7 +170,7 @@ a particular programming language:
 
 ## Paragraphs or text that is valid for multiple programming languages    
 Note that you can also use shortcodes for paragraphs or text that is valid for multiple languages, without repeating it for each individual language.
-To do so, you need to list the relevant languages, separated by a comma (`,`), as follows: 
+To do so, list the relevant languages separated by a comma (`,`):
     
     {{%/* text "java,kotlin" %}}Maven{{% /text */%}}
 
@@ -170,14 +178,14 @@ To do so, you need to list the relevant languages, separated by a comma (`,`), a
 Additional shortcodes are defined in `layouts/shortcodes`.
 
 ### Method vs function
-An additional shortcode was created for the stepdef body:
+An specific shortcode was created for the stepdef body:
 
     {{%/* stepdef-body */%}}
 
 When using this shortcode, it will be replaced in the text with the word `method` or `function`, depending on the programming language.
 
 ### Expression parameter
-An additional shortcode was created for the expression parameter:
+An specific shortcode was created for the expression parameter:
 
     {{%/* expression-parameter */%}}
 
@@ -185,4 +193,4 @@ When using this shortcode, it will be replaced in the text with the words `captu
 
 ## Working locally
 
-For information on how to work locally, please see the [README.md](https://github.com/cucumber/docs.cucumber.io).
+For information on how to work locally and build the project, please see the [README.md](https://github.com/cucumber/docs.cucumber.io).
