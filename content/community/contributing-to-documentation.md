@@ -55,7 +55,7 @@ Some guidelines:
 * Use [code blocks](#language-specific-source-code-and-paragraphs) for all code examples (except Gherkin) and paragraphs related to one or more specific languages
 * Use [language blocks](#Language-specific-text-fragments) for text that is only relevant for one or more specific languages
 * Mark [Polyglot pages](#polyglot-pages) as needed
-* All documents should use [British English](https://en.wikipedia.org/wiki/British_English). Contributions in [American English](https://en.wikipedia.org/wiki/American_English) is fine - editors will do the translation.
+* All documents should use [British English](https://en.wikipedia.org/wiki/British_English). Contributions in [American English](https://en.wikipedia.org/wiki/American_English) are fine - editors will do the translation.
 * Use links to external sites sparingly
 * Do not use copyrighted material (images, text or other)
 * Illustrations are great, but please use lo-fi drawings; Cucumber's design team will recreate illustrations according to Cucumber's [brand guidelines](https://github.com/cucumber-ltd/brand)
