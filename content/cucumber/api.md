@@ -300,7 +300,9 @@ if (scenario.isFailed()) {
 ```
 
 ```javascript
-TODO: See Ruby or Java example
+if (scenario.isFailed()) {
+  //Do your logic here
+}
 ```
 
 ```ruby
