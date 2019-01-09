@@ -302,7 +302,9 @@ if (scenario.isFailed()) {
 ```javascript
 if (scenario.isFailed()) {
   driver.takeScreenshot().then(function(image,err) {
-      scenario.embed(image, "image/png");
+      if (!err) {
+          scenario.embed(image, "image/png");
+      }
   });
 }
 ```
