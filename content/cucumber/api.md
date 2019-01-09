@@ -301,7 +301,9 @@ if (scenario.isFailed()) {
 
 ```javascript
 if (scenario.isFailed()) {
-  //Do your logic here
+  driver.takeScreenshot().then(function(image,err) {
+      scenario.embed(image, "image/png");
+  });
 }
 ```
 
