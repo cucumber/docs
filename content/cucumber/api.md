@@ -301,7 +301,7 @@ if (scenario.isFailed()) {
 
 ```javascript
 if (scenario.isFailed()) {
-  driver.takeScreenshot().then(function(image,err) {
+  webDriver.takeScreenshot().then(function(image,err) {
       if (!err) {
           scenario.embed(image, "image/png");
       }
