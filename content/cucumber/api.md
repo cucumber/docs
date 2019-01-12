@@ -300,13 +300,16 @@ if (scenario.isFailed()) {
 ```
 
 ```javascript
-
-if (scenario.result.status === Status.FAILED) {
+After(function (scenario) {
+ if (scenario.result.status === Status.FAILED) {
     var world = this;
-    return webDriver.takeScreenshot().then(function(screenShot) {
-       world.attach(screenShot, "image/png");
+    return webDriver.takeScreenshot().then(function(screenShot, error) {
+       if (!errpr) {
+         world.attach(screenShot, "image/png");
+       }
      });
-}
+  }
+});
 ```
 
 ```ruby
