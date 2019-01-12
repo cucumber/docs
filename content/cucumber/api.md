@@ -301,11 +301,11 @@ if (scenario.isFailed()) {
 
 ```javascript
 
-if (scenario.isFailed()) {
-var world = this;
-return webDriver.takeScreenshot().then(function(screenShot) {
-    world.attach(screenShot, "image/png");
- });
+if (scenario.result.status === Status.FAILED) {
+    var world = this;
+    return webDriver.takeScreenshot().then(function(screenShot) {
+       world.attach(screenShot, "image/png");
+     });
 }
 ```
 
