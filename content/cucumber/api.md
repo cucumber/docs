@@ -301,14 +301,14 @@ if (scenario.isFailed()) {
 
 ```javascript
 After(function (scenario) {
- if (scenario.result.status === Status.FAILED) {
-    var world = this;
-    return webDriver.takeScreenshot().then(function(screenShot, error) {
-       if (!errpr) {
-         world.attach(screenShot, "image/png");
-       }
-     });
-  }
+    if (scenario.result.status === Status.FAILED) {
+        var world = this;
+        return webDriver.takeScreenshot().then(function(screenShot, error) {
+            if (!error) {
+                world.attach(screenShot, "image/png");
+            }
+        });
+    }
 });
 ```
 
