@@ -300,12 +300,12 @@ if (scenario.isFailed()) {
 ```
 
 ```javascript
+
 if (scenario.isFailed()) {
-  webDriver.takeScreenshot().then(function(image,err) {
-      if (!err) {
-          scenario.embed(image, "image/png");
-      }
-  });
+var world = this;
+return webDriver.takeScreenshot().then(function(screenShot) {
+    world.attach(screenShot, "image/png");
+ });
 }
 ```
 
