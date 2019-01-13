@@ -345,7 +345,16 @@ if (scenario.isFailed()) {
 ```
 
 ```javascript
-TODO: See Ruby or Java example
+After(function (scenario) {
+    if (scenario.result.status === Status.FAILED) {
+        var world = this;
+        return webDriver.takeScreenshot().then(function(screenShot, error) {
+            if (!error) {
+                world.attach(screenShot, "image/png");
+            }
+        });
+    }
+});
 ```
 
 ```ruby
