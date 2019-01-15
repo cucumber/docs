@@ -652,7 +652,7 @@ Copy each of the three snippets for the undefined steps and paste them into
 
 {{% block "kotlin" %}}
 
-Unfortunately, Cucumber does not generate snippets in Kotlin. But fortunately IntelliJ can convert the Java code to Kotlin code for you.
+Unfortunately, Cucumber does not generate snippets in Kotlin. But fortunately IntelliJ can convert the Java code to Kotlin code for you. You might need to improve the translated code, to make it more idiomatic.
 You might also need to add the following import statements (if you hadn't already).
 
 Your `StepDefs.kt` file should now look like this:
@@ -858,9 +858,7 @@ import cucumber.api.java.en.When
 import junit.framework.Assert.assertEquals
 
 
-fun isItFriday(today: String): String {
-    return ""
-}
+fun isItFriday(today: String) = ""
 
 
 class StepDefs {
@@ -874,7 +872,7 @@ class StepDefs {
 
     @When("^I ask whether it's Friday yet$")
     fun i_ask_whether_is_s_Friday_yet() {
-        actualAnswer = IsItFriday.isItFriday(today)
+        actualAnswer = isItFriday(today)
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
@@ -1047,9 +1045,7 @@ static String isItFriday(String today) {
 
 {{% block "kotlin" %}}
 ```kotlin
-fun isItFriday(today: String): String {
-    return "Nope"
-}
+fun isItFriday(today: String) = "Nope"
 ```
 {{% /block %}}
 
@@ -1152,7 +1148,7 @@ public void today_is_Friday() {
 ```kotlin
 @Given("^today is Friday$")
 fun today_is_Friday() {
-    this.today = "Friday"
+    today = "Friday"
 }
 ```
 {{% /block %}}
@@ -1321,9 +1317,7 @@ static String isItFriday(String today) {
 
 {{% block "kotlin" %}}
 ```kotlin
-fun isItFriday(today: String): String {
-    return if (today == "Friday") "TGIF" else "Nope"
-}
+fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 ```
 {{% /block %}}
 
@@ -1481,9 +1475,7 @@ import cucumber.api.java.en.When
 import junit.framework.Assert.assertEquals
 
 
-fun isItFriday(today: String): String {
-    return if (today == "Friday") "TGIF" else "Nope"
-}
+fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 
 
 class StepDefs {
@@ -1492,12 +1484,12 @@ class StepDefs {
 
     @Given("^today is \"([^\"]*)\"$")
     fun today_is(today: String) {
-        this.today = today
+        today = today
     }
 
     @When("^I ask whether it's Friday yet$")
     fun i_ask_whether_is_s_Friday_yet() {
-        this.actualAnswer = IsItFriday.isItFriday(today)
+        actualAnswer = isItFriday(today)
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
