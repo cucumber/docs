@@ -652,7 +652,7 @@ Copy each of the three snippets for the undefined steps and paste them into
 
 {{% block "kotlin" %}}
 
-Unfortunately, Cucumber does not generate snippets in Kotlin. But fortunately IntelliJ can convert the Java code to Kotlin code for you.
+Unfortunately, Cucumber does not generate snippets in Kotlin. But fortunately IntelliJ can convert the Java code to Kotlin code for you. You might need to improve the translated code, to make it more idiomatic.
 You might also need to add the following import statements (if you hadn't already).
 
 Your `StepDefs.kt` file should now look like this:
@@ -872,7 +872,7 @@ class StepDefs {
 
     @When("^I ask whether it's Friday yet$")
     fun i_ask_whether_is_s_Friday_yet() {
-        actualAnswer = IsItFriday.isItFriday(today)
+        actualAnswer = isItFriday(today)
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
@@ -1148,7 +1148,7 @@ public void today_is_Friday() {
 ```kotlin
 @Given("^today is Friday$")
 fun today_is_Friday() {
-    this.today = "Friday"
+    today = "Friday"
 }
 ```
 {{% /block %}}
@@ -1484,12 +1484,12 @@ class StepDefs {
 
     @Given("^today is \"([^\"]*)\"$")
     fun today_is(today: String) {
-        this.today = today
+        today = today
     }
 
     @When("^I ask whether it's Friday yet$")
     fun i_ask_whether_is_s_Friday_yet() {
-        this.actualAnswer = IsItFriday.isItFriday(today)
+        actualAnswer = isItFriday(today)
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
