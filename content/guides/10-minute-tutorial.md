@@ -858,9 +858,7 @@ import cucumber.api.java.en.When
 import junit.framework.Assert.assertEquals
 
 
-fun isItFriday(today: String): String {
-    return ""
-}
+fun isItFriday(today: String) = ""
 
 
 class StepDefs {
@@ -1047,9 +1045,7 @@ static String isItFriday(String today) {
 
 {{% block "kotlin" %}}
 ```kotlin
-fun isItFriday(today: String): String {
-    return "Nope"
-}
+fun isItFriday(today: String) = "Nope"
 ```
 {{% /block %}}
 
@@ -1321,9 +1317,7 @@ static String isItFriday(String today) {
 
 {{% block "kotlin" %}}
 ```kotlin
-fun isItFriday(today: String): String {
-    return if (today == "Friday") "TGIF" else "Nope"
-}
+fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 ```
 {{% /block %}}
 
@@ -1481,9 +1475,7 @@ import cucumber.api.java.en.When
 import junit.framework.Assert.assertEquals
 
 
-fun isItFriday(today: String): String {
-    return if (today == "Friday") "TGIF" else "Nope"
-}
+fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 
 
 class StepDefs {
