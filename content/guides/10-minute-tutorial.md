@@ -254,8 +254,7 @@ import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
 @CucumberOptions(plugin = ["pretty"])
-class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 
 * Now you can delete the `RunCucumberTest.java` class.
@@ -285,12 +284,9 @@ import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
 @CucumberOptions(plugin = ["pretty"])
-class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 
-* Now delete the `RunCucumberTest.java` class (or even the whole `java` directory).
-* Finally, create a Kotlin class called `StepDefs` inside the `hellocucumber` package.
 
 {{% /block %}}
 
@@ -862,8 +858,8 @@ fun isItFriday(today: String) = ""
 
 
 class StepDefs {
-    lateinit var today: String
-    lateinit var actualAnswer: String
+    private lateinit var today: String
+    private lateinit var actualAnswer: String
 
     @Given("^today is Sunday$")
     fun today_is_Sunday() {
@@ -1479,8 +1475,8 @@ fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 
 
 class StepDefs {
-    lateinit var today: String
-    lateinit var actualAnswer: String
+    private lateinit var today: String
+    private lateinit var actualAnswer: String
 
     @Given("^today is \"([^\"]*)\"$")
     fun today_is(today: String) {
