@@ -1480,7 +1480,7 @@ class StepDefs {
 
     @Given("^today is \"([^\"]*)\"$")
     fun today_is(today: String) {
-        today = today
+        this.today = today
     }
 
     @When("^I ask whether it's Friday yet$")
