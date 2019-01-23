@@ -62,39 +62,39 @@ Steps:
 1.  Create a new Gradle project or look at [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
 2.  Add the following dependency to `build.gradle`
 
-```
-dependencies {
-    testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
-}
-```
+    ```
+    dependencies {
+        testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
+    }
+    ```
 3. Add the following configuration to `build.gradle`
 
-```
-configurations {
-    cucumberRuntime {
-        extendsFrom testRuntime
+    ```
+    configurations {
+        cucumberRuntime {
+            extendsFrom testRuntime
+        }
     }
-}
-```
+    ```
 
 4.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` respectively in a `gradle.cucumber` package.
 5.  Add the following Gradle `cucumber` task in `build.gradle`
 
-```
-task cucumber() {
-    dependsOn assemble, compileTestJava
-    doLast {
-        javaexec {
-            main = "cucumber.api.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+    ```
+    task cucumber() {
+        dependsOn assemble, compileTestJava
+        doLast {
+            javaexec {
+                main = "cucumber.api.cli.Main"
+                classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+                args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+            }
         }
     }
-}
-```
+    ```
 
 6.  Run the following gradle task from the directory path where `build.gradle` file is located:
 
-```shell
-gradle cucumber
-```
+    ```shell
+    gradle cucumber
+    ```
