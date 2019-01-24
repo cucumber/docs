@@ -70,6 +70,10 @@ repositories {
 
 You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) to execute by [adding a cucumber task](/tools/java#gradle) to `build.gradle`.
 
+# JUnit-integration
+
+It is also possible to use [cucumber-junit](/cucumber/api/#junit) to run your Cucumber test suite.
+
 # Snapshot releases
 
 To take advantage of functionality that has been committed to the git `master` branch, but hasn't been released to the central Maven repo yet, you can use `SNAPSHOT` builds from the [sonatype snapshot repo](https://oss.sonatype.org/content/repositories/snapshots/io/cucumber/).
