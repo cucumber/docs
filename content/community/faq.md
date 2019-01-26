@@ -223,4 +223,4 @@ Otherwise, Picocontainer is the most light weight framework you can use.
 {{% /block %}}
 
 # Arity Mismatch
-An Arity mismatch exception{{% text "java,kotlin" %}}, `cucumber.runtime.CucumberException: Arity mismatch`,{{% /text %}} indicates that the step does not provide the right number of arguments needed for the step definition.
+An Arity mismatch exception{{% text "java,kotlin" %}}- `cucumber.runtime.CucumberException: Arity mismatch`-{{% /text %}} indicates that the step does not provide the right number of arguments needed for the step definition.
