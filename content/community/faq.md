@@ -234,3 +234,6 @@ If you are using Cucumber on the JVM, you can use [dependency injection (DI)](/c
 If your project already uses a dependency framework supported by Cucumber (and/or you are familiar with one of them), it's probably easiest to use that framework. 
 Otherwise, Picocontainer is the most light weight framework you can use.
 {{% /block %}}
+
+# Arity Mismatch
+An arity mismatch exception{{% text "java,kotlin" %}} `cucumber.runtime.CucumberException: Arity mismatch`{{% /text %}} indicates that the step does not provide the right number of arguments needed for the step definition.
