@@ -293,6 +293,13 @@ class RunCucumberTest
 {{% block "javascript" %}}
 We'll start by creating a new directory and an empty Node.js project.
 
+Sometime, before that we need to install cucumber globally by running this command:
+
+```shell
+npm install -g cucumber
+```
+Now continue with the rest:
+
 ```shell
 mkdir hellocucumber
 cd hellocucumber
