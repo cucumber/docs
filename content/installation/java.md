@@ -70,6 +70,10 @@ repositories {
 
 You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) to execute by [adding a cucumber task](/tools/java#gradle) to `build.gradle`.
 
+# Using Cucumber without a dependency manager
+
+If you have not migrated to using a dependency manager, you can still download the jars separately from the Maven central repository.  Simply go to [the Cucumber section of the Maven central repository](http://repo1.maven.org/maven2/info/cukes/) and download the latest version of `cucumber-core`, `cucumber-java`, `cucumber-jvm-deps`, and `gherkin`.  Then add them to your classpath.  If you use it through JUnit, you may also want to add `cucumber-junit` and `cucumber-html`.  Be careful that the newest version may not be at the bottom of the file list, as 10 sorts alphabetically before 9.  Also be sure to download the same version for each of the Cucumber jars.
+
 # JUnit-integration
 
 It is also possible to use [cucumber-junit](/cucumber/api/#junit) to run your Cucumber test suite.
