@@ -137,11 +137,11 @@ a list of [steps](#steps).
 
 The keyword `Scenario` is a synonym of the keyword `Example`.
 
-You can have as many steps as you like, but we recommend you keep the number at 3-5 per scenario.
+You can have as many steps as you like, but we recommend you keep the number at 3-5 per example.
 If they become longer than that, they lose their expressive power as specification and documentation.
 
-In addition to being a specification and documentation, a scenario is also a *test*.
-As a whole, your scenarios are an *executable specification* of the system.
+In addition to being a specification and documentation, an example is also a *test*.
+As a whole, your examples are an *executable specification* of the system.
 
 Examples follow this same pattern:
 
