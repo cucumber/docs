@@ -832,7 +832,7 @@ public class Stepdefs {
     }
 
     @When("^I ask whether it's Friday yet$")
-    public void i_ask_whether_is_s_Friday_yet() {
+    public void i_ask_whether_it_s_Friday_yet() {
         actualAnswer = IsItFriday.isItFriday(today);
     }
 
@@ -867,7 +867,7 @@ class StepDefs {
     }
 
     @When("^I ask whether it's Friday yet$")
-    fun i_ask_whether_is_s_Friday_yet() {
+    fun i_ask_whether_it_s_Friday_yet() {
         actualAnswer = isItFriday(today)
     }
 
@@ -938,7 +938,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
       java.lang.AssertionError: expected:<Nope> but was:<null>
 	at org.junit.Assert.fail(Assert.java:88)
@@ -969,7 +969,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # StepDefs.today_is_Sunday()
-    When I ask whether it's Friday yet # StepDefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # StepDefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # StepDefs.i_should_be_told(String)
       junit.framework.ComparisonFailure: expected:<[Nope]> but was:<[]>
         at junit.framework.Assert.assertEquals(Assert.java:100)
@@ -1073,7 +1073,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
 1 Scenarios (1 passed)
@@ -1176,12 +1176,12 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/isitfriday.feature:4
     Given today is "Sunday"            # Stepdefs.today_is(String)
-    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
   Scenario: Friday is Friday           # hellocucumber/is_it_friday.feature:9
     Given today is "Friday"            # Stepdefs.today_is(String)
-    When I ask whether is's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
       org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
 	at org.junit.Assert.assertEquals(Assert.java:115)
@@ -1354,12 +1354,12 @@ Feature: Is it Friday yet?
 
   Scenario: Friday is Friday           # hellocucumber/is_it_friday_yet.feature:4
     Given today is Friday              # Stepdefs.today_is_Sunday()
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
 2 scenarios (2 passed)
@@ -1449,7 +1449,7 @@ public class Stepdefs {
     }
 
     @When("^I ask whether it's Friday yet$")
-    public void i_ask_whether_is_s_Friday_yet() {
+    public void i_ask_whether_it_s_Friday_yet() {
         this.actualAnswer = IsItFriday.isItFriday(today);
     }
 
@@ -1484,7 +1484,7 @@ class StepDefs {
     }
 
     @When("^I ask whether it's Friday yet$")
-    fun i_ask_whether_is_s_Friday_yet() {
+    fun i_ask_whether_it_s_Friday_yet() {
         actualAnswer = isItFriday(today)
     }
 
@@ -1570,7 +1570,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_is_s_Friday_yet()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
     Examples:
