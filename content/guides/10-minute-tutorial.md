@@ -61,6 +61,14 @@ npm -v
 
 Both of these commands should print a version number.
 
+{{% tip "Note"%}}
+If you are using linux, install cucumber globally and verify
+```shell
+npm install -g cucumber
+npm ls -g depth -0
+```
+{{% /tip %}}
+
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -292,13 +300,6 @@ class RunCucumberTest
 
 {{% block "javascript" %}}
 We'll start by creating a new directory and an empty Node.js project.
-
-Sometime, before that we need to install cucumber globally by running this command:
-
-```shell
-npm install -g cucumber
-```
-Now continue with the rest:
 
 ```shell
 mkdir hellocucumber
