@@ -389,7 +389,7 @@ In your step definition, there’s no need to find this text and match it in you
 It will automatically be passed as the last argument in the step definition.
 
 Indentation of the opening `"""` is unimportant, although common practice is two spaces in from the enclosing step.
-The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be de-indented according to the opening `"""`. Indentation beyond the column of the opening """ will therefore be preserved.
+The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be dedented according to the opening `"""`. Indentation beyond the column of the opening """ will therefore be preserved.
 
 ## Data Tables
 
@@ -426,7 +426,7 @@ Funksjonalitet: Gjett et ord
     Når Ordmaker starter et spill
     Så må Ordmaker vente på at Gjetter blir med
 
-  Example: Gjetter blir med
+  Eksempel: Gjetter blir med
     Gitt at Ordmaker har startet et spill med ordet "bløtt"
     Når Gjetter blir med på Ordmakers spill
     Så må Gjetter gjette et ord på 5 bokstaver
