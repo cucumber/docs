@@ -87,8 +87,8 @@ You can also tell Cucumber-JVM explicitly which packages (and sub-packages) to s
  public class RunCucumberTest{}
 ```
  ```kotlin
- @CucumberOptions(glue = {"<package>", "<package>", "<etc>"})
- public class RunCucumberTest{}
+ @CucumberOptions(glue = ["<package>", "<package>", "<etc>"])
+ class RunCucumberTest
 ```
 {{% /block %}}
 
