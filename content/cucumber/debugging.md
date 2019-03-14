@@ -3,7 +3,7 @@ title: Debugging
 subtitle: How to debug failing Cucumber steps
 polyglot:
  - java
- - kotlin
+ - javascript
  - ruby
  - kotlin
 
