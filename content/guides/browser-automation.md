@@ -15,7 +15,7 @@ Cucumber is not a browser automation tool, but it works well with the following 
 
 WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver's goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.
 
-[Selenium-WebDriver](https://docs.seleniumhq.org/docs/03_webdriver.jsp#setting-up-webdriver-project) can be used in multiple programming languages, including Java, JavaScript and Ruby.
+[Selenium-WebDriver](https://docs.seleniumhq.org/docs/03_webdriver.jsp#setting-up-webdriver-project) can be used in multiple programming languages, including Java, JavaScript, Ruby and Kotlin.
 
 Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting [Selenium-Web driver by example](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example).
 
@@ -169,11 +169,11 @@ end
 
 More information on [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/).
 
-# Browser Automation Tools for Java
+# Browser Automation Tools for JVM
 
 ## Serenity BDD
 
-{{% text "java" %}}
+{{% text "java,kotlin" %}}
 
 Serenity BDD is an open source reporting library that helps you write better
 structured, more maintainable automated acceptance criteria. Serenity also produces
@@ -185,7 +185,7 @@ A detailed tutorial on using Cucumber-JVM with Serenity can be found
 
 {{% /text %}}
 
-{{% text "javascript,ruby" %}}Serenity only works with Java.{{% /text %}}
+{{% text "javascript,ruby" %}}Serenity only works with JVM languages.{{% /text %}}
 
 # Browser Automation Tools for Ruby
 
@@ -250,7 +250,7 @@ More information on [Watir](http://watir.com).
 
 {{% /text %}}
 
-{{% text "java,javascript" %}}Watir only works with Ruby.{{% /text %}}
+{{% text "java,javascript,kotlin" %}}Watir only works with Ruby.{{% /text %}}
 
 ## Capybara
 
@@ -270,7 +270,7 @@ More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 {{% /text %}}
 
-{{% text "java,javascript" %}}Capybara only works with Ruby.{{% /text %}}
+{{% text "java,javascript,kotlin" %}}Capybara only works with Ruby.{{% /text %}}
 
 # Tips and Tricks
 
@@ -326,8 +326,12 @@ mvn test -Ddriver=chrome
 
 ## Example Projects
 
-{{% text "java" %}}
-Here are a few example project using Java:
+{{% text "javascript" %}}There are currently no example projects available using JavaScript.{{% /text %}}
+
+{{% text "ruby" %}}There are currently no example projects available using Ruby.{{% /text %}}
+
+{{% text "java,kotlin" %}}
+Here are a few example projects using Java:
 
 - [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
 
