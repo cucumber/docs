@@ -54,5 +54,5 @@ The following blog posts describe the changes made per release:
 
 * [Announcing Cucumber-JVM 4.2.0](https://cucumber.io/blog/2018/10/31/announcing-cucumber-jvm-4-2-0)
 
-Details can be found in the [changelog](https://github.com/cucumber/cucumber-jvm/blob/master/CHANGELOG.md).
+Details can be found in the [cucumber-jvm changelog](https://github.com/cucumber/cucumber-jvm/blob/master/CHANGELOG.md).
 {{% /block %}}
