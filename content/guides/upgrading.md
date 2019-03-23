@@ -36,7 +36,7 @@ You can read the history file to learn about the changes in every release:
 {{% /block %}}
 
 # Migration guides
-We don't have any migration guides at the moment, but blog post announcing new versions usually contain an overview of the changes made in that particular version.
+We don't have any migration guides at the moment, but blog posts announcing new versions usually contain an overview of the changes made in that particular version.
 This includes information about any breaking changes when a new major version is released.
 
 {{% block "java,kotlin" %}}
