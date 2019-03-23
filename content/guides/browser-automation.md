@@ -326,9 +326,9 @@ mvn test -Ddriver=chrome
 
 ## Example Projects
 
-{{% text "javascript" %}}There are no example projects using JavaScript.{{% /text %}}
+{{% text "javascript" %}}There are currently no example projects available using JavaScript.{{% /text %}}
 
-{{% text "ruby" %}}There are no example projects using Ruby.{{% /text %}}
+{{% text "ruby" %}}There are currently no example projects available using Ruby.{{% /text %}}
 
 {{% text "java,kotlin" %}}
 Here are a few example projects using Java:
