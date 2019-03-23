@@ -169,11 +169,11 @@ end
 
 More information on [Selenium Webdriver](http://docs.seleniumhq.org/projects/webdriver/).
 
-# Browser Automation Tools for Java
+# Browser Automation Tools for JVM
 
 ## Serenity BDD
 
-{{% text "java" %}}
+{{% text "java,kotlin" %}}
 
 Serenity BDD is an open source reporting library that helps you write better
 structured, more maintainable automated acceptance criteria. Serenity also produces
@@ -185,7 +185,7 @@ A detailed tutorial on using Cucumber-JVM with Serenity can be found
 
 {{% /text %}}
 
-{{% text "javascript,ruby" %}}Serenity only works with Java.{{% /text %}}
+{{% text "javascript,ruby" %}}Serenity only works with JVM languages.{{% /text %}}
 
 # Browser Automation Tools for Ruby
 
@@ -326,8 +326,12 @@ mvn test -Ddriver=chrome
 
 ## Example Projects
 
-{{% text "java" %}}
-Here are a few example project using Java:
+{{% text "javascript" %}}There are no example projects using JavaScript.{{% /text %}}
+
+{{% text "javascript" %}}There are no example projects using Ruby.{{% /text %}}
+
+{{% text "java,kotlin" %}}
+Here are a few example projects using Java:
 
 - [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
 
