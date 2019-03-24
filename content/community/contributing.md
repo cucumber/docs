@@ -18,6 +18,8 @@ Or have a look on [StackOverflow](https://stackoverflow.com/questions/tagged/cuc
 
 It's impossible to give a meaningful answer to "Cucumber doesn't work - what's wrong?" -style questions. You have to tell us [more](#help-us-help-you).
 
+We use GitHub issues to track bugs and feature requests exclusively. Please use the [support forums](/community/get-in-touch) for questions and discussions.
+
 # You have found a bug
 
 Before you file an [Issue on Github](https://github.com/cucumber/cucumber/issues/), make sure you have tried the latest version.
@@ -28,7 +30,8 @@ This way you don't waste time by reporting a bug that has already been fixed.
 gem update cucumber
 ```
 
-If you are certain you have found a bug, just register a ticket with the relevant project. If you're not sure, please [get in touch](/community/get-in-touch).
+If you are certain you have found a bug, just register a ticket with the relevant project. We have added issue templates on GitHub to help you provide the relevant information.
+If you're not sure, please [get in touch](/community/get-in-touch).
 
 ## Help us help you
 
@@ -51,13 +54,15 @@ The only way to fix a bug, is to reproduce it first. At the very least, provide 
 If you can, write a Unit Test or a Cucumber Feature that demonstrates the bug.
 On occasion, we might ask you to provide a [Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (preferably in the form of a Github project).
 
-If you file a Github issue without providing following these quidelines, your ticket may be closed. If that happens, please provide the missing information in the ticket to have it reopened.
+If you file a Github issue without providing following these guidelines, your ticket may be closed. If that happens, please provide the missing information in the ticket to have it reopened.
 
 Whenever possible, please provide a Pull Request yourself that fixes the issue and/or consider adding your solution to the documentation.
 
 # You want a new feature
 
 Start by creating a ticket. Then, create a Cucumber Feature and start implementing it. It also helps if you add unit tests for the low level code.
+
+If you want to discuss your feature and possible solution, you can do so in the GitHub issue, or on one of the [support forums](/community/get-in-touch).
 
 # You want to update the documentation
 
