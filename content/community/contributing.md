@@ -54,7 +54,7 @@ The only way to fix a bug, is to reproduce it first. At the very least, provide 
 If you can, write a Unit Test or a Cucumber Feature that demonstrates the bug.
 On occasion, we might ask you to provide a [Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (preferably in the form of a Github project).
 
-If you file a Github issue without providing following these guidelines, your ticket may be closed. If that happens, please provide the missing information in the ticket to have it reopened.
+If you file a Github issue without following these guidelines, your ticket may be closed. If that happens, please provide the missing information in the ticket to have it reopened.
 
 Whenever possible, please provide a Pull Request yourself that fixes the issue and/or consider adding your solution to the documentation.
 
