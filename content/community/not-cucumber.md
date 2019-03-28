@@ -24,7 +24,7 @@ If not, you can create an issue yourself.
 {{% /block %}}
 
 ## Eclipse
-{{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
+{{% text "javascript,ruby" %}}Eclipse is a Java IDE.{{% /text %}}
 {{% block "java,kotlin" %}}
 You can find the [Cucumber Eclipse Plugin on GitHub](https://github.com/cucumber/cucumber-eclipse). It is an open source plugin.
 {{% /block %}}
