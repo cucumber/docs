@@ -60,19 +60,33 @@ To run Cucumber with [Gradle](https://gradle.org/), make sure that:
 Steps:
 
 1.  Create a new Gradle project or look at [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
-2.  Add the following dependency to `build.gradle`
-
+2.  If you are going to use Gradle **4.10.3 or older**, add this dependency block to `build.gradle`.
     ```
     dependencies {
         testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
     }
     ```
-3. Add the following configuration to `build.gradle`
 
+    For Gradle **5.0 or more recent**, you can add the following dependency block to `build.gradle`.
+    ```
+    dependencies {
+        testImplementation 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
+    }
+    ```
+
+3. For Gradle **4.10.3 or older**, add the following configuration to `build.gradle`.
     ```
     configurations {
         cucumberRuntime {
             extendsFrom testRuntime
+        }
+    }
+    ```
+    For Gradle **5.0 or more recent**, the following configuration must be added to `build.gradle`.
+    ```
+    configurations {
+        cucumberRuntime {
+            extendsFrom testImplementation
         }
     }
     ```
