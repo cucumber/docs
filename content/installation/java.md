@@ -41,10 +41,10 @@ You can now run Cucumber [from the command line](/cucumber/api/#from-the-command
 
 # Gradle
 
-If you are going to use the lambda expressions API (Java 8) to write the step
+If you are using Gradle **4.10.3 or older**, and you are going to use the lambda expressions API (Java 8) to write the step
 definitions, add the following dependencies to `build.gradle`:
 
-## Gradle 4.10.3 or older
+
 ```
 dependencies {
     testCompile 'io.cucumber:cucumber-java8:{{% version "cucumberjvm" %}}'
@@ -56,7 +56,7 @@ repositories {
 }
 ```
 
-Otherwise, to write them using annotated methods, add the following dependencies to `build.gradle`:
+If you would prefer to write step definitions using annotated methods and you are using Gradle **4.10.3 or older**, add the following dependencies to `build.gradle`:
 
 ```
 dependencies {
@@ -69,7 +69,7 @@ repositories {
 }
 ```
 
-## Gradle 5.0 or newer
+Similarly, if you want to use Gradle **5.0 or more recent**, and would like to use the lambda API, add the following block to `build.gradle`.
 ```
 dependencies {
     testImplementation 'io.cucumber:cucumber-java8:{{% version "cucumberjvm" %}}'
