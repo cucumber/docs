@@ -61,13 +61,13 @@ Steps:
 
 1.  Create a new Gradle project or look at [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
 2.  Add the appropriate dependency to `build.gradle`, based on the Gradle version being used.
-    #### Gradle version 4.10.3 or older
+    ### Gradle version 4.10.3 or older
     ```
     dependencies {
         testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
     }
     ```
-    #### Gradle version 5.0 or newer
+    ### Gradle version 5.0 or newer
     ```
     dependencies {
         testImplementation 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
@@ -75,7 +75,7 @@ Steps:
     ```
 
 3. Add the appropriate configuration to `build.gradle`, based on the Gradle version being used.
-    #### Gradle version 4.10.3 or older
+    ### Gradle version 4.10.3 or older
     ```
     configurations {
         cucumberRuntime {
@@ -83,7 +83,7 @@ Steps:
         }
     }
     ```
-    #### Gradle version 5.0 or newer
+    ### Gradle version 5.0 or newer
     ```
     configurations {
         cucumberRuntime {
