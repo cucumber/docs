@@ -67,7 +67,7 @@ Steps:
     }
     ```
 
-    For Gradle **5.0 or **, you can add the following dependency block to `build.gradle`.
+    For Gradle **5.0 or more recent**, you can add the following dependency block to `build.gradle`.
     ```
     dependencies {
         testImplementation 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
