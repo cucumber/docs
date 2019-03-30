@@ -268,9 +268,9 @@ For example, if you have the following steps used across multiple scenarios :
 
 and all of these steps have different step definitions which visit the Home, About and Contact pages, you might be writing _redundant steps_. It is possible that the underlying code for executing each of these test cases is different, **but** it is important to understand that from the point of view of their **behavior**, all of these steps do essentially similar things, ie.
 
-_* Open the Home page_
-_* Open the About page_
-_* Open the Contact page_
+_⋅⋅* Open the Home page_
+_⋅⋅* Open the About page_
+_⋅⋅* Open the Contact page_
 
 As such, you can use abstract helper methods to reduce all these into one step :
 
