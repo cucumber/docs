@@ -254,11 +254,11 @@ Given("I have {int} {color} balls", function (int1, color) {
 ```
 {{% /block %}}
 
-# Grouping step definitions
+# How do I group my step definitions?
 
-Avoid writing similar step definitions, as they can lead to clutter. While documenting your steps helps, making use of **helper methods** to abstract them can do wonders.
+Avoid writing similar step definitions which can lead to clutter. While documenting your steps helps, making use of **helper methods** to abstract them can do wonders.
 
-For example, take the following steps:
+For example, if you have the following steps :
 
 ```
     Given I go to the home page
@@ -266,22 +266,18 @@ For example, take the following steps:
     Given I get the contact details
 ```
 
-If all of these steps visit the **Home**, **About** and **Contact** pages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same:
+and all of these steps just open the respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, ie. *to open the Home, About or Contact page*.
 
-1. Open the Home page.
-2. Open the About page.
-3. Open the Contact page.
-
-As such, you can use abstract helper methods to reduce all these into one step :
+As such, you can use abstract helper methods to reduce them into a single step:
 
     Given I go to the {} page
 
-with the step definition:
+with the step def :
 
 ```java
 @Given("I want to open the {string} page")
-public void i_want_to_open_page(String name) {
-  pageFactory.openPage(name);
+public void i_want_to_open_page(String webpage) {
+  webpageFactory.openPage(webpage);
 }
 ```
 
@@ -297,15 +293,16 @@ public void i_want_to_open_page(String name) {
  //TODO
 ```
 
-Your step definitions are the "glue" to the actual code (in this example, a factory method to decide which page to open).
+And have your step definitions be the glue to the actual code (in this example, a factory method to decide which page to open).
+You can also use step definitons to hide implementation details by calling several reusable helper methods from one.
 
-This helps in a number of ways:
+This helps in a number of ways,
 
-1. Less steps and more easily maintainable steps.
+1. Less and more easily maintainable steps.
 2. Increased Scalablility: Adding tests for a new functionality with the same underlying *behaviour* is easier.
 3. Concise and easy to understand tests.
 
-You can use the same method to write steps for validating a webpage, clicking a button, etc. - each with their own helper methods.
+You can tacke other behaviours like *validating a webpage, clicking a button, etc* the same way.
 
 We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.
 Also, using [Data Tables](/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
