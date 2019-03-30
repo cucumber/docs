@@ -254,11 +254,11 @@ Given("I have {int} {color} balls", function (int1, color) {
 ```
 {{% /block %}}
 
-# Abstract Your Steps
+# How do I group my step definitions?
 
-It is always a good idea to make sure that you are not writing duplicate/similar step definitions. While there are a number of ways to do so and you can document your step definitions as well, it is always good to make use of **helper methods** to abstract your step definitions and reduce the number of steps.
+Avoid writing similar step definitions which can lead to clutter. While documenting your steps helps, making use of **helper methods** to abstract them can do wonders.
 
-For example, if you have the following steps used across multiple scenarios :
+For eg, if you have the following steps :
 
 ```
     Given I go to the home page
@@ -266,11 +266,11 @@ For example, if you have the following steps used across multiple scenarios :
     Given I get the contact details
 ```
 
-and all of these steps have different step definitions which visit the Home, About and Contact pages, you might be writing _redundant steps_. It is possible that the underlying code for executing each of these test cases is different, **but** it is important to understand that from the point of view of their **behavior**, all of these steps do essentially similar things, ie.
+and all of these steps visit the **Home**, **About** and **Contact** pages, you might be writing _redundant steps_. While the underlying code for these steps could be different, their **behaviour** is essentially the same, ie.
 
-_⋅⋅* Open the Home page_
-_⋅⋅* Open the About page_
-_⋅⋅* Open the Contact page_
+1. Open the Home page.
+2. Open the About page.
+3. Open the Contact page.
 
 As such, you can use abstract helper methods to reduce all these into one step :
 
@@ -285,16 +285,28 @@ public void i_want_to_open_page(String name) {
 }
 ```
 
-And then inside your step definition, use a helper method to determine how the page must be opened and direct your step definition to the correct code for opening that particular page.
+```javascript
+ //TODO
+```
 
-This helps you in a number of ways like,
+```ruby
+ //TODO
+```
 
-1. Allowing you to have less and more easily maintainable steps.
-2. Making your project easily scalable: Adding tests for a new functionality with the same underlying _behavior_ is a lot easier and less cumbersome.
-3. Making your test cases concise and easy to understand by anyone.
 
-to name a few.
+```kotlin
+ //TODO
+```
+
+And have your step definitions act as a gateway to the actual code (in this case, a factory method to decide which page to open).
+
+This helps in a number of ways,
+
+1. Less and more easily maintainable steps.
+2. Increased Scalablility: Adding tests for a new functionality with the same underlying _behaviour_ is easier.
+3. Concise and easy to understand tests.
 
 You can use the same method to write steps for validating a webpage, clicking a button, etc each with their own helper methods.
 
-A good look at the _(Abstract) Factory Design_ pattern can be very useful for creating/refractoring your test cases with such abstraction. Also, using [Data Tables](/cucumber/api/#data-tables) for providing inputs along with this method makes your steps even more easy to maintain and understand.
+We recommend taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.
+Also, using [Data Tables](/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
