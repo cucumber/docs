@@ -254,11 +254,11 @@ Given("I have {int} {color} balls", function (int1, color) {
 ```
 {{% /block %}}
 
-# How do I group my step definitions?
+# Grouping step definitions
 
-Avoid writing similar step definitions which can lead to clutter. While documenting your steps helps, making use of **helper methods** to abstract them can do wonders.
+Avoid writing similar step definitions as they can lead to clutter. While documenting your steps helps, making use of **helper methods** to abstract them can do wonders.
 
-For example, if you have the following steps :
+For example, take the following steps :
 
 ```
     Given I go to the home page
@@ -266,13 +266,13 @@ For example, if you have the following steps :
     Given I get the contact details
 ```
 
-and all of these steps just open the respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, ie. *to open the Home, About or Contact page*.
+If all of these steps just open the respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, ie. *to open the Home, About or Contact page*.
 
 As such, you can use abstract helper methods to reduce them into a single step:
 
     Given I go to the {} page
 
-with the step def :
+with the step definition :
 
 ```java
 @Given("I want to open the {string} page")
@@ -293,8 +293,7 @@ public void i_want_to_open_page(String webpage) {
  //TODO
 ```
 
-And have your step definitions be the glue to the actual code (in this example, a factory method to decide which page to open).
-You can also use step definitons to hide implementation details by calling several reusable helper methods from one.
+Your step definitions are the glue to the actual code (in this example, a factory method to decide which page to open).
 
 This helps in a number of ways,
 
