@@ -301,7 +301,7 @@ This helps in a number of ways,
 2. Increased Scalablility: Adding tests for a new functionality with the same underlying *behaviour* is easier.
 3. Concise and easy to understand tests.
 
-You can tacke other behaviours like *validating a webpage, clicking a button, etc* the same way.
+You can handle other behaviours like *validating a webpage, clicking a button, etc* the same way.
 
 We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.
 Also, using [Data Tables](/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
