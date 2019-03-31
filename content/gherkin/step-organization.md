@@ -92,7 +92,7 @@ As such, you can use abstract helper methods to reduce them into a single step:
 
     Given I go to the {} page
 
-And the following the step definition:
+And the following step definition:
 
 ```java
 @Given("I want to open the {string} page")
