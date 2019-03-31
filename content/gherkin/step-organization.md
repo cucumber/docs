@@ -76,9 +76,9 @@ This makes your project a lot easier to understand for people who join your proj
 
 # Grouping step definitions
 
-Avoid writing similar step definitions as they can lead to clutter. While documenting your steps helps, making use of **helper methods** to abstract them can do wonders.
+Avoid writing similar step definitions, as they can lead to clutter. While documenting your steps helps, making use of **helper methods** to abstract them can do wonders.
 
-For example, take the following steps :
+For example, take the following steps:
 
 ```
     Given I go to the home page
@@ -86,13 +86,13 @@ For example, take the following steps :
     Given I get the contact details
 ```
 
-If all of these steps just open the respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, ie. *to open the Home, About or Contact page*.
+If all of these steps just open the respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, i.e. *to open the Home, About or Contact page*.
 
 As such, you can use abstract helper methods to reduce them into a single step:
 
     Given I go to the {} page
 
-with the step definition :
+And the following the step definition:
 
 ```java
 @Given("I want to open the {string} page")
@@ -122,7 +122,7 @@ This helps in a number of ways,
 * Increased scalablility with reusable steps.
 * Easier to understand tests.
 
-You can handle other behaviours like *validating a webpage, clicking a button, etc* the same way.
+You can handle other behaviours, like *validating a webpage, clicking a button, etc.*, the same way.
 
 We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.
 Also, using [Data Tables](/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
