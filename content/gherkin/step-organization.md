@@ -73,3 +73,57 @@ In fact, it is recommended to refactor step definitions into helper methods for 
 The method can reside in the same {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}} file as the step definition.
 
 This makes your project a lot easier to understand for people who join your project at a later date; which also makes your project easier to maintain.
+
+# Grouping step definitions
+
+Avoid writing similar step definitions, as they can lead to clutter. While documenting your steps helps, making use of **helper methods** to abstract them can do wonders.
+
+For example, take the following steps:
+
+```
+    Given I go to the home page
+    Given I check the about page of the website 
+    Given I get the contact details
+```
+
+If all of these steps just open the respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, i.e. *to open the Home, About or Contact page*.
+
+As such, you can use abstract helper methods to reduce them into a single step:
+
+    Given I go to the {} page
+
+And the following the step definition:
+
+```java
+@Given("I want to open the {string} page")
+public void i_want_to_open_page(String webpage) {
+  webpageFactory.openPage(webpage);
+}
+```
+
+```javascript
+ //TODO
+```
+
+```ruby
+ //TODO
+```
+
+```kotlin
+ //TODO
+```
+
+Your step definitions are the glue to the actual code (in this example, a factory method to decide which page to open).
+They can also be used to hide implementation details by calling several reusable helper methods from one step definiton.
+
+This helps in a number of ways,
+
+* Increased maintainability.
+* Increased scalablility with reusable steps.
+* Easier to understand tests.
+
+You can handle other behaviours, like *validating a webpage, clicking a button, etc.*, the same way.
+
+We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.
+Also, using [Data Tables](/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
+

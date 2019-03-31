@@ -146,24 +146,10 @@ Each scenario should *test exactly one thing* so that when it fails, it fails fo
 If your scenarios use the same or similar steps, or perform similar actions on your system, you can extract [helper methods](#how-to-use-helper-methods) to do those things.
 
 ### How to use helper methods
-We will illustrate the use of helper methods with an example. For instance, let's say you need to login to your application.
-If you want to (re)use this action as a step or part of another step, write a method for login.
+Helper methods allow you to re(use) actions in steps and avoid writing multiple step definitions for similar behaviours. You write a helper method for actions like *logging in to your application* and then reuse them as a step or part of other steps.
+This helps keep your tests clean, concise and maintainable.
 
-```java
-public void login(String user, String pass) {
-
-  // sendKeys to username field
-
-  // sendKeys to password fields
-
-  // click Login button
-
-}
-```
-
-You can call this method from your step definition. You could even call *several* helper methods from one step definition; for instance, if you want to login and navigate to a particular page.
-
-Of course, which helper methods you'll need will depend on your application and your domain.
+To learn more about using helper methods, check out [Helper methods](/gherkin/step-organization/#helper-methods) and [Grouping step definitions](/gherkin/step-organization/#grouping-step-definitions). 
 
 ## How detailed should my scenarios be?
 Your scenarios should contain *just enough* information to describe the *behaviour* of the system.
