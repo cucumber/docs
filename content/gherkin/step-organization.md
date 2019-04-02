@@ -95,7 +95,7 @@ As such, you can use abstract helper methods to reduce them into a single step:
 And the following step definition:
 
 ```java
-@Given("I want to open the {string} page")
+@Given("I go to the {string} page")
 public void i_want_to_open_page(String webpage) {
   webpageFactory.openPage(webpage);
 }
