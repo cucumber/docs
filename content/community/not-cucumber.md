@@ -19,8 +19,15 @@ Note that if you are using a newer version of Cucumber, the plugin you are using
 ## IntelliJ
 {{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
 {{% block "java,kotlin" %}}
-If you are having issues with the "Cucumber for Java" plugin, please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
-If not, you can create an issue yourself.
+JetBrains are the creators of IntelliJ, and maintain the "Cucumber for Java" plugin, please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
+If not, you can create an issue yourself. You need to
+
+### IntelliJ and Cucumber v1.x
+For "Cucumber java" check that you are using the "Program arguments:" of ```--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter```
+
+### IntelliJ and Cucumber v4.x
+For "Cucumber java" check that you are using the "Program arguments:" of ```--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter```
+Currently no output appears whilst cucumber is executing, you will only see "Running tests..." until all tests have completed. Stay with Cucumber v1.x if you require realtime feedback as tests execute.
 {{% /block %}}
 
 ## Eclipse
