@@ -1,6 +1,6 @@
 ---
 title: SpecFlow
-subtitle: C#, F#
+subtitle: C#, F#, VB.NET
 svg: installation/dotnet.svg
 implementation: semi-official
 weight: 1160
