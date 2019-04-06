@@ -44,7 +44,7 @@ Feature: Example feature
 
 ```
 
-And here's an example of implementing those steps using our `tests/cucumber.rs` file:
+Here's an example of how to implement those steps using our `tests/cucumber.rs` file:
 
 ```rust
 #[macro_use]
