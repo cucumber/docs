@@ -6,11 +6,11 @@ implementation: unofficial
 weight: 1200
 ---
 
-## Cucmber-Rust
+# Cucmber-Rust
 
 Cucumber-Rust is an unofficial implementation of the Cucumber testing framework for Rust. The implementation is fully native. It doesn't use any external test runners or dependencies.
 
-### Usage
+## Usage
 
 Create a directory called `tests/` in your project root and create a test target of your choice. In this example we will name it `cucumber.rs`.
 
@@ -138,15 +138,6 @@ The full gamut of Cucumber's Gherkin language is implemented by the
 [gherkin-rust](https://github.com/bbqsrc/gherkin-rust) project. Most features of the Gherkin 
 language are parsed already and accessible via the relevant structs.
 
-### License
-
-This project is licensed under either of
-
- * Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
- * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-at your option.
-
-### Additional Information
+## Additional Information
 
 For more details please see the [Cucumber-Rust website](https://github.com/bbqsrc/cucumber-rust).
