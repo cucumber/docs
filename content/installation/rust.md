@@ -31,7 +31,7 @@ If using stable Rust, you need to disable the `nightly` feature:
 cucumber_rust = { version = "^0.5.1", default-features = false }
 ```
 
-Create a directory called `features/` and put a feature file in it named something like `example.feature`. It might look like:
+Create a directory called `features/` and place your feature file there. For example, a file named `example.feature`, which might look like this:
 
 ```gherkin
 Feature: Example feature
