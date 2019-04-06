@@ -315,18 +315,12 @@ end
 
 {{% /block %}}
 
-The `scenario` parameter is optional, but if you use it, you can inspect the status
+The `scenario` parameter is optional. If you use it, you can inspect the status
 of the scenario.
 
-{{% block "java" %}}
+{{% block "java,javascript,kotlin" %}}
 For example, you can take a screenshot with
 [WebDriver](http://www.seleniumhq.org/projects/webdriver/)
-for failed scenarios and embed them in Cucumber's report.
-{{% /block %}}
-
-{{% block "ruby" %}}
-For example, you can take a screenshot with
-[Capybara](https://github.com/teamcapybara/capybara)
 for failed scenarios and embed them in Cucumber's report.
 {{% /block %}}
 
@@ -356,6 +350,12 @@ After(function (scenario) {
     }
 });
 ```
+
+{{% block "ruby" %}}
+For example, you can take a screenshot with
+[Capybara](https://github.com/teamcapybara/capybara)
+for failed scenarios and embed them in Cucumber's report.
+{{% /block %}}
 
 ```ruby
 # Available scenario methods: #failed?, #passed?, and #exception
