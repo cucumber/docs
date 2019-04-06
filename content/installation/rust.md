@@ -12,9 +12,7 @@ Cucumber-Rust is an unofficial implementation of the Cucumber testing framework 
 
 ## Usage
 
-Create a directory called `tests/` in your project root and create a test target of your choice. In this example we will name it `cucumber.rs`.
-
-Add this to your `Cargo.toml`:
+Add cucumber_rust dependency to your `Cargo.toml`:
 
 ```toml
 [[test]]
@@ -44,7 +42,7 @@ Feature: Example feature
 
 ```
 
-Here's an example of how to implement those steps using our `tests/cucumber.rs` file:
+Create a directory called `tests/` in your project root and create a test module file of your choice. In this example we will name it `cucumber.rs`. Here's an example of how to implement those steps using our `tests/cucumber.rs` file:
 
 ```rust
 #[macro_use]
