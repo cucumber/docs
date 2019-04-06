@@ -25,7 +25,7 @@ harness = false # Allows Cucumber to print output instead of libtest
 cucumber_rust = "^0.5.1"
 ```
 
-If using stable Rust, you need to disable the `nightly` feature:
+If you are using stable Rust, you need to disable the nightly feature:
 
 ```
 cucumber_rust = { version = "^0.5.1", default-features = false }
