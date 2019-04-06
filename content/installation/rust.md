@@ -8,7 +8,7 @@ weight: 1200
 
 ## Cucmber-Rust
 
-Cucumber-Rust is an unofficial implementation of the Cucumber testing framework for Rust. Fully native, no external test runners or dependencies.
+Cucumber-Rust is an unofficial implementation of the Cucumber testing framework for Rust. The implementation is fully native. It doesn't use any external test runners or dependencies.
 
 ### Usage
 
