@@ -12,7 +12,7 @@ Cucumber-Rust is an unofficial implementation of the Cucumber framework for Rust
 
 ## Usage
 
-Add cucumber_rust dependency to your `Cargo.toml`:
+Add the `cucumber_rust` dependency to your `Cargo.toml`:
 
 ```toml
 [[test]]
