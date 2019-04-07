@@ -193,6 +193,16 @@ If you have a need to run the additional steps, likely your scenario is testing 
 Taking a screenshot when a scenario fails, might help you to figure out what went wrong.
 To take a screenshot on failure, you can configure an [after hook](/cucumber/api/#after).
 
+For an [example](/guides/browser-automation/#screenshot-on-failure) on how to use take a screenshot
+with {{% text "java,javascript,kotlin" %}}[WebDriver](http://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}} for failed scenarios and embed them in Cucumber's report, see the [browser automation](/guides/browser-automation) page.
+
+{{% block "java,javascript,kotlin" %}}
+Below is an example of how to take a screenshot with
+[WebDriver](http://www.seleniumhq.org/projects/webdriver/)
+Below is an example of how to take a screenshot with
+for failed scenarios and embed them in Cucumber's report.
+{{% /block %}}
+
 Note that taking a screenshot after *every step* is considered an anti-pattern.
 You should be able to rely on your test automation, without having to check every step of your scenario with a screenshot.
 Your automation should be stable and tests should fail for a clear reason.

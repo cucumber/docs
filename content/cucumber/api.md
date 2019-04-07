@@ -318,53 +318,11 @@ end
 The `scenario` parameter is optional. If you use it, you can inspect the status
 of the scenario.
 
-{{% block "java,javascript,kotlin" %}}
 For example, you can take a screenshot with
-[WebDriver](http://www.seleniumhq.org/projects/webdriver/)
+{{% text "java,javascript,kotlin" %}}[WebDriver](http://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}}
 for failed scenarios and embed them in Cucumber's report.
-{{% /block %}}
 
-```java
-if (scenario.isFailed()) {
-    byte[] screenshot = webDriver.getScreenshotAs(OutputType.BYTES);
-    scenario.embed(screenshot, "image/png");
-}
-```
-
-```kotlin
-if (scenario.isFailed()) {
-    val screenshot = webDriver.getScreenshotAs(OutputType.BYTES)
-    scenario.embed(screenshot, "image/png")
-}
-```
-
-```javascript
-After(function (scenario) {
-    if (scenario.result.status === Status.FAILED) {
-        var world = this;
-        return webDriver.takeScreenshot().then(function(screenShot, error) {
-            if (!error) {
-                world.attach(screenShot, "image/png");
-            }
-        });
-    }
-});
-```
-
-{{% block "ruby" %}}
-For example, you can take a screenshot with
-[Capybara](https://github.com/teamcapybara/capybara)
-for failed scenarios and embed them in Cucumber's report.
-{{% /block %}}
-
-```ruby
-# Available scenario methods: #failed?, #passed?, and #exception
-if scenario.failed?
-  path = "html-report/#{scenario.__id__}.html"
-  page.driver.browser.save_screenshot(path)
-  embed(path, "image/png")
-end
-```
+See the [browser automation page](/guides/browser-automation/#screenshot-on-failure) for an example on how to do so.
 
 {{% block "ruby" %}}
 Here is an example in which we exit at the first failure (which could be useful in some cases like [Continuous Integration](/guides/continuous-integration), where fast feedback is important).

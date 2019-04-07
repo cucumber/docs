@@ -17,7 +17,7 @@ WebDriver is designed to provide a simpler, more concise programming interface i
 
 [Selenium-WebDriver](https://docs.seleniumhq.org/docs/03_webdriver.jsp#setting-up-webdriver-project) can be used in multiple programming languages, including Java, JavaScript, Ruby and Kotlin.
 
-Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting [Selenium-Web driver by example](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example).
+Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting the [Selenium-Web driver by example](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example).
 
 We can express the example as the following scenario:
 
@@ -274,6 +274,58 @@ More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 # Tips and Tricks
 
+## Screenshot on failure
+Taking a screenshot when a scenario fails, might help you to figure out what went wrong.
+To take a screenshot on failure, you can configure an [after hook](/cucumber/api/#after).
+
+{{% block "java,javascript,kotlin" %}}
+Below is an example of how to take a screenshot with
+[WebDriver](http://www.seleniumhq.org/projects/webdriver/)
+for failed scenarios and embed them in Cucumber's report.
+{{% /block %}}
+
+```java
+if (scenario.isFailed()) {
+    byte[] screenshot = webDriver.getScreenshotAs(OutputType.BYTES);
+    scenario.embed(screenshot, "image/png");
+}
+```
+
+```kotlin
+if (scenario.isFailed()) {
+    val screenshot = webDriver.getScreenshotAs(OutputType.BYTES)
+    scenario.embed(screenshot, "image/png")
+}
+```
+
+```javascript
+After(function (scenario) {
+    if (scenario.result.status === Status.FAILED) {
+        var world = this;
+        return webDriver.takeScreenshot().then(function(screenShot, error) {
+            if (!error) {
+                world.attach(screenShot, "image/png");
+            }
+        });
+    }
+});
+```
+
+{{% block "ruby" %}}
+Below is an example of how to take a screenshot with
+[Capybara](https://github.com/teamcapybara/capybara)
+for failed scenarios and embed them in Cucumber's report.
+{{% /block %}}
+
+```ruby
+# Available scenario methods: #failed?, #passed?, and #exception
+if scenario.failed?
+  path = "html-report/#{scenario.__id__}.html"
+  page.driver.browser.save_screenshot(path)
+  embed(path, "image/png")
+end
+```
+
 ## Multiple Browsers
 
 Cucumber can run your scenarios with different browsers, based on a configuration property loaded at runtime:
@@ -305,6 +357,33 @@ public class WebDriverFactory {
 }
 ```
 
+```kotlin
+// TODO: Convert Java example to Kotlin
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebDriverFactory {
+    public static WebDriver createWebDriver() {
+        String webdriver = System.getProperty("browser", "firefox");
+        switch(webdriver) {
+            case "firefox":
+                return new FirefoxDriver();
+            case "chrome":
+                return new ChromeDriver();
+            default:
+                throw new RuntimeException("Unsupported webdriver: " + webdriver);
+        }
+    }
+}
+
+```
+
+```javascript
+// TODO
+```
+
 Then, define the `browser` property when you run Cucumber:
 {{% text "ruby" %}}
 ```
@@ -312,7 +391,7 @@ browser=chrome cucumber
 ```
 {{% /text %}}
 
-{{% text "java" %}}
+{{% text "java,kotlin" %}}
 ```
 mvn test -Dbrowser=chrome
 ```
@@ -324,14 +403,20 @@ mvn test -Ddriver=chrome
 ```
 {{% /text %}}
 
+{{% text "javascript" %}}
+```
+// TODO: How to pass arguments in JavaScript
+```
+{{% /text %}}
+
 ## Example Projects
 
-{{% text "javascript" %}}There are currently no example projects available using JavaScript.{{% /text %}}
+{{% text "javascript" %}}There are currently no example projects available using JavaScript and browser automation.{{% /text %}}
 
-{{% text "ruby" %}}There are currently no example projects available using Ruby.{{% /text %}}
+{{% text "ruby" %}}There are currently no example projects available using Ruby and browser automation.{{% /text %}}
 
 {{% text "java,kotlin" %}}
-Here are a few example projects using Java:
+Here are a few example projects using Java and browser automation:
 
 - [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
 
