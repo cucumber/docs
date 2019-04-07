@@ -69,9 +69,9 @@ and **approve** the Gherkin documents after a developer or tester has translated
 # Step Definitions
 
 In addition to [feature files](/gherkin/reference#feature), Cucumber needs a set of [step definitions](/cucumber/step-definitions). Step definitions map (or "glue") each
-Gherkin step into runnable programming code to carry out what action should be performed by the step.
+Gherkin step to programming code to carry out the  action that should be performed by the step.
 
-Step definitions make the specification hard-wired to the implementation.
+Step definitions hard-wire the specification to the implementation.
 
 <!-- TODO: Illustration (Feature) - (Step Defs) -> (System) -->
 
