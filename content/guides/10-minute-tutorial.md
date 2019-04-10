@@ -1113,7 +1113,7 @@ Congratulations! You've got your first green Cucumber scenario.
 # Add another failing test
 The next thing to test for would be that we also get the correct result when it *is* Friday.
 
-Update the `is-it-friday-yet.feature` file:
+Update the `is_it_friday_yet.feature` file:
 ```gherkin
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -1401,7 +1401,7 @@ Feature: Is it Friday yet?
 # Using variables and examples
 So, we all know that there are more days in the week than just Sunday and Friday. Let's update our scenario to use variables and evaluate more possibilities. We'll use variables and examples to evaluate Friday, Sunday, and anything else!
 
-Update the `is-it-friday-yet.feature` file. Notice how we go from `Scenario` to `Scenario Outline` when we start using multiple `Examples`.
+Update the `is_it_friday_yet.feature` file. Notice how we go from `Scenario` to `Scenario Outline` when we start using multiple `Examples`.
 ```gherkin
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
