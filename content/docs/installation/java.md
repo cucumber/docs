@@ -37,7 +37,7 @@ Otherwise, to write them using annotated methods, add the following dependency t
 </dependency>
 ```
 
-You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) or [run Cucumber with Maven](/tools/java#maven).
+You can now run Cucumber [from the command line](/docs/cucumber/api/#from-the-command-line) or [run Cucumber with Maven](/docs/tools/java#maven).
 
 # Gradle
 
@@ -94,11 +94,11 @@ repositories {
 }
 ```
 
-You can now run Cucumber [from the command line](/cucumber/api/#from-the-command-line) to execute by [adding a cucumber task](/tools/java#gradle) to `build.gradle`.
+You can now run Cucumber [from the command line](/docs/cucumber/api/#from-the-command-line) to execute by [adding a cucumber task](/docs/tools/java#gradle) to `build.gradle`.
 
 # JUnit-integration
 
-It is also possible to use [cucumber-junit](/cucumber/api/#junit) to run your Cucumber test suite.
+It is also possible to use [cucumber-junit](/docs/cucumber/api/#junit) to run your Cucumber test suite.
 
 # Snapshot releases
 
@@ -134,11 +134,11 @@ If you are using Gradle, check the [build.gradle](https://github.com/cucumber/cu
 # Assertions
 
 Cucumber does not come with an assertion library. Instead, use the assertion methods
-from a [unit testing tool](/cucumber/checking-assertions/#java).
+from a [unit testing tool](/docs/cucumber/checking-assertions/#java).
 
 # Dependency Injection
 
 While it's not required, we strongly recommend you include one of the
-[dependency injection](/cucumber/state/#dependency-injection) modules as well. This allows
-you to share state between [step definitions](/cucumber/step-definitions)
+[dependency injection](/docs/cucumber/state/#dependency-injection) modules as well. This allows
+you to share state between [step definitions](/docs/cucumber/step-definitions)
 without resorting to static variables (a common source of flickering scenarios).

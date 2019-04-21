@@ -15,7 +15,7 @@ Cucumber can be used to implement automated tests based on scenarios described i
 
 # Step Arguments
 
-In the example given in [step definitions](/cucumber/step-definitions) Cucumber extracts the text `48` from the step, converts it to an `int`
+In the example given in [step definitions](/docs/cucumber/step-definitions) Cucumber extracts the text `48` from the step, converts it to an `int`
 and passes it as an argument to the {{% stepdef-body %}}.
 
 The number of parameters in the {{% stepdef-body %}} has to match the number of {{% expression-parameter %}}s in the expression. (If there is a mismatch, Cucumber will throw an error).
@@ -78,7 +78,7 @@ Once execution begins, for each step, Cucumber will look for a registered step d
 
 The specific preposition/adverb used has **no** significance when Cucumber is registering or looking up step definitions.
 
-Also, check out [multiline step arguments](/gherkin/reference#step-arguments) for more info on how to pass entire tables or bigger strings to your step definitions.
+Also, check out [multiline step arguments](/docs/gherkin/reference#step-arguments) for more info on how to pass entire tables or bigger strings to your step definitions.
 
 ### Step Results
 
@@ -217,7 +217,7 @@ end
 
 {{% tip "Think twice before you use Before" %}}
 Whatever happens in a `Before` hook is invisible to people who only read the features.
-You should consider using a [background](/gherkin/reference#background) as a more explicit
+You should consider using a [background](/docs/gherkin/reference#background) as a more explicit
 alternative, especially if the setup should be readable by non-technical people.
 Only use a `Before` hook for low-level logic such as starting a browser or deleting
 data from a database.
@@ -322,10 +322,10 @@ For example, you can take a screenshot with
 {{% text "java,javascript,kotlin" %}}[WebDriver](http://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}}
 for failed scenarios and embed them in Cucumber's report.
 
-See the [browser automation page](/guides/browser-automation/#screenshot-on-failure) for an example on how to do so.
+See the [browser automation page](/docs/guides/browser-automation/#screenshot-on-failure) for an example on how to do so.
 
 {{% block "ruby" %}}
-Here is an example in which we exit at the first failure (which could be useful in some cases like [Continuous Integration](/guides/continuous-integration), where fast feedback is important).
+Here is an example in which we exit at the first failure (which could be useful in some cases like [Continuous Integration](/docs/guides/continuous-integration), where fast feedback is important).
 {{% /block %}}
 
 ```ruby
@@ -793,7 +793,7 @@ It is launched by running
 {{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
 {{% text "ruby" %}}`cucumber` from the command line, or a build script.{{% /text %}}
 
-It is possible to [configure](/cucumber/configuration) how Cucumber should run features.
+It is possible to [configure](/docs/cucumber/configuration) how Cucumber should run features.
 
 ## From the command line
 
@@ -869,7 +869,7 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 {{% /block %}}
 
-You can also run features using a [build tool](/tools/general#build-tools) or an [IDE](/tools/general#ides).
+You can also run features using a [build tool](/docs/tools/general#build-tools) or an [IDE](/docs/tools/general#ides).
 
 
 ## JUnit
@@ -1131,7 +1131,7 @@ Some of the runners provide additional mechanisms for passing options to Cucumbe
 {{% /block %}}
 
 {{% block "ruby" %}}
-You can also define common command-line options in a [`cucumber.yml`](/cucumber/configuration) file.
+You can also define common command-line options in a [`cucumber.yml`](/docs/cucumber/configuration) file.
 {{% /block %}}
 
 {{% block "javascript" %}}

@@ -6,7 +6,7 @@ implementation: official
 weight: 1145
 ---
 
-There is no native Kotlin implementation of Cucumber, but you can use [Cucumber-JVM](/installation/java) to write Cucumber tests in Kotlin.
+There is no native Kotlin implementation of Cucumber, but you can use [Cucumber-JVM](/docs/installation/java) to write Cucumber tests in Kotlin.
 
 For examples, please see the [kotlin-java8](https://github.com/cucumber/cucumber-jvm/tree/master/kotlin-java8) examples on GitHub.
 
