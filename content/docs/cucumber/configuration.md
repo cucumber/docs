@@ -263,7 +263,7 @@ want to execute with this profile.
 The example above generates two profiles:
 
 1. `html_report`, with a list of command-line options that specify new output formats, and
-2. `bvt`, which executes all Features and Scenarios [tagged](/cucumber/api#tags) with `@bvt`.
+2. `bvt`, which executes all Features and Scenarios [tagged](/docs/cucumber/api#tags) with `@bvt`.
 
 Cucumber-Rails creates a `cucumber.yml` file in the project config directory containing a number of predefined profiles,
 one of which is the default profile. When Cucumber is run from the command line, it is usually necessary to provide both
@@ -379,8 +379,8 @@ You can use environment variables in the profile argument list, just as you woul
    ie: BROWSER=IE
    ```
 
-When [running Cucumber](/cucumber/api#running-cucumber), it can sometimes be handy to pass special
-values to Cucumber for your [step definitions](/cucumber/step-definitions) to use.
+When [running Cucumber](/docs/cucumber/api#running-cucumber), it can sometimes be handy to pass special
+values to Cucumber for your [step definitions](/docs/cucumber/step-definitions) to use.
 
 You can do this on the command line:
 

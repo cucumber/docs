@@ -11,7 +11,7 @@ weight: 60
 
 Cucumber is frequently used alongside other tools. As much as we would like to help you, if you are having trouble with any of these tools it's better to contact those communities directly.
 This page lists some of the tools often used with Cucumber and where to find help for those tools.
-If you cannot find the tool you are looking for, try the [related tools](/tools/related-tools) page.
+If you cannot find the tool you are looking for, try the [related tools](/docs/tools/related-tools) page.
 
 # IDE Plugins
 Note that if you are using a newer version of Cucumber, the plugin you are using might not have been updated yet.
@@ -30,7 +30,7 @@ You can find the [Cucumber Eclipse Plugin on GitHub](https://github.com/cucumber
 {{% /block %}}
 
 # Browser automation
-For some help using Cucumber with browser automation, you can check the documentation on [browser automation](/guides/browser-automation).
+For some help using Cucumber with browser automation, you can check the documentation on [browser automation](/docs/guides/browser-automation).
 If you are having trouble with a particular browser automation tool, you might need to contact the relevant community directly.
 
 ## Selenium

@@ -11,8 +11,8 @@ weight: 4
 markup: mmark
 ---
 
-Cucumber uses *expressions* to link a [Gherkin Step](/gherkin/reference#steps)
-to a [Step Definition](/cucumber/step-definitions). You can use
+Cucumber uses *expressions* to link a [Gherkin Step](/docs/gherkin/reference#steps)
+to a [Step Definition](/docs/cucumber/step-definitions). You can use
 [Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression) or *Cucumber Expressions*.
 
 Cucumber Expressions offer similar functionality to Regular Expressions, with a syntax 
@@ -32,7 +32,7 @@ but we can also write a more generic expression, with an `int` *output parameter
     I have {int} cucumbers in my belly
 
 When the text is matched against that expression, the number `42` is extracted
-from the `{int}` output parameter and passed as an argument to the [step definition](/cucumber/step-definitions).
+from the `{int}` output parameter and passed as an argument to the [step definition](/docs/cucumber/step-definitions).
 
 The following text would not match the expression:
 
@@ -67,7 +67,7 @@ The anonymous parameter type will be converted to the parameter type of the step
 Cucumber comes with a built-in object mapper that can handle most basic types. Aside from `Enum` it supports conversion 
 to `BigInteger`, `BigDecimal`, `Byte`, `Short`, `Integer`, `Long`, `Float`, `Double` and `String`.
 
-To automatically convert to other types it is recommended to install an object mapper. See [configuration](/cucumber/configuration)
+To automatically convert to other types it is recommended to install an object mapper. See [configuration](/docs/cucumber/configuration)
 to learn how.{{% /block %}}
 
 # Custom Parameter types
@@ -78,7 +78,7 @@ output parameters to your own types. Consider this Cucumber Expression:
     I have a {color} ball
 
 If we want the `{color}` output parameter to be converted to a `Color` object,
-we can define a custom parameter type in Cucumber's [configuration](/cucumber/configuration).
+we can define a custom parameter type in Cucumber's [configuration](/docs/cucumber/configuration).
 
 {{% block "java" %}}
 ```java

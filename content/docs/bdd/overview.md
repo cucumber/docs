@@ -70,7 +70,7 @@ to unit tests. The BDD flavour of TDD uses natural language to describe tests.
 They can be understood by non-programmers and are often based on examples created
 collaboratively using Example Mapping.
 
-[Gherkin](/gherkin) is a simple syntax for such natural language tests, and
+[Gherkin](/docs/gherkin) is a simple syntax for such natural language tests, and
 Cucumber is the tool that can execute them.
 
 {{% note "Test after is not BDD" %}}

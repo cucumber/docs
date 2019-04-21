@@ -15,8 +15,8 @@ A Step Definition is a
 {{% text "kotlin" %}}Kotlin function{{% /text %}}
 {{% text "javascript" %}}JavaScript function{{% /text %}}
 {{% text "ruby" %}}Ruby block{{% /text %}}
-with an [expression](#expressions) that links it to one or more [Gherkin steps](/gherkin/reference#steps).
-When Cucumber executes a [Gherkin step](/gherkin/reference#steps) in a scenario, it will look for a matching *step definition* to execute.
+with an [expression](#expressions) that links it to one or more [Gherkin steps](/docs/gherkin/reference#steps).
+When Cucumber executes a [Gherkin step](/docs/gherkin/reference#steps) in a scenario, it will look for a matching *step definition* to execute.
 
 To illustrate how this works, look at the following Gherkin Scenario:
 
@@ -114,7 +114,7 @@ Given('I have {int} cukes in my belly', function (cukes) {
 
 # Expressions
 
-A step definition's *expression* can either be a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression) or a [Cucumber Expression](/cucumber/cucumber-expressions). If you prefer to use Regular Expressions, each *capture group* from the match will be passed as arguments to the step definition's {{% stepdef-body %}}.
+A step definition's *expression* can either be a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression) or a [Cucumber Expression](/docs/cucumber/cucumber-expressions). If you prefer to use Regular Expressions, each *capture group* from the match will be passed as arguments to the step definition's {{% stepdef-body %}}.
 
 {{% block "java" %}}
 ```java
@@ -147,7 +147,7 @@ Given(/I have (\d+) cukes in my belly/, function (cukes) {
 {{% /block %}}
 
 If the capture group expression is identical to one of the registered 
-[parameter types](/cucumber/cucumber-expressions#parameter-types)'s `regexp`,
+[parameter types](/docs/cucumber/cucumber-expressions#parameter-types)'s `regexp`,
 the captured string will be transformed before it is passed to the 
 step definition's {{% stepdef-body %}}. In the example above, the `cukes`
 argument will be an integer, because the built-in `int` parameter type's
@@ -180,9 +180,9 @@ expression.
 
 # Snippets
 
-When Cucumber encounters a [Gherkin step](/gherkin/reference#steps) without a
+When Cucumber encounters a [Gherkin step](/docs/gherkin/reference#steps) without a
 matching step definition, it will print a 
-step definition snippet with a matching [Cucumber Expression](/cucumber/cucumber-expressions).
+step definition snippet with a matching [Cucumber Expression](/docs/cucumber/cucumber-expressions).
 You can use this as a starting point for new step definitions.
 
 Consider this Gherkin step:
@@ -221,8 +221,8 @@ Given("I have {int} red balls", function (int1) {
 ```
 {{% /block %}}
 
-Suggested snippets will use your own [parameter types](/cucumber/cucumber-expressions#parameter-types)
-if they match parts of your undefined step. If a [color](/cucumber/cucumber-expressions#custom-parameter-types) 
+Suggested snippets will use your own [parameter types](/docs/cucumber/cucumber-expressions#parameter-types)
+if they match parts of your undefined step. If a [color](/docs/cucumber/cucumber-expressions#custom-parameter-types) 
 parameter type exists, Cucumber would use that in the suggested expression:
 
 {{% block "java" %}}

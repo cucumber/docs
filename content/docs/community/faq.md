@@ -12,39 +12,39 @@ weight: 50
 # Getting started and help
 
 ## How do I get started with Cucumber?
-To get started from scratch, try the [10-minute tutorial](/guides/10-minute-tutorial).
+To get started from scratch, try the [10-minute tutorial](/docs/guides/10-minute-tutorial).
 {{% block "java" %}}
 If you'd prefer to get started with a working project (or if you are having trouble getting the tutorial to work),
 you can get started with the [cucumber-java-skeleton](https://github.com/cucumber/cucumber-java-skeleton). This project is designed to work "out of the box".
 {{% /block %}}
 
-You can read these docs to learn more about [Gherkin](/gherkin/reference), [Cucumber](/cucumber/api) and [BDD](/bdd/overview).
-There are also links to several [blog posts](/community/blog-posts) about Cucumber and BDD.
+You can read these docs to learn more about [Gherkin](/docs/gherkin/reference), [Cucumber](/docs/cucumber/api) and [BDD](/docs/bdd/overview).
+There are also links to several [blog posts](/docs/community/blog-posts) about Cucumber and BDD.
 
 ## Where can I get more in depth information?
 If you'd like to go more in depth, try one of the following:
 
-- [Books](/professional/books) 
+- [Books](/docs/professional/books) 
 
-- [Cucumber School (online training)](/professional/school)
+- [Cucumber School (online training)](/docs/professional/school)
 
-- [BDD Kickstart (classroom training)](/professional/training)
+- [BDD Kickstart (classroom training)](/docs/professional/training)
 
 ## Where can I get help?
-For questions, you can [get in touch](/community/get-in-touch) with the community.
+For questions, you can [get in touch](/docs/community/get-in-touch) with the community.
 
 # Installing and running Cucumber
 
 ## How do I install Cucumber?
 How to install Cucumber, depends on which programming language you are using.
 
-You can find information on how to install your flavour of Cucumber on the [installation](/installation) page.
+You can find information on how to install your flavour of Cucumber on the [installation](/docs/installation) page.
 
 ## Which version of Cucumber should I use?
 In general, it is recommended to use the most recently released version of Cucumber for your programming language.
 Each release will fix known bugs and/or add new features.
 
-You can find the most recent version of Cucumber either in the [10-minute tutorial](/guides/10-minute-tutorial), the [installation](/installation) page or on [GitHub](https://github.com/cucumber).
+You can find the most recent version of Cucumber either in the [10-minute tutorial](//docsguides/10-minute-tutorial), the [installation](/docs/installation) page or on [GitHub](https://github.com/cucumber).
 {{% block "java" %}}
 Note that with Cucumber-JVM v2.x, the `groupId` has changed from `info.cukes` to `io.cucumber`.
 If you cannot find a version newer than 1.2.5, change the groupId in your dependencies.
@@ -63,10 +63,10 @@ Implementations of Cucumber in a particular language, should have a `CHANGELOG.m
 
 
 ## How do I run Cucumber?
-For information on how to run Cucumber, see [Running Cucumber](/cucumber/api/#running-cucumber).
+For information on how to run Cucumber, see [Running Cucumber](/docs/cucumber/api/#running-cucumber).
 
 ## What are the configuration options for running Cucumber?
-For information about configuration options, see [Configuration](/cucumber/configuration/).
+For information about configuration options, see [Configuration](/docs/cucumber/configuration/).
 
 {{% block "java,kotlin" %}}
 When running Cucumber with JUnit, you can specify several options on how JUnit should run your tests.
@@ -93,7 +93,7 @@ You can also tell Cucumber-JVM explicitly which packages (and sub-packages) to s
 {{% /block %}}
 
 ## Cucumber expressions vs regex
-For more information about Cucumber expressions, see the section on [Cucumber expressions](/cucumber/cucumber-expressions/).
+For more information about Cucumber expressions, see the section on [Cucumber expressions](/docs/cucumber/cucumber-expressions/).
 You can still use regular expression (regex) also, but you cannot use Cucumber expressions and regular expressions in the same step definition.
 
 {{% block "java,kotlin" %}}
@@ -149,7 +149,7 @@ If your scenarios use the same or similar steps, or perform similar actions on y
 Helper methods allow you to re(use) actions in steps and avoid writing multiple step definitions for similar behaviours. You write a helper method for actions like *logging in to your application* and then reuse them as a step or part of other steps.
 This helps keep your tests clean, concise and maintainable.
 
-To learn more about using helper methods, check out [Helper methods](/gherkin/step-organization/#helper-methods) and [Grouping step definitions](/gherkin/step-organization/#grouping-step-definitions). 
+To learn more about using helper methods, check out [Helper methods](/docs/gherkin/step-organization/#helper-methods) and [Grouping step definitions](/docs/gherkin/step-organization/#grouping-step-definitions). 
 
 ## How detailed should my scenarios be?
 Your scenarios should contain *just enough* information to describe the *behaviour* of the system.
@@ -166,7 +166,7 @@ Then the user will be notified
 This way, if the implementation of how the user is notified changes, you will only have to change the step definition (or the helper method called by that step definition),
 rather than the step itself **and** all underlying code.
 
-For more information, have a look at [Writing better Gherkin](/bdd/better-gherkin/) and/or [Writing maintainable automated acceptance tests (pdf).](http://dhemery.com/pdf/writing_maintainable_automated_acceptance_tests.pdf)
+For more information, have a look at [Writing better Gherkin](/docs/bdd/better-gherkin/) and/or [Writing maintainable automated acceptance tests (pdf).](http://dhemery.com/pdf/writing_maintainable_automated_acceptance_tests.pdf)
 
 ## How can I specify my test cases in Excel / csv?
 We advise you *not* to use Excel or csv files to define your test cases; using Excel or csv files is considered an anti-pattern.
@@ -191,10 +191,10 @@ If you have a need to run the additional steps, likely your scenario is testing 
 
 ## Taking a screenshot after (failed) steps
 Taking a screenshot when a scenario fails, might help you to figure out what went wrong.
-To take a screenshot on failure, you can configure an [after hook](/cucumber/api/#after).
+To take a screenshot on failure, you can configure an [after hook](/docs/cucumber/api/#after).
 
-For an [example](/guides/browser-automation/#screenshot-on-failure) on how to use take a screenshot
-with {{% text "java,javascript,kotlin" %}}[WebDriver](http://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}} for failed scenarios and embed them in Cucumber's report, see the [browser automation](/guides/browser-automation) page.
+For an [example](/docs/guides/browser-automation/#screenshot-on-failure) on how to use take a screenshot
+with {{% text "java,javascript,kotlin" %}}[WebDriver](http://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}} for failed scenarios and embed them in Cucumber's report, see the [browser automation](/docs/guides/browser-automation) page.
 
 {{% block "java,javascript,kotlin" %}}
 Below is an example of how to take a screenshot with
@@ -221,11 +221,11 @@ If you are using Eclipse, you might try this [plugin](https://marketplace.eclips
 
 # How do I share state between steps?
 {{% block "ruby,javascript" %}}
-In order to share state between steps, you can use a [world object](/cucumber/state/#world-object).
+In order to share state between steps, you can use a [world object](/docs/cucumber/state/#world-object).
 {{% /block %}}
 
 {{% block "java,kotlin" %}}
-If you are using Cucumber on the JVM, you can use [dependency injection (DI)](/cucumber/state/#dependency-injection) to share state between steps.
+If you are using Cucumber on the JVM, you can use [dependency injection (DI)](/docs/cucumber/state/#dependency-injection) to share state between steps.
 
 If your project already uses a dependency framework supported by Cucumber (and/or you are familiar with one of them), it's probably easiest to use that framework. 
 Otherwise, Picocontainer is the most light weight framework you can use.

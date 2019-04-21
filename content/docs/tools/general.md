@@ -32,12 +32,12 @@ You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstud
 
 # IDEs
 
-* [Java IDEs](/tools/java#ides)
-* [Ruby IDEs](/tools/ruby#ides)
+* [Java IDEs](/docs/tools/java#ides)
+* [Ruby IDEs](/docs/tools/ruby#ides)
 * [CukeTest](http://cuketest.com) is a Gherkin editor and Cucumber.js development tool.
 
 # Build Tools
 You can run Cucumber using build tools, rather than from the command line.
 
-* [Java build tools](/tools/java#build-tools)
-* [Ruby build tools](/tools/ruby#build-tools)
+* [Java build tools](/docs/tools/java#build-tools)
+* [Ruby build tools](/docs/tools/ruby#build-tools)

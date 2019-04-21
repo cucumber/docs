@@ -13,12 +13,12 @@ Please follow these guidelines if you want to contribute to Cucumber or help the
 
 # You have a question
 
-Before you [get in touch](/community/get-in-touch), try searching the [mailing list](https://groups.google.com/forum/#!forum/cukes) for similar questions and possible solutions.
+Before you /docsget-in-touch), try searching the [mailing list](https://groups.google.com/forum/#!forum/cukes) for similar questions and possible solutions.
 Or have a look on [StackOverflow](https://stackoverflow.com/questions/tagged/cucumber). Similar questions come up now and again. You might be able to find the answer yourself.
 
 It's impossible to give a meaningful answer to "Cucumber doesn't work - what's wrong?" -style questions. You have to tell us [more](#help-us-help-you).
 
-We use GitHub issues to track bugs and feature requests exclusively. Please use the [support forums](/community/get-in-touch) for questions and discussions.
+We use GitHub issues to track bugs and feature requests exclusively. Please use the [support forums](/docs/community/get-in-touch) for questions and discussions.
 
 # You have found a bug
 
@@ -31,12 +31,12 @@ gem update cucumber
 ```
 
 If you are certain you have found a bug, just register a ticket with the relevant project. We have added issue templates on GitHub to help you provide the relevant information.
-If you're not sure, please [get in touch](/community/get-in-touch).
+If you're not sure, please [get in touch](/docs/community/get-in-touch).
 
 ## Help us help you
 
 You will likely use Cucumber combined with various web frameworks, many different dependencies and your own code.
-You can [run Cucumber](/cucumber/api/#running-cucumber) in different ways, and many things can go wrong - and quite often it has nothing to do with Cucumber at all.
+You can [run Cucumber](/docs/cucumber/api/#running-cucumber) in different ways, and many things can go wrong - and quite often it has nothing to do with Cucumber at all.
 
 The only way we can fix a bug is to reproduce it first. If reproducing the bug requires setting up a project, please write a Cucumber Feature that demonstrates the bug. When you have done that, mention it in your Issue or send a Pull Request.
 
@@ -62,11 +62,11 @@ Whenever possible, please provide a Pull Request yourself that fixes the issue a
 
 Start by creating a ticket. Then, create a Cucumber Feature and start implementing it. It also helps if you add unit tests for the low level code.
 
-If you want to discuss your feature and possible solution, you can do so in the GitHub issue, or on one of the [support forums](/community/get-in-touch).
+If you want to discuss your feature and possible solution, you can do so in the GitHub issue, or on one of the [support forums](/docs/community/get-in-touch).
 
 # You want to update the documentation
 
-If you would like to contribute to the documentation, please see [Contributing to documentation](/community/contributing-to-documentation/).
+If you would like to contribute to the documentation, please see [Contributing to documentation](/docs/community/contributing-to-documentation/).
 
 # You want to contribute but don't know how
 

@@ -276,7 +276,7 @@ More information on [Capybara](http://teamcapybara.github.io/capybara/).
 
 ## Screenshot on failure
 Taking a screenshot when a scenario fails, might help you to figure out what went wrong.
-To take a screenshot on failure, you can configure an [after hook](/cucumber/api/#after).
+To take a screenshot on failure, you can configure an [after hook](/docs/cucumber/api/#after).
 
 {{% block "java,javascript,kotlin" %}}
 Below is an example of how to take a screenshot with

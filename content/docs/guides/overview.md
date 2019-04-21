@@ -6,7 +6,7 @@ weight: 1000
 
 {{% note "Before you get started" %}}
 If you're new to Behaviour-Driven Development (BDD) (or if you think it's a testing technique 😏) read
-our [BDD introduction](/bdd) first.
+our [BDD introduction](/docs/bdd) first.
 {{% /note %}}
 
 Ok, now that you know that BDD is about discovery, collaboration and examples
@@ -14,7 +14,7 @@ Ok, now that you know that BDD is about discovery, collaboration and examples
 
 # What is Cucumber?
 
-Cucumber is a tool that supports [Behaviour-Driven Development(BDD)](/bdd).
+Cucumber is a tool that supports [Behaviour-Driven Development(BDD)](/docs/bdd).
 
 Cucumber reads executable specifications written in plain text and validates that the
 software does what those specifications say. The specifications consists of multiple
@@ -32,7 +32,7 @@ that the software conforms with the specification and generates a report indicat
 ✅ success or ❌ failure for each scenario.
 
 In order for Cucumber
-to understand the scenarios, they must follow some basic syntax rules, called [Gherkin](/gherkin/).
+to understand the scenarios, they must follow some basic syntax rules, called [Gherkin](/docs/gherkin/).
 
 # What is Gherkin?
 
@@ -47,13 +47,13 @@ Gherkin serves multiple purposes:
 
 ![Single source of Truth](/img/single-source-of-truth-256x256.png)
 
-The Cucumber grammar exists in different flavours for many [spoken languages](/gherkin/reference#spoken-languages)
+The Cucumber grammar exists in different flavours for many [spoken languages](/docs/gherkin/reference#spoken-languages)
 so that your team can use the keywords in your own language.
 
 Gherkin documents are stored in `.feature` text files and are typically versioned in source control
 alongside the software.
 
-See the [Gherkin reference](/gherkin) for more details.
+See the [Gherkin reference](/docs/gherkin) for more details.
 
 {{% note "Who should write Gherkin?" %}}
 It's usually best to let developers write Gherkin if the team is practicing BDD (test first).
@@ -62,13 +62,13 @@ If Cucumber is used solely as a test automation tool (test after) it can be done
 testers or developers.
 
 It is usually counterproductive to let product owners and business analysts write Gherkin.
-Instead, we recommend they participate in [Example Mapping](/bdd/example-mapping) sessions
+Instead, we recommend they participate in [Example Mapping](/docs/bdd/example-mapping) sessions
 and **approve** the Gherkin documents after a developer or tester has translated it to Gherkin.
 {{% /note %}}
 
 # Step Definitions
 
-In addition to [feature files](/gherkin/reference#feature), Cucumber needs a set of [step definitions](/cucumber/step-definitions). Step definitions map (or "glue") each
+In addition to [feature files](/docs/gherkin/reference#feature), Cucumber needs a set of [step definitions](/docs/cucumber/step-definitions). Step definitions map (or "glue") each
 Gherkin step to programming code to carry out the  action that should be performed by the step.
 
 Step definitions hard-wire the specification to the implementation.

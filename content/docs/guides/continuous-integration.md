@@ -21,7 +21,7 @@ We recommend executing Cucumber from one of these on a CI server.
 
 # Rake
 
-If your CI server is using [Rake](/tools/ruby#rake), just make sure
+If your CI server is using [Rake](/docs/tools/ruby#rake), just make sure
 that Rake executes your Cucumber task.
 
 # Ant JUnit output

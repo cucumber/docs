@@ -30,7 +30,7 @@ Feature: Guess the word
 ```
 
 The trailing portion (after the keyword) of each step is matched to
-a code block, called a [step definition](/cucumber/step-definitions).
+a code block, called a [step definition](/docs/cucumber/step-definitions).
 
 # Keywords
 
@@ -85,7 +85,7 @@ and a list of business rules (general acceptance criteria).
 
 The free format description for `Feature` ends when you start a line with the keyword `Rule`, `Example` or `Scenario Outline` (or their alias keywords).
 
-You can place [tags](/cucumber/api/#tags) above `Feature` to group related features,
+You can place [tags](/docs/cucumber/api/#tags) above `Feature` to group related features,
 independent of your file and directory structure.
 
 ## Descriptions
@@ -211,14 +211,14 @@ Most software does something people could do manually (just not as efficiently).
 Try hard to come up with examples that don't make any assumptions about
 technology or user interface. Imagine it's 1922, when there were no computers.
 
-Implementation details should be hidden in the [step definitions](/cucumber/step-definitions).
+Implementation details should be hidden in the [step definitions](/docs/cucumber/step-definitions).
 {{% /note %}}
 
 ### Then
 
 `Then` steps are used to describe an *expected* outcome, or result.
 
-The [step definition](/cucumber/step-definitions) of a `Then` step should use an *assertion* to
+The [step definition](/docs/cucumber/step-definitions) of a `Then` step should use an *assertion* to
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
@@ -270,7 +270,7 @@ are not *essential* to describe the scenarios; they are *incidental details*. Yo
 A `Background` allows you to add some context to the scenarios in the feature. It can contain one or
 more `Given` steps.
 
-A `Background` is run before *each* scenario, but after any [Before hooks](/cucumber/api/#hooks). In your feature file, put the `Background` before the first `Scenario`.
+A `Background` is run before *each* scenario, but after any [Before hooks](/docs/cucumber/api/#hooks). In your feature file, put the `Background` before the first `Scenario`.
 
 You can only have one set of `Background` steps per feature. If you need different `Background` steps for different scenarios, you'll need to split them into different feature files.
 
@@ -303,7 +303,7 @@ Feature: Multiple site support
     Then I should see "Your article was published."
 ```
 
-For a less explicit alternative to `Background`, check out [tagged hooks](/cucumber/api/#tagged-hooks).
+For a less explicit alternative to `Background`, check out [tagged hooks](/docs/cucumber/api/#tagged-hooks).
 
 ## Tips for using Background
 

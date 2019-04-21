@@ -56,7 +56,7 @@ For example, in a Curriculum Vitae application, we might have:
 The first three files would define all the `Given`, `When`, and `Then` step definitions related to creating, reading, updating, and deleting the various {{% text "ruby" %}}models.{{% /text %}}{{% text "java" %}}types of objects.{{% /text %}}{{% text "javascript" %}}types of objects.{{% /text %}}
 The last file would define step definitions related to logging in and out, and the different things a certain user is allowed to do in the system.
 
-If you follow this pattern you also avoid the [Feature-coupled step definitions](/guides/anti-patterns#feature-coupled-step-definitions) anti-pattern.
+If you follow this pattern you also avoid the [Feature-coupled step definitions](/docs/guides/anti-patterns#feature-coupled-step-definitions) anti-pattern.
 
 # Writing step definitions
 Don't write step definitions for steps that are not present in one of your scenarios.
@@ -67,7 +67,7 @@ Only implement step definitions that you actually need.
 Always keep in mind that Cucumber is simply a DSL wrapper around the programming language whose full expressiveness
 remains available to you in the step definition files (*but not in feature files*).
 On the other hand, do not lose sight that every step called as such in a step definition file is first parsed by
-[Gherkin](/gherkin/) and therefore must conform to the same syntax as used in feature files.
+[Gherkin](/docs/gherkin/) and therefore must conform to the same syntax as used in feature files.
 
 In fact, it is recommended to refactor step definitions into helper methods for greater flexibility and easier reuse.
 The method can reside in the same {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}} file as the step definition.
@@ -125,5 +125,5 @@ This helps in a number of ways,
 You can handle other behaviours, like *validating a webpage, clicking a button, etc.*, the same way.
 
 We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.
-Also, using [Data Tables](/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
+Also, using [Data Tables](/docs/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
 
