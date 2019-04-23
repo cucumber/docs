@@ -31,8 +31,8 @@ You can find the [Cucumber Eclipse Plugin on GitHub](https://github.com/cucumber
 
 # Maven Execution Plugin
 {{% text "javascript,ruby" %}}Maven Plugins are for JVM based languages.{{% /text %}}
-{{% text "java" %}}You need to place the test classes inside the `src/test/java` folder structure for Maven to detect them automatically.{{% /text %}}
-{{% text "kotlin" %}}You need to place the test classes inside the `src/test/kotlin` folder structure for Maven to detect them automatically.{{% /text %}}
+{{% text "java" %}}You need to place the test classes inside the `src/test/java` folder structure for Maven plugin to detect them automatically.{{% /text %}}
+{{% text "kotlin" %}}You need to place the test classes inside the `src/test/kotlin` folder structure for Maven plugin to detect them automatically.{{% /text %}}
 {{% block "java,kotlin" %}}
 If you are using **Maven Surefire Plugin** to execute Cucumber runners, refer to the [official documentation](https://maven.apache.org/surefire/maven-surefire-plugin/examples/cucumber.html). You can find details about default inclusion and exclusion pattern of test classes [here](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html).
 In case you are using **Maven Failsafe Plugin**, refer to the [official documentation](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/cucumber.html). You can find details about default inclusion and exclusion of test classes [here](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html).
