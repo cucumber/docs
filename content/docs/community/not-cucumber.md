@@ -77,3 +77,14 @@ Karate is an API automation tool for Java.
 {{% block "java" %}}
 For more information see the [Karate project on GitHub](https://github.com/intuit/karate).
 {{% /block %}}
+
+# Test Frameworks
+
+## TestNG
+{{% text "java,kotlin" %}}
+If you are having issues when using TestNG with Cucumber-JVM, please check that you are using the version of TestNG that Cucumber-JVM was build against.
+
+For an example of how to use TestNG with Cucumber, see the [java-calculator-testng example](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng).
+{{% /text %}}
+
+{{% text "ruby,javascript" %}}TestNG is only available for Java and Kotlin.{{% /text %}}
