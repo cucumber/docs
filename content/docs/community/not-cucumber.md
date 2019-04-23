@@ -29,6 +29,15 @@ If not, you can create an issue yourself.
 You can find the [Cucumber Eclipse Plugin on GitHub](https://github.com/cucumber/cucumber-eclipse). It is an open source plugin.
 {{% /block %}}
 
+# Maven Execution Plugin
+{{% text "javascript,ruby" %}}Maven Plugins are for JVM based languages.{{% /text %}}
+{{% text "java" %}}You need to place the test classes inside the `src/test/java` folder structure for Maven to detect them automatically.{{% /text %}}
+{{% text "kotlin" %}}You need to place the test classes inside the `src/test/kotlin` folder structure for Maven to detect them automatically.{{% /text %}}
+{{% block "java,kotlin" %}}
+If you are using **Maven Surefire Plugin** to execute Cucumber runners, refer to the [official documentation](https://maven.apache.org/surefire/maven-surefire-plugin/examples/cucumber.html). You can find details about default inclusion and exclusion pattern of test classes [here](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html).
+In case you are using **Maven Failsafe Plugin**, refer to the [official documentation](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/cucumber.html). You can find details about default inclusion and exclusion of test classes [here](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html).
+{{% /block %}}
+
 # Browser automation
 For some help using Cucumber with browser automation, you can check the documentation on [browser automation](/docs/guides/browser-automation).
 If you are having trouble with a particular browser automation tool, you might need to contact the relevant community directly.
