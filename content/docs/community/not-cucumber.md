@@ -33,10 +33,16 @@ You can find the [Cucumber Eclipse Plugin on GitHub](https://github.com/cucumber
 {{% text "javascript,ruby" %}}Maven Plugins are for JVM based languages.{{% /text %}}
 {{% text "java" %}}You need to place the test classes inside the `src/test/java` folder structure for Maven plugin to detect them automatically.{{% /text %}}
 {{% text "kotlin" %}}You need to place the test classes inside the `src/test/kotlin` folder structure for Maven plugin to detect them automatically.{{% /text %}}
-{{% block "java,kotlin" %}}
-If you are using **Maven Surefire Plugin** to execute Cucumber runners, refer to the [official documentation](https://maven.apache.org/surefire/maven-surefire-plugin/examples/cucumber.html). You can find details about default inclusion and exclusion pattern of test classes [here](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html).
-In case you are using **Maven Failsafe Plugin**, refer to the [official documentation](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/cucumber.html). You can find details about default inclusion and exclusion of test classes [here](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html).
-{{% /block %}}
+
+{{% text "java,kotlin" %}}If you are using **Maven Surefire Plugin** to execute Cucumber runners, refer to the [official documentation](https://maven.apache.org/surefire/maven-surefire-plugin/examples/cucumber.html).{{% /text %}}
+{{% text "java" %}} For automatic inclusion of runners you need to use the `*Test.java` naming pattern.{{% /text %}} 
+{{% text "kotlin" %}} For automatic inclusion of runners you need to use the `*Test.kt` naming pattern.{{% /text %}}
+{{% text "java,kotlin" %}} You can find further details about default inclusion and exclusion pattern of test classes [here](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html).{{% /text %}}
+
+{{% text "java,kotlin" %}}In case you are using **Maven Failsafe Plugin**, refer to the [official documentation](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/cucumber.html).{{% /text %}}
+{{% text "java" %}} For automatic inclusion of runners you need to use the `*IT.java` naming pattern.{{% /text %}} 
+{{% text "kotlin" %}} For automatic inclusion of runners you need to use the `*IT.kt` naming pattern.{{% /text %}}
+{{% text "java,kotlin" %}} You can find further details about default inclusion and exclusion of test classes [here](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html).{{% /text %}}
 
 # Browser automation
 For some help using Cucumber with browser automation, you can check the documentation on [browser automation](/docs/guides/browser-automation).
