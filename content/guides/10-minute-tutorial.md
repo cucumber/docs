@@ -1303,10 +1303,7 @@ We should update our statement to actually evaluate whether or not `today` is eq
 {{% block "java" %}}
 ```java
 static String isItFriday(String today) {
-    if (today.equals("Friday")) {
-        return "TGIF";
-    }
-    return "Nope";
+    return "Friday".equals(today) ? "TGIF" : "Nope";
 }
 ```
 {{% /block %}}
@@ -1432,10 +1429,7 @@ import static org.junit.Assert.*;
 
 class IsItFriday {
     static String isItFriday(String today) {
-	if (today.equals("Friday")) {
-	    return "TGIF";
-	}
-    return "Nope";
+	    return "Friday".equals(today) ? "TGIF" : "Nope";
     }
 }
 
