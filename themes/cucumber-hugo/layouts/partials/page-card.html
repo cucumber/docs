@@ -17,7 +17,7 @@
         {{if .Params.svg}}
         <div class="media-left">
           <figure class="image is-64x64">
-            {{ readFile .Params.svg | safeHTML }}
+            {{ readFile (printf "/docs/%s" .Params.svg) | safeHTML }}
           </figure>
         </div>
         {{end}}
