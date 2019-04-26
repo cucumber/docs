@@ -1429,7 +1429,7 @@ import static org.junit.Assert.*;
 
 class IsItFriday {
     static String isItFriday(String today) {
-	    return "Friday".equals(today) ? "TGIF" : "Nope";
+	return "Friday".equals(today) ? "TGIF" : "Nope";
     }
 }
 
