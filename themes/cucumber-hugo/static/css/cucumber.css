@@ -5982,6 +5982,8 @@ a.dropdown-item.is-active {
   min-height: 3.25rem;
   position: relative;
   z-index: 30;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
 }
 
 .navbar.is-white {
