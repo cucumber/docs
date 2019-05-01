@@ -229,8 +229,6 @@ For more information on how to use `Data Tables` with Cucumber-js, please see th
 
 The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/com/example/TypeRegistryConfiguration.kt`.{{% /text %}}
 This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java" %}} on the glue path.{{% /text %}}
-The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/com/example/TypeRegistryConfiguration.kt`.{{% /text %}}
-This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java,kotlin" %}} on the glue path.{{% /text %}}
 
 # Profiles
 
