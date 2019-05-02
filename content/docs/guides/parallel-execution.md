@@ -264,3 +264,68 @@ If you have **multiple runners**, set the parallel configuration of `classes` to
 To get a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
 
 
+# CLI
+The `Main class` in the `cucumber.api.cli package` is used to execute the feature files. There is no need to create any runner class. The usage options for this class is mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/v4.0.0/core/src/main/resources/cucumber/api/cli/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
+ 
+Below is the basic command to start the execution.
+```shell
+java -cp <classpath> cucumber.api.cli.Main -g <steps package> --threads <thread count> <path to feature files>
+```
+
+Follow the below steps to **execute the command from a terminal**.
+
+- Download the necessary cucumber jars from the cucumber.io Maven repository (links provided under version number) or, if available, copy from the local repository into a folder. These need to be provided in the **classpath**. The versions mentioned are compatible with the latest cucumber release 4.3.0.
+
+	1. `cucumber-core.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-core/4.3.0/cucumber-core-4.3.0.jar)
+	2. `cucumber-java.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-java/4.3.0/cucumber-java-4.3.0.jar)
+	3. `cucumber-java8.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-java8/4.3.0/cucumber-java8-4.3.0.jar)
+	4. `cucumber-html.jar` [`0.2.7`](http://central.maven.org/maven2/io/cucumber/cucumber-html/0.2.7/cucumber-html-0.2.7.jar)
+	5. `gherkin.jar` [`5.1.0`](http://central.maven.org/maven2/io/cucumber/gherkin/5.1.0/gherkin-5.1.0.jar)
+	6. `cucumber-expressions.jar` [`6.2.2`](http://central.maven.org/maven2/io/cucumber/cucumber-expressions/6.6.2/cucumber-expressions-6.6.2.jar)
+	7. `datatable.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable/1.1.12/datatable-1.1.12.jar)
+	8. `datatable-dependencies.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable-dependencies/1.1.12/datatable-dependencies-1.1.12.jar)
+	9. `tag-expressions.jar` [`1.1.1`](http://central.maven.org/maven2/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar)
+	
+- Create a folder for the step definition classes and feature files. Let us call it `cukecli`. Create two folders inside it called `parallel` and `features`. 
+
+- Create the **two feature files** (`scenarios.feature` and `scenariooutlines.feature`) inside the `features` folder as described in the JUnit section.
+
+- Create the **step definition class** in the `parallel` folder as described in the JUnit section.
+
+- Open up a terminal window and navigate to the source folder of the project, in our case `cukecli`.
+
+- Compile the step definition class. Add the **path to the folder containing cucumber jars to the classpath using the -cp option**.
+
+```shell
+javac -cp .;<path to cucumber jar folder>/* ./parallel/Stepdefs.java
+```
+
+- Execute using the below command.
+
+```shell
+java -cp .;<path to cucumber jar folder>/* cucumber.api.cli.Main --threads 4 -g parallel feature
+```
+
+- You should get a console output similar to below.
+
+```shell
+Thread ID - 11 - Scenario Outline Row 1 from scenariooutlines feature file.
+Thread ID - 14 - Scenario 2 from scenarios feature file.
+Thread ID - 12 - Scenario Outline Row 2 from scenariooutlines feature file.
+Thread ID - 13 - Scenario 1 from scenarios feature file.
+
+4 Scenarios (4 passed)
+4 Steps (4 passed)
+0m1.396s
+```
+
+By running in parallel mode, using **4 threads**, the execution time has **reduced from 4 seconds to slightly greater than 1 second**.
+
+To get a **visual representation** you can add the **timeline report** with the plugin option in the command.
+
+```java
+java -cp <classpath> cucumber.api.cli.Main -p timeline:<report folder> --threads <thread count> -g <steps package> <path to feature files>
+```
+
+![Timeline report](/img/parallel-timeline-report.png)
+
