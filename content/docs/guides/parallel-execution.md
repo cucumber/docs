@@ -158,3 +158,109 @@ The thread count in the above setting is **4 threads per core**. If you want thi
 If you have **multiple runners** then you can set the parallel option to `classesAndMethods`, `methods` or `classes`. For a single runner the `classes` option would be similar to a sequential execution.
 
 To get a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
+
+
+# TestNG
+Cucumber can be executed in parallel using **TestNG and Maven test execution plugins** by setting the **dataprovider parallel option to true**. In TestNG the **scenarios and rows in a scenario outline are executed in multiple threads**. One can use either Maven Surefire or Failsafe plugin for executing the runners.
+
+- Create a Maven project in your favorite IDE. Add the `cucumber-java8` and `cucumber-testng` **dependencies** to the `POM`.
+
+```shell
+<dependency>
+	<groupId>io.cucumber</groupId>
+	<artifactId>cucumber-java8</artifactId>
+	<version>4.3.0</version>
+	<scope>test</scope>
+</dependency>
+<dependency>
+	<groupId>io.cucumber</groupId>
+	<artifactId>cucumber-testng</artifactId>
+	<version>4.3.0</version>
+	<scope>test</scope>
+</dependency>
+```
+
+- Create a **features** folder in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenariooutlines.feature`) inside it as described in the JUnit section.
+
+- Add the **step definition class** to the `parallel` package in `src/test/java` folder as described in the JUnit section.
+
+- Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method**. Set the **parallel option value to true** for the DataProvider annotation.
+
+```java
+@CucumberOptions(glue= {"parallel"}, features = {"src/test/resources/features"})
+public class Runner extends AbstractTestNGCucumberTests{
+
+	@Override
+	@DataProvider(parallel = true)
+	public Object[][] scenarios() {
+		return super.scenarios();
+	}
+}
+```
+
+- Add the Maven **Surefire plugin configurations** to the `build` section to the `POM`. There is no need for the `includes` tag if the runner class follows the [default naming pattern](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html) of Surefire plugin.
+
+```shell
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-surefire-plugin</artifactId>
+	<version>3.0.0-M3</version>
+	<configuration>
+		<includes>
+			<include>**/Runner.java</include>
+		</includes>				
+	</configuration>
+</plugin>
+```
+
+- Use the Maven `install` or a suitable command to **execute the POM**. This should run in parallel thread mode. You should see a result similar to below. The **scenarios and rows of the scenario outlines are executed in different threads**.
+
+```shell
+Thread ID - 15 - Scenario Outline Row 2 from scenariooutlines feature file.
+Thread ID - 14 - Scenario Outline Row 1 from scenariooutlines feature file.
+Thread ID - 16 - Scenario 1 from scenarios feature file.
+Thread ID - 17 - [Scenario 2 from scenarios feature file.
+```
+
+- To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section of POM file. There is no need for the `includes` tag if the runner class follows the [default naming pattern](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html) of Failsafe plugin.
+
+```shell
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-failsafe-plugin</artifactId>
+	<version>3.0.0-M3</version>
+	<executions>
+		<execution>
+			<goals>
+				<goal>integration-test</goal>
+				<goal>verify</goal>
+			</goals>
+			<configuration>
+				<includes>
+					<include>**/Runner.java</include>
+				</includes>
+			</configuration>
+		</execution>
+	</executions>
+</plugin>
+```
+
+The default **thread count of the dataprovider** in parallel mode is **10**. To change this the `dataproviderthradcount` property needs to be added to the `configuration` section of the Surefire or Failsafe plugin in the `POM`.
+```shell
+<properties>
+    <property>
+        <name>dataproviderthreadcount</name>
+        <value>20</value>
+    </property>
+</properties>
+```
+
+If you have **multiple runners**, set the parallel configuration of `classes` to reduce execution times. In addition the `threadCount` can be set to to the desired value or `useUnlimitedThreads` can be set to true.
+```shell
+<parallel>classes</parallel>
+<threadCount>4</threadCount>
+```
+
+To get a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
+
+
