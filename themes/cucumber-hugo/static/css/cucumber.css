@@ -5984,6 +5984,7 @@ a.dropdown-item.is-active {
   z-index: 30;
   font-family: Roboto, sans-serif;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .navbar.is-white {
