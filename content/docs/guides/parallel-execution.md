@@ -25,18 +25,18 @@ Cucumber can be executed in parallel using **JUnit and Maven test execution plug
 <dependency>
 	<groupId>io.cucumber</groupId>
 	<artifactId>cucumber-java8</artifactId>
-	<version>4.3.0</version>
+	<version>{{% version "cucumberjvm" %}}</version>
 	<scope>test</scope>
 </dependency>
 <dependency>
 	<groupId>io.cucumber</groupId>
 	<artifactId>cucumber-junit</artifactId>
-	<version>4.3.0</version>
+	<version>{{% version "cucumberjvm" %}}</version>
 	<scope>test</scope>
 </dependency>
 ```
 
-- Create a **features** folder in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenariooutlines.feature`) inside it.
+- Create a **parallel** folder in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenariooutlines.feature`) inside it.
 
 ```gherkin
 Feature: Scenarios feature file
@@ -82,26 +82,29 @@ public class Stepdefs {
 }
 ```
 
-- Add a cucumber **runner** using the `RunWith` annotation.
+- Add a cucumber **runner** using the `RunWith` annotation in the `parallel` package in the `src/test/java` folder.
 
 ```java
+package parallel;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
 @RunWith(Cucumber.class)
-@CucumberOptions(glue= {"parallel"}, features = {"src/test/resources/features"})
-public class Runner {
+@CucumberOptions()
+public class RunCucumberTest {
 }
 ```
 
-- Add the **Surefire plugin configuration** to the `build` section to the `POM`. There is no need for the `includes` tag if the runner class follows the [default naming pattern](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html) of Surefire plugin.
+- Add the **Surefire plugin configuration** to the `build` section to the `POM`.
 
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-surefire-plugin</artifactId>
-	<version>3.0.0-M3</version>
+	<version>2.22.0</version>
 	<configuration>
-		<includes>
-			<include>**/Runner.java</include>
-		</includes>
 		<parallel>methods</parallel>
 		<useUnlimitedThreads>true</useUnlimitedThreads>
 	</configuration>
@@ -117,13 +120,13 @@ Thread ID - 14 - Scenario 1 from scenarios feature file.
 Thread ID - 14 - Scenario 2 from scenarios feature file.
 ```
 
-- To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section to the `POM`. There is no need for the `includes` tag if the runner class follows the [default naming pattern](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html) of Failsafe plugin.
+- To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section to the `POM`. Rename the runner class to `RunCucumberIT`.  You can find further details [here](docs/community/not-cucumber/#maven-execution-plugin).
 
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-failsafe-plugin</artifactId>
-	<version>3.0.0-M3</version>
+	<version>2.22.0</version>
 	<executions>
 		<execution>
 			<goals>
@@ -131,9 +134,6 @@ Thread ID - 14 - Scenario 2 from scenarios feature file.
 				<goal>verify</goal>
 			</goals>
 			<configuration>
-				<includes>
-					<include>**/Runner.java</include>
-				</includes>
 				<parallel>methods</parallel>
 				<useUnlimitedThreads>true</useUnlimitedThreads>
 			</configuration>
@@ -141,6 +141,7 @@ Thread ID - 14 - Scenario 2 from scenarios feature file.
 	</executions>
 </plugin>
 ```
+
 
 To set the thread count to a **specific number** instead of `useUnlimitedThreads` use the below setting.
 ```shell
@@ -157,7 +158,7 @@ The thread count in the above setting is **4 threads per core**. If you want thi
 
 If you have **multiple runners** then you can set the parallel option to `classesAndMethods`, `methods` or `classes`. For a single runner the `classes` option would be similar to a sequential execution.
 
-To get a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
+For a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
 
 
 # TestNG
@@ -169,26 +170,32 @@ Cucumber can be executed in parallel using **TestNG and Maven test execution plu
 <dependency>
 	<groupId>io.cucumber</groupId>
 	<artifactId>cucumber-java8</artifactId>
-	<version>4.3.0</version>
+	<version>{{% version "cucumberjvm" %}}</version>
 	<scope>test</scope>
 </dependency>
 <dependency>
 	<groupId>io.cucumber</groupId>
 	<artifactId>cucumber-testng</artifactId>
-	<version>4.3.0</version>
+	<version>{{% version "cucumberjvm" %}}</version>
 	<scope>test</scope>
 </dependency>
 ```
 
-- Create a **features** folder in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenariooutlines.feature`) inside it as described in the JUnit section.
+- Create a **parallel** folder in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenariooutlines.feature`) inside it as described in the JUnit section.
 
 - Add the **step definition class** to the `parallel` package in `src/test/java` folder as described in the JUnit section.
 
-- Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method**. Set the **parallel option value to true** for the DataProvider annotation.
+- Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package in `src/test/java` folder. Set the **parallel option value to true** for the DataProvider annotation.
 
 ```java
-@CucumberOptions(glue= {"parallel"}, features = {"src/test/resources/features"})
-public class Runner extends AbstractTestNGCucumberTests{
+package parallel;
+
+import org.testng.annotations.DataProvider;
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+@CucumberOptions()
+public class RunCucumberTest extends AbstractTestNGCucumberTests{
 
 	@Override
 	@DataProvider(parallel = true)
@@ -198,18 +205,13 @@ public class Runner extends AbstractTestNGCucumberTests{
 }
 ```
 
-- Add the Maven **Surefire plugin configurations** to the `build` section to the `POM`. There is no need for the `includes` tag if the runner class follows the [default naming pattern](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html) of Surefire plugin.
+- Add the Maven **Surefire plugin configuration** to the `build` section of the `POM`.
 
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-surefire-plugin</artifactId>
-	<version>3.0.0-M3</version>
-	<configuration>
-		<includes>
-			<include>**/Runner.java</include>
-		</includes>				
-	</configuration>
+	<version>2.22.0</version>
 </plugin>
 ```
 
@@ -222,46 +224,30 @@ Thread ID - 16 - Scenario 1 from scenarios feature file.
 Thread ID - 17 - [Scenario 2 from scenarios feature file.
 ```
 
-- To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section of POM file. There is no need for the `includes` tag if the runner class follows the [default naming pattern](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html) of Failsafe plugin.
+- To execute using a Maven **Failsafe plugin**, setup the `POM` as described in the JUnit section. Remove the `parallel` and `useUnlimitedThreads` settings in the `configuration` part.
 
-```shell
-<plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-failsafe-plugin</artifactId>
-	<version>3.0.0-M3</version>
-	<executions>
-		<execution>
-			<goals>
-				<goal>integration-test</goal>
-				<goal>verify</goal>
-			</goals>
-			<configuration>
-				<includes>
-					<include>**/Runner.java</include>
-				</includes>
-			</configuration>
-		</execution>
-	</executions>
-</plugin>
-```
 
-The default **thread count of the dataprovider** in parallel mode is **10**. To change this the `dataproviderthradcount` property needs to be added to the `configuration` section of the Surefire or Failsafe plugin in the `POM`.
+The default **thread count of the dataprovider** in parallel mode is **10**. To change this the `dataproviderthreadcount` property needs to be added to the `configuration` section of the Surefire or Failsafe plugin in the `POM`.
 ```shell
-<properties>
-    <property>
-        <name>dataproviderthreadcount</name>
-        <value>20</value>
-    </property>
-</properties>
+<configuration>
+	<properties>
+    	<property>
+        	<name>dataproviderthreadcount</name>
+        	<value>20</value>
+    	</property>
+	</properties>
+</configuration>
 ```
 
 If you have **multiple runners**, set the parallel configuration of `classes` to reduce execution times. In addition the `threadCount` can be set to to the desired value or `useUnlimitedThreads` can be set to true.
 ```shell
-<parallel>classes</parallel>
-<threadCount>4</threadCount>
+<configuration>
+	<parallel>classes</parallel>
+	<threadCount>4</threadCount>
+</configuration>
 ```
 
-To get a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
+For a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
 
 
 # CLI
@@ -286,15 +272,15 @@ Follow the below steps to **execute the command from a terminal**.
 	8. `datatable-dependencies.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable-dependencies/1.1.12/datatable-dependencies-1.1.12.jar)
 	9. `tag-expressions.jar` [`1.1.1`](http://central.maven.org/maven2/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar)
 	
-- Create a folder for the step definition classes and feature files. Let us call it `cukecli`. Create two folders inside it called `parallel` and `features`. 
+- Create a folder named `cukecli` and a folder `parallel` inside it, to keep the step definition classes and feature files.
 
-- Create the **two feature files** (`scenarios.feature` and `scenariooutlines.feature`) inside the `features` folder as described in the JUnit section.
+- Create the **two feature files** (`scenarios.feature` and `scenariooutlines.feature`) inside the `parallel` folder as described in the JUnit section.
 
 - Create the **step definition class** in the `parallel` folder as described in the JUnit section.
 
-- Open up a terminal window and navigate to the source folder of the project, in our case `cukecli`.
+- Open up a **terminal window** and navigate to the source folder of the project, in our case `cukecli`.
 
-- Compile the step definition class. Add the **path to the folder containing cucumber jars to the classpath using the -cp option**.
+- Compile the step definition class. Add the **path to the folder containing cucumber jars to the classpath** using the **-cp** option.
 
 ```shell
 javac -cp .;<path to cucumber jar folder>/* ./parallel/Stepdefs.java
@@ -303,7 +289,7 @@ javac -cp .;<path to cucumber jar folder>/* ./parallel/Stepdefs.java
 - Execute using the below command.
 
 ```shell
-java -cp .;<path to cucumber jar folder>/* cucumber.api.cli.Main --threads 4 -g parallel feature
+java -cp .;<path to cucumber jar folder>/* cucumber.api.cli.Main --threads 4 -g parallel parallel
 ```
 
 - You should get a console output similar to below.
@@ -319,9 +305,9 @@ Thread ID - 13 - Scenario 1 from scenarios feature file.
 0m1.396s
 ```
 
-By running in parallel mode, using **4 threads**, the execution time has **reduced from 4 seconds to slightly greater than 1 second**.
+By running in parallel mode, using **4 threads**, the execution time has **reduced from 4 seconds to around 1 second**.
 
-To get a **visual representation** you can add the **timeline report** with the plugin option in the command.
+For a **visual representation** you can add the **timeline report** with the plugin option in the command.
 
 ```java
 java -cp <classpath> cucumber.api.cli.Main -p timeline:<report folder> --threads <thread count> -g <steps package> <path to feature files>
