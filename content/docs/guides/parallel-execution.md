@@ -309,7 +309,7 @@ By running in parallel mode, using **4 threads**, the execution time has **reduc
 
 For a **visual representation** you can add the **timeline report** with the plugin option in the command.
 
-```java
+```shell
 java -cp <classpath> cucumber.api.cli.Main -p timeline:<report folder> --threads <thread count> -g <steps package> <path to feature files>
 ```
 
