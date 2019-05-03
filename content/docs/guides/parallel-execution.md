@@ -120,7 +120,7 @@ Thread ID - 14 - Scenario 1 from scenarios feature file.
 Thread ID - 14 - Scenario 2 from scenarios feature file.
 ```
 
-- To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section to the `POM`. Rename the runner class to `RunCucumberIT`.  You can find further details [here](docs/community/not-cucumber/#maven-execution-plugin).
+- To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section to the `POM`. Rename the runner class to `RunCucumberIT`.  You can find further details [here](/docs/community/not-cucumber/#maven-execution-plugin).
 
 ```shell
 <plugin>
