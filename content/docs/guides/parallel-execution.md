@@ -3,6 +3,7 @@ title: Parallel Execution
 subtitle: Using multiple threads to reduce test times
 polyglot:
  - java
+ - kotlin
  
 weight: 1800
 ---
@@ -61,6 +62,7 @@ Feature: Scenario Outlines feature file
 ```
 
 - Add the **step definition class** to the `parallel` package in `src/test/java` folder.
+{{% block "java" %}}
 
 ```java
 package parallel;
@@ -81,21 +83,59 @@ public class Stepdefs {
 	}
 }
 ```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
+```kotlin
+package parallel
+
+import cucumber.api.java8.En
+
+class Stepdefs : En {
+	
+	init {
+		BeforeStep() { ->
+			Thread.sleep(1000)
+		}
+		
+		Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
+            println("Thread ID - %2d - %s from %s feature file.".format(Thread.currentThread().id,scenario,file))
+        }
+	}
+}
+```
+{{% /block %}}
 
 - Add a cucumber **runner** using the `RunWith` annotation in the `parallel` package in the `src/test/java` folder.
+
+{{% block "java" %}}
 
 ```java
 package parallel;
 
-import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions()
 public class RunCucumberTest {
 }
 ```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
+```kotlin
+package parallel
+
+import cucumber.api.junit.Cucumber
+import org.junit.runner.RunWith
+
+@RunWith(Cucumber::class)
+class RunCucumberTest {
+}
+```
+{{% /block %}}
 
 - Add the **Surefire plugin configuration** to the `build` section to the `POM`.
 
@@ -158,7 +198,7 @@ The thread count in the above setting is **4 threads per core**. If you want thi
 
 If you have **multiple runners** then you can set the parallel option to `classesAndMethods`, `methods` or `classes`. For a single runner the `classes` option would be similar to a sequential execution.
 
-For a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
+For a **visual representation** you can add the **timeline report** with the plugin option to a `CucumberOptions` annotation in the runner class. Scroll to the end for an image of the report.
 
 
 # TestNG
@@ -187,14 +227,13 @@ Cucumber can be executed in parallel using **TestNG and Maven test execution plu
 
 - Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package in `src/test/java` folder. Set the **parallel option value to true** for the DataProvider annotation.
 
+{{% block "java" %}}
 ```java
 package parallel;
 
 import org.testng.annotations.DataProvider;
-import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-@CucumberOptions()
 public class RunCucumberTest extends AbstractTestNGCucumberTests{
 
 	@Override
@@ -204,6 +243,25 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests{
 	}
 }
 ```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
+```kotlin
+package parallel
+
+import org.testng.annotations.DataProvider;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+class RunCucumberTest : AbstractTestNGCucumberTests() {
+	
+	@DataProvider(parallel = true)
+	override fun scenarios(): Array<Array<(Any)>>  {
+		return super.scenarios()
+	}	
+}
+```
+{{% /block %}}
 
 - Add the Maven **Surefire plugin configuration** to the `build` section of the `POM`.
 
@@ -247,7 +305,7 @@ If you have **multiple runners**, set the parallel configuration of `classes` to
 </configuration>
 ```
 
-For a **visual representation** you can add the **timeline report** with the plugin option in the runner class. Scroll to the end for an image of the report.
+For a **visual representation** you can add the **timeline report** with the plugin option to a `CucumberOptions` annotation in the runner class. Scroll to the end for an image of the report.
 
 
 # CLI
@@ -262,15 +320,16 @@ Follow the below steps to **execute the command from a terminal**.
 
 - Download the necessary cucumber jars from the cucumber.io Maven repository (links provided under version number) or, if available, copy from the local repository into a folder. These need to be provided in the **classpath**. The versions mentioned are compatible with the latest cucumber release 4.3.0.
 
-	1. `cucumber-core.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-core/4.3.0/cucumber-core-4.3.0.jar)
-	2. `cucumber-java.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-java/4.3.0/cucumber-java-4.3.0.jar)
-	3. `cucumber-java8.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-java8/4.3.0/cucumber-java8-4.3.0.jar)
-	4. `cucumber-html.jar` [`0.2.7`](http://central.maven.org/maven2/io/cucumber/cucumber-html/0.2.7/cucumber-html-0.2.7.jar)
-	5. `gherkin.jar` [`5.1.0`](http://central.maven.org/maven2/io/cucumber/gherkin/5.1.0/gherkin-5.1.0.jar)
-	6. `cucumber-expressions.jar` [`6.2.2`](http://central.maven.org/maven2/io/cucumber/cucumber-expressions/6.6.2/cucumber-expressions-6.6.2.jar)
-	7. `datatable.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable/1.1.12/datatable-1.1.12.jar)
-	8. `datatable-dependencies.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable-dependencies/1.1.12/datatable-dependencies-1.1.12.jar)
-	9. `tag-expressions.jar` [`1.1.1`](http://central.maven.org/maven2/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar)
+	1.  `cucumber-core.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-core/4.3.0/cucumber-core-4.3.0.jar)
+	2.  `cucumber-java.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-java/4.3.0/cucumber-java-4.3.0.jar)
+	3.  `cucumber-java8.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-java8/4.3.0/cucumber-java8-4.3.0.jar)
+	4.  `cucumber-html.jar` [`0.2.7`](http://central.maven.org/maven2/io/cucumber/cucumber-html/0.2.7/cucumber-html-0.2.7.jar)
+	5.  `gherkin.jar` [`5.1.0`](http://central.maven.org/maven2/io/cucumber/gherkin/5.1.0/gherkin-5.1.0.jar)
+	6.  `cucumber-expressions.jar` [`6.2.2`](http://central.maven.org/maven2/io/cucumber/cucumber-expressions/6.6.2/cucumber-expressions-6.6.2.jar)
+	7.  `datatable.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable/1.1.12/datatable-1.1.12.jar)
+	8.  `datatable-dependencies.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable-dependencies/1.1.12/datatable-dependencies-1.1.12.jar)
+	9.  `tag-expressions.jar` [`1.1.1`](http://central.maven.org/maven2/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar)
+	10. `typetools.jar` [`0.5.0`](http://central.maven.org/maven2/net/jodah/typetools/0.5.0/typetools-0.5.0.jar)
 	
 - Create a folder named `cukecli` and a folder `parallel` inside it, to keep the step definition classes and feature files.
 
@@ -280,17 +339,37 @@ Follow the below steps to **execute the command from a terminal**.
 
 - Open up a **terminal window** and navigate to the source folder of the project, in our case `cukecli`.
 
+{{% block "java" %}}
 - Compile the step definition class. Add the **path to the folder containing cucumber jars to the classpath** using the **-cp** option.
 
 ```shell
 javac -cp .;<path to cucumber jar folder>/* ./parallel/Stepdefs.java
 ```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+- Compile the step definition class. Add **path to each of the downloaded cucumber jars to the classpath** using the **-cp** option.
+
+```shell
+kotlinc -cp .;<path to each cucumber jar> -jvm-target 1.8 ./parallel/Stepdefs.java
+```
+{{% /block %}}
 
 - Execute using the below command.
+
+{{% block "java" %}}
 
 ```shell
 java -cp .;<path to cucumber jar folder>/* cucumber.api.cli.Main --threads 4 -g parallel parallel
 ```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
+```shell
+java -cp .;<path to cucumber jar folder>/*;<path to kotlin lib folder>/* cucumber.api.cli.Main --threads 4 -g parallel parallel
+```
+{{% /block %}}
 
 - You should get a console output similar to below.
 
