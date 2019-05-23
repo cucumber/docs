@@ -18,7 +18,7 @@ For each of these options, this tutorial will look at the project setup, configu
 
 
 # JUnit
-Cucumber can be executed in parallel using **JUnit and Maven test execution plugins**. In JUnit the **feature files are run in parallel rather than scenarios**, which means **all the scenarios in a feature file will be executed by the same thread**. One can use either Maven Surefire or Failsafe plugin for executing the runners.
+Cucumber can be executed in parallel using **JUnit and Maven test execution plugins**. In JUnit the **feature files are run in parallel rather than scenarios**, which means **all the scenarios in a feature file will be executed by the same thread**. You can use either Maven Surefire or Failsafe plugin to execute the runners.
 
 - Create a Maven project in your favorite IDE. Add `cucumber-java8` and `cucumber-junit` **dependencies** to the `POM`.
 
