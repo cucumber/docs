@@ -8,7 +8,7 @@ polyglot:
 weight: 1800
 ---
 
-Cucumber-JVM allows [parallel execution](https://cucumber.io/blog/announcing-cucumber-jvm-4-0-0/) across multiple threads since version 4.0.0. There are several options to incorporate this inbuilt feature in a Cucumber project.
+Cucumber-JVM allows [parallel execution](https://cucumber.io/blog/announcing-cucumber-jvm-4-0-0/) across multiple threads since version 4.0.0. There are several options to incorporate this built-in feature in a Cucumber project.
 
 - [JUnit](/docs/guides/parallel-execution/#junit)
 - [TestNG](/docs/guides/parallel-execution/#testng)
