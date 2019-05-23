@@ -7,7 +7,7 @@ polyglot:
  
 weight: 1800
 ---
-
+{{% block "java,kotlin" %}}
 Cucumber-JVM allows [parallel execution](https://cucumber.io/blog/announcing-cucumber-jvm-4-0-0/) across multiple threads since version 4.0.0. There are several options to incorporate this built-in feature in a Cucumber project.
 
 - [JUnit](/docs/guides/parallel-execution/#junit)
@@ -15,9 +15,11 @@ Cucumber-JVM allows [parallel execution](https://cucumber.io/blog/announcing-cuc
 - [CLI](/docs/guides/parallel-execution/#cli)
 
 For each of these options, this tutorial will look at the project setup, configuration settings and execution commands.
-
+{{% /block %}}
 
 # JUnit
+
+{{% block "java,kotlin" %}}
 Cucumber can be executed in parallel using **JUnit and Maven test execution plugins**. In JUnit the **feature files are run in parallel rather than scenarios**, which means **all the scenarios in a feature file will be executed by the same thread**. You can use either Maven Surefire or Failsafe plugin to execute the runners.
 
 - Create a Maven project in your favorite IDE. Add `cucumber-java8` and `cucumber-junit` **dependencies** to the `POM`.
@@ -37,7 +39,7 @@ Cucumber can be executed in parallel using **JUnit and Maven test execution plug
 </dependency>
 ```
 
-- Create a **parallel** folder in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenariooutlines.feature`) inside it.
+- Create a **parallel** folder (or any other name) in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) inside it.
 
 ```gherkin
 Feature: Scenarios feature file
@@ -53,7 +55,7 @@ Feature: Scenarios feature file
 Feature: Scenario Outlines feature file
 
   Scenario Outline: <scen_out_row_num>
-    Given Step from '<scen_out_row_num>' in 'scenariooutlines' feature file
+    Given Step from '<scen_out_row_num>' in 'scenario-outlines' feature file
 
     Examples: 
       | scen_out_row_num       |
@@ -61,7 +63,9 @@ Feature: Scenario Outlines feature file
       | Scenario Outline Row 2 |
 ```
 
-- Add the **step definition class** to the `parallel` package in `src/test/java` folder.
+- Add the **step definition class** to the `parallel` package (same name as folder above for automatic pickup by runner) in `src/test/java` folder.
+{{% /block %}}
+
 {{% block "java" %}}
 
 ```java
@@ -71,11 +75,6 @@ import cucumber.api.java.BeforeStep;
 import cucumber.api.java.en.Given;
 
 public class Stepdefs {
-
-	@BeforeStep
-	public void beforeStep() throws InterruptedException {
-		Thread.sleep(1000);
-	}
 
 	@Given("Step from {string} in {string} feature file")
 	public void step(String scenario, String file) {
@@ -93,11 +92,6 @@ package parallel
 import cucumber.api.java8.En
 
 class Stepdefs : En {
-	
-	init {
-		BeforeStep() { ->
-			Thread.sleep(1000)
-		}
 		
 		Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
             println("Thread ID - %2d - %s from %s feature file.".format(Thread.currentThread().id,scenario,file))
@@ -107,7 +101,9 @@ class Stepdefs : En {
 ```
 {{% /block %}}
 
-- Add a cucumber **runner** using the `RunWith` annotation in the `parallel` package in the `src/test/java` folder.
+{{% block "java,kotlin" %}}
+- Add a cucumber **runner** using the `RunWith` annotation in the `parallel` package (same name as step definition package) in the `src/test/java` folder.
+{{% /block %}}
 
 {{% block "java" %}}
 
@@ -137,6 +133,7 @@ class RunCucumberTest {
 ```
 {{% /block %}}
 
+{{% block "java,kotlin" %}}
 - Add the **Surefire plugin configuration** to the `build` section to the `POM`.
 
 ```shell
@@ -151,11 +148,11 @@ class RunCucumberTest {
 </plugin>
 ```
 
-- Use the Maven `install` or a suitable command to **execute** the `POM`. This should run in parallel threaded mode. You should see a result similar to below. It is important to note that **both the scenarios in the file (`scenarios.feature`) are executed by thread with ID 14**. Similarly **both the rows of the scenario outline in the file (`scenariooutlines.feature`) are executed by thread with ID 13**.
+- Use the Maven `install` or a suitable command to **execute** the `POM`. This should run in parallel threaded mode. You should see a result similar to below. It is important to note that **both the scenarios in the file (`scenarios.feature`) are executed by thread with ID 14**. Similarly **both the rows of the scenario outline in the file (`scenario-outlines.feature`) are executed by thread with ID 13**.
 
 ```shell
-Thread ID - 13 - Scenario Outline Row 1 from scenariooutlines feature file.
-Thread ID - 13 - Scenario Outline Row 2 from scenariooutlines feature file.
+Thread ID - 13 - Scenario Outline Row 1 from scenario-outlines feature file.
+Thread ID - 13 - Scenario Outline Row 2 from scenario-outlines feature file.
 Thread ID - 14 - Scenario 1 from scenarios feature file.
 Thread ID - 14 - Scenario 2 from scenarios feature file.
 ```
@@ -199,9 +196,11 @@ The thread count in the above setting is **4 threads per core**. If you want thi
 If you have **multiple runners** then you can set the parallel option to `classesAndMethods`, `methods` or `classes`. For a single runner the `classes` option would be similar to a sequential execution.
 
 For a **visual representation** you can add the **timeline report** with the plugin option to a `CucumberOptions` annotation in the runner class. Scroll to the end for an image of the report.
-
+{{% /block %}}
 
 # TestNG
+
+{{% block "java,kotlin" %}}
 Cucumber can be executed in parallel using **TestNG and Maven test execution plugins** by setting the **dataprovider parallel option to true**. In TestNG the **scenarios and rows in a scenario outline are executed in multiple threads**. One can use either Maven Surefire or Failsafe plugin for executing the runners.
 
 - Create a Maven project in your favorite IDE. Add the `cucumber-java8` and `cucumber-testng` **dependencies** to the `POM`.
@@ -221,11 +220,10 @@ Cucumber can be executed in parallel using **TestNG and Maven test execution plu
 </dependency>
 ```
 
-- Create a **parallel** folder in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenariooutlines.feature`) inside it as described in the JUnit section.
+- Add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) and **step definition class** as described in the JUnit section.
 
-- Add the **step definition class** to the `parallel` package in `src/test/java` folder as described in the JUnit section.
-
-- Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package in `src/test/java` folder. Set the **parallel option value to true** for the DataProvider annotation.
+- Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package (same name as step definition package) in `src/test/java` folder. Set the **parallel option value to true** for the DataProvider annotation.
+{{% /block %}}
 
 {{% block "java" %}}
 ```java
@@ -263,6 +261,7 @@ class RunCucumberTest : AbstractTestNGCucumberTests() {
 ```
 {{% /block %}}
 
+{{% block "java,kotlin" %}}
 - Add the Maven **Surefire plugin configuration** to the `build` section of the `POM`.
 
 ```shell
@@ -276,8 +275,8 @@ class RunCucumberTest : AbstractTestNGCucumberTests() {
 - Use the Maven `install` or a suitable command to **execute the POM**. This should run in parallel thread mode. You should see a result similar to below. The **scenarios and rows of the scenario outlines are executed in different threads**.
 
 ```shell
-Thread ID - 15 - Scenario Outline Row 2 from scenariooutlines feature file.
-Thread ID - 14 - Scenario Outline Row 1 from scenariooutlines feature file.
+Thread ID - 15 - Scenario Outline Row 2 from scenario-outlines feature file.
+Thread ID - 14 - Scenario Outline Row 1 from scenario-outlines feature file.
 Thread ID - 16 - Scenario 1 from scenarios feature file.
 Thread ID - 17 - [Scenario 2 from scenarios feature file.
 ```
@@ -306,38 +305,28 @@ If you have **multiple runners**, set the parallel configuration of `classes` to
 ```
 
 For a **visual representation** you can add the **timeline report** with the plugin option to a `CucumberOptions` annotation in the runner class. Scroll to the end for an image of the report.
-
+{{% /block %}}
 
 # CLI
+
+{{% block "java,kotlin" %}}
 The `Main class` in the `cucumber.api.cli package` is used to execute the feature files. You can run this class directly from the command line; in that case, there is no need to create any runner class. The usage options for this class is mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/v4.0.0/core/src/main/resources/cucumber/api/cli/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
  
 Below is the basic command to start the execution.
 ```shell
-java -cp <classpath> cucumber.api.cli.Main -g <steps package> --threads <thread count> <path to feature files>
+java -cp <classpath> cucumber.api.cli.Main -g <glue package> --threads <thread count> <path to feature files>
 ```
 
 Follow the steps below to **execute the command from a terminal**.
 
-- Download the necessary cucumber jars from the cucumber.io Maven repository (links provided under version number) or, if available, copy from the local repository into a folder. These need to be provided in the **classpath**. The versions mentioned are compatible with the latest cucumber release 4.3.0.
-
-	1.  `cucumber-core.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-core/4.3.0/cucumber-core-4.3.0.jar)
-	2.  `cucumber-java.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-java/4.3.0/cucumber-java-4.3.0.jar)
-	3.  `cucumber-java8.jar` [`4.3.0`](http://central.maven.org/maven2/io/cucumber/cucumber-java8/4.3.0/cucumber-java8-4.3.0.jar)
-	4.  `cucumber-html.jar` [`0.2.7`](http://central.maven.org/maven2/io/cucumber/cucumber-html/0.2.7/cucumber-html-0.2.7.jar)
-	5.  `gherkin.jar` [`5.1.0`](http://central.maven.org/maven2/io/cucumber/gherkin/5.1.0/gherkin-5.1.0.jar)
-	6.  `cucumber-expressions.jar` [`6.2.2`](http://central.maven.org/maven2/io/cucumber/cucumber-expressions/6.6.2/cucumber-expressions-6.6.2.jar)
-	7.  `datatable.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable/1.1.12/datatable-1.1.12.jar)
-	8.  `datatable-dependencies.jar` [`1.1.12`](http://central.maven.org/maven2/io/cucumber/datatable-dependencies/1.1.12/datatable-dependencies-1.1.12.jar)
-	9.  `tag-expressions.jar` [`1.1.1`](http://central.maven.org/maven2/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar)
-	10. `typetools.jar` [`0.5.0`](http://central.maven.org/maven2/net/jodah/typetools/0.5.0/typetools-0.5.0.jar)
+- Download the cucumber jars from the cucumber.io repository into a folder. These need to be provided in the **classpath**.
 	
-- Create a folder named `cukecli` and a folder `parallel` inside it, to keep the step definition classes and feature files.
+- Create a folder named `cucumbercli` and a folder `parallel` (or any folder names) inside it, to keep the step definition classes and feature files.
 
-- Create the **two feature files** (`scenarios.feature` and `scenariooutlines.feature`) inside the `parallel` folder as described in the JUnit section.
+- Add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) and **step definition class** as described in the JUnit section.
 
-- Create the **step definition class** in the `parallel` folder as described in the JUnit section.
-
-- Open up a **terminal window** and navigate to the source folder of the project, in our case `cukecli`.
+- Open up a **terminal window** and navigate to the source folder of the project, in our case `cucumbercli`.
+{{% /block %}}
 
 {{% block "java" %}}
 - Compile the step definition class. Add the **path to the folder containing cucumber jars to the classpath** using the **-cp** option.
@@ -355,7 +344,9 @@ kotlinc -cp .;<path to each cucumber jar> -jvm-target 1.8 ./parallel/Stepdefs.ja
 ```
 {{% /block %}}
 
+{{% block "java,kotlin" %}}
 - Execute using the below command.
+{{% /block %}}
 
 {{% block "java" %}}
 
@@ -371,6 +362,7 @@ java -cp .;<path to cucumber jar folder>/*;<path to kotlin lib folder>/* cucumbe
 ```
 {{% /block %}}
 
+{{% block "java,kotlin" %}}
 - You should get a console output similar to below.
 
 ```shell
@@ -393,4 +385,5 @@ java -cp <classpath> cucumber.api.cli.Main -p timeline:<report folder> --threads
 ```
 
 ![Timeline report](/img/parallel-timeline-report.png)
+{{% /block %}}
 
