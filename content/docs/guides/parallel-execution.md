@@ -14,7 +14,7 @@ Cucumber-JVM allows [parallel execution](https://cucumber.io/blog/announcing-cuc
 - [TestNG](/docs/guides/parallel-execution/#testng)
 - [CLI](/docs/guides/parallel-execution/#cli)
 
-For each of these options, this tutorial will look at the project setup, configuration settings, execution commands.
+For each of these options, this tutorial will look at the project setup, configuration settings and execution commands.
 
 
 # JUnit
