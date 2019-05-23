@@ -316,7 +316,7 @@ Below is the basic command to start the execution.
 java -cp <classpath> cucumber.api.cli.Main -g <steps package> --threads <thread count> <path to feature files>
 ```
 
-Follow the below steps to **execute the command from a terminal**.
+Follow the steps below to **execute the command from a terminal**.
 
 - Download the necessary cucumber jars from the cucumber.io Maven repository (links provided under version number) or, if available, copy from the local repository into a folder. These need to be provided in the **classpath**. The versions mentioned are compatible with the latest cucumber release 4.3.0.
 
