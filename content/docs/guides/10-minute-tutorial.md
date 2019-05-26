@@ -564,7 +564,7 @@ public void i_ask_whether_it_s_Friday_yet() {
     throw new PendingException();
 }
 
-@Then("^I should be told \"([^\"]*)\"$")
+@Then("""^I should be told "([^"]*)"$""")
 public void i_should_be_told(String arg1) {
     // Write code here that turns the phrase above into concrete actions
     throw new PendingException();
@@ -676,7 +676,7 @@ class StepDefs {
         throw PendingException()
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("""^I should be told "([^"]*)"$""")
     @Throws(Exception::class)
     fun i_should_be_told(arg1: String) {
         // Write code here that turns the phrase above into concrete actions
@@ -836,7 +836,7 @@ public class Stepdefs {
         actualAnswer = IsItFriday.isItFriday(today);
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("""^I should be told "([^"]*)"$""")
     public void i_should_be_told(String expectedAnswer) {
         assertEquals(expectedAnswer, actualAnswer);
     }
@@ -871,7 +871,7 @@ class StepDefs {
         actualAnswer = isItFriday(today)
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("""^I should be told "([^"]*)"$""")
     fun i_should_be_told(expectedAnswer: String) {
         assertEquals(expectedAnswer, actualAnswer)
     }
@@ -1437,7 +1437,7 @@ public class Stepdefs {
     private String today;
     private String actualAnswer;
 
-    @Given("^today is \"([^\"]*)\"$")
+    @Given("""^today is "([^"]*)"$""")
     public void today_is(String today) {
         this.today = today;
     }
@@ -1447,7 +1447,7 @@ public class Stepdefs {
         this.actualAnswer = IsItFriday.isItFriday(today);
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("""^I should be told "([^"]*)"$""")
     public void i_should_be_told(String expectedAnswer) {
         assertEquals(expectedAnswer, actualAnswer);
     }
@@ -1472,7 +1472,7 @@ class StepDefs {
     private lateinit var today: String
     private lateinit var actualAnswer: String
 
-    @Given("^today is \"([^\"]*)\"$")
+    @Given("""^today is "([^"]*)"$""")
     fun today_is(today: String) {
         this.today = today
     }
@@ -1482,7 +1482,7 @@ class StepDefs {
         actualAnswer = isItFriday(today)
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("""^I should be told "([^"]*)"$""")
     fun i_should_be_told(expectedAnswer: String) {
         assertEquals(expectedAnswer, actualAnswer)
     }
