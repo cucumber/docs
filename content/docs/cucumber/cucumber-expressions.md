@@ -1,6 +1,6 @@
 ---
 title: Cucumber Expressions
-subtitle: Linking step definitions to Gherkin steps
+subtitle: Using variables in your step definitions
 polyglot:
  - java
  - javascript

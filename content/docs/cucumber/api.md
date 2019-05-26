@@ -1058,11 +1058,11 @@ For more information on JUnit, see the [JUnit web site](http://www.junit.org).
 {{% /block %}}
 
 {{% block "ruby" %}}
-Ruby can't be run by JUnit
+Ruby can't be run by JUnit.
 {{% /block %}}
 
 {{% block "javascript" %}}
-Javascript can't be run by JUnit
+Javascript can't be run by JUnit.
 {{% /block %}}
 
 # Options

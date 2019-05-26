@@ -5982,6 +5982,9 @@ a.dropdown-item.is-active {
   min-height: 3.25rem;
   position: relative;
   z-index: 30;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .navbar.is-white {
@@ -6786,12 +6789,16 @@ a.navbar-item:hover, a.navbar-item.is-active,
   .navbar,
   .navbar-menu,
   .navbar-start,
-  .navbar-end {
-    align-items: stretch;
+  .navbar-end,
+  .navbar-end-2 {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
     display: flex;
   }
   .navbar {
     min-height: 3.25rem;
+    justify-content: space-between;
   }
   .navbar.is-spaced {
     padding: 1rem 2rem;
@@ -6858,6 +6865,9 @@ a.navbar-item:hover, a.navbar-item.is-active,
   .navbar-menu {
     flex-grow: 1;
     flex-shrink: 0;
+    height:90px;
+    max-width:600px;
+    justify-content: flex-end;
   }
   .navbar-start {
     justify-content: flex-start;

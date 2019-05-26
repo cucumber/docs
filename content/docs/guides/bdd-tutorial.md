@@ -33,11 +33,11 @@ This technique is called Outside-in because programmers typically start with the
 
 Andrew Premdas, one of the first adopters of Cucumber, says it well:
 
-> Your cucumber features should drive your implementation, not reflect it.
+> Your Cucumber features should drive your implementation, not reflect it.
 
 This means Cucumber features should be written before the code implementing the feature.
 
-When you do BDD/Specification by Example and Outside-in, regression tests are a by-product of those activities. Testing isn't the activity itself.
+When you do BDD / Specification by Example and Outside-in, regression tests are a by-product of those activities. Testing isn't the activity itself.
 
 These executable specifications also work as automated regression tests which reduces costly and time-consuming manual regression testing. Testers can use their time for more valuable things, like exploratory testing.
 
