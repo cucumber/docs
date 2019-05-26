@@ -22,22 +22,7 @@ For each of these options, this tutorial will look at the project setup, configu
 {{% block "java,kotlin" %}}
 Cucumber can be executed in parallel using **JUnit and Maven test execution plugins**. In JUnit the **feature files are run in parallel rather than scenarios**, which means **all the scenarios in a feature file will be executed by the same thread**. You can use either Maven Surefire or Failsafe plugin to execute the runners.
 
-- Create a Maven project in your favorite IDE. Add `cucumber-java8` and `cucumber-junit` **dependencies** to the `POM`.
-
-```shell
-<dependency>
-	<groupId>io.cucumber</groupId>
-	<artifactId>cucumber-java8</artifactId>
-	<version>{{% version "cucumberjvm" %}}</version>
-	<scope>test</scope>
-</dependency>
-<dependency>
-	<groupId>io.cucumber</groupId>
-	<artifactId>cucumber-junit</artifactId>
-	<version>{{% version "cucumberjvm" %}}</version>
-	<scope>test</scope>
-</dependency>
-```
+- Create a Maven project in your favorite IDE using the [cucumber-archetype](/docs/guides/10-minute-tutorial/#create-an-empty-cucumber-project) or adding Cucumber dependencies to the POM as detailed [here](https://cucumber.io/docs/installation/java/#maven) and Junit dependencies [here](/docs/cucumber/checking-assertions/#junit).
 
 - Create a **parallel** folder (or any other name) in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) inside it.
 
@@ -94,8 +79,8 @@ import cucumber.api.java8.En
 class Stepdefs : En {
 		
 		Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
-            println("Thread ID - %2d - %s from %s feature file.".format(Thread.currentThread().id,scenario,file))
-        }
+			println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
+       }
 	}
 }
 ```
@@ -182,20 +167,28 @@ Thread ID - 14 - Scenario 2 from scenarios feature file.
 
 To set the thread count to a **specific number** instead of `useUnlimitedThreads` use the below setting.
 ```shell
-<parallel>methods</parallel>
-<threadCount>4</threadCount>
+<configuration>
+	<parallel>methods</parallel>
+	<threadCount>4</threadCount>
+</configuration>
 ```
 
 The thread count in the above setting is **4 threads per core**. If you want this to be **4 threads across all cores** set the `perCoreThreadCount` to **false**.
 ```shell
-<parallel>methods</parallel>
-<threadCount>4</threadCount>
-<perCoreThreadCount>false</perCoreThreadCount>
+<configuration>
+	<parallel>methods</parallel>
+	<threadCount>4</threadCount>
+	<perCoreThreadCount>false</perCoreThreadCount>
+</configuration>
 ```
 
-If you have **multiple runners** then you can set the parallel option to `classesAndMethods`, `methods` or `classes`. For a single runner the `classes` option would be similar to a sequential execution.
-
-For a **visual representation** you can add the **timeline report** with the plugin option to a `CucumberOptions` annotation in the runner class. Scroll to the end for an image of the report.
+In case of **multiple runners** one can also set the parallel option to `classesAndMethods` or `classes` in addition to `methods`.
+```shell
+<configuration>
+	<parallel>classesAndMethods</parallel>
+	useUnlimitedThreads>true</useUnlimitedThreads>
+</configuration>
+```
 {{% /block %}}
 
 # TestNG
@@ -203,22 +196,7 @@ For a **visual representation** you can add the **timeline report** with the plu
 {{% block "java,kotlin" %}}
 Cucumber can be executed in parallel using **TestNG and Maven test execution plugins** by setting the **dataprovider parallel option to true**. In TestNG the **scenarios and rows in a scenario outline are executed in multiple threads**. One can use either Maven Surefire or Failsafe plugin for executing the runners.
 
-- Create a Maven project in your favorite IDE. Add the `cucumber-java8` and `cucumber-testng` **dependencies** to the `POM`.
-
-```shell
-<dependency>
-	<groupId>io.cucumber</groupId>
-	<artifactId>cucumber-java8</artifactId>
-	<version>{{% version "cucumberjvm" %}}</version>
-	<scope>test</scope>
-</dependency>
-<dependency>
-	<groupId>io.cucumber</groupId>
-	<artifactId>cucumber-testng</artifactId>
-	<version>{{% version "cucumberjvm" %}}</version>
-	<scope>test</scope>
-</dependency>
-```
+- Create a Maven project in your favorite IDE adding Cucumber dependencies to the POM as detailed [here](https://cucumber.io/docs/installation/java/#maven) and TestNG dependencies [here](/docs/cucumber/checking-assertions/#testng).
 
 - Add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) and **step definition class** as described in the JUnit section.
 
@@ -244,7 +222,6 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests{
 {{% /block %}}
 
 {{% block "kotlin" %}}
-
 ```kotlin
 package parallel
 
@@ -303,8 +280,6 @@ If you have **multiple runners**, set the parallel configuration of `classes` to
 	<threadCount>4</threadCount>
 </configuration>
 ```
-
-For a **visual representation** you can add the **timeline report** with the plugin option to a `CucumberOptions` annotation in the runner class. Scroll to the end for an image of the report.
 {{% /block %}}
 
 # CLI
@@ -366,23 +341,39 @@ java -cp .;<path to cucumber jar folder>/*;<path to kotlin lib folder>/* cucumbe
 - You should get a console output similar to below.
 
 ```shell
-Thread ID - 11 - Scenario Outline Row 1 from scenariooutlines feature file.
+Thread ID - 11 - Scenario Outline Row 1 from scenario-outlines feature file.
 Thread ID - 14 - Scenario 2 from scenarios feature file.
-Thread ID - 12 - Scenario Outline Row 2 from scenariooutlines feature file.
+Thread ID - 12 - Scenario Outline Row 2 from scenario-outlines feature file.
 Thread ID - 13 - Scenario 1 from scenarios feature file.
-
-4 Scenarios (4 passed)
-4 Steps (4 passed)
-0m1.396s
 ```
+{{% /block %}}
 
-By running in parallel mode, using **4 threads**, the execution time has **reduced from 4 seconds to around 1 second**.
+# Timeline Formatter
 
-For a **visual representation** you can add the **timeline report** with the plugin option in the command.
+{{% block "java,kotlin" %}}
+For a **visual representation** of threads, add the **timeline report** using the `plugin` option of `CucumberOptions` annotation on a JUnit or TestNG runner. 
+{{% /block %}}
+
+{{% block "java" %}}
+```java
+@CucumberOptions(plugin= {"timeline:<report folder>"})
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+@CucumberOptions(plugin = ["timeline:<report folder>"])
+```
+{{% /block %}}
+
+{{% block "java,kotlin" %}}
+In case of CLI, the below command can be used.
 
 ```shell
 java -cp <classpath> cucumber.api.cli.Main -p timeline:<report folder> --threads <thread count> -g <steps package> <path to feature files>
 ```
+
+Below is a sample report.
 
 ![Timeline report](/img/parallel-timeline-report.png)
 {{% /block %}}
