@@ -8,7 +8,7 @@ polyglot:
 weight: 1800
 ---
 {{% block "java,kotlin" %}}
-Cucumber-JVM allows [parallel execution](https://cucumber.io/blog/announcing-cucumber-jvm-4-0-0/) across multiple threads since version 4.0.0. There are several options to incorporate this built-in feature in a Cucumber project.
+Cucumber-JVM allows parallel execution across multiple threads since [version 4.0.0.](https://cucumber.io/blog/announcing-cucumber-jvm-4-0-0/) There are several options to incorporate this built-in feature in a Cucumber project. You can do so using:
 
 - [JUnit](/docs/guides/parallel-execution/#junit)
 - [TestNG](/docs/guides/parallel-execution/#testng)
@@ -22,7 +22,7 @@ For each of these options, this tutorial will look at the project setup, configu
 {{% block "java,kotlin" %}}
 Cucumber can be executed in parallel using **JUnit and Maven test execution plugins**. In JUnit the **feature files are run in parallel rather than scenarios**, which means **all the scenarios in a feature file will be executed by the same thread**. You can use either Maven Surefire or Failsafe plugin to execute the runners.
 
-- Create a Maven project in your favorite IDE using the [cucumber-archetype](/docs/guides/10-minute-tutorial/#create-an-empty-cucumber-project) or adding Cucumber dependencies to the POM as detailed [here](https://cucumber.io/docs/installation/java/#maven) and Junit dependencies [here](/docs/cucumber/checking-assertions/#junit).
+- Create a Maven project in your favorite IDE using the [cucumber-archetype](/docs/guides/10-minute-tutorial/#create-an-empty-cucumber-project) or by adding Cucumber dependencies to the POM as detailed [here](https://cucumber.io/docs/installation/java/#maven) and Junit dependencies [here](/docs/cucumber/checking-assertions/#junit).
 
 - Create a **parallel** folder (or any other name) in `src/test/resources` path and add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) inside it.
 
@@ -59,11 +59,12 @@ package parallel;
 import cucumber.api.java.BeforeStep;
 import cucumber.api.java.en.Given;
 
-public class Stepdefs {
+public class StepDefs {
 
 	@Given("Step from {string} in {string} feature file")
 	public void step(String scenario, String file) {
-		System.out.format("Thread ID - %2d - %s from %s feature file.\n", Thread.currentThread().getId(), scenario,file);
+		System.out.format("Thread ID - %2d - %s from %s feature file.\n",
+		Thread.currentThread().getId(), scenario,file);
 	}
 }
 ```
@@ -76,9 +77,13 @@ package parallel
 
 import cucumber.api.java8.En
 
-class Stepdefs : En {
+class StepDefs : En {
 		
-		Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
+		    init {
+        Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
+            println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
+        }
+    }
 			println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
        }
 	}
@@ -113,8 +118,7 @@ import cucumber.api.junit.Cucumber
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
-class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 {{% /block %}}
 
@@ -143,7 +147,9 @@ Thread ID - 14 - Scenario 2 from scenarios feature file.
 ```
 
 - To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section to the `POM`. Rename the runner class to `RunCucumberIT`.  You can find further details [here](/docs/community/not-cucumber/#maven-execution-plugin).
-
+{{% block "kotlin" %}}
+For Failsafe to find your step definitions, make sure they are in src/test/**java**.
+{{% /block %}}
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -285,7 +291,7 @@ If you have **multiple runners**, set the parallel configuration of `classes` to
 # CLI
 
 {{% block "java,kotlin" %}}
-The `Main class` in the `cucumber.api.cli package` is used to execute the feature files. You can run this class directly from the command line; in that case, there is no need to create any runner class. The usage options for this class is mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/v4.0.0/core/src/main/resources/cucumber/api/cli/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
+The `Main class` in the `cucumber.api.cli package` is used to execute the feature files. You can run this class directly from the command line; in that case, there is no need to create any runner class. The usage options for this class are mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/v4.0.0/core/src/main/resources/cucumber/api/cli/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
  
 Below is the basic command to start the execution.
 ```shell
@@ -294,20 +300,18 @@ java -cp <classpath> cucumber.api.cli.Main -g <glue package> --threads <thread c
 
 Follow the steps below to **execute the command from a terminal**.
 
-- Download the cucumber jars from the cucumber.io repository into a folder. These need to be provided in the **classpath**.
 	
-- Create a folder named `cucumbercli` and a folder `parallel` (or any folder names) inside it, to keep the step definition classes and feature files.
 
 - Add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) and **step definition class** as described in the JUnit section.
 
-- Open up a **terminal window** and navigate to the source folder of the project, in our case `cucumbercli`.
+- Open up a **terminal window** and navigate to the source folder of the project.
 {{% /block %}}
 
 {{% block "java" %}}
 - Compile the step definition class. Add the **path to the folder containing cucumber jars to the classpath** using the **-cp** option.
 
 ```shell
-javac -cp .;<path to cucumber jar folder>/* ./parallel/Stepdefs.java
+javac -cp .;<path to cucumber jar folder>/* ./parallel/StepDefs.java
 ```
 {{% /block %}}
 
@@ -315,7 +319,7 @@ javac -cp .;<path to cucumber jar folder>/* ./parallel/Stepdefs.java
 - Compile the step definition class. Add **path to each of the downloaded cucumber jars to the classpath** using the **-cp** option.
 
 ```shell
-kotlinc -cp .;<path to each cucumber jar> -jvm-target 1.8 ./parallel/Stepdefs.java
+kotlinc -cp .;<path to each cucumber jar> -jvm-target 1.8 ./parallel/StepDefs.kt
 ```
 {{% /block %}}
 
