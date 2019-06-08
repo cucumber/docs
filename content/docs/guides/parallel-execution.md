@@ -47,11 +47,10 @@ Feature: Scenario Outlines feature file
       | Scenario Outline Row 1 |
       | Scenario Outline Row 2 |
 ```
-
-- Add the **step definition class** to the `parallel` package (same name as folder above for automatic pickup by runner) in `src/test/java` folder.
 {{% /block %}}
 
 {{% block "java" %}}
+- Add the **step definition class** to the `parallel` package (same name as folder above for automatic pickup by runner) in `src/test/java` folder.
 
 ```java
 package parallel;
@@ -71,27 +70,29 @@ public class StepDefs {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+- Add the **step definition class** to the `parallel` package (same name as folder above for automatic pickup by runner) in `src/test/kotlin` folder.
 
 ```kotlin
 package parallel
 
 import cucumber.api.java8.En
 
-class StepDefs : En {
-		
+class StepDefs : En {	
 	init {
-        	Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
-            	println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
-        	}
-    	}
-		println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
-	}
+        Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
+            println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
+        }
+    }
 }
 ```
 {{% /block %}}
 
-{{% block "java,kotlin" %}}
+{{% block "java" %}}
 - Add a cucumber **runner** using the `RunWith` annotation in the `parallel` package (same name as step definition package) in the `src/test/java` folder.
+{{% /block %}}
+
+{{% block "kotlin" %}}
+- Add a cucumber **runner** using the `RunWith` annotation in the `parallel` package (same name as step definition package) in the `src/test/kotlin` folder.
 {{% /block %}}
 
 {{% block "java" %}}
@@ -124,10 +125,6 @@ class RunCucumberTest
 {{% block "java,kotlin" %}}
 - Add the **Surefire plugin configuration** to the `build` section to the `POM`.
 
-{{% block "kotlin" %}}
-For Surefire to find your step definitions, make sure they are in src/test/**java**.
-{{% /block %}}
-
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -150,11 +147,9 @@ Thread ID - 14 - Scenario 2 from scenarios feature file.
 ```
 
 - To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section to the `POM`. Rename the runner class to `RunCucumberIT`.  You can find further details [here](/docs/community/not-cucumber/#maven-execution-plugin).
-
 {{% block "kotlin" %}}
 For Failsafe to find your step definitions, make sure they are in src/test/**java**.
 {{% /block %}}
-
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -210,11 +205,11 @@ Cucumber can be executed in parallel using **TestNG and Maven test execution plu
 - Create a Maven project in your favorite IDE adding Cucumber dependencies to the POM as detailed [here](https://cucumber.io/docs/installation/java/#maven) and TestNG dependencies [here](/docs/cucumber/checking-assertions/#testng).
 
 - Add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) and **step definition class** as described in the JUnit section.
-
-- Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package (same name as step definition package) in `src/test/java` folder. Set the **parallel option value to true** for the DataProvider annotation.
 {{% /block %}}
 
 {{% block "java" %}}
+- Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package (same name as step definition package) in `src/test/java` folder. Set the **parallel option value to true** for the DataProvider annotation.
+
 ```java
 package parallel;
 
@@ -233,6 +228,8 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests{
 {{% /block %}}
 
 {{% block "kotlin" %}}
+- Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package (same name as step definition package) in `src/test/kotlin` folder. Set the **parallel option value to true** for the DataProvider annotation.
+
 ```kotlin
 package parallel
 
@@ -266,7 +263,7 @@ class RunCucumberTest : AbstractTestNGCucumberTests() {
 Thread ID - 15 - Scenario Outline Row 2 from scenario-outlines feature file.
 Thread ID - 14 - Scenario Outline Row 1 from scenario-outlines feature file.
 Thread ID - 16 - Scenario 1 from scenarios feature file.
-Thread ID - 17 - [Scenario 2 from scenarios feature file.
+Thread ID - 17 - Scenario 2 from scenarios feature file.
 ```
 
 - To execute using a Maven **Failsafe plugin**, setup the `POM` as described in the JUnit section. Remove the `parallel` and `useUnlimitedThreads` settings in the `configuration` part.
@@ -284,7 +281,7 @@ The default **thread count of the dataprovider** in parallel mode is **10**. To 
 </configuration>
 ```
 
-If you have **multiple runners**, set the parallel configuration of `classes` to reduce execution times. In addition the `threadCount` can be set to to the desired value or `useUnlimitedThreads` can be set to true.
+If you have **multiple runners**, set the parallel configuration to `classes` to reduce execution times. In addition the `threadCount` can be set to to the desired value or `useUnlimitedThreads` can be set to true.
 ```shell
 <configuration>
 	<parallel>classes</parallel>
@@ -297,19 +294,12 @@ If you have **multiple runners**, set the parallel configuration of `classes` to
 
 {{% block "java,kotlin" %}}
 The `Main class` in the `cucumber.api.cli package` is used to execute the feature files. You can run this class directly from the command line; in that case, there is no need to create any runner class. The usage options for this class are mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/v4.0.0/core/src/main/resources/cucumber/api/cli/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
- 
-Below is the basic command to start the execution.
-```shell
-java -cp <classpath> cucumber.api.cli.Main -g <glue package> --threads <thread count> <path to feature files>
-```
 
-Follow the steps below to **execute the command from a terminal**.
-
-	
+Follow the steps below to **execute the command from a terminal**.	
 
 - Add the two feature files (`scenarios.feature` and `scenario-outlines.feature`) and **step definition class** as described in the JUnit section.
 
-- Open up a **terminal window** and navigate to the source folder of the project.
+- Open up a **terminal window** and navigate to the source folder of the project, in this case **parallel**.
 {{% /block %}}
 
 {{% block "java" %}}
