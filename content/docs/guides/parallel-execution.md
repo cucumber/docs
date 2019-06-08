@@ -79,13 +79,12 @@ import cucumber.api.java8.En
 
 class StepDefs : En {
 		
-		    init {
-        Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
-            println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
-        }
-    }
-			println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
-       }
+	init {
+        	Given("Step from {string} in {string} feature file") { scenario: String , file: String ->
+            	println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
+        	}
+    	}
+		println("Thread ID - ${Thread.currentThread().id} - $scenario from $file feature file")
 	}
 }
 ```
@@ -125,6 +124,10 @@ class RunCucumberTest
 {{% block "java,kotlin" %}}
 - Add the **Surefire plugin configuration** to the `build` section to the `POM`.
 
+{{% block "kotlin" %}}
+For Surefire to find your step definitions, make sure they are in src/test/**java**.
+{{% /block %}}
+
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -147,9 +150,11 @@ Thread ID - 14 - Scenario 2 from scenarios feature file.
 ```
 
 - To execute using a Maven **Failsafe plugin include the below configuration** in the `build` section to the `POM`. Rename the runner class to `RunCucumberIT`.  You can find further details [here](/docs/community/not-cucumber/#maven-execution-plugin).
+
 {{% block "kotlin" %}}
 For Failsafe to find your step definitions, make sure they are in src/test/**java**.
 {{% /block %}}
+
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
