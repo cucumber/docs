@@ -1,5 +1,5 @@
 ---
-title: Things that are not Cucumber problems
+title: FAQ about related tools
 subtitle: "Help with other tools"
 polyglot:
  - java
