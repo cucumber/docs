@@ -61,21 +61,21 @@ Steps:
 
 1.  Create a new Gradle project or look at [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
 2.  If you are going to use Gradle **4.10.3 or older**, add this dependency block to `build.gradle`.
-    ```
+    ```groovy
     dependencies {
         testCompile 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
     }
     ```
 
     For Gradle **5.0 or more recent**, you can add the following dependency block to `build.gradle`.
-    ```
+    ```groovy
     dependencies {
         testImplementation 'io.cucumber:cucumber-java:{{% version "cucumberjvm" %}}'
     }
     ```
 
 3. For Gradle **4.10.3 or older**, add the following configuration to `build.gradle`.
-    ```
+    ```groovy
     configurations {
         cucumberRuntime {
             extendsFrom testRuntime
@@ -83,7 +83,7 @@ Steps:
     }
     ```
     For Gradle **5.0 or more recent**, the following configuration must be added to `build.gradle`.
-    ```
+    ```groovy
     configurations {
         cucumberRuntime {
             extendsFrom testImplementation
@@ -94,7 +94,7 @@ Steps:
 4.  Add feature `.feature` files and associated step mapping classes `.java` in `src/test/resources` and `src/test/java` respectively in a `gradle.cucumber` package.
 5.  Add the following Gradle `cucumber` task in `build.gradle`
 
-    ```
+    ```groovy
     task cucumber() {
         dependsOn assemble, compileTestJava
         doLast {
