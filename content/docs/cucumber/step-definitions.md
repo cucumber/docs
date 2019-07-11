@@ -30,7 +30,7 @@ The `I have 48 cukes in my belly` part of the step (the text following the `Give
 {{% block "java" %}}
 ```java
 package foo;
-import cucumber.api.java.en.Given;
+import io.cucumber.java.en.Given;
 
 public class MyStepdefs {
     @Given("I have {int} cukes in my belly")
