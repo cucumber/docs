@@ -106,7 +106,9 @@ public void i_want_to_open_page(String webpage) {
 ```
 
 ```ruby
- //TODO
+ Given 'I go to the {string} page' do |page|
+   open_web_page page
+ end
 ```
 
 ```kotlin
