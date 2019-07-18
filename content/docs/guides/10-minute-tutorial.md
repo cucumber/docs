@@ -98,6 +98,8 @@ mvn archetype:generate                      \
    -DinteractiveMode=false
 ```
 
+**Please regard** that you might have to surround each parameter with double-quote characters, if an error occurs. Compare [with this resource](https://stackoverflow.com/questions/16348459/error-the-goal-you-specified-requires-a-project-to-execute-but-there-is-no-pom).
+
 You should get something like the following result:
 ```shell
 [INFO] Project created from Archetype in dir: <directory where you created the project>/cucumber
