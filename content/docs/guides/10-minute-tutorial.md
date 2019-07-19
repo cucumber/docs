@@ -88,17 +88,15 @@ Open a terminal, go to the directory where you want to create your project, and 
 
 ```shell
 mvn archetype:generate                      \
-   -DarchetypeGroupId=io.cucumber           \
-   -DarchetypeArtifactId=cucumber-archetype \
-   -DarchetypeVersion={{% version "cucumberarchetype" %}}               \
-   -DgroupId=hellocucumber                  \
-   -DartifactId=hellocucumber               \
-   -Dpackage=hellocucumber                  \
-   -Dversion=1.0.0-SNAPSHOT                 \
-   -DinteractiveMode=false
+   "-DarchetypeGroupId=io.cucumber"           \
+   "-DarchetypeArtifactId=cucumber-archetype" \
+   "-DarchetypeVersion={{% version "cucumberarchetype" %}}"               \
+   "-DgroupId=hellocucumber"                  \
+   "-DartifactId=hellocucumber"               \
+   "-Dpackage=hellocucumber"                  \
+   "-Dversion=1.0.0-SNAPSHOT"                 \
+   "-DinteractiveMode=false"
 ```
-
-**Please regard** that you might have to surround each parameter with double-quote characters, if an error occurs. Compare [with this resource](https://stackoverflow.com/questions/16348459/error-the-goal-you-specified-requires-a-project-to-execute-but-there-is-no-pom).
 
 You should get something like the following result:
 ```shell
