@@ -37,7 +37,9 @@ Make sure to use the same version for `cucumber-junit` that you are using for `c
 {{% /note %}}
 
 {{% note "JUnit 5"%}}
-JUnit 5 is not supported by Cucumber.
+JUnit 5 is not directly supported by Cucumber.
+
+If you wish to use JUnit 5 assertions, please add a runtime test dependency on the `junit-vintage-engine` artifact from the `org.junit.vintage` group.
 {{% /note %}}
 
 Below is an example using `assertEquals`:
