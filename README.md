@@ -1,6 +1,6 @@
 # Cucumber Documentation
 
-This repository contains the source code for [https://docs.cucumber.io](https://docs.cucumber.io).
+This repository contains the source code for [https://cucumber.io/docs](https://cucumber.io/docs).
 
 ## Contributing Content
 
