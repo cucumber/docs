@@ -27,7 +27,7 @@ BDD can be split in two parts - *Deliberate Discovery* and *Test-Driven Developm
 # Deliberate Discovery
 
 There are many reasons why software projects go wrong. A very common reason
-is that different people in the organisation or on the team have very different
+is that different people in the organization or on the team have very different
 understandings of how the software should behave, and what problems it's trying
 to solve.
 
