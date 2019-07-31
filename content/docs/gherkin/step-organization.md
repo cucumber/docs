@@ -106,7 +106,9 @@ public void i_want_to_open_page(String webpage) {
 ```
 
 ```ruby
- //TODO
+ Given 'I go to the {string} page' do |page|
+   open_web_page page
+ end
 ```
 
 ```kotlin
@@ -124,6 +126,6 @@ This helps in a number of ways,
 
 You can handle other behaviours, like *validating a webpage, clicking a button, etc.*, the same way.
 
-We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.
+{{% text "java,kotlin" %}}We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.{{% /text %}}
 Also, using [Data Tables](/docs/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
 
