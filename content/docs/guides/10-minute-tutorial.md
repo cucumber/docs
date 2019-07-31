@@ -95,14 +95,14 @@ and run the following command:
 
 ```shell
 mvn archetype:generate                      \
-   -DarchetypeGroupId=io.cucumber           \
-   -DarchetypeArtifactId=cucumber-archetype \
-   -DarchetypeVersion={{% version "cucumberarchetype" %}}               \
-   -DgroupId=hellocucumber                  \
-   -DartifactId=hellocucumber               \
-   -Dpackage=hellocucumber                  \
-   -Dversion=1.0.0-SNAPSHOT                 \
-   -DinteractiveMode=false
+   "-DarchetypeGroupId=io.cucumber"           \
+   "-DarchetypeArtifactId=cucumber-archetype" \
+   "-DarchetypeVersion={{% version "cucumberarchetype" %}}"               \
+   "-DgroupId=hellocucumber"                  \
+   "-DartifactId=hellocucumber"               \
+   "-Dpackage=hellocucumber"                  \
+   "-Dversion=1.0.0-SNAPSHOT"                 \
+   "-DinteractiveMode=false"
 ```
 
 You should get something like the following result:
