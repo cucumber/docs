@@ -118,7 +118,7 @@ A step definition's *expression* can either be a [Regular Expression](https://en
 
 {{% block "java" %}}
 ```java
-@Given("I have {int} cukes in my belly")
+@Given("I have (d+) cukes in my belly")
 public void i_have_n_cukes_in_my_belly(int cukes) {
 }
 ```
