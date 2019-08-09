@@ -76,7 +76,7 @@ Scenario: add description
   Then I should see "Cucumber BDD tool" under "Descriptions"
 ```
 The{{% text "kotlin" %}}`edit_work_experience_steps.kt`{{% /text %}}
-The{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
+{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
 {{% text "javascript" %}}`edit_work_experience_steps.js`{{% /text %}}
 {{% text "ruby" %}}`edit_work_experience_steps.rb`{{% /text %}}could be implemented like this:
 
