@@ -1042,7 +1042,7 @@ class RunCucumberTest {
 The default option for `strict` is `false`.
 
 For example if you want to tell Cucumber to print code snippets for missing
-step definitions use the plugin `summary`, you can specify it like this:
+step definitions use the `summary` plugin, you can specify it like this:
 
 ```java
 package com.example;
