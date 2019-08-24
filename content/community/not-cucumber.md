@@ -20,14 +20,21 @@ Note that if you are using a newer version of Cucumber, the plugin you are using
 {{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
 {{% block "java,kotlin" %}}
 The IntelliJ "Cucumber for Java" plugin is maintained by JetBrains, the creators of IntelliJ. Please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
-If not, you can create an issue yourself. You need to
+If not, you can create an issue yourself.
 
-IntelliJ and Cucumber v1.x
-:  For "Cucumber java" check that you are using the "Program arguments:" of ```--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter```
+IntelliJ's support for Cucumber is via plugins. The plugin that you need to use depends upon what version of IntelliJ your are using, and what version of Cucumber your trying to use.
 
-IntelliJ and Cucumber v4.x
-:  For "Cucumber java" check that you are using the "Program arguments:" of ```--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter```
-Currently no output appears whilst cucumber is executing, you will only see "Running tests..." until all tests have completed. Stay with Cucumber v1.x if you require realtime feedback as tests execute.
+If you upgrade Cucumber or IntelliJ you might need to recreate your Run/Debug Configuration so the correct plugin is used. Right-Click on the feature file and select "Run 'Feature: ...'".
+
+Configuration that you set via Maven/Gradle/Junit/TestNG is not imported into IntelliJ configuration so you might need to alter any of these values;
+Main class
+Glue
+Feature or folder path
+VM options
+Program arguments
+Working directory
+Environment variables
+Use classpath of module
 {{% /block %}}
 
 ## Eclipse
