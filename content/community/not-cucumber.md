@@ -19,7 +19,7 @@ Note that if you are using a newer version of Cucumber, the plugin you are using
 ## IntelliJ
 {{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
 {{% block "java,kotlin" %}}
-JetBrains are the creators of IntelliJ, and maintain the "Cucumber for Java" plugin, please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
+The IntelliJ "Cucumber for Java" plugin is maintained by JetBrains, the creators of IntelliJ. Please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
 If not, you can create an issue yourself. You need to
 
 IntelliJ and Cucumber v1.x
