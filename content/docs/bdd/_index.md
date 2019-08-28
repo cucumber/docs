@@ -31,7 +31,7 @@ Essentially, you can think of BDD as a three-step, iterative, process:
 In [their book](https://leanpub.com/bddbooks-discovery), Seb Rose and Gáspár Nagy refer to these three steps as _Discovery_, _Formulation_ and _Automation_.
 
  <figure style="margin:auto;">
-  <img src="https://miro.medium.com/max/8602/1*GRABHv7ynanVvSIIzslr0Q.png" width="400px">
+  <img alt="diagram of how the three practices fit together" src="https://miro.medium.com/max/8602/1*GRABHv7ynanVvSIIzslr0Q.png" width="400px">
   <figcaption>TODO: better illustration of the 3 practices</figcaption>
 </figure> 
 
