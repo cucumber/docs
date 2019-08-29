@@ -1044,6 +1044,7 @@ The default option for `strict` is `false`.
 For example if you want to tell Cucumber to print code snippets for missing
 step definitions use the `summary` plugin, you can specify it like this:
 
+{{% block "java" %}}
 ```java
 package com.example;
 
@@ -1056,7 +1057,9 @@ import org.junit.runner.RunWith;
 public class RunCucumberTest {
 }
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
 ```kotlin
 package com.example;
 
@@ -1069,6 +1072,7 @@ import org.junit.runner.RunWith;
 class RunCucumberTest {
 }
 ```
+{{% /block %}}
 
 Usually, this class will be empty. You can, however, specify several JUnit rules.
 
