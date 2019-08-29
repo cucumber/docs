@@ -12,30 +12,38 @@ There's much more to BDD than just using Cucumber.
 
 # What is BDD?
 
-BDD aims to close the gap between business people and technical people on software teams by:
+BDD is a way for software teams to work that aims to close the gap between business people and technical people by:
 
 * Making a deliberate effort to avoid accidental discovery of business requirements late in the process.
 * Eliminating defects and rework to achieve a confident, sustainable pace.
 * Producing system documentation that is current, accurate and easy to understand.
 
-We do this by focussing collaborative work around concrete, real-world, examples to illustrate how we want the system to behave. We use those examples to guide us from concept through to implementation.
+We do this by focussing collaborative work around concrete, real-world, examples that illustrate how we want the system to behave. We use those examples to guide us from concept through to implementation.
+
+### BDD and agile
+
+We assume that your team are using some kind of agile methodology already, planning work in small increments of value like [User Stories]. BDD does not replace your existing agile process, it enhances it.
+
+Think of BDD as a set of plugins for your existing process that will make your team more able to deliver on the promises of agile: timely, reliable releases of working software that meets your organisation’s evolving needs.
 
 # Three practices
 
 Essentially, you can think of BDD as a three-step, iterative, process:
 
-1. First, collaboratively specify a small upcoming change to the system using conversations around examples
+1. First, take a small upcoming change to the system -- a [User Story] -- and use conversations about examples to collaboratively explore and agree on the details of what's expected to be done.
 2. Next, document those examples in a way that can be automated, and check for agreement.
 3. Finally, implement the behaviour described by each documented example, starting with an automated test to guide the development of the code.
 
 In [their book](https://leanpub.com/bddbooks-discovery), Seb Rose and Gáspár Nagy refer to these three steps as _Discovery_, _Formulation_ and _Automation_.
 
- <figure style="margin:auto;">
-  <img alt="diagram of how the three practices fit together" src="https://miro.medium.com/max/8602/1*GRABHv7ynanVvSIIzslr0Q.png" width="400px">
-  <figcaption>TODO: better illustration of the 3 practices</figcaption>
+ <figure>
+  <img alt="diagram of how the three practices fit together" src="/img/three-practices-loops.png" width="600px">
+  <figcaption>The three practices of BDD</figcaption>
 </figure> 
 
-## Discovery: collaborative design using examples
+There's lots to learn about each of these three practices, but we'll summarise each of them below.
+
+## Discovery
 
 > The hardest single part of building a software system is deciding precisely what to build.
 >
@@ -43,13 +51,17 @@ In [their book](https://leanpub.com/bddbooks-discovery), Seb Rose and Gáspár N
 
 We start with discovery. This is where business and technical people work closely together to explore and decide on the work that needs to be done.
 
-We use structured conversations, called specification workshops, that focus around real-world examples of the system from the users' perspective. These conversations help us to grow our team's shared understanding of the needs of our users, the rules that govern how the system should function, and the scope of what needs to be done.
+We use structured conversations, called [specification workshops], that focus around real-world examples of the system from the users' perspective. These conversations help us to grow our team's shared understanding of the needs of our users, of the rules that govern how the system should function, and of the scope of what needs to be done.
 
 It may also reveal gaps in our understanding, where we need more information before we know what to do.
 
-## Formulation: documenting system behaviour for humans and computers
+We can often use the scrutiny of a discovery session to find low-priority functionality that can be deferred the scope of a user story, helping to team to work in smaller increments and improving their flow.
 
-Taking the real-world examples of system behaviour from our discovery sessions, the technical folks on the team now try to express those examples as structured documentation. This gives us a quick way to confirm their understanding of what needs to be built matches what the business folks have envisaged.
+If you're new to BDD, discovery is where you should start. It's useless to try the other two practices until you've mastered discovery.
+
+## Formulation
+
+Taking the real-world examples of system behaviour from our discovery sessions, the technical folks on the team now try to express those examples as structured documentation. This gives us a quick way to confirm that their understanding of what to build matches what the business folks have envisaged.
 
 In contrast to traditional documentation, we use a medium that can be read by both humans and computers, so that:
 
@@ -58,7 +70,7 @@ In contrast to traditional documentation, we use a medium that can be read by bo
 
 By collaborating with business folks to write this executable specification, we establish a shared language for talking about the system. This is really useful for programmers who are notoriously [bad at naming things](https://martinfowler.com/bliki/TwoHardThings.html).
 
-## Automation: guiding the implementation using automated examples
+## Automation
 
 Now that we have our executable specification, we can use it to guide our development of the implementation.
 
@@ -66,17 +78,21 @@ Taking one example at a time, we automate it by connecting it to the system as a
 
 The automated examples work like guide-rails, helping us to keep our development work on track.
 
-When we need to come back and maintain the system later, the automated examples will help us to understand what the system is currently doing, and to ensure we don't unintentionally break anything.
+When we need to come back and maintain the system later, the automated examples will help us to understand what the system is currently doing, and to make changes safely without unintentionally breaking anything.
 
 This rapid, repeatable feedback reduces the burden of manual testing, freeing people up to do more interesting work, like exploratory testing.
 
 # The characteristics of BDD
 
+These three practices fit together according to some fundamental principles: collaboration through conversations, embracing uncertainty, and ermall pieces.
+
 ## Collaboration through conversations
 
 Although documentation and automated tests are produced by a BDD team, you can think of them as nice side-effects. The real goal is valuable, working software, and the fastest way to get there is through conversations between the people who are involved in imagining and delivering that software.
 
-## Fast feedback
+BDD helps teams to have the right conversations at the right time so you minimise the amount of time spent in meeting rooms whilst maximising the amount of valuable code you produce.
+
+## Embracing uncertainty
 
 Each of the three practices is designed to provide immediate feedback about your team's current shared understanding of the upcoming change. You should expect some of that feedback to show you where there's a _lack_ of shared understanding. This is good, because missed or misunderstood requirements are much cheaper to resolve before you've turned them into code.
 
@@ -86,13 +102,12 @@ If you want to practice BDD, we're going to assume that your team are keen to re
 
 Small pieces of work flow through your development team more smoothly than big ones, and are less likely to contain surprises.
 
-The idea is to make each change small, and repeat the whole loop as often as possible. Each time you go around the loop, you've added something valuable to your system.
+The idea is to make each change small, and repeat the whole discover-formulate-automate loop as often as possible. Each time you go around the loop, you've added something valuable to your system.
 
-We will assume that your team are using some kind of agile methodology already, and are planning and prioritising these small changes as User Stories.
+# Learn more
 
-## Enhancement to agile
+Read the topics below to dig deeper and learn more about BDD.
 
-BDD does not replace your existing agile process, it enhances it.
-
-Think of BDD as a set of plugins that will make your team more able to deliver on the promises of agile: frequent releases of working software that meets real-world needs.
-
+[specification workshops]: /docs/terms/specification-workshops/
+[User Story]: /docs/terms/user-story/
+[User Stories]: /docs/terms/user-story/
