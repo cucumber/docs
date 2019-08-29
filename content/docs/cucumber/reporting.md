@@ -179,3 +179,4 @@ There are also many third-party plugins:
 * [cucumber_characteristics](https://github.com/singram/cucumber_characteristics) - Generates HTML/JSON reports on overall test timings, as well as timings and usage of Steps, Features, and Examples. Also lists unused and ambiguous (Cucumber 1.x) Steps. Compatible with Cucumber 1.x and 2.1+ and Ruby 1.9+.
 * [allure-cucumber](https://github.com/allure-framework/allure-cucumber) - [Allure](https://github.com/allure-framework) adaptor for Cucumber. This formatter generates the XML files for Allure reporting framework.
 * [Cluecumber](https://github.com/trivago/cluecumber-report-plugin) - Maven plugin for clear and concise Cucumber reporting.
+* [Cucelastic] (https://github.com/AshisRaj/cucelastic-maven-plugin) - Maven plugin for UI agnostic tools like Kibana with the possibility to filter and analyze the data, extend and share it across teams.
