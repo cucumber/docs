@@ -18,7 +18,7 @@ If you'd prefer to get started with a working project (or if you are having trou
 you can get started with the [cucumber-java-skeleton](https://github.com/cucumber/cucumber-java-skeleton). This project is designed to work "out of the box".
 {{% /block %}}
 
-You can read these docs to learn more about [Gherkin](/docs/gherkin/reference), [Cucumber](/docs/cucumber/api) and [BDD](/docs/bdd/overview).
+You can read these docs to learn more about [Gherkin](/docs/gherkin/reference), [Cucumber](/docs/cucumber/api) and [BDD](/docs/bdd).
 There are also links to several [blog posts](/docs/community/blog-posts) about Cucumber and BDD.
 
 ## Where can I get more in depth information?
