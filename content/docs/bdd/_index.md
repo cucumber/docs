@@ -20,7 +20,7 @@ BDD is a way for software teams to work that aims to close the gap between busin
 
 We do this by focussing collaborative work around concrete, real-world, examples that illustrate how we want the system to behave. We use those examples to guide us from concept through to implementation.
 
-### BDD and agile
+## BDD and agile
 
 We assume that your team are using some kind of agile methodology already, planning work in small increments of value like [User Stories]. BDD does not replace your existing agile process, it enhances it.
 
