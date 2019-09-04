@@ -1482,7 +1482,7 @@ Feature: Is it Friday yet?
 ```
 
 We need to replace the step definitions for `today is Sunday` and `today is Friday` with one step definition that takes the value of `<day>` as a String.
-Update the {{% text "java" %}}`stepdefs.java`{{% /text %}}{{% text "javascript" %}}`stepdefs.js`{{% /text %}}{{% text "ruby" %}}`stepdefs.rb`{{% /text %}} file as follows:
+Update the {{% text "java" %}}`Stepdefs.java`{{% /text %}}{{% text "javascript" %}}`stepdefs.js`{{% /text %}}{{% text "ruby" %}}`stepdefs.rb`{{% /text %}} file as follows:
 
 {{% block "java" %}}
 ```java
