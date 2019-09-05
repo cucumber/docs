@@ -36,11 +36,11 @@ Essentially, day-to-day BDD activity is a three-step, iterative, process:
 
 The idea is to make each change small, and repeat the whole process as often as possible. Each time you automate and implement a new example, you've added something valuable to your system, and you're ready to respond to feedback.
 
-We call these practices _Discovery_, _Specification_, and _Automation_.
+We call these practices _Exploration_, _Specification_, and _Automation_.
 
 <figure>
   <img alt="diagram of how the practices fit together" src="/img/BDD practices diagram.png" width="600px">
-  <figcaption>Discovery, Specification and Automation</figcaption>
+  <figcaption>Exploration, Specification and Automation</figcaption>
 </figure> 
 
 Over time, the living documention becomes an asset that enables the team to continue confidently and rapidly making changes to the system. The code reflects the documentation, and the documentation reflects the team's shared understanding of the problem domain, which is constantly evolving.
@@ -54,7 +54,7 @@ The rewards are great, but it does require some maintenance effort and disciplin
 
 There's lots to learn about each of these practices. We'll summarise each of them below.
 
-## Discovery
+## Exploration
 
 > The hardest single part of building a software system is deciding precisely what to build.
 >
@@ -70,7 +70,7 @@ It may also reveal gaps in our understanding, where we need more information bef
 
 The scrutiny of a discovery session often reveals low-priority functionality that can be deferred the scope of a user story, helping to team to work in smaller increments and improving their flow.
 
-If you're new to BDD, discovery is where you should start. It's useless to try the other two practices until you've mastered discovery.
+If you're new to BDD, exploration is the best place to start. It's useless to try the other two practices until you've mastered exploration.
 
 ## Specification
 
@@ -99,7 +99,7 @@ This rapid, repeatable feedback reduces the burden of manual testing, freeing pe
 
 Over time, as your living documenation and codebase grow together, a symbiotic relationship develops betweemn them. The documentation reflects the behaviour of the code, giving the whole team confidence about exactly what the system does. The code reflects the documentation, with rapid feedback for the developers if the code's behaviour strays outside the boundary defined by the living documentation.
 
-This is where the investment of all that discovery, specification and automation work pays off. The team are able to confidently and rapidly adapt the system --- and it's documentation --- to meet the business' evolving needs.
+This is where the investment of all that exploration, specification and automation work pays off. The team are able to confidently and rapidly adapt the system --- and it's documentation --- to meet the business' evolving needs.
 
 This habitation stage will involve some maintenance effort. The documentation needs to reflect the team's shared understanding of the propblem domain, and that understanding is constantly evolving. Just like code [needs to be refactored to reflect the team's emerging understanding of the problem](https://www.youtube.com/watch?v=Jp5japiHAs4), so does your documentation, if you want it to remain living.
 
