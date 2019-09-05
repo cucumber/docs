@@ -16,7 +16,7 @@ BDD is a way for software teams to work that aims to close the gap between busin
 
 * Encouraging collaboration across roles to build shared understanding of the next part of the problem to be solved
 * Working in rapid, small iterations to increase feedback and flow of value
-* Producing system documentation that is current, accurate and automatically validates the system's behaviour
+* Producing system documentation that is automatically validated against the system's behaviour
 
 We do this by focussing collaborative work around concrete, real-world, examples that illustrate how we want the system to behave. We use those examples to guide us from concept through to implementation.
 
