@@ -64,7 +64,7 @@ Although documentation and automated tests are produced by a BDD team, you can t
 
 BDD helps teams to have the right conversations at the right time so you minimise the amount of time spent in meetings and maximising the amount of valuable code you produce.
 
-We use structured conversations, called [specification workshops], that focus around real-world examples of the system from the users' perspective. These conversations grow our team's shared understanding of the needs of our users, of the rules that govern how the system should function, and of the scope of what needs to be done.
+We use structured conversations, called [discovery workshops], that focus around real-world examples of the system from the users' perspective. These conversations grow our team's shared understanding of the needs of our users, of the rules that govern how the system should function, and of the scope of what needs to be done.
 
 It may also reveal gaps in our understanding, where we need more information before we know what to do.
 
@@ -107,6 +107,6 @@ This habitation stage will involve some maintenance effort. The documentation ne
 
 Read the topics below to dig deeper and learn more about BDD.
 
-[specification workshops]: /docs/terms/specification-workshops/
+[discovery workshops]: /docs/terms/discovery-workshop/
 [User Story]: /docs/terms/user-story/
 [User Stories]: /docs/terms/user-story/
