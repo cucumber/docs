@@ -57,8 +57,6 @@ Cucumber tries to follow the [SemVer](http://semver.org/) specification for rele
 * If the middle number (minor) number in the release changes, you don't need to worry.
 * If the left-hand (major) number changes, you can expect that things might break.
 
-You can read the [history file](https://github.com/cucumber/cucumber/blob/master/History.md) to learn about the changes in every release.
-
 Implementations of Cucumber in a particular language, should have a `CHANGELOG.md`, describing the changes made per version.
 
 
@@ -72,7 +70,7 @@ For information about configuration options, see [Configuration](/docs/cucumber/
 When running Cucumber with JUnit, you can specify several options on how JUnit should run your tests.
 Check the section on [JUnit](https://docs.cucumber.io/cucumber/api/#junit) for more information.
 
-For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/api/CucumberOptions.java).
+For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/test/java/io/cucumber/core/options/CucumberOptions.java).
 {{% /block %}}
 
 ## Cucumber says my steps are undefined, but I have implemented step definitions!
@@ -131,7 +129,7 @@ You can find the required dependencies [here](https://docs.cucumber.io/installat
 {{% /block %}}
 
 {{% block "java" %}}
-For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java8-calculator/src/test/java/cucumber/examples/java/calculator/RpnCalculatorStepdefs.java).
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java8-calculator/src/test/java/io/cucumber/examples/java8/RpnCalculatorSteps.java).
 {{% /block %}}
 
 {{% block "kotlin" %}}
