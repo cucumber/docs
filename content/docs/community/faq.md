@@ -57,8 +57,15 @@ Cucumber tries to follow the [SemVer](http://semver.org/) specification for rele
 * If the middle number (minor) number in the release changes, you don't need to worry.
 * If the left-hand (major) number changes, you can expect that things might break.
 
-Implementations of Cucumber in a particular language, should have a `CHANGELOG.md`, describing the changes made per version.
-
+{{% block "javascript" %}}
+You can read the [changelog file](https://github.com/cucumber/cucumber-js/blob/master/CHANGELOG.md) to learn about the changes in every release.
+{{% /block %}}
+{{% block "ruby" %}}
+You can read the [changelog file](https://github.com/cucumber/cucumber-ruby/blob/master/CHANGELOG.md) to learn about the changes in every release.
+{{% /block %}}
+{{% block "java,kotlin" %}}
+You can read the [changelog file](https://github.com/cucumber/cucumber-jvm/blob/master/CHANGELOG.md) to learn about the changes in every release.
+{{% /block %}}
 
 ## How do I run Cucumber?
 For information on how to run Cucumber, see [Running Cucumber](/docs/cucumber/api/#running-cucumber).
