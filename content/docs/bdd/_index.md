@@ -93,7 +93,7 @@ The automated examples work like guide-rails, helping us to keep our development
 
 When we need to come back and maintain the system later, the automated examples will help us to understand what the system is currently doing, and to make changes safely without unintentionally breaking anything.
 
-This rapid, repeatable feedback reduces the burden of manual testing, freeing people up to do more interesting work, like exploratory testing.
+This rapid, repeatable feedback reduces the burden of manual regression testing, freeing people up to do more interesting work, like exploratory testing.
 
 ## Habitation
 
