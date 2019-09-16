@@ -238,9 +238,7 @@ compile group: 'io.cucumber', name: 'cucumber-needle', version: '{{% version "cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).
 
-# Details of using DI
-
-(since Cucumber 5)
+# How to use DI
 
 When using a DI framework all your step definitions, hooks, transformers, etc. will be created by the frameworks instance injector.
 
