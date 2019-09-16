@@ -28,7 +28,7 @@ Think of BDD as a set of plugins for your existing process that will make your t
 
 # Four practices
 
-Essentially, day-to-day BDD activity is a three-step, iterative, process:
+Essentially, day-to-day BDD activity is a three-step, iterative process:
 
 1. First, take a small upcoming change to the system -- a [User Story] -- and use conversations about examples to collaboratively explore and agree on the details of what's expected to be done.
 2. Next, document those examples in a way that can be automated, and check for agreement.
