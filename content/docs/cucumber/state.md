@@ -252,7 +252,7 @@ can be applied on them and delivered results can be tested.
 
 The reason using Cucumber with a DI framework typically originates from the fact that the tested application also uses
 the same framework. So we need to configure a custom injector to be used with Cucumber.
-This injectors ties tests and application instances together.
+This injector ties tests and application instances together.
 
 Here is an example of a typical step definition using [Google Guice](/docs/cucumber/state/#guice). Using the
 Cucumber provided Guice injector will fail to instantiate the required `appService` member.
