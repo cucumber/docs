@@ -12,11 +12,11 @@ There's much more to BDD than just using Cucumber.
 
 # What is BDD?
 
-BDD is a way for software teams to work that aims to close the gap between business people and technical people by:
+BDD is a way for software teams to work together that closes the gap between business people and technical people by:
 
-* Encouraging collaboration across roles to build shared understanding of the next part of the problem to be solved
-* Working in rapid, small iterations to increase feedback and flow of value
-* Producing system documentation that is automatically validated against the system's behaviour
+* Encouraging collaboration across roles to build shared understanding of the the problem to be solved
+* Working in rapid, small iterations to increase feedback and the flow of value
+* Producing system documentation that is automatically checked against the system's behaviour
 
 We do this by focussing collaborative work around concrete, real-world examples that illustrate how we want the system to behave. We use those examples to guide us from concept through to implementation.
 
@@ -31,30 +31,25 @@ Think of BDD as a set of plugins for your existing process that will make your t
 Essentially, day-to-day BDD activity is a three-step, iterative process:
 
 1. First, take a small upcoming change to the system -- a [User Story] -- and use conversations about examples to collaboratively explore and agree on the details of what's expected to be done.
-2. Next, document those examples in a way that can be automated, and check for agreement.
+2. Next, capture those those examples in a way that can be automated, and check for agreement.
 3. Finally, implement the behaviour described by each documented example, starting with an automated test to guide the development of the code.
 
-The idea is to make each change small, and repeat the whole process as often as possible. Each time you automate and implement a new example, you've added something valuable to your system, and you're ready to respond to feedback.
+The idea is to make each change small and iterate rapidly, moving back up a level each time you need more information. Each time you automate and implement a new example, you've added something valuable to your system, and you're ready to respond to feedback.
 
-We call these practices _Exploration_, _Specification_, and _Automation_.
-
-<figure>
-  <img alt="diagram of how the practices fit together" src="/img/BDD practices diagram.png" width="600px">
-  <figcaption>Exploration, Specification and Automation</figcaption>
-</figure> 
-
-Over time, the living documention becomes an asset that enables the team to continue confidently and rapidly making changes to the system. The code reflects the documentation, and the documentation reflects the team's shared understanding of the problem domain, which is constantly evolving.
+We call these practices _Discovery_, _Formulation_, and _Automation_.
 
 <figure>
-  <img alt="diagram of how the practices fit together" src="/img/BDD practices diagram - habitation.png" width="600px">
-  <figcaption>Habitation</figcaption>
+  <img alt="diagram of how the practices fit together" src="/img/BDD practices diagram (loops).png" width="600px">
+  <figcaption>Discovery, Formulation and Automation</figcaption>
 </figure> 
+
+Over time, the documented examples become an asset that enables the team to continue confidently and rapidly making changes to the system. The code reflects the documentation, and the documentation reflects the team's shared understanding of the problem domain, which is constantly evolving.
 
 The rewards are great, but it does require some maintenance effort and discipline. We call this final practice _Habitation_.
 
 There's lots to learn about each of these practices. We'll summarise each of them below.
 
-## Exploration
+## Discovery: What it _could_ do
 
 > The hardest single part of building a software system is deciding precisely what to build.
 >
@@ -70,9 +65,9 @@ It may also reveal gaps in our understanding, where we need more information bef
 
 The scrutiny of a discovery session often reveals low-priority functionality that can be deferred the scope of a user story, helping to team to work in smaller increments and improving their flow.
 
-If you're new to BDD, exploration is the best place to start. It's useless to try the other two practices until you've mastered exploration.
+If you're new to BDD, discovery is the best place to start. It's useless to try the other two practices until you've mastered discovery.
 
-## Specification
+## Formulation: What it _should_ do
 
 Taking the real-world examples of system behaviour from our discovery sessions, the technical folks on the team now try to express those examples as structured documentation. This gives us a quick way to confirm that their understanding of what to build matches what the business folks have envisaged.
 
@@ -83,7 +78,7 @@ In contrast to traditional documentation, we use a medium that can be read by bo
 
 By collaborating with business folks to write this executable specification, we establish a shared language for talking about the system. This is really useful for programmers who are notoriously [bad at naming things](https://martinfowler.com/bliki/TwoHardThings.html).
 
-## Automation
+## Automation: What it _actually does_
 
 Now that we have our executable specification, we can use it to guide our development of the implementation.
 
@@ -97,9 +92,9 @@ This rapid, repeatable feedback reduces the burden of manual regression testing,
 
 ## Habitation
 
-Over time, as your living documenation and codebase grow together, a symbiotic relationship develops betweemn them. The documentation reflects the behaviour of the code, giving the whole team confidence about exactly what the system does. The code reflects the documentation, with rapid feedback for the developers if the code's behaviour strays outside the boundary defined by the living documentation.
+Over time, as your living documenation and codebase grow together, a symbiotic relationship develops between them. The documentation reflects the behaviour of the code, giving the whole team confidence about exactly what the system does. The code reflects the documentation, with rapid feedback for the developers if the code's behaviour strays outside the boundary defined by the living documentation.
 
-This is where the investment of all that exploration, specification and automation work pays off. The team are able to confidently and rapidly adapt the system --- and it's documentation --- to meet the business' evolving needs.
+This is where the investment of all that discovery, formulation and automation work pays off. The team are able to confidently and rapidly adapt the system --- and it's documentation --- to meet the business' evolving needs.
 
 This habitation stage will involve some maintenance effort. The documentation needs to reflect the team's shared understanding of the propblem domain, and that understanding is constantly evolving. Just like code [needs to be refactored to reflect the team's emerging understanding of the problem](https://www.youtube.com/watch?v=Jp5japiHAs4), so does your documentation, if you want it to remain living.
 

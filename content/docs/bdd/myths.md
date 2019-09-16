@@ -23,7 +23,7 @@ Many people use Cucumber to do test automation, to check for bugs after the code
 
 We see plenty of teams who try to leave the work of identifying examples and turning them into formulated scenarios to a single individual on the team.
 
-That's not BDD. Discovery work needs to be done collaboratively, bringing together representatives of the different specialists who all need to share understanding about what will be built.
+That's not BDD. Discovery work needs to be done _collaboratively_, bringing together representatives of the different specialists who all need to share understanding about what will be built.
 
 # Using Cucumber means you're doing BDD
 
