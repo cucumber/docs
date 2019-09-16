@@ -357,7 +357,7 @@ end
 ## Step hooks
 {{% text "java" %}}
 Step hooks invoked before and after a step. The hooks have 'invoke around' semantics. Meaning that if a `BeforeStep`
-hook is executed the `AfterStep` hooks will also be executed regardless of the result of the step. If a step did not 
+hook is executed the `AfterStep` hooks will also be executed regardless of the result of the step. If a step did not
 pass, the following step and its hooks will be skipped.
 {{% /text %}}
 
@@ -376,7 +376,7 @@ Lambda style:
 
 ```java
 BeforeStep((Scenario scenario) -> {
-    
+
 });
 ```
 {{% /text %}}
@@ -918,11 +918,11 @@ class RunCucumberTest {
 }
 ```
 
-This will execute all scenarios in same package as the runner, by default glue code is also assumed to be in the same 
-package. 
+This will execute all scenarios in same package as the runner, by default glue code is also assumed to be in the same
+package.
 
 The `@CucumberOptions` can be used to provide
-[additional configuration](#list-configuration-options) to the runner. 
+[additional configuration](#list-configuration-options) to the runner.
 
 
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
@@ -982,7 +982,7 @@ class RunCucumberTest {
 ```
 The default option for `dryRun` is `false`.
 
-For example if you want console output from Cucumber in a readable format, you can specify it like this: 
+For example if you want console output from Cucumber in a readable format, you can specify it like this:
 
 ```java
 package com.example;
@@ -1012,7 +1012,7 @@ class RunCucumberTest {
 
 The default option for `monochrome` is `false`.
 
-For example if you want to skip undefined steps from execution, you can specify it like this: 
+For example if you want to skip undefined steps from execution, you can specify it like this:
 
 ```java
 package com.example;
@@ -1040,6 +1040,39 @@ class RunCucumberTest {
 }
 ```
 The default option for `strict` is `false`.
+
+For example if you want to tell Cucumber to print code snippets for missing
+step definitions use the `summary` plugin, you can specify it like this:
+
+{{% block "java" %}}
+```java
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "summary"}, strict = true)
+public class RunCucumberTest {
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "summary"}, strict = true)
+class RunCucumberTest {
+}
+```
+{{% /block %}}
 
 Usually, this class will be empty. You can, however, specify several JUnit rules.
 
