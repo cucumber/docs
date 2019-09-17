@@ -397,7 +397,7 @@ cucumber.object-factory=com.example.app.CustomObjectFactory
 ### Using a test runner (JUnit/TestNG)
 
 The Cucumber modules for [JUnit](/docs/cucumber/api/#junit) and [TestNG](/docs/cucumber/checking-assertions/#testng) allow to run Cucumber through a JUnit/TestNG test.
-The custom object factory can be configured using the [@CucumberOptions](/docs/cucumber/api/#specify-an-object-factory) annotation.
+The custom object factory can be configured using the `@CucumberOptions` annotation.
 
 # Databases
 
