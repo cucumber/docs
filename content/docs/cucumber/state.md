@@ -1,6 +1,6 @@
 ---
 title: State
-subtitle: Sharing state, isolated state, details on DI
+subtitle: Sharing state, isolated state, dependency injection
 ---
 
 It's important to prevent state created by one scenario from leaking into others.
@@ -397,27 +397,7 @@ cucumber.object-factory=com.example.app.CustomObjectFactory
 ### Using a test runner (JUnit/TestNG)
 
 The Cucumber modules for [JUnit](/docs/cucumber/api/#junit) and [TestNG](/docs/cucumber/checking-assertions/#testng) allow to run Cucumber through a JUnit/TestNG test.
-The custom object factory can be configured using the `@CucumberOptions` annotation.
-
-```java
-package com.example.app;
-
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
-
-@RunWith( Cucumber.class )
-@CucumberOptions( objectFactory = com.example.app.CustomObjectFactory.class )
-public final class RunCucumberTest {
-}
-```
-
-Using the `@CucumberOptions` annotation has another important advantage. It is possible to create different tests that
-run different Cucumber scenarios (using [tags](/docs/cucumber/api/#tag-expressions)).
-In case certain scenarios need a differently configured injector,
-several custom object factories may exist and can be referenced by different tests.
-This is very helpful when certain aspects of an application need to be tested with different configurations
-or in different runtime environments.
+The custom object factory can be configured using the [@CucumberOptions](/docs/cucumber/api/#specify-an-object-factory) annotation.
 
 # Databases
 
