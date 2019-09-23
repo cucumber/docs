@@ -24,7 +24,7 @@ We do this by focussing collaborative work around concrete, real-world examples 
 
 We assume that your team are using some kind of agile methodology already, planning work in small increments of value like [User Stories]. BDD does not replace your existing agile process, it enhances it.
 
-Think of BDD as a set of plugins for your existing process that will make your team more able to deliver on the promises of agile: timely, reliable releases of working software that meets your organisation’s evolving needs.
+Think of BDD as a set of plugins for your existing process that will make your team more able to deliver on the promises of agile: timely, reliable releases of working software that meets your organisation’s evolving needs, requiring some maintenance effort and discipline.
 
 ## Rapid iterations
 
@@ -32,7 +32,7 @@ We assume you would like to be able to respond quickly to feedback from your use
 
 BDD encourages working in rapid iterations, continuously breaking down your user's problems into small pieces that can flow through your development process as quickly as possible.
 
-# Three practices, one discipline
+# Three practices
 
 Essentially, day-to-day BDD activity is a three-step, iterative process:
 
@@ -51,8 +51,6 @@ We call these practices _Discovery_, _Formulation_, and _Automation_.
 
 Over time, the documented examples become an asset that enables your team to continue confidently and rapidly making changes to the system. The code reflects the documentation, and the documentation reflects the team's shared understanding of the problem domain. This shared understanding is constantly evolving.
 
-The rewards are great, but it does require some maintenance effort and discipline. We call this the discipline of _Habitation_.
-
 There's lots to learn about each of these practices. We'll summarise each of them below.
 
 ## Discovery: What it _could_ do
@@ -69,20 +67,20 @@ We use structured conversations, called [discovery workshops], that focus around
 
 It may also reveal gaps in our understanding, where we need more information before we know what to do.
 
-The scrutiny of a discovery session often reveals low-priority functionality that can be deferred the scope of a user story, helping to team to work in smaller increments and improving their flow.
+The scrutiny of a discovery session often reveals low-priority functionality that can be deferred from the scope of a user story, helping the team to work in smaller increments, improving their flow.
 
-If you're new to BDD, discovery is the best place to start. It's useless to try the other two practices until you've mastered discovery.
+If you're new to BDD, discovery is the right place to start. You won't get much joy from the other two practices until you've mastered discovery.
 
 ## Formulation: What it _should_ do
 
-Taking the real-world examples of system behaviour from our discovery sessions, the technical folks on the team now try to express those examples as structured documentation. This gives us a quick way to confirm that their understanding of what to build matches what the business folks have envisaged.
+As soon as we have identified at least one valuable example from our discovery sessions, we can now formulate each example as structured documentation. This gives us a quick way to confirm that we really do have a shared understanding of what to build.
 
-In contrast to traditional documentation, we use a medium that can be read by both humans and computers, so that:
+In contrast to traditional documentation, we use [a medium that can be read by both humans and computers](../gherkin), so that:
 
-* We can get feedback from the business folks about whether we understand them correctly.
+* We can get feedback from the whole team about our shared vision of what we're building.
 * We'll be able to automate these examples to guide our development of the implementation.
 
-By collaborating with business folks to write this executable specification, we establish a shared language for talking about the system. This is really useful for programmers who are notoriously [bad at naming things](https://martinfowler.com/bliki/TwoHardThings.html).
+By writing this executable specification collaboratively, we establish a shared language for talking about the system. This helps us to use problem-domain terminology all the way down into the code.
 
 ## Automation: What it _actually does_
 
@@ -95,18 +93,6 @@ The automated examples work like guide-rails, helping us to keep our development
 When we need to come back and maintain the system later, the automated examples will help us to understand what the system is currently doing, and to make changes safely without unintentionally breaking anything.
 
 This rapid, repeatable feedback reduces the burden of manual regression testing, freeing people up to do more interesting work, like exploratory testing.
-
-## Habitation
-
-Over time, as your living documenation and codebase grow together, a symbiotic relationship develops between them. The documentation reflects the behaviour of the code, giving the whole team confidence about exactly what the system does. The code reflects the documentation, with rapid feedback for the developers if the code's behaviour strays outside the boundary defined by the living documentation.
-
-This is where the investment of all that discovery, formulation and automation work pays off. The team are able to confidently and rapidly adapt the system --- and it's documentation --- to meet the business' evolving needs.
-
-This habitation stage will involve some maintenance effort. The documentation needs to reflect the team's shared understanding of the propblem domain, and that understanding is constantly evolving. Just like code [needs to be refactored to reflect the team's emerging understanding of the problem](https://www.youtube.com/watch?v=Jp5japiHAs4), so does your documentation, if you want it to remain living.
-
-# The benefits of BDD
-
-
 
 # Learn more
 
