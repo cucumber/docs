@@ -135,13 +135,13 @@ Given('I am on the Google search page', async function () {
     await driver.get('http://www.google.com');
 });
 
-When('I search for {string}', async function (searchKey) {
+When('I search for {string}', async function (searchTerm) {
     const element = await driver.findElement(By.name('q'));
     element.sendKeys(searchKey, Key.RETURN);
     element.submit();
 });
 
-Then('the page title should start with {string}', {timeout: 60 * 1000}, async function (searchKey) {
+Then('the page title should start with {string}', {timeout: 60 * 1000}, async function (searchTerm) {
     const title = await driver.getTitle();
     const isTitleStartWithCheese = title.toLowerCase().lastIndexOf(`${searchKey}`, 0) === 0;
     expect(isTitleStartWithCheese).to.equal(true);
