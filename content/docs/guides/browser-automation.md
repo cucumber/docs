@@ -137,7 +137,7 @@ Given('I am on the Google search page', async function () {
 
 When('I search for {string}', async function (searchTerm) {
     const element = await driver.findElement(By.name('q'));
-    element.sendKeys(searchKey, Key.RETURN);
+    element.sendKeys(searchTerm, Key.RETURN);
     element.submit();
 });
 
