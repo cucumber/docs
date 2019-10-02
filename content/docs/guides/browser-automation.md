@@ -143,7 +143,7 @@ When('I search for {string}', async function (searchTerm) {
 
 Then('the page title should start with {string}', {timeout: 60 * 1000}, async function (searchTerm) {
     const title = await driver.getTitle();
-    const isTitleStartWithCheese = title.toLowerCase().lastIndexOf(`${searchKey}`, 0) === 0;
+    const isTitleStartWithCheese = title.toLowerCase().lastIndexOf(`${searchTerm}`, 0) === 0;
     expect(isTitleStartWithCheese).to.equal(true);
 });
 
