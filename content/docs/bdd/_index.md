@@ -18,7 +18,7 @@ BDD is a way for software teams to work that closes the gap between business peo
 * Working in rapid, small iterations to increase feedback and the flow of value
 * Producing system documentation that is automatically checked against the system's behaviour
 
-We do this by focussing collaborative work around concrete, real-world examples that illustrate how we want the system to behave. We use those examples to guide us from concept through to implementation, in a process of continuous collaboration.
+We do this by focusing collaborative work around concrete, real-world examples that illustrate how we want the system to behave. We use those examples to guide us from concept through to implementation, in a process of continuous collaboration.
 
 ## BDD and agile
 
