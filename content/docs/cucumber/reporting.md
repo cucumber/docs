@@ -180,3 +180,4 @@ There are also many third-party plugins:
 * [allure-cucumber](https://github.com/allure-framework/allure-cucumber) - [Allure](https://github.com/allure-framework) adaptor for Cucumber. This formatter generates the XML files for Allure reporting framework.
 * [Cluecumber](https://github.com/trivago/cluecumber-report-plugin) - Maven plugin for clear and concise Cucumber reporting.
 * [Cucelastic] (https://github.com/AshisRaj/cucelastic-maven-plugin) - Maven plugin for UI agnostic tools like Kibana with the possibility to filter and analyze the data, extend and share it across teams.
+* [cucumber-reporting-plugin](https://gitlab.com/monochromata-de/cucumber-reporting-plugin) - A Cucumber plugin which produces pretty HTML reports using [cucumber-reporting](https://github.com/damianszczepanik/cucumber-reporting)
