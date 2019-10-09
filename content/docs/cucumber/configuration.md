@@ -27,7 +27,7 @@ import cucumber.api.TypeRegistry;
 import cucumber.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterType;
 import io.cucumber.datatable.DataTableType;
-import io.cucumber.docstring.DocStringType
+import io.cucumber.docstring.DocStringType;
 
 import java.util.Locale;
 
