@@ -13,7 +13,7 @@ You **can** set up mocks with expectations in your [step definitions](/docs/cucu
 ## RSpec 2.x
 
 Starting with Cucumber 0.8.4, you can use all of RSpec's supported mocking frameworks (RSpec, Mocha, RR, Flexmock).
-Just `require 'cucumber/rspec/doubles'` ([test-double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
+Use `require 'cucumber/rspec/doubles'` ([test-double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
 
 Perhaps place your stub action within a block as below:
 

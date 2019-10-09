@@ -308,7 +308,7 @@ Likewise, Cucumber's connection won't see data from the web server.
 In this case, you will have to turn off database transactions and make sure the data is explicitly deleted before each Scenario.
 
 ## Turn off transactions
-If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails) it's easy to turn off transactions for a feature or particular scenarios. Use the `@no-txn` tag, like this:
+If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), you can turn off transactions for a feature or particular scenarios. Use the `@no-txn` tag, like this:
 
 ```
 @no-txn

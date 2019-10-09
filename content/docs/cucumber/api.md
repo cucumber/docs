@@ -486,7 +486,7 @@ See more documentation on [tags](#tags).
 ## Global Hooks
 
 {{% block "ruby" %}}
-A global hook will run once before any scenario is run. Simply put the
+A global hook will run once before any scenario is run. Put the
 code at the top-level in your `env.rb` file (or any other file under
 `features/support` directory).
 
@@ -571,7 +571,7 @@ Feature: Verify billing
     Given hello
 ```
 
-A feature or scenario or can have as many tags as you like. Just separate them with spaces:
+A feature or scenario can have as many tags as you like. Separate them with spaces:
 
 ```gherkin
 @billing @bicker @annoy
@@ -687,7 +687,7 @@ Another way to run a subset of scenarios is to use the `file.feature:line` patte
 {{% /tip %}}
 
 ### Tag expressions
-A tag expression is simply an *infix boolean expression*. Below are some examples:
+A tag expression is an *infix boolean expression*. Below are some examples:
 
 Expression           | Description
 ---------------------|---------------------------------------------------------:
