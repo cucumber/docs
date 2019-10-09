@@ -27,6 +27,7 @@ import cucumber.api.TypeRegistry;
 import cucumber.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterType;
 import io.cucumber.datatable.DataTableType;
+import io.cucumber.docstring.DocStringType
 
 import java.util.Locale;
 
@@ -52,6 +53,13 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
             ItemQuantity.class,
             (String s) -> new ItemQuantity(s))
         );
+
+	typeRegistry.defineDocStringType(new DocStringType(
+	    StringBuilder.class,
+	    "stringbuilder",
+	    (String s) -> new StringBuilder(s))
+	);
+	    
     }
 }
 ```
