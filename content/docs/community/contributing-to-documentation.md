@@ -6,7 +6,7 @@ weight: 40
 
 The Cucumber documentation is open source and anyone is welcome to contribute. In fact, we'd really appreciate your help!
 
-Each page provides a link to easily edit the content of that page. You can also make your changes to the [docs.cucumber.io project on Github](https://github.com/cucumber/docs.cucumber.io).
+Each page provides a link to edit the content of that page. You can also make your changes to the [docs.cucumber.io project on Github](https://github.com/cucumber/docs.cucumber.io).
 
 # Process
 
@@ -72,8 +72,7 @@ Some guidelines:
 * If needed, describe what the result of each step should be
 
 # Toolchain
-The documentation is written in [Markdown](http://toolchain.gitbook.com/syntax/markdown.html)
-(simple markup).
+The documentation is written in [Markdown](http://toolchain.gitbook.com/syntax/markdown.html).
 
 The documentation is stored in the [docs.cucumber.io project on Github](https://github.com/cucumber/docs.cucumber.io).
 
@@ -118,7 +117,7 @@ The following languages are currently supported:
 * .Net (optional; some pages only)
 
 * Whenever possible, we prefer to have information for Java, JavaScript and Ruby.
-  * If you're only familiar with one programming language, just add an example for that language; someone
+  * If you're only familiar with one programming language, add an example for that language; someone
     else will fill the gaps for the other languages!
   * You can ask for help with the other languages in the help channel for that language on Slack, or in your GitHub pull request / issue
 

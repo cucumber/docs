@@ -16,7 +16,7 @@ to a [Step Definition](/docs/cucumber/step-definitions). You can use
 [Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression) or *Cucumber Expressions*.
 
 Cucumber Expressions offer similar functionality to Regular Expressions, with a syntax 
-that is easier to read and write. Cucumber Expressions are also
+that is more human to read and write. Cucumber Expressions are also
 extensible with *parameter types*.
 
 # Introduction

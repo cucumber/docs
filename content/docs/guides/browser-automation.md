@@ -201,7 +201,7 @@ A detailed tutorial on using Cucumber-JVM with Serenity can be found
 
 {{% text "ruby" %}}
 
-Watir (pronounced _water_), is an open-source (BSD), family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
+Watir (pronounced _water_), is an open-source (BSD), family of Ruby libraries for automating web browsers. It allows you to write tests that are easier to read and maintain. It is straightforward and flexible.
 
 Watir drives browsers the same way people do. It clicks links, fills in forms, presses buttons. Watir also checks results, such as whether expected text appears on the page.
 
@@ -225,7 +225,7 @@ describe "google.com" do
 end
 ```
 
-Now let us incorporate Cucumber to this simple test
+Now let us incorporate Cucumber to this test:
 
 ```gherkin
 Feature: Search In order to use Google users must be able to search for content
@@ -404,7 +404,7 @@ browser=chrome cucumber
 mvn test -Dbrowser=chrome
 ```
 
-If you are using Serenity, simply pass the `driver` system property (no extra coding required):
+If you are using Serenity, pass the `driver` system property (no extra coding required):
 
 ```
 mvn test -Ddriver=chrome

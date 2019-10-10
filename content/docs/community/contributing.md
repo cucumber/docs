@@ -30,7 +30,7 @@ This way you don't waste time by reporting a bug that has already been fixed.
 gem update cucumber
 ```
 
-If you are certain you have found a bug, just register a ticket with the relevant project. We have added issue templates on GitHub to help you provide the relevant information.
+If you are certain you have found a bug, register a ticket with the relevant project. We have added issue templates on GitHub to help you provide the relevant information.
 If you're not sure, please [get in touch](/docs/community/get-in-touch).
 
 ## Help us help you

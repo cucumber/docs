@@ -1,6 +1,6 @@
 ---
 title: 10 Minute Tutorial
-subtitle: Get started in just 10 minutes
+subtitle: Get started in 10 minutes
 polyglot:
  - java
  - javascript
@@ -125,7 +125,7 @@ Open the project in IntelliJ IDEA:
 
 **With Gradle**
 
-You can use the following `build.gradle` file as an example template. Just use your IDE
+You can use the following `build.gradle` file as an example template. Use your IDE
 to start a new Gradle-based project.
 
 ```groovy
@@ -445,7 +445,7 @@ cucumber --init
 
 {{% /block %}}
 
-You now have a simple project with Cucumber installed.
+You now have a small project with Cucumber installed.
 
 # Verify Cucumber installation
 
@@ -560,7 +560,7 @@ The first line of this file starts with the keyword `Feature:` followed by a nam
 It's a good idea to use a name similar to the file name.
 
 The second line is a brief description of the feature. Cucumber does not
-execute this line, it's just documentation.
+execute this line because it's documentation.
 
 The fourth line, `Scenario: Sunday is not Friday` is a
 [scenario](/docs/gherkin/reference#example), which is a *concrete example* illustrating how
@@ -867,8 +867,7 @@ Try to use the same words in the code as in the steps.
 If the words in your steps originated from conversations during an
 [Example Mapping](/docs/bdd/example-mapping) session, you're building a
 [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html),
-which is a great way to make your production code and test easier to understand
-and maintain.
+which we believe is a great way to make your production code and tests more understandable and easier to maintain.
 {{% /tip %}}
 
 Change your step definition code to this:
@@ -1094,8 +1093,7 @@ That's progress! The first two steps are passing, but the last one is failing.
 
 # See scenario reported as passing
 
-Let's do the simplest possible thing to make the scenario pass. In this case,
-that's simply to make our {{% stepdef-body %}} return `Nope`:
+Let's do the minimum we need to make the scenario pass. In this case, that means making our {{% stepdef-body %}} return `Nope`:
 
 {{% block "java" %}}
 ```java
@@ -1687,4 +1685,4 @@ Now that we have working code, we should do some refactoring:
 # Summary
 
 In this brief tutorial you've seen how to install Cucumber, how to follow
-the BDD process to develop a very simple {{% stepdef-body %}}, and how to use that {{% stepdef-body %}} to evaluate multiple scenarios!
+the BDD process to develop a {{% stepdef-body %}}, and how to use that {{% stepdef-body %}} to evaluate multiple scenarios!

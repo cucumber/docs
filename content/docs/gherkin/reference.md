@@ -183,7 +183,7 @@ such as creating and configuring objects or adding data to a test database.
 The purpose of `Given` steps is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` steps).
 Avoid talking about user interaction in `Given`'s. If you were creating use cases, `Given`'s would be your preconditions.
 
-It's okay to have several `Given` steps (just use `And` or `But` for number 2 and upwards to make it more readable).
+It's okay to have several `Given` steps (use `And` or `But` for number 2 and upwards to make it more readable).
 
 Examples:
 
@@ -228,7 +228,7 @@ Examples:
 - Receive an invitation
 - Card should be swallowed
 
-While it might be tempting to implement `Then` steps to just look in the database - resist that temptation!
+While it might be tempting to implement `Then` steps to look in the database - resist that temptation!
 
 You should only verify outcome that is observable for the user (or external system), and databases usually are not.
 

@@ -168,7 +168,7 @@ There are also many third-party plugins:
    * [teamcity_formatter](https://github.com/kevinrood/teamcity_formatter) - Compatible with Cucumber 2.
    * [cucumber_teamcity](https://github.com/ankurcha/cucumber_teamcity/) - Tested with Cucumber 1.3.18 and TeamCity 8.x.
 * [TextmateFormatter](https://github.com/raldred/cucumber_textmate/) prints Cucumber results as HTML with enhanced styling and Javascript for Textmate (Included in the Cucumber core since 0.4.5)
-* [SlowHandCuke](https://github.com/moredip/SlowHandCuke) - Simple tweak to the Pretty formatter to display the currently running Step as it is running
+* [SlowHandCuke](https://github.com/moredip/SlowHandCuke) - A tweak to the Pretty formatter to display the currently running Step as it is running
 * [timestamped-scenarios](https://github.com/moredip/timestamped-scenarios) - Append test run timestamps to each Scenario name as it is being output.
 * [Fivemat](https://github.com/tpope/fivemat) - Cucumber formatter that gives each test file its own line of dots.
 * [Fuubar](https://github.com/martinciu/fuubar-cucumber) - The insta-failing progress bar formatter
