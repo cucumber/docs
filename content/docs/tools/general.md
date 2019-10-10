@@ -4,7 +4,7 @@ subtitle: "Editors, IDEs and build tools"
 weight: 1000
 ---
 
-Using Cucumber in your project is more managable with the right tools.
+Using Cucumber in your project is more manageable with the right tools.
 
 # Editors
 

@@ -445,7 +445,7 @@ cucumber --init
 
 {{% /block %}}
 
-You now have a project with Cucumber installed.
+You now have a small project with Cucumber installed.
 
 # Verify Cucumber installation
 

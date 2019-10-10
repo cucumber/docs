@@ -10,8 +10,8 @@ polyglot:
 ---
 
 You can have all of your step definitions in one file, or in multiple files. When you start with your project, all your step definitions will probably be in one file.
-As your project grows, you can then split them into meaningful groups in different files.
-This will make your project more logical and perhaps easier to maintain.
+As your project grows, you should split your step definitions into meaningful groups in different files
+This will make your project more logical and easier to maintain.
 
 # How Cucumber finds your features and step definitions
 Be aware that, regardless of the directory structure employed, Cucumber effectively flattens the `features/` directory tree when running tests.
@@ -86,7 +86,7 @@ For example, take the following steps:
     Given I get the contact details
 ```
 
-If all of these steps open the respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, i.e. *to open the Home, About or Contact page*.
+If all of these steps open their respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, i.e. *to open the Home, About or Contact page*.
 
 As such, you can use abstract helper methods to reduce them into a single step:
 

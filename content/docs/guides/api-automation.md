@@ -34,7 +34,7 @@ For more information see the [Karate project on GitHub](https://github.com/intui
 # API Automation Tools for Ruby
 
 ## REST Client
-[REST Client](https://github.com/rest-client/rest-client) is an HTTP and REST client for Ruby.
+[REST Client](https://github.com/rest-client/rest-client) is a simple HTTP and REST client for Ruby.
 
 ## HTTParty
 [HTTParty](https://github.com/jnunemaker/httparty) can be used to make HTTP calls.
