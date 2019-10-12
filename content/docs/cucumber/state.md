@@ -264,7 +264,7 @@ To use this approach, you need to tell Cucumber to start a transaction in a `Bef
 roll it back in an `After`[hook](/docs/cucumber/api/#hooks).
 
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
-[tagged hooks](/docs/cucumber/api/#tagged-hooks) using a tag named `@txn`.
+[conditional hooks](/docs/cucumber/api/#conditional-hooks) using a tag named `@txn`.
 
 To enable it, you must tag every [feature](/docs/gherkin/reference#feature) or [scenario](/docs/gherkin/reference#example) that requires
 transactions with `@txn`:
