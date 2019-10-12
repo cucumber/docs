@@ -452,9 +452,19 @@ You now have a small project with Cucumber installed.
 To make sure everything works together correctly, let's run Cucumber.
 
 {{% block "java,kotlin" %}}
+
+**With Maven**
+
 ```shell
 mvn test
 ```
+
+**With Gradle**
+
+```shell
+./gradlew test
+```
+
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -476,6 +486,9 @@ cucumber
 You should see something like the following:
 
 {{% block "java,kotlin" %}}
+
+**With Maven**
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -496,6 +509,13 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
+```
+
+**With Gradle**
+
+```shell
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
 ```
 
 {{% /block %}}
