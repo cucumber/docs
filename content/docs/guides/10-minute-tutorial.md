@@ -160,7 +160,7 @@ test {
 }
 ```
 
-Then add a file `src/test/hellocucumber/RunCucumberTest.java` inside the project
+Then add a file `src/test/java/hellocucumber/RunCucumberTest.java` inside the project
 to enable JUnit 5 integration:
 
 ```java
