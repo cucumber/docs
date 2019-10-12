@@ -177,6 +177,8 @@ public class RunCucumberTest
 }
 ```
 
+Create an empty directory `src/test/resources/hellocucumber` which later will contain the feature files.
+
 If you have not already, open the project in IntelliJ IDEA:
 
 * **File -> Open... -> (Select build.gradle)**
