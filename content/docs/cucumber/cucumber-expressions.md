@@ -56,7 +56,7 @@ Parameter Type  | Description
 `{int}`         | Matches integers, for example `71` or `-19`.
 `{float}`       | Matches floats, for example `3.6`, `.8` or `-9.2`.
 `{word}`        | Matches words without whitespace, for example `banana` (but not `banana split`)
-`{string}`      | Matches single-quoted or double-quoted strings, for example `"banana split"` or `'banana split'` (but not `banana split`). Only the text between the quotes will be extracted. The quotes themselves are discarded.
+`{string}`      | Matches single-quoted or double-quoted strings, for example `"banana split"` or `'banana split'` (but not `banana split`). Only the text between the quotes will be extracted. The quotes themselves are discarded. Empty pairs of quotes are valid and will be matched and passed to step code as empty strings.
 `{}` anonymous  | Matches anything (`/.*/`). 
 
 {{% block "java,kotlin" %}}
