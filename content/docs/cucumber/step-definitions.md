@@ -29,7 +29,7 @@ The `I have 48 cukes in my belly` part of the step (the text following the `Give
 
 {{% block "java" %}}
 ```java
-package foo;
+package com.example;
 import io.cucumber.java.en.Given;
 
 public class MyStepdefs {
@@ -43,8 +43,8 @@ public class MyStepdefs {
 Or, using Java8 lambdas:
 
 ```java
-package foo;
-import cucumber.api.java8.En;
+package com.example;
+import io.cucumber.java8.En;
 
 public class MyStepdefs implements En {
     public MyStepdefs() {
@@ -59,8 +59,8 @@ public class MyStepdefs implements En {
 {{% block "kotlin" %}}
 
 ```kotlin
-package foo
-import cucumber.api.java8.En
+package com.example
+import io.cucumber.java8.En
 
 class MyStepdefs : En {
 
@@ -78,8 +78,8 @@ class MyStepdefs : En {
 {{% block "kotlin" %}}
 
 ```kotlin
-package foo
-import cucumber.api.java8.En
+package com.example
+import io.cucumber.java8.En
 
 class MyStepdefs : En {
 

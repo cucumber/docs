@@ -16,15 +16,15 @@ polyglot:
 
 {{% block "java,kotlin" %}}
 The type registry is used to configure parameter types and data table types. It can be configured by placing an implementation
-of `cucumber.api.TypeRegistryConfigurer` on the glue path.
+of `io.cucumber.core.api.TypeRegistryConfigurer` on the glue path.
 
 For instance, the following class registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity:
 
 ```java
 package com.example;
 
-import cucumber.api.TypeRegistry;
-import cucumber.api.TypeRegistryConfigurer;
+import io.cucumber.core.api.TypeRegistry;
+import io.cucumber.core.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterType;
 import io.cucumber.datatable.DataTableType;
 
@@ -59,8 +59,8 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 ```kotlin
 package com.example
 
-import cucumber.api.TypeRegistryConfigurer
-import cucumber.api.TypeRegistry
+import io.cucumber.core.api.TypeRegistryConfigurer
+import io.cucumber.core.api.TypeRegistry
 import io.cucumber.datatable.DataTableType
 import io.cucumber.datatable.TableEntryTransformer
 import java.util.Locale
@@ -89,8 +89,8 @@ example) will handle the conversion of anonymous parameter types and data table 
 ```java
 package com.example;
 
-import cucumber.api.TypeRegistry;
-import cucumber.api.TypeRegistryConfigurer;
+import io.cucumber.core.api.TypeRegistry;
+import io.cucumber.core.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterByTypeTransformer;
 import io.cucumber.datatable.TableCellByTypeTransformer;
 import io.cucumber.datatable.TableEntryByTypeTransformer;
@@ -142,8 +142,8 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 ```kotlin
 package com.example
 
-import cucumber.api.TypeRegistryConfigurer
-import cucumber.api.TypeRegistry
+import io.cucumber.core.api.TypeRegistryConfigurer
+import io.cucumber.core.api.TypeRegistry
 import io.cucumber.cucumberexpressions.ParameterByTypeTransformer
 import io.cucumber.datatable.TableCellByTypeTransformer
 import io.cucumber.datatable.TableEntryByTypeTransformer

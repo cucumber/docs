@@ -55,8 +55,8 @@ Feature: Scenario Outlines feature file
 ```java
 package parallel;
 
-import cucumber.api.java.BeforeStep;
-import cucumber.api.java.en.Given;
+import io.cucumber.java.BeforeStep;
+import io.cucumber.java.en.Given;
 
 public class StepDefs {
 
@@ -75,7 +75,7 @@ public class StepDefs {
 ```kotlin
 package parallel
 
-import cucumber.api.java8.En
+import io.cucumber.java8.En
 
 class StepDefs : En {	
 	init {
@@ -100,7 +100,7 @@ class StepDefs : En {
 ```java
 package parallel;
 
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -114,7 +114,7 @@ public class RunCucumberTest {
 ```kotlin
 package parallel
 
-import cucumber.api.junit.Cucumber
+import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
@@ -214,7 +214,7 @@ Cucumber can be executed in parallel using **TestNG and Maven test execution plu
 package parallel;
 
 import org.testng.annotations.DataProvider;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 public class RunCucumberTest extends AbstractTestNGCucumberTests{
 
@@ -234,7 +234,7 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests{
 package parallel
 
 import org.testng.annotations.DataProvider;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 class RunCucumberTest : AbstractTestNGCucumberTests() {
 	
@@ -293,7 +293,7 @@ If you have **multiple runners**, set the parallel configuration to `classes` to
 # CLI
 
 {{% block "java,kotlin" %}}
-The `Main class` in the `cucumber.api.cli package` is used to execute the feature files. You can run this class directly from the command line; in that case, there is no need to create any runner class. The usage options for this class are mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/v4.0.0/core/src/main/resources/cucumber/api/cli/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
+The `Main class` in the `io.cucumber.core.cli package` is used to execute the feature files. You can run this class directly from the command line; in that case, there is no need to create any runner class. The usage options for this class are mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/v4.0.0/core/src/main/resources/cucumber/api/cli/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
 
 Follow the steps below to **execute the command from a terminal**.	
 
@@ -325,14 +325,14 @@ kotlinc -cp .;<path to each cucumber jar> -jvm-target 1.8 ./parallel/StepDefs.kt
 {{% block "java" %}}
 
 ```shell
-java -cp .;<path to cucumber jar folder>/* cucumber.api.cli.Main --threads 4 -g parallel parallel
+java -cp .;<path to cucumber jar folder>/* io.cucumber.core.cli.Main --threads 4 -g parallel parallel
 ```
 {{% /block %}}
 
 {{% block "kotlin" %}}
 
 ```shell
-java -cp .;<path to cucumber jar folder>/*;<path to kotlin lib folder>/* cucumber.api.cli.Main --threads 4 -g parallel parallel
+java -cp .;<path to cucumber jar folder>/*;<path to kotlin lib folder>/* io.cucumber.core.cli.Main --threads 4 -g parallel parallel
 ```
 {{% /block %}}
 
@@ -369,7 +369,7 @@ For a **visual representation** of threads, add the **timeline report** using th
 In case of CLI, the below command can be used.
 
 ```shell
-java -cp <classpath> cucumber.api.cli.Main -p timeline:<report folder> --threads <thread count> -g <steps package> <path to feature files>
+java -cp <classpath> io.cucumber.core.cli.Main -p timeline:<report folder> --threads <thread count> -g <steps package> <path to feature files>
 ```
 
 Below is a sample report.

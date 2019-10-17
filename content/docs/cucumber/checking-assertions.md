@@ -49,8 +49,8 @@ import static org.junit.Assert.*;
 
 public class Example {
 
-    @Then("^the result should be (.+)$")
-    public void the_result_should_be(String expectedResult) {
+    @Then("the result should be {int}")
+    public void the_result_should_be(int expectedResult) {
         assertEquals(expectedResult, result);
     }
 }

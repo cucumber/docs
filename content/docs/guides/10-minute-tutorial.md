@@ -314,8 +314,8 @@ Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
 package hellocucumber
 
-import cucumber.api.CucumberOptions
-import cucumber.api.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
@@ -344,8 +344,8 @@ Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
 package hellocucumber
 
-import cucumber.api.CucumberOptions
-import cucumber.api.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
@@ -624,19 +624,19 @@ You can implement missing steps with the snippets below:
 @Given("today is Sunday")
 public void today_is_Sunday() {
     // Write code here that turns the phrase above into concrete actions
-    throw new cucumber.api.PendingException();
+    throw new io.cucumber.java.PendingException();
 }
 
 @When("I ask whether it's Friday yet")
 public void i_ask_whether_it_s_Friday_yet() {
     // Write code here that turns the phrase above into concrete actions
-    throw new cucumber.api.PendingException();
+    throw new io.cucumber.java.PendingException();
 }
 
 @Then("I should be told {string}")
 public void i_should_be_told(String string) {
     // Write code here that turns the phrase above into concrete actions
-    throw new cucumber.api.PendingException();
+    throw new io.cucumber.java.PendingException();
 }
 ```
 {{% /block %}}
@@ -724,28 +724,28 @@ Your `StepDefs.kt` file should now look like this:
 ```kotlin
 package hellocucumber
 
-import cucumber.api.PendingException
+import io.cucumber.java.PendingException
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.When
 import io.cucumber.java.en.Then
 import org.junit.Assert.*
 
 class StepDefs {
-    @Given("^today is Sunday$")
+    @Given("today is Sunday")
     @Throws(Exception::class)
     fun today_is_Sunday() {
         // Write code here that turns the phrase above into concrete actions
         throw PendingException()
     }
 
-    @When("^I ask whether it's Friday yet$")
+    @When("I ask whether it's Friday yet")
     @Throws(Exception::class)
     fun i_ask_whether_it_s_Friday_yet() {
         // Write code here that turns the phrase above into concrete actions
         throw PendingException()
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("I should be told {string}")
     @Throws(Exception::class)
     fun i_should_be_told(arg1: String) {
         // Write code here that turns the phrase above into concrete actions
@@ -771,7 +771,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
-      cucumber.api.PendingException: TODO: implement me
+      io.cucumber.java.PendingException: TODO: implement me
 	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:14)
 	at ?.today is Sunday(classpath:hellocucumber/is_it_friday_yet.feature:5)
 
@@ -785,7 +785,7 @@ hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
 3 Steps (2 skipped, 1 pending)
 0m0.188s
 
-cucumber.api.PendingException: TODO: implement me
+io.cucumber.java.PendingException: TODO: implement me
 	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:13)
 	at ?.today is Sunday(classpath:hellocucumber/is_it_friday_yet.feature:5)
 ```
@@ -802,7 +802,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # StepDefs.today_is_Sunday()
-      cucumber.api.PendingException: TODO: implement me
+      io.cucumber.java.PendingException: TODO: implement me
         at hellocucumber.StepDefs.today_is_Sunday(StepDefs.kt:14)
         at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
 
@@ -813,7 +813,7 @@ Feature: Is it Friday yet?
 3 Steps (2 skipped, 1 pending)
 0m0.107s
 
-cucumber.api.PendingException: TODO: implement me
+io.cucumber.java.PendingException: TODO: implement me
         at hellocucumber.StepDefs.today_is_Sunday(StepDefs.kt:14)
         at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
 
@@ -932,17 +932,17 @@ class StepDefs {
     private lateinit var today: String
     private lateinit var actualAnswer: String
 
-    @Given("^today is Sunday$")
+    @Given("today is Sunday")
     fun today_is_Sunday() {
         today = "Sunday"
     }
 
-    @When("^I ask whether it's Friday yet$")
+    @When("I ask whether it's Friday yet")
     fun i_ask_whether_it_s_Friday_yet() {
         actualAnswer = isItFriday(today)
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("I should be told {string}")
     fun i_should_be_told(expectedAnswer: String) {
         assertEquals(expectedAnswer, actualAnswer)
     }
@@ -1212,7 +1212,7 @@ public void today_is_Friday() {
 
 {{% block "kotlin" %}}
 ```kotlin
-@Given("^today is Friday$")
+@Given("today is Friday")
 fun today_is_Friday() {
     today = "Friday"
 }
@@ -1547,17 +1547,17 @@ class StepDefs {
     private lateinit var today: String
     private lateinit var actualAnswer: String
 
-    @Given("^today is \"([^\"]*)\"$")
+    @Given("today is {string}")
     fun today_is(today: String) {
         this.today = today
     }
 
-    @When("^I ask whether it's Friday yet$")
+    @When("I ask whether it's Friday yet")
     fun i_ask_whether_it_s_Friday_yet() {
         actualAnswer = isItFriday(today)
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("I should be told {string}")
     fun i_should_be_told(expectedAnswer: String) {
         assertEquals(expectedAnswer, actualAnswer)
     }
