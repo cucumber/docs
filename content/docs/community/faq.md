@@ -18,7 +18,7 @@ If you'd prefer to get started with a working project (or if you are having trou
 you can get started with the [cucumber-java-skeleton](https://github.com/cucumber/cucumber-java-skeleton). This project is designed to work "out of the box".
 {{% /block %}}
 
-You can read these docs to learn more about [Gherkin](/docs/gherkin/reference), [Cucumber](/docs/cucumber/api) and [BDD](/docs/bdd/overview).
+You can read these docs to learn more about [Gherkin](/docs/gherkin/reference), [Cucumber](/docs/cucumber/api) and [BDD](/docs/bdd).
 There are also links to several [blog posts](/docs/community/blog-posts) about Cucumber and BDD.
 
 ## Where can I get more in depth information?
@@ -57,10 +57,15 @@ Cucumber tries to follow the [SemVer](http://semver.org/) specification for rele
 * If the middle number (minor) number in the release changes, you don't need to worry.
 * If the left-hand (major) number changes, you can expect that things might break.
 
-You can read the [history file](https://github.com/cucumber/cucumber/blob/master/History.md) to learn about the changes in every release.
-
-Implementations of Cucumber in a particular language, should have a `CHANGELOG.md`, describing the changes made per version.
-
+{{% block "javascript" %}}
+You can read the [changelog file](https://github.com/cucumber/cucumber-js/blob/master/CHANGELOG.md) to learn about the changes in every release.
+{{% /block %}}
+{{% block "ruby" %}}
+You can read the [changelog file](https://github.com/cucumber/cucumber-ruby/blob/master/CHANGELOG.md) to learn about the changes in every release.
+{{% /block %}}
+{{% block "java,kotlin" %}}
+You can read the [changelog file](https://github.com/cucumber/cucumber-jvm/blob/master/CHANGELOG.md) to learn about the changes in every release.
+{{% /block %}}
 
 ## How do I run Cucumber?
 For information on how to run Cucumber, see [Running Cucumber](/docs/cucumber/api/#running-cucumber).
@@ -72,7 +77,7 @@ For information about configuration options, see [Configuration](/docs/cucumber/
 When running Cucumber with JUnit, you can specify several options on how JUnit should run your tests.
 Check the section on [JUnit](https://docs.cucumber.io/cucumber/api/#junit) for more information.
 
-For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/api/CucumberOptions.java).
+For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/test/java/io/cucumber/core/options/CucumberOptions.java).
 {{% /block %}}
 
 ## Cucumber says my steps are undefined, but I have implemented step definitions!
@@ -131,7 +136,7 @@ You can find the required dependencies [here](https://docs.cucumber.io/installat
 {{% /block %}}
 
 {{% block "java" %}}
-For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java8-calculator/src/test/java/cucumber/examples/java/calculator/RpnCalculatorStepdefs.java).
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java8-calculator/src/test/java/io/cucumber/examples/java8/RpnCalculatorSteps.java).
 {{% /block %}}
 
 {{% block "kotlin" %}}

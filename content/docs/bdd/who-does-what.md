@@ -88,7 +88,7 @@ So, those three lines cover Why, Who, and What. Then, the document gets into the
 
 You can have any number of scenarios for a feature.
 
-Of course, if you have lots and lots of scenarios in one feature, you might
+If you have lots and lots of scenarios in one feature, you might
 actually be describing *more* than one feature. When that happens, we recommend
 splitting up the document into separate Feature definitions. (The definition of
 “lots and lots” here is subjective, and it's up to you determine when it's time to split up a feature.)

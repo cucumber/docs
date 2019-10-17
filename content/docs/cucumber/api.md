@@ -120,7 +120,7 @@ Hooks are blocks of code that can run at various points in the Cucumber executio
 They are typically used for setup and teardown of the environment before and after each scenario.
 
 Where a hook is defined has no impact on what scenarios or steps it is run for.
-If you want more fine-grained control, you can use [tagged hooks](#tagged-hooks).
+If you want more fine-grained control, you can use [conditional hooks](#conditional-hooks).
 
 {{% text "java" %}}
 You can declare hooks in any class.
@@ -357,7 +357,7 @@ end
 ## Step hooks
 {{% text "java" %}}
 Step hooks invoked before and after a step. The hooks have 'invoke around' semantics. Meaning that if a `BeforeStep`
-hook is executed the `AfterStep` hooks will also be executed regardless of the result of the step. If a step did not 
+hook is executed the `AfterStep` hooks will also be executed regardless of the result of the step. If a step did not
 pass, the following step and its hooks will be skipped.
 {{% /text %}}
 
@@ -376,7 +376,7 @@ Lambda style:
 
 ```java
 BeforeStep((Scenario scenario) -> {
-    
+
 });
 ```
 {{% /text %}}
@@ -431,7 +431,7 @@ AfterStep { scenario: Scenario ->
 
 {{% block "javascript" %}}Cucumber.js does not support `AfterStep` hooks.{{% /block %}}
 
-## Tagged hooks
+## Conditional hooks
 
 Hooks can be conditionally selected for execution based on the tags of the scenario.
 To run a particular hook only for certain scenarios, you can associate a
@@ -486,7 +486,7 @@ See more documentation on [tags](#tags).
 ## Global Hooks
 
 {{% block "ruby" %}}
-A global hook will run once before any scenario is run. Simply put the
+A global hook will run once before any scenario is run. Put the
 code at the top-level in your `env.rb` file (or any other file under
 `features/support` directory).
 
@@ -555,7 +555,7 @@ Tags are a great way to organise your features and scenarios.
 They can be used for two purposes:
 
 * [Running a subset of scenarios](#running-a-subset-of-scenarios)
-* [Scoping hooks to a subset of scenarios](#tagged-hooks)
+* [Scoping hooks to a subset of scenarios](#conditional-hooks)
 
 Consider the following example:
 
@@ -571,7 +571,7 @@ Feature: Verify billing
     Given hello
 ```
 
-A feature or scenario or can have as many tags as you like. Just separate them with spaces:
+A feature or scenario can have as many tags as you like. Separate them with spaces:
 
 ```gherkin
 @billing @bicker @annoy
@@ -687,7 +687,7 @@ Another way to run a subset of scenarios is to use the `file.feature:line` patte
 {{% /tip %}}
 
 ### Tag expressions
-A tag expression is simply an *infix boolean expression*. Below are some examples:
+A tag expression is an *infix boolean expression*. Below are some examples:
 
 Expression           | Description
 ---------------------|---------------------------------------------------------:
@@ -895,8 +895,8 @@ Create an empty class that uses the Cucumber JUnit runner.
 ```java
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -908,8 +908,8 @@ public class RunCucumberTest {
 ```kotlin
 package com.example
 
-import cucumber.api.CucumberOptions
-import cucumber.api.junit.Cucumber
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
@@ -918,11 +918,11 @@ class RunCucumberTest {
 }
 ```
 
-This will execute all scenarios in same package as the runner, by default glue code is also assumed to be in the same 
-package. 
+This will execute all scenarios in same package as the runner, by default glue code is also assumed to be in the same
+package.
 
 The `@CucumberOptions` can be used to provide
-[additional configuration](#list-configuration-options) to the runner. 
+[additional configuration](#list-configuration-options) to the runner.
 
 
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
@@ -930,8 +930,8 @@ For example if you want to tell Cucumber to use the two formatter plugins `prett
 ```java
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -943,8 +943,8 @@ public class RunCucumberTest {
 ```kotlin
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -958,8 +958,8 @@ For example if you want to check whether all feature file steps have correspondi
 ```java
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -971,8 +971,8 @@ public class RunCucumberTest {
 ```kotlin
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -982,13 +982,13 @@ class RunCucumberTest {
 ```
 The default option for `dryRun` is `false`.
 
-For example if you want console output from Cucumber in a readable format, you can specify it like this: 
+For example if you want console output from Cucumber in a readable format, you can specify it like this:
 
 ```java
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -1000,8 +1000,8 @@ public class RunCucumberTest {
 ```kotlin
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -1012,13 +1012,13 @@ class RunCucumberTest {
 
 The default option for `monochrome` is `false`.
 
-For example if you want to skip undefined steps from execution, you can specify it like this: 
+For example if you want to skip undefined steps from execution, you can specify it like this:
 
 ```java
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -1030,8 +1030,8 @@ public class RunCucumberTest {
 ```kotlin
 package com.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -1040,6 +1040,39 @@ class RunCucumberTest {
 }
 ```
 The default option for `strict` is `false`.
+
+For example if you want to tell Cucumber to print code snippets for missing
+step definitions use the `summary` plugin, you can specify it like this:
+
+{{% block "java" %}}
+```java
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "summary"}, strict = true)
+public class RunCucumberTest {
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "summary"}, strict = true)
+class RunCucumberTest {
+}
+```
+{{% /block %}}
 
 Usually, this class will be empty. You can, however, specify several JUnit rules.
 

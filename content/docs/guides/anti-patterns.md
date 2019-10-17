@@ -76,7 +76,7 @@ Scenario: add description
   Then I should see "Cucumber BDD tool" under "Descriptions"
 ```
 The{{% text "kotlin" %}}`edit_work_experience_steps.kt`{{% /text %}}
-The{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
+{{% text "java" %}}`edit_work_experience_steps.java`{{% /text %}}
 {{% text "javascript" %}}`edit_work_experience_steps.js`{{% /text %}}
 {{% text "ruby" %}}`edit_work_experience_steps.rb`{{% /text %}}could be implemented like this:
 
@@ -162,7 +162,7 @@ In Cucumber-js calling steps from step definitions is not supported; this is *by
 The best way to achieve composition and reuse, is to use the features of your programming language. If you want to combine
 several actions into one step, extract individual (helper) methods and call these methods from your step definition.
 
-To make your life easier, strive to keep your steps atomic as much as possible.
+You want to strive to keep your steps atomic as much as possible.
 
 # More information
 For more information on anti-patterns, see [Cucumber Anti-Patterns (blog)](http://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns).

@@ -65,7 +65,7 @@ import cucumber.api.java8.En
 class MyStepdefs : En {
 
     init {
-        Given("I have {int} cukes in my belly") { cukes: Int -> 
+        Given("I have {int} cukes in my belly") { cukes: Int ->
                 prinln("Cukes: $cukes")
         }
     }
@@ -84,7 +84,7 @@ import cucumber.api.java8.En
 class MyStepdefs : En {
 
     init {
-        Given("I have {int} cukes in my belly") { cukes: Int -> 
+        Given("I have {int} cukes in my belly") { cukes: Int ->
                 prinln("Cukes: $cukes")
         }
     }
@@ -126,7 +126,7 @@ public void i_have_n_cukes_in_my_belly(int cukes) {
 
 {{% block "kotlin" %}}
 ```kotlin
-Given("I have {int} cukes in my belly") { cukes: Int -> 
+Given("I have {int} cukes in my belly") { cukes: Int ->
         prinln("Cukes: $cukes")
 }
 ```
@@ -146,9 +146,9 @@ Given(/I have (\d+) cukes in my belly/, function (cukes) {
 ```
 {{% /block %}}
 
-If the capture group expression is identical to one of the registered 
+If the capture group expression is identical to one of the registered
 [parameter types](/docs/cucumber/cucumber-expressions#parameter-types)'s `regexp`,
-the captured string will be transformed before it is passed to the 
+the captured string will be transformed before it is passed to the
 step definition's {{% stepdef-body %}}. In the example above, the `cukes`
 argument will be an integer, because the built-in `int` parameter type's
 `regexp` is `\d+` .
@@ -181,7 +181,7 @@ expression.
 # Snippets
 
 When Cucumber encounters a [Gherkin step](/docs/gherkin/reference#steps) without a
-matching step definition, it will print a 
+matching step definition, it will print a
 step definition snippet with a matching [Cucumber Expression](/docs/cucumber/cucumber-expressions).
 You can use this as a starting point for new step definitions.
 
@@ -222,7 +222,7 @@ Given("I have {int} red balls", function (int1) {
 {{% /block %}}
 
 Suggested snippets will use your own [parameter types](/docs/cucumber/cucumber-expressions#parameter-types)
-if they match parts of your undefined step. If a [color](/docs/cucumber/cucumber-expressions#custom-parameter-types) 
+if they match parts of your undefined step. If a [color](/docs/cucumber/cucumber-expressions#custom-parameter-types)
 parameter type exists, Cucumber would use that in the suggested expression:
 
 {{% block "java" %}}
@@ -254,3 +254,5 @@ Given("I have {int} {color} balls", function (int1, color) {
 ```
 {{% /block %}}
 
+Make sure you use the `summary` plugin when running Cucumber in order
+to have the snippets printed.

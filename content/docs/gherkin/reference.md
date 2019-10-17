@@ -99,9 +99,9 @@ You can write anything you like, as long as no line starts with a keyword.
 
 The (optional) `Rule` keyword has been added in Gherkin v6. (Note that Gherkin 6 has not yet been incorporated into all implementation of Cucumber!)
 The purpose of the `Rule` keyword is to represent one *business rule* that should be implemented.
-It provides additional information for a feature. 
-A `Rule` is used to group together several scenarios 
-that belong to this *business rule*. A `Rule` should contain one or more scenarios that illustrate the particular rule. A `Rule` cannot contain a `Background`.
+It provides additional information for a feature.
+A `Rule` is used to group together several scenarios
+that belong to this *business rule*. A `Rule` should contain one or more scenarios that illustrate the particular rule.
 
 For example:
 
@@ -183,7 +183,7 @@ such as creating and configuring objects or adding data to a test database.
 The purpose of `Given` steps is to **put the system in a known state** before the user (or external system) starts interacting with the system (in the `When` steps).
 Avoid talking about user interaction in `Given`'s. If you were creating use cases, `Given`'s would be your preconditions.
 
-It's okay to have several `Given` steps (just use `And` or `But` for number 2 and upwards to make it more readable).
+It's okay to have several `Given` steps (use `And` or `But` for number 2 and upwards to make it more readable).
 
 Examples:
 
@@ -228,7 +228,7 @@ Examples:
 - Receive an invitation
 - Card should be swallowed
 
-While it might be tempting to implement `Then` steps to just look in the database - resist that temptation!
+While it might be tempting to implement `Then` steps to look in the database - resist that temptation!
 
 You should only verify outcome that is observable for the user (or external system), and databases usually are not.
 
@@ -301,7 +301,7 @@ Feature: Multiple site support
     Then I should see "Your article was published."
 ```
 
-For a less explicit alternative to `Background`, check out [tagged hooks](/docs/cucumber/api/#tagged-hooks).
+For a less explicit alternative to `Background`, check out [conditional hooks](/docs/cucumber/api/#conditional-hooks).
 
 ## Tips for using Background
 

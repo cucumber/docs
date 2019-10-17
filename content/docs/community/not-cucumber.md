@@ -1,5 +1,5 @@
 ---
-title: Things that are not Cucumber problems
+title: FAQ about related tools
 subtitle: "Help with other tools"
 polyglot:
  - java
@@ -19,8 +19,22 @@ Note that if you are using a newer version of Cucumber, the plugin you are using
 ## IntelliJ
 {{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
 {{% block "java,kotlin" %}}
-If you are having issues with the "Cucumber for Java" plugin, please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
+The IntelliJ "Cucumber for Java" plugin is maintained by JetBrains, the creators of IntelliJ. Please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
 If not, you can create an issue yourself.
+
+IntelliJ's support for Cucumber is via plugins. The plugin that you need to use depends upon what version of IntelliJ your are using, and what version of Cucumber your trying to use.
+
+If you upgrade Cucumber or IntelliJ you might need to recreate your Run/Debug Configuration so the correct plugin is used. Right-Click on the feature file and select "Run 'Feature: ...'".
+
+Configuration that you set via Maven/Gradle/Junit/TestNG is not imported into IntelliJ configuration so you might need to alter any of these values;
+Main class
+Glue
+Feature or folder path
+VM options
+Program arguments
+Working directory
+Environment variables
+Use classpath of module
 {{% /block %}}
 
 ## Eclipse

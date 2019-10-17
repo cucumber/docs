@@ -30,7 +30,7 @@ To make sure that the stub works in the same way as the real thing, we need to h
 
 # Ports and adapters
 We can think of our database and our stub as two things that can be plugged into the **port**.
-The application containing the business logic doesn't need to know if it's talking to a stub or the actual database; it's simply talking to this port
+The application containing the business logic doesn't need to know if it's talking to a stub or the actual database. This is because it's talking to this port
 and storing and retrieving data. We can run our tests using both the stub and the real implementation. This gives us confidence that the stub behaves like the real thing.
 
 The business logic is at the core of the application, completely decoupled

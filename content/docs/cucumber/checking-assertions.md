@@ -37,7 +37,9 @@ Make sure to use the same version for `cucumber-junit` that you are using for `c
 {{% /note %}}
 
 {{% note "JUnit 5"%}}
-JUnit 5 is not supported by Cucumber.
+JUnit 5 is not directly supported by Cucumber.
+
+If you wish to use JUnit 5 assertions, please add a runtime test dependency on the `junit-vintage-engine` artifact from the `org.junit.vintage` group.
 {{% /note %}}
 
 Below is an example using `assertEquals`:
@@ -140,7 +142,7 @@ Realize that tests/assertions/expectations either “pass” or “fail” (rais
 Anything besides “fail” is a pass.
 
 When, in RSpec, `something.should_be 0` and it is not, then what is returned is an error exception, not a Boolean value.
-In Cucumber, one writes `fail if false` and not simply `false`.
+In Cucumber, one writes `fail if false` and not only `false`.
 This is because `false` might be the expected successful outcome of a test, and thus not an error.
 
 Sometimes however, we wish to test how our application handles an exception and therefore do not want that exception

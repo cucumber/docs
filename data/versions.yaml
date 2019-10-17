@@ -4,8 +4,8 @@
 #
 
 # Note: When updating cucumber-jvm version, please update both the snapshot version and the regular version
-cucumberjvm-snapshot: "4.5.5-SNAPSHOT"
-cucumberjvm: "4.5.4"
+cucumberjvm-snapshot: "5.0.0-SNAPSHOT"
+cucumberjvm: "4.7.4"
 cucumberarchetype: "4.2.6.1"
 cucumberjs: "5.0.3"
 cucumberruby: "3.1.0"
