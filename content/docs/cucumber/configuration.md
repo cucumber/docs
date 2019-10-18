@@ -15,181 +15,130 @@ polyglot:
 # Type Registry
 
 {{% block "java,kotlin" %}}
-The type registry is used to configure parameter types and data table types. It can be configured by placing an implementation
-of `cucumber.api.TypeRegistryConfigurer` on the glue path.
+The type registry is used to configure parameter types, data table types and docstring types. It can be configured by annotating transformer methods by `@ParameterType`, `@DataTableType` and `@DocStringType` respectively.
 
-For instance, the following class registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity:
+For example, the following class registers custom "Author" data table type, "List<Book>" docstring type and "Book" parameter type:
 
 ```java
-package com.example;
+package com.example.app;
 
-import cucumber.api.TypeRegistry;
-import cucumber.api.TypeRegistryConfigurer;
-import io.cucumber.cucumberexpressions.ParameterType;
-import io.cucumber.datatable.DataTableType;
-import io.cucumber.docstring.DocStringType;
+import io.cucumber.java.DataTableType;
+import io.cucumber.java.DocStringType;
+import io.cucumber.java.ParameterType;
+import io.cucumber.java.en.Given;
 
-import java.util.Locale;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import static java.util.Locale.ENGLISH;
+public class Steps {
 
-public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
-
-    @Override
-    public Locale locale() {
-        return ENGLISH;
+    @DataTableType
+    public Author authorEntryTransformer(Map<String, String> entry) {
+        return new Author(
+            entry.get("firstName"),
+            entry.get("lastName"),
+            entry.get("famousBook"));
     }
 
-    @Override
-    public void configureTypeRegistry(TypeRegistry typeRegistry) {
-        typeRegistry.defineParameterType(new ParameterType<>(
-            "digit",
-            "[0-9]",
-            Integer.class,
-            (String s) -> Integer.parseInt(s))
-        );
+    @ParameterType(name = "book", value = ".*")
+    public Book bookTransformer(String bookName) {
+    	return new Book(bookName);
+    }
 
-        typeRegistry.defineDataTableType(new DataTableType(
-            ItemQuantity.class,
-            (String s) -> new ItemQuantity(s))
-        );
+    @DocStringType(contentType = "book_list")
+    public List<Book> defineBookList(String docstring) {
+        return Stream.of(docstring.split("\\s")).map(Book::new).collect(Collectors.toList());
+    }
 
-	typeRegistry.defineDocStringType(new DocStringType(
-	    StringBuilder.class,
-	    "stringbuilder",
-	    (String s) -> new StringBuilder(s))
-	);
-	    
+    @Given("There are my favorite authors")
+    public void authorsStep(List<Author> authors) {
+        // step implementation
+    }
+
+    @Given("{book} is my favorite book")
+    public void bookStep(Book book) {
+        // step implementation
+    }
+
+    @Given("There is a list of the literature")
+    public void literatureListStep(List<Book> list) {
+        // step implementation
     }
 }
+
 ```
 
 ```kotlin
-package com.example
 
-import cucumber.api.TypeRegistryConfigurer
-import cucumber.api.TypeRegistry
-import io.cucumber.datatable.DataTableType
-import io.cucumber.datatable.TableEntryTransformer
-import java.util.Locale
-import java.util.Locale.ENGLISH
+package com.example.app;
 
-class TypeRegistryConfiguration : TypeRegistryConfigurer {
 
-    override fun locale(): Locale {
-        return ENGLISH
+import io.cucumber.java.DataTableType
+import io.cucumber.java.DocStringType
+import io.cucumber.java.ParameterType
+import io.cucumber.java.en.Given
+import kotlin.streams.toList
+
+
+class Steps {
+
+    @DataTableType
+    fun authorEntryTransformer(entry: Map<String, String>): Author {
+        return Author(
+                entry["firstName"],
+                entry["lastName"],
+                entry["famousBook"])
     }
 
-    override fun configureTypeRegistry(typeRegistry: TypeRegistry) {
-        typeRegistry.defineDataTableType(DataTableType(
-                Person::class.java,
-                TableEntryTransformer<Person>
-                { map: Map<String, String> ->
-                    Person(map["first"], map["last"])
-                }))
+    @ParameterType(name = "book", value = ".*")
+    fun bookTransformer(bookName: String): Book {
+        return Book(bookName)
+    }
+
+    @DocStringType(contentType = "book_list")
+    fun  defineBookList(docstring: String): List<Book> {
+        return docstring.split("\\s".toRegex()).stream().map { Book(it) }.toList()
+    }
+
+    @Given("There are my favorite authors")
+    fun authorsStep(authors: List<Author>) {
+        // step implementation
+    }
+
+    @Given("{book} is my favorite book")
+    fun bookStep(book: Book) {
+        // step implementation
+    }
+
+    @Given("There is a list of the literature")
+    fun literatureListStep(list: List<Book>) {
+        // step implementation
     }
 }
 ```
 
-Using the TypeRegistryConfiguration it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this
-example) will handle the conversion of anonymous parameter types and data table entries.
-
+Using the `@DefaultParameterTransformer`, `@DefaultDataTableEntryTransformer` and `DefaultDataTableCellTransformer` annotations also possible to plugin an ObjectMapper. The object mapper (Jackson in this example) will handle the conversion of anonymous parameter types and data table entries.
 ```java
-package com.example;
+package io.cucumber.examples.java;
 
-import cucumber.api.TypeRegistry;
-import cucumber.api.TypeRegistryConfigurer;
-import io.cucumber.cucumberexpressions.ParameterByTypeTransformer;
-import io.cucumber.datatable.TableCellByTypeTransformer;
-import io.cucumber.datatable.TableEntryByTypeTransformer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.cucumber.java.DefaultDataTableCellTransformer;
+import io.cucumber.java.DefaultDataTableEntryTransformer;
+import io.cucumber.java.DefaultParameterTransformer;
 
 import java.lang.reflect.Type;
-import java.util.Locale;
-import java.util.Map;
 
-import static java.util.Locale.ENGLISH;
+public class ParameterTypes {
 
-public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
-    @Override
-    public Locale locale() {
-        return ENGLISH;
-    }
-
-    @Override
-    public void configureTypeRegistry(TypeRegistry typeRegistry) {
-        Transformer transformer = new Transformer();
-        typeRegistry.setDefaultDataTableCellTransformer(transformer);
-        typeRegistry.setDefaultDataTableEntryTransformer(transformer);
-        typeRegistry.setDefaultParameterTransformer(transformer);
-    }
-
-    private class Transformer implements ParameterByTypeTransformer, TableEntryByTypeTransformer, TableCellByTypeTransformer {
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        @Override
-        public Object transform(String s, Type type) {
-            return objectMapper.convertValue(s, objectMapper.constructType(type));
-        }
-
-        @Override
-        public <T> T transform(Map<String, String> map, Class<T> aClass, TableCellByTypeTransformer tableCellByTypeTransformer) {
-            return objectMapper.convertValue(map, aClass);
-        }
-
-        @Override
-        public <T> T transform(String s, Class<T> aClass) {
-            return objectMapper.convertValue(s, aClass);
-        }
-    }
-}
-```
-
-
-```kotlin
-package com.example
-
-import cucumber.api.TypeRegistryConfigurer
-import cucumber.api.TypeRegistry
-import io.cucumber.cucumberexpressions.ParameterByTypeTransformer
-import io.cucumber.datatable.TableCellByTypeTransformer
-import io.cucumber.datatable.TableEntryByTypeTransformer
-import com.fasterxml.jackson.databind.ObjectMapper
-
-import java.lang.reflect.Type
-import java.util.Locale
-import java.util.Map
-
-import static java.util.Locale.ENGLISH
-
-class TypeRegistryConfiguration : TypeRegistryConfigurer {
-
-    override fun locale(): Locale {
-        return ENGLISH
-    }
-
-    override fun configureTypeRegistry(typeRegistry: TypeRegistry) {
-        var transformer = Transformer()
-        typeRegistry.setDefaultDataTableCellTransformer(transformer)
-        typeRegistry.setDefaultDataTableEntryTransformer(transformer)
-        typeRegistry.setDefaultParameterTransformer(transformer)
-    }
-
-    class Transformer : ParameterByTypeTransformer, TableEntryByTypeTransformer, TableCellByTypeTransformer {
-        val objectMapper: ObjectMapper = ObjectMapper()
-
-        override fun transform(s: String, type: Type) {
-            return objectMapper.convertValue(s, objectMapper.constructType(type))
-        }
-
-        override fun transform(map: Map<String, String>, aClass: Class<T> , tableCellByTypeTransformer: TableCellByTypeTransformer): T  {
-            return objectMapper.convertValue(map, aClass)
-        }
-
-        override fun transform(s: String, aClass: Class<T>): T {
-            return objectMapper.convertValue(s, aClass)
-        }
+    @DefaultParameterTransformer
+    @DefaultDataTableEntryTransformer
+    @DefaultDataTableCellTransformer
+    public Object transformer(Object fromValue, Type toValueType) {
+        return objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
     }
 }
 ```
