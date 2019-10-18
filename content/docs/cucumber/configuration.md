@@ -64,7 +64,8 @@ public class Steps {
     public void literatureListStep(List<Book> list) {
         // step implementation
     }
-```java    
+```
+
 ```kotlin
 
 package com.example.app;
@@ -111,10 +112,6 @@ class Steps {
     fun literatureListStep(list: List<Book>) {
         // step implementation
     }
-
-    public class Book(var name: String)
-
-    public class Author(name: String?, surName: String?, famousBook: String?)
 }
 ```
 
