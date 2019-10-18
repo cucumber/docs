@@ -15,129 +15,82 @@ polyglot:
 # Type Registry
 
 {{% block "java,kotlin" %}}
-The type registry is used to configure parameter types and data table types. It can be configured by placing an implementation
-of `io.cucumber.core.api.TypeRegistryConfigurer` on the glue path.
+Parameter types let you convert parameters from cucumber-expressions to objects. Data table and doc string string
+types let you convert data tables and doc strings to objects. Like step definitions type definitions are part of the
+glue. When placed on the glue path Cucumber will detect them automatically.
 
-For instance, the following class registers a `ParameterType` of type Integer, and a `DataTableType` of type ItemQuantity:
+For instance, the following class registers a `ParameterType` of type Color, and a `DataTableType` of type Person:
 
 ```java
 package com.example;
 
-import io.cucumber.core.api.TypeRegistry;
-import io.cucumber.core.api.TypeRegistryConfigurer;
-import io.cucumber.cucumberexpressions.ParameterType;
-import io.cucumber.datatable.DataTableType;
+import io.cucumber.java.DataTableType;
+import io.cucumber.java.ParameterType;
 
-import java.util.Locale;
+import java.util.Map;
 
 import static java.util.Locale.ENGLISH;
 
-public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
+public class StepDefinitions {
 
-    @Override
-    public Locale locale() {
-        return ENGLISH;
+    @ParameterType("red|blue|yellow")
+    public Color color(String color){
+        return new Color(color);
     }
-
-    @Override
-    public void configureTypeRegistry(TypeRegistry typeRegistry) {
-        typeRegistry.defineParameterType(new ParameterType<>(
-            "digit",
-            "[0-9]",
-            Integer.class,
-            (String s) -> Integer.parseInt(s))
-        );
-
-        typeRegistry.defineDataTableType(new DataTableType(
-            ItemQuantity.class,
-            (String s) -> new ItemQuantity(s))
-        );
+    
+    @DataTableType
+    public Person person(Map<String, String> entry){
+        return new Person(entry.get("first"), entry.get("last"));
     }
 }
 ```
 
 ```kotlin
-package com.example
+package com.example.kotlin
 
-import io.cucumber.core.api.TypeRegistryConfigurer
-import io.cucumber.core.api.TypeRegistry
-import io.cucumber.datatable.DataTableType
-import io.cucumber.datatable.TableEntryTransformer
-import java.util.Locale
-import java.util.Locale.ENGLISH
+import io.cucumber.java8.En
 
-class TypeRegistryConfiguration : TypeRegistryConfigurer {
+class LambdaStepDefinitions : En {
 
-    override fun locale(): Locale {
-        return ENGLISH
-    }
+    init {
+        ParameterType("color", "red|blue|yellow") { s : String ->
+            Color.getColor(s)
+        }
 
-    override fun configureTypeRegistry(typeRegistry: TypeRegistry) {
-        typeRegistry.defineDataTableType(DataTableType(
-                Person::class.java,
-                TableEntryTransformer<Person>
-                { map: Map<String, String> ->
-                    Person(map["first"], map["last"])
-                }))
+        DataTableType { entry: Map<String, String> ->
+            Person(entry["first"], entry["last"])
+        }
     }
 }
 ```
 
-Using the TypeRegistryConfiguration it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this
+Using the it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this
 example) will handle the conversion of anonymous parameter types and data table entries.
 
 ```java
 package com.example;
 
-import io.cucumber.core.api.TypeRegistry;
-import io.cucumber.core.api.TypeRegistryConfigurer;
-import io.cucumber.cucumberexpressions.ParameterByTypeTransformer;
-import io.cucumber.datatable.TableCellByTypeTransformer;
-import io.cucumber.datatable.TableEntryByTypeTransformer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.cucumber.java.DefaultDataTableCellTransformer;
+import io.cucumber.java.DefaultDataTableEntryTransformer;
+import io.cucumber.java.DefaultParameterTransformer;
 
 import java.lang.reflect.Type;
-import java.util.Locale;
-import java.util.Map;
 
-import static java.util.Locale.ENGLISH;
+public class StepDefinitions {
 
-public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
-    @Override
-    public Locale locale() {
-        return ENGLISH;
-    }
-
-    @Override
-    public void configureTypeRegistry(TypeRegistry typeRegistry) {
-        Transformer transformer = new Transformer();
-        typeRegistry.setDefaultDataTableCellTransformer(transformer);
-        typeRegistry.setDefaultDataTableEntryTransformer(transformer);
-        typeRegistry.setDefaultParameterTransformer(transformer);
-    }
-
-    private class Transformer implements ParameterByTypeTransformer, TableEntryByTypeTransformer, TableCellByTypeTransformer {
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        @Override
-        public Object transform(String s, Type type) {
-            return objectMapper.convertValue(s, objectMapper.constructType(type));
-        }
-
-        @Override
-        public <T> T transform(Map<String, String> map, Class<T> aClass, TableCellByTypeTransformer tableCellByTypeTransformer) {
-            return objectMapper.convertValue(map, aClass);
-        }
-
-        @Override
-        public <T> T transform(String s, Class<T> aClass) {
-            return objectMapper.convertValue(s, aClass);
-        }
+    @DefaultParameterTransformer
+    @DefaultDataTableEntryTransformer
+    @DefaultDataTableCellTransformer
+    public Object transformer(Object fromValue, Type toValueType) {
+        return objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
     }
 }
 ```
 
+//TODO: Need default transformers
 
 ```kotlin
 package com.example
@@ -227,7 +180,7 @@ For more information on how to use `Data Tables` with Cucumber-js, please see th
 
 ## Recommended location
 
-The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/com/example/TypeRegistryConfiguration.kt`.{{% /text %}}
+The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/ParameterTypes.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/com/example/ParameterTypes.kt`.{{% /text %}}
 This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java,kotlin" %}} on the glue path.{{% /text %}}
 
 # Profiles

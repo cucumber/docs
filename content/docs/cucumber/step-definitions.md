@@ -32,7 +32,7 @@ The `I have 48 cukes in my belly` part of the step (the text following the `Give
 package com.example;
 import io.cucumber.java.en.Given;
 
-public class MyStepdefs {
+public class StepDefinitions {
     @Given("I have {int} cukes in my belly")
     public void i_have_n_cukes_in_my_belly(int cukes) {
         System.out.format("Cukes: %n\n", cukes);
@@ -46,8 +46,8 @@ Or, using Java8 lambdas:
 package com.example;
 import io.cucumber.java8.En;
 
-public class MyStepdefs implements En {
-    public MyStepdefs() {
+public class StepDefinitions implements En {
+    public StepDefinitions() {
         Given("I have {int} cukes in my belly", (Integer cukes) -> {
             System.out.format("Cukes: %n\n", cukes);
         });
@@ -62,7 +62,7 @@ public class MyStepdefs implements En {
 package com.example
 import io.cucumber.java8.En
 
-class MyStepdefs : En {
+class StepDefinitions : En {
 
     init {
         Given("I have {int} cukes in my belly") { cukes: Int ->
@@ -81,7 +81,7 @@ class MyStepdefs : En {
 package com.example
 import io.cucumber.java8.En
 
-class MyStepdefs : En {
+class StepDefinitions : En {
 
     init {
         Given("I have {int} cukes in my belly") { cukes: Int ->
