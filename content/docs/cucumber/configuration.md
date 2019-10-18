@@ -114,6 +114,59 @@ class Steps {
     }
 }
 ```
+For lambda defined step definitions, there are `DataTableType`, `ParameterType` and `DocStringType` functions:
+
+```java
+package com.example.app;
+
+import io.cucumber.java8.En;
+
+import java.util.Map;
+import java.util.stream.Stream;
+
+public class LambdaSteps implements En {
+    
+    public LambdaSteps() {
+        
+        DataTableType((Map<String, String> entry) -> new Author(
+            entry.get("firstName"),
+            entry.get("lastName"),
+            entry.get("famousBook")
+        ));
+
+
+        ParameterType("book", ".*", (String bookName) -> new Book(bookName));
+
+        DocStringType("book_list", (String docstring) -> {
+            return Stream.of(docstring.split("\\s"))
+                .map(Book::new)
+		.toArray(Book[]::new);
+        });
+    }
+}
+```
+```kotlin
+package com.example.kotlin
+
+import io.cucumber.java8.En
+
+class LambdaStepDefinitions : En {
+
+    init {
+        ParameterType("book", ".*") { s : String ->
+            Book(s)
+        }
+
+        DataTableType { entry: Map<String, String> ->
+            Author(entry["firstName"], entry["lastName"], entry["famousBook"])
+        }
+
+        DocStringType("book_list") { docstring : String ->
+            docstring.split("\\s".toRegex()).stream().map { Book(it) }.toArray()
+        }
+    }
+}
+```
 
 Using the `@DefaultParameterTransformer`, `@DefaultDataTableEntryTransformer` and `DefaultDataTableCellTransformer` annotations also possible to plugin an ObjectMapper. The object mapper (Jackson in this example) will handle the conversion of anonymous parameter types and data table entries.
 
