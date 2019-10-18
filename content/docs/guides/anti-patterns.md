@@ -81,7 +81,7 @@ The{{% text "kotlin" %}}`edit_work_experience_steps.kt`{{% /text %}}
 {{% text "ruby" %}}`edit_work_experience_steps.rb`{{% /text %}}could be implemented like this:
 
 ```java
-    @Given("^I have a CV and I'm on the edit description page$")
+    @Given("I have a CV and I'm on the edit description page")
     public void I_have_a_CV_and_Im_on_the_edit_description_page() {
         Employee employee = new Employee("Sally");
         employee.createCV();
@@ -89,7 +89,7 @@ The{{% text "kotlin" %}}`edit_work_experience_steps.kt`{{% /text %}}
 ```
 
 ```kotlin
-@Given("^I have a CV and I'm on the edit description page$")
+@Given("I have a CV and I'm on the edit description page")
 fun I_have_a_CV_and_Im_on_the_edit_description_page() {
     val employee = Employee("Sally")
     employee.createCV()
@@ -162,7 +162,7 @@ In Cucumber-js calling steps from step definitions is not supported; this is *by
 The best way to achieve composition and reuse, is to use the features of your programming language. If you want to combine
 several actions into one step, extract individual (helper) methods and call these methods from your step definition.
 
-To make your life easier, strive to keep your steps atomic as much as possible.
+You want to strive to keep your steps atomic as much as possible.
 
 # More information
 For more information on anti-patterns, see [Cucumber Anti-Patterns (blog)](http://www.thinkcode.se/blog/2016/06/22/cucumber-antipatterns).

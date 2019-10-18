@@ -59,7 +59,7 @@ To run Cucumber with [Gradle](https://gradle.org/), make sure that:
 
 Steps:
 
-1.  Create a new Gradle project or look at [java-gradle](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle) example on Github
+1.  Create a new Gradle project or look at [gradle-cucumber-runner](https://github.com/tsundberg/gradle-cucumber-runner) example on Github
 2.  If you are going to use Gradle **4.10.3 or older**, add this dependency block to `build.gradle`.
     ```groovy
     dependencies {
@@ -99,7 +99,7 @@ Steps:
         dependsOn assemble, compileTestJava
         doLast {
             javaexec {
-                main = "cucumber.api.cli.Main"
+                main = "io.cucumber.core.cli.Main"
                 classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
                 args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
             }

@@ -5,7 +5,7 @@ subtitle: Design examples, break down requirements
 
 Before you pull a user story into development, it’s crucial to have a conversation to clarify and confirm the acceptance criteria.
 
-Example Mapping is a simple method to make this conversation short and very productive.
+Example Mapping is a method designed to make this conversation short and very productive.
 
 # How it works
 

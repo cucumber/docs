@@ -49,8 +49,8 @@ import static org.junit.Assert.*;
 
 public class Example {
 
-    @Then("^the result should be (.+)$")
-    public void the_result_should_be(String expectedResult) {
+    @Then("the result should be {int}")
+    public void the_result_should_be(int expectedResult) {
         assertEquals(expectedResult, result);
     }
 }
@@ -142,7 +142,7 @@ Realize that tests/assertions/expectations either “pass” or “fail” (rais
 Anything besides “fail” is a pass.
 
 When, in RSpec, `something.should_be 0` and it is not, then what is returned is an error exception, not a Boolean value.
-In Cucumber, one writes `fail if false` and not simply `false`.
+In Cucumber, one writes `fail if false` and not only `false`.
 This is because `false` might be the expected successful outcome of a test, and thus not an error.
 
 Sometimes however, we wish to test how our application handles an exception and therefore do not want that exception

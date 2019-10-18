@@ -21,7 +21,7 @@ We recommend executing Cucumber from one of these on a CI server.
 
 # Rake
 
-If your CI server is using [Rake](/docs/tools/ruby#rake), just make sure
+If your CI server is using [Rake](/docs/tools/ruby#rake), make sure
 that Rake executes your Cucumber task.
 
 # Ant JUnit output
@@ -31,7 +31,7 @@ and display them as HTML. Some can even create reports over time.
 
 If you're using such a CI server, we recommend you use Cucumber with the `JUnit` formatter.
 
-> To get started using Cucumber in [Jenkins](http://jenkins-ci.org/), just add a build step running
+> To get started using Cucumber in [Jenkins](http://jenkins-ci.org/), add a build step running
 > `cucumber -f junit --out WORKSPACE` and then check the
 > 'Publish JUnit test result report', and enter `\*.xml` in the 'Test report XMLs' field.
 > Save and run. (Later improve by using a Rake task and placing your output in a subfolder).

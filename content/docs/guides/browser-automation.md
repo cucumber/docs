@@ -29,28 +29,28 @@ Scenario: Finding some cheese
 ```
 
 ```java
-package class.example;
+package com.example;
 
-import cucumber.api.java.After;
+import io.cucumber.java.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class ExampleSteps {
 
     private final WebDriver driver = new FirefoxDriver();
-    @Given("^I am on the Google search page$")
+    @Given("I am on the Google search page")
     public void I_visit_google() {
     driver.get("https:\\www.google.com");
    }
 
-   @When("^I search for \"(.*)\"$")
+   @When("I search for {string}")
      public void search_for(String query) {
         WebElement element = driver.findElement(By.name("q"));
         // Enter something to search for
@@ -59,7 +59,7 @@ public class ExampleSteps {
         element.submit();
    }
 
-   @Then("^the page title should start with \"(.*)\"$")
+   @Then("the page title should start with {string}")
    public void checkTitle(String titleStartsWith) {
        // Google's search is rendered dynamically with JavaScript
        // Wait for the page to load timeout after ten seconds
@@ -78,10 +78,10 @@ public class ExampleSteps {
 ```
 
 ```kotlin
-package class.example;
+package com.example;
 
-import cucumber.api.Scenario
-import cucumber.api.java8.En
+import io.cucumber.java8.Scenario
+import io.cucumber.java8.En
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
@@ -92,11 +92,11 @@ class ExampleSteps: En {
     lateinit var driver: WebDriver
 
     init {
-        Given("^I am on the Google search page$") {
+        Given("I am on the Google search page") {
             driver.get("https:\\www.google.com")
         }
 
-        When("^I search for \"(.*)\"$") { query: String ->
+        When("I search for {string}") { query: String ->
             val element: WebElement = driver.findElement(By.name("q"));
             // Enter something to search for
             element.sendKeys(query)
@@ -104,7 +104,7 @@ class ExampleSteps: En {
             element.submit()
         }
 
-        Then("^the page title should start with \"(.*)\"$") { titleStartsWith: String ->
+        Then("the page title should start with {string}") { titleStartsWith: String ->
             // Google's search is rendered dynamically with JavaScript
             // Wait for the page to load timeout after ten seconds
             WebDriverWait(driver, 10L).until { d ->
@@ -201,7 +201,7 @@ A detailed tutorial on using Cucumber-JVM with Serenity can be found
 
 {{% text "ruby" %}}
 
-Watir (pronounced _water_), is an open-source (BSD), family of Ruby libraries for automating web browsers. It allows you to write tests that are easy to read and maintain. It is simple and flexible.
+Watir (pronounced _water_), is an open-source (BSD), family of Ruby libraries for automating web browsers. It allows you to write tests that are easier to read and maintain. It is straightforward and flexible.
 
 Watir drives browsers the same way people do. It clicks links, fills in forms, presses buttons. Watir also checks results, such as whether expected text appears on the page.
 
@@ -225,7 +225,7 @@ describe "google.com" do
 end
 ```
 
-Now let us incorporate Cucumber to this simple test
+Now let us incorporate Cucumber to this test:
 
 ```gherkin
 Feature: Search In order to use Google users must be able to search for content
@@ -404,7 +404,7 @@ browser=chrome cucumber
 mvn test -Dbrowser=chrome
 ```
 
-If you are using Serenity, simply pass the `driver` system property (no extra coding required):
+If you are using Serenity, pass the `driver` system property (no extra coding required):
 
 ```
 mvn test -Ddriver=chrome

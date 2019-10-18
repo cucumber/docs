@@ -16,7 +16,7 @@ to a [Step Definition](/docs/cucumber/step-definitions). You can use
 [Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression) or *Cucumber Expressions*.
 
 Cucumber Expressions offer similar functionality to Regular Expressions, with a syntax 
-that is easier to read and write. Cucumber Expressions are also
+that is more human to read and write. Cucumber Expressions are also
 extensible with *parameter types*.
 
 # Introduction
@@ -56,7 +56,7 @@ Parameter Type  | Description
 `{int}`         | Matches integers, for example `71` or `-19`.
 `{float}`       | Matches floats, for example `3.6`, `.8` or `-9.2`.
 `{word}`        | Matches words without whitespace, for example `banana` (but not `banana split`)
-`{string}`      | Matches single-quoted or double-quoted strings, for example `"banana split"` or `'banana split'` (but not `banana split`). Only the text between the quotes will be extracted. The quotes themselves are discarded.
+`{string}`      | Matches single-quoted or double-quoted strings, for example `"banana split"` or `'banana split'` (but not `banana split`). Only the text between the quotes will be extracted. The quotes themselves are discarded. Empty pairs of quotes are valid and will be matched and passed to step code as empty strings.
 `{}` anonymous  | Matches anything (`/.*/`). 
 
 {{% block "java,kotlin" %}}
@@ -82,23 +82,19 @@ we can define a custom parameter type in Cucumber's [configuration](/docs/cucumb
 
 {{% block "java" %}}
 ```java
-typeRegistry.defineParameterType(new ParameterType<>(
-    "color",           // name
-    "red|blue|yellow", // regexp
-    Color.class,       // type
-    Color::new         // transformer function
-))
+@ParameterType("red|blue|yellow")  // regexp
+public Color color(String color){  // type, name (from method)
+    return new Color(color);       // transformer function
+}
 ```
 {{% /block %}}
 
 {{% block "kotlin" %}}
+//TODO:
 ```kotlin
-typeRegistry.defineParameterType(ParameterType<Color>(
-    "color",                            // name
-    "red|blue|yellow",                  // regexp
-    Color::class.java,                  // type
-    { s: String -> Color.getColor(s) }  // transformer function
-))
+ParameterType("color", "red|blue|yellow") { s : String ->  // name, regexp
+    Color.getColor(s)                                      // transformer function
+}                                                          // type (derived by return type of transformer function)
 ```
 {{% /block %}}
 
@@ -106,7 +102,7 @@ typeRegistry.defineParameterType(ParameterType<Color>(
 ```javascript
 const { defineParameterType } = require('cucumber')
 
-defineParameterType(new ParameterType<>(
+defineParameterType(new ParameterType(
     'color',           // name
     /red|blue|yellow/, // regexp
     Color,             // type

@@ -100,37 +100,6 @@ You can now run Cucumber [from the command line](/docs/cucumber/api/#from-the-co
 
 It is also possible to use [cucumber-junit](/docs/cucumber/api/#junit) to run your Cucumber test suite.
 
-# Snapshot releases
-
-To take advantage of functionality that has been committed to the git `master` branch, but hasn't been released to the central Maven repo yet, you can use `SNAPSHOT` builds from the [sonatype snapshot repo](https://oss.sonatype.org/content/repositories/snapshots/io/cucumber/).
-
-If you are using Maven, add the sonatype repository to your `pom.xml`:
-
-```xml
-<repository>
-    <id>sonatype-snapshots</id>
-    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    <snapshots>
-        <enabled>true</enabled>
-    </snapshots>
-</repository>
-```
-
-Then, add a dependency to the snapshot version to your `pom.xml`:
-
-```xml
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-java</artifactId>
-    <version>{{% version "cucumberjvm-snapshot" %}}</version>
-    <scope>test</scope>
-</dependency>
-```
-
-You can find the current snapshot version number [here](https://github.com/cucumber/cucumber-jvm/blob/master/pom.xml).
-
-If you are using Gradle, check the [build.gradle](https://github.com/cucumber/cucumber-java-skeleton/blob/master/build.gradle) file in the cucumber-java-skeleton project.
-
 # Assertions
 
 Cucumber does not come with an assertion library. Instead, use the assertion methods

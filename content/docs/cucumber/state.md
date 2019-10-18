@@ -264,7 +264,7 @@ To use this approach, you need to tell Cucumber to start a transaction in a `Bef
 roll it back in an `After`[hook](/docs/cucumber/api/#hooks).
 
 This is such a common thing to do that several Cucumber extensions provide ready-to-use
-[tagged hooks](/docs/cucumber/api/#tagged-hooks) using a tag named `@txn`.
+[conditional hooks](/docs/cucumber/api/#conditional-hooks) using a tag named `@txn`.
 
 To enable it, you must tag every [feature](/docs/gherkin/reference#feature) or [scenario](/docs/gherkin/reference#example) that requires
 transactions with `@txn`:
@@ -282,18 +282,6 @@ Feature: Let's write a lot of stuff to the DB
 
 ### With JUnit and Spring
 
-The [`cucumber-spring`](#spring) module contains `@txn` hooks in the `cucumber.api.spring` package.
-
-This package isn't on your glue path by default, so you have to add it yourself in your
-Cucumber Options.
-
-```java
-@RunWith(Cucumber.class)
-@CucumberOptions(glue = {"your.own.glue.code", "cucumber.api.spring"})
-public class RunCucumberTest {
-}
-```
-
 See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
 
 # Browser Automation and Transactions
@@ -308,7 +296,7 @@ Likewise, Cucumber's connection won't see data from the web server.
 In this case, you will have to turn off database transactions and make sure the data is explicitly deleted before each Scenario.
 
 ## Turn off transactions
-If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails) it's easy to turn off transactions for a feature or particular scenarios. Use the `@no-txn` tag, like this:
+If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), you can turn off transactions for a feature or particular scenarios. Use the `@no-txn` tag, like this:
 
 ```
 @no-txn

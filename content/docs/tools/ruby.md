@@ -50,7 +50,7 @@ libraries properly loaded.
 In fact, an important habit to acquire is to run Cucumber as a `rake` task immediately after performing a migration.
 This ensures that the test database schema is kept in sync with the development database schema.
 You can achieve the same effect by running `rake db:test:prepare` before your first Cucumber run following a migration
-but developing the habit of just running `rake cucumber` or `rake cucumber:wip` is probably the better course.
+but developing the habit of running `rake cucumber` or `rake cucumber:wip` is probably the better course.
 
 The Cucumber Rake task recognises the `@wip` Tag, so `rake cucumber:wip` will run only those scenarios tagged with **@wip**.
 

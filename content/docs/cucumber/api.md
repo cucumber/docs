@@ -120,7 +120,7 @@ Hooks are blocks of code that can run at various points in the Cucumber executio
 They are typically used for setup and teardown of the environment before and after each scenario.
 
 Where a hook is defined has no impact on what scenarios or steps it is run for.
-If you want more fine-grained control, you can use [tagged hooks](#tagged-hooks).
+If you want more fine-grained control, you can use [conditional hooks](#conditional-hooks).
 
 {{% text "java" %}}
 You can declare hooks in any class.
@@ -431,7 +431,7 @@ AfterStep { scenario: Scenario ->
 
 {{% block "javascript" %}}Cucumber.js does not support `AfterStep` hooks.{{% /block %}}
 
-## Tagged hooks
+## Conditional hooks
 
 Hooks can be conditionally selected for execution based on the tags of the scenario.
 To run a particular hook only for certain scenarios, you can associate a
@@ -486,7 +486,7 @@ See more documentation on [tags](#tags).
 ## Global Hooks
 
 {{% block "ruby" %}}
-A global hook will run once before any scenario is run. Simply put the
+A global hook will run once before any scenario is run. Put the
 code at the top-level in your `env.rb` file (or any other file under
 `features/support` directory).
 
@@ -555,7 +555,7 @@ Tags are a great way to organise your features and scenarios.
 They can be used for two purposes:
 
 * [Running a subset of scenarios](#running-a-subset-of-scenarios)
-* [Scoping hooks to a subset of scenarios](#tagged-hooks)
+* [Scoping hooks to a subset of scenarios](#conditional-hooks)
 
 Consider the following example:
 
@@ -571,7 +571,7 @@ Feature: Verify billing
     Given hello
 ```
 
-A feature or scenario or can have as many tags as you like. Just separate them with spaces:
+A feature or scenario can have as many tags as you like. Separate them with spaces:
 
 ```gherkin
 @billing @bicker @annoy
@@ -687,7 +687,7 @@ Another way to run a subset of scenarios is to use the `file.feature:line` patte
 {{% /tip %}}
 
 ### Tag expressions
-A tag expression is simply an *infix boolean expression*. Below are some examples:
+A tag expression is an *infix boolean expression*. Below are some examples:
 
 Expression           | Description
 ---------------------|---------------------------------------------------------:
@@ -843,7 +843,7 @@ cucumber
 The **Command-Line Interface Runner (CLI Runner)** is an executable Java class that can be run from the command-line.
 
 ```
-java cucumber.api.cli.Main
+java io.cucumber.core.cli.Main
 ```
 {{% /block %}}
 

@@ -36,7 +36,7 @@ to understand the scenarios, they must follow some basic syntax rules, called [G
 
 # What is Gherkin?
 
-Gherkin is a simple set of grammar rules that makes plain text structured enough
+Gherkin is a set of grammar rules that makes plain text structured enough
 for Cucumber to understand. The scenario above is written in Gherkin.
 
 Gherkin serves multiple purposes:

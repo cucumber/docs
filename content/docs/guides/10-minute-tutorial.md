@@ -1,6 +1,6 @@
 ---
 title: 10 Minute Tutorial
-subtitle: Get started in just 10 minutes
+subtitle: Get started in 10 minutes
 polyglot:
  - java
  - javascript
@@ -125,7 +125,7 @@ Open the project in IntelliJ IDEA:
 
 **With Gradle**
 
-You can use the following `build.gradle` file as an example template. Just use your IDE
+You can use the following `build.gradle` file as an example template. Use your IDE
 to start a new Gradle-based project.
 
 ```groovy
@@ -160,7 +160,7 @@ test {
 }
 ```
 
-Then add a file `src/test/hellocucumber/RunCucumberTest.java` inside the project
+Then add a file `src/test/java/hellocucumber/RunCucumberTest.java` inside the project
 to enable JUnit 5 integration:
 
 ```java
@@ -314,8 +314,8 @@ Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
 package hellocucumber
 
-import cucumber.api.CucumberOptions
-import cucumber.api.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
@@ -344,8 +344,8 @@ Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
 package hellocucumber
 
-import cucumber.api.CucumberOptions
-import cucumber.api.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
@@ -445,7 +445,7 @@ cucumber --init
 
 {{% /block %}}
 
-You now have a simple project with Cucumber installed.
+You now have a small project with Cucumber installed.
 
 # Verify Cucumber installation
 
@@ -560,7 +560,7 @@ The first line of this file starts with the keyword `Feature:` followed by a nam
 It's a good idea to use a name similar to the file name.
 
 The second line is a brief description of the feature. Cucumber does not
-execute this line, it's just documentation.
+execute this line because it's documentation.
 
 The fourth line, `Scenario: Sunday is not Friday` is a
 [scenario](/docs/gherkin/reference#example), which is a *concrete example* illustrating how
@@ -611,6 +611,9 @@ Feature: Is it Friday yet?
     When I ask whether it's Friday yet # null
     Then I should be told "Nope"       # null
 
+Undefined scenarios:
+hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
+
 1 Scenarios (1 undefined)
 3 Steps (3 undefined)
 0m0.040s
@@ -618,22 +621,22 @@ Feature: Is it Friday yet?
 
 You can implement missing steps with the snippets below:
 
-@Given("^today is Sunday$")
+@Given("today is Sunday")
 public void today_is_Sunday() {
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+    throw new io.cucumber.java.PendingException();
 }
 
-@When("^I ask whether it's Friday yet$")
+@When("I ask whether it's Friday yet")
 public void i_ask_whether_it_s_Friday_yet() {
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+    throw new io.cucumber.java.PendingException();
 }
 
-@Then("^I should be told \"([^\"]*)\"$")
-public void i_should_be_told(String arg1) {
+@Then("I should be told {string}")
+public void i_should_be_told(String string) {
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+    throw new io.cucumber.java.PendingException();
 }
 ```
 {{% /block %}}
@@ -721,28 +724,28 @@ Your `StepDefs.kt` file should now look like this:
 ```kotlin
 package hellocucumber
 
-import cucumber.api.PendingException
-import cucumber.api.java.en.Given
-import cucumber.api.java.en.When
-import cucumber.api.java.en.Then
+import io.cucumber.java.PendingException
+import io.cucumber.java.en.Given
+import io.cucumber.java.en.When
+import io.cucumber.java.en.Then
 import org.junit.Assert.*
 
 class StepDefs {
-    @Given("^today is Sunday$")
+    @Given("today is Sunday")
     @Throws(Exception::class)
     fun today_is_Sunday() {
         // Write code here that turns the phrase above into concrete actions
         throw PendingException()
     }
 
-    @When("^I ask whether it's Friday yet$")
+    @When("I ask whether it's Friday yet")
     @Throws(Exception::class)
     fun i_ask_whether_it_s_Friday_yet() {
         // Write code here that turns the phrase above into concrete actions
         throw PendingException()
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("I should be told {string}")
     @Throws(Exception::class)
     fun i_should_be_told(arg1: String) {
         // Write code here that turns the phrase above into concrete actions
@@ -768,20 +771,23 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
-      cucumber.api.PendingException: TODO: implement me
-	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:12)
-	at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
+      io.cucumber.java.PendingException: TODO: implement me
+	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:14)
+	at ?.today is Sunday(classpath:hellocucumber/is_it_friday_yet.feature:5)
 
     When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
+
+Pending scenarios:
+hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
 
 1 Scenarios (1 pending)
 3 Steps (2 skipped, 1 pending)
 0m0.188s
 
-cucumber.api.PendingException: TODO: implement me
-	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:12)
-	at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
+io.cucumber.java.PendingException: TODO: implement me
+	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:13)
+	at ?.today is Sunday(classpath:hellocucumber/is_it_friday_yet.feature:5)
 ```
 {{% /block %}}
 
@@ -796,7 +802,7 @@ Feature: Is it Friday yet?
 
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # StepDefs.today_is_Sunday()
-      cucumber.api.PendingException: TODO: implement me
+      io.cucumber.java.PendingException: TODO: implement me
         at hellocucumber.StepDefs.today_is_Sunday(StepDefs.kt:14)
         at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
 
@@ -807,7 +813,7 @@ Feature: Is it Friday yet?
 3 Steps (2 skipped, 1 pending)
 0m0.107s
 
-cucumber.api.PendingException: TODO: implement me
+io.cucumber.java.PendingException: TODO: implement me
         at hellocucumber.StepDefs.today_is_Sunday(StepDefs.kt:14)
         at ✽.today is Sunday(hellocucumber/is_it_friday_yet.feature:5)
 
@@ -867,8 +873,7 @@ Try to use the same words in the code as in the steps.
 If the words in your steps originated from conversations during an
 [Example Mapping](/docs/bdd/example-mapping) session, you're building a
 [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html),
-which is a great way to make your production code and test easier to understand
-and maintain.
+which we believe is a great way to make your production code and tests more understandable and easier to maintain.
 {{% /tip %}}
 
 Change your step definition code to this:
@@ -877,9 +882,9 @@ Change your step definition code to this:
 ```java
 package hellocucumber;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
 import static org.junit.Assert.*;
 
 class IsItFriday {
@@ -892,17 +897,17 @@ public class Stepdefs {
     private String today;
     private String actualAnswer;
 
-    @Given("^today is Sunday$")
+    @Given("today is Sunday")
     public void today_is_Sunday() {
         today = "Sunday";
     }
 
-    @When("^I ask whether it's Friday yet$")
+    @When("I ask whether it's Friday yet")
     public void i_ask_whether_it_s_Friday_yet() {
         actualAnswer = IsItFriday.isItFriday(today);
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("I should be told {string}")
     public void i_should_be_told(String expectedAnswer) {
         assertEquals(expectedAnswer, actualAnswer);
     }
@@ -914,9 +919,9 @@ public class Stepdefs {
 ```kotlin
 package hellocucumber
 
-import cucumber.api.java.en.Then
-import cucumber.api.java.en.Given
-import cucumber.api.java.en.When
+import io.cucumber.java.en.Then
+import io.cucumber.java.en.Given
+import io.cucumber.java.en.When
 import junit.framework.Assert.assertEquals
 
 
@@ -927,17 +932,17 @@ class StepDefs {
     private lateinit var today: String
     private lateinit var actualAnswer: String
 
-    @Given("^today is Sunday$")
+    @Given("today is Sunday")
     fun today_is_Sunday() {
         today = "Sunday"
     }
 
-    @When("^I ask whether it's Friday yet$")
+    @When("I ask whether it's Friday yet")
     fun i_ask_whether_it_s_Friday_yet() {
         actualAnswer = isItFriday(today)
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("I should be told {string}")
     fun i_should_be_told(expectedAnswer: String) {
         assertEquals(expectedAnswer, actualAnswer)
     }
@@ -1011,8 +1016,8 @@ Feature: Is it Friday yet?
 	at org.junit.Assert.failNotEquals(Assert.java:834)
 	at org.junit.Assert.assertEquals(Assert.java:118)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:30)
-	at ✽.I should be told "Nope"(hellocucumber/is_it_friday_yet.feature:7)
+	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:31)
+	at ?.I should be told "Nope"(classpath:hellocucumber/is_it_friday_yet.feature:7)
 
 
 Failed scenarios:
@@ -1094,8 +1099,7 @@ That's progress! The first two steps are passing, but the last one is failing.
 
 # See scenario reported as passing
 
-Let's do the simplest possible thing to make the scenario pass. In this case,
-that's simply to make our {{% stepdef-body %}} return `Nope`:
+Let's do the minimum we need to make the scenario pass. In this case, that means making our {{% stepdef-body %}} return `Nope`:
 
 {{% block "java" %}}
 ```java
@@ -1199,16 +1203,16 @@ We'll need to add a step definition to set `today` to "Friday":
 
 {{% block "java" %}}
 ```java
-@Given("^today is Friday$")
+@Given("today is Friday")
 public void today_is_Friday() {
-    this.today = "Friday";
+    today = "Friday";
 }
 ```
 {{% /block %}}
 
 {{% block "kotlin" %}}
 ```kotlin
-@Given("^today is Friday$")
+@Given("today is Friday")
 fun today_is_Friday() {
     today = "Friday"
 }
@@ -1236,36 +1240,41 @@ When we run this test, it will fail.
 
 {{% block "java" %}}
 ```shell
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
 Running hellocucumber.RunCucumberTest
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
-  Scenario: Sunday isn't Friday        # hellocucumber/isitfriday.feature:4
-    Given today is "Sunday"            # Stepdefs.today_is(String)
+  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+    Given today is Sunday              # Stepdefs.today_is_Sunday()
     When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
-  Scenario: Friday is Friday           # hellocucumber/is_it_friday.feature:9
-    Given today is "Friday"            # Stepdefs.today_is(String)
+  Scenario: Friday is Friday           # hellocucumber/is_it_friday_yet.feature:9
+    Given today is Friday              # Stepdefs.today_is_Friday()
     When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
       org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:26)
-	at ✽.I should be told "TGIF"(hellocucumber/is_it_friday.feature:12)
+	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:36)
+	at ?.I should be told "TGIF"(classpath:hellocucumber/is_it_friday_yet.feature:12)
 
 
-org.junit.ComparisonFailure:
-Expected :TGIF
-Actual   :Nope
- <Click to see difference>
+Failed scenarios:
+hellocucumber/is_it_friday_yet.feature:9 # Friday is Friday
 
+2 Scenarios (1 failed, 1 passed)
+6 Steps (1 failed, 5 passed)
+0m0.085s
 
+org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:26)
-	at ✽.I should be told "TGIF"(hellocucumber/is_it_friday.feature:12)
+	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:36)
+	at ?.I should be told "TGIF"(classpath:hellocucumber/is_it_friday_yet.feature:12)
 ```
 {{% /block %}}
 
@@ -1415,18 +1424,18 @@ Running hellocucumber.RunCucumberTest
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
-  Scenario: Friday is Friday           # hellocucumber/is_it_friday_yet.feature:4
-    Given today is Friday              # Stepdefs.today_is_Sunday()
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
-    Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
-
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
     When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
     Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
 
-2 scenarios (2 passed)
-6 steps (6 passed)
+  Scenario: Friday is Friday           # hellocucumber/is_it_friday_yet.feature:9
+    Given today is Friday              # Stepdefs.today_is_Friday()
+    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "TGIF"       # Stepdefs.i_should_be_told(String)
+
+2 Scenarios (2 passed)
+6 Steps (6 passed)
 0m0.255s
 ```
 {{% /block %}}
@@ -1488,14 +1497,14 @@ Update the {{% text "java" %}}`Stepdefs.java`{{% /text %}}{{% text "javascript" 
 ```java
 package hellocucumber;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
 import static org.junit.Assert.*;
 
 class IsItFriday {
     static String isItFriday(String today) {
-	return "Friday".equals(today) ? "TGIF" : "Nope";
+        return "Friday".equals(today) ? "TGIF" : "Nope";
     }
 }
 
@@ -1503,17 +1512,17 @@ public class Stepdefs {
     private String today;
     private String actualAnswer;
 
-    @Given("^today is \"([^\"]*)\"$")
+    @Given("today is {string}")
     public void today_is(String today) {
         this.today = today;
     }
 
-    @When("^I ask whether it's Friday yet$")
+    @When("I ask whether it's Friday yet")
     public void i_ask_whether_it_s_Friday_yet() {
-        this.actualAnswer = IsItFriday.isItFriday(today);
+        actualAnswer = IsItFriday.isItFriday(today);
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("I should be told {string}")
     public void i_should_be_told(String expectedAnswer) {
         assertEquals(expectedAnswer, actualAnswer);
     }
@@ -1525,9 +1534,9 @@ public class Stepdefs {
 ```kotlin
 package hellocucumber
 
-import cucumber.api.java.en.Then
-import cucumber.api.java.en.Given
-import cucumber.api.java.en.When
+import io.cucumber.java.en.Then
+import io.cucumber.java.en.Given
+import io.cucumber.java.en.When
 import junit.framework.Assert.assertEquals
 
 
@@ -1538,17 +1547,17 @@ class StepDefs {
     private lateinit var today: String
     private lateinit var actualAnswer: String
 
-    @Given("^today is \"([^\"]*)\"$")
+    @Given("today is {string}")
     fun today_is(today: String) {
         this.today = today
     }
 
-    @When("^I ask whether it's Friday yet$")
+    @When("I ask whether it's Friday yet")
     fun i_ask_whether_it_s_Friday_yet() {
         actualAnswer = isItFriday(today)
     }
 
-    @Then("^I should be told \"([^\"]*)\"$")
+    @Then("I should be told {string}")
     fun i_should_be_told(expectedAnswer: String) {
         assertEquals(expectedAnswer, actualAnswer)
     }
@@ -1624,23 +1633,29 @@ Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
 
   Scenario Outline: Today is or is not Friday # hellocucumber/is_it_friday_yet.feature:4
-    Given today is <day>                      # hellocucumber/is_it_friday_yet.feature:5
-    When I ask whether it's Friday yet        # hellocucumber/is_it_friday_yet.feature:6
-    Then I should be told <answer>            # hellocucumber/is_it_friday_yet.feature:7
+    Given today is "<day>"
+    When I ask whether it's Friday yet
+    Then I should be told "<answer>"
 
-  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
-    Given today is Sunday              # Stepdefs.today_is_Sunday()
-    When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
-    Then I should be told "Nope"       # Stepdefs.i_should_be_told(String)
+    Examples: 
 
-    Examples:
-      | day              | answer |
-      | "Friday"         | "TGIF" |
-      | "Sunday"         | "Nope" |
-      | "anything else!" | "Nope" |
+  Scenario Outline: Today is or is not Friday # hellocucumber/is_it_friday_yet.feature:11
+    Given today is "Friday"                   # Stepdefs.today_is(String)
+    When I ask whether it's Friday yet        # Stepdefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "TGIF"              # Stepdefs.i_should_be_told(String)
 
-3 scenarios (3 passed)
-9 steps (9 passed)
+  Scenario Outline: Today is or is not Friday # hellocucumber/is_it_friday_yet.feature:12
+    Given today is "Sunday"                   # Stepdefs.today_is(String)
+    When I ask whether it's Friday yet        # Stepdefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "Nope"              # Stepdefs.i_should_be_told(String)
+
+  Scenario Outline: Today is or is not Friday # hellocucumber/is_it_friday_yet.feature:13
+    Given today is "anything else!"           # Stepdefs.today_is(String)
+    When I ask whether it's Friday yet        # Stepdefs.i_ask_whether_it_s_Friday_yet()
+    Then I should be told "Nope"              # Stepdefs.i_should_be_told(String)
+
+3 Scenarios (3 passed)
+9 Steps (9 passed)
 0m0.255s
 ```
 {{% /block %}}
@@ -1687,4 +1702,4 @@ Now that we have working code, we should do some refactoring:
 # Summary
 
 In this brief tutorial you've seen how to install Cucumber, how to follow
-the BDD process to develop a very simple {{% stepdef-body %}}, and how to use that {{% stepdef-body %}} to evaluate multiple scenarios!
+the BDD process to develop a {{% stepdef-body %}}, and how to use that {{% stepdef-body %}} to evaluate multiple scenarios!
