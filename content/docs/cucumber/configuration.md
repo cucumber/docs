@@ -218,6 +218,52 @@ class ParameterTypes {
     }
 }
 ```
+For lambda defined step definitions, there are `DefaultParameterTransformer`, `DefaultDataTableCellTransformer` and `DefaultDataTableEntryTransformer` functions:
+```java
+
+package com.example.app;
+
+import io.cucumber.java8.En;
+
+import com.fasterxml.jackson.databind.ObjectMapper
+
+public class LambdaSteps implements En {
+    
+    public LambdaSteps() {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        DefaultParameterTransformer((String fromValue, Type toValueType) ->
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
+
+        DefaultDataTableCellTransformer((fromValue, toValueType) ->
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
+
+        DefaultDataTableEntryTransformer((fromValue, toValueType) ->
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
+    }
+}    
+```
+
+```kotlin
+
+import com.fasterxml.jackson.databind.ObjectMapper
+
+import io.cucumber.java8.En
+import java.lang.reflect.Type
+
+class LambdaSteps : En {
+    init {
+        val objectMapper = ObjectMapper()
+
+        DefaultParameterTransformer { fromValue: String, toValueType: Type -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
+
+        DefaultDataTableCellTransformer { fromValue, toValueType -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
+
+        DefaultDataTableEntryTransformer { fromValue, toValueType -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
+    }
+}
+```
+
 {{% /block %}}
 
 {{% block "ruby" %}}
