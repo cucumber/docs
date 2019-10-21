@@ -55,7 +55,7 @@ import io.cucumber.java.en.Given
 import kotlin.streams.toList
 
 
-class Steps {
+class StepDefinitions {
 
     @DataTableType
     fun authorEntryTransformer(entry: Map<String, String>): Author {
@@ -103,7 +103,7 @@ import io.cucumber.java.en.Given
 import kotlin.streams.toList
 
 
-class Steps {
+class StepDefinitions {
 
     @ParameterType(name = "book", value = ".*")
     fun bookTransformer(bookName: String): Book {
@@ -240,7 +240,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 
 import java.lang.reflect.Type;
 
-public class ParameterTypes {
+public class StepDefinitions {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -287,7 +287,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 
 public class LambdaStepDefinitions implements En {
     
-    public LambdaSteps() {
+    public LambdaStepDefinitions() {
         ObjectMapper objectMapper = new ObjectMapper();
 
         DefaultParameterTransformer((String fromValue, Type toValueType) ->
@@ -309,7 +309,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import io.cucumber.java8.En
 import java.lang.reflect.Type
 
-class LambdaSteps : En {
+class LambdaStepDefinitions : En {
     init {
         val objectMapper = ObjectMapper()
 
