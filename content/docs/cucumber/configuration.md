@@ -160,7 +160,7 @@ class StepsDefinitions {
 
     @DocStringType(contentType = "shelf_json")
     @Throws(JsonProcessingException::class)
-    fun defineShelf(docstring: String): BookShelf {
+    fun shelfTransformer(docstring: String): BookShelf {
         return objectMapper.readValue(docstring, BookShelf::class)
     }
 
