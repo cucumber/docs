@@ -131,7 +131,7 @@ public class StepsDefinitions {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     @DocStringType(contentType = "shelf_json")
-    public BookShelf defineShelf(String docstring) throws JsonProcessingException {
+    public BookShelf shelfTransformer(String docstring) throws JsonProcessingException {
         return objectMapper.readValue(docstring, BookShelf.class);
     }
 
@@ -176,6 +176,7 @@ For lambda defined step definitions, there are `DataTableType`, `ParameterType` 
 ```java
 package com.example.app;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java8.En;
 
 import java.util.Map;
@@ -229,14 +230,12 @@ class LambdaStepDefinitions : En {
 Using the `@DefaultParameterTransformer`, `@DefaultDataTableEntryTransformer` and `DefaultDataTableCellTransformer` annotations also possible to plugin an ObjectMapper. The object mapper (Jackson in this example) will handle the conversion of anonymous parameter types and data table entries.
 
 ```java
-package com.example
+package com.example.app
 
-import io.cucumber.core.api.TypeRegistryConfigurer
-import io.cucumber.core.api.TypeRegistry
-import io.cucumber.cucumberexpressions.ParameterByTypeTransformer
-import io.cucumber.datatable.TableCellByTypeTransformer
-import io.cucumber.datatable.TableEntryByTypeTransformer
 import com.fasterxml.jackson.databind.ObjectMapper
+import io.cucumber.java.DefaultDataTableCellTransformer
+import io.cucumber.java.DefaultDataTableEntryTransformer
+import io.cucumber.java.DefaultParameterTransformer
 
 import java.lang.reflect.Type;
 
