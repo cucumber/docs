@@ -46,6 +46,15 @@ When you are done editing, build the site and check links:
     ./docker_shell.sh make
     ./docker_shell.sh make htmlproofer
 
+By default, external links are only checked in CI (because it takes a while).
+To check external links locally:
+
+    CI=true ./docker_shell.sh make htmlproofer
+
+Links that are broken should be removed or replaced, even if they are only
+temporarily broken. The reason for this is that broken links negatively affect
+search engine rankings.
+
 ### Modify theme
 
 See the [theme README](themes/cucumber-hugo/README.md)

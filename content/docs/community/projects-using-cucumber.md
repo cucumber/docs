@@ -17,7 +17,6 @@ Here is a list of projects using Cucumber:
 - [Diaspora](https://github.com/diaspora/diaspora)
 - [drush-make-ci](https://github.com/joshkoenig/drush-make-ci)
 - [Folioapp](https://github.com/jpatel531/folioapp)
-- [GitLab](https://github.com/gitlabhq/gitlabhq)
 - [Jekyll](https://github.com/jekyll/jekyll)
 - [Jeweler](https://github.com/technicalpickles/jeweler)
 - [OERPScenario (linked to OpenERP)](https://github.com/camptocamp/oerpscenario)

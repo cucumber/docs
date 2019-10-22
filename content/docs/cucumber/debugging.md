@@ -133,30 +133,12 @@ By setting an environment variable, you can tell Cucumber to use various debuggi
 {{% block "java,kotlin" %}}
 In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. 
 
-1. Set a conditional breakpoint on the part of the code you want to debug.
+1. Set a breakpoint on the part of the code you want to debug.
 
 This might be the line you are currently getting an Exception (see your stacktrace). 
 
-Or, if you don't know where to start, you can set a breakpoint in the method [`cucumber.runtime.Utils#invoke`](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/runtime/Utils.java), at the line `return targetMethod.invoke(target, args)` (line 26 in `cucumber-jvm` master at the time of writing) and specify the following snippet as the condition:
-
-```java
-Package pkg = target.getClass().getPackage();
-  if (pkg == null) {
-    return false;
-  }
-  return !target.getClass().getPackage().getName().startsWith("cucumber");
-```
-   
-```kotlin
-Package pkg = target.getClass().getPackage();
-  if (pkg == null) {
-    return false;
-  }
-  return !target.getClass().getPackage().getName().startsWith("cucumber");
-```
-
-2. Run your [RunCukesTest](https://github.com/cucumber/cucumber-java-skeleton/blob/master/src/test/java/skeleton/RunCukesTest.java) in debug mode
-3. Assuming you haven't set any other breakpoints, the execution will stop at `Utils#invoke`
+2. Run your [RunCucumberTest](https://github.com/cucumber/cucumber-java-skeleton/blob/master/src/test/java/io/cucumber/skeleton/RunCucumberTest.java) in debug mode
+3. The execution will stop at your breakpoint
 4. Now you can either:
    - *Step into* to start debugging the method implementing the first step of the scenario
    - Or *Resume* the execution to run the current step and jump to the next one

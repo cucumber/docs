@@ -73,7 +73,9 @@ end
 
 # To speed up local development, external links are only checked in CI:
 # https://app.netlify.com/sites/cucumber/settings/deploys
-external_link_check = ENV['EXTERNAL_LINK_CHECK'] == 'true'
+# To enable link checks locally, define CI=true
+puts "===================== ENV['CI']=#{ENV['CI']}"
+external_link_check = ENV['CI'] != 'false'
 options = {
   disable_external: !external_link_check
 }
