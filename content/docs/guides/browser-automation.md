@@ -426,8 +426,6 @@ mvn test -Ddriver=chrome
 {{% text "java,kotlin" %}}
 Here are a few example projects using Java and browser automation:
 
-- [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
-
 - [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)
 
 {{% /text %}}

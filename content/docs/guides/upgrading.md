@@ -21,8 +21,6 @@ Essentially, this means that:
 # Changelog
 You can read the history file to learn about the changes in every release:
 
-[cucumber changelog](https://github.com/cucumber/cucumber/blob/master/History.md)
-
 {{% block "ruby" %}}
 [cucumber-ruby changelog](https://github.com/cucumber/cucumber-ruby/blob/master/CHANGELOG.md)
 {{% /block %}}
