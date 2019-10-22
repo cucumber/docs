@@ -74,10 +74,13 @@ end
 # To speed up local development, external links are only checked in CI:
 # https://app.netlify.com/sites/cucumber/settings/deploys
 # To enable link checks locally, define CI=true
-puts "===================== ENV['CI']=#{ENV['CI']}"
 external_link_check = ENV['CI'] != 'false'
 options = {
-  disable_external: !external_link_check
+  disable_external: !external_link_check,
+  # https://stackoverflow.com/questions/27231113/999-error-code-on-head-request-to-linkedin
+  http_status_ignore: [999],
+  # Something is not right on that site - not sure what...
+  url_ignore: [/https:\/\/testng\.org/]
 }
 path = ARGV[0] || 'public'
 if File.file?(path)
