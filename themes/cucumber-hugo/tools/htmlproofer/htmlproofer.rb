@@ -83,7 +83,9 @@ options = {
     # Something is not right on that site - not sure what...
     /https:\/\/testng\.org/,
     # Amazon probably doesn't like bots
-    /https:\/\/www\.amazon\.com/
+    /https:\/\/www\.amazon\.com/,
+    # Pull requests with new pages will link to 'edit' on master (which doesn't exist yet). Ignore!
+    /https:\/\/github.com\/cucumber\/docs\.cucumber\.io\/edit/
   ]
 }
 path = ARGV[0] || 'public'
