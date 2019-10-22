@@ -79,8 +79,12 @@ options = {
   disable_external: !external_link_check,
   # https://stackoverflow.com/questions/27231113/999-error-code-on-head-request-to-linkedin
   http_status_ignore: [999],
-  # Something is not right on that site - not sure what...
-  url_ignore: [/https:\/\/testng\.org/]
+  url_ignore: [
+    # Something is not right on that site - not sure what...
+    /https:\/\/testng\.org/,
+    # Amazon probably doesn't like bots
+    /https:\/\/www\.amazon\.com/
+  ]
 }
 path = ARGV[0] || 'public'
 if File.file?(path)
