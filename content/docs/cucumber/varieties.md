@@ -51,7 +51,7 @@ If not, point to the latest RC release. If no RC release, point to master.
 [Cucumber-Ruby 3.1.2]: https://github.com/cucumber/cucumber-ruby/blob/master/CHANGELOG.md#312-2018-07-13
 
 [Cucumber.js master]: https://github.com/cucumber/cucumber-js
-[Cucumber.js master]: https://github.com/cucumber/cucumber-js
+[Cucumber.js 6.0.0]: https://github.com/cucumber/cucumber-js/blob/v6.0.2/CHANGELOG.md#602-2019-10-07
 
 <!-- Libraries -->
 [gherkin]: https://github.com/cucumber/cucumber/tree/master/gherkin
