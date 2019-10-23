@@ -8,7 +8,7 @@ weight: 1125
 
 [Cucumber.ml](https://github.com/cucumber/cucumber.ml) is an
 implementation written in and useful for
-[OCaml](http://www.ocaml.org/) projects.
+[OCaml](https://www.ocaml.org/) projects.
 
 # Prerequisites
 
