@@ -19,7 +19,7 @@ Essentially, this means that:
 * If the left-hand (major) number changes, you can expect that things might break.
 
 # Changelog
-You can read the history file to learn about the changes:
+You can read the changelog file to learn about the changes in every release:
 
 {{% block "ruby" %}}
 [cucumber-ruby changelog](https://github.com/cucumber/cucumber-ruby/blob/master/CHANGELOG.md)
