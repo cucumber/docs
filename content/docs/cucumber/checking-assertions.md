@@ -60,7 +60,7 @@ For more examples of how to use JUnit assertions, see the [JUnit Wiki](https://g
 
 ## TestNG
 
-You can also use [TestNG](http://testng.org/doc/)'s assertions'.
+You can also use [TestNG](https://testng.org/doc/)'s assertions'.
 
 If you are using Maven, add the following to your `pom.xml`:
 ```xml
@@ -81,7 +81,7 @@ If you are using Maven, add the following to your `pom.xml`:
 TestNG assertions are similar JUnit.
 For a more extensive example of how to use TestNG with Cucumber, see the [java-calculator-testng example](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-calculator-testng).
 
-For more information on how to use TestNG assertions, see the [TestNG documentation](http://testng.org/doc/documentation-main.html#success-failure).
+For more information on how to use TestNG assertions, see the [TestNG documentation](https://testng.org/doc/documentation-main.html#success-failure).
 
 # JavaScript
 
