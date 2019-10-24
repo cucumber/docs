@@ -51,19 +51,6 @@ versioned in source control alongside the software.
 
 See the [Gherkin reference](/docs/gherkin) for more details.
 
-{{% note "Who should write Gherkin?" %}}
-It's usually best to let developers write Gherkin if the team is practicing BDD
-(test first).
-
-If Cucumber is used solely as a test automation tool (test after) it can be done
-by testers or developers.
-
-It is usually counterproductive to let product owners and business analysts
-write Gherkin. Instead, we recommend they participate in [Example Mapping](/docs/bdd/example-mapping)
-sessions and **approve** the Gherkin documents after a developer or tester has
-translated it to Gherkin.
-{{% /note %}}
-
 # What are Step Definitions?
 
 [Step definitions](/docs/cucumber/step-definitions) connect Gherkin steps to
@@ -87,8 +74,3 @@ When("{maker} starts a game", function(maker) {
   maker.startGameWithWord({ word: "whale" })
 })
 ```
-
-{{% note "Who should write step definitions?" %}}
-The same people who write Gherkin should be writing step definitions. This is
-another reason the Gherkin is best written by developers and/or testers.
-{{% /note %}}
