@@ -17,7 +17,9 @@ polyglot:
 {{% block "java,kotlin" %}}
 Parameter types let you convert parameters from cucumber-expressions to objects. Data table and doc string string types let you convert data tables and doc strings to objects. Like step definitions, type definitions are part of the glue. When placed on the glue path Cucumber will detect them automatically.
 For example, the following class registers custom "Author" data table type:
+{{% /block %}}
 
+{{% block "java" %}}
 ```java
 package com.example.app;
 
@@ -43,7 +45,9 @@ public class StepDefinitions {
     }
 }    
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
 
 ```kotlin
 package com.example.app
@@ -68,7 +72,16 @@ class StepDefinitions {
     }
 }
 ```
+{{% /block %}}
+
+{{% block "java,kotlin" %}}
+
 The parameter type example:
+
+{{% /block %}}
+
+{{% block "java" %}}
+
 ```java
 package com.example.app;
 
@@ -89,6 +102,10 @@ public class StepDefinitions {
 }
 ```
 
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
 ```kotlin
 package com.example.app;
 
@@ -108,7 +125,16 @@ class StepDefinitions {
     }
 }
 ```
+
+{{% /block %}}
+
+{{% block "java,kotlin" %}}
+
 The docstring type example:
+
+{{% /block %}}
+
+{{% block "java" %}}
 
 ```java
 package com.example.app;
@@ -134,6 +160,10 @@ public class StepsDefinitions {
     }
 }    
 ```
+
+{{% /block %}}
+
+{{% block "kotlin" %}}
 
 ```kotlin
 package com.example.app
@@ -163,7 +193,15 @@ class StepsDefinitions {
 }
 ```
 
+{{% /block %}}
+
+{{% block "java,kotlin" %}}
+
 For lambda defined step definitions, there are `DataTableType`, `ParameterType` and `DocStringType` functions:
+
+{{% /block %}}
+
+{{% block "java" %}}
 
 ```java
 package com.example.app;
@@ -195,6 +233,10 @@ public class LambdaStepDefinitions implements En {
 }
 ```
 
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
 ```kotlin
 package com.example.kotlin
 
@@ -222,10 +264,15 @@ class LambdaStepDefinitions : En {
     }
 }
 ```
+{{% /block %}}
 
+{{% block "java,kotlin" %}}
 Using the `@DefaultParameterTransformer`, `@DefaultDataTableEntryTransformer` and `DefaultDataTableCellTransformer` 
 annotations also possible to plugin an ObjectMapper. The object mapper (Jackson in this example) will handle the 
 conversion of anonymous parameter types and data table entries.
+{{% /block %}}
+
+{{% block "java" %}}
 
 ```java
 package com.example.app;
@@ -249,7 +296,9 @@ public class StepDefinitions {
     }
 }
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
 ```kotlin
 package com.example.app
 
@@ -272,7 +321,13 @@ class StepDefinitions {
     }
 }
 ```
+{{% /block %}}
+
+{{% block "java,kotlin" %}}
 For lambda defined step definitions, there are `DefaultParameterTransformer`, `DefaultDataTableCellTransformer` and `DefaultDataTableEntryTransformer` functions:
+{{% /block %}}
+
+{{% block "java" %}}
 ```java
 package com.example.app;
 
@@ -298,7 +353,9 @@ public class LambdaStepDefinitions implements En {
     }
 }    
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
 ```kotlin
 import com.fasterxml.jackson.databind.ObjectMapper
 
