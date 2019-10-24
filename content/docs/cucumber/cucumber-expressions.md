@@ -91,9 +91,10 @@ public Color color(String color){  // type, name (from method)
 
 {{% block "kotlin" %}}
 ```kotlin
-ParameterType("color", "red|blue|yellow") { s : String ->  // name, regexp
-    Color.getColor(s)                                      // transformer function
-}                                                          // type (derived by return type of transformer function)
+@ParameterType("red|blue|yellow")   // regexp
+fun color(color: String): Color {   // name (from method), type
+    return Color(color)             // transformer function
+}                                    
 ```
 {{% /block %}}
 
