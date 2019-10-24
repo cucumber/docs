@@ -53,7 +53,7 @@ Some guidelines:
 * Use neutral language, but try to make it a little entertaining (this is hard!)
 * Write in a platform-neutral way as much as possible. Cucumber is implemented in several languages, and the docs should not assume a particular platform
 * Use [code blocks](#language-specific-source-code-and-paragraphs) for all code examples (except Gherkin) and paragraphs related to one or more specific languages
-* Use [language blocks](#Language-specific-text-fragments) for text that is only relevant for one or more specific languages
+* Use [language blocks](#language-specific-text-fragments) for text that is only relevant for one or more specific languages
 * Mark [polyglot pages](#polyglot-pages) as needed
 * All documents should use [British English](https://en.wikipedia.org/wiki/British_English). Contributions in [American English](https://en.wikipedia.org/wiki/American_English) are fine - editors will do the translation.
 * Use links to external sites sparingly

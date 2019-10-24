@@ -193,7 +193,8 @@ In IntelliJ, you can do so by right-clicking on the `kotlin` directory and selec
 * Create the `hellocucumber` package inside the `kotlin` directory.
 * Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package. IntelliJ might tell you that Kotlin is not configured; click **"Configure"**.
 Your `pom.xml` should now look like this:
-```shell
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

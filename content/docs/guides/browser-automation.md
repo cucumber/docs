@@ -416,18 +416,3 @@ mvn test -Ddriver=chrome
 // TODO: How to pass arguments in JavaScript
 ```
 {{% /text %}}
-
-## Example Projects
-
-{{% text "javascript" %}}There are currently no example projects available using JavaScript and browser automation.{{% /text %}}
-
-{{% text "ruby" %}}There are currently no example projects available using Ruby and browser automation.{{% /text %}}
-
-{{% text "java,kotlin" %}}
-Here are a few example projects using Java and browser automation:
-
-- [java-webbit-websockets-selenium](https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-webbit-websockets-selenium)
-
-- [serenity-with-cucumber](https://github.com/serenity-bdd/serenity-articles/tree/master/introduction-to-serenity-with-cucumber/src/samples/etsy-tester)
-
-{{% /text %}}
