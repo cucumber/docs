@@ -133,15 +133,13 @@ By setting an environment variable, you can tell Cucumber to use various debuggi
 {{% block "java,kotlin" %}}
 In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. 
 
-1. Set a breakpoint on the part of the code you want to debug.
-
-This might be the line you are currently getting an Exception (see your stacktrace). 
+1. Set a breakpoint on the part of the code you want to debug. This might be the line you are currently getting an Exception (see your stacktrace). 
 
 2. Run your [RunCucumberTest](https://github.com/cucumber/cucumber-java-skeleton/blob/master/src/test/java/io/cucumber/skeleton/RunCucumberTest.java) in debug mode
-3. The execution will stop at your breakpoint
+3. The execution will stop at your breakpoint.
 4. Now you can either:
-   - *Step into* to start debugging the method implementing the first step of the scenario
-   - Or *Resume* the execution to run the current step and jump to the next one
+   - *Step into* to start debugging the method implementing the first step of the scenario.
+   - Or *Resume* the execution to run the current step and jump to the next one.
 5. And so on..
 
 For more details on how to set a breakpoint in your IDE, see:
