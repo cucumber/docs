@@ -27,7 +27,7 @@ For example, the following class registers custom "Author" data table type:
 
 {{% block "java" %}}
 ```java
-package com.example.app;
+package com.example;
 
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
@@ -56,7 +56,7 @@ public class StepDefinitions {
 {{% block "kotlin" %}}
 
 ```kotlin
-package com.example.app
+package com.example
 
 import io.cucumber.java.DataTableType
 import io.cucumber.java.en.Given
@@ -89,7 +89,7 @@ The parameter type example:
 {{% block "java" %}}
 
 ```java
-package com.example.app;
+package com.example;
 
 import io.cucumber.java.ParameterType;
 import io.cucumber.java.en.Given;
@@ -113,7 +113,7 @@ public class StepDefinitions {
 {{% block "kotlin" %}}
 
 ```kotlin
-package com.example.app;
+package com.example;
 
 import io.cucumber.java.ParameterType
 import io.cucumber.java.en.Given
@@ -143,7 +143,7 @@ The docstring type example:
 {{% block "java" %}}
 
 ```java
-package com.example.app;
+package com.example;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -172,7 +172,7 @@ public class StepsDefinitions {
 {{% block "kotlin" %}}
 
 ```kotlin
-package com.example.app
+package com.example
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.JsonNode;
@@ -211,7 +211,7 @@ and `DocStringType` functions:
 {{% block "java" %}}
 
 ```java
-package com.example.app;
+package com.example;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -283,7 +283,7 @@ conversion of anonymous parameter types and data table entries.
 {{% block "java" %}}
 
 ```java
-package com.example.app;
+package com.example;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.DefaultDataTableCellTransformer;
@@ -308,7 +308,7 @@ public class StepDefinitions {
 
 {{% block "kotlin" %}}
 ```kotlin
-package com.example.app
+package com.example
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.cucumber.java.DefaultDataTableCellTransformer
@@ -338,7 +338,7 @@ For lambda defined step definitions, there are `DefaultParameterTransformer`,
 
 {{% block "java" %}}
 ```java
-package com.example.app;
+package com.example;
 
 import io.cucumber.java8.En;
 
