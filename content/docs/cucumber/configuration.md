@@ -245,7 +245,7 @@ public class LambdaStepDefinitions implements En {
 {{% block "kotlin" %}}
 
 ```kotlin
-package com.example.kotlin
+package com.example
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
