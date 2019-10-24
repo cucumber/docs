@@ -3,12 +3,11 @@ title: Introduction
 subtitle: New to Cucumber? Start here!
 weight: 1000
 ---
-# What is Cucumber?
-
 Cucumber is a tool that supports [Behaviour-Driven Development(BDD)](/docs/bdd).
 If you're new to Behaviour-Driven Development read our [BDD introduction](/docs/bdd)
 first.
 
+# What is Cucumber?
 Ok, now that you know that BDD is about discovery, collaboration and examples
 (and not testing), let's take a look at Cucumber.
 
