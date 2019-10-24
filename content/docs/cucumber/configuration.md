@@ -15,7 +15,13 @@ polyglot:
 # Type Registry
 
 {{% block "java,kotlin" %}}
-Parameter types let you convert parameters from cucumber-expressions to objects. Data table and doc string string types let you convert data tables and doc strings to objects. Like step definitions, type definitions are part of the glue. When placed on the glue path Cucumber will detect them automatically.
+Parameter types let you convert parameters from cucumber-expressions to objects.
+Data table and doc string string types let you convert data tables and doc
+strings to objects. Like step definitions, type definitions are part of the glue.
+When placed on the glue path Cucumber will detect them automatically. 
+{{% /block %}}
+
+{{% block "java" %}}
 For example, the following class registers custom "Author" data table type:
 {{% /block %}}
 
@@ -197,7 +203,8 @@ class StepsDefinitions {
 
 {{% block "java,kotlin" %}}
 
-For lambda defined step definitions, there are `DataTableType`, `ParameterType` and `DocStringType` functions:
+For lambda defined step definitions, there are `DataTableType`, `ParameterType` 
+and `DocStringType` functions:
 
 {{% /block %}}
 
@@ -267,8 +274,9 @@ class LambdaStepDefinitions : En {
 {{% /block %}}
 
 {{% block "java,kotlin" %}}
-Using the `@DefaultParameterTransformer`, `@DefaultDataTableEntryTransformer` and `DefaultDataTableCellTransformer` 
-annotations also possible to plugin an ObjectMapper. The object mapper (Jackson in this example) will handle the 
+Using the `@DefaultParameterTransformer`, `@DefaultDataTableEntryTransformer`
+and `DefaultDataTableCellTransformer` annotations also possible to plugin an 
+ObjectMapper. The object mapper (Jackson in this example) will handle the 
 conversion of anonymous parameter types and data table entries.
 {{% /block %}}
 
@@ -324,7 +332,8 @@ class StepDefinitions {
 {{% /block %}}
 
 {{% block "java,kotlin" %}}
-For lambda defined step definitions, there are `DefaultParameterTransformer`, `DefaultDataTableCellTransformer` and `DefaultDataTableEntryTransformer` functions:
+For lambda defined step definitions, there are `DefaultParameterTransformer`, 
+`DefaultDataTableCellTransformer` and `DefaultDataTableEntryTransformer` functions:
 {{% /block %}}
 
 {{% block "java" %}}
@@ -366,11 +375,17 @@ class LambdaStepDefinitions : En {
     init {
         val objectMapper = ObjectMapper()
 
-        DefaultParameterTransformer { fromValue: String, toValueType: Type -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
+        DefaultParameterTransformer { fromValue: String, toValueType: Type -> 
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) 
+        }
 
-        DefaultDataTableCellTransformer { fromValue, toValueType -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
+        DefaultDataTableCellTransformer { fromValue, toValueType -> 
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) 
+        }
 
-        DefaultDataTableEntryTransformer { fromValue, toValueType -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
+        DefaultDataTableEntryTransformer { fromValue, toValueType -> 
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType))
+        }
     }
 }
 ```

@@ -90,7 +90,6 @@ public Color color(String color){  // type, name (from method)
 {{% /block %}}
 
 {{% block "kotlin" %}}
-//TODO:
 ```kotlin
 ParameterType("color", "red|blue|yellow") { s : String ->  // name, regexp
     Color.getColor(s)                                      // transformer function
