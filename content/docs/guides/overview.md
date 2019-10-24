@@ -3,18 +3,14 @@ title: Introduction
 subtitle: New to Cucumber? Start here!
 weight: 1000
 ---
-
-{{% note "Before you get started" %}}
-If you're new to Behaviour-Driven Development (BDD) read our 
-[BDD introduction](/docs/bdd) first.
-{{% /note %}}
-
-Ok, now that you know that BDD is about discovery, collaboration and examples
-(and not testing), let's take a look at Cucumber.
-
 # What is Cucumber?
 
 Cucumber is a tool that supports [Behaviour-Driven Development(BDD)](/docs/bdd).
+If you're new to Behaviour-Driven Development read our [BDD introduction](/docs/bdd)
+first.
+
+Ok, now that you know that BDD is about discovery, collaboration and examples
+(and not testing), let's take a look at Cucumber.
 
 Cucumber reads executable specifications written in plain text and validates
 that the software does what those specifications say. The specifications
