@@ -187,7 +187,7 @@ class StepsDefinitions {
     }
 
     @Given("Books are defined by json")
-    fun books_are_defined_by_json(bookShelf: JsonNode) {
+    fun books_are_defined_by_json(books: JsonNode) {
         // step implementation
     }
 }
