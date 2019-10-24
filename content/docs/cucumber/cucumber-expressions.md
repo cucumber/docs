@@ -106,7 +106,7 @@ typeRegistry.defineParameterType(ParameterType<Color>(
 ```javascript
 const { defineParameterType } = require('cucumber')
 
-defineParameterType(new ParameterType<>(
+defineParameterType(new ParameterType(
     'color',           // name
     /red|blue|yellow/, // regexp
     Color,             // type

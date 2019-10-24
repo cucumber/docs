@@ -282,18 +282,6 @@ Feature: Let's write a lot of stuff to the DB
 
 ### With JUnit and Spring
 
-The [`cucumber-spring`](#spring) module contains `@txn` hooks in the `cucumber.api.spring` package.
-
-This package isn't on your glue path by default, so you have to add it yourself in your
-Cucumber Options.
-
-```java
-@RunWith(Cucumber.class)
-@CucumberOptions(glue = {"your.own.glue.code", "cucumber.api.spring"})
-public class RunCucumberTest {
-}
-```
-
 See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
 
 # Browser Automation and Transactions

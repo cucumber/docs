@@ -81,7 +81,7 @@ The{{% text "kotlin" %}}`edit_work_experience_steps.kt`{{% /text %}}
 {{% text "ruby" %}}`edit_work_experience_steps.rb`{{% /text %}}could be implemented like this:
 
 ```java
-    @Given("^I have a CV and I'm on the edit description page$")
+    @Given("I have a CV and I'm on the edit description page")
     public void I_have_a_CV_and_Im_on_the_edit_description_page() {
         Employee employee = new Employee("Sally");
         employee.createCV();
@@ -89,7 +89,7 @@ The{{% text "kotlin" %}}`edit_work_experience_steps.kt`{{% /text %}}
 ```
 
 ```kotlin
-@Given("^I have a CV and I'm on the edit description page$")
+@Given("I have a CV and I'm on the edit description page")
 fun I_have_a_CV_and_Im_on_the_edit_description_page() {
     val employee = Employee("Sally")
     employee.createCV()

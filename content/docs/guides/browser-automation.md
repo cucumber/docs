@@ -29,7 +29,7 @@ Scenario: Finding some cheese
 ```
 
 ```java
-package class.example;
+package com.example;
 
 import io.cucumber.java.After;
 import org.openqa.selenium.By;
@@ -45,12 +45,12 @@ import io.cucumber.java.en.When;
 public class ExampleSteps {
 
     private final WebDriver driver = new FirefoxDriver();
-    @Given("^I am on the Google search page$")
+    @Given("I am on the Google search page")
     public void I_visit_google() {
     driver.get("https:\\www.google.com");
    }
 
-   @When("^I search for \"(.*)\"$")
+   @When("I search for {string}")
      public void search_for(String query) {
         WebElement element = driver.findElement(By.name("q"));
         // Enter something to search for
@@ -59,7 +59,7 @@ public class ExampleSteps {
         element.submit();
    }
 
-   @Then("^the page title should start with \"(.*)\"$")
+   @Then("the page title should start with {string}")
    public void checkTitle(String titleStartsWith) {
        // Google's search is rendered dynamically with JavaScript
        // Wait for the page to load timeout after ten seconds
@@ -78,10 +78,10 @@ public class ExampleSteps {
 ```
 
 ```kotlin
-package class.example;
+package com.example;
 
-import cucumber.api.Scenario
-import cucumber.api.java8.En
+import io.cucumber.java8.Scenario
+import io.cucumber.java8.En
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
@@ -92,11 +92,11 @@ class ExampleSteps: En {
     lateinit var driver: WebDriver
 
     init {
-        Given("^I am on the Google search page$") {
+        Given("I am on the Google search page") {
             driver.get("https:\\www.google.com")
         }
 
-        When("^I search for \"(.*)\"$") { query: String ->
+        When("I search for {string}") { query: String ->
             val element: WebElement = driver.findElement(By.name("q"));
             // Enter something to search for
             element.sendKeys(query)
@@ -104,7 +104,7 @@ class ExampleSteps: En {
             element.submit()
         }
 
-        Then("^the page title should start with \"(.*)\"$") { titleStartsWith: String ->
+        Then("the page title should start with {string}") { titleStartsWith: String ->
             // Google's search is rendered dynamically with JavaScript
             // Wait for the page to load timeout after ten seconds
             WebDriverWait(driver, 10L).until { d ->

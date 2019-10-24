@@ -23,12 +23,10 @@ For instance, the following class registers a `ParameterType` of type Integer, a
 ```java
 package com.example;
 
-import cucumber.api.TypeRegistry;
-import cucumber.api.TypeRegistryConfigurer;
+import io.cucumber.core.api.TypeRegistry;
+import io.cucumber.core.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterType;
 import io.cucumber.datatable.DataTableType;
-
-import java.util.Locale;
 
 import static java.util.Locale.ENGLISH;
 
@@ -59,8 +57,8 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 ```kotlin
 package com.example
 
-import cucumber.api.TypeRegistryConfigurer
-import cucumber.api.TypeRegistry
+import io.cucumber.core.api.TypeRegistryConfigurer
+import io.cucumber.core.api.TypeRegistry
 import io.cucumber.datatable.DataTableType
 import io.cucumber.datatable.TableEntryTransformer
 import java.util.Locale
@@ -89,8 +87,8 @@ example) will handle the conversion of anonymous parameter types and data table 
 ```java
 package com.example;
 
-import cucumber.api.TypeRegistry;
-import cucumber.api.TypeRegistryConfigurer;
+import io.cucumber.core.api.TypeRegistry;
+import io.cucumber.core.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterByTypeTransformer;
 import io.cucumber.datatable.TableCellByTypeTransformer;
 import io.cucumber.datatable.TableEntryByTypeTransformer;
@@ -142,8 +140,8 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 ```kotlin
 package com.example
 
-import cucumber.api.TypeRegistryConfigurer
-import cucumber.api.TypeRegistry
+import io.cucumber.core.api.TypeRegistryConfigurer
+import io.cucumber.core.api.TypeRegistry
 import io.cucumber.cucumberexpressions.ParameterByTypeTransformer
 import io.cucumber.datatable.TableCellByTypeTransformer
 import io.cucumber.datatable.TableEntryByTypeTransformer
@@ -210,7 +208,7 @@ end
 {{% /block %}}
 
 {{% block "java,kotlin,ruby" %}}
-If you are using a type that has not yet been defined, you will an error similar to:
+If you are using a type that has not yet been defined, you will get an error similar to:
 ```shell
 The parameter type "person" is not defined.
 ```
@@ -227,7 +225,7 @@ For more information on how to use `Data Tables` with Cucumber-js, please see th
 
 ## Recommended location
 
-The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/com/example/TypeRegistryConfiguration.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/com/example/TypeRegistryConfiguration.kt`.{{% /text %}}
+The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/java/com/example/ParameterTypes.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/kotlin/com/example/ParameterTypes.kt`.{{% /text %}}
 This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java,kotlin" %}} on the glue path.{{% /text %}}
 
 # Profiles

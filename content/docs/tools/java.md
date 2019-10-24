@@ -99,7 +99,7 @@ Steps:
         dependsOn assemble, compileTestJava
         doLast {
             javaexec {
-                main = "cucumber.api.cli.Main"
+                main = "io.cucumber.core.cli.Main"
                 classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
                 args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
             }

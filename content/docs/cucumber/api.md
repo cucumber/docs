@@ -843,7 +843,7 @@ cucumber
 The **Command-Line Interface Runner (CLI Runner)** is an executable Java class that can be run from the command-line.
 
 ```
-java cucumber.api.cli.Main
+java io.cucumber.core.cli.Main
 ```
 {{% /block %}}
 
