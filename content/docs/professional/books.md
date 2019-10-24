@@ -12,7 +12,7 @@ We like these Books
      {{% card 
          title="Discovery"
          image="/img/book-discovery.png" 
-         link="http://bddbooks.com/"
+         link="https://bddbooks.com/"
      %}}
 This practical guide by Gáspár Nagy and Seb Rose explains good collaboration techniques, illustrated by concrete examples.
      {{% /card %}}
@@ -21,7 +21,7 @@ This practical guide by Gáspár Nagy and Seb Rose explains good collaboration t
     {{% card 
         title="The Cucumber Book"
         image="/img/book-cucumber-book.jpg" 
-        link="https://pragprog.com/book/hwcuc2/the-cucumber-book-second-edition"
+        link="https://www.amazon.com/Cucumber-Book-2e-Matt-Wynne/dp/1680502387"
     %}}
 Matt Wynne and Aslak Hellesøy show you how to express your customers’ wild ideas as a set of clear, executable specifications that everyone on the team can read.
     {{% /card %}}

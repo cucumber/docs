@@ -73,9 +73,20 @@ end
 
 # To speed up local development, external links are only checked in CI:
 # https://app.netlify.com/sites/cucumber/settings/deploys
-external_link_check = ENV['EXTERNAL_LINK_CHECK'] == 'true'
+# To enable link checks locally, define CI=true
+external_link_check = ENV['CI'] != 'false'
 options = {
-  disable_external: !external_link_check
+  disable_external: !external_link_check,
+  # https://stackoverflow.com/questions/27231113/999-error-code-on-head-request-to-linkedin
+  http_status_ignore: [999],
+  url_ignore: [
+    # Something is not right on that site - not sure what...
+    /https:\/\/testng\.org/,
+    # Amazon probably doesn't like bots
+    /https:\/\/www\.amazon\.com/,
+    # Pull requests with new pages will link to 'edit' on master (which doesn't exist yet). Ignore!
+    /https:\/\/github.com\/cucumber\/docs\.cucumber\.io\/edit/
+  ]
 }
 path = ARGV[0] || 'public'
 if File.file?(path)

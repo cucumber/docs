@@ -44,7 +44,7 @@ You can find information on how to install your flavour of Cucumber on the [inst
 In general, it is recommended to use the most recently released version of Cucumber for your programming language.
 Each release will fix known bugs and/or add new features.
 
-You can find the most recent version of Cucumber either in the [10-minute tutorial](//docsguides/10-minute-tutorial), the [installation](/docs/installation) page or on [GitHub](https://github.com/cucumber).
+You can find the most recent version of Cucumber either in the [10-minute tutorial](/docs/guides/10-minute-tutorial), the [installation](/docs/installation) page or on [GitHub](https://github.com/cucumber).
 {{% block "java" %}}
 Note that with Cucumber-JVM v2.x, the `groupId` has changed from `info.cukes` to `io.cucumber`.
 If you cannot find a version newer than 1.2.5, change the groupId in your dependencies.
@@ -140,7 +140,7 @@ For an example on how to use them, see this [code example](https://github.com/cu
 {{% /block %}}
 
 {{% block "kotlin" %}}
-For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/kotlin-java8/src/test/kotlin/cucumber/runtime/kotlin/test/LambdaStepdefs.kt).
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/kotlin-java8/src/test/kotlin/io/cucumber/kotlin/LambdaStepdefs.kt).
 {{% /block %}}
 
 ## How do I call other steps or scenarios?
