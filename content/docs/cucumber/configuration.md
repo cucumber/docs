@@ -15,36 +15,192 @@ polyglot:
 # Type Registry
 
 {{% block "java,kotlin" %}}
-Parameter types let you convert parameters from cucumber-expressions to objects. Data table and doc string string
-types let you convert data tables and doc strings to objects. Like step definitions type definitions are part of the
-glue. When placed on the glue path Cucumber will detect them automatically.
-
-For instance, the following class registers a `ParameterType` of type Color, and a `DataTableType` of type Person:
+Parameter types let you convert parameters from cucumber-expressions to objects. Data table and doc string string types let you convert data tables and doc strings to objects. Like step definitions, type definitions are part of the glue. When placed on the glue path Cucumber will detect them automatically.
+For example, the following class registers custom "Author" data table type:
 
 ```java
-package com.example;
+package com.example.app;
 
 import io.cucumber.java.DataTableType;
-import io.cucumber.java.ParameterType;
+import io.cucumber.java.en.Given;
 
+import java.util.List;
 import java.util.Map;
-
-import static java.util.Locale.ENGLISH;
 
 public class StepDefinitions {
 
-    @ParameterType("red|blue|yellow")
-    public Color color(String color){
-        return new Color(color);
-    }
-    
     @DataTableType
-    public Person person(Map<String, String> entry){
-        return new Person(entry.get("first"), entry.get("last"));
+    public Author authorEntryTransformer(Map<String, String> entry) {
+        return new Author(
+            entry.get("firstName"),
+            entry.get("lastName"),
+            entry.get("famousBook"));
+    }
+
+    @Given("There are my favorite authors")
+    public void authorsStep(List<Author> authors) {
+        // step implementation
+    }
+}    
+```
+
+
+```kotlin
+
+package com.example.app;
+
+
+import io.cucumber.java.DataTableType
+import io.cucumber.java.en.Given
+import kotlin.streams.toList
+
+
+class StepDefinitions {
+
+    @DataTableType
+    fun authorEntryTransformer(entry: Map<String, String>): Author {
+        return Author(
+                entry["firstName"],
+                entry["lastName"],
+                entry["famousBook"])
+    }
+
+    @Given("There are my favorite authors")
+    fun authorsStep(authors: List<Author>) {
+        // step implementation
+    }
+}
+```
+The parameter type example:
+```java
+
+package com.example.app;
+
+import io.cucumber.java.ParameterType;
+import io.cucumber.java.en.Given;
+
+public class StepDefinitions {
+
+    @ParameterType(name = "book", value = ".*")
+    public Book bookTransformer(String bookName) {
+    	return new Book(bookName);
+    }	
+
+    @Given("{book} is my favorite book")
+    public void bookStep(Book book) {
+        // step implementation
     }
 }
 ```
 
+```kotlin
+
+package com.example.app;
+
+
+import io.cucumber.java.ParameterType
+import io.cucumber.java.en.Given
+import kotlin.streams.toList
+
+
+class StepDefinitions {
+
+    @ParameterType(name = "book", value = ".*")
+    fun bookTransformer(bookName: String): Book {
+        return Book(bookName)
+    }
+
+    @Given("{book} is my favorite book")
+    fun bookStep(book: Book) {
+        // step implementation
+    }
+}
+```
+The docstring type example:
+
+```java
+package com.example.app;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.cucumber.java.DocStringType;
+import io.cucumber.java.en.Given;
+
+public class StepsDefinitions {
+
+    private static ObjectMapper objectMapper = new ObjectMapper();
+
+    @DocStringType(contentType = "shelf_json")
+    public BookShelf shelfTransformer(String docstring) throws JsonProcessingException {
+        return objectMapper.readValue(docstring, BookShelf.class);
+    }
+
+    @Given("Books are defined by json")
+    public void bookShelfStep(BookShelf bookShelf) {
+        // step implementation
+    }
+}    
+```
+
+```kotlin
+package com.example.app
+
+import com.fasterxml.jackson.core.JsonProcessingException
+import com.fasterxml.jackson.databind.ObjectMapper
+import io.cucumber.java.DocStringType
+import io.cucumber.java.en.Given
+
+class StepsDefinitions {
+
+    companion object {
+
+        private val objectMapper = ObjectMapper()
+    }
+
+    @DocStringType(contentType = "shelf_json")
+    @Throws(JsonProcessingException::class)
+    fun shelfTransformer(docstring: String): BookShelf {
+        return objectMapper.readValue(docstring, BookShelf::class)
+    }
+
+    @Given("Books are defined by json")
+    fun bookShelfStep(bookShelf: BookShelf) {
+        // step implementation
+    }
+}
+```
+
+For lambda defined step definitions, there are `DataTableType`, `ParameterType` and `DocStringType` functions:
+
+```java
+package com.example.app;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.cucumber.java8.En;
+
+import java.util.Map;
+
+public class LambdaStepDefinitions implements En {
+    
+    private static ObjectMapper objectMapper = new ObjectMapper();
+
+    public LambdaStepDefinitions() {
+        
+        DataTableType((Map<String, String> entry) -> new Author(
+            entry.get("firstName"),
+            entry.get("lastName"),
+            entry.get("famousBook")
+        ));
+
+
+        ParameterType("book", ".*", (String bookName) -> new Book(bookName));
+
+        DocStringType("shelf_json", (String docstring) -> {
+            return objectMapper.readValue(docstring, BookShelf.class)
+        });
+    }
+}
+```
 ```kotlin
 package com.example.kotlin
 
@@ -53,27 +209,32 @@ import io.cucumber.java8.En
 class LambdaStepDefinitions : En {
 
     init {
-        ParameterType("color", "red|blue|yellow") { s : String ->
-            Color.getColor(s)
+        val objectMapper = ObjectMapper()
+
+        ParameterType("book", ".*") { s : String ->
+            Book(s)
         }
 
         DataTableType { entry: Map<String, String> ->
-            Person(entry["first"], entry["last"])
+            Author(entry["firstName"], entry["lastName"], entry["famousBook"])
         }
+
+        DocStringType("shelf_json") { docstring: String -> 
+	    objectMapper.readValue(docstring, BookShelf::class)
+	}
     }
 }
 ```
 
-Using the it is also possible to plugin an ObjectMapper. The object mapper (Jackson in this
-example) will handle the conversion of anonymous parameter types and data table entries.
+Using the `@DefaultParameterTransformer`, `@DefaultDataTableEntryTransformer` and `DefaultDataTableCellTransformer` annotations also possible to plugin an ObjectMapper. The object mapper (Jackson in this example) will handle the conversion of anonymous parameter types and data table entries.
 
 ```java
-package com.example;
+package com.example.app
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import io.cucumber.java.DefaultDataTableCellTransformer;
-import io.cucumber.java.DefaultDataTableEntryTransformer;
-import io.cucumber.java.DefaultParameterTransformer;
+import com.fasterxml.jackson.databind.ObjectMapper
+import io.cucumber.java.DefaultDataTableCellTransformer
+import io.cucumber.java.DefaultDataTableEntryTransformer
+import io.cucumber.java.DefaultParameterTransformer
 
 import java.lang.reflect.Type;
 
@@ -90,51 +251,71 @@ public class StepDefinitions {
 }
 ```
 
-//TODO: Need default transformers
-
 ```kotlin
-package com.example
 
-import io.cucumber.core.api.TypeRegistryConfigurer
-import io.cucumber.core.api.TypeRegistry
-import io.cucumber.cucumberexpressions.ParameterByTypeTransformer
-import io.cucumber.datatable.TableCellByTypeTransformer
-import io.cucumber.datatable.TableEntryByTypeTransformer
+package com.example.app;
+
 import com.fasterxml.jackson.databind.ObjectMapper
+import io.cucumber.java.DefaultDataTableCellTransformer
+import io.cucumber.java.DefaultDataTableEntryTransformer
+import io.cucumber.java.DefaultParameterTransformer
 
 import java.lang.reflect.Type
-import java.util.Locale
-import java.util.Map
 
-import static java.util.Locale.ENGLISH
+class StepDefinitions {
 
-class TypeRegistryConfiguration : TypeRegistryConfigurer {
+    private val objectMapper = ObjectMapper()
 
-    override fun locale(): Locale {
-        return ENGLISH
+    @DefaultParameterTransformer
+    @DefaultDataTableEntryTransformer
+    @DefaultDataTableCellTransformer
+    fun transformer(fromValue: Any, toValueType: Type): Any {
+        return objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType))
     }
+}
+```
+For lambda defined step definitions, there are `DefaultParameterTransformer`, `DefaultDataTableCellTransformer` and `DefaultDataTableEntryTransformer` functions:
+```java
 
-    override fun configureTypeRegistry(typeRegistry: TypeRegistry) {
-        var transformer = Transformer()
-        typeRegistry.setDefaultDataTableCellTransformer(transformer)
-        typeRegistry.setDefaultDataTableEntryTransformer(transformer)
-        typeRegistry.setDefaultParameterTransformer(transformer)
+package com.example.app;
+
+import io.cucumber.java8.En;
+
+import com.fasterxml.jackson.databind.ObjectMapper
+
+public class LambdaStepDefinitions implements En {
+    
+    public LambdaStepDefinitions() {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        DefaultParameterTransformer((String fromValue, Type toValueType) ->
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
+
+        DefaultDataTableCellTransformer((fromValue, toValueType) ->
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
+
+        DefaultDataTableEntryTransformer((fromValue, toValueType) ->
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
     }
+}    
+```
 
-    class Transformer : ParameterByTypeTransformer, TableEntryByTypeTransformer, TableCellByTypeTransformer {
-        val objectMapper: ObjectMapper = ObjectMapper()
+```kotlin
 
-        override fun transform(s: String, type: Type) {
-            return objectMapper.convertValue(s, objectMapper.constructType(type))
-        }
+import com.fasterxml.jackson.databind.ObjectMapper
 
-        override fun transform(map: Map<String, String>, aClass: Class<T> , tableCellByTypeTransformer: TableCellByTypeTransformer): T  {
-            return objectMapper.convertValue(map, aClass)
-        }
+import io.cucumber.java8.En
+import java.lang.reflect.Type
 
-        override fun transform(s: String, aClass: Class<T>): T {
-            return objectMapper.convertValue(s, aClass)
-        }
+class LambdaStepDefinitions : En {
+    init {
+        val objectMapper = ObjectMapper()
+
+        DefaultParameterTransformer { fromValue: String, toValueType: Type -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
+
+        DefaultDataTableCellTransformer { fromValue, toValueType -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
+
+        DefaultDataTableEntryTransformer { fromValue, toValueType -> objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) }
     }
 }
 ```
@@ -163,7 +344,7 @@ end
 {{% /block %}}
 
 {{% block "java,kotlin,ruby" %}}
-If you are using a type that has not yet been defined, you will an error similar to:
+If you are using a type that has not yet been defined, you will got an error similar to:
 ```shell
 The parameter type "person" is not defined.
 ```
