@@ -21,11 +21,11 @@ When Cucumber executes a [Gherkin step](/docs/gherkin/reference#steps) in a scen
 To illustrate how this works, look at the following Gherkin Scenario:
 
 ```gherkin
-Scenario: Some cukes
-  Given I have 48 cukes in my belly
+Scenario: Some cakes
+  Given I have 48 cakes in my belly
 ```
 
-The `I have 48 cukes in my belly` part of the step (the text following the `Given` keyword) will match the following step definition:
+The `I have 48 cakes in my belly` part of the step (the text following the `Given` keyword) will match the following step definition:
 
 {{% block "java" %}}
 ```java
@@ -33,9 +33,9 @@ package com.example;
 import io.cucumber.java.en.Given;
 
 public class StepDefinitions {
-    @Given("I have {int} cukes in my belly")
-    public void i_have_n_cukes_in_my_belly(int cukes) {
-        System.out.format("Cukes: %n\n", cukes);
+    @Given("I have {int} cakes in my belly")
+    public void i_have_n_cakes_in_my_belly(int cakes) {
+        System.out.format("Cakes: %n\n", cakes);
     }
 }
 ```
@@ -48,8 +48,8 @@ import io.cucumber.java8.En;
 
 public class StepDefinitions implements En {
     public StepDefinitions() {
-        Given("I have {int} cukes in my belly", (Integer cukes) -> {
-            System.out.format("Cukes: %n\n", cukes);
+        Given("I have {int} cakes in my belly", (Integer cakes) -> {
+            System.out.format("Cakes: %n\n", cakes);
         });
     }
 }
@@ -65,8 +65,8 @@ import io.cucumber.java8.En
 class StepDefinitions : En {
 
     init {
-        Given("I have {int} cukes in my belly") { cukes: Int ->
-                prinln("Cukes: $cukes")
+        Given("I have {int} cakes in my belly") { cakes: Int ->
+                prinln("Cakes: $cakes")
         }
     }
 
@@ -84,8 +84,8 @@ import io.cucumber.java8.En
 class StepDefinitions : En {
 
     init {
-        Given("I have {int} cukes in my belly") { cukes: Int ->
-                prinln("Cukes: $cukes")
+        Given("I have {int} cakes in my belly") { cakes: Int ->
+                prinln("Cakes: $cakes")
         }
     }
 
@@ -96,8 +96,8 @@ class StepDefinitions : En {
 
 {{% block "ruby" %}}
 ```ruby
-Given('I have {int} cukes in my belly') do |cukes|
-  puts "Cukes: #{cukes}"
+Given('I have {int} cakes in my belly') do |cakes|
+  puts "Cakes: #{cakes}"
 end
 ```
 {{% /block %}}
@@ -106,8 +106,8 @@ end
 ```javascript
 const { Given } = require('cucumber')
 
-Given('I have {int} cukes in my belly', function (cukes) {
-  console.log(`Cukes: ${cukes}`)
+Given('I have {int} cakes in my belly', function (cakes) {
+  console.log(`Cakes: ${cakes}`)
 });
 ```
 {{% /block %}}
@@ -118,30 +118,30 @@ A step definition's *expression* can either be a [Regular Expression](https://en
 
 {{% block "java" %}}
 ```java
-@Given("I have {int} cukes in my belly")
-public void i_have_n_cukes_in_my_belly(int cukes) {
+@Given("I have {int} cakes in my belly")
+public void i_have_n_cakes_in_my_belly(int cakes) {
 }
 ```
 {{% /block %}}
 
 {{% block "kotlin" %}}
 ```kotlin
-Given("I have {int} cukes in my belly") { cukes: Int ->
-        prinln("Cukes: $cukes")
+Given("I have {int} cakes in my belly") { cakes: Int ->
+        prinln("Cakes: $cakes")
 }
 ```
 {{% /block %}}
 
 {{% block "ruby" %}}
 ```ruby
-Given(/I have (\d+) cukes in my belly/) do |cukes|
+Given(/I have (\d+) cakes in my belly/) do |cakes|
 end
 ```
 {{% /block %}}
 
 {{% block "javascript" %}}
 ```javascript
-Given(/I have (\d+) cukes in my belly/, function (cukes) {
+Given(/I have (\d+) cakes in my belly/, function (cakes) {
 });
 ```
 {{% /block %}}
@@ -149,7 +149,7 @@ Given(/I have (\d+) cukes in my belly/, function (cukes) {
 If the capture group expression is identical to one of the registered
 [parameter types](/docs/cucumber/cucumber-expressions#parameter-types)'s `regexp`,
 the captured string will be transformed before it is passed to the
-step definition's {{% stepdef-body %}}. In the example above, the `cukes`
+step definition's {{% stepdef-body %}}. In the example above, the `cakes`
 argument will be an integer, because the built-in `int` parameter type's
 `regexp` is `\d+` .
 
@@ -163,9 +163,9 @@ state in instance variables.
 Please note that if you use arrow functions, you won't be able to share state between steps!
 
 ```javascript
-Given('I have {int} cukes in my belly', cukes => {
+Given('I have {int} cakes in my belly', cakes => {
   // Don't do this. The value of "this" is the "global" object
-  this.cukes = cukes
+  this.cakes = cakes
 })
 ```
 {{% /warn %}}
