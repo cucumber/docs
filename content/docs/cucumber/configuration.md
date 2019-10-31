@@ -16,7 +16,7 @@ polyglot:
 
 {{% block "java,kotlin" %}}
 Parameter types let you convert parameters from cucumber-expressions to objects.
-Data table and doc string string types let you convert data tables and doc
+Data table and doc string types let you convert data tables and doc
 strings to objects. Like step definitions, type definitions are part of the glue.
 When placed on the glue path Cucumber will detect them automatically. 
 {{% /block %}}
