@@ -414,7 +414,7 @@ end
 {{% /block %}}
 
 {{% block "java,kotlin,ruby" %}}
-If you are using a type that has not yet been defined, you will got an error similar to:
+If you are using a type that has not yet been defined, you will get an error similar to:
 ```shell
 The parameter type "person" is not defined.
 ```
