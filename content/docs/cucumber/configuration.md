@@ -22,7 +22,7 @@ When placed on the glue path Cucumber will detect them automatically.
 {{% /block %}}
 
 {{% block "java" %}}
-For example, the following class registers custom "Author" data table type:
+For example, the following class registers a custom "Author" data table type:
 {{% /block %}}
 
 {{% block "java" %}}
