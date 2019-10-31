@@ -924,9 +924,11 @@ package.
 The `@CucumberOptions` can be used to provide
 [additional configuration](#list-configuration-options) to the runner.
 
+**Using plugins:**
 
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
 
+{{% block "java" %}}
 ```java
 package com.example;
 
@@ -939,7 +941,9 @@ import org.junit.runner.RunWith;
 public class RunCucumberTest {
 }
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
 ```kotlin
 package com.example;
 
@@ -952,6 +956,44 @@ import org.junit.runner.RunWith;
 class RunCucumberTest {
 }
 ```
+{{% /block %}}
+
+For example if you want to tell Cucumber to print code snippets for missing
+step definitions use the `summary` plugin, you can specify it like this:
+
+{{% block "java" %}}
+```java
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "summary"}, strict = true, snippets = CAMELCASE)
+public class RunCucumberTest {
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "summary"}, strict = true, snippets = CAMELCASE)
+class RunCucumberTest {
+}
+```
+{{% /block %}}
+The default option for `snippets` is `UNDERSCORE`. This settings can be used to
+specify the way code snippets will be created by Cucumber.
+
+**Performing a dry-run:**
 
 For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this:
 
@@ -981,6 +1023,8 @@ class RunCucumberTest {
 }
 ```
 The default option for `dryRun` is `false`.
+
+**Formatting console output:**
 
 For example if you want console output from Cucumber in a readable format, you can specify it like this:
 
@@ -1012,6 +1056,8 @@ class RunCucumberTest {
 
 The default option for `monochrome` is `false`.
 
+**Skip undefined tests:**
+
 For example if you want to skip undefined steps from execution, you can specify it like this:
 
 ```java
@@ -1041,8 +1087,9 @@ class RunCucumberTest {
 ```
 The default option for `strict` is `false`.
 
-For example if you want to tell Cucumber to print code snippets for missing
-step definitions use the `summary` plugin, you can specify it like this:
+**Select scenarios using tags:**
+
+For example if you want to tell Cucumber to only run the scenarios specified with specific tags, you can specify it like this:
 
 {{% block "java" %}}
 ```java
@@ -1053,7 +1100,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "summary"}, strict = true)
+@CucumberOptions(tags = {"@foo", "not @bar"})
 public class RunCucumberTest {
 }
 ```
@@ -1068,13 +1115,51 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "summary"}, strict = true)
-class RunCucumberTest {
+@CucumberOptions(tags = {"@foo", "not @bar"})
+public class RunCucumberTest {
 }
 ```
 {{% /block %}}
 
-Usually, this class will be empty. You can, however, specify several JUnit rules.
+**Specify an object factory:**
+
+For example if you are using Cucumber with a DI framework and want to use a custom object factory, you can specify it like this:
+
+{{% block "java" %}}
+```java
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(objectFactory = FooFactory.class)
+public class RunCucumberTest {
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(objectFactory = FooFactory.class)
+public class RunCucumberTest {
+}
+```
+{{% /block %}}
+The default option for `objectFactory` is to use the default object factory.
+Additional information about using custom object factories can be found [here](/docs/cucumber/state/#the-cucumber-object-factory).
+
+There are additional options available in the `@CucumberOptions` annotation.
+
+Usually, the test class will be empty. You can, however, specify several JUnit rules.
 
 {{% note "Supported JUnit annotations"%}}
 Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotations.

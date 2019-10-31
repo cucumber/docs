@@ -1,6 +1,6 @@
 ---
 title: State
-subtitle: Sharing state, isolated state
+subtitle: Sharing state, isolated state, dependency injection
 ---
 
 It's important to prevent state created by one scenario from leaking into others.
@@ -237,6 +237,167 @@ compile group: 'io.cucumber', name: 'cucumber-needle', version: '{{% version "cu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).
+
+# How to use DI
+
+When using a DI framework all your step definitions, hooks, transformers, etc. will be created by the frameworks instance injector.
+
+## The need for a custom injector
+
+Cucumber example tests are typically small and have no dependencies.
+In real life, though, tests often need access to application specific object instances
+which also need to be supplied by the injector.
+These instances need to be made available to your step definitions so that actions
+can be applied on them and delivered results can be tested.
+
+The reason using Cucumber with a DI framework typically originates from the fact that the tested application also uses
+the same framework. So we need to configure a custom injector to be used with Cucumber.
+This injector ties tests and application instances together.
+
+Here is an example of a typical step definition using [Google Guice](/docs/cucumber/state/#guice). Using the
+Cucumber provided Guice injector will fail to instantiate the required `appService` member.
+
+```java
+package com.example.app;
+
+import static org.junit.Assert.assertTrue;
+
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.guice.ScenarioScoped;
+import com.example.app.service.AppService;
+import java.util.Objects;
+import javax.inject.Inject;
+
+@ScenarioScoped
+public final class StepDefinition {
+
+    private final AppService appService;
+
+    @Inject
+    public StepDefinition( AppService appService ) {
+        this.appService = Objects.requireNonNull( appService, "appService must not be null" );
+    }
+
+    @When("the application services are started")
+    public void startServices() {
+        this.appService.startServices();
+    }
+
+    @Then("all application services should be running")
+    public void checkThatApplicationServicesAreRunning() {
+        assertTrue( this.appService.servicesAreRunning() );
+    }
+}
+```
+
+The implementation of the AppService may need further arguments and configuration that typically
+has to be provided by a Guice module. Guice modules are used to configure an injector and might look like this:
+
+```java
+package com.example.app.service.impl;
+
+import com.example.app.service.AppService;
+import com.google.inject.AbstractModule;
+
+public final class ServiceModule extends AbstractModule {
+    @Override
+    protected void configure() {
+        bind( AppService.class ).to( AppServiceImpl.class );
+        // ... (further bindings)
+    }
+}
+```
+
+The actual injector is then created like this: `injector = Guice.createInjector( new ServiceModule() );`
+
+This means we need to create our own injector and tell Cucumber to use it.
+
+## The Cucumber object factory
+
+Whenever Cucumber needs a specific object, it uses an object factory.
+Cucumber has a default object factory that (in case of Guice) creates a default injector and
+delegates object creation to that injector.
+If you want to customize the injector we need to provide our own object factory and tell Cucumber to use it instead.
+
+```java
+package com.example.app;
+
+import io.cucumber.core.backend.ObjectFactory;
+import io.cucumber.guice.CucumberModules;
+import io.cucumber.guice.ScenarioScope;
+import com.example.app.service.impl.ServiceModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Stage;
+
+public final class CustomObjectFactory implements ObjectFactory {
+
+    private Injector injector;
+
+    public CustomObjectFactory() {
+        // Create an injector with our service module
+        this.injector =
+          Guice.createInjector( Stage.PRODUCTION, CucumberModules.createScenarioModule(), new ServiceModule());
+    }
+
+    @Override
+    public boolean addClass( Class< ? > clazz ) {
+        return true;
+    }
+
+    @Override
+    public void start() {
+        this.injector.getInstance( ScenarioScope.class ).enterScope();
+    }
+
+    @Override
+    public void stop() {
+        this.injector.getInstance( ScenarioScope.class ).exitScope();
+    }
+
+    @Override
+    public < T > T getInstance( Class< T > clazz ) {
+        return this.injector.getInstance( clazz );
+    }
+}
+```
+
+This is the default object factory for Guice except that we have added our own bindings to the injector.
+Cucumber loads the object factory through the `java.util.ServiceLoader`. In order for the ServiceLoader to be able
+to pick up our custom implementation we need to provide the file `META-INF/services/io.cucumber.core.backend.ObjectFactory`.
+
+```
+com.example.app.CustomObjectFactory
+#
+# ... additional custom object factories could be added here
+#
+```
+
+Now we have to tell Cucumber to use our custom object factory. There are several ways how this could be accomplished.
+
+### Using the command line
+
+When Cucumber is run from the command line, the custom object factory can be specified as argument.
+
+```bash
+java io.cucumber.core.cli.Main --object-factory com.example.app.CustomObjectFactory
+```
+
+### Using the property file
+
+Cucumber makes use of a properties file (`cucumber.properties`) if it exists. The custom object factory can be
+specified in this file and will be picked up when Cucumber is running. The following entry needs to be available
+in the `cucumber.properties` file:
+
+```
+cucumber.object-factory=com.example.app.CustomObjectFactory
+```
+
+### Using a test runner (JUnit/TestNG)
+
+The Cucumber modules for [JUnit](/docs/cucumber/api/#junit) and [TestNG](/docs/cucumber/checking-assertions/#testng) allow to run Cucumber through a JUnit/TestNG test.
+The custom object factory can be configured using the `@CucumberOptions` annotation.
 
 # Databases
 
