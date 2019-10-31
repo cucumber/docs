@@ -275,7 +275,7 @@ class LambdaStepDefinitions : En {
 
 {{% block "java,kotlin" %}}
 Using the `@DefaultParameterTransformer`, `@DefaultDataTableEntryTransformer`
-and `DefaultDataTableCellTransformer` annotations also possible to plugin an 
+and `@DefaultDataTableCellTransformer` annotations, it is also possible to plug in an 
 ObjectMapper. The object mapper (Jackson in this example) will handle the 
 conversion of anonymous parameter types and data table entries.
 {{% /block %}}
