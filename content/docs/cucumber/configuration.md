@@ -333,7 +333,7 @@ class StepDefinitions {
 
 {{% block "java,kotlin" %}}
 For lambda defined step definitions, there are `DefaultParameterTransformer`, 
-`DefaultDataTableCellTransformer` and `DefaultDataTableEntryTransformer` functions:
+`DefaultDataTableCellTransformer` and `DefaultDataTableEntryTransformer` {{% stepdef-body %}}:
 {{% /block %}}
 
 {{% block "java" %}}
