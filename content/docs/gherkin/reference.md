@@ -442,21 +442,28 @@ In order to allow Gherkin to be written in a number of languages, the keywords h
 
 ### List translation options
 You can get information about the translations from the command line.
+Note: 'cucumber' command may be different over code languages. ex. for Node.js is 'cucumber-js'
 
 To see a listing of available languages:
 ```shell
-cucumber --i18n help
+cucumber --i18n-languages help
 ```
 
 To list the keywords of a particular language, use the language code:
 ```shell
-cucumber --i18n <language_code>
+cucumber --i18n-keywords <language_code>
 ```
 
 For example, to see the keywords in French:
 ```shell
-cucumber --i18n fr
+cucumber --i18n-keywords fr
 ```
+
+Finally, to run the test using a particular language, use  'language' parameter and language code:
+```shell
+cucumber --language fr
+```
+
 
 ### Overview
 You can find all translation of Gherkin [on GitHub](https://github.com/cucumber/cucumber/blob/master/gherkin/gherkin-languages.json).
