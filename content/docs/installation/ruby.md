@@ -42,7 +42,7 @@ Then, initialize a `features/` directory:
 cucumber --init
 ```
 
-[Bundler](http://gembundler.com/) is a utility gem that manages project specific RubyGem dependencies such that each
+[Bundler](https://bundler.io/) is a utility gem that manages project specific RubyGem dependencies such that each
 Rails project is unaffected by the gem requirements of another.
 If you use Bundler to support multiple gem versions in multiple Rails projects on a single development host then you must
 run Cucumber using the preface `bundle exec`. For example: `bundle exec cucumber -pnone features`.

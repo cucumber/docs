@@ -25,7 +25,7 @@ Before we begin, you will need the following:
 
 {{% block "java" %}}
 
-- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+- [Java SE](https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
 - A build tool. You can choose between:
   - [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
   - [Gradle](https://gradle.org/install/)
@@ -38,7 +38,7 @@ Before we begin, you will need the following:
 
 {{% block "kotlin" %}}
 
-- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) (Java 9 and higher are not yet supported by Cucumber)
+- [Java SE](https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) (Java 9 and higher are not yet supported by Cucumber)
 - [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
@@ -68,7 +68,7 @@ Both of these commands should print a version number.
 {{% block "ruby" %}}
 
 - [Ruby](https://www.ruby-lang.org/)
-- [Bundler](http://bundler.io/)
+- [Bundler](https://bundler.io/)
 - A text editor
 
 Open a terminal to verify that Ruby is installed properly:

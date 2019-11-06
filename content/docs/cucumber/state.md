@@ -93,8 +93,6 @@ This will `extend` each new `World` object with those modules.
 If you use [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), there is already a `World` set up for you, so you will get
 an instance of `Cucumber::Rails::World`, which is a subclass of `ActionDispatch::IntegrationTest`. This gives you access to a lot of Rails' helper methods.
 
-For more information, have a look at [Building a better World](http://drnicwilliams.com/2009/04/15/cucumber-building-a-better-world-object/) (blog post).
-
 Cucumber-js also uses a `World` as an isolated context for each scenario. You can find more information in the
 [cucumber-js documentation on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/world.md).
 

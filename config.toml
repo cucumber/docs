@@ -1,4 +1,4 @@
-baseURL = "http://cucumber.io/"
+baseURL = "https://cucumber.io/"
 languageCode = "en-us"
 title = "Cucumber Documentation"
 theme = "cucumber-hugo"

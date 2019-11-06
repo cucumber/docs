@@ -86,7 +86,7 @@ More information on [Watir](http://watir.com).
 
 ## Capybara
 {{% text "ruby" %}}
-More information on [Capybara](http://teamcapybara.github.io/capybara/).
+More information on [Capybara](https://teamcapybara.github.io/capybara/).
 {{% /text %}}
 
 {{% text "java,javascript" %}}Capybara only works with Ruby.{{% /text %}}
