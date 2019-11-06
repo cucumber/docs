@@ -5,7 +5,7 @@ subtitle: Decoupling your scenarios from infrastructure
 
 Mocking is usually discouraged when using Cucumber; ideally you would exercise as much of your stack as possible.
 There are cases when using mocking can come in handy. For example, if your system depends on a third party.
-If you have a dependency on an external system, we recommend using [stubs instead of mocks](http://martinfowler.com/articles/mocksArentStubs.html).
+If you have a dependency on an external system, we recommend using [stubs instead of mocks](https://martinfowler.com/articles/mocksArentStubs.html).
 You **can** set up mocks with expectations in your [step definitions](/docs/cucumber/step-definitions).
 
 # Ruby
@@ -13,7 +13,7 @@ You **can** set up mocks with expectations in your [step definitions](/docs/cucu
 ## RSpec 2.x
 
 Starting with Cucumber 0.8.4, you can use all of RSpec's supported mocking frameworks (RSpec, Mocha, RR, Flexmock).
-Use `require 'cucumber/rspec/doubles'` ([test-double](http://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
+Use `require 'cucumber/rspec/doubles'` ([test-double](https://www.martinfowler.com/bliki/TestDouble.html) is a more generic term than mocks and stubs).
 
 Perhaps place your stub action within a block as below:
 
@@ -34,11 +34,11 @@ Different mocking frameworks may serve different purposes.
 
 ## Mockito
 
-[Mockito](http://mockito.org) is a framework for the creation of [test doubles](http://www.martinfowler.com/bliki/TestDouble.html) in automated unit tests for the purpose of TDD or BDD.
+[Mockito](https://site.mockito.org/) is a framework for the creation of [test doubles](https://www.martinfowler.com/bliki/TestDouble.html) in automated unit tests for the purpose of TDD or BDD.
 
 ## MockServer
 
-You can use [MockServer](http://www.mock-server.com/) for mocking any system you integrate with via HTTP or HTTPS (i.e. services, web sites, etc).
+You can use [MockServer](https://www.mock-server.com/) for mocking any system you integrate with via HTTP or HTTPS (i.e. services, web sites, etc).
 
 ## WireMock
 

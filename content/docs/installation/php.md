@@ -6,4 +6,4 @@ implementation: semi-official
 weight: 1165
 ---
 
-Please see the [Behat website](http://behat.org/).
+Please see the [Behat website](https://behat.org/).

@@ -72,7 +72,7 @@ Some guidelines:
 * If needed, describe what the result of each step should be
 
 # Toolchain
-The documentation is written in [Markdown](http://toolchain.gitbook.com/syntax/markdown.html).
+The documentation is written in [Markdown](https://en.wikipedia.org/wiki/Markdown).
 
 The documentation is stored in the [docs.cucumber.io project on Github](https://github.com/cucumber/docs.cucumber.io).
 

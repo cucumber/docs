@@ -60,7 +60,7 @@ If you follow this pattern you also avoid the [Feature-coupled step definitions]
 
 # Writing step definitions
 Don't write step definitions for steps that are not present in one of your scenarios.
-These might end up as unused [cruft](http://en.wikipedia.org/wiki/Cruft) that will need to be cleaned up later.
+These might end up as unused [cruft](https://en.wikipedia.org/wiki/Cruft) that will need to be cleaned up later.
 Only implement step definitions that you actually need.
 
 # Helper methods
