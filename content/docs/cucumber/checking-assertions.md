@@ -100,7 +100,7 @@ Then('the result should be {word}', function (expected) {
 
 ## Other Assertion Libraries
 
-You can use any other assertion library if you wish. Here is an example using [Chai](https://chaijs.com/):
+You can use any other assertion library if you wish. Here is an example using [Chai](https://www.chaijs.com/):
 
 ```javascript
 const expect = require('chai')
