@@ -3,7 +3,7 @@
     {{ range .Page.Params.polyglot }}
       <li data-language="{{ . }}">
         <a>
-          <figure class="image is-24x24">
+          <figure class="image is-36x36">
             {{ readFile (printf "/docs/installation/%s.svg" .) | safeHTML }}
           </figure>
         </a>

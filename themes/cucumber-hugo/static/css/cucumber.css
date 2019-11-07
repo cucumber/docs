@@ -55,6 +55,26 @@
   margin-bottom: 1.5rem;
 }
 
+.resource-list{
+  display: none;
+}
+
+.resources:hover .resource-list {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.resource-list {
+  padding: 10px 20px;
+  line-height: 24px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color .2s ease;
+}
+
 .delete, .modal-close {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -4406,6 +4426,11 @@ a.box:active {
   width: 32px;
 }
 
+.image.is-36x36 {
+  height: 36px;
+  width: 36px;
+}
+
 .image.is-48x48 {
   height: 48px;
   width: 48px;
@@ -5078,9 +5103,10 @@ a.tag:hover {
 
 .title {
   color: #363636;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 28pt;
+  font-weight: lighter;
   line-height: 1.125;
+  font-family: "Open Sans";
 }
 
 .title strong {
@@ -5985,6 +6011,7 @@ a.dropdown-item.is-active {
   font-family: Roboto, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
+  height: 80px;
 }
 
 .navbar.is-white {
@@ -6547,11 +6574,6 @@ a.dropdown-item.is-active {
   top: 0;
 }
 
-html.has-navbar-fixed-top,
-body.has-navbar-fixed-top {
-  padding-top: 3.25rem;
-}
-
 html.has-navbar-fixed-bottom,
 body.has-navbar-fixed-bottom {
   padding-bottom: 3.25rem;
@@ -6563,6 +6585,7 @@ body.has-navbar-fixed-bottom {
   display: flex;
   flex-shrink: 0;
   min-height: 3.25rem;
+  margin: 1rem 0;
 }
 
 .navbar-brand a.navbar-item:hover {
@@ -6658,14 +6681,15 @@ a.navbar-item,
 a.navbar-item:hover, a.navbar-item.is-active,
 .navbar-link:hover,
 .navbar-link.is-active {
-  background-color: #fafafa;
-  color: #004fff;
+  border-bottom: 2px solid #1DBB68;
 }
 
 .navbar-item {
   display: block;
   flex-grow: 0;
   flex-shrink: 0;
+  font-size: 13.4pt;
+  font-weight: 400;
 }
 
 .navbar-item img {
@@ -6792,7 +6816,6 @@ a.navbar-item:hover, a.navbar-item.is-active,
   .navbar-end,
   .navbar-end-2 {
     flex-direction: row;
-    align-items: flex-start;
     flex-wrap: wrap;
     display: flex;
   }
@@ -6865,8 +6888,6 @@ a.navbar-item:hover, a.navbar-item.is-active,
   .navbar-menu {
     flex-grow: 1;
     flex-shrink: 0;
-    height:90px;
-    max-width:600px;
     justify-content: flex-end;
   }
   .navbar-start {
@@ -7148,14 +7169,6 @@ a.navbar-item:hover, a.navbar-item.is-active,
   margin-bottom: 1.5rem;
 }
 
-.panel-heading,
-.panel-tabs,
-.panel-block {
-  border-bottom: 1px solid #dbdbdb;
-  border-left: 1px solid #dbdbdb;
-  border-right: 1px solid #dbdbdb;
-}
-
 .panel-heading:first-child,
 .panel-tabs:first-child,
 .panel-block:first-child {
@@ -7221,12 +7234,12 @@ a.navbar-item:hover, a.navbar-item.is-active,
 }
 
 .panel-block.is-active {
-  border-left-color: #004fff;
+  border-left-color: #1DBB68;
   color: #363636;
 }
 
 .panel-block.is-active .panel-icon {
-  color: #004fff;
+  color: #1DBB68;
 }
 
 a.panel-block,
@@ -7282,7 +7295,7 @@ label.panel-block:hover {
 
 .tabs a:hover {
   border-bottom-color: #363636;
-  color: #363636;
+  color: #1DBB68;
 }
 
 .tabs li {
@@ -7424,7 +7437,7 @@ label.panel-block:hover {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  padding: 0.75rem;
+  padding: 1.5rem;
 }
 
 .columns.is-mobile > .column.is-narrow {
@@ -8799,6 +8812,12 @@ label.panel-block:hover {
   color: #1b1d1e;
 }
 
+.banner {
+  background-image: url(/img/green-gears.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
 .hero.is-white .subtitle {
   color: rgba(27, 29, 30, 0.9);
 }
@@ -8823,7 +8842,7 @@ label.panel-block:hover {
 .hero.is-white .navbar-link:hover,
 .hero.is-white .navbar-link.is-active {
   background-color: #f2f2f2;
-  color: #1b1d1e;
+  color: #1DBB68;
 }
 
 .hero.is-white .tabs a {
@@ -8979,7 +8998,7 @@ label.panel-block:hover {
 .hero.is-light .navbar-link:hover,
 .hero.is-light .navbar-link.is-active {
   background-color: #e8e8e8;
-  color: #363636;
+  color: #1DBB68;
 }
 
 .hero.is-light .tabs a {
@@ -9658,10 +9677,6 @@ label.panel-block:hover {
 .hero-body {
   flex-grow: 1;
   flex-shrink: 0;
-  padding: 3rem 1.5rem;
-}
-
-.section {
   padding: 3rem 1.5rem;
 }
 

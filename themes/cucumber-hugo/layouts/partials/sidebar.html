@@ -1,8 +1,16 @@
 
 <nav class="panel">
-  <div class="panel-block">
-    {{ partial "doc-search.html" . }}
-  </div>
+    <div class="navbar-brand">
+        <a class="logo" href="/">
+          <img src="/img/LOGO.svg" alt="Cucumber" />
+        </a>
+    
+        <button class="button navbar-burger" data-target="navbarMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
   {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
     {{ $expandChildren := (not .Page.Params.collapseChildren) }}

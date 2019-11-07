@@ -3,8 +3,9 @@
     {{ partial "sidebar.html" . }}
   </div>
   <div class="column is-three-quarters">
+      {{ partial "navbar.html" . }}
     <div>
-      <h1 class="title is-1">{{ .Title }}</h1>
+      <h1 class="title">{{ .Title }}</h1>
       <div class="content">
         {{ .Content }}
       </div>

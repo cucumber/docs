@@ -3,11 +3,13 @@
     {{ partial "sidebar.html" . }}
   </div>
   <div class="column is-three-quarters">
+      {{ partial "navbar.html" . }}
     <div>
-      <h1 class="title is-1">{{ .Title }}</h1>
+      <div class="banner"><h1 class="title">{{ .Title }}</h1>
       {{ if .Page.Params.polyglot }}
         {{ partial "language-tabs.html" . }}
       {{ end }}
+      </div>
       <div class="content">
        {{- with .Content -}}{{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" aria-label="Anchor"> 🔗&#xFE0E;</a>${3}` | safeHTML }}
       </div>
