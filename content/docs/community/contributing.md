@@ -48,7 +48,7 @@ When asking a question, or filing a bug report, please tell us:
 - What the output, error message and full {{% text "ruby" %}}backtrace{{% /text %}}{{% text "java,kotlin,javascript" %}}stacktrace{{% /text %}} was.
 {{% text "ruby" %}}Feed Cucumber with `--backtrace --verbose` and rake with `--trace`.{{% /text %}}
 - What your expected output is.
-- What relevant code you have. Don't *describe* your code; show your actual code. You can use <http://gist.github.com/>, rather than pasting code in emails.
+- What relevant code you have. Don't *describe* your code; show your actual code. You can use <https://gist.github.com/>, rather than pasting code in emails.
 
 The only way to fix a bug, is to reproduce it first. At the very least, provide the steps to reproduce the issue.
 If you can, write a Unit Test or a Cucumber Feature that demonstrates the bug.

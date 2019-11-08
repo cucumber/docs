@@ -70,7 +70,7 @@ Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}
 2. Cucumber gathers any capture groups or variables
 3. Cucumber passes them to the step definition's {{% text "ruby" %}}`Proc` (or “function”){{% /text %}}{{% text "javascript" %}}function{{% /text %}}{{% text "java" %}}method{{% /text %}} and executes it
 
-Recall that step definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**).
+Recall that step definitions start with a [preposition](https://www.merriam-webster.com/dictionary/given) or an [adverb](https://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**).
 
 All step definitions are loaded (and defined) before Cucumber starts to execute the plain text in the feature file.
 
@@ -319,7 +319,7 @@ The `scenario` parameter is optional. If you use it, you can inspect the status
 of the scenario.
 
 For example, you can take a screenshot with
-{{% text "java,javascript,kotlin" %}}[WebDriver](http://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}}
+{{% text "java,javascript,kotlin" %}}[WebDriver](https://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}}
 for failed scenarios and embed them in Cucumber's report.
 
 See the [browser automation page](/docs/guides/browser-automation/#screenshot-on-failure) for an example on how to do so.
@@ -779,8 +779,8 @@ a particular Cucumber run will produce a warning message. If the `--strict` opti
 the default profile, then instead of a warning the run will fail.
 
 Limiting the number of occurrences is commonly used in conjunction with the `@wip` tag to restrict the number of
-unspecified scenarios to manageable levels. Those following [Kanban](http://en.wikipedia.org/wiki/kanban) or
-[Lean Software Development](http://en.wikipedia.org/wiki/Lean_software_development) based methodologies will find this useful.
+unspecified scenarios to manageable levels. Those following [Kanban](https://en.wikipedia.org/wiki/kanban) or
+[Lean Software Development](https://en.wikipedia.org/wiki/Lean_software_development) based methodologies will find this useful.
 {{% /text %}}
 
 # Running Cucumber
@@ -1172,7 +1172,7 @@ and `After` [hooks](#hooks).
 The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
 Listeners and Reporters can all be expected to work.
 
-For more information on JUnit, see the [JUnit web site](http://www.junit.org).
+For more information on JUnit, see the [JUnit web site](https://www.junit.org).
 {{% /block %}}
 
 {{% block "ruby" %}}

@@ -51,7 +51,7 @@ If you cannot find a version newer than 1.2.5, change the groupId in your depend
 {{% /block %}}
 
 ## Upgrading
-Cucumber tries to follow the [SemVer](http://semver.org/) specification for release numbers. Essentially, that means that:
+Cucumber tries to follow the [SemVer](https://semver.org/) specification for release numbers. Essentially, that means that:
 
 * If only the right-hand (patch) number in the release changes, you don't need to worry.
 * If the middle number (minor) number in the release changes, you don't need to worry.
@@ -199,11 +199,11 @@ Taking a screenshot when a scenario fails, might help you to figure out what wen
 To take a screenshot on failure, you can configure an [after hook](/docs/cucumber/api/#after).
 
 For an [example](/docs/guides/browser-automation/#screenshot-on-failure) on how to use take a screenshot
-with {{% text "java,javascript,kotlin" %}}[WebDriver](http://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}} for failed scenarios and embed them in Cucumber's report, see the [browser automation](/docs/guides/browser-automation) page.
+with {{% text "java,javascript,kotlin" %}}[WebDriver](https://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}} for failed scenarios and embed them in Cucumber's report, see the [browser automation](/docs/guides/browser-automation) page.
 
 {{% block "java,javascript,kotlin" %}}
 Below is an example of how to take a screenshot with
-[WebDriver](http://www.seleniumhq.org/projects/webdriver/)
+[WebDriver](https://www.seleniumhq.org/projects/webdriver/)
 Below is an example of how to take a screenshot with
 for failed scenarios and embed them in Cucumber's report.
 {{% /block %}}
