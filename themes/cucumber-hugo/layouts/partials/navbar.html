@@ -1,57 +1,41 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-menu" id="navbarMenu">
-    <div class="navbar-start">
-      <a href="https://cucumber.io/docs/guides/" class="navbar-item">
-        <span>
-          Guides
-        </span>
-      </a>
-      <a href="#" class="resources navbar-item">
-        Resources <i class="fas fa-chevron-down"></i>
-      </a>
-      <ul class="resource-list">
-        <li>
-          <a class="navbar-item" href="https://cucumber.io/jam">
-            jam
-          </a>
-        </li>
-        <li>
-          <a class="navbar-item" href="https://cucumber.io/blog">
-            blog
-          </a>
-        </li>
-        <li>
-          <a class="navbar-item" href="https://cucumber.io/events">
-            events
-          </a>
-        </li>
-        <li>
-          <a class="navbar-item" href="https://cucumber.io/docs">
-            documentation
-          </a>
-        </li>
-        <li>
-          <a class="navbar-item" href="https://cucumber.io/school">
-            video tutorials
-          </a>
-        </li>
-      </ul>
-
-      <a class="navbar-item" href="https://cucumber.io/support">
-        <span>
-          support
-        </span>
-      </a>
-
-      <a class="navbar-item" href="https://cucumber.io/training">
-        <span>
-          learn bdd
-        </span>
-      </a>
-      <a class="navbar-item" href="https://github.com/cucumber">
-        <span><i class="fab fa-github"></i></span>
-      </a>
-      <div class="search navbar-item">{{ partial "doc-search.html" . }}</div>
-    </div>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="second-nav">
+  <div class="navbar-brand">
+    <a class="navbar-text" href="/">
+      Cucumber Open
+    </a>
   </div>
+  <button class="button navbar-burger" data-target="navbarMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="menus">
+  <div class="navbar-menu" id="navbarMenu">
+        <a class="navbar-item" href="https://cucumber.io/docs/guides/">
+          <span>
+            Guides
+          </span>
+        </a>
+        <a class="navbar-item" href="https://cucumber.io/jam">
+          <span>
+            Secondary
+          </span>
+        </a>
+        <a class="navbar-item" href="https://cucumber.io/blog">
+          <span>
+            Cucumber Hub
+          </span>
+        </a>
+        <a class="navbar-item" href="https://github.com/cucumber">
+          <span>
+              <i class="fab fa-github"></i>
+          </span>
+        </a>
+  </div>
+  </span>
+  <div class="search navbar-item">{{ partial "doc-search.html" . }}</div>
+</div>
+</div>
 </nav>
+

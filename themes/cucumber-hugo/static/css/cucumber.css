@@ -4189,6 +4189,11 @@ a.box:active {
   }
 }
 
+#docsearch {
+  height: 46px;
+  width: 340px;
+}
+
 .control {
   font-size: 1rem;
   position: relative;
@@ -4200,7 +4205,7 @@ a.box:active {
   height: 2.25em;
   pointer-events: none;
   position: absolute;
-  top: 0;
+  top: 5;
   width: 2.25em;
   z-index: 4;
 }
@@ -6008,8 +6013,7 @@ a.dropdown-item.is-active {
   min-height: 3.25rem;
   position: relative;
   z-index: 30;
-  font-family: Roboto, sans-serif;
-  text-transform: uppercase;
+  font-family: "Open Sans";
   font-weight: bold;
   height: 80px;
 }
@@ -6022,6 +6026,24 @@ a.dropdown-item.is-active {
 .navbar.is-white .navbar-brand > .navbar-item,
 .navbar.is-white .navbar-brand .navbar-link {
   color: #1b1d1e;
+}
+
+.second-nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.menus {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.navbar-text {
+  color: #173467;
+  font-size: 21pt;
+  font-weight: 500;
 }
 
 .navbar.is-white .navbar-brand > a.navbar-item:hover, .navbar.is-white .navbar-brand > a.navbar-item.is-active,
@@ -6688,7 +6710,7 @@ a.navbar-item:hover, a.navbar-item.is-active,
   display: block;
   flex-grow: 0;
   flex-shrink: 0;
-  font-size: 13.4pt;
+  font-size: 18pt;
   font-weight: 400;
 }
 
@@ -6885,8 +6907,11 @@ a.navbar-item:hover, a.navbar-item.is-active,
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+  nav.navbar {
+    padding: 0 1rem;
+  }
   .navbar-menu {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     flex-shrink: 0;
     justify-content: flex-end;
   }
@@ -7169,12 +7194,6 @@ a.navbar-item:hover, a.navbar-item.is-active,
   margin-bottom: 1.5rem;
 }
 
-.panel-heading:first-child,
-.panel-tabs:first-child,
-.panel-block:first-child {
-  border-top: 1px solid #dbdbdb;
-}
-
 .panel-heading {
   background-color: whitesmoke;
   border-radius: 4px 4px 0 0;
@@ -7430,6 +7449,11 @@ label.panel-block:hover {
 
 .tabs.is-large {
   font-size: 1.5rem;
+}
+
+html.has-navbar-fixed-top,
+body.has-navbar-fixed-top {
+  padding-top: 80px;
 }
 
 .column {
