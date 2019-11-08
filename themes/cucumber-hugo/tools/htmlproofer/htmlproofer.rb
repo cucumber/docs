@@ -80,6 +80,8 @@ options = {
   # https://stackoverflow.com/questions/27231113/999-error-code-on-head-request-to-linkedin
   http_status_ignore: [999],
   url_ignore: [
+    # Amazon often returns 503 even when a page is available. Ignore.
+    /https:\/\/www\.amazon\.com/,
     # Something is not right on that site - not sure what...
     /https:\/\/testng\.org/,
     # Pull requests with new pages will link to 'edit' on master (which doesn't exist yet). Ignore!
