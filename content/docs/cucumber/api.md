@@ -889,6 +889,8 @@ To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency t
   [...]
 </dependencies>
 ```
+Cucumber is based on JUnit 4. If you're using JUnit 5, remember to include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
+
 
 Create an empty class that uses the Cucumber JUnit runner.
 
