@@ -1,0 +1,38 @@
+@import "../../node_modules/bulma/sass/utilities/initial-variables"
+
+// Brand colours: https://github.com/cucumber-ltd/brand/blob/master/Cucumber_Brand_V1.0.pdf
+
+// Non-bulma variables
+$cucumber-grey-lighter: #efefef
+
+// Bulma variable overrides
+$blue:   #004fff
+$orange: #ff7f00
+$red:    #ff1245
+$green:  #00a818
+$purple: #3e10af
+$black:  #1b1d1e
+$grey:   #65696b
+
+$primary: $green
+// This sets the code snippet background colour
+$pre-background: $cucumber-grey-lighter
+$code: $black !default
+
+@import "../../node_modules/bulma/bulma"
+@import "./pygments"
+
+.is-huge
+  height: 128px
+  max-height: 128px
+  max-width: 128px
+  min-height: 128px
+  min-width: 128px
+  width: 128px
+
+.algolia-autocomplete
+  width: 100%
+
+// Override Bulma's minireset.sass so the TOC is indented
+li
+  padding-left: 8px

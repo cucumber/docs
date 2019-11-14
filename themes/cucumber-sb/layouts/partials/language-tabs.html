@@ -1,0 +1,13 @@
+<div class="tabs is-boxed left">
+  <ul>
+    {{ range .Page.Params.polyglot }}
+      <li data-language="{{ . }}">
+        <a>
+          <figure class="image is-24x24">
+            {{ readFile (printf "/docs/installation/%s.svg" .) | safeHTML }}
+          </figure>
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</div>

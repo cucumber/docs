@@ -1,0 +1,5 @@
+{{ $languages := split (.Get 0) ","}}
+{{ $inner := .Inner }}
+{{ range $languages }}
+<span class="is-hidden text-{{ . }}">{{ $inner }}</span>
+{{ end }}

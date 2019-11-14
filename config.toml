@@ -1,7 +1,7 @@
 baseURL = "https://cucumber.io/"
 languageCode = "en-us"
 title = "Cucumber Documentation"
-theme = "cucumber-hugo"
+theme = "cucumber-sb"
 
 pygmentsUseClassic = true
 pygmentsCodeFences = true
