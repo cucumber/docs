@@ -3,7 +3,7 @@ title: Behaviour-Driven Development
 subtitle: The process Cucumber supports
 weight: 1180
 menu: main
-iconClass: fas fa-comments
+iconClass: far fa-comments
 ---
 
 Behaviour-Driven Development (BDD) is the software development process that Cucumber was built to support.

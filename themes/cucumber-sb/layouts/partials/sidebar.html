@@ -27,10 +27,10 @@
 
         <div class="panel-group {{ if eq $currentPage . }}is-active{{ end }}">
 
-        <a href="{{$pageUrl}}" style="padding-left: 1.5em" class="panel-block {{ if eq $currentPage . }}is-active{{ end }}">
-          <span class="panel-icon">
+        <a href="{{$pageUrl}}" style="padding-left: 2.5em" class="panel-block {{ if eq $currentPage . }}is-active{{ end }}">
+          <!--span class="panel-icon">
             <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
+          </span-->
           {{ .Name }}
         </a>
 
@@ -39,7 +39,7 @@
           {{ range $headings }}
             <a href="#{{ . | replaceRE "&rsquo;" " " | replaceRE "\\." " " | htmlUnescape | plainify | urlize  }}" style="padding-left: 3em" class="panel-block">
               <span class="panel-icon">
-                <i class="fas fa-angle-right" aria-hidden="true"></i>
+                <i class="fas fa-link" aria-hidden="true"></i>
               </span>
               {{ . | htmlUnescape | plainify }}
             </a>
