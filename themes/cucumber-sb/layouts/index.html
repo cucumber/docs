@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
-{{ partial "head.html" . }}
-<body class="cucumber">
+<html class="has-navbar-fixed-top cucmber-docs-sb home">
+  {{ partial "head.html" . }}
+<body class="bg-transparent scroll-js cucumber home nav-white scrollTop">
+{{ partial "navbar.html" . }}
+
 {{- with .Content -}}
     <div>
       {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" aria-label="Anchor">&#xf0c1;</a> ${3}` | safeHTML }}
     </div>
     {{- end -}}
+
+{{ partial "footer.html" .}}
 </body>
 </html>

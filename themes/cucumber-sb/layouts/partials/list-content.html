@@ -11,16 +11,18 @@
         {{ .Content }}
       </div>
 
-      <div class="columns">
-        {{ range $index, $page := .Pages.ByWeight }}
-          {{ if eq (mod (sub $index 3) 3) 0 }}
-      </div>
-      <div class="columns">
-          {{ end }}
-        <div class="column is-one-third">
-          {{ partial "page-card.html" $page }}
+      <div class="content-cards">
+        <div class="columns">
+          {{ range $index, $page := .Pages.ByWeight }}
+            {{ if eq (mod (sub $index 3) 3) 0 }}
         </div>
-        {{ end }}
+        <div class="columns">
+            {{ end }}
+          <div class="column is-one-third">
+            {{ partial "page-card.html" $page }}
+          </div>
+          {{ end }}
+        </div>
       </div>
     </div>
 
