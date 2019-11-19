@@ -24822,7 +24822,7 @@ li {
     box-shadow: none; }
   .cucmber-docs-sb html.has-navbar-fixed-top, .cucmber-docs-sb body.has-navbar-fixed-top {
     padding-top: 65px; }
-  .cucmber-docs-sb .navbar {
+  .cucmber-docs-sb .nav-main {
     min-height: 65px;
     box-shadow: 0 0 5px 0px rgba(85, 85, 85, 0.1); }
   .cucmber-docs-sb.home {
@@ -24909,6 +24909,18 @@ li {
       list-style: decimal; }
     .cucmber-docs-sb .content a {
       color: #1CBA66; }
+      .cucmber-docs-sb .content a.hanchor {
+        position: absolute; }
+        .cucmber-docs-sb .content a.hanchor:after {
+          margin-left: 10px;
+          color: #1DBB68;
+          content: "\f0c1";
+          font-family: "Font Awesome 5 Pro";
+          font-size: 22px;
+          font-weight: 300;
+          line-height: 30px;
+          position: absolute;
+          top: 5px; }
   .cucmber-docs-sb .content-edit-block {
     padding: 20px 40px 10px 40px;
     border-top: 1px solid #cecece; }
@@ -24919,7 +24931,7 @@ li {
   .cucmber-docs-sb .content-cards {
     padding: 0 40px; }
     .cucmber-docs-sb .content-cards .card:hover {
-      box-shadow: 0 2px 3px rgba(35, 217, 108, 0.25), 0 0 0 1px rgba(35, 217, 108, 0.25); }
+      box-shadow: 0 2px 3px rgba(27, 29, 30, 0.1), 0 0 0 1px rgba(27, 29, 30, 0.1); }
     .cucmber-docs-sb .content-cards a:hover {
       text-decoration: none; }
     .cucmber-docs-sb .content-cards a .title {
