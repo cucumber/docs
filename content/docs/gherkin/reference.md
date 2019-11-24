@@ -2,14 +2,16 @@
 title: Gherkin Reference
 subtitle: "Cucumber syntax: Given, When, Then"
 ---
-Gherkin uses a set of special keywords to give structure and meaning to
+Gherkin uses a set of special [keywords](#keywords) to give structure and meaning to
 executable specifications. Each keyword is translated to many spoken languages;
 in this reference we'll use English.
 
 Most lines in a Gherkin document start with one of the [keywords](#keywords).
 
-Comment lines are allowed anywhere in the file. They begin with zero or more spaces,
-followed by a hash sign (`#`) and some text. Comments do have to start on a new line.
+A comment must start on a new line. Comment lines are allowed anywhere in the file. They begin with zero or more spaces,
+followed by a hash sign (`#`) and some text.
+
+Block comments are currently not supported by Gherkin.
 
 Either spaces or tabs may be used for indentation. The recommended indentation
 level is two spaces. Here is an example:
@@ -136,7 +138,7 @@ a list of [steps](#steps).
 The keyword `Scenario` is a synonym of the keyword `Example`.
 
 You can have as many steps as you like, but we recommend you keep the number at 3-5 per example.
-If they become longer than that, they lose their expressive power as specification and documentation.
+Having too many steps within examples will cause them to lose their expressive power as specification and documentation.
 
 In addition to being a specification and documentation, an example is also a *test*.
 As a whole, your examples are an *executable specification* of the system.
@@ -209,7 +211,7 @@ Most software does something people could do manually (just not as efficiently).
 Try hard to come up with examples that don't make any assumptions about
 technology or user interface. Imagine it's 1922, when there were no computers.
 
-Implementation details should be hidden in the [step definitions](/docs/cucumber/step-definitions).
+Implementation details should be abstracted away in [step definitions](/docs/cucumber/step-definitions).
 {{% /note %}}
 
 ### Then
@@ -220,7 +222,7 @@ The [step definition](/docs/cucumber/step-definitions) of a `Then` step should u
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
-An observation *should* be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not something deeply buried inside it (like a database).
+An outcome *should* be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not a behaviour deeply buried inside the system (like a minor change to a database).
 
 Examples:
 
@@ -230,11 +232,11 @@ Examples:
 
 While it might be tempting to implement `Then` steps to look in the database - resist that temptation!
 
-You should only verify outcome that is observable for the user (or external system), and databases usually are not.
+You should only verify an outcome that is observable for the user (or external system), and changes to a database are usually not.
 
 ### And, But
 
-If you have several `Given`'s, `When`'s, or `Then`s, you *could* write:
+If you have successive `Given`'s, `When`'s, or `Then`'s, you *could* write:
 
 ```gherkin
 Example: Multiple Givens
@@ -246,7 +248,7 @@ Example: Multiple Givens
   Then I shouldn't see something else
 ```
 
-Or, you could make it read more fluidly by writing:
+Or, you could make the example more fluidly structured by replacing the successive `Given`'s, `When`'s, or `Then`'s with `And`'s and `But`'s:
 
 ```gherkin
 Example: Multiple Givens
@@ -279,7 +281,7 @@ Feature: Multiple site support
   Only blog owners can post to a blog, except administrators,
   who can post to all blogs.
 
-  Background:
+  Background
     Given a global administrator named "Greg"
     And a blog named "Greg's anti-tax rants"
     And a customer named "Dr. Bill"
