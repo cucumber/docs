@@ -10,7 +10,7 @@ polyglot:
 ---
 
 You can have all of your step definitions in one file, or in multiple files. When you start with your project, all your step definitions will probably be in one file.
-As your project grows, you should split your step definitions into meaningful groups in different files
+As your project grows, you should split your step definitions into meaningful groups in different files.
 This will make your project more logical and easier to maintain.
 
 # How Cucumber finds your features and step definitions
@@ -22,7 +22,7 @@ This is either the default case or the location specified with the {{% text "jav
 # Grouping steps
 
 Technically it doesn't matter how you name your step definition files, or which step definitions you put in a file.
-You *could* have one giant file and put all your step definitions in there. But that would get very messy, and hard to maintain.
+You *could* have one giant file containing all your step definitions. However, as the project grows, the file can become messy and hard to maintain.
 Instead, we recommend creating a separate{{% text "ruby" %}} `*_steps.rb`{{% /text %}}{{% text "java" %}} `Steps.java`{{% /text %}}{{% text "kotlin" %}} `Steps.kt`{{% /text %}}{{% text "javascript" %}} `*_steps.js`{{% /text %}} file for each domain concept.
 
 A good rule of thumb is to have one file for each major {{% text "ruby" %}}model/database table.{{% /text %}}{{% text "java,kotlin" %}}domain object.{{% /text %}}{{% text "javascript" %}}domain object.{{% /text %}}
@@ -69,7 +69,7 @@ remains available to you in the step definition files (*but not in feature files
 On the other hand, do not lose sight that every step called as such in a step definition file is first parsed by
 [Gherkin](/docs/gherkin/) and therefore must conform to the same syntax as used in feature files.
 
-In fact, it is recommended to refactor step definitions into helper methods for greater flexibility and reuse.
+In fact, it is recommended to refactor step definitions into helper methods for greater modularity and reuse.
 The method can reside in the same {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}} file as the step definition.
 
 This makes your project more understandable for people who join your project at a later date; which also makes your project easier to maintain.
@@ -118,7 +118,7 @@ public void i_want_to_open_page(String webpage) {
 Your step definitions are the glue to the actual code (in this example, a factory method to decide which page to open).
 They can also be used to hide implementation details by calling several reusable helper methods from one step definiton.
 
-This helps in a number of ways,
+This helps in a number of ways:
 
 * Increased maintainability.
 * Increased scalablility with reusable steps.
