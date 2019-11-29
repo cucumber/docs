@@ -1,8 +1,10 @@
 
-<nav class="panel">
+<nav class="panel panel-sidebar">
+    <div class="panel panel-sidebar-fixed">
   <div class="panel-block panel-search">
     {{ partial "doc-search.html" . }}
   </div>
+  <div class="panel-sidebar-nav">
   {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
     {{ $expandChildren := (not .Page.Params.collapseChildren) }}
@@ -55,4 +57,15 @@
           </div>
 
   {{ end }}
+  </div>
+
+  <div class="panel-open">
+      <div class="panel-open-head">Cucumber Open</div>
+      <div class="panel-open-links">
+        <a href="https://github.com/cucumber/docs.cucumber.io" target="_blank"><span class="fab fa-github">&nbsp;</span>GitHub Docs</a> 
+        <a href="https://github.com/cucumber/docs.cucumber.io" target="_blank"><span class="fab fa-github">&nbsp;</span>Link 2</a> 
+        <a href="https://github.com/cucumber/docs.cucumber.io" target="_blank"><span class="fab fa-github">&nbsp;</span>Link 3</a> 
+      </div> 
+  </div>
+</div>
 </nav>
