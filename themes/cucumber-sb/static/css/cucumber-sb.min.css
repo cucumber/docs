@@ -25418,6 +25418,8 @@ li {
     */ }
   .cucumber-docs-sb li {
     padding: 0; }
+  .cucumber-docs-sb ol li::before {
+    content: none; }
   .cucumber-docs-sb .list {
     background-color: transparent;
     box-shadow: none; }

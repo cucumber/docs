@@ -18,51 +18,45 @@ Free, open source, any platform </p>
           </div>
         </div>
     </div>
-  </div></section>
-    <section class="band home-trio band-full-width-content bg-gray-xtra-light" style="background-image:url();" id="" data-nav-text="">
-      <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="row">
-  <div class="col-12 col-md-4 trio-col">
-  <div class="trio-icon"><img alt="OpenAPI Specification" src="https://static0.smartbear.co/cucumber/media/images/logos/icons/cucumber-open-icon.svg"></div>
-  
-  <div class="trio-title">Cucumber Open</div>
-  
-  <div class="trio-desc">Free, open source, any platform.</div>
-  
-  <div class="trio-link"><a class="btn btn-cucumber-outlined" href="/docs/getting-started/">View Docs</a></div>
-  
-  <div class="trio-link"><a href="/docs/getting-started/"><span class="fab fa-github">&nbsp;</span>GitHub Docs</a></div>
-  </div>
-  
-  <div class="col-12 col-md-4 trio-col active">
-  <div class="trio-icon"><img alt="OpenAPI Specification" src="https://static0.smartbear.co/cucumber/media/images/logos/icons/c4j-icon.png"></div>
-  
-  <div class="trio-title">CucumberHub</div>
-  
-  <div class="trio-desc">Define acceptance criteria, execute automated tests, and generate living documentation all in one platform.</div>
-  
-  <div class="trio-link"><a class="btn btn-cucumber-outlined" href="/docs/getting-started/">View Docs</a></div>
-  
-  <div class="trio-link"><a href="/docs/getting-started/">View Features</a></div>
-  </div>
-  
-  <div class="col-12 col-md-4 trio-col">
-  <div class="trio-icon"><img alt="OpenAPI Specification" class="fpo" src="#" style="height:72px;width:72px;overflow: hidden;"></div>
-  
-  <div class="trio-title">Learn BDD</div>
-  
-  <div class="trio-desc">Learn about Cucumber products and BDD with a variety of our training modules.</div>
-  
-  <div class="trio-link"><a class="btn btn-cucumber-outlined" href="/docs/getting-started/">View Docs</a></div>
-  
-  <div class="trio-link"><a href="/docs/getting-started/">Discover Courses</a></div>
-  </div>
-  </div></div>
-      </div>
+  </div></section>   
+<section class="band hover-trio band-full-width-content bg-gray-xtra-light" style="background-image:url();" id="" data-nav-text="">
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+<div class="col-12 col-md-4 trio-col">
+<div class="trio-icon"><a href="/tools/cucumber-open/"><img alt="OpenAPI Specification" src="https://static0.smartbear.co/cucumber/media/images/logos/icons/cucumber-open-icon.svg"></a></div>
+
+<div class="trio-title"><a class="text-gray-dark" href="/tools/cucumber-open/">Cucumber Open</a></div>
+
+<div class="trio-desc">Our open source tool tests business-readable specifications against your code on any modern development stack. With over 30 million downloads, Cucumber Open is the world's #1 tool for Behaviour-Driven Development.</div>
+
+<div class="trio-link"><a class="btn btn-cucumber-outlined" href="/docs/installation/">View Docs</a></div>
+</div>
+
+<div class="col-12 col-md-4 trio-col active">
+<div class="trio-icon"><a href="/tools/cucumberstudio/"><img src="https://static0.smartbear.co/cucumber/media/images/logos/icons/c4j-icon.png"></a></div>
+
+<div class="trio-title"><a class="text-gray-dark" href="/tools/cucumberstudio/">CucumberStudio</a></div>
+
+<div class="trio-desc">Cucumber Studio empowers Product Owners and Business Analysts to harness the power of examples, making everyone part of the conversation.</div>
+
+<div class="trio-link"><a class="btn btn-cucumber-outlined" href="/tools/cucumberstudio/">Learn More</a></div>
+</div>
+
+<div class="col-12 col-md-4 trio-col">
+<div class="trio-icon"><a href="/tools/cucumber-for-jira/"><img src="https://static0.smartbear.co/cucumber/media/images/logos/icons/c4j-icon.png"></a></div>
+
+<div class="trio-title"><a class="text-gray-dark" href="/tools/cucumber-for-jira/">Cucumber for Jira</a></div>
+
+<div class="trio-desc">Define with all your stakeholders the feature files using behavior driven development (BDD), directly in Jira.</div>
+
+<div class="trio-link"><a class="btn btn-cucumber-outlined" href="/tools/cucumber-for-jira/">Learn More</a></div>
+</div>
+</div>
+        </div>
     </div>
-    </section>
+  </div></section>  
     <section class="band pt-5 pb-6 band-full-width-content bg-transparent" style="background-image:url();" id="" data-nav-text="">
       <div class="container">
           <div class="row">
@@ -82,30 +76,5 @@ Free, open source, any platform </p>
       </div>
     </div>
 </section>
-<section class="band py-6 bg-image-cover band-full-width-content bg-transparent" style="background-image:url(https://static0.smartbear.co/cucumber/media/images/backgrounds/bottom-cta-background.png?ext=.png);" id="" data-nav-text="">
-    <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <p class="section-heading text-center text-white">Start your free trial today</p>
-
-<h3 class="text-center text-white">Build quality, don’t just test for it. Try CucumberHub for free.</h3>
-
-<div class="text-center mt-5">
-<ul class="list list-check list-cucumber d-inline-block mx-4">
-	<li class="text-white h5">List Item Here</li>
-	<li class="text-white h5">List Item Here</li>
-</ul>
-
-<ul class="list list-check list-cucumber d-inline-block mx-4">
-	<li class="text-white h5">List Item Here</li>
-	<li class="text-white h5">List Item Here</li>
-</ul>
-</div>
-
-<p class="text-white text-center mt-4"><a class="btn btn-cucumber py-3 px-5" href="#">Start Free Trial</a><br>
-<span class="small">30-day trial, no credit card required</span></p>
-        </div>
-    </div>
-  </div></section>
   </div>
 </section>
