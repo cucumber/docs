@@ -15,7 +15,7 @@ Cucumber can be used to implement automated tests based on scenarios described i
 
 # Step Arguments
 
-In the example given in [step definitions](/docs/cucumber/step-definitions) Cucumber extracts the text `48` from the step, converts it to an `int`
+In the example given in [step definitions](/docs/cucumber/step-definitions), Cucumber extracts the text `48` from the step, converts it to an `int`
 and passes it as an argument to the {{% stepdef-body %}}.
 
 The number of parameters in the {{% stepdef-body %}} has to match the number of {{% expression-parameter %}}s in the expression. (If there is a mismatch, Cucumber will throw an error).
@@ -104,7 +104,7 @@ Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java" %}}`null`{{% /tex
 
 #### Skipped
 
-Steps that follow `undefined`, `pending`, or `failed` steps are never executed,  even if there is a matching step definition. These steps are marked as cyan.
+Steps that follow `undefined`, `pending`, or `failed` steps are never executed,  even if there is a matching step definition. These steps are marked as skipped (cyan).
 
 #### Ambiguous
 
@@ -264,7 +264,7 @@ Before(10) { scenario: Scenario ->
 
 ### After
 
-`After` hooks run after the last step of each scenario, even when steps are `failed`, `undefined`, `pending`, or `skipped`.
+`After` hooks run after the last step of each scenario, even when the step result is `failed`, `undefined`, `pending`, or `skipped`.
 
 {{% block "java" %}}
 
@@ -438,7 +438,7 @@ To run a particular hook only for certain scenarios, you can associate a
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
-Hook with a [tag expression](#tag-expressions).
+hook with a [tag expression](#tag-expressions).
 
 {{% block "java" %}}
 Annotated method style:
@@ -483,7 +483,7 @@ end
 
 See more documentation on [tags](#tags).
 
-## Global Hooks
+## Global hooks
 
 {{% block "ruby" %}}
 A global hook will run once before any scenario is run. Put the
@@ -555,7 +555,7 @@ Tags are a great way to organise your features and scenarios.
 They can be used for two purposes:
 
 * [Running a subset of scenarios](#running-a-subset-of-scenarios)
-* [Scoping hooks to a subset of scenarios](#conditional-hooks)
+* [Restricting hooks to a subset of scenarios](#conditional-hooks)
 
 Consider the following example:
 
@@ -889,6 +889,8 @@ To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency t
   [...]
 </dependencies>
 ```
+Cucumber is based on JUnit 4. If you're using JUnit 5, remember to include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
+
 
 Create an empty class that uses the Cucumber JUnit runner.
 
