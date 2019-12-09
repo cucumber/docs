@@ -1,26 +1,35 @@
 <head>
-  {{ partial "gtag.html" . }}
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="/img/favicon.png" /> 
-  {{.Hugo.Generator}}
-  <title>{{ if .Title }} {{ .Title }} :{{ end }} Cucumber</title>
-  <link rel="canonical" href="//cucumber.io/docs">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/img/favicon.png" /> {{.Hugo.Generator}}
+    <title>{{ if .Title }} {{ .Title }} - {{ end }}Cucumber Documentation</title>
+    <link rel="canonical" href="https://cucumber.io{{ .Permalink | relURL }}">
 
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-vlOMx0hKjUCl4WzuhIhSNZSm2yQCaf0mOU1hEDK/iztH3gU4v5NMmJln9273A6Jz" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" type="text/css" >
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-vlOMx0hKjUCl4WzuhIhSNZSm2yQCaf0mOU1hEDK/iztH3gU4v5NMmJln9273A6Jz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,500,600,700|Roboto+Mono:400,400i" rel="stylesheet">
-  
-  <link rel="stylesheet" href="/css/cucumber.css" type="text/css"/>
-  <link rel="stylesheet" href="/css/cucumber-sb.min.css" type="text/css">
-  <!--link rel="stylesheet" href="https://localhost:3001/site/assets/css/stylesheet.min.css" type="text/css"/ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,500,600,700|Roboto+Mono:400,400i" rel="stylesheet">
 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M6PZPNH');</script>
+    <link rel="stylesheet" href="/css/cucumber.css" type="text/css" />
+    <link rel="stylesheet" href="/css/cucumber-sb.min.css" type="text/css">
+    <!--link rel="stylesheet" href="https://localhost:3001/site/assets/css/stylesheet.min.css" type="text/css"/ -->
+
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M6PZPNH');
+    </script>
 </head>
