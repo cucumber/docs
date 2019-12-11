@@ -3,6 +3,11 @@ languageCode = "en-us"
 title = "Cucumber Documentation"
 theme = "cucumber-sb"
 
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
 pygmentsUseClassic = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
