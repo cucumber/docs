@@ -4,8 +4,8 @@ subtitle: Support forums, chat rooms
 weight: 70
 ---
 
-If you need help using Cucumber, you have several options.
-Wherever you interact with the Cucumber community, always remember to respect and uphold our [code of conduct](https://github.com/cucumber/cucumber/blob/master/CODE_OF_CONDUCT.md).
+If you need help using Cucumber Open, you have several options.
+Wherever you interact with the Cucumber Open community, always remember to respect and uphold our [code of conduct](https://github.com/cucumber/cucumber/blob/master/CODE_OF_CONDUCT.md).
 
 # Slack
 
