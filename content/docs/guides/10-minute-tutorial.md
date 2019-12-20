@@ -160,23 +160,6 @@ test {
 }
 ```
 
-Then add a file `src/test/java/hellocucumber/RunCucumberTest.java` inside the project
-to enable JUnit 5 integration:
-
-```java
-package hellocucumber;
-
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-@CucumberOptions(plugin = "pretty", features = "src/test/resources/hellocucumber")
-public class RunCucumberTest
-{
-}
-```
-
 If you have not already, open the project in IntelliJ IDEA:
 
 * **File -> Open... -> (Select build.gradle)**
