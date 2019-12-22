@@ -125,40 +125,29 @@ Open the project in IntelliJ IDEA:
 
 **With Gradle**
 
-You can use the following `build.gradle` file as an example template. Use your IDE
-to start a new Gradle-based project.
+The easiest way to create this sample Cucumber project using Gradle is to convert the above generated Maven archetype into a Gradle project.
 
+Run the following command from the `hellocucumber` directory:
+
+```shell
+gradle init
+```
+
+Add the following Task to your `build.gradle` file:
 ```groovy
-apply plugin: 'java'
-sourceCompatibility = 11
-targetCompatibility = 11
-
-group = "hellocucumber"
-version = "1.0"
-
-// Versioning of dependencies
-wrapper.gradleVersion = '5.5.1'
-def cucumberVersion = '{{% version "cucumberjvm" %}}'
-def junitVersion = '5.5.0'
-
-repositories {
-    jcenter()
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
-    testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
-
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
-    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:${junitVersion}"
-}
-
-test {
-    useJUnitPlatform()
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+        }
+    }
 }
 ```
+Note that you also need to add the necessary dependencies/configurations to `build.gradle` depending on which version of Gradle you are using.
+See the [Build Tools](https://cucumber.io/docs/tools/java/#gradle) section.
 
 If you have not already, open the project in IntelliJ IDEA:
 
@@ -436,8 +425,14 @@ You now have a small project with Cucumber installed.
 To make sure everything works together correctly, let's run Cucumber.
 
 {{% block "java,kotlin" %}}
+**Maven:**
 ```shell
 mvn test
+```
+
+**Gradle:**
+```shell
+gradle cucumber
 ```
 {{% /block %}}
 
@@ -558,10 +553,15 @@ The last three lines starting with `Given`, `When` and `Then` are the
 Now that we have a scenario, we can ask Cucumber to execute it.
 
 {{% block "java,kotlin" %}}
+**Maven:**
 ```shell
 mvn test
 ```
 
+**Gradle:**
+```shell
+gradle cucumber
+```
 {{% /block %}}
 
 {{% block "javascript" %}}
