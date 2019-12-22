@@ -125,7 +125,7 @@ Open the project in IntelliJ IDEA:
 
 **With Gradle**
 
-The easiest way to create this sample Cucumber project using Gradle is to convert the above generated Maven archetype into a Gradle project.
+One way to create this sample Cucumber project using Gradle is to convert the above generated Maven archetype into a Gradle project.
 
 Run the following command from the `hellocucumber` directory:
 
