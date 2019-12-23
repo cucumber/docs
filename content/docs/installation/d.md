@@ -1,7 +1,7 @@
 ---
 title: unencumbered
 subtitle: D
-svg: installation/d.svg
+svg: 
 implementation: unofficial
 weight: 1200
 ---
