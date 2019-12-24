@@ -231,7 +231,48 @@ This is just a convention though; Cucumber will pick them up from any file{{% te
 # Profiles
 
 {{% block "java" %}}
-Profiles are not available in Java.
+Profiles are not available in Java.  However, it is possible to set configuration options using [Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html).
+
+For instance, we can configure separate profiles for scenarios which are to be run in separate environments like so:
+
+``` xml
+    <profiles>
+        <profile>
+          <id>dev</id>
+            <properties>
+                <cucumber.options>--tags @dev</cucumber.options>
+                <base.url>http://dev.base.url.to.application</base.url>
+            </properties>
+        </profile>
+        <profile>
+          <id>qa</id>
+            <properties>
+                <cucumber.options>--tags @qa</cucumber.options>
+                <base.url>http://qa.base.url.to.application</base.url>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            ...
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <systemPropertyVariables>
+                       <cucumber.options>${cucumber.options}</cucumber.options>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+```
+
+To mimick similar behavior using Gradle, see the Gradle docs on [Migrating Maven profiles and properties](https://docs.gradle.org/current/userguide/migrating_from_maven.html#migmvn:profiles_and_properties).
+
+
 {{% /block %}}
 
 {{% block "kotlin" %}}
@@ -293,7 +334,9 @@ output.
 
 ## Default Profile
 {{% block "java" %}}
-Profiles are not available in Java.
+Profiles are not available in Java.  See above.
+
+
 {{% /block %}}
 
 {{% block "kotlin" %}}
