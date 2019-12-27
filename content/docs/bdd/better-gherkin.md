@@ -38,16 +38,15 @@ As a side benefit, in consequence your scenarios will be a lot shorter and much 
 
 # Consider a more declarative style
 
-One way to make tests easier to maintain and less brittle is to use a declarative style. Declarative style tests state ideas, rather than details of the UI. They are more informative, they can help tests read better as "living documentation". They are less brittle, and let the test have a longer lifespan. A declarative style helps you focus on the value that the customer is getting, rather than the keystrokes they will use,
+One way to make tests easier to maintain and less brittle is to use a declarative style. Declarative style describes the behaviour of the application, rather than the implementation details. They are more informative, they can help tests read better as "living documentation". They are less brittle, and let the test have a longer lifespan. A declarative style helps you focus on the value that the customer is getting, rather than the keystrokes they will use.
 
-Imperative tests are communicative, but because they are so closely tied to the mechanics of the current UI, they are often more work to maintain. It's easiest to understand this by looking at examples.
+Imperative tests are communicative, and in some contexts, this style of test is appropriate. On the other hand, because they are so closely tied to the mechanics of the current UI, they are often more work to maintain. Any time the implementation changes, the tests need to be updated too.
 
-Here's a more imperative style;
+Here's a more imperative style:
 ```
 Feature: Subscribers see different sets of stock images based on their subscription level 
 
 Scenario: Free subscribers see only the free articles
-
   Given users with a free subscription can access "FreeArticle1" but not "PaidArticle1" 
   When I type "freeFrieda@example.com" in the email field
   And I type "validPassword123" in the password field
@@ -77,5 +76,3 @@ A more declarative style hides the details of how the application's capabilities
   Then she sees a Free article and a Paid article on the home page
 ``` 
 With a declarative style, each step communicates an idea, but the exact values aren't specified. The details, such as what specific articles are free or paid, and the subscription level of different test users, are specified "behind the scenes" in the step definition code. The subscription packages can change in the future. The business can change what content is available to subscribers on free and paid plans, without having to change this test and other tests that use the same step definitions. If another subscription level is added later, it's easy to add a test for that. By avoiding terms like “click a button” that suggest implementation, the test is more resilient to implementation details of the UI. The intent of the test remains the same, even if the implementation changes later.
-
-Imperative tests do have a place, but use them wisely. There’s no right or wrong, experiment to see what fits your context.  
