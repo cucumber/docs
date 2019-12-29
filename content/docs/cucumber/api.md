@@ -50,9 +50,8 @@ In this case, the `DataTable` is automatically flattened to a `List<String>`
 by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
 {{% /text %}}
 
-{{% text "javascript" %}}
-https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.js
-{{% /text %}}
+{{% text "javascript" %}} For an example of data tables in JavaScript, go
+[here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
 
 # Steps
 
