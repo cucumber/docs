@@ -86,7 +86,9 @@ For example, take the following steps:
     Given I get the contact details
 ```
 
-If all of these steps open their respective webpages, you might be writing *redundant steps*. While the underlying code for these steps could be different, their **behaviour** is essentially the same, i.e. *to open the Home, About or Contact page*.
+If all of these steps open their respective web pages, you might be writing *redundant steps*. While the underlying code
+for these steps could be different, their **behaviour** is essentially the same, i.e. *to open the Home, About or
+Contact page*.
 
 As such, you can use abstract helper methods to reduce them into a single step:
 
@@ -116,16 +118,18 @@ public void i_want_to_open_page(String webpage) {
 ```
 
 Your step definitions are the glue to the actual code (in this example, a factory method to decide which page to open).
-They can also be used to hide implementation details by calling several reusable helper methods from one step definiton.
+They can also be used to hide implementation details by calling several reusable helper methods from one step
+definition.
 
 This helps in a number of ways:
 
 * Increased maintainability.
-* Increased scalablility with reusable steps.
+* Increased scalability with reusable steps.
 * More understandable tests.
 
 You can handle other behaviours, like *validating a webpage, clicking a button, etc.*, the same way.
 
-{{% text "java,kotlin" %}}We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.{{% /text %}}
-Also, using [Data Tables](/docs/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
-
+{{% text "java,kotlin" %}}We suggest taking a look at the [Factory Design Pattern]
+(https://refactoring.guru/design-patterns/factory-method) as well.{{% /text %}} Using
+[Data Tables](/docs/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and
+understandability.
