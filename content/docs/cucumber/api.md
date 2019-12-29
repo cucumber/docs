@@ -50,6 +50,10 @@ In this case, the `DataTable` is automatically flattened to a `List<String>`
 by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
 {{% /text %}}
 
+{{% text "javascript" %}}
+https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.js
+{{% /text %}}
+
 # Steps
 
 A step is analogous to a method call or function invocation.
