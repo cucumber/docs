@@ -8,7 +8,7 @@ in this reference we'll use English.
 
 Most lines in a Gherkin document start with one of the [keywords](#keywords).
 
-A comment must start on a new line. Comment lines are allowed anywhere in the file. They begin with zero or more spaces,
+Comments are only permitted at the start of a new line, anywhere in the feature file. They begin with zero or more spaces,
 followed by a hash sign (`#`) and some text.
 
 Block comments are currently not supported by Gherkin.
@@ -137,11 +137,11 @@ a list of [steps](#steps).
 
 The keyword `Scenario` is a synonym of the keyword `Example`.
 
-You can have as many steps as you like, but we recommend you keep the number at 3-5 per example.
-Having too many steps within examples will cause them to lose their expressive power as specification and documentation.
+You can have as many steps as you like, but we recommend you keep the number at 3-5 per example. Having too many steps
+in an example, will cause it to lose it's expressive power as specification and documentation.
 
-In addition to being a specification and documentation, an example is also a *test*.
-As a whole, your examples are an *executable specification* of the system.
+In addition to being a specification and documentation, an example is also a *test*. As a whole, your examples are an
+*executable specification* of the system.
 
 Examples follow this same pattern:
 
@@ -211,7 +211,7 @@ Most software does something people could do manually (just not as efficiently).
 Try hard to come up with examples that don't make any assumptions about
 technology or user interface. Imagine it's 1922, when there were no computers.
 
-Implementation details should be abstracted away in [step definitions](/docs/cucumber/step-definitions).
+Implementation details should be hidden in the [step definitions](/docs/cucumber/step-definitions).
 {{% /note %}}
 
 ### Then
@@ -222,7 +222,7 @@ The [step definition](/docs/cucumber/step-definitions) of a `Then` step should u
 compare the *actual* outcome (what the system actually does) to the *expected* outcome
 (what the step says the system is supposed to do).
 
-An outcome *should* be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not a behaviour deeply buried inside the system (like a minor change to a database).
+An outcome *should* be on an **observable** output. That is, something that comes *out* of the system (report, user interface, message), and not a behaviour deeply buried inside the system (like a record in a database).
 
 Examples:
 
