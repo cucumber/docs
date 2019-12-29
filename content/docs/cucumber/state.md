@@ -1,6 +1,11 @@
 ---
 title: State
 subtitle: Sharing state, isolated state, dependency injection
+polyglot:
+- java
+- javascript
+- ruby
+- kotlin
 ---
 
 It's important to prevent state created by one scenario from leaking into others.
@@ -24,6 +29,7 @@ State can make your steps more tightly coupled and harder to reuse.
 
 ## World object
 
+{{% block "ruby" %}}
 In Ruby, Cucumber runs scenarios in a `World`. By default, the `World` is an instance of `Object`.
 
 All [step definitions](/docs/cucumber/step-definitions) will run in the context of the current `World` instance; a new instance
@@ -91,14 +97,21 @@ World(MyHelper, MyOtherHelpers)
 This will `extend` each new `World` object with those modules.
 
 If you use [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), there is already a `World` set up for you, so you will get
-an instance of `Cucumber::Rails::World`, which is a subclass of `ActionDispatch::IntegrationTest`. This gives you access to a lot of Rails' helper methods.
+an instance of `Cucumber::Rails::World`, which is a subclass of `ActionDispatch::IntegrationTest`. This gives you access
+to a lot of Rails' helper methods.
+{{% /block %}}
 
-Cucumber-js also uses a `World` as an isolated context for each scenario. You can find more information in the
+{{% block "javascript" %}} Cucumber-js uses a `World` as an isolated context for each scenario. You can find more
+information in the
 [cucumber-js documentation on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/world.md).
+{{% /block %}}
+
+{{% block "java,kotlin" %}} JVM languages do not know a "World" object, like Ruby and JavaScript. Instead, you'll need
+to use [Dependency Injection](#dependency-injection).{{% /block %}}
 
 ## Dependency Injection
-If your programming language is Java, you will be writing glue code
-([step definitions](/docs/cucumber/step-definitions) and [hooks](/docs/cucumber/api/#hooks)) in plain old Java classes.
+{{% block "java,kotlin" %}} If your programming language is a JVM language, you will be writing glue code
+([step definitions](/docs/cucumber/step-definitions) and [hooks](/docs/cucumber/api/#hooks)) in classes.
 
 Cucumber will create a new instance of each of your glue code classes before each scenario.
 
@@ -112,10 +125,12 @@ The available dependency injection modules are:
 - [Guice](#guice)
 - [OpenEJB](#openejb)
 - [Weld](#weld)
-- [Needle](#needle)
+- [Needle](#needle) 
+
+{{% /block %}} {{% block "ruby,javascript" %}} Dependency Injection is specific to JVM languages. {{% /block %}}
 
 ### PicoContainer
-
+{{% block "java,kotlin" %}} 
 To use PicoContainer, add the following dependency to your `pom.xml`:
 
 ```xml
@@ -134,9 +149,13 @@ compile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '{{% vers
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
 For more information, please see [sharing state using Picocontainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Picocontainer is a Dependency Injection framework for JVM languages. {{% /block %}}
+
 
 ### Spring
-
+{{% block "java,kotlin" %}} 
 To use Spring, add the following dependency to your `pom.xml`:
 
 ```xml
@@ -154,9 +173,12 @@ compile group: 'io.cucumber', name: 'cucumber-spring', version: '{{% version "cu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Spring is a Dependency Injection framework for JVM languages. {{% /block %}}
 
 ### Guice
-
+{{% block "java,kotlin" %}} 
 To use Guice, add the following dependency to your `pom.xml`:
 
 ```xml
@@ -175,9 +197,12 @@ compile group: 'io.cucumber', name: 'cucumber-guice', version: '{{% version "cuc
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
 For more information, please see [sharing state using Guice](http://www.thinkcode.se/blog/2017/08/16/sharing-state-between-steps-in-cucumberjvm-using-guice).
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Guice is a Dependency Injection framework for JVM languages. {{% /block %}}
 
 ### OpenEJB
-
+{{% block "java,kotlin" %}} 
 To use OpenEJB, add the following dependency to your `pom.xml`:
 
 ```xml
@@ -195,9 +220,12 @@ compile group: 'io.cucumber', name: 'cucumber-openejb', version: '{{% version "c
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} OpenEJB is a Dependency Injection framework for JVM languages. {{% /block %}}
 
 ### Weld
-
+{{% block "java,kotlin" %}} 
 To use Weld, add the following dependency to your `pom.xml`:
 
 ```xml
@@ -215,9 +243,12 @@ compile group: 'io.cucumber', name: 'cucumber-weld', version: '{{% version "cucu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Weld is a Dependency Injection framework for JVM languages. {{% /block %}}
 
 ### Needle
-
+{{% block "java,kotlin" %}} 
 To use Needle, add the following dependency to your `pom.xml`:
 
 ```xml
@@ -235,18 +266,22 @@ compile group: 'io.cucumber', name: 'cucumber-needle', version: '{{% version "cu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Needle is a Dependency Injection framework for JVM languages. {{% /block %}}
 
 # How to use DI
-
+{{% block "java,kotlin" %}} 
 When using a DI framework all your step definitions, hooks, transformers, etc. will be created by the frameworks instance injector.
+{{% /block %}}
 
-## The need for a custom injector
+{{% block "ruby,javascript" %}} Dependency Injection is specific to JVM languages. {{% /block %}}
 
-Cucumber example tests are typically small and have no dependencies.
-In real life, though, tests often need access to application specific object instances
-which also need to be supplied by the injector.
-These instances need to be made available to your step definitions so that actions
-can be applied on them and delivered results can be tested.
+## Using a custom injector
+{{% block "java,kotlin" %}} Cucumber example tests are typically small and have no dependencies. In real life, though,
+tests often need access to application specific object instances which also need to be supplied by the injector. These
+instances need to be made available to your step definitions so that actions can be applied on them and delivered
+results can be tested.
 
 The reason using Cucumber with a DI framework typically originates from the fact that the tested application also uses
 the same framework. So we need to configure a custom injector to be used with Cucumber.
@@ -310,9 +345,12 @@ public final class ServiceModule extends AbstractModule {
 The actual injector is then created like this: `injector = Guice.createInjector( new ServiceModule() );`
 
 This means we need to create our own injector and tell Cucumber to use it.
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Using a custom injector is specific to JVM languages. {{% /block %}}
 
 ## The Cucumber object factory
-
+{{% block "java,kotlin" %}} 
 Whenever Cucumber needs a specific object, it uses an object factory.
 Cucumber has a default object factory that (in case of Guice) creates a default injector and
 delegates object creation to that injector.
@@ -373,29 +411,40 @@ com.example.app.CustomObjectFactory
 ```
 
 Now we have to tell Cucumber to use our custom object factory. There are several ways how this could be accomplished.
+{{% /block %}}
 
-### Using the command line
+{{% block "ruby,javascript" %}} The Cucumber object factory is specific to JVM languages. {{% /block %}}
 
+### Using the Cucumber object factory from the command line
+{{% block "java,kotlin" %}} 
 When Cucumber is run from the command line, the custom object factory can be specified as argument.
 
 ```bash
 java io.cucumber.core.cli.Main --object-factory com.example.app.CustomObjectFactory
 ```
+{{% /block %}}
 
-### Using the property file
+{{% block "ruby,javascript" %}} Using the Cucumber object factory is specific to JVM languages. {{% /block %}}
 
-Cucumber makes use of a properties file (`cucumber.properties`) if it exists. The custom object factory can be
-specified in this file and will be picked up when Cucumber is running. The following entry needs to be available
-in the `cucumber.properties` file:
+### Using the Cucumber object factory a property file
+{{% block "java,kotlin" %}} Cucumber makes use of a properties file (`cucumber.properties`) if it exists. The custom
+object factory can be specified in this file and will be picked up when Cucumber is running. The following entry needs
+to be available in the `cucumber.properties` file:
 
 ```
 cucumber.object-factory=com.example.app.CustomObjectFactory
 ```
+{{% /block %}}
 
-### Using a test runner (JUnit/TestNG)
+{{% block "ruby,javascript" %}} Using the Cucumber object factory is specific to JVM languages. {{% /block %}}
 
+### Using the Cucumber object factory a test runner (JUnit/TestNG)
+{{% block "java,kotlin" %}} 
 The Cucumber modules for [JUnit](/docs/cucumber/api/#junit) and [TestNG](/docs/cucumber/checking-assertions/#testng) allow to run Cucumber through a JUnit/TestNG test.
 The custom object factory can be configured using the `@CucumberOptions` annotation.
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Using the Cucumber object factory is specific to JVM languages. {{% /block %}}
 
 # Databases
 
@@ -403,11 +452,10 @@ There are several options to remove state from your database, to prevent leaking
 
 ## The Before Hook Approach
 
-The recommended approach to clean a database between scenarios is to use a
-`Before` [hook](/docs/cucumber/api/#hooks) to remove all data *before* a scenario starts.
-
-This is usually better than using an `After` [hook](/docs/cucumber/api/#hooks), as it allows
-you to perform a post-mortem inspection of the database if a scenario fails.
+The recommended approach to clean a database between scenarios is to use a `Before` [hook](/docs/cucumber/api/#hooks) to
+remove all data *before* a scenario starts. This is usually better than using an `After`
+[hook](/docs/cucumber/api/#hooks), as it allows you to perform a post-mortem inspection of the database if a scenario
+fails.
 
 An alternative approach is to use database transactions.
 
@@ -440,22 +488,27 @@ Feature: Let's write a lot of stuff to the DB
 ```
 
 ### With JUnit and Spring
-
+{{% block "java,kotlin" %}} 
 See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} JUnit and Spring are used with JVM languages. {{% /block %}}
 
 # Browser Automation and Transactions
 
-If you're using a [browser automation](/docs/guides/browser-automation) tool that talks to your application over HTTP, the
-transactional approach will not work if your [step definitions](/docs/cucumber/step-definitions) and the web application serving
-HTTP request each have their own database connection.
-With transactions on, transactions are **never** committed to the database (but rolled back at the end of each Scenario).
-Therefore, the web server's connection will never see data from Cucumber, and therefore your browser won't either.
-Likewise, Cucumber's connection won't see data from the web server.
+If you're using a [browser automation](/docs/guides/browser-automation) tool that talks to your application over HTTP,
+the transactional approach will not work if your [step definitions](/docs/cucumber/step-definitions) and the web
+application serving HTTP request each have their own database connection. With transactions on, transactions are
+**never** committed to the database (but rolled back at the end of each Scenario). Therefore, the web server's
+connection will never see data from Cucumber, and therefore your browser won't either. Likewise, Cucumber's connection
+won't see data from the web server.
 
 In this case, you will have to turn off database transactions and make sure the data is explicitly deleted before each Scenario.
 
 ## Turn off transactions
-If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), you can turn off transactions for a feature or particular scenarios. Use the `@no-txn` tag, like this:
+{{% block "ruby" %}} 
+If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), you can turn off transactions for
+a feature or particular scenarios. Use the `@no-txn` tag, like this:
 
 ```
 @no-txn
@@ -476,12 +529,14 @@ With Rails, you can also turn off transaction globally in your `features/support
 ```
 Cucumber::Rails::World.use_transactional_fixtures = false
 ```
+{{% /block %}}
+
+{{% block "java,kotlin,javascript" %}} Ruby tools provide specific ways to turn of transactions. {{% /block %}}
 
 ## Cleaning Your Database
-
-If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), a good tool to deal with this is Ben Mabey's
-[Database Cleaner](https://github.com/bmabey/database_cleaner) gem,
-which you can install with `gem install database_cleaner`.
+{{% block "ruby" %}} If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), a good tool to deal with this is
+Ben Mabey's [Database Cleaner](https://github.com/bmabey/database_cleaner) gem, which you can install with `gem install
+database_cleaner`.
 
 You can use this very effectively with the `@no-txn` tag. For example, add something like the following somewhere in e.g. `features/support/db_cleaner.rb`:
 
@@ -525,3 +580,6 @@ After('@no-txn') do
   DatabaseCleaner.strategy = :transaction
 end
 ```
+{{% /block %}}
+
+{{% block "java,kotlin,javascript" %}} Ruby tools provide specific ways to clean your database. {{% /block %}}
