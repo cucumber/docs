@@ -2,7 +2,7 @@
 title: Installation
 weight: 1110
 menu: main
-iconClass: fas fa-download
+iconClass: far fa-download
 collapseChildren: true
 ---
 

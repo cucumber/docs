@@ -17,7 +17,7 @@ WebDriver is designed to provide a simpler, more concise programming interface i
 
 [Selenium-WebDriver](https://docs.seleniumhq.org/docs/03_webdriver.jsp#setting-up-webdriver-project) can be used in multiple programming languages, including Java, JavaScript, Ruby and Kotlin.
 
-Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting the [Selenium-Web driver by example](http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example).
+Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting the [Selenium-Web driver by example](https://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example).
 
 We can express the example as the following scenario:
 
@@ -274,7 +274,7 @@ built-in `MiniTest/Test::Unit`. In particular, whenever Capybara is required int
 method of `Rails Test::Unit` is removed. Capybara depends upon Nokogiri and Nokogiri prefers to use XML rather than CSS tags.
 This behaviour can be overridden in `./features/support/env.rb`.
 
-More information on [Capybara](http://teamcapybara.github.io/capybara/).
+More information on [Capybara](https://teamcapybara.github.io/capybara/).
 
 {{% /text %}}
 
@@ -288,7 +288,7 @@ To take a screenshot on failure, you can configure an [after hook](/docs/cucumbe
 
 {{% block "java,javascript,kotlin" %}}
 Below is an example of how to take a screenshot with
-[WebDriver](http://www.seleniumhq.org/projects/webdriver/)
+[WebDriver](https://www.seleniumhq.org/projects/webdriver/)
 for failed scenarios and embed them in Cucumber's report.
 {{% /block %}}
 

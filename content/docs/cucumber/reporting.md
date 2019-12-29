@@ -164,7 +164,7 @@ The `test_step_finished` event is fired after each `Cucumber::Core::Test::Step` 
 There are also many third-party plugins:
 
 * Masterthought
-* TeamCity - prints Cucumber results in a format for interpretation by a [TeamCity](http://www.jetbrains.com/teamcity/index.html) build agent.
+* TeamCity - prints Cucumber results in a format for interpretation by a [TeamCity](https://www.jetbrains.com/teamcity/index.html) build agent.
    * [teamcity_formatter](https://github.com/kevinrood/teamcity_formatter) - Compatible with Cucumber 2.
    * [cucumber_teamcity](https://github.com/ankurcha/cucumber_teamcity/) - Tested with Cucumber 1.3.18 and TeamCity 8.x.
 * [TextmateFormatter](https://github.com/raldred/cucumber_textmate/) prints Cucumber results as HTML with enhanced styling and Javascript for Textmate (Included in the Cucumber core since 0.4.5)

@@ -3,7 +3,7 @@ title: Behaviour-Driven Development
 subtitle: The process Cucumber supports
 weight: 1180
 menu: main
-iconClass: fas fa-comments
+iconClass: far fa-comments
 ---
 
 Behaviour-Driven Development (BDD) is the software development process that Cucumber was built to support.
@@ -45,7 +45,7 @@ The idea is to make each change small and iterate rapidly, moving back up a leve
 We call these practices _Discovery_, _Formulation_, and _Automation_.
 
 <figure>
-  <img alt="diagram of how the practices fit together" src="/img/BDD practices diagram (loops).png" width="600px">
+  <img alt="diagram of how the practices fit together" src="/img/bdd-practices-diagram.png" width="600px">
   <figcaption>Discovery, Formulation and Automation</figcaption>
 </figure> 
 

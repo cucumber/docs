@@ -1,65 +1,41 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="second-nav">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="/img/cucumber-logo.png" alt="Cucumber">
+    <a class="navbar-text" href="/">
+      Cucumber Open
     </a>
-
-    <button class="button navbar-burger" data-target="navbarMenu">
+  </div>
+  <button class="button navbar-burger" data-target="navbarMenu">
       <span></span>
       <span></span>
       <span></span>
     </button>
-  </div>
-
+    <div class="menus">
   <div class="navbar-menu" id="navbarMenu">
-    <div class="navbar-end">
-        <a class="navbar-item" href="https://cucumber.io/">
+        <a class="navbar-item" href="https://cucumber.io/docs/guides/">
           <span>
-            home
+            Guides
           </span>
         </a>
         <a class="navbar-item" href="https://cucumber.io/jam">
           <span>
-            jam
+            Secondary
           </span>
         </a>
         <a class="navbar-item" href="https://cucumber.io/blog">
           <span>
-            blog
-          </span>
-        </a>
-        <a class="navbar-item" href="https://cucumber.io/events">
-          <span>
-            events
-          </span>
-        </a>
-        <a class="navbar-item" href="https://cucumber.io/docs">
-          <span>
-            documentation
-          </span>
-        </a>
-    </div>
-    <div class="navbar-end-2">
-        <a class="navbar-item" href="https://cucumber.io/training">
-          <span>
-            learn bdd
-          </span>
-        </a>
-        <a class="navbar-item" href="https://cucumber.io/school">
-          <span>
-            video tutorials
+            Cucumber Hub
           </span>
         </a>
         <a class="navbar-item" href="https://github.com/cucumber">
           <span>
-            open source
+              <i class="fab fa-github"></i>
           </span>
         </a>
-        <a class="navbar-item" href="https://cucumber.io/support">
-          <span>
-            support
-          </span>
-        </a>
-    </div>
   </div>
+  </span>
+  <div class="search navbar-item">{{ partial "doc-search.html" . }}</div>
+</div>
+</div>
 </nav>
+

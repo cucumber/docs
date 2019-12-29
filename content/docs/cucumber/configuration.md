@@ -337,7 +337,7 @@ ERB (Embedded RuBy) is a Ruby specific tool.
 
 {{% block "ruby" %}}
 
-The `cucumber.yml` file is preprocessed by [ERB (Embedded RuBy)](http://ruby-doc.org/stdlib-2.5.0/libdoc/erb/rdoc/ERB.html). This allows you to use Ruby code
+The `cucumber.yml` file is preprocessed by [ERB (Embedded RuBy)](https://ruby-doc.org/stdlib-2.5.0/libdoc/erb/rdoc/ERB.html). This allows you to use Ruby code
 to generate values in the `cucumber.yml` file.
 
 So, if you have several profiles with similar values, you might do this:

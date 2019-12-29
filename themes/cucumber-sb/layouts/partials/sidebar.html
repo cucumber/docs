@@ -1,0 +1,69 @@
+
+<nav class="panel panel-sidebar">
+    <div class="panel panel-sidebar-fixed">
+  <div class="panel-block panel-search">
+    {{ partial "doc-search.html" . }}
+  </div>
+  <div class="panel-sidebar-nav">
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.main }}
+    {{ $expandChildren := (not .Page.Params.collapseChildren) }}
+
+    <div class="panel-group {{ if eq $currentPage .Page }}is-active{{ end }}">
+
+    <a href="{{.URL}}" class="panel-block  {{ if eq $currentPage .Page }}is-active{{ end }}">
+      {{if .Page.Params.iconClass}}
+      <span class="panel-icon">
+        <i class="{{.Page.Params.iconClass}}" aria-hidden="true"></i>
+      </span>
+      {{end}}
+      {{ .Name }}
+    </a>
+
+    {{ range .Page.Pages.ByWeight }}
+      {{ $currentFilePage := (eq $currentPage .)}}
+      {{ $siblingOfCurrentFilePage := (eq $currentPage.Parent .Parent)}}
+      {{ $childOfCurrentDirPage := (eq $currentPage .Parent)}}
+      {{ if or $currentFilePage (and $siblingOfCurrentFilePage $expandChildren) (and $childOfCurrentDirPage $expandChildren) }}
+        {{ $pageUrl := (cond (isset .Params "external_url") .Params.external_url .URL) }}
+
+        <div class="panel-group {{ if eq $currentPage . }}is-active{{ end }}">
+
+        <a href="{{$pageUrl}}" style="padding-left: 2.5em" class="panel-block {{ if eq $currentPage . }}is-active{{ end }}">
+          <!--span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span-->
+          {{ .Name }}
+        </a>
+
+        {{ if eq $currentPage . }}
+          {{ $headings := findRE "<h1.*?>(.|\n])+?</h1>" .Content }}
+          {{ range $headings }}
+            <a href="#{{ . | replaceRE "&rsquo;" " " | replaceRE "\\." " " | htmlUnescape | plainify | urlize  }}" style="padding-left: 3em" class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-link" aria-hidden="true"></i>
+              </span>
+              {{ . | htmlUnescape | plainify }}
+            </a>
+          {{ end }}
+        {{ end }}
+
+        </div>
+
+      {{ end }}
+    {{ end }}
+
+
+          </div>
+
+  {{ end }}
+  </div>
+
+  <div class="panel-open">
+      <div class="panel-open-head">Cucumber Open</div>
+      <div class="panel-open-links">
+        <a href="https://github.com/cucumber/cucumber" target="_blank"><span class="fab fa-github">&nbsp;</span>GitHub Docs</a> 
+      </div> 
+  </div>
+</div>
+</nav>

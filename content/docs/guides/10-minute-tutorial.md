@@ -25,7 +25,7 @@ Before we begin, you will need the following:
 
 {{% block "java" %}}
 
-- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+- [Java SE](https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
 - A build tool. You can choose between:
   - [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
   - [Gradle](https://gradle.org/install/)
@@ -38,7 +38,7 @@ Before we begin, you will need the following:
 
 {{% block "kotlin" %}}
 
-- [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) (Java 9 and higher are not yet supported by Cucumber)
+- [Java SE](https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) (Java 9 and higher are not yet supported by Cucumber)
 - [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
@@ -68,7 +68,7 @@ Both of these commands should print a version number.
 {{% block "ruby" %}}
 
 - [Ruby](https://www.ruby-lang.org/)
-- [Bundler](http://bundler.io/)
+- [Bundler](https://bundler.io/)
 - A text editor
 
 Open a terminal to verify that Ruby is installed properly:
@@ -125,57 +125,29 @@ Open the project in IntelliJ IDEA:
 
 **With Gradle**
 
-You can use the following `build.gradle` file as an example template. Use your IDE
-to start a new Gradle-based project.
+One way to create this sample Cucumber project using Gradle is to convert the above generated Maven archetype into a Gradle project.
 
+Run the following command from the `hellocucumber` directory:
+
+```shell
+gradle init
+```
+
+Add the following Task to your `build.gradle` file:
 ```groovy
-apply plugin: 'java'
-sourceCompatibility = 11
-targetCompatibility = 11
-
-group = "hellocucumber"
-version = "1.0"
-
-// Versioning of dependencies
-wrapper.gradleVersion = '5.5.1'
-def cucumberVersion = '{{% version "cucumberjvm" %}}'
-def junitVersion = '5.5.0'
-
-repositories {
-    jcenter()
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
-    testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
-
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
-    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:${junitVersion}"
-}
-
-test {
-    useJUnitPlatform()
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+        }
+    }
 }
 ```
-
-Then add a file `src/test/java/hellocucumber/RunCucumberTest.java` inside the project
-to enable JUnit 5 integration:
-
-```java
-package hellocucumber;
-
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-@CucumberOptions(plugin = "pretty", features = "src/test/resources/hellocucumber")
-public class RunCucumberTest
-{
-}
-```
+Note that you also need to add the necessary dependencies/configurations to `build.gradle` depending on which version of Gradle you are using.
+See the [Build Tools](/docs/tools/java/#gradle) section.
 
 If you have not already, open the project in IntelliJ IDEA:
 
@@ -453,8 +425,14 @@ You now have a small project with Cucumber installed.
 To make sure everything works together correctly, let's run Cucumber.
 
 {{% block "java,kotlin" %}}
+**Maven:**
 ```shell
 mvn test
+```
+
+**Gradle:**
+```shell
+gradle cucumber
 ```
 {{% /block %}}
 
@@ -575,10 +553,15 @@ The last three lines starting with `Given`, `When` and `Then` are the
 Now that we have a scenario, we can ask Cucumber to execute it.
 
 {{% block "java,kotlin" %}}
+**Maven:**
 ```shell
 mvn test
 ```
 
+**Gradle:**
+```shell
+gradle cucumber
+```
 {{% /block %}}
 
 {{% block "javascript" %}}
