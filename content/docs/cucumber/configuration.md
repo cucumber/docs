@@ -368,8 +368,6 @@ output.
 ## Default Profile
 {{% block "java" %}}
 Cucumber profiles are not available on Cucumber-JVM. See above.
-
-
 {{% /block %}}
 
 {{% block "kotlin" %}}
