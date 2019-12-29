@@ -114,7 +114,10 @@ Given('I have {int} cukes in my belly', function (cukes) {
 
 # Expressions
 
-A step definition's *expression* can either be a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression) or a [Cucumber Expression](/docs/cucumber/cucumber-expressions). If you prefer to use Regular Expressions, each *capture group* from the match will be passed as arguments to the step definition's {{% stepdef-body %}}.
+A step definition's *expression* can either be a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)
+or a [Cucumber Expression](/docs/cucumber/cucumber-expressions). The examples in this section use Cucumber Expressions. 
+If you prefer to use Regular Expressions, each *capture group* from the match will be passed as arguments to the step
+definition's {{% stepdef-body %}}.
 
 {{% block "java" %}}
 ```java
@@ -134,14 +137,14 @@ Given("I have {int} cukes in my belly") { cukes: Int ->
 
 {{% block "ruby" %}}
 ```ruby
-Given(/I have (\d+) cukes in my belly/) do |cukes|
+Given(/I have {int} cukes in my belly/) do |cukes|
 end
 ```
 {{% /block %}}
 
 {{% block "javascript" %}}
 ```javascript
-Given(/I have (\d+) cukes in my belly/, function (cukes) {
+Given(/I have {int} cukes in my belly/, function (cukes) {
 });
 ```
 {{% /block %}}
