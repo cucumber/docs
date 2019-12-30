@@ -151,7 +151,7 @@ There is no documentation yet, but the code is on [GitHub](https://github.com/cu
 For more information, please see [sharing state using Picocontainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
 {{% /block %}}
 
-{{% block "ruby,javascript" %}} Picocontainer is a Dependency Injection framework for JVM languages. {{% /block %}}
+{{% block "ruby,javascript" %}} PicoContainer is a Dependency Injection framework for JVM languages. {{% /block %}}
 
 
 ### Spring
