@@ -148,7 +148,7 @@ compile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '{{% vers
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
-For more information, please see [sharing state using Picocontainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
+For more information, please see [sharing state using PicoContainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} PicoContainer is a Dependency Injection framework for JVM languages. {{% /block %}}
