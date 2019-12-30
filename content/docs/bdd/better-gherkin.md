@@ -67,6 +67,9 @@ Each step is a precise instruction. The inputs and expected results are specifie
 A more declarative style hides the details of how the application's capabilities are implemented.
 
 ```
+Feature: Subscribers see different sets of stock images based on their subscription level
+ 
+Scenario: Free subscribers see only the free articles
   Given Free Frieda has a free subscription
   When Free Frieda logs in with her valid credentials
   Then she sees a Free article on the home page
