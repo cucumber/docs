@@ -38,11 +38,11 @@ As a side benefit, in consequence your scenarios will be a lot shorter and much 
 
 # Consider a more declarative style
 
-One way to make tests easier to maintain and less brittle is to use a declarative style. Declarative style describes the behaviour of the application, rather than the implementation details. Declarative tests read better as "living documentation". A declarative style helps you focus on the value that the customer is getting, rather than the keystrokes they will use.
+One way to make scenarios easier to maintain and less brittle is to use a declarative style. Declarative style describes the behaviour of the application, rather than the implementation details. Declarative tests read better as "living documentation". A declarative style helps you focus on the value that the customer is getting, rather than the keystrokes they will use.
 
-Imperative tests are communicative, and in some contexts, this style of test is appropriate. On the other hand, because they are so closely tied to the mechanics of the current UI, they often require more work to maintain. Any time the implementation changes, the tests need to be updated too.
+Imperative tests communicate details, and in some contexts, this style of test is appropriate. On the other hand, because they are so closely tied to the mechanics of the current UI, they often require more work to maintain. Any time the implementation changes, the tests need to be updated too.
 
-Here's a more imperative style:
+Here's an example of a feature in an imperative style:
 ```
 Feature: Subscribers see different sets of stock images based on their subscription level 
 
