@@ -503,7 +503,7 @@ application serving HTTP request each have their own database connection. With t
 connection will never see data from Cucumber, and therefore your browser won't either. Likewise, Cucumber's connection
 won't see data from the web server.
 
-In this case, you will have to turn off database transactions and make sure the data is explicitly deleted before each Scenario.
+In this case, you will have to turn off database transactions and make sure the test data is explicitly deleted before each Scenario.
 
 ## Turn off transactions
 {{% block "ruby" %}} 
