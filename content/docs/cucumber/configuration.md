@@ -325,12 +325,8 @@ output.
 {{% /block %}}
 
 ## Default Profile
-{{% block "java" %}}
+{{% block "java,kotlin" %}}
 Cucumber profiles are not available on Cucumber-JVM. See above.
-{{% /block %}}
-
-{{% block "kotlin" %}}
-Cucumber profiles are not available in Kotlin.  See above.
 {{% /block %}}
 
 {{% block "javascript" %}}
