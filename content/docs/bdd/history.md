@@ -3,7 +3,7 @@ title: History of BDD
 subtitle: Origins of BDD and Cucumber
 ---
 
-Behavior-driven development was pioneered by Daniel Terhorst-North back in the early 00s, as he explained in a 2006 article called[Introducing BDD](http://dannorth.net/introducing-bdd/). It grew from a response to test-driven development (TDD), as a way to help programmers on new agile teams "get straight to the good stuff" of knowing how to approach testing and coding, and minimize misunderstandings. BDD has evolved into both analysis and automated testing at the acceptance level.
+Behavior-driven development was pioneered by Daniel Terhorst-North back in the early 00s, as he explained in a 2006 article called [Introducing BDD](http://dannorth.net/introducing-bdd/). It grew from a response to test-driven development (TDD), as a way to help programmers on new agile teams "get straight to the good stuff" of knowing how to approach testing and coding, and minimize misunderstandings. BDD has evolved into both analysis and automated testing at the acceptance level.
 
 # Early tools supporting BDD
 
