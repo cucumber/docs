@@ -7,7 +7,7 @@ Behavior-driven development was pioneered by Daniel Terhorst-North back in the e
 
 # Early tools supporting BDD
 
-In 2003, Daniel Terhorst-North started writing a replacement for JUnit called JBehave, using vocabulary based on "behaviour" rather than "test". Influenced by the idea of ubiquitous language introduced in Eric Evans' [Domain-Driven Design](https://domainlanguage.com/ddd/), and also focusing on business value, he and Chris Matts developed the "Given/When/Then" template to capture a story's accdeptance criteria in an executable form. 
+In 2003, Daniel Terhorst-North started writing a replacement for JUnit called JBehave, using vocabulary based on "behaviour" rather than "test". Influenced by the idea of ubiquitous language introduced in Eric Evans' [Domain-Driven Design](https://domainlanguage.com/ddd/), and also focusing on business value, he and Chris Matts developed the "Given/When/Then" template to capture a story's acceptance criteria in an executable form. 
 
 In 2005, the [RSpec](https://rspec.info/) project, which supported BDD in the Ruby language, was founded by [Dave Astels](http://daveastels.com/), [Steven Baker](https://stevenrbaker.com/), Aslak Hellesøy. and [David Chelimsky](https://twitter.com/dchelimsky). 
 
