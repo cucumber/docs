@@ -36,3 +36,9 @@ $code: $black !default
 // Override Bulma's minireset.sass so the TOC is indented
 li
   padding-left: 8px
+
+// Bulma doesn't expect these elements to have children, so we need to the default <p> margin
+.message-header,
+.message-body
+  p:last-child 
+    margin-bottom: 0
