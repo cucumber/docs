@@ -13,7 +13,7 @@ There are several discovery workshop models, these are just a few:
 
 [**Example Mapping**](/docs/bdd/example-mapping/)
 
-Uses a pack of four separately colored index cards to map rules (a summary of constraints/acceptance criteria the team has agreed upon) to examples (illustratios/cases of the acceptance criteria)
+Uses a pack of four separately colored index cards to map rules (a summary of constraints/acceptance criteria the team has agreed upon) to examples (illustrations/cases of the acceptance criteria)
 
 [**OOPSI Mapping (Outcomes, Outputs, Processes, Scenarios, Inputs)**](https://jennyjmar.com/2016/04/16/bdd-discovery-and-oopsi/)
 
@@ -33,7 +33,7 @@ A good rule-of-thumb is 3-6 people, but at a bare minimum your [Three Amigos](ht
 
 ### How long does a discovery workshop take?
 
-A discovery workshop should ideally only last about 25-30 minutes per story (when I was at IBM we even used to place a timer in the middle of the table to ensure no time was wasted).  If you need any more time than this, it's likely the story is far too large and should be broken down, or some of the specifics are missing.  In the latter case, you should set aside the story as the product owner needs to do more research.
+A discovery workshop should ideally only last about 25-30 minutes per story.  If you need any more time than this, it's likely the story is far too large and should be broken down, or some of the specifics are missing.  In the latter case, you should set aside the story as the product owner needs to do more research.
 
 ### Why bother?
 
