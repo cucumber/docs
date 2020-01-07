@@ -272,12 +272,11 @@ Occasionally you'll find yourself repeating the same `Given` steps in all of the
 Since it is repeated in every scenario, this is an indication that those steps
 are not *essential* to describe the scenarios; they are *incidental details*. You can literally move such `Given` steps to the background, by grouping them under a `Background` section.
 
-A `Background` allows you to add some context to the scenarios that follow it. It can contain one or
-more `Given` steps.
+A `Background` allows you to add some context to the scenarios that follow it. It can contain one or more `Given` steps, which are run before *each* scenario, but after any [Before hooks](/docs/cucumber/api/#hooks).
 
-A `Background` is run before *each* scenario, but after any [Before hooks](/docs/cucumber/api/#hooks). In your feature file, put the `Background` before the first `Scenario`/`Example`.
+A `Background` is placed before the first `Scenario`/`Example`, at the same level of indentation.
 
-For example:
+For example, at the `Feature` level:
 
 ```gherkin
 Feature: Multiple site support
@@ -306,10 +305,32 @@ Feature: Multiple site support
     Then I should see "Your article was published."
 ```
 
-You can only have one set of `Background` steps at the `Feature` level. If you need different `Background` steps for different scenarios, you have a couple of options:
+And, at the `Rule` level:
 
-- Split the scenarios up into different feature files
-- If it makes sense, consider grouping the scenarios together by business rule using [the `Rule` keyword](#rule), and adding a different `Background` to each `Rule`
+```gherkin
+Feature: Overdue tasks
+  Let users know when tasks are overdue, even when using other
+  features of the app
+
+  Rule: Users are notified about overdue tasks on first use of the day
+    Background:
+      Given I have overdue tasks
+
+    Example: First use of the day
+      Given I last used the app yesterday
+      When I use the app
+      Then I am notified about overdue tasks
+
+    Example: Already used today
+      Given I last used the app earlier today
+      When I use the app
+      Then I am not notified about overdue tasks
+  ...
+```
+
+You can only have one set of `Background` steps per `Feature` or `Rule`. If you need different `Background` steps for different scenarios, consider breaking up your set of scenarios into more `Rule`s or more `Feature`s.
+
+You would typically place a `Background` at either `Feature` or `Rule` level, but you can do _both_ if you need to; the steps will be run in hierarchical order, so the `Feature` ones first, followed by the `Rule` ones.
 
 For a less explicit alternative to `Background`, check out [conditional hooks](/docs/cucumber/api/#conditional-hooks).
 
