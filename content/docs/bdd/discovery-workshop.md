@@ -33,7 +33,7 @@ A good rule-of-thumb is 3-6 people, but at a bare minimum your [Three Amigos](/d
 
 ### How long does a discovery workshop take?
 
-A discovery workshop should ideally only last about 25-30 minutes per story.  If you need any more time than this, it's likely the story is far too large and should be broken down, or some of the specifics are missing.  In the latter case, you should set aside the story as the product owner needs to do more research.
+A discovery workshop should ideally only last about 25-30 minutes per story.  If you need any more time than this, it's likely the story is far too large and should be broken down, or some of the specifics are missing.  In the latter case, you should set aside the story as the team needs to do more research.
 
 ### Why bother?
 
