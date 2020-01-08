@@ -17,7 +17,7 @@ Uses a pack of index cards in four different colours to map rules (a summary of 
 
 [**OOPSI Mapping (Outcomes, Outputs, Processes, Scenarios, Inputs)**](https://jennyjmar.com/2016/04/16/bdd-discovery-and-oopsi/)
 
-Similar to Example Mapping, uses separately colored Post-it Notes to map shared processes/relationships between outputs and scenarios.
+Similar to Example Mapping, uses Post-it Notes of different colours to map shared processes/relationships between outputs and scenarios.
 
 [**Feature Mapping**](https://johnfergusonsmart.com/feature-mapping-a-simpler-path-from-stories-to-executable-acceptance-criteria/)
 
