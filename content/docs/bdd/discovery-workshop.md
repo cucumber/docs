@@ -25,7 +25,7 @@ Also uses Post-it Notes of different colours.  The team picks a story from the 
 
 ### When should you hold a discovery workshop?
 
-As late as possible before development on a new User Story begins, in order to prevent details from being lost.  Conducting a discovery workshop as late as possible also gives the team enough leg room to shift their plans should new details surface.
+As late as possible before development on a new User Story begins, in order to prevent details from being lost. Conducting a discovery workshop as late as possible also gives the team enough leg room to shift their plans should new details surface.
 
 ### Who should attend?
 
