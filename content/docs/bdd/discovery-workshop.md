@@ -21,7 +21,7 @@ Similar to Example Mapping, uses Post-it Notes of different colours to map share
 
 [**Feature Mapping**](https://johnfergusonsmart.com/feature-mapping-a-simpler-path-from-stories-to-executable-acceptance-criteria/)
 
-Also uses separately colored Post-it Notes.  The team picks a story from the backlog, identifies the actors involved, breaks the story down into tasks, and maps those tasks to specific examples.
+Also uses Post-it Notes of different colours.  The team picks a story from the backlog, identifies the actors involved, breaks the story down into tasks, and maps those tasks to specific examples.
 
 ### When should you hold a discovery workshop?
 
