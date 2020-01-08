@@ -13,7 +13,7 @@ There are several discovery workshop models, these are just a few:
 
 [**Example Mapping**](/docs/bdd/example-mapping/)
 
-Uses a pack of four separately colored index cards to map rules (a summary of constraints/acceptance criteria the team has agreed upon) to examples (illustrations/cases of the acceptance criteria)
+Uses a pack of index cards in four different colours to map rules (a summary of constraints/acceptance criteria the team has agreed upon) to examples (illustrations/cases of the acceptance criteria)
 
 [**OOPSI Mapping (Outcomes, Outputs, Processes, Scenarios, Inputs)**](https://jennyjmar.com/2016/04/16/bdd-discovery-and-oopsi/)
 
