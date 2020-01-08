@@ -267,7 +267,7 @@ Example: Multiple Givens
 
 ## Background
 
-Occasionally you'll find yourself repeating the same `Given` steps in all of the scenarios in a `Feature` or `Rule`.
+Occasionally you'll find yourself repeating the same `Given` steps in all of the scenarios in a `Feature`.
 
 Since it is repeated in every scenario, this is an indication that those steps
 are not *essential* to describe the scenarios; they are *incidental details*. You can literally move such `Given` steps to the background, by grouping them under a `Background` section.
@@ -276,7 +276,7 @@ A `Background` allows you to add some context to the scenarios that follow it. I
 
 A `Background` is placed before the first `Scenario`/`Example`, at the same level of indentation.
 
-For example, at the `Feature` level:
+For example:
 
 ```gherkin
 Feature: Multiple site support
@@ -305,7 +305,7 @@ Feature: Multiple site support
     Then I should see "Your article was published."
 ```
 
-And, at the `Rule` level:
+`Background` is also supported at the `Rule` level, for example:
 
 ```gherkin
 Feature: Overdue tasks
@@ -328,9 +328,11 @@ Feature: Overdue tasks
   ...
 ```
 
-You can only have one set of `Background` steps per `Feature` or `Rule`. If you need different `Background` steps for different scenarios, consider breaking up your set of scenarios into more `Rule`s or more `Feature`s.
+{{% warn "Use with caution"%}}
+Whilst usage of `Background` within `Rule` is currently supported, it's not recommended, and may be removed in future versions of Gherkin.
+{{% /warn %}}
 
-You would typically place a `Background` at either `Feature` or `Rule` level, but you can do _both_ if you need to; the steps will be run in hierarchical order, so the `Feature` ones first, followed by the `Rule` ones.
+You can only have one set of `Background` steps per `Feature` or `Rule`. If you need different `Background` steps for different scenarios, consider breaking up your set of scenarios into more `Rule`s or more `Feature`s.
 
 For a less explicit alternative to `Background`, check out [conditional hooks](/docs/cucumber/api/#conditional-hooks).
 
