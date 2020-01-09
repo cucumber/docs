@@ -91,7 +91,6 @@ we can define a custom parameter type in Cucumber's [configuration](/docs/cucumb
 public Color currency(String value) {
     return new Color(value);
 }
- @ParameterType("color", "red|blue|yellow", Color::new)
 ```
 {{% /block %}}
 
