@@ -80,14 +80,18 @@ output parameters to your own types. Consider this Cucumber Expression:
 If we want the `{color}` output parameter to be converted to a `Color` object,
 we can define a custom parameter type in Cucumber's [configuration](/docs/cucumber/configuration).
 
+{{% block "java8" %}}
+```java
+ ParameterType("color", "red|blue|yellow", Color::new);
+```
+{{% /block %}}
 {{% block "java" %}}
 ```java
-typeRegistry.defineParameterType(new ParameterType<>(
-    "color",           // name
-    "red|blue|yellow", // regexp
-    Color.class,       // type
-    Color::new         // transformer function
-))
+@ParameterType(".*?")
+public Color currency(String value) {
+    return new Color(value);
+}
+ @ParameterType("color", "red|blue|yellow", Color::new)
 ```
 {{% /block %}}
 
