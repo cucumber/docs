@@ -82,23 +82,19 @@ we can define a custom parameter type in Cucumber's [configuration](/docs/cucumb
 
 {{% block "java" %}}
 ```java
-typeRegistry.defineParameterType(new ParameterType<>(
-    "color",           // name
-    "red|blue|yellow", // regexp
-    Color.class,       // type
-    Color::new         // transformer function
-))
+@ParameterType("red|blue|yellow")  // regexp
+public Color color(String color){  // type, name (from method)
+    return new Color(color);       // transformer function
+}
 ```
 {{% /block %}}
 
 {{% block "kotlin" %}}
 ```kotlin
-typeRegistry.defineParameterType(ParameterType<Color>(
-    "color",                            // name
-    "red|blue|yellow",                  // regexp
-    Color::class.java,                  // type
-    { s: String -> Color.getColor(s) }  // transformer function
-))
+@ParameterType("red|blue|yellow")   // regexp
+fun color(color: String): Color {   // name (from method), type
+    return Color(color)             // transformer function
+}                                    
 ```
 {{% /block %}}
 

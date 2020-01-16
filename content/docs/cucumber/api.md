@@ -606,17 +606,17 @@ You can tell Cucumber to only run scenarios with a particular tag:
 Using a JVM system property:
 
 ```shell
-mvn test -Dcucumber.options='--tags "@smoke and @fast"'
+mvn test -Dcucumber.filter.tags="@smoke and @fast"
 ```
 
 Or an environment variable:
 
 ```shell
 # Linux / OS X:
-CUCUMBER_OPTIONS='--tags "@smoke and @fast"' mvn test
+CUCUMBER_FILTER_TAGS="@smoke and @fast" mvn test
 
 # Windows:
-set CUCUMBER_OPTIONS='--tags "@smoke and @fast"'
+set CUCUMBER_FILTER_TAGS="@smoke and @fast"
 mvn test
 ```
 
@@ -1227,11 +1227,6 @@ Pass the `--help` option to print out all the available configuration options:
 java cucumber.api.cli.Main --help
 ```
 
-Or:
-
-```
-mvn test -Dcucumber.options="--help"
-```
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -1247,7 +1242,7 @@ For example, if you are using Maven and want to run a subset of scenarios tagged
 with `@smoke`:
 
 ```
-mvn test -Dcucumber.options="--tags @smoke"
+mvn test -Dcucumber.filter.tags="@smoke"
 ```
 
 Some of the runners provide additional mechanisms for passing options to Cucumber.
