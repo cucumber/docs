@@ -436,12 +436,45 @@ This is just a convention though; Cucumber will pick them up from any file{{% te
 
 # Profiles
 
-{{% block "java" %}}
-Profiles are not available in Java.
-{{% /block %}}
+{{% block "java,kotlin" %}}
+Cucumber profiles are not available on Cucumber-JVM.  However, it is possible to set configuration options using [Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html).
 
-{{% block "kotlin" %}}
-Profiles are not available in Kotlin.
+For instance, we can configure separate profiles for scenarios which are to be run in separate environments like so:
+
+``` xml
+    <profiles>
+        <profile>
+          <id>dev</id>
+            <properties>
+                <cucumber.options>--tags "@dev and not @ignore"</cucumber.options>
+            </properties>
+        </profile>
+        <profile>
+          <id>qa</id>
+            <properties>
+                <cucumber.options>--tags "@qa"</cucumber.options>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            ...
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <systemPropertyVariables>
+                       <cucumber.options>${cucumber.options}</cucumber.options>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+```
+
+To mimick similar behavior using Gradle, see the Gradle docs on [Migrating Maven profiles and properties](https://docs.gradle.org/current/userguide/migrating_from_maven.html#migmvn:profiles_and_properties).
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -498,12 +531,8 @@ output.
 {{% /block %}}
 
 ## Default Profile
-{{% block "java" %}}
-Profiles are not available in Java.
-{{% /block %}}
-
-{{% block "kotlin" %}}
-Profiles are not available in Kotlin.
+{{% block "java,kotlin" %}}
+Cucumber profiles are not available on Cucumber-JVM. See above.
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -543,7 +572,7 @@ ERB (Embedded RuBy) is a Ruby specific tool.
 
 {{% block "ruby" %}}
 
-The `cucumber.yml` file is preprocessed by [ERB (Embedded RuBy)](http://ruby-doc.org/stdlib-2.5.0/libdoc/erb/rdoc/ERB.html). This allows you to use Ruby code
+The `cucumber.yml` file is preprocessed by [ERB (Embedded RuBy)](https://ruby-doc.org/stdlib-2.5.0/libdoc/erb/rdoc/ERB.html). This allows you to use Ruby code
 to generate values in the `cucumber.yml` file.
 
 So, if you have several profiles with similar values, you might do this:

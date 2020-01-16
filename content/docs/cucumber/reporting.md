@@ -164,7 +164,7 @@ The `test_step_finished` event is fired after each `Cucumber::Core::Test::Step` 
 There are also many third-party plugins:
 
 * Masterthought
-* TeamCity - prints Cucumber results in a format for interpretation by a [TeamCity](http://www.jetbrains.com/teamcity/index.html) build agent.
+* TeamCity - prints Cucumber results in a format for interpretation by a [TeamCity](https://www.jetbrains.com/teamcity/index.html) build agent.
    * [teamcity_formatter](https://github.com/kevinrood/teamcity_formatter) - Compatible with Cucumber 2.
    * [cucumber_teamcity](https://github.com/ankurcha/cucumber_teamcity/) - Tested with Cucumber 1.3.18 and TeamCity 8.x.
 * [TextmateFormatter](https://github.com/raldred/cucumber_textmate/) prints Cucumber results as HTML with enhanced styling and Javascript for Textmate (Included in the Cucumber core since 0.4.5)
@@ -178,5 +178,5 @@ There are also many third-party plugins:
 * [cucumber_characteristics](https://github.com/singram/cucumber_characteristics) - Generates HTML/JSON reports on overall test timings, as well as timings and usage of Steps, Features, and Examples. Also lists unused and ambiguous (Cucumber 1.x) Steps. Compatible with Cucumber 1.x and 2.1+ and Ruby 1.9+.
 * [allure-cucumber](https://github.com/allure-framework/allure-cucumber) - [Allure](https://github.com/allure-framework) adaptor for Cucumber. This formatter generates the XML files for Allure reporting framework.
 * [Cluecumber](https://github.com/trivago/cluecumber-report-plugin) - Maven plugin for clear and concise Cucumber reporting.
-* [Cucelastic] (https://github.com/AshisRaj/cucelastic-maven-plugin) - Maven plugin for UI agnostic tools like Kibana with the possibility to filter and analyze the data, extend and share it across teams.
+* [Cucelastic] (https://github.com/AshisRaj/cucelastic-maven-plugin) - Maven plugin to push test report data into Elastic Search to enable users to plugin UI agnostic tools like Kibana to visualize a dynamic and easy sharable report/dashboad with the possibility to filter and analyze the data, extend and share it across teams.
 * [cucumber-reporting-plugin](https://gitlab.com/monochromata-de/cucumber-reporting-plugin) - A Cucumber plugin which produces pretty HTML reports using [cucumber-reporting](https://github.com/damianszczepanik/cucumber-reporting)

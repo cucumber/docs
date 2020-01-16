@@ -3,5 +3,5 @@ title: Professional Services
 subtitle: Training, videos and books
 weight: 1122
 menu: main
-iconClass: fas fa-money-bill-alt
+iconClass: far fa-comments-dollar
 ---

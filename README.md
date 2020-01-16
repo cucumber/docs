@@ -64,7 +64,7 @@ See the [theme README](themes/cucumber-hugo/README.md)
 The site is built with [Hugo](https://gohugo.io), a fast static site generator.
 
 We have a custom-built theme for the site in `themes/cucumber-hugo`. This theme
-is based on [Bulma](http://bulma.io/) - a lightweight CSS framework.
+is based on [Bulma](https://bulma.io/) - a lightweight CSS framework.
 
 The online site is rebuild automatically whenever the git repository receives
 new commits, either via a `git push`, or by modifying contents in the CMS.

@@ -141,7 +141,7 @@ Argument      | Description
 # Optional text
 
 It's grammatically incorrect to say *1 cucumbers*, so we should make the plural **s**
-optional. That can be done by surrounding the optional text with parenthesis:
+optional. That can be done by surrounding the optional text with parentheses:
 
     I have {int} cucumber(s) in my belly
 
@@ -153,8 +153,8 @@ It would also match this text:
 
     I have 42 cucumbers in my belly
 
-In Regular Expressions, parenthesis means capture group, but in Cucumber Expressions
-it means *optional text*.
+In Regular Expressions, parentheses indicate a capture group, but in Cucumber Expressions
+they mean *optional text*.
 
 # Alternative text
 

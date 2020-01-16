@@ -1,8 +1,5 @@
 
 <nav class="panel">
-  <div class="panel-block">
-    {{ partial "doc-search.html" . }}
-  </div>
   {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
     {{ $expandChildren := (not .Page.Params.collapseChildren) }}

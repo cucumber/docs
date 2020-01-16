@@ -15,7 +15,7 @@ Cucumber can be used to implement automated tests based on scenarios described i
 
 # Step Arguments
 
-In the example given in [step definitions](/docs/cucumber/step-definitions) Cucumber extracts the text `48` from the step, converts it to an `int`
+In the example given in [step definitions](/docs/cucumber/step-definitions), Cucumber extracts the text `48` from the step, converts it to an `int`
 and passes it as an argument to the {{% stepdef-body %}}.
 
 The number of parameters in the {{% stepdef-body %}} has to match the number of {{% expression-parameter %}}s in the expression. (If there is a mismatch, Cucumber will throw an error).
@@ -50,6 +50,9 @@ In this case, the `DataTable` is automatically flattened to a `List<String>`
 by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
 {{% /text %}}
 
+{{% text "javascript" %}} For an example of data tables in JavaScript, go
+[here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
+
 # Steps
 
 A step is analogous to a method call or function invocation.
@@ -70,7 +73,7 @@ Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}
 2. Cucumber gathers any capture groups or variables
 3. Cucumber passes them to the step definition's {{% text "ruby" %}}`Proc` (or “function”){{% /text %}}{{% text "javascript" %}}function{{% /text %}}{{% text "java" %}}method{{% /text %}} and executes it
 
-Recall that step definitions start with a [preposition](http://www.merriam-webster.com/dictionary/given) or an [adverb](http://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**).
+Recall that step definitions start with a [preposition](https://www.merriam-webster.com/dictionary/given) or an [adverb](https://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**).
 
 All step definitions are loaded (and defined) before Cucumber starts to execute the plain text in the feature file.
 
@@ -104,7 +107,7 @@ Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java" %}}`null`{{% /tex
 
 #### Skipped
 
-Steps that follow `undefined`, `pending`, or `failed` steps are never executed,  even if there is a matching step definition. These steps are marked as cyan.
+Steps that follow `undefined`, `pending`, or `failed` steps are never executed,  even if there is a matching step definition. These steps are marked as skipped (cyan).
 
 #### Ambiguous
 
@@ -264,7 +267,7 @@ Before(10) { scenario: Scenario ->
 
 ### After
 
-`After` hooks run after the last step of each scenario, even when steps are `failed`, `undefined`, `pending`, or `skipped`.
+`After` hooks run after the last step of each scenario, even when the step result is `failed`, `undefined`, `pending`, or `skipped`.
 
 {{% block "java" %}}
 
@@ -319,7 +322,7 @@ The `scenario` parameter is optional. If you use it, you can inspect the status
 of the scenario.
 
 For example, you can take a screenshot with
-{{% text "java,javascript,kotlin" %}}[WebDriver](http://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}}
+{{% text "java,javascript,kotlin" %}}[WebDriver](https://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}}
 for failed scenarios and embed them in Cucumber's report.
 
 See the [browser automation page](/docs/guides/browser-automation/#screenshot-on-failure) for an example on how to do so.
@@ -438,7 +441,7 @@ To run a particular hook only for certain scenarios, you can associate a
 {{% text "java" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
-Hook with a [tag expression](#tag-expressions).
+hook with a [tag expression](#tag-expressions).
 
 {{% block "java" %}}
 Annotated method style:
@@ -483,7 +486,7 @@ end
 
 See more documentation on [tags](#tags).
 
-## Global Hooks
+## Global hooks
 
 {{% block "ruby" %}}
 A global hook will run once before any scenario is run. Put the
@@ -555,7 +558,7 @@ Tags are a great way to organise your features and scenarios.
 They can be used for two purposes:
 
 * [Running a subset of scenarios](#running-a-subset-of-scenarios)
-* [Scoping hooks to a subset of scenarios](#conditional-hooks)
+* [Restricting hooks to a subset of scenarios](#conditional-hooks)
 
 Consider the following example:
 
@@ -779,8 +782,8 @@ a particular Cucumber run will produce a warning message. If the `--strict` opti
 the default profile, then instead of a warning the run will fail.
 
 Limiting the number of occurrences is commonly used in conjunction with the `@wip` tag to restrict the number of
-unspecified scenarios to manageable levels. Those following [Kanban](http://en.wikipedia.org/wiki/kanban) or
-[Lean Software Development](http://en.wikipedia.org/wiki/Lean_software_development) based methodologies will find this useful.
+unspecified scenarios to manageable levels. Those following [Kanban](https://en.wikipedia.org/wiki/kanban) or
+[Lean Software Development](https://en.wikipedia.org/wiki/Lean_software_development) based methodologies will find this useful.
 {{% /text %}}
 
 # Running Cucumber
@@ -889,6 +892,8 @@ To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency t
   [...]
 </dependencies>
 ```
+Cucumber is based on JUnit 4. If you're using JUnit 5, remember to include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
+
 
 Create an empty class that uses the Cucumber JUnit runner.
 
@@ -924,9 +929,11 @@ package.
 The `@CucumberOptions` can be used to provide
 [additional configuration](#list-configuration-options) to the runner.
 
+**Using plugins:**
 
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
 
+{{% block "java" %}}
 ```java
 package com.example;
 
@@ -939,7 +946,9 @@ import org.junit.runner.RunWith;
 public class RunCucumberTest {
 }
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
 ```kotlin
 package com.example;
 
@@ -952,6 +961,44 @@ import org.junit.runner.RunWith;
 class RunCucumberTest {
 }
 ```
+{{% /block %}}
+
+For example if you want to tell Cucumber to print code snippets for missing
+step definitions use the `summary` plugin, you can specify it like this:
+
+{{% block "java" %}}
+```java
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "summary"}, strict = true, snippets = CAMELCASE)
+public class RunCucumberTest {
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty", "summary"}, strict = true, snippets = CAMELCASE)
+class RunCucumberTest {
+}
+```
+{{% /block %}}
+The default option for `snippets` is `UNDERSCORE`. This settings can be used to
+specify the way code snippets will be created by Cucumber.
+
+**Performing a dry-run:**
 
 For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this:
 
@@ -981,6 +1028,8 @@ class RunCucumberTest {
 }
 ```
 The default option for `dryRun` is `false`.
+
+**Formatting console output:**
 
 For example if you want console output from Cucumber in a readable format, you can specify it like this:
 
@@ -1012,6 +1061,8 @@ class RunCucumberTest {
 
 The default option for `monochrome` is `false`.
 
+**Skip undefined tests:**
+
 For example if you want to skip undefined steps from execution, you can specify it like this:
 
 ```java
@@ -1041,8 +1092,9 @@ class RunCucumberTest {
 ```
 The default option for `strict` is `false`.
 
-For example if you want to tell Cucumber to print code snippets for missing
-step definitions use the `summary` plugin, you can specify it like this:
+**Select scenarios using tags:**
+
+For example if you want to tell Cucumber to only run the scenarios specified with specific tags, you can specify it like this:
 
 {{% block "java" %}}
 ```java
@@ -1053,7 +1105,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "summary"}, strict = true)
+@CucumberOptions(tags = {"@foo", "not @bar"})
 public class RunCucumberTest {
 }
 ```
@@ -1068,13 +1120,51 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "summary"}, strict = true)
-class RunCucumberTest {
+@CucumberOptions(tags = {"@foo", "not @bar"})
+public class RunCucumberTest {
 }
 ```
 {{% /block %}}
 
-Usually, this class will be empty. You can, however, specify several JUnit rules.
+**Specify an object factory:**
+
+For example if you are using Cucumber with a DI framework and want to use a custom object factory, you can specify it like this:
+
+{{% block "java" %}}
+```java
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(objectFactory = FooFactory.class)
+public class RunCucumberTest {
+}
+```
+{{% /block %}}
+
+{{% block "kotlin" %}}
+```kotlin
+package com.example;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(objectFactory = FooFactory.class)
+public class RunCucumberTest {
+}
+```
+{{% /block %}}
+The default option for `objectFactory` is to use the default object factory.
+Additional information about using custom object factories can be found [here](/docs/cucumber/state/#the-cucumber-object-factory).
+
+There are additional options available in the `@CucumberOptions` annotation.
+
+Usually, the test class will be empty. You can, however, specify several JUnit rules.
 
 {{% note "Supported JUnit annotations"%}}
 Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotations.
@@ -1087,7 +1177,7 @@ and `After` [hooks](#hooks).
 The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
 Listeners and Reporters can all be expected to work.
 
-For more information on JUnit, see the [JUnit web site](http://www.junit.org).
+For more information on JUnit, see the [JUnit web site](https://www.junit.org).
 {{% /block %}}
 
 {{% block "ruby" %}}

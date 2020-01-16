@@ -13,7 +13,7 @@ from a unit testing tool.
 
 ## JUnit
 
-We recommend using [JUnit](http://junit.org/junit4/)'s `assert*` methods.
+We recommend using [JUnit](https://junit.org/junit4/)'s `assert*` methods.
 
 If you are using Maven, add the following to your `pom.xml`:
 
@@ -100,7 +100,7 @@ Then('the result should be {word}', function (expected) {
 
 ## Other Assertion Libraries
 
-You can use any other assertion library if you wish. Here is an example using [Chai](http://chaijs.com/):
+You can use any other assertion library if you wish. Here is an example using [Chai](https://www.chaijs.com/):
 
 ```javascript
 const expect = require('chai')
@@ -114,7 +114,7 @@ Then('the result should be {word}', function (expected) {
 
 ## RSpec
 
-We recommend using [RSpec](http://rspec.info/) for assertions.
+We recommend using [RSpec](https://rspec.info/) for assertions.
 
 Add the `rspec-expectations` gem to your `Gemfile`.
 Cucumber will automatically load RSpec's matchers and expectation methods to be

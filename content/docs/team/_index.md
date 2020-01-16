@@ -3,7 +3,7 @@ title: Team
 subtitle: Meet the people behind Cucumber
 weight: 2000
 menu: main
-iconClass: fas fa-users
+iconClass: far fa-user-friends
 collapseChildren: true
 ---
 
