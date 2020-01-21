@@ -102,7 +102,7 @@ You can write anything you like, as long as no line starts with a keyword.
 The (optional) `Rule` keyword has been part of Gherkin since v6. 
 
 {{% note "Cucumber Support for Rule"%}}
-Not all Cucumber implementations have added support for the `Rule` keyword.
+Not all Cucumber implementations have finished implementing support for the `Rule` keyword - see [this issue](https://github.com/cucumber/cucumber/issues/869) for the latest status.
 {{% /note %}}
 
 The purpose of the `Rule` keyword is to represent one *business rule* that should be implemented.
