@@ -147,7 +147,7 @@ task cucumber() {
 }
 ```
 Note that you also need to add the necessary dependencies/configurations to `build.gradle` depending on which version of Gradle you are using.
-See the [Build Tools](/docs/tools/java/#gradle) section.
+See the [Build Tools](/docs/tools/java/#gradle) section. If you follow this guide be sure to set your `--glue` path to `hellocucumber` for this tutorial.
 
 If you have not already, open the project in IntelliJ IDEA:
 
