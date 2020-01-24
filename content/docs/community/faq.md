@@ -70,6 +70,9 @@ You can read the [changelog file](https://github.com/cucumber/cucumber-jvm/blob/
 ## How do I run Cucumber?
 For information on how to run Cucumber, see [Running Cucumber](/docs/cucumber/api/#running-cucumber).
 
+## How do I run Cucumber from the CLI?
+For information on how to run the Cucumber CLI, see [From the command line](/docs/cucumber/api/#from-the-command-line).
+
 ## What are the configuration options for running Cucumber?
 For information about configuration options, see [Configuration](/docs/cucumber/configuration/).
 

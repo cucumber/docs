@@ -848,6 +848,24 @@ The **Command-Line Interface Runner (CLI Runner)** is an executable Java class t
 ```
 java io.cucumber.core.cli.Main
 ```
+Note that you will need to add the `cucumber-core` jar and all of its transitive dependencies to your classpath, in addition to the location of your compiled .class files. You can find these jars in [Maven Central](https://mvnrepository.com/repos/central). 
+
+
+You will also need to provide the CLI with your step definitions via the `--glue` option followed by its package name, and the filepath of your feature file(s). 
+
+For example:
+```shell
+java -cp "path/to/each/jar:path/to/compiled/.class/files" io.cucumber.core.cli.Main /path/to/your/feature/files --glue hellocucumber
+```
+Alternatively if you are using a Maven project, you can run the CLI using the [Exec Maven](https://www.mojohaus.org/exec-maven-plugin/) plugin:
+
+```shell
+mvn exec:java                                  \
+    -Dexec.classpathScope=test                 \
+    -Dexec.mainClass=io.cucumber.core.cli.Main \
+    -Dexec.args="/path/to/your/feature/files --glue hellocucumber"
+```
+
 {{% /block %}}
 
 {{% block "javascript" %}}
