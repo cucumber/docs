@@ -1,6 +1,6 @@
 ---
 title: Step Definitions
-subtitle: Connecting Gherkin steps to code
+subtitle: Connecting Gherkin steps to code 
 polyglot:
  - java
  - javascript
@@ -259,3 +259,4 @@ Given("I have {int} {color} balls", function (int1, color) {
 
 Make sure you use the `summary` plugin when running Cucumber in order
 to have the snippets printed.
+.
