@@ -97,7 +97,7 @@ and run the following command:
 mvn archetype:generate                      \
    "-DarchetypeGroupId=io.cucumber"           \
    "-DarchetypeArtifactId=cucumber-archetype" \
-   "-DarchetypeVersion={{% version "cucumberarchetype" %}}"               \
+   "-DarchetypeVersion={{% version "cucumberjvm" %}}"               \
    "-DgroupId=hellocucumber"                  \
    "-DartifactId=hellocucumber"               \
    "-Dpackage=hellocucumber"                  \
