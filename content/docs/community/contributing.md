@@ -13,7 +13,7 @@ Please follow these guidelines if you want to contribute to Cucumber or help the
 
 # You have a question
 
-Before you /docsget-in-touch), try searching the [mailing list](https://groups.google.com/forum/#!forum/cukes) for similar questions and possible solutions.
+Before you [get in touch](/docs/community/get-in-touch), try searching the [mailing list](https://groups.google.com/forum/#!forum/cukes) for similar questions and possible solutions.
 Or have a look on [StackOverflow](https://stackoverflow.com/questions/tagged/cucumber). Similar questions come up now and again. You might be able to find the answer yourself.
 
 It's impossible to give a meaningful answer to "Cucumber doesn't work - what's wrong?" -style questions. You have to tell us [more](#help-us-help-you).
