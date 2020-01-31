@@ -97,7 +97,7 @@ and run the following command:
 mvn archetype:generate                      \
    "-DarchetypeGroupId=io.cucumber"           \
    "-DarchetypeArtifactId=cucumber-archetype" \
-   "-DarchetypeVersion={{% version "cucumberarchetype" %}}"               \
+   "-DarchetypeVersion={{% version "cucumberjvm" %}}"               \
    "-DgroupId=hellocucumber"                  \
    "-DartifactId=hellocucumber"               \
    "-Dpackage=hellocucumber"                  \
@@ -141,7 +141,7 @@ task cucumber() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+            args = ['--plugin', 'pretty', '--glue', 'hellocucumber', 'src/test/resources']
         }
     }
 }

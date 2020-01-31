@@ -606,17 +606,17 @@ You can tell Cucumber to only run scenarios with a particular tag:
 Using a JVM system property:
 
 ```shell
-mvn test -Dcucumber.options='--tags "@smoke and @fast"'
+mvn test -Dcucumber.filter.tags="@smoke and @fast"
 ```
 
 Or an environment variable:
 
 ```shell
 # Linux / OS X:
-CUCUMBER_OPTIONS='--tags "@smoke and @fast"' mvn test
+CUCUMBER_FILTER_TAGS="@smoke and @fast" mvn test
 
 # Windows:
-set CUCUMBER_OPTIONS='--tags "@smoke and @fast"'
+set CUCUMBER_FILTER_TAGS="@smoke and @fast"
 mvn test
 ```
 
@@ -848,6 +848,24 @@ The **Command-Line Interface Runner (CLI Runner)** is an executable Java class t
 ```
 java io.cucumber.core.cli.Main
 ```
+Note that you will need to add the `cucumber-core` jar and all of its transitive dependencies to your classpath, in addition to the location of your compiled .class files. You can find these jars in [Maven Central](https://mvnrepository.com/repos/central). 
+
+
+You will also need to provide the CLI with your step definitions via the `--glue` option followed by its package name, and the filepath of your feature file(s). 
+
+For example:
+```shell
+java -cp "path/to/each/jar:path/to/compiled/.class/files" io.cucumber.core.cli.Main /path/to/your/feature/files --glue hellocucumber
+```
+Alternatively if you are using a Maven project, you can run the CLI using the [Exec Maven](https://www.mojohaus.org/exec-maven-plugin/) plugin:
+
+```shell
+mvn exec:java                                  \
+    -Dexec.classpathScope=test                 \
+    -Dexec.mainClass=io.cucumber.core.cli.Main \
+    -Dexec.args="/path/to/your/feature/files --glue hellocucumber"
+```
+
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -1227,11 +1245,6 @@ Pass the `--help` option to print out all the available configuration options:
 java cucumber.api.cli.Main --help
 ```
 
-Or:
-
-```
-mvn test -Dcucumber.options="--help"
-```
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -1247,7 +1260,7 @@ For example, if you are using Maven and want to run a subset of scenarios tagged
 with `@smoke`:
 
 ```
-mvn test -Dcucumber.options="--tags @smoke"
+mvn test -Dcucumber.filter.tags="@smoke"
 ```
 
 Some of the runners provide additional mechanisms for passing options to Cucumber.

@@ -70,6 +70,9 @@ You can read the [changelog file](https://github.com/cucumber/cucumber-jvm/blob/
 ## How do I run Cucumber?
 For information on how to run Cucumber, see [Running Cucumber](/docs/cucumber/api/#running-cucumber).
 
+## How do I run Cucumber from the CLI?
+For information on how to run the Cucumber CLI, see [From the command line](/docs/cucumber/api/#from-the-command-line).
+
 ## What are the configuration options for running Cucumber?
 For information about configuration options, see [Configuration](/docs/cucumber/configuration/).
 
@@ -238,3 +241,11 @@ Otherwise, Picocontainer is the most light weight framework you can use.
 
 # Arity Mismatch
 An arity mismatch exception{{% text "java,kotlin" %}} `cucumber.runtime.CucumberException: Arity mismatch`{{% /text %}} indicates that the step does not provide the right number of arguments needed for the step definition.
+
+# Duplicate Step Definition
+A DuplicateStepDefinitionException indicates that you have defined the same step twice. First of all, Cucumber doesn't
+distinguish between [keywords](docs/gherkin/reference/#keywords) used with a particular step when
+[matching steps](/docs/cucumber/api/#matching-steps). This means that `Given an order exists` and `Then an order exists`
+will both match "an order exists". When providing arguments using Cucumber expressions and/or regular expressions,
+multiple steps might match the same expression. Finally, this means that you cannot extend a class which defines step
+definitions, as that will lead to duplicates.
