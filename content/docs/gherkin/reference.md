@@ -329,7 +329,7 @@ Feature: Overdue tasks
 ```
 
 {{% warn "Use with caution"%}}
-Whilst usage of `Background` within `Rule` is currently supported, it's not recommended, and may be removed in future versions of Gherkin.
+Whilst usage of `Background` within `Rule` is currently supported, it's not recommended, and [may be removed](https://github.com/cucumber/cucumber/issues/590) in future versions of Gherkin.
 {{% /warn %}}
 
 You can only have one set of `Background` steps per `Feature` or `Rule`. If you need different `Background` steps for different scenarios, consider breaking up your set of scenarios into more `Rule`s or more `Feature`s.
