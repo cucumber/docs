@@ -6,4 +6,4 @@ implementation: official
 weight: 1180
 ---
 
-Please see the [Godog website](https://github.com/DATA-DOG/godog).
+Please see the [godog repo](https://github.com/cucumber/godog).
