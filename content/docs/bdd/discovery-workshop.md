@@ -29,7 +29,7 @@ As late as possible before development on a new User Story begins, in order to p
 
 ### Who should attend?
 
-A good rule-of-thumb is 3-6 people, but at a bare minimum your [Three Amigos](/docs/bdd/who-does-what/#the-three-amigos/) should be present:  a product owner, a developer, and a tester.  Your product owner will identify the problem the team should be trying to solve, your developer will address how to build a solution around said problem, and your tester will address any edge cases that could arise. 
+A good rule-of-thumb is 3-6 people, but at a bare minimum your [Three Amigos](/docs/bdd/who-does-what/#the-three-amigos/) should be present: a product owner, a developer, and a tester.  Your product owner will identify the problem the team should be trying to solve, your developer will address how to build a solution around said problem, and your tester will address any edge cases that could arise. 
 
 ### How long does a discovery workshop take?
 
