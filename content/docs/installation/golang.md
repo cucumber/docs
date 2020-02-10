@@ -2,7 +2,7 @@
 title: Godog
 subtitle: Go
 svg: installation/golang.svg
-implementation: semi-official
+implementation: official
 weight: 1180
 ---
 
