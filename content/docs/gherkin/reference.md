@@ -260,6 +260,32 @@ Example: Multiple Givens
   But I shouldn't see something else
 ```
 
+### Star Notation
+
+Gherkin also supports a "star" notation for steps, where the `*` character can be used in place of any of the normal step keywords. This can helpful when you have some steps that are effectively a _list of things_, so you can express it more like bullet points where otherwise the natural language of `And` etc might not read so elegantly.
+
+For example:
+
+```gherkin
+Example: List of setup items
+  Given some base context
+  And one thing
+  And another thing
+  And yet another thing
+  When I do something
+```
+
+Could be expressed as:
+
+```gherkin
+Example: List of setup items
+  Given some base context
+  * one thing
+  * another thing
+  * yet another thing
+  When I do something
+```
+
 ## Background
 
 Occasionally you'll find yourself repeating the same `Given` steps in all of the scenarios in a feature.
