@@ -43,7 +43,7 @@ The primary keywords are:
 - `Feature`
 - `Rule` (as of Gherkin 6)
 - `Example` (or `Scenario`)
-- `Given`, `When`, `Then`, `And`, `But`  (steps)
+- `Given`, `When`, `Then`, `And`, `But` for steps (or `*`)
 - `Background`
 - `Scenario Outline` (or `Scenario Template`)
 - `Examples`
