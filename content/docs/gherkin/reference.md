@@ -267,23 +267,25 @@ Gherkin also supports a "star" notation for steps, where the `*` character can b
 For example:
 
 ```gherkin
-Example: List of setup items
-  Given some base context
-  And one thing
-  And another thing
-  And yet another thing
-  When I do something
+Scenario: All done
+  Given I am out shopping
+  And I have eggs
+  And I have milk
+  And I have butter
+  When I check my list
+  Then I don't need anything
 ```
 
 Could be expressed as:
 
 ```gherkin
-Example: List of setup items
-  Given some base context
-  * one thing
-  * another thing
-  * yet another thing
-  When I do something
+Scenario: All done
+  Given I am out shopping
+  * I have eggs
+  * I have milk
+  * I have butter
+  When I check my list
+  Then I don't need anything
 ```
 
 ## Background
