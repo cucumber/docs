@@ -260,9 +260,9 @@ Example: Multiple Givens
   But I shouldn't see something else
 ```
 
-### Universal Keyword
+### *
 
-Gherkin also supports a universal keyword for steps, where the `*` character can be used in place of any of the normal step keywords. This can helpful when you have some steps that are effectively a _list of things_, so you can express it more like bullet points where otherwise the natural language of `And` etc might not read so elegantly.
+Gherkin also supports using an asterisk (`*`) in place of any of the normal step keywords. This can be helpful when you have some steps that are effectively a _list of things_, so you can express it more like bullet points where otherwise the natural language of `And` etc might not read so elegantly.
 
 For example:
 
