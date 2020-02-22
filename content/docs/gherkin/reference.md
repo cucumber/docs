@@ -43,7 +43,7 @@ The primary keywords are:
 - `Feature`
 - `Rule` (as of Gherkin 6)
 - `Example` (or `Scenario`)
-- `Given`, `When`, `Then`, `And`, `But`  (steps)
+- `Given`, `When`, `Then`, `And`, `But` for steps (or `*`)
 - `Background`
 - `Scenario Outline` (or `Scenario Template`)
 - `Examples`
@@ -258,6 +258,34 @@ Example: Multiple Givens
   When I open my eyes
   Then I should see something
   But I shouldn't see something else
+```
+
+### *
+
+Gherkin also supports using an asterisk (`*`) in place of any of the normal step keywords. This can be helpful when you have some steps that are effectively a _list of things_, so you can express it more like bullet points where otherwise the natural language of `And` etc might not read so elegantly.
+
+For example:
+
+```gherkin
+Scenario: All done
+  Given I am out shopping
+  And I have eggs
+  And I have milk
+  And I have butter
+  When I check my list
+  Then I don't need anything
+```
+
+Could be expressed as:
+
+```gherkin
+Scenario: All done
+  Given I am out shopping
+  * I have eggs
+  * I have milk
+  * I have butter
+  When I check my list
+  Then I don't need anything
 ```
 
 ## Background
