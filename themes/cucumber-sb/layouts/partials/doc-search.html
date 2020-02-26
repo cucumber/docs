@@ -1,14 +1,35 @@
-<p class="control has-icons-left is-expanded is-clearfix">
-  <input class="input" type="text" placeholder="How can we help?" id="docsearch">
-  <span class="icon is-left">
-    <i class="fas fa-search"></i>
-  </span>
-</p>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script type="text/javascript"> docsearch({
-apiKey: '960fe54616f6ef6cc971fe677482fc48',
-indexName: 'cucumber',
-inputSelector: '#docsearch',
-debug: true // Set debug to true if you want to inspect the dropdown
-});
+<div id="searchComponentLite" style="width:100%; margin-bottom: 20px;"></div>
+<script>
+  (function (w, d) {
+  function initSearch() {   
+    var config = {
+        locations: ['Cucumber_Website', 'Cucumber_Blog', 'Cucumber_Documentation'],
+        availableProducts: ['Cucumber', 'CucumberStudio', 'Cucumber Open', 'Cucumber for Jira'],
+      searchPlaceholder: 'How can we help?'
+    }
+    w.sbSearch.init(config);    
+    
+    var configLite = {
+      mode: 'lite',
+      root: 'searchComponentLite',
+      locations: ['Cucumber_Website', 'Cucumber_Blog', 'Cucumber_Documentation'],
+      availableProducts: ['Cucumber', 'CucumberStudio', 'Cucumber Open', 'Cucumber for Jira'],
+      searchPlaceholder: 'How can we help?'
+    }
+
+    w.sbSearch.init(configLite);			
+  }
+   
+    var s = document.createElement('script');
+    s.src = 'https://static' + ((w.location.href.indexOf('stag') == -1)  ? 1 : 0) + '.smartbear.co/smartbear/react/search/search.js?t=' + Math.random();
+    s.async = true;
+    s.onreadystatechange = function () {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initSearch();
+      }
+    };
+    s.onload = initSearch;				
+    d.body.appendChild(s);
+
+  })(window, document);
 </script>

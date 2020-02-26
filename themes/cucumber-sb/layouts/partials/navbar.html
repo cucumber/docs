@@ -208,6 +208,36 @@
                             </div>
                         </div>
                     </li>
+                    <li class="nav-item nav-item-search"> 
+                        <a href="#" class="nav-link header-search-ico sb-search-ico">
+                            <i class="fal fa-search"></i>
+                        </a>
+                                            
+                        <script>
+                            (function (w, d) {
+                                function initSearch() {
+                                    var config = {
+                                        locations: ['Cucumber_Website', 'Cucumber_Blog', 'Cucumber_Documentation'],
+                                        availableProducts: ['Cucumber', 'CucumberStudio', 'Cucumber Open', 'Cucumber for Jira'],
+                                        searchPlaceholder: 'How can we help?'
+                                    }
+                                    w.sbSearch.init(config);
+                                }
+    
+                                var s = document.createElement('script');
+                                s.src = 'https://static' + ((w.location.href.indexOf('stag') == -1)  ? 1 : 0) + '.smartbear.co/smartbear/react/search/search.js?t=' + Math.random();
+                                s.async = true;
+                                s.onreadystatechange = function () {
+                                    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                                        initSearch();
+                                    }
+                                };
+                                s.onload = initSearch;				
+                                d.body.appendChild(s);
+                            })(window, document);
+                        </script>					
+                                            
+                    </li>				                    
                     <li class="nav-item nav-item-login">
                         <a href="https://studio.cucumber.io/users/sign_in" class="btn btn-cucumber btn-cucumber-outlined btn-nav" title="Login"> Login</a>
                     </li>
