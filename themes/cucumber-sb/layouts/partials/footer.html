@@ -176,3 +176,39 @@
         </div>
     </nav>
 </footer>
+
+<script>
+    (function (w, d) {
+    function initSearch() {   
+      var config = {
+          locations: ['Cucumber_Website', 'Cucumber_Blog', 'Cucumber_Documentation'],
+          availableProducts: ['Cucumber', 'CucumberStudio', 'Cucumber Open', 'Cucumber for Jira'],
+        searchPlaceholder: 'How can we help?'
+      }
+      w.sbSearch.init(config);    
+      
+      var configLite = {
+        mode: 'lite',
+        root: 'searchComponentLite',
+        locations: ['Cucumber_Website', 'Cucumber_Blog', 'Cucumber_Documentation'],
+        availableProducts: ['Cucumber', 'CucumberStudio', 'Cucumber Open', 'Cucumber for Jira'],
+        searchPlaceholder: 'How can we help?'
+      }
+  
+      w.sbSearch.init(configLite);			
+    }
+     
+      var s = document.createElement('script');
+      s.src = 'https://static' + ((w.location.href.indexOf('stag') == -1)  ? 1 : 0) + '.smartbear.co/smartbear/react/search/search.js?t=' + Math.random();
+      s.async = true;
+      s.onreadystatechange = function () {
+        if (this.readyState == 'complete' || this.readyState == 'loaded') {
+          initSearch();
+        }
+      };
+      s.onload = initSearch;				
+      d.body.appendChild(s);
+  
+    })(window, document);
+  </script>
+  
