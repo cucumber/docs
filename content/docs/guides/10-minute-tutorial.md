@@ -132,7 +132,14 @@ Run the following command from the `hellocucumber` directory:
 ```shell
 gradle init
 ```
-
+Add following dependency configuration to your build.gradle file:
+```groovy
+configurations {
+    cucumberRuntime {
+        extendsFrom testRuntime
+    }
+}
+```
 Add the following Task to your `build.gradle` file:
 ```groovy
 task cucumber() {
