@@ -85,7 +85,7 @@ The name and the optional description have no special meaning to Cucumber. Their
 a place for you to document important aspects of the feature, such as a brief explanation
 and a list of business rules (general acceptance criteria).
 
-The free format description for `Feature` ends when you start a line with the keyword `Rule`, `Example` or `Scenario Outline` (or their alias keywords).
+The free format description for `Feature` ends when you start a line with the keyword `Background`, `Rule`, `Example` or `Scenario Outline` (or their alias keywords).
 
 You can place [tags](/docs/cucumber/api/#tags) above `Feature` to group related features,
 independent of your file and directory structure.
@@ -99,7 +99,12 @@ You can write anything you like, as long as no line starts with a keyword.
 
 ## Rule
 
-The (optional) `Rule` keyword has been added in Gherkin v6. (Note that Gherkin 6 has not yet been incorporated into all implementation of Cucumber!)
+The (optional) `Rule` keyword has been part of Gherkin since v6. 
+
+{{% note "Cucumber Support for Rule"%}}
+Not all Cucumber implementations have finished implementing support for the `Rule` keyword - see [this issue](https://github.com/cucumber/cucumber/issues/869) for the latest status.
+{{% /note %}}
+
 The purpose of the `Rule` keyword is to represent one *business rule* that should be implemented.
 It provides additional information for a feature.
 A `Rule` is used to group together several scenarios
@@ -290,17 +295,14 @@ Scenario: All done
 
 ## Background
 
-Occasionally you'll find yourself repeating the same `Given` steps in all of the scenarios in a feature.
+Occasionally you'll find yourself repeating the same `Given` steps in all of the scenarios in a `Feature`.
 
 Since it is repeated in every scenario, this is an indication that those steps
 are not *essential* to describe the scenarios; they are *incidental details*. You can literally move such `Given` steps to the background, by grouping them under a `Background` section.
 
-A `Background` allows you to add some context to the scenarios in the feature. It can contain one or
-more `Given` steps.
+A `Background` allows you to add some context to the scenarios that follow it. It can contain one or more `Given` steps, which are run before *each* scenario, but after any [Before hooks](/docs/cucumber/api/#hooks).
 
-A `Background` is run before *each* scenario, but after any [Before hooks](/docs/cucumber/api/#hooks). In your feature file, put the `Background` before the first `Scenario`.
-
-You can only have one set of `Background` steps per feature. If you need different `Background` steps for different scenarios, you'll need to split them into different feature files.
+A `Background` is placed before the first `Scenario`/`Example`, at the same level of indentation.
 
 For example:
 
@@ -330,6 +332,35 @@ Feature: Multiple site support
     When I try to post to "Expensive Therapy"
     Then I should see "Your article was published."
 ```
+
+`Background` is also supported at the `Rule` level, for example:
+
+```gherkin
+Feature: Overdue tasks
+  Let users know when tasks are overdue, even when using other
+  features of the app
+
+  Rule: Users are notified about overdue tasks on first use of the day
+    Background:
+      Given I have overdue tasks
+
+    Example: First use of the day
+      Given I last used the app yesterday
+      When I use the app
+      Then I am notified about overdue tasks
+
+    Example: Already used today
+      Given I last used the app earlier today
+      When I use the app
+      Then I am not notified about overdue tasks
+  ...
+```
+
+{{% warn "Use with caution"%}}
+Whilst usage of `Background` within `Rule` is currently supported, it's not recommended, and [may be removed](https://github.com/cucumber/cucumber/issues/590) in future versions of Gherkin.
+{{% /warn %}}
+
+You can only have one set of `Background` steps per `Feature` or `Rule`. If you need different `Background` steps for different scenarios, consider breaking up your set of scenarios into more `Rule`s or more `Feature`s.
 
 For a less explicit alternative to `Background`, check out [conditional hooks](/docs/cucumber/api/#conditional-hooks).
 
