@@ -251,7 +251,7 @@ end
 {{% /block %}}
 
 {{% block "javascript" %}}
-```javascript
+```javascript 
 Given("I have {int} {color} balls", function (int1, color) {
 });
 ```
