@@ -352,13 +352,13 @@ public class LambdaStepDefinitions implements En {
         ObjectMapper objectMapper = new ObjectMapper();
 
         DefaultParameterTransformer((String fromValue, Type toValueType) ->
-            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)));
 
         DefaultDataTableCellTransformer((fromValue, toValueType) ->
-            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)));
 
         DefaultDataTableEntryTransformer((fromValue, toValueType) ->
-            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType));
+            objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)));
     }
 }    
 ```
