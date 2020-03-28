@@ -98,6 +98,6 @@ This rapid, repeatable feedback reduces the burden of manual regression testing,
 
 Read the topics below to dig deeper and learn more about BDD.
 
-[discovery workshops]: /docs/terms/discovery-workshop/
+[discovery workshops]: /docs/bdd/discovery-workshop/
 [User Story]: /docs/terms/user-story/
 [User Stories]: /docs/terms/user-story/
