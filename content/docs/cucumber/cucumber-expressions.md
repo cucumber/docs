@@ -102,12 +102,11 @@ fun color(color: String): Color {   // name (from method), type
 ```javascript
 const { defineParameterType } = require('cucumber')
 
-defineParameterType(new ParameterType(
-    'color',           // name
-    /red|blue|yellow/, // regexp
-    Color,             // type
-    s => new Color(s)  // transformer function
-))
+defineParameterType({ 
+    name: 'color',
+    regexp: /red|blue|yellow/,
+    transformer: s => new Color(s)
+})
 ```
 
 The `transformer` function may return a `Promise`.
