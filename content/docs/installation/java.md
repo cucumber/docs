@@ -111,3 +111,7 @@ While it's not required, we strongly recommend you include one of the
 [dependency injection](/docs/cucumber/state/#dependency-injection) modules as well. This allows
 you to share state between [step definitions](/docs/cucumber/step-definitions)
 without resorting to static variables (a common source of flickering scenarios).
+
+----
+![Cucumber School Logo](https://s3.amazonaws.com/thinkific-import/227417/zecVu1TYR0uqyYraOWBm_cucumber-school-logo.svg)
+Watch the Cucumber School video lesson on installing Cucumber for JVM languages [here](https://school.cucumber.io/courses/take/bdd-with-cucumber-java/lessons/9588455-install-cucumber).
