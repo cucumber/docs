@@ -67,7 +67,7 @@ Free, open source, any platform </p>
   <p class="d-block d-md-none text-center text-md-left"><img alt="" src="https://static0.smartbear.co/cucumber/media/images/home/smartbear-logo.svg" style="width: 210px; height: auto;"></p>
   <h3 class="text-center text-md-left">SmartBear is committed to Open Source development. Create more with us.</h3>
   
-  <p class="text-center text-md-left"><a class="cta-underlined mt-4 d-inline-block text-center text-md-left mx-auto mx-md-0" href="#">Join the SmartBear Community</a></p>
+  <p class="text-center text-md-left"><a class="cta-underlined mt-4 d-inline-block text-center text-md-left mx-auto mx-md-0" href="https://community.smartbear.com/t5/Cucumber-Community/ct-p/Cucumber?utm_source=communityBlock&utm_medium=CucumberDocs&utm_campaign=Welcome" target="_blank">Join the SmartBear Community</a></p>
   </div>
   
   <div class="text-center w-100 w-md-50 mt-5 mt-md-0"><img alt="" class="ml-0 ml-md-6" src="https://static0.smartbear.co/cucumber/media/images/home/community-orbit.png"></div>
