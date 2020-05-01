@@ -25,33 +25,33 @@ Free, open source, any platform </p>
           <div class="col-12">
             <div class="row">
 <div class="col-12 col-md-4 trio-col">
-<div class="trio-icon"><a href="/tools/cucumber-open/"><img alt="OpenAPI Specification" src="https://static0.smartbear.co/cucumber/media/images/logos/icons/cucumber-open-icon.svg"></a></div>
+<div class="trio-icon"><a href="https://cucumber.io/tools/cucumber-open/"><img alt="OpenAPI Specification" src="https://static0.smartbear.co/cucumber/media/images/logos/icons/cucumber-open-icon.svg"></a></div>
 
-<div class="trio-title"><a class="text-gray-dark" href="/tools/cucumber-open/">Cucumber Open</a></div>
+<div class="trio-title"><a class="text-gray-dark" href="https://cucumber.io/tools/cucumber-open/">Cucumber Open</a></div>
 
 <div class="trio-desc">Our open source tool tests business-readable specifications against your code on any modern development stack. With over 30 million downloads, Cucumber Open is the world's #1 tool for Behaviour-Driven Development.</div>
 
-<div class="trio-link"><a class="btn btn-cucumber-outlined" href="/docs/installation/">View Docs</a></div>
+<div class="trio-link"><a class="btn btn-cucumber-outlined" href="https://cucumber.io/docs/installation/">View Docs</a></div>
 </div>
 
 <div class="col-12 col-md-4 trio-col active">
-<div class="trio-icon"><a href="/tools/cucumberstudio/"><img src="https://static0.smartbear.co/cucumber/media/images/logos/icons/c4j-icon.png"></a></div>
+<div class="trio-icon"><a href="https://cucumber.io/tools/cucumberstudio/"><img src="https://static0.smartbear.co/cucumber/media/images/logos/icons/c4j-icon.png"></a></div>
 
-<div class="trio-title"><a class="text-gray-dark" href="/tools/cucumberstudio/">CucumberStudio</a></div>
+<div class="trio-title"><a class="text-gray-dark" href="https://cucumber.io/tools/cucumberstudio/">CucumberStudio</a></div>
 
 <div class="trio-desc">Cucumber Studio empowers Product Owners and Business Analysts to harness the power of examples, making everyone part of the conversation.</div>
 
-<div class="trio-link"><a class="btn btn-cucumber-outlined" href="/tools/cucumberstudio/">Learn More</a></div>
+<div class="trio-link"><a class="btn btn-cucumber-outlined" href="https://cucumber.io/tools/cucumberstudio/">Learn More</a></div>
 </div>
 
 <div class="col-12 col-md-4 trio-col">
-<div class="trio-icon"><a href="/tools/cucumber-for-jira/"><img src="https://static0.smartbear.co/cucumber/media/images/logos/icons/c4j-icon.png"></a></div>
+<div class="trio-icon"><a href="https://cucumber.io/tools/cucumber-for-jira/"><img src="https://static0.smartbear.co/cucumber/media/images/logos/icons/c4j-icon.png"></a></div>
 
-<div class="trio-title"><a class="text-gray-dark" href="/tools/cucumber-for-jira/">Cucumber for Jira</a></div>
+<div class="trio-title"><a class="text-gray-dark" href="https://cucumber.io/tools/cucumber-for-jira/">Cucumber for Jira</a></div>
 
 <div class="trio-desc">Define with all your stakeholders the feature files using behavior driven development (BDD), directly in Jira.</div>
 
-<div class="trio-link"><a class="btn btn-cucumber-outlined" href="/tools/cucumber-for-jira/">Learn More</a></div>
+<div class="trio-link"><a class="btn btn-cucumber-outlined" href="https://cucumber.io/tools/cucumber-for-jira/">Learn More</a></div>
 </div>
 </div>
         </div>
