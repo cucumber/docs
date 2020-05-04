@@ -114,4 +114,5 @@ without resorting to static variables (a common source of flickering scenarios).
 
 ----
 ![Cucumber School Logo](/img/cucumber-school-logo.png)
+
 Watch the Cucumber School video lesson on installing Cucumber for JVM languages [here](https://school.cucumber.io/courses/take/bdd-with-cucumber-java/lessons/9588455-install-cucumber).
