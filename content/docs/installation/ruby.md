@@ -6,6 +6,12 @@ implementation: official
 weight: 1120
 ---
 
+----
+![Cucumber School Logo](/img/cucumber-school-logo.png)
+
+Watch the Cucumber School video lesson on installing Cucumber for Ruby [here](https://school.cucumber.io/courses/take/bdd-with-cucumber-ruby/lessons/11303803-install-cucumber).
+----
+
 Cucumber for Ruby is a Ruby gem. Depending on your project structure there are several ways to install it:
 
 # Rubygems

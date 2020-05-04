@@ -5,6 +5,13 @@ svg: installation/java.svg
 implementation: official
 weight: 1110
 ---
+
+----
+![Cucumber School Logo](/img/cucumber-school-logo.png)
+
+Watch the Cucumber School video lesson on installing Cucumber for JVM languages [here](https://school.cucumber.io/courses/take/bdd-with-cucumber-java/lessons/9588454-install-cucumber).
+----
+
 Cucumber-JVM is published in the central Maven repository.
 You can install it by adding dependencies to your project.
 
@@ -112,7 +119,3 @@ While it's not required, we strongly recommend you include one of the
 you to share state between [step definitions](/docs/cucumber/step-definitions)
 without resorting to static variables (a common source of flickering scenarios).
 
-----
-![Cucumber School Logo](/img/cucumber-school-logo.png)
-
-Watch the Cucumber School video lesson on installing Cucumber for JVM languages [here](https://school.cucumber.io/courses/take/bdd-with-cucumber-java/lessons/9588455-install-cucumber).

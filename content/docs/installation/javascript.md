@@ -6,6 +6,12 @@ implementation: official
 weight: 1115
 ---
 
+----
+![Cucumber School Logo](/img/cucumber-school-logo.png)
+
+Watch the Cucumber School video lesson on installing Cucumber.js [here](https://school.cucumber.io/courses/take/bdd-with-cucumber-javascript/lessons/11261262-install-cucumber).
+----
+
 Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works with both [Node.js](https://nodejs.org/en/) and browsers.
 
 # With Node.js
