@@ -10,6 +10,7 @@ weight: 1110
 ![Cucumber School Logo](/img/cucumber-school-logo.png)
 
 Watch the Cucumber School video lesson on installing Cucumber for JVM languages [here](https://school.cucumber.io/courses/take/bdd-with-cucumber-java/lessons/9588454-install-cucumber).
+
 ----
 
 Cucumber-JVM is published in the central Maven repository.
