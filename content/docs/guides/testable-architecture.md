@@ -52,8 +52,8 @@ These tests are brittle because one change can break all of them. They are also 
 as there is IO involved when going through a a browser, web service or database.
 
 # Test Pyramid
-Focus on having different kinds of tests; lots and lots of unit tests.
-A few tests that don’t go through all the heavy infrastructure components and just a few tests that go through the UI.
+Focus on having different kinds of tests: lots and lots of unit tests,
+a few tests that don’t go through all the heavy infrastructure components and just a few tests that go through the UI.
 This is called the [test pyramid](https://martinfowler.com/bliki/TestPyramid.html).
 
 # More information
