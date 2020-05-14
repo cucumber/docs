@@ -16,7 +16,7 @@ Each channel has a topic, to help you pick the right channel to ask your questio
 If you're interested in becoming an open-source contributor, please go to [#the_greenhouse ](https://cucumberbdd.slack.com/messages/C60FTHJ22/). Or just wander around and make yourself at home!
 
 # Cucumber Community
-[Cucumber Community<](https://community.smartbear.com/t5/Cucumber-Open/bd-p/CucumberOS) is a great place to get your questions answered, and to share your knowledge with others.
+[Cucumber Community](https://community.smartbear.com/t5/Cucumber-Open/bd-p/CucumberOS) is a great place to get your questions answered, and to share your knowledge with others.
 
 # Premium Support
 
