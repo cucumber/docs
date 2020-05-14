@@ -15,9 +15,8 @@ Once you've received your invite, head over to [#intros](https://cucumberbdd.sla
 Each channel has a topic, to help you pick the right channel to ask your question.
 If you're interested in becoming an open-source contributor, please go to [#the_greenhouse ](https://cucumberbdd.slack.com/messages/C60FTHJ22/). Or just wander around and make yourself at home!
 
-# Mailing list
-
-Over 3000 Cucumber users are part of the daily discussions on our [mailing list](https://groups.google.com/forum/#!forum/cukes). It's a great place to get your questions answered, and to share your knowledge with others in the community.
+# Cucumber Community
+[Cucumber Community<](https://community.smartbear.com/t5/Cucumber-Open/bd-p/CucumberOS) is a great place to get your questions answered, and to share your knowledge with others.
 
 # Premium Support
 
