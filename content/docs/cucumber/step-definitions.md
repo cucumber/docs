@@ -6,6 +6,7 @@ polyglot:
  - javascript
  - ruby
  - kotlin
+ - scala
 
 weight: 1
 ---
@@ -13,6 +14,7 @@ weight: 1
 A Step Definition is a
 {{% text "java" %}}Java method{{% /text %}}
 {{% text "kotlin" %}}Kotlin function{{% /text %}}
+{{% text "scala" %}}Scala function{{% /text %}}
 {{% text "javascript" %}}JavaScript function{{% /text %}}
 {{% text "ruby" %}}Ruby block{{% /text %}}
 with an [expression](#expressions) that links it to one or more [Gherkin steps](/docs/gherkin/reference#steps).
@@ -94,6 +96,24 @@ class StepDefinitions : En {
 
 {{% /block %}}
 
+{{% block "scala" %}}
+
+```scala
+package com.example
+import io.cucumber.scala.{ScalaDsl, EN}
+
+class StepDefinitions extends ScalaDsl with EN {
+
+    Given("I have {int} cukes in my belly") { cukes: Int =>
+        prinln(s"Cukes: $cukes")
+    }
+
+}
+```
+
+{{% /block %}}
+
+
 {{% block "ruby" %}}
 ```ruby
 Given('I have {int} cukes in my belly') do |cukes|
@@ -131,6 +151,14 @@ public void i_have_n_cukes_in_my_belly(int cukes) {
 ```kotlin
 Given("I have {int} cukes in my belly") { cukes: Int ->
         prinln("Cukes: $cukes")
+}
+```
+{{% /block %}}
+
+{{% block "scala" %}}
+```scala
+Given("I have {int} cukes in my belly") { cukes: Int =>
+    prinln(s"Cukes: $cukes")
 }
 ```
 {{% /block %}}
@@ -210,6 +238,13 @@ public void i_have_red_balls(int int1) {
 ```
 {{% /block %}}
 
+{{% block "scala" %}}
+```scala
+Given("I have {int} red balls") { balls: Int =>
+}
+```
+{{% /block %}}
+
 {{% block "ruby" %}}
 ```ruby
 Given('I have {int} red balls') do |int1|
@@ -239,6 +274,13 @@ public void i_have_red_balls(int int1, Color color) {
 {{% block "kotlin" %}}
 ```kotlin
 @Given("I have {int} {color} balls") { balls: Int, color: Color ->
+}
+```
+{{% /block %}}}
+
+{{% block "scala" %}}
+```scala
+Given("I have {int} {color} balls") { (balls: Int, color: Color) =>
 }
 ```
 {{% /block %}}

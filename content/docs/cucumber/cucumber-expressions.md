@@ -6,6 +6,7 @@ polyglot:
  - javascript
  - ruby
  - kotlin
+ - scala
 
 weight: 4
 markup: mmark
@@ -59,7 +60,7 @@ Parameter Type  | Description
 `{string}`      | Matches single-quoted or double-quoted strings, for example `"banana split"` or `'banana split'` (but not `banana split`). Only the text between the quotes will be extracted. The quotes themselves are discarded. Empty pairs of quotes are valid and will be matched and passed to step code as empty strings.
 `{}` anonymous  | Matches anything (`/.*/`). 
 
-{{% block "java,kotlin" %}}
+{{% block "java,kotlin,scala" %}}
 On the JVM, there are additional parameter types for `biginteger`, `bigdecimal`,
 `byte`, `short`, `long` and `double`. 
 
@@ -94,6 +95,14 @@ public Color color(String color){  // type, name (from method)
 @ParameterType("red|blue|yellow")   // regexp
 fun color(color: String): Color {   // name (from method), type
     return Color(color)             // transformer function
+}                                    
+```
+{{% /block %}}
+
+{{% block "scala" %}}
+```scala
+ParameterType("color", "red|blue|yellow") { color: String => // name, regexp
+    Color(color)                                             // transformer function, type
 }                                    
 ```
 {{% /block %}}
@@ -134,8 +143,8 @@ Argument      | Description
 `regexp`      | A regexp that will match the parameter. May include capture groups.
 `type`        | The return type of the transformer {{% stepdef-body %}}.
 `transformer` | A {{% stepdef-body %}} that transforms the match from the regexp. Must have arity 1 if the regexp doesn't have any capture groups. Otherwise the arity must match the number of capture groups in `regexp`.
-{{% text "java,kotlin,javascript" %}}`useForSnippets`{{% /text %}}{{% text "ruby" %}}`use_for_snippets`{{% /text %}} | Defaults to `true`. That means this parameter type will be used to generate snippets for undefined steps. If the `regexp` frequently matches text you don't intend to be used as arguments, disable its use for snippets with `false`.
-{{% text "java,kotlin,javascript" %}}`preferForRegexpMatch`{{% /text %}}{{% text "ruby" %}}`prefer_for_regexp_match`{{% /text %}} | Defaults to `false`. Set to `true` if you have step definitions that use regular expressions, and you want this parameter type to take precedence over others during a match.
+{{% text "java,kotlin,scala,javascript" %}}`useForSnippets`{{% /text %}}{{% text "ruby" %}}`use_for_snippets`{{% /text %}} | Defaults to `true`. That means this parameter type will be used to generate snippets for undefined steps. If the `regexp` frequently matches text you don't intend to be used as arguments, disable its use for snippets with `false`.
+{{% text "java,kotlin,scala,javascript" %}}`preferForRegexpMatch`{{% /text %}}{{% text "ruby" %}}`prefer_for_regexp_match`{{% /text %}} | Defaults to `false`. Set to `true` if you have step definitions that use regular expressions, and you want this parameter type to take precedence over others during a match.
 
 # Optional text
 
