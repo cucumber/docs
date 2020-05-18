@@ -1,5 +1,2 @@
-# Redirect Docs.cucumber.io to cucumber.io/docs/
-/* https://cucumber.io/docs/:splat 200
-
 # General Category Redirects
-/gherkin/* /docs/gherkin/:splat 301
+/gherkin/* /docs/gherkin/:splat
