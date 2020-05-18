@@ -1,7 +1,3 @@
-# Domain Redirect
-https://docs.cucumber.io/ https://cucumber.io/docs/ 301
-https://docs.cucumber.io/docs/* https://cucumber.io/docs/:splat 301
-
 # General Category Redirects
 /gherkin/*  https://cucumber.io/docs/gherkin/:splat
 /guides/*   https://cucumber.io/docs/guides/:splat
