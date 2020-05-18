@@ -23,8 +23,7 @@ The number of parameters in the {{% stepdef-body %}} has to match the number of 
 
 ## Data Tables
 
-{{% text "java" %}}
-The simplest way to pass a `List<String>` to a step definition is to use a data table:
+The simplest way to pass a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}} to a step definition is to use a data table:
 
 ```gherkin
 Given the following animals:
@@ -33,45 +32,36 @@ Given the following animals:
   | sheep |
 ```
 
-Declare the argument as a `List<String>`, but don't define any capture groups in the expression:
+Declare the argument as a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}, but don't define any capture groups in the expression:
 
+{{% text "java" %}}
 ```java
 @Given("the following animals:")
 public void the_following_animals(List<String> animals) {
 }
 ```
+{{% /text %}}
 
+{{% text "kotlin" %}}
 ```kotlin
 @Given("the following animals:")
 fun the_following_animals(animals: List<String>) {
 }
 ```
-
-In this case, the `DataTable` is automatically flattened to a `List<String>`
-by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
 {{% /text %}}
 
 {{% text "scala" %}}
-The simplest way to pass a `java.util.List[String]` to a step definition is to use a data table:
-
-```gherkin
-Given the following animals:
-  | cow   |
-  | horse |
-  | sheep |
-```
-
-Declare the argument as a `java.util.List[String]`, but don't define any capture groups in the expression:
-
 ```scala
 Given("the following animals:") { animals: java.util.List[String] =>
 }
 ```
+{{% /text %}}
 
-In this case, the `DataTable` is automatically flattened to a `java.util.List[String]`
-by Cucumber (using `DataTable.asList(classOf[String])`) before invoking the step definition.
+In this case, the `DataTable` is automatically flattened to a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}
+by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
 
-For now, Cucumber Scala does not support using Scala collection types.
+{{% text "scala" %}}
+**Note:** For now, Cucumber Scala does not support using Scala collection types.
 See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50).
 {{% /text %}}
 
@@ -90,13 +80,13 @@ Given I have 93 cucumbers in my belly
 
 In this step, you're "calling" the above step definition with one argument: the value `93`.
 
-Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}{{% text "java" %}}`*.feature`{{% /text %}}{{% text "scala" %}}`*.feature`{{% /text %}}{{% text "javascript" %}}`*.feature`{{% /text %}} files.
+Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}{{% text "java,kotlin,scala" %}}`*.feature`{{% /text %}}{{% text "javascript" %}}`*.feature`{{% /text %}} files.
 
 ## Matching steps
 
 1. Cucumber matches a step against a step definition's `Regexp`
 2. Cucumber gathers any capture groups or variables
-3. Cucumber passes them to the step definition's {{% text "ruby" %}}`Proc` (or “function”){{% /text %}}{{% text "javascript" %}}function{{% /text %}}{{% text "java" %}}method{{% /text %}}{{% text "scala" %}}method{{% /text %}} and executes it
+3. Cucumber passes them to the step definition's {{% text "ruby" %}}`Proc` (or “function”){{% /text %}}{{% text "javascript" %}}function{{% /text %}}{{% text "java,scala" %}}method{{% /text %}} and executes it
 
 Recall that step definitions start with a [preposition](https://www.merriam-webster.com/dictionary/given) or an [adverb](https://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**).
 
@@ -128,7 +118,7 @@ When a step definition's method or function invokes the `pending` method, the st
 
 When a step definition's method or function is executed and raises an error, the step is marked as failed (red). What you return from a step definition has no significance whatsoever.
 
-Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java" %}}`null`{{% /text %}}{{% text "scala" %}}`null`{{% /text %}}{{% text "javascript" %}}`null`{{% /text %}} or `false` will **not** cause a step definition to fail.
+Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java,kotlin,scala" %}}`null`{{% /text %}}{{% text "javascript" %}}`null`{{% /text %}} or `false` will **not** cause a step definition to fail.
 
 #### Skipped
 
@@ -138,8 +128,7 @@ Steps that follow `undefined`, `pending`, or `failed` steps are never executed, 
 
 Step definitions have to be unique for Cucumber to know what to execute.
 If you use ambiguous step definitions,{{% text "ruby" %}}Cucumber will raise a `Cucumber::Ambiguous` error,{{% /text %}}
-{{% text "java" %}} Cucumber will raise an `AmbiguousStepDefinitionsException`,{{% /text %}}
-{{% text "scala" %}} Cucumber will raise an `AmbiguousStepDefinitionsException`,{{% /text %}}
+{{% text "java,kotlin,scala" %}} Cucumber will raise an `AmbiguousStepDefinitionsException`,{{% /text %}}
 {{% text "javascript" %}}the step / scenario will get an "Ambiguous" result,{{% /text %}}
 telling you to fix the ambiguity.
 
@@ -409,11 +398,11 @@ Around('@fast') do |scenario, block|
 end
 ```
 
-{{% block "java,scala" %}}Cucumber-JVM does not support `Around` hooks.{{% /block %}}
+{{% block "java,kotlin,scala" %}}Cucumber-JVM does not support `Around` hooks.{{% /block %}}
 {{% block "javascript" %}}Cucumber.js does not support `Around` hooks.{{% /block %}}
 
 ## Step hooks
-{{% text "java,scala" %}}
+{{% text "java,kotlin,scala" %}}
 Step hooks invoked before and after a step. The hooks have 'invoke around' semantics. Meaning that if a `BeforeStep`
 hook is executed the `AfterStep` hooks will also be executed regardless of the result of the step. If a step did not
 pass, the following step and its hooks will be skipped.
@@ -510,8 +499,7 @@ AfterStep { scenario: Scenario =>
 
 Hooks can be conditionally selected for execution based on the tags of the scenario.
 To run a particular hook only for certain scenarios, you can associate a
-{{% text "java" %}}`Before` or `After`{{% /text %}}
-{{% text "scala" %}}`Before` or `After`{{% /text %}}
+{{% text "java,kotlin,scala" %}}`Before` or `After`{{% /text %}}
 {{% text "javascript" %}}`Before` or `After`{{% /text %}}
 {{% text "ruby" %}}`Before`, `After`, `Around` or `AfterStep`{{% /text %}}
 hook with a [tag expression](#tag-expressions).
@@ -587,7 +575,7 @@ at_exit do
 end
 ```
 
-{{% block "java,scala" %}}Cucumber-JVM does not support global hooks.{{% /block %}}
+{{% block "java,kotlin,scala" %}}Cucumber-JVM does not support global hooks.{{% /block %}}
 {{% block "javascript" %}}Cucumber.js does not support global hooks.{{% /block %}}
 
 ## Running a hook only once
@@ -606,7 +594,7 @@ end
 ```
 {{% /text %}}
 
-{{% block "java,scala" %}}Cucumber-JVM does not support running a hook only once.{{% /block %}}
+{{% block "java,kotlin,scala" %}}Cucumber-JVM does not support running a hook only once.{{% /block %}}
 {{% block "javascript" %}}Cucumber.js does not support running a hook only once.{{% /block %}}
 
 ## AfterConfiguration
@@ -629,7 +617,7 @@ This hook will run _only once_: after support has been loaded, and before any fe
 You can use this hook to extend Cucumber. For example you could affect how features are loaded, or register custom formatters programmatically.
 {{% /text %}}
 
-{{% text "java,scala" %}}Cucumber-JVM does not support `AfterConfiguration` hooks.{{% /text %}}
+{{% text "java,kotlin,scala" %}}Cucumber-JVM does not support `AfterConfiguration` hooks.{{% /text %}}
 {{% text "javascript" %}}Cucumber js does not support `AfterConfiguration` hooks.{{% /text %}}
 
 # Tags
@@ -903,7 +891,7 @@ By default, Cucumber will treat anything ending in
 {{% text "kotlin" %}}`.kt`{{% /text %}}
 {{% text "javascript" %}}`.js`{{% /text %}}
 {{% text "ruby" %}}`.rb`{{% /text %}} under the root
-{{% text "java,kotlin,javascript,scala" %}}resource{{% /text %}}
+{{% text "java,kotlin,scala,javascript" %}}resource{{% /text %}}
 {{% text "ruby" %}}library{{% /text %}} directory as a step definition file.
 
 Thus, a step contained in
@@ -913,7 +901,7 @@ Thus, a step contained in
 {{% text "javascript" %}}`features/models/entities/step-definitions/anything.js`{{% /text %}}
 {{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
 can be used in a feature file contained in
-{{% text "java,kotlin,javascript,scala" %}}`features/views/entity-new`{{% /text %}}
+{{% text "java,kotlin,scala,javascript" %}}`features/views/entity-new`{{% /text %}}
 {{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
 , provided that:
 
@@ -1447,7 +1435,7 @@ cucumber --help
 ```
 {{% /block %}}
 
-{{% block "java,scala" %}}
+{{% block "java,kotlin,scala" %}}
 Pass the `--help` option to print out all the available configuration options:
 
 ```
@@ -1462,7 +1450,7 @@ Use the `cucumber-js --help` command to see which arguments can be passed to the
 
 You can also use [tags](#tags) to specify what to run.
 
-{{% block "java,scala" %}}
+{{% block "java,kotlin,scala" %}}
 Configuration options can also be overridden and passed to *any* of the runners via the `cucumber.options` Java system property.
 
 For example, if you are using Maven and want to run a subset of scenarios tagged

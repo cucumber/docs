@@ -27,7 +27,7 @@ Make sure the Cucumber version is the same for all Cucumber dependencies.
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-scala_2.13</artifactId>
-    <version>{{% version "cucumberjvm" %}}</version>
+    <version>{{% version "cucumberscala" %}}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -37,7 +37,7 @@ You can now run Cucumber [from the command line](/docs/cucumber/api/#from-the-co
 # Sbt
 
 ```scala
-libraryDependencies += "io.cucumber" %% "cucumber-scala" % "{{% version "cucumberjvm" %}}" % Test
+libraryDependencies += "io.cucumber" %% "cucumber-scala" % "{{% version "cucumberscala" %}}" % Test
 ```
 
 # JUnit-integration

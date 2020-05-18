@@ -22,7 +22,7 @@ strings to objects. Like step definitions, type definitions are part of the glue
 When placed on the glue path Cucumber will detect them automatically. 
 {{% /block %}}
 
-{{% block "java,scala" %}}
+{{% block "java,kotlin,scala" %}}
 For example, the following class registers a custom "Author" data table type:
 {{% /block %}}
 
