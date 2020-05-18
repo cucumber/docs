@@ -1,1 +1,2 @@
-/* https://cucumber.io/:splat  200
+# General Category Redirects
+/gherkin/* /docs/gherkin/:splat 200
