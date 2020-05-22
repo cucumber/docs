@@ -103,7 +103,7 @@ Then('the result should be {word}', function (expected) {
 You can use any other assertion library if you wish. Here is an example using [Chai](https://www.chaijs.com/):
 
 ```javascript
-const expect = require('chai')
+const { expect } = require('chai')
 
 Then('the result should be {word}', function (expected) {
   expect(this.actual).to.eql(expected)
