@@ -105,6 +105,7 @@ A language select will be displayed if the page specifies the following in the f
  - javascript
  - ruby
  - kotlin
+ - scala
  - dotnet
  ```
 
@@ -114,6 +115,7 @@ The following languages are currently supported:
 * JavaScript
 * Ruby
 * Kotlin (optional)
+* Scala (optional)
 * .Net (optional; some pages only)
 
 * Whenever possible, we prefer to have information for Java, JavaScript and Ruby.
@@ -154,6 +156,13 @@ Wrap `{{%/* block %}}` shortcodes around paragraphs and fenced code blocks:
     ```
     {{% /block */%}}
 
+    {{%/* block "scala" %}}
+    Put this in your `Hello.scala`:
+    ```scala
+    println("hello")
+    ```
+    {{% /block */%}}
+
 Please note that you cannot use headers *inside* language blocks! If you are writing a page with content for a specific language,
 perhaps it should be a separate page. Alternatively, you can use a header per language.
 
@@ -165,13 +174,13 @@ a particular programming language:
     The preferred build tool is
     {{%/* text "ruby" %}}Rake{{% /text %}}
     {{% text "javascript" %}}Yarn{{% /text %}}
-    {{% text "java,kotlin" %}}Maven{{% /text */%}}.
+    {{% text "java,kotlin,scala" %}}Maven{{% /text */%}}.
 
 ## Paragraphs or text that is valid for multiple programming languages    
 Note that you can also use shortcodes for paragraphs or text that is valid for multiple languages, without repeating it for each individual language.
 To do so, list the relevant languages separated by a comma (`,`):
     
-    {{%/* text "java,kotlin" %}}Maven{{% /text */%}}
+    {{%/* text "java,kotlin,scala" %}}Maven{{% /text */%}}
 
 ## Additional shortcodes
 Additional shortcodes are defined in `layouts/shortcodes`.

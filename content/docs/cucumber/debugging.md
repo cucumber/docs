@@ -6,6 +6,7 @@ polyglot:
  - javascript
  - ruby
  - kotlin
+ - scala
 
 ---
 {{% block "ruby" %}}
@@ -130,7 +131,7 @@ end
 By setting an environment variable, you can tell Cucumber to use various debugging tools, and you can combine them by setting multiple environment variables.
 {{% /block %}}
 
-{{% block "java,kotlin" %}}
+{{% block "java,kotlin,scala" %}}
 In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode. 
 
 1. Set a breakpoint on the part of the code you want to debug. This might be the line you are currently getting an Exception (see your stacktrace). 

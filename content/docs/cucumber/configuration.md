@@ -8,20 +8,21 @@ polyglot:
  - javascript
  - ruby
  - kotlin
+ - scala
 
 ---
 
 
 # Type Registry
 
-{{% block "java,kotlin" %}}
+{{% block "java,kotlin,scala" %}}
 Parameter types let you convert parameters from cucumber-expressions to objects.
 Data table and doc string types let you convert data tables and doc
 strings to objects. Like step definitions, type definitions are part of the glue.
 When placed on the glue path Cucumber will detect them automatically. 
 {{% /block %}}
 
-{{% block "java" %}}
+{{% block "java,kotlin,scala" %}}
 For example, the following class registers a custom "Author" data table type:
 {{% /block %}}
 
@@ -80,7 +81,30 @@ class StepDefinitions {
 ```
 {{% /block %}}
 
-{{% block "java,kotlin" %}}
+{{% block "scala" %}}
+
+```scala
+package com.example
+
+import io.cucumber.scala.{ScalaDsl, EN}
+
+class StepDefinitions extends ScalaDsl with EN {
+
+    DataTableType { entry: Map[String, String] =>
+        Author(
+            entry("firstName"),
+            entry("lastName"),
+            entry("famousBook"))
+    }
+
+    Given("There are my favorite authors") { authors: List[Author] =>
+        // step implementation
+    }
+}
+```
+{{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 
 The parameter type example:
 
@@ -132,9 +156,28 @@ class StepDefinitions {
 }
 ```
 
+{{% block "scala" %}}
+
+```scala
+package com.example
+
+import io.cucumber.scala.{ScalaDsl, EN}
+
+class StepDefinitions extends ScalaDsl with EN {
+
+    ParameterType("book", ".*") { bookName: String =>
+        Book(bookName)
+    }
+
+    Given("{book} is my favorite book") { book: Book =>
+        // step implementation
+    }
+}
+```
+
 {{% /block %}}
 
-{{% block "java,kotlin" %}}
+{{% block "java,kotlin,scala" %}}
 
 The docstring type example:
 
@@ -194,6 +237,34 @@ class StepsDefinitions {
 
     @Given("Books are defined by json")
     fun books_are_defined_by_json(books: JsonNode) {
+        // step implementation
+    }
+}
+```
+
+{{% /block %}}
+
+{{% block "scala" %}}
+
+```scala
+package com.example
+
+import com.fasterxml.jackson.core.JsonProcessingException
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper
+import io.cucumber.scala.{ScalaDsl, EN}
+
+object StepsDefinitions {
+    private val objectMapper = ObjectMapper()
+}
+
+class StepsDefinitions extends ScalaDsl with EN {
+
+    DocStringType("json") { docString: String =>
+        objectMapper.readValue(docString, classOf[JsonNode])
+    }
+
+    Given("Books are defined by json") { books: JsonNode =>
         // step implementation
     }
 }
@@ -280,6 +351,13 @@ ObjectMapper. The object mapper (Jackson in this example) will handle the
 conversion of anonymous parameter types and data table entries.
 {{% /block %}}
 
+{{% block "scala" %}}
+Using the `DefaultParameterTransformer`, `DefaultDataTableEntryTransformer`
+and `DefaultDataTableCellTransformer` methods, it is also possible to plug in an 
+ObjectMapper. The object mapper (Jackson in this example) will handle the 
+conversion of anonymous parameter types and data table entries.
+{{% /block %}}
+
 {{% block "java" %}}
 
 ```java
@@ -326,6 +404,34 @@ class StepDefinitions {
     @DefaultDataTableCellTransformer
     fun transformer(fromValue: Any, toValueType: Type): Any {
         return objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType))
+    }
+}
+```
+{{% /block %}}
+
+{{% block "scala" %}}
+```scala
+package com.example
+
+import com.fasterxml.jackson.databind.ObjectMapper
+import io.cucumber.scala.ScalaDsl
+
+import java.lang.reflect.Type
+
+class StepDefinitions extends ScalaDsl {
+
+    private val objectMapper = ObjectMapper()
+
+    DefaultParameterTransformer { (fromValue: String, toValueType: Type) => 
+        objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) 
+    }
+
+    DefaultDataTableCellTransformer { (fromValue: String, toValueType: Type) => 
+        objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType)) 
+    }
+
+    DefaultDataTableEntryTransformer { (fromValue: Map[String, String], toValueType: Type) => 
+        objectMapper.convertValue(fromValue, objectMapper.constructType(toValueType))
     }
 }
 ```
@@ -413,7 +519,7 @@ end
 ```
 {{% /block %}}
 
-{{% block "java,kotlin,ruby" %}}
+{{% block "java,kotlin,scala,ruby" %}}
 If you are using a type that has not yet been defined, you will get an error similar to:
 ```shell
 The parameter type "person" is not defined.
@@ -429,14 +535,20 @@ For more information on how to use `Data Tables` with Cucumber-js, please see th
 
 {{% /block %}}
 
+{{% block "scala" %}}
+If you want to, you can use the predefined `JacksonDefaultDataTableEntryTransformer` trait which defines default transformers using Jackson Scala Module.
+
+See [Default Jackon DataTable Transformer](https://github.com/cucumber/cucumber-jvm-scala/blob/master/docs/default_jackson_datatable_transformer.md).
+{{% /block %}}
+
 ## Recommended location
 
-The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/java/com/example/ParameterTypes.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/kotlin/com/example/ParameterTypes.kt`.{{% /text %}}
-This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java,kotlin" %}} on the glue path.{{% /text %}}
+The recommended location to define custom parameter types, would be in{{% text "ruby" %}} `features/support/parameter_types.rb`.{{% /text %}}{{% text "javascript" %}} `features/support/parameter_types.js`.{{% /text %}}{{% text "java" %}} `src/test/java/com/example/ParameterTypes.java`.{{% /text %}}{{% text "kotlin" %}} `src/test/kotlin/com/example/ParameterTypes.kt`.{{% /text %}}{{% text "scala" %}} `src/test/kotlin/com/example/ParameterTypes.scala`.{{% /text %}}
+This is just a convention though; Cucumber will pick them up from any file{{% text "ruby, javascript" %}} under features.{{% /text %}}{{% text "java,kotlin,scala" %}} on the glue path.{{% /text %}}
 
 # Profiles
 
-{{% block "java,kotlin" %}}
+{{% block "java,kotlin,scala" %}}
 Cucumber profiles are not available on Cucumber-JVM.  However, it is possible to set configuration options using [Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html).
 
 For instance, we can configure separate profiles for scenarios which are to be run in separate environments like so:
@@ -531,7 +643,7 @@ output.
 {{% /block %}}
 
 ## Default Profile
-{{% block "java,kotlin" %}}
+{{% block "java,kotlin,scala" %}}
 Cucumber profiles are not available on Cucumber-JVM. See above.
 {{% /block %}}
 
@@ -566,7 +678,7 @@ progress output and HTML output.
 
 ## Preprocessing with ERB
 
-{{% block "java,kotlin,javascript" %}}
+{{% block "java,kotlin,scala,javascript" %}}
 ERB (Embedded RuBy) is a Ruby specific tool.
 {{% /block %}}
 
@@ -588,7 +700,7 @@ So, if you have several profiles with similar values, you might do this:
 {{% /block %}}
 
 # Environment Variables
-{{% block "java,kotlin" %}}
+{{% block "java,kotlin,scala" %}}
 Cucumber-JVM does not support configuration of Cucumber with an `env` file.
 {{% /block %}}
 

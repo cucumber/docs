@@ -4,6 +4,7 @@
 #
 
 cucumberjvm: "5.6.0"
+cucumberscala: "5.6.0"
 cucumberjs: "5.0.3"
 cucumberruby: "3.1.0"
 rspec: "3.7.0"

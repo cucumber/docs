@@ -6,6 +6,7 @@ polyglot:
   - javascript
   - ruby
   - kotlin
+  - scala
 weight: 1700
 ---
 We try to add new features to Cucumber periodically. This means you may want to upgrade to a newer version to take advantage of these new features, as well as any bug fixes.
@@ -27,6 +28,10 @@ You can read the history file to learn about the changes in every release:
 
 {{% block "java,kotlin" %}}
 [cucumber-jvm changelog](https://github.com/cucumber/cucumber-jvm/blob/master/CHANGELOG.md)
+{{% /block %}}
+
+{{% block "scala" %}}
+[cucumber-jvm-scala changelog](https://github.com/cucumber/cucumber-jvm-scala/blob/master/CHANGELOG.md)
 {{% /block %}}
 
 {{% block "javascript" %}}
