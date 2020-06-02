@@ -45,13 +45,14 @@ import io.cucumber.java.en.When;
 public class ExampleSteps {
 
     private final WebDriver driver = new FirefoxDriver();
+    
     @Given("I am on the Google search page")
     public void I_visit_google() {
-    driver.get("https:\\www.google.com");
-   }
+        driver.get("https:\\www.google.com");
+    }
 
-   @When("I search for {string}")
-     public void search_for(String query) {
+    @When("I search for {string}")
+    public void search_for(String query) {
         WebElement element = driver.findElement(By.name("q"));
         // Enter something to search for
         element.sendKeys(query);
@@ -68,12 +69,12 @@ public class ExampleSteps {
                return d.getTitle().toLowerCase().startsWith(titleStartsWith);
            }
        });
-    }
+   }
 
-    @After()
-     public void closeBrowser() {
+   @After()
+   public void closeBrowser() {
        driver.quit();
-     }
+   }
 }
 ```
 
