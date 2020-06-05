@@ -5,3 +5,4 @@
 /cucumber/api/* https://cucumber.io/docs/cucumber/api/:splat
 /installation/* https://cucumber.io/docs/installation/:splat
 /cucumber/* https://cucumber.io/docs/cucumber/:splat
+/community/faq/ https://cucumber.io/docs/community/faq/
