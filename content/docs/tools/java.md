@@ -96,7 +96,7 @@ Steps:
 
     ```groovy
     task cucumber() {
-        dependsOn assemble, compileTestJava
+        dependsOn assemble, testClasses
         doLast {
             javaexec {
                 main = "io.cucumber.core.cli.Main"
