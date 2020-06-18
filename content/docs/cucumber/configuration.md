@@ -553,18 +553,18 @@ Cucumber profiles are not available on Cucumber-JVM.  However, it is possible to
 
 For instance, we can configure separate profiles for scenarios which are to be run in separate environments like so:
 
-``` xml
+```xml
     <profiles>
         <profile>
           <id>dev</id>
             <properties>
-                <cucumber.options>--tags "@dev and not @ignore"</cucumber.options>
+                <cucumber.filter.tags>@dev and not @ignore</cucumber.filter.tags>
             </properties>
         </profile>
         <profile>
           <id>qa</id>
             <properties>
-                <cucumber.options>--tags "@qa"</cucumber.options>
+                <cucumber.filter.tags>@qa</cucumber.filter.tags>
             </properties>
         </profile>
     </profiles>
@@ -578,7 +578,7 @@ For instance, we can configure separate profiles for scenarios which are to be r
                 <version>3.0.0-M4</version>
                 <configuration>
                     <systemPropertyVariables>
-                       <cucumber.options>${cucumber.options}</cucumber.options>
+                       <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
