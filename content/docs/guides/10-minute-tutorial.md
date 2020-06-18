@@ -136,7 +136,7 @@ Add following dependency configuration to your build.gradle file:
 ```groovy
 configurations {
     cucumberRuntime {
-        extendsFrom testRuntime
+        extendsFrom testImplementation
     }
 }
 ```
