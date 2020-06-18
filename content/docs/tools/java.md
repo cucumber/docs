@@ -45,8 +45,8 @@ Steps:
 4.  Run the following Maven from the directory path where the `pom.xml` file is located:
 
     ```shell
-    mvn clean install -Dcucumber.options="--glue package_name_of_step_definitions \
-       --plugin pretty path\to\featurefiles"
+    mvn clean install -Dcucumber.glue="package_name_of_step_definitions" \
+       -Dcucumber.plugin="pretty path\to\featurefiles"
     ```
 
 ## Gradle
