@@ -1451,13 +1451,16 @@ Use the `cucumber-js --help` command to see which arguments can be passed to the
 You can also use [tags](#tags) to specify what to run.
 
 {{% block "java,kotlin,scala" %}}
-When property parsing functionality is not provided by the runner (i.e.
-`cucumber-junit-platform-engine`) Cucumber will in order of precedence parse
-properties from system properties, environment variables and the
-`cucumber.properties` file.
+Cucumber will in order of precedence parse properties from system properties,
+environment variables and the `cucumber.properties` file.
 
 Note that options provided by `@CucumberOptions` take precedence over the
-`cucumber.properties` file. CLI arguments take precedence over all.
+properties file and CLI arguments take precedence over all.
+
+Note that the `cucumber-junit-platform-engine` is provided with properties
+by the Junit Platform rather then Cucumber. See
+[junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/master/junit-platform-engine#configuration-options)
+for more information.
 
 For example, if you are using Maven and want to run a subset of scenarios tagged
 with `@smoke`:
