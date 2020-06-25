@@ -4,12 +4,12 @@
   "author": "Cucumber Ltd",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^8.6.2",
-    "bulma": "^0.7.1",
-    "concurrently": "^3.5.1",
-    "node-sass": "^4.9.0",
-    "postcss-cli": "^5.0.0",
-    "rimraf": "^2.6.2"
+    "autoprefixer": "8.6.2",
+    "bulma": "0.7.1",
+    "concurrently": "3.5.1",
+    "node-sass": "4.9.0",
+    "postcss-cli": "5.0.0",
+    "rimraf": "2.6.2"
   },
   "resolutions": {
     "mem": "^4.0.0",
