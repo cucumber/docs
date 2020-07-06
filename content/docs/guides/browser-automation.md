@@ -15,9 +15,9 @@ Cucumber is not a browser automation tool, but it works well with the following 
 
 WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. Selenium-WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver's goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.
 
-[Selenium-WebDriver](https://www.selenium.dev/documentation/en/webdriver/) can be used in multiple programming languages, including Java, JavaScript, Ruby and Kotlin.
+[Selenium-WebDriver](https://www.selenium.dev/documentation/en/selenium_installation/installing_selenium_libraries/#_java_) can be used in multiple programming languages, including Java, JavaScript, Ruby and Kotlin.
 
-Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting the [Selenium-Web driver by example](https://www.selenium.dev/documentation/en/).
+Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting the [Selenium-Web driver by example](https://www.selenium.dev/documentation/en/#getting-started).
 
 We can express the example as the following scenario:
 
