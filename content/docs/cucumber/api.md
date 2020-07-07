@@ -1106,7 +1106,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "summary"}, strict = true, snippets = CAMELCASE)
+@CucumberOptions(plugin = {"pretty", "summary"}, snippets = CAMELCASE)
 public class RunCucumberTest {
 }
 ```
@@ -1121,7 +1121,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "summary"}, strict = true, snippets = CAMELCASE)
+@CucumberOptions(plugin = {"pretty", "summary"}, snippets = CAMELCASE)
 class RunCucumberTest {
 }
 ```
@@ -1136,7 +1136,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(classOf[Cucumber])
-@CucumberOptions(plugin = Seq("pretty", "summary"), strict = true, snippets = CAMELCASE)
+@CucumberOptions(plugin = Seq("pretty", "summary"), snippets = CAMELCASE)
 class RunCucumberTest {
 }
 ```
@@ -1275,7 +1275,7 @@ import org.junit.runner.RunWith;
 class RunCucumberTest {
 }
 ```
-The default option for `strict` is `false`.
+The default option for `strict` is `true`.
 
 **Select scenarios using tags:**
 
@@ -1475,7 +1475,7 @@ cucumber.ansi-colors.disabled=  # true or false. default: false
 cucumber.execution.dry-run=     # true or false. default: false 
 cucumber.execution.limit=       # number of scenarios to execute (CLI only).  
 cucumber.execution.order=       # lexical, reverse, random or random:[seed] (CLI only). default: lexical
-cucumber.execution.strict=      # true or false. default: false.
+cucumber.execution.strict=      # true or false. default: true.
 cucumber.execution.wip=         # true or false. default: false.
 cucumber.features=              # command separated paths to feature files. example: path/to/example.feature, path/to/other.feature  
 cucumber.filter.name=           # regex. example: .*Hello.*
