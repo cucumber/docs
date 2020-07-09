@@ -147,7 +147,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/picocontainer).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/picocontainer).
 For more information, please see [sharing state using PicoContainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
 {{% /block %}}
 
@@ -172,7 +172,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-spring', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/spring).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/spring).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Spring is a Dependency Injection framework for JVM languages. {{% /block %}}
@@ -195,7 +195,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-guice', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/guice).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/guice).
 For more information, please see [sharing state using Guice](http://www.thinkcode.se/blog/2017/08/16/sharing-state-between-steps-in-cucumberjvm-using-guice).
 {{% /block %}}
 
@@ -219,7 +219,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-openejb', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/openejb).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/openejb).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} OpenEJB is a Dependency Injection framework for JVM languages. {{% /block %}}
@@ -242,7 +242,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-weld', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/weld).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/weld).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Weld is a Dependency Injection framework for JVM languages. {{% /block %}}
@@ -265,7 +265,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-needle', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/master/needle).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/needle).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Needle is a Dependency Injection framework for JVM languages. {{% /block %}}
@@ -489,7 +489,7 @@ Feature: Let's write a lot of stuff to the DB
 
 ### With JUnit and Spring
 {{% block "java,kotlin" %}} 
-See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/master/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
+See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/main/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} JUnit and Spring are used with JVM languages. {{% /block %}}

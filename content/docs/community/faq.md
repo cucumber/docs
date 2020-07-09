@@ -64,7 +64,7 @@ You can read the [changelog file](https://github.com/cucumber/cucumber-js/blob/m
 You can read the [changelog file](https://github.com/cucumber/cucumber-ruby/blob/master/CHANGELOG.md) to learn about the changes in every release.
 {{% /block %}}
 {{% block "java,kotlin" %}}
-You can read the [changelog file](https://github.com/cucumber/cucumber-jvm/blob/master/CHANGELOG.md) to learn about the changes in every release.
+You can read the [changelog file](https://github.com/cucumber/cucumber-jvm/blob/main/CHANGELOG.md) to learn about the changes in every release.
 {{% /block %}}
 
 ## How do I run Cucumber?
@@ -80,7 +80,7 @@ For information about configuration options, see [Configuration](/docs/cucumber/
 When running Cucumber with JUnit, you can specify several options on how JUnit should run your tests.
 Check the section on [JUnit](https://docs.cucumber.io/cucumber/api/#junit) for more information.
 
-For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/test/java/io/cucumber/core/options/CucumberOptions.java).
+For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/main/core/src/test/java/io/cucumber/core/options/CucumberOptions.java).
 {{% /block %}}
 
 ## Cucumber says my steps are undefined, but I have implemented step definitions!
@@ -139,11 +139,11 @@ You can find the required dependencies [here](https://docs.cucumber.io/installat
 {{% /block %}}
 
 {{% block "java" %}}
-For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/examples/java8-calculator/src/test/java/io/cucumber/examples/java8/RpnCalculatorSteps.java).
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/main/examples/java8-calculator/src/test/java/io/cucumber/examples/java8/RpnCalculatorSteps.java).
 {{% /block %}}
 
 {{% block "kotlin" %}}
-For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/master/kotlin-java8/src/test/kotlin/io/cucumber/kotlin/LambdaStepdefs.kt).
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/main/kotlin-java8/src/test/kotlin/io/cucumber/kotlin/LambdaStepdefs.kt).
 {{% /block %}}
 
 ## How do I call other steps or scenarios?

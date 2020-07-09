@@ -1459,7 +1459,7 @@ properties file and CLI arguments take precedence over all.
 
 Note that the `cucumber-junit-platform-engine` is provided with properties
 by the Junit Platform rather then Cucumber. See
-[junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/master/junit-platform-engine#configuration-options)
+[junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
 for more information.
 
 For example, if you are using Maven and want to run a subset of scenarios tagged

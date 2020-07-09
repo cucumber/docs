@@ -27,11 +27,11 @@ You can read the history file to learn about the changes in every release:
 {{% /block %}}
 
 {{% block "java,kotlin" %}}
-[cucumber-jvm changelog](https://github.com/cucumber/cucumber-jvm/blob/master/CHANGELOG.md)
+[cucumber-jvm changelog](https://github.com/cucumber/cucumber-jvm/blob/main/CHANGELOG.md)
 {{% /block %}}
 
 {{% block "scala" %}}
-[cucumber-jvm-scala changelog](https://github.com/cucumber/cucumber-jvm-scala/blob/master/CHANGELOG.md)
+[cucumber-jvm-scala changelog](https://github.com/cucumber/cucumber-jvm-scala/blob/main/CHANGELOG.md)
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -57,5 +57,5 @@ The following blog posts describe the changes made per release:
 
 * [Announcing Cucumber-JVM 4.2.0](https://cucumber.io/blog/2018/10/31/announcing-cucumber-jvm-4-2-0)
 
-Details can be found in the [cucumber-jvm changelog](https://github.com/cucumber/cucumber-jvm/blob/master/CHANGELOG.md).
+Details can be found in the [cucumber-jvm changelog](https://github.com/cucumber/cucumber-jvm/blob/main/CHANGELOG.md).
 {{% /block %}}
