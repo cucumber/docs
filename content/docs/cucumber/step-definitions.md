@@ -49,7 +49,7 @@ package com.example;
 import io.cucumber.java8.En;
 
 public class StepDefinitions implements En {
-    public StepDefinitions() {
+    public void StepDefinitions() {
         Given("I have {int} cukes in my belly", (Integer cukes) -> {
             System.out.format("Cukes: %n\n", cukes);
         });
