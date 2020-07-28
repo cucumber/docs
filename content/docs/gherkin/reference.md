@@ -374,7 +374,7 @@ For a less explicit alternative to `Background`, check out [conditional hooks](/
 * Make your `Background` section **vivid**.
   * Use colourful names, and try to tell a story. The human brain keeps track of stories much better than it keeps track of names like `"User A"`, `"User B"`, `"Site 1"`, and so on.
 * Keep your scenarios **short**, and don't have too many.
-  * If the `Background` section has scrolled off the screen, the reader no longer has a full overview of whats happening.
+  * If the `Background` section has scrolled off the screen, the reader no longer has a full overview of what's happening.
 Think about using higher-level steps, or splitting the `*.feature` file.
 
 ## Scenario Outline
