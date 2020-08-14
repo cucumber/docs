@@ -473,7 +473,7 @@ The language you choose for Gherkin should be the same language your users and
 domain experts use when they talk about the domain. Translating between
 two languages should be avoided.
 
-This is why Gherkin has been translated to over 70 languages.
+This is why Gherkin has been translated to [over 70 languages](/docs/gherkin/languages) .
 
 Here is a Gherkin scenario written in Norwegian:
 
@@ -497,14 +497,3 @@ If you omit this header, Cucumber will default to English (`en`).
 
 Some Cucumber implementations also let you set the default language in the
 configuration, so you don't need to place the `# language` header in every file.
-
-## Gherkin Dialects
-In order to allow Gherkin to be written in a number of languages, the keywords have been translated into multiple languages. To improve readability and flow, some languages may have more than one translation for any given keyword.
-
-### Overview
-You can find all translation of Gherkin [on GitHub](https://github.com/cucumber/cucumber/blob/master/gherkin/gherkin-languages.json).
-This is also the place to add or update translations.
-
-A list of the currently supported languages and their keywords can be found below.
-
-{{% gherkin-i18n-table %}}
