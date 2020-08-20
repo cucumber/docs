@@ -18,9 +18,20 @@ build your own.
 This page documents built-in formatter plugins, custom formatters and some common third-party plugins.
 Available plugins may vary per programming language.
 
+# Cucumber Reports Service
+
+The easiest way to get started with reporting is to use the [Cucumber Reports](https://reports.cucumber.io/) service.
+Read the introductory [blog post](https://cucumber.io/blog/open-source/cucumber-reports/) for more details.
+
+Publishing to the Cucumber Reports service is currently supported in:
+
+* Cucumber-JVM `6.5.1` and above
+* Cucumber-Ruby `5.0.0` and above
+
 # Built-in reporter plugins
 
-There are several reporter plugins built into Cucumber:
+If you don't want to publish your reports to the [Cucumber Reports](https://reports.cucumber.io/) service, you can
+generate local reports using one of the following built-in reporter plugins:
 
 * `progress`
 * `pretty`
