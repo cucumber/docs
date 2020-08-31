@@ -1,6 +1,6 @@
 # Builds a docker image with all the software required to build the website
 #
-FROM alpine:3.7
+FROM alpine:3.12
 
 # Install languages and build tools
 RUN apk add --no-cache --update --upgrade \
