@@ -6,7 +6,7 @@
 cucumberjvm: "6.6.0"
 cucumberscala: "6.1.1"
 cucumberjs: "6.0.5"
-cucumberruby: "5.1.0"
+cucumberruby: "5.1.1"
 rspec: "3.9.0"
 testng: "7.1.0"
 junit: "4.12"
