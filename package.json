@@ -11,6 +11,6 @@
     "algolia": "atomic-algolia"
   },
   "dependencies": {
-    "gherkin": "^5.0.0"
+    "gherkin": "5.0.0"
   }
 }
