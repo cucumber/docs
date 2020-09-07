@@ -17,7 +17,7 @@ WebDriver is designed to provide a simpler, more concise programming interface t
 
 [Selenium-WebDriver](https://www.selenium.dev/documentation/en/selenium_installation/installing_selenium_libraries) can be used in multiple programming languages, including Java, JavaScript, Ruby and Kotlin.
 
-Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting the [Selenium-Web driver by example](https://www.selenium.dev/documentation/en/#getting-started).
+Let us look at an example of Cucumber using Selenium-WebDriver in UI testing, by converting the [Selenium-Web driver by example](https://www.selenium.dev/documentation).
 
 We can express the example as the following scenario:
 
