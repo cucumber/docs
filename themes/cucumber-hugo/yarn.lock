@@ -151,16 +151,16 @@ atob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.1.tgz#ae2d5a729477f289d60dd7f96a6314a22dd6c22a"
 
-autoprefixer@8.6.2:
-  version "8.6.2"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-8.6.2.tgz#51d42ff13243820a582a53ecca20dedaeb7f2efd"
-  integrity sha512-cv9v1mYYBcAnZq4MHseJ9AIdjQmNahnpCpPO46oTkQJS2GggsBp2azHjNpAuQ95Epvsg+AIsyjYhfI9YwFxGSA==
+autoprefixer@8.6.5:
+  version "8.6.5"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-8.6.5.tgz#343f3d193ed568b3208e00117a1b96eb691d4ee9"
+  integrity sha512-PLWJN3Xo/rycNkx+mp8iBDMTm3FeWe4VmYaZDSqL5QQB9sLsQkG5k8n+LNDFnhh9kdq2K+egL/icpctOmDHwig==
   dependencies:
     browserslist "^3.2.8"
-    caniuse-lite "^1.0.30000851"
+    caniuse-lite "^1.0.30000864"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^6.0.22"
+    postcss "^6.0.23"
     postcss-value-parser "^3.2.3"
 
 aws-sign2@~0.7.0:
@@ -279,9 +279,14 @@ camelcase@^5.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000851:
+caniuse-lite@^1.0.30000844:
   version "1.0.30000855"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000855.tgz#d5a26a9093b932d6266bf4ed9294b41b84945d14"
+
+caniuse-lite@^1.0.30000864:
+  version "1.0.30001124"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001124.tgz#5d9998190258e11630d674fc50ea8e579ae0ced2"
+  integrity sha512-zQW8V3CdND7GHRH6rxm6s59Ww4g/qGWTheoboW9nfeMg7sUoopIfKCcNZUjwYRCOrvereh3kwDpZj4VLQ7zGtA==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -1822,9 +1827,18 @@ postcss-value-parser@^3.2.3:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@^6.0.1, postcss@^6.0.22, postcss@^6.0.8:
+postcss@^6.0.1, postcss@^6.0.8:
   version "6.0.22"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.22.tgz#e23b78314905c3b90cbd61702121e7a78848f2a3"
+  dependencies:
+    chalk "^2.4.1"
+    source-map "^0.6.1"
+    supports-color "^5.4.0"
+
+postcss@^6.0.23:
+  version "6.0.23"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
+  integrity sha512-soOk1h6J3VMTZtVeVpv15/Hpdl2cBLX3CAw4TAbkpTJiNPk9YP/zWcD1ND+xEtvyuuvKzbxliTOIyvkSeSJ6ag==
   dependencies:
     chalk "^2.4.1"
     source-map "^0.6.1"
