@@ -25,8 +25,9 @@ Read the introductory [blog post](https://cucumber.io/blog/open-source/cucumber-
 
 Publishing to the Cucumber Reports service is currently supported in:
 
-* Cucumber-JVM `6.5.1` and above
-* Cucumber-Ruby `5.0.0` and above
+* Cucumber-JVM `6.7.0` and above
+* Cucumber-Ruby `5.1.1` and above
+* Cucumber-JS `7.0.0-rc.0` and above
 
 # Built-in reporter plugins
 
