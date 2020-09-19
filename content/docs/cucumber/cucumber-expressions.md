@@ -66,7 +66,7 @@ On the JVM, there are additional parameter types for `biginteger`, `bigdecimal`,
 
 The anonymous parameter type will be converted to the parameter type of the step definition using an object mapper. 
 Cucumber comes with a built-in object mapper that can handle most basic types. Aside from `Enum` it supports conversion 
-to `BigInteger`, `BigDecimal`, `Byte`, `Short`, `Integer`, `Long`, `Float`, `Double` and `String`.
+to `BigInteger`, `BigDecimal`, `Boolean`, `Byte`, `Short`, `Integer`, `Long`, `Float`, `Double` and `String`.
 
 To automatically convert to other types it is recommended to install an object mapper. See [configuration](/docs/cucumber/configuration)
 to learn how.{{% /block %}}
