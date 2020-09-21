@@ -21,12 +21,12 @@ Add `cucumber` as a development dependency:
 
 ```shell
 # NPM
-npm install --save-dev cucumber
+npm install --save-dev @cucumber/cucumber
 ```
 
 Or, if you prefer [Yarn](https://yarnpkg.com/en/):
 
 ```shell
 # Yarn
-yarn add --dev cucumber
+yarn add --dev @cucumber/cucumber
 ```
