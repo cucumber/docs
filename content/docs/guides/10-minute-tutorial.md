@@ -348,7 +348,7 @@ npm init --yes
 Add Cucumber as a development dependency:
 
 ```shell
-npm install cucumber --save-dev
+npm install @cucumber/cucumber --save-dev
 ```
 
 Open `package.json` in a text editor and change the `test` section so it looks like this:
