@@ -2,17 +2,9 @@
 title: Cucumber-Scala
 subtitle: Scala
 svg: installation/scala.svg
-implementation: unmaintained
-weight: 1315
+implementation: official
+weight: 1146
 ---
-
-----
-
-**This package is currently in need of new maintainers.**
-
-Please see [Cucumber-Scala](https://github.com/cucumber/cucumber-jvm-scala).
-
-----
 
 Cucumber-Scala is published in the central Maven repository.
 You can install it by adding dependencies to your project.
