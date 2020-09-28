@@ -10,7 +10,7 @@
     "node-sass": "4.14.1",
     "postcss-cli": "5.0.1",
     "rimraf": "3.0.2",
-    "yarn": "1.22.5"
+    "yarn": "1.22.10"
   },
   "resolutions": {
     "mem": "^6.0.0",
