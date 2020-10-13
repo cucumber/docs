@@ -305,8 +305,8 @@ class RunCucumberTest
 
 * Now you can delete the `RunCucumberTest.java` class.
 * Create a Kotlin class called `StepDefs` inside the `hellocucumber` package.
-* Copy the import statements from `StepDefs.java` to `StepDefs.kt`; you'll need them later.
-* Finally, delete the `StepDefs.java` class (or even the `java` directory).
+* Copy the import statements from `StepDefinitions.java` to `StepDefs.kt`; you'll need them later.
+* Finally, delete the `StepDefinitions.java` class (or even the `java` directory).
 
 {{% /block %}}
 
@@ -701,7 +701,7 @@ end
 {{% /block %}}
 
 Copy each of the three snippets for the undefined steps and paste them into
-{{% text "java" %}}`src/test/java/hellocucumber/Stepdefs.java`{{% /text %}}
+{{% text "java" %}}`src/test/java/hellocucumber/StepDefinitions.java`{{% /text %}}
 {{% text "kotlin" %}}`src/test/kotlin/hellocucumber/Stepdefs.kt`{{% /text %}}
 {{% text "javascript" %}}`features/step_definitions/stepdefs.js`{{% /text %}}
 {{% text "ruby" %}}`features/step_definitions/stepdefs.rb`{{% /text %}}.
@@ -763,7 +763,7 @@ Feature: Is it Friday yet?
   Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
     Given today is Sunday              # Stepdefs.today_is_Sunday()
       io.cucumber.java.PendingException: TODO: implement me
-	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:14)
+	at hellocucumber.Stepdefs.today_is_Sunday(StepDefinitions.java:14)
 	at ?.today is Sunday(classpath:hellocucumber/is_it_friday_yet.feature:5)
 
     When I ask whether it's Friday yet # Stepdefs.i_ask_whether_it_s_Friday_yet()
@@ -777,7 +777,7 @@ hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
 0m0.188s
 
 io.cucumber.java.PendingException: TODO: implement me
-	at hellocucumber.Stepdefs.today_is_Sunday(Stepdefs.java:13)
+	at hellocucumber.Stepdefs.today_is_Sunday(StepDefinitions.java:13)
 	at ?.today is Sunday(classpath:hellocucumber/is_it_friday_yet.feature:5)
 ```
 {{% /block %}}
@@ -1007,7 +1007,7 @@ Feature: Is it Friday yet?
 	at org.junit.Assert.failNotEquals(Assert.java:834)
 	at org.junit.Assert.assertEquals(Assert.java:118)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:31)
+	at hellocucumber.Stepdefs.i_should_be_told(StepDefinitions.java:31)
 	at ?.I should be told "Nope"(classpath:hellocucumber/is_it_friday_yet.feature:7)
 
 
@@ -1250,7 +1250,7 @@ Feature: Is it Friday yet?
       org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:36)
+	at hellocucumber.Stepdefs.i_should_be_told(StepDefinitions.java:36)
 	at ?.I should be told "TGIF"(classpath:hellocucumber/is_it_friday_yet.feature:12)
 
 
@@ -1264,7 +1264,7 @@ hellocucumber/is_it_friday_yet.feature:9 # Friday is Friday
 org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at hellocucumber.Stepdefs.i_should_be_told(Stepdefs.java:36)
+	at hellocucumber.Stepdefs.i_should_be_told(StepDefinitions.java:36)
 	at ?.I should be told "TGIF"(classpath:hellocucumber/is_it_friday_yet.feature:12)
 ```
 {{% /block %}}
@@ -1482,7 +1482,7 @@ Feature: Is it Friday yet?
 ```
 
 We need to replace the step definitions for `today is Sunday` and `today is Friday` with one step definition that takes the value of `<day>` as a String.
-Update the {{% text "java" %}}`Stepdefs.java`{{% /text %}}{{% text "javascript" %}}`stepdefs.js`{{% /text %}}{{% text "ruby" %}}`stepdefs.rb`{{% /text %}} file as follows:
+Update the {{% text "java" %}}`StepDefinitions.java`{{% /text %}}{{% text "javascript" %}}`stepdefs.js`{{% /text %}}{{% text "ruby" %}}`stepdefs.rb`{{% /text %}} file as follows:
 
 {{% block "java" %}}
 ```java
