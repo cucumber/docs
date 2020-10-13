@@ -1,8 +1,8 @@
 # General Category Redirects
-/gherkin/*  https://cucumber.io/docs/gherkin/:splat
-/guides/*   https://cucumber.io/docs/guides/:splat
-/training/* https://cucumber.io/school/
-/cucumber/api/* https://cucumber.io/docs/cucumber/api/:splat
-/installation/* https://cucumber.io/docs/installation/:splat
-/cucumber/* https://cucumber.io/docs/cucumber/:splat
-/community/faq/ https://cucumber.io/docs/community/faq/
+#/gherkin/*  https://cucumber.io/docs/gherkin/:splat
+#/guides/*   https://cucumber.io/docs/guides/:splat
+#/training/* https://cucumber.io/school/
+#/cucumber/api/* https://cucumber.io/docs/cucumber/api/:splat
+#/installation/* https://cucumber.io/docs/installation/:splat
+#/cucumber/* https://cucumber.io/docs/cucumber/:splat
+#/community/faq/ https://cucumber.io/docs/community/faq/
