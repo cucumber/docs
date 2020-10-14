@@ -1559,7 +1559,7 @@ class StepDefs {
 {{% block "javascript" %}}
 ```javascript
 const assert = require('assert');
-const { Given, When, Then } = require('cucumber');
+const { Given, When, Then } = ('@cucumber/cucumber');
 
 function isItFriday(today) {
   if (today === "Friday") {
