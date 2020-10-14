@@ -944,7 +944,7 @@ class StepDefs {
 {{% block "javascript" %}}
 ```javascript
 const assert = require('assert');
-const { Given, When, Then } = require('cucumber');
+const { Given, When, Then } = require('@cucumber/cucumber');
 
 function isItFriday(today) {
   // We'll leave the implementation blank for now
