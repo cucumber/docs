@@ -249,3 +249,7 @@ distinguish between [keywords](docs/gherkin/reference/#keywords) used with a par
 will both match "an order exists". When providing arguments using Cucumber expressions and/or regular expressions,
 multiple steps might match the same expression. Finally, this means that you cannot extend a class which defines step
 definitions, as that will lead to duplicates.
+
+# Does Cucumber-JVM support Kotlin?
+You can use [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) to write step definitions in Kotlin. Please have a look at the [Kotlin examples for cucumber-jvm](https://github.com/cucumber/cucumber-jvm/tree/master/kotlin-java8). 
+ At the moment it is not possible to generate step definitions in Kotlin. The reason for this is that there is no Kotlin Backend implemented. If this is something you'd like to work on, there is [a request for one](https://github.com/cucumber/cucumber-jvm/issues/1520). There is also a request for a [native Kotlin implementation of Cucumber](https://github.com/cucumber/cucumber/issues/331).
