@@ -156,6 +156,8 @@ class StepDefinitions {
 }
 ```
 
+{{% /block %}}
+
 {{% block "scala" %}}
 
 ```scala
