@@ -12,13 +12,15 @@ weight: 4
 markup: mmark
 ---
 
-Cucumber uses *expressions* to link a [Gherkin Step](/docs/gherkin/reference#steps)
-to a [Step Definition](/docs/cucumber/step-definitions). You can use
-[Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression) or *Cucumber Expressions*.
+Cucumber uses *expressions* to link a [Gherkin Step](/docs/gherkin/reference#steps) to a
+[Step Definition](/docs/cucumber/step-definitions). You can use *Regular Expressions* or *Cucumber Expressions*.
 
-Cucumber Expressions offer similar functionality to Regular Expressions, with a syntax 
-that is more human to read and write. Cucumber Expressions are also
-extensible with *parameter types*.
+Cucumber Expressions offer similar functionality to Regular Expressions, with a syntax that is more human to read and
+write. Cucumber Expressions are also extensible with *parameter types*.
+
+By default, Cucumber will assume you are using Cucumber Expressions. To use Regular Expressions, add anchors (starting
+with `^` and ending with `$`) or forward slashes (`/`). For more information, see
+[Cucumber Expression - Java Heuristics](https://github.com/cucumber/cucumber/blob/master/cucumber-expressions/java/heuristics.adoc).
 
 # Introduction
 
