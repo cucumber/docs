@@ -143,7 +143,7 @@ For an example on how to use them, see this [code example](https://github.com/cu
 {{% /block %}}
 
 {{% block "kotlin" %}}
-For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/main/kotlin-java8/src/test/kotlin/io/cucumber/kotlin/LambdaStepdefs.kt).
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/main/kotlin-java8/src/test/kotlin/io/cucumber/kotlin/LambdaStepDefinitions.kt).
 {{% /block %}}
 
 ## How do I call other steps or scenarios?
