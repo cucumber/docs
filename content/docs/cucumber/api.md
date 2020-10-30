@@ -525,7 +525,7 @@ After("@browser and not @headless", (Scenario scenario) -> {
 Lambda style:
 
 ```kotlin
-After (arrayOf(@browser and not @headless")) { scenario: Scenario ->
+After (arrayOf("@browser and not @headless")) { scenario: Scenario ->
     driver.quit()
 }
 ```
@@ -1066,16 +1066,15 @@ public class RunCucumberTest {
 
 {{% block "kotlin" %}}
 ```kotlin
-package com.example;
+package com.example
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty", "html:target/cucumber"})
-class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 {{% /block %}}
 
@@ -1114,16 +1113,15 @@ public class RunCucumberTest {
 
 {{% block "kotlin" %}}
 ```kotlin
-package com.example;
+package com.example
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty", "summary"}, snippets = CAMELCASE)
-class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 {{% /block %}}
 
@@ -1162,16 +1160,15 @@ public class RunCucumberTest {
 ```
 
 ```kotlin
-package com.example;
+package com.example
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
 @CucumberOptions(dryRun=true)
-class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 
 ```scala
@@ -1206,16 +1203,15 @@ public class RunCucumberTest {
 ```
 
 ```kotlin
-package com.example;
+package com.example
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome=true)
-class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 
 ```scala
@@ -1251,16 +1247,15 @@ public class RunCucumberTest {
 ```
 
 ```kotlin
-package com.example;
+package com.example
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
 @CucumberOptions(strict=false)
-class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 
 ```scala
@@ -1298,16 +1293,15 @@ public class RunCucumberTest {
 
 {{% block "kotlin" %}}
 ```kotlin
-package com.example;
+package com.example
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
 @CucumberOptions(tags = {"@foo", "not @bar"})
-public class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 {{% /block %}}
 
@@ -1347,16 +1341,15 @@ public class RunCucumberTest {
 
 {{% block "kotlin" %}}
 ```kotlin
-package com.example;
+package com.example
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
 @CucumberOptions(objectFactory = FooFactory.class)
-public class RunCucumberTest {
-}
+class RunCucumberTest
 ```
 {{% /block %}}
 
