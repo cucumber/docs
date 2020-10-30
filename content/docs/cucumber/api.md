@@ -23,7 +23,23 @@ The number of parameters in the {{% stepdef-body %}} has to match the number of 
 
 ## Data Tables
 
-The simplest way to pass a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}} to a step definition is to use a data table:
+Data tables from Gherkin can be accessed by using the DataTable object as the last parameter in a step definition.
+This conversion can be done either by Cucumber or manually.
+
+{{% text "java,kotlin" %}}Depending on the table shape as one of the following collections:{{% text "java,kotlin" %}}
+
+```java
+
+List<List<String>> table
+List<Map<String, String>> table
+Map<String, String> table
+Map<String, List<String>> table
+Map<String, Map<String, String>> table
+```
+
+The simplest way to pass a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala"
+%}}`java.util.List[String]`{{% /text %}}{{% text "ruby,javascript" %}}list of strings{{% /text %}} to a step definition
+is to use a data table:
 
 ```gherkin
 Given the following animals:
@@ -32,7 +48,7 @@ Given the following animals:
   | sheep |
 ```
 
-Declare the argument as a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}, but don't define any capture groups in the expression:
+Declare the argument as a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}{{% text "ruby,javascript" %}}list of strings{{% /text %}}, but don't define any capture groups in the expression:
 
 {{% text "java" %}}
 ```java
@@ -57,8 +73,11 @@ Given("the following animals:") { animals: java.util.List[String] =>
 ```
 {{% /text %}}
 
-In this case, the `DataTable` is automatically flattened to a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}
+In this case, the `DataTable` is automatically flattened to a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}{{% text "ruby,javascript" %}}list of strings{{% /text %}}
 by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
+
+{{% text "java,kotlin" %}}Note: In addition to collections of String, Integer, Float, BigInteger and BigDecimal, Byte,
+Short, Long and Double are also supported.{{% /text %}}
 
 {{% text "scala" %}}
 **Note:** For now, Cucumber Scala does not support using Scala collection types.
@@ -67,6 +86,10 @@ See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50).
 
 {{% text "javascript" %}} For an example of data tables in JavaScript, go
 [here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
+
+For more information, see [cucumber/datatable](https://github.com/cucumber/cucumber/tree/master/datatable). {{% text
+"java,kotlin" %}}In addition, see
+[cucumber-jvm data-tables](https://github.com/cucumber/cucumber-jvm/tree/main/java#data-tables){{% /text %}}
 
 # Steps
 
