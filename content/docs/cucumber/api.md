@@ -26,7 +26,7 @@ The number of parameters in the {{% stepdef-body %}} has to match the number of 
 Data tables from Gherkin can be accessed by using the DataTable object as the last parameter in a step definition.
 This conversion can be done either by Cucumber or manually.
 
-{{% text "java,kotlin" %}}Depending on the table shape as one of the following collections:{{% /text %}
+{{% text "java,kotlin" %}}Depending on the table shape as one of the following collections:{{% /text %}}
 
 ```java
 
