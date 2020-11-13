@@ -73,7 +73,7 @@ Given("the following animals:") { animals: java.util.List[String] =>
 ```
 {{% /text %}}
 
-In this case, the `DataTable` is automatically flattened to a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}{{% text "ruby,javascript" %}}list of strings{{% /text %}}
+In this case, the `DataTable` is automatically flattened to a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}{{% text "ruby,javascript" %}}array of strings{{% /text %}}
 by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
 
 {{% text "java,kotlin" %}}Note: In addition to collections of String, Integer, Float, BigInteger and BigDecimal, Byte,
