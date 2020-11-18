@@ -60,7 +60,7 @@ implementation.
 ```
 ┌────────────┐                 ┌──────────────┐                 ┌───────────┐
 │   Steps    │                 │     Step     │                 │           │
-│ in Gherkin ├──matched with──▶│ Definitions  ├───manipulates──▶│  System   │
+│ in Gherkin ├──matched with──>│ Definitions  ├───manipulates──>│  System   │
 │            │                 │              │                 │           │
 └────────────┘                 └──────────────┘                 └───────────┘
 ```
