@@ -90,8 +90,8 @@ You can have any number of scenarios for a feature.
 
 If you have lots and lots of scenarios in one feature, you might
 actually be describing *more* than one feature. When that happens, we recommend
-splitting up the document into separate Feature definitions. (The definition of
-“lots and lots” here is subjective, and it's up to you determine when it's time to split up a feature.)
+splitting up the document into separate Feature definitions (The definition of
+“lots and lots” here is subjective, and it's up to you to determine when it's time to split up a feature).
 
 The first line provides a short description of what the scenario is intended to
 cover. If you can’t describe your scenario in a single sentence (and not a
