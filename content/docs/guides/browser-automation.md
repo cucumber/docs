@@ -295,15 +295,15 @@ for failed scenarios and embed them in Cucumber's report.
 
 ```java
 if (scenario.isFailed()) {
-    byte[] screenshot = webDriver.getScreenshotAs(OutputType.BYTES);
-    scenario.embed(screenshot, "image/png");
+    byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
+    scenario.attach(screenshot, "image/png", "name");
 }
 ```
 
 ```kotlin
 if (scenario.isFailed()) {
-    val screenshot = webDriver.getScreenshotAs(OutputType.BYTES)
-    scenario.embed(screenshot, "image/png")
+    val screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES)
+    scenario.attach(screenshot, "image/png", "name")
 }
 ```
 
