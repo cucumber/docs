@@ -447,7 +447,7 @@ In your step definition, there’s no need to find this text and match it in you
 It will automatically be passed as the last argument in the step definition.
 
 Indentation of the opening `"""` is unimportant, although common practice is two spaces in from the enclosing step.
-The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be dedented according to the opening `"""`. Indentation beyond the column of the opening """ will therefore be preserved.
+The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be dedented according to the opening `"""`. Indentation beyond the column of the opening `"""` will therefore be preserved.
 
 ## Data Tables
 
