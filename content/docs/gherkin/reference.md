@@ -449,6 +449,24 @@ It will automatically be passed as the last argument in the step definition.
 Indentation of the opening `"""` is unimportant, although common practice is two spaces in from the enclosing step.
 The indentation inside the triple quotes, however, is significant. Each line of the Doc String will be dedented according to the opening `"""`. Indentation beyond the column of the opening `"""` will therefore be preserved.
 
+Doc strings also support using three backticks as the delimiter:
+
+~~~gherkin
+Given a blog post named "Random" with Markdown body
+  ```
+  Some Title, Eh?
+  ===============
+  Here is the first paragraph of my blog post. Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit.
+  ```
+~~~
+
+This might be familiar for those used to writing with Markdown.
+
+{{% note "Tool support for backticks"%}}
+Whilst all current versions of Cucumber support backticks as the delimiter, many tools like text editors don't (yet).
+{{% /note %}}
+
 ## Data Tables
 
 `Data Tables` are handy for passing a list of values to a step definition:
