@@ -331,7 +331,7 @@ for failed scenarios and embed them in Cucumber's report.
 if scenario.failed?
   path = "html-report/#{scenario.__id__}.html"
   page.driver.browser.save_screenshot(path)
-  embed(path, "image/png")
+  attach(path, "image/png")
 end
 ```
 
