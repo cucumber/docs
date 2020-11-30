@@ -143,7 +143,7 @@ configurations {
 Add the following Task to your `build.gradle` file:
 ```groovy
 task cucumber() {
-    dependsOn assemble, compileTestJava
+    dependsOn assemble, testClasses
     doLast {
         javaexec {
             main = "io.cucumber.core.cli.Main"
