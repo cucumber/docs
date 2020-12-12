@@ -1,3 +1,3 @@
 source 'https://rubygems.org' do
-  gem 'html-proofer', '3.17.4'
+  gem 'html-proofer', '3.18.0'
 end
