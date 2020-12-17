@@ -264,7 +264,7 @@ If IntelliJ IDEA doesn't recognize the package with step definitions, you can sp
 
 For more information, please see [Run Cucumber Tests](https://www.jetbrains.com/help/idea/running-cucumber-tests.html) from JetBrains documentation.
 
-# Running Cucumber results in a stack trace containing 'Failed to instantiate public cucumber.runtime.java.JavaBackend or NoSuchMethodException'
+# How do I fix a Cucumber-JVM error where the stacktrace contains 'Failed to instantiate public cucumber.runtime.java.JavaBackend or NoSuchMethodException'?
 
 Check that the Cucumber version is the same for all Cucumber dependencies and make sure you only have the required dependencies. This means you need to ensure that you get the transitive dependencies that go with the version of Cucumber that you have. 
 
