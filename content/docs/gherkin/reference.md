@@ -40,13 +40,13 @@ Each line that isn't a blank line has to start with a Gherkin *keyword*, followe
 
 The primary keywords are:
 
-- `Feature`
-- `Rule` (as of Gherkin 6)
-- `Example` (or `Scenario`)
-- `Given`, `When`, `Then`, `And`, `But` for steps (or `*`)
-- `Background`
-- `Scenario Outline` (or `Scenario Template`)
-- `Examples`
+- [`Feature`](#Feature)
+- [`Rule`](#Rule) (as of Gherkin 6)
+- [`Example`](#Example) (or `Scenario`)
+- [`Given`](#Given), [`When`](#When), [`Then`](#Then), [`And`](#And-But), [`But`](#And-But) for steps (or [`*`](#Asterisk))
+- [`Background`](#Background)
+- [`Scenario Outline`](#Scenario-Outline) (or [`Scenario Template`](#Scenario-Outline))
+- [`Examples`](#Examples) (or [`Scenarios`](#Examples))
 
 There are a few secondary keywords as well:
 
@@ -264,7 +264,7 @@ Example: Multiple Givens
   But I shouldn't see something else
 ```
 
-### *
+<h3 id="Asterisk">*</h3>
 
 Gherkin also supports using an asterisk (`*`) in place of any of the normal step keywords. This can be helpful when you have some steps that are effectively a _list of things_, so you can express it more like bullet points where otherwise the natural language of `And` etc might not read so elegantly.
 
@@ -413,6 +413,8 @@ Scenario Outline: eating
     |    12 |   5 |    7 |
     |    20 |   5 |   15 |
 ```
+
+### Examples
 
 A `Scenario Outline` must contain an `Examples` (or `Scenarios`) section. Its steps are interpreted as a template
 which is never directly run. Instead, the `Scenario Outline` is run *once for each row* in
