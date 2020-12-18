@@ -1455,7 +1455,7 @@ cucumber --help
 Pass the `--help` option to print out all the available configuration options:
 
 ```
-java cucumber.api.cli.Main --help
+java io.cucumber.core.cli.Main --help
 ```
 
 {{% /block %}}
