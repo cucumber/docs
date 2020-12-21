@@ -19,7 +19,7 @@ Add `cucumber` as a development dependency:
 
 ```shell
 # NPM
-npm install --save-dev cucumber
+npm install --save-dev @cucumber/cucumber
 ```
 
 ## Yarn
@@ -32,5 +32,5 @@ Add `cucumber` as a development dependency:
 
 ```shell
 # Yarn
-yarn add --dev cucumber
+yarn add --dev @cucumber/cucumber
 ```

@@ -89,8 +89,8 @@ Decide whether you'd prefer to use Gradle or Maven.
 
 **With Maven**
 
-For Maven, we'll start by creating a new project directory with the `cucumber-archetype` 
-Maven plugin. Open a terminal, go to the directory where you want to create your project, 
+For Maven, we'll start by creating a new project directory with the `cucumber-archetype`
+Maven plugin. Open a terminal, go to the directory where you want to create your project,
 and run the following command:
 
 ```shell
@@ -348,7 +348,7 @@ npm init --yes
 Add Cucumber as a development dependency:
 
 ```shell
-npm install @cucumber/cucumber --save-dev
+npm install --save-dev @cucumber/cucumber
 ```
 
 Open `package.json` in a text editor and change the `test` section so it looks like this:
@@ -1384,7 +1384,7 @@ fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 ```javascript
 function isItFriday(today) {
   if (today === "Friday") {
-    return "TGIF"; 
+    return "TGIF";
   } else {
     return "Nope";
   }
@@ -1628,7 +1628,7 @@ Feature: Is it Friday yet?
     When I ask whether it's Friday yet
     Then I should be told "<answer>"
 
-    Examples: 
+    Examples:
 
   Scenario Outline: Today is or is not Friday # hellocucumber/is_it_friday_yet.feature:11
     Given today is "Friday"                   # Stepdefs.today_is(String)
