@@ -21,13 +21,14 @@ Available plugins may vary per programming language.
 # Cucumber Reports Service
 
 The easiest way to get started with reporting is to use the [Cucumber Reports](https://reports.cucumber.io/) service.
-Read the introductory [blog post](https://cucumber.io/blog/open-source/cucumber-reports/) for more details.
+
+Watch [this video](https://smartbear.wistia.com/medias/nrgptu7825) for a quick introduction or read the introductory [blog post](https://cucumber.io/blog/open-source/cucumber-reports/) for more details.
 
 Publishing to the Cucumber Reports service is currently supported in:
 
 * Cucumber-JVM `6.7.0` and above
 * Cucumber-Ruby `5.1.1` and above
-* Cucumber-JS `7.0.0-rc.0` and above
+* Cucumber-JS `7.0.0` and above
 
 # Built-in reporter plugins
 
