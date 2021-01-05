@@ -253,3 +253,21 @@ definitions, as that will lead to duplicates.
 # Does Cucumber-JVM support Kotlin?
 You can use [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) to write step definitions in Kotlin. Please have a look at the [Kotlin examples for cucumber-jvm](https://github.com/cucumber/cucumber-jvm/tree/master/kotlin-java8). 
 At the moment it is not possible to generate step definitions in Kotlin. The reason for this is that there is no Kotlin Backend implemented. If this is something you'd like to work on, there is [a request for one](https://github.com/cucumber/cucumber-jvm/issues/1520). There is also a request for a [native Kotlin implementation of Cucumber](https://github.com/cucumber/cucumber/issues/331).
+
+# Cucumber Can't Find my Step Definitions in IntelliJ IDEA
+In this instance, you need to configure a new run configuration in IntelliJ IDEA. 
+1. Click **Run** > **Edit Configurations** from the menu in IntellJ IDEA.
+2. Click the **+** icon on the top-left and type in _cucumber_. Select **Cucumber Java**.
+3. Create the configuration according to the [Run/Debug Configuration Cucumber Java](https://www.jetbrains.com/help/idea/run-debug-configuration-cucumber-java.html) instructions from JetBrains. 
+   
+If IntelliJ IDEA doesn't recognize the package with step definitions, you can specify it manually by entering the package name in the Glue field, for example _stepdefs_.
+
+For more information, please see [Run Cucumber Tests](https://www.jetbrains.com/help/idea/running-cucumber-tests.html) from JetBrains documentation.
+
+# How do I fix a Cucumber-JVM error where the stacktrace contains 'Failed to instantiate public cucumber.runtime.java.JavaBackend or NoSuchMethodException'?
+
+Check that the Cucumber version is the same for all Cucumber dependencies and make sure you only have the required dependencies. This means you need to ensure that you get the transitive dependencies that go with the version of Cucumber that you have. 
+
+You can see all your Maven dependencies, including transitive ones by running `mvn dependency:tree`. 
+
+If you're using any other library which also contains a dependency on Cucumber, (this is a transitive dependency), try excluding that transitive dependency in your pom file to ensure only one version of Cucumber is being referenced. Please refer to the Maven [instructions for excluding dependencies](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html#dependency-exclusions) for steps on excluding transitive dependencies. 
