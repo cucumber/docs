@@ -29,10 +29,10 @@ Finally, there is no reason to limit these meetings to three people—or to hold
 # Writing Gherkin
 
 To start with, when the language and style used in the scenarios
-is still being established, it is recommended that the entire team collaborate on writing the Gherkin. Later, it
-can be efficiently done by a pair: a developer (or someone who is responsible for the
+is still being established, it is recommended that the entire team collaborate on writing the Gherkin.
+Later, it can be efficiently done by a pair: a developer (or someone who is responsible for the
 automation) and a tester (or someone who is responsible for quality) as long as their
-output is actively reviewed by a the product owner (or business representative).
+output is actively reviewed by the product owner (or business representative).
 
 # Writing Features
 
