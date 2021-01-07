@@ -28,16 +28,11 @@ Finally, there is no reason to limit these meetings to three people—or to hold
 
 # Writing Gherkin
 
-It is preferable that the first draft of any feature be written by, or with, a
-“domain expert”. This person is typically a non-programmer, and always someone who knows the feature's domain from a user or business perspective.
-
-Then the programmer(s) will go over the scenarios, refining the steps for
-clarification and increased testability. The result is then reviewed by the domain expert to ensure the intent has not been compromised by the programmers’
-reworking.
-
-This cycle is repeated until everyone involved is satisfied that the
-Scenarios accurately describe what is wanted in a testable manner.
-
+To start with, when the language and style used in the scenarios
+is still being established, it is recommended that the entire team collaborate on writing the Gherkin. Later, it
+can be efficiently done by a pair: a developer (or someone who is responsible for the
+automation) and a tester (or someone who is responsible for quality) as long as their
+output is actively reviewed by a the product owner (or business representative).
 
 # Writing Features
 
