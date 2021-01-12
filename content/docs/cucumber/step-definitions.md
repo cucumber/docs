@@ -266,7 +266,7 @@ parameter type exists, Cucumber would use that in the suggested expression:
 {{% block "java" %}}
 ```java
 @Given("I have {int} {color} balls")
-public void i_have_red_balls(int int1, Color color) {
+public void i_have_color_balls(int int1, Color color) {
 }
 ```
 {{% /block %}}
