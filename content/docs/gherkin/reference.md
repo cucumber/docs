@@ -40,13 +40,13 @@ Each line that isn't a blank line has to start with a Gherkin *keyword*, followe
 
 The primary keywords are:
 
-- [`Feature`](#Feature)
-- [`Rule`](#Rule) (as of Gherkin 6)
-- [`Example`](#Example) (or `Scenario`)
-- [`Given`](#Given), [`When`](#When), [`Then`](#Then), [`And`](#And-But), [`But`](#And-But) for steps (or [`*`](#Asterisk))
-- [`Background`](#Background)
-- [`Scenario Outline`](#Scenario-Outline) (or [`Scenario Template`](#Scenario-Outline))
-- [`Examples`](#Examples) (or [`Scenarios`](#Examples))
+- [`Feature`](#feature)
+- [`Rule`](#rule) (as of Gherkin 6)
+- [`Example`](#example) (or `Scenario`)
+- [`Given`](#given), [`When`](#when), [`Then`](#then), [`And`](#and-but), [`But`](#and-but) for steps (or [`*`](#Asterisk))
+- [`Background`](#background)
+- [`Scenario Outline`](#scenario-outline) (or [`Scenario Template`](#scenario-outline))
+- [`Examples`](#examples) (or [`Scenarios`](#examples))
 
 There are a few secondary keywords as well:
 
