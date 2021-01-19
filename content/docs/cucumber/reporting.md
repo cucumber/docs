@@ -193,3 +193,4 @@ There are also many third-party plugins:
 * [Cluecumber](https://github.com/trivago/cluecumber-report-plugin) - Maven plugin for clear and concise Cucumber reporting.
 * [Cucelastic] (https://github.com/AshisRaj/cucelastic-maven-plugin) - Maven plugin to push test report data into Elastic Search to enable users to plugin UI agnostic tools like Kibana to visualize a dynamic and easy sharable report/dashboad with the possibility to filter and analyze the data, extend and share it across teams.
 * [cucumber-reporting-plugin](https://gitlab.com/monochromata-de/cucumber-reporting-plugin) - A Cucumber plugin which produces pretty HTML reports using [cucumber-reporting](https://github.com/damianszczepanik/cucumber-reporting)
+* [Serenity/JS](https://serenity-js.org/handbook/integration/serenityjs-and-cucumber.html) - An acceptance testing and reporting framework with in-depth HTML reports, Screenplay Pattern APIs, and support for every single version of Cucumber.js
