@@ -28,7 +28,7 @@ Think of BDD as a set of plugins for your existing process that will make your t
 
 ## Rapid iterations
 
-We assume you would like to be able to respond quickly to feedback from your users, and do only the minimal work neccesary to meet those needs.
+We assume you would like to be able to respond quickly to feedback from your users, and do only the minimal work necessary to meet those needs.
 
 BDD encourages working in rapid iterations, continuously breaking down your user's problems into small pieces that can flow through your development process as quickly as possible.
 
