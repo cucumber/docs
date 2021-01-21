@@ -186,6 +186,7 @@ There are also many third-party plugins:
 * [Fivemat](https://github.com/tpope/fivemat) - Cucumber formatter that gives each test file its own line of dots.
 * [Fuubar](https://github.com/martinciu/fuubar-cucumber) - The insta-failing progress bar formatter
 * [cucumber_timing_presenter](https://github.com/distributedlife/cucumber_timing_presenter) - formatter that calculates timing metrics as well as two graphs showing impact of Step time on overall build time.
+* [ReportPortal.io adapter](https://github.com/reportportal/agent-js-cucumber) - agent for real-time reporting of CucumberJS tests into [ReportPortal](https://reportportal.io/) test-automation dashboard.
 * [Bilgerat](https://github.com/mdsol/bilgerat) - formatter that sends failure messages to [HipChat](https://www.hipchat.com/) rooms.
 * [cucumber_statistics](https://github.com/alienfast/cucumber_statistics) - Tracks timing and displays results in a single HTML page with outliers highlighted in a table sortable by various metrics.
 * [cucumber_characteristics](https://github.com/singram/cucumber_characteristics) - Generates HTML/JSON reports on overall test timings, as well as timings and usage of Steps, Features, and Examples. Also lists unused and ambiguous (Cucumber 1.x) Steps. Compatible with Cucumber 1.x and 2.1+ and Ruby 1.9+.
