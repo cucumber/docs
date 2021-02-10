@@ -33,14 +33,44 @@ Publishing to the Cucumber Reports service is currently supported in:
 # Built-in reporter plugins
 
 If you don't want to publish your reports to the [Cucumber Reports](https://reports.cucumber.io/) service, you can
-generate local reports using one of the following built-in reporter plugins:
+generate local reports using one of the following built-in reporter plugins (also known as "formatters"):
 
+{{% text "java,kotlin" %}}
 * `progress`
 * `pretty`
 * `html`
 * `json`
 * `rerun`
 * `junit`
+{{% /text %}}
+
+{{% text "javascript" %}}
+* `message`
+* `html`
+* `json`
+* `progress`
+* `rerun`
+* `snippets`
+* `usage`
+{{% /text %}}
+
+{{% text "ruby" %}}
+* `progress`
+* `pretty`
+* `html`
+* `json`
+* `rerun`
+* `junit`
+{{% /text %}}
+
+{{% text "dotnet" %}}
+* `progress`
+* `pretty`
+* `html`
+* `json`
+* `rerun`
+* `junit`
+{{% /text %}}
 
 # Custom formatters
 The Cucumber formatter API is readily extensible. A formatter can be any class implementing the event-based formatter
