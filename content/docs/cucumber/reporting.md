@@ -36,12 +36,14 @@ If you don't want to publish your reports to the [Cucumber Reports](https://repo
 generate local reports using one of the following built-in reporter plugins (also known as "formatters"):
 
 {{% text "java,kotlin" %}}
+* `message`
 * `progress`
 * `pretty`
 * `html`
 * `json`
 * `rerun`
 * `junit`
+* `testng`
 {{% /text %}}
 
 {{% text "javascript" %}}
@@ -55,15 +57,7 @@ generate local reports using one of the following built-in reporter plugins (als
 {{% /text %}}
 
 {{% text "ruby" %}}
-* `progress`
-* `pretty`
-* `html`
-* `json`
-* `rerun`
-* `junit`
-{{% /text %}}
-
-{{% text "dotnet" %}}
+* `message`
 * `progress`
 * `pretty`
 * `html`
