@@ -49,7 +49,7 @@ It enables you to connect your scenarios and unit tests at a lower level, while 
 You’ll want to run *some* tests that go through the whole depth of your stack, to get complete confidence.
 Diagnosing where the problem is in a full-stack, end-to-end test is really hard, because it can be anywhere.
 These tests are brittle because one change can break all of them. They are also slow,
-as there is IO involved when going through a a browser, web service or database.
+as there is IO involved when going through a browser, web service or database.
 
 # Test Pyramid
 Focus on having different kinds of tests: lots and lots of unit tests,
