@@ -69,7 +69,7 @@ by a `:` and a short text that describes the feature.
 
 You can add free-form text underneath `Feature` to add more description.
 
-These description lines are ignored by Cucumber at runtime, but are available for reporting (They are included by default in html reports).
+These description lines are ignored by Cucumber at runtime, but are available for reporting (they are included by reporting tools like the official HTML formatter).
 
 ```gherkin
 Feature: Guess the word
@@ -96,6 +96,8 @@ Free-form descriptions (as described above for `Feature`) can also be placed und
 `Example`/`Scenario`, `Background`, `Scenario Outline` and `Rule`.
 
 You can write anything you like, as long as no line starts with a keyword.
+
+Descriptions can be in the form of Markdown - formatters including the official HTML formatter support this.
 
 ## Rule
 
