@@ -963,7 +963,7 @@ You will also need to provide the CLI with your step definitions via the `--glue
 
 For example:
 ```shell
-java -cp "path/to/each/jar:path/to/compiled/.class/files" io.cucumber.core.cli.Main /path/to/your/feature/files --glue hellocucumber
+java -cp "path/to/each/jar:path/to/compiled/.class/files" io.cucumber.core.cli.Main /path/to/your/feature/files --glue hellocucumber --glue anotherpackage
 ```
 Alternatively if you are using a Maven project, you can run the CLI using the [Exec Maven](https://www.mojohaus.org/exec-maven-plugin/) plugin:
 
@@ -971,7 +971,7 @@ Alternatively if you are using a Maven project, you can run the CLI using the [E
 mvn exec:java                                  \
     -Dexec.classpathScope=test                 \
     -Dexec.mainClass=io.cucumber.core.cli.Main \
-    -Dexec.args="/path/to/your/feature/files --glue hellocucumber"
+    -Dexec.args="/path/to/your/feature/files --glue hellocucumber --glue anotherpackage"
 ```
 
 {{% /block %}}
