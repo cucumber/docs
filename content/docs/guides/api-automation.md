@@ -31,6 +31,15 @@ Karate is an API automation tool for Java.
 For more information see the [Karate project on GitHub](https://github.com/intuit/karate).
 {{% /block %}}
 
+# API Automation Tools for JavaScript
+
+## PactumJS
+[PactumJS](https://pactumjs.github.io/) is a REST API Testing Tool for all levels in a Test Pyramid.
+
+{{% block "javascript" %}}
+For more information see the [official docs](https://pactumjs.github.io/) and [boilerplate code](https://github.com/pactumjs/pactum-cucumber-boilerplate).
+{{% /block %}}
+
 # API Automation Tools for Ruby
 
 ## REST Client
