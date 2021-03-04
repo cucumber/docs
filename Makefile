@@ -15,10 +15,10 @@ htmlproofer: hugo
 	ruby themes/cucumber-hugo/tools/htmlproofer/htmlproofer.rb
 .PHONY: htmlproofer
 
-layouts/shortcodes/gherkin-i18n-table.html: node_modules/gherkin/lib/gherkin/gherkin-languages.json layouts/shortcodes/gherkin-i18n-table-jq.txt
+layouts/shortcodes/gherkin-i18n-table.html: node_modules/@cucumber/gherkin/dist/src/gherkin-languages.json layouts/shortcodes/gherkin-i18n-table-jq.txt
 	cat $< | jq --sort-keys --from-file layouts/shortcodes/gherkin-i18n-table-jq.txt --raw-output --compact-output > $@
 
-node_modules/gherkin/lib/gherkin/gherkin-languages.json:
+node_modules/@cucumber/gherkin/dist/src/gherkin-languages.json:
 	yarn
 
 .docker-$(DOCKER_TAG): Dockerfile
