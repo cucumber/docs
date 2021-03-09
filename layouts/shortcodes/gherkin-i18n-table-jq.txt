@@ -15,7 +15,7 @@
         "     <tbody>\n"
       ] + (
           [ .value
-            | {"feature","background","scenario","scenarioOutline","examples","given","when","then","and","but"}
+            | {"feature","background","scenario","scenarioOutline","examples","given","when","then","and","but","rule"}
             | to_entries[]
             | "       <tr>\n",
               "         <td><code>", ([ .key ] | add), "</code></th>\n",
