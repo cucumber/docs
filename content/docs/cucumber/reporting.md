@@ -67,6 +67,10 @@ There is also a "pretty" formatter available as an optional module [@cucumber/pr
 * `junit`
 {{% /text %}}
 
+{{% note "JSON formatter" %}}
+The built-in JSON formatter is deprecated and will be removed in a future release.
+{{% /note %}}
+
 # Custom formatters
 The Cucumber formatter API is readily extensible. A formatter can be any class implementing the event-based formatter
 API. {{% text "ruby" %}}The formatter class should live in the `features/support` directory. {{% /text %}}To use your custom formatter, run Cucumber using the `--format` flag:
