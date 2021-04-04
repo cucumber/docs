@@ -6,7 +6,6 @@ polyglot:
 - javascript
 - ruby
 - kotlin
-- dotnet
 ---
 
 Cucumber uses reporter plugins to produce reports that contain information about
