@@ -6,7 +6,6 @@ polyglot:
 - javascript
 - ruby
 - kotlin
-- dotnet
 ---
 
 Cucumber uses reporter plugins to produce reports that contain information about
@@ -33,145 +32,75 @@ Publishing to the Cucumber Reports service is currently supported in:
 # Built-in reporter plugins
 
 If you don't want to publish your reports to the [Cucumber Reports](https://reports.cucumber.io/) service, you can
-generate local reports using one of the following built-in reporter plugins:
+generate local reports using one of the following built-in reporter plugins (also known as "formatters"):
 
+{{% text "java,kotlin" %}}
+* `message`
 * `progress`
 * `pretty`
 * `html`
 * `json`
 * `rerun`
 * `junit`
+* `testng`
+{{% /text %}}
+
+{{% text "javascript" %}}
+* `message`
+* `html`
+* `json`
+* `progress`
+* `rerun`
+* `snippets`
+* `usage`
+
+There is also a "pretty" formatter available as an optional module [@cucumber/pretty-formatter](https://www.npmjs.com/package/@cucumber/pretty-formatter).
+{{% /text %}}
+
+{{% text "ruby" %}}
+* `message`
+* `progress`
+* `pretty`
+* `html`
+* `json`
+* `rerun`
+* `junit`
+{{% /text %}}
+
+{{% note "JSON formatter" %}}
+The built-in JSON formatter is deprecated and will be removed in a future release.
+{{% /note %}}
 
 # Custom formatters
-The Cucumber formatter API is readily extensible. A formatter can be any class implementing the event-based formatter
-API. {{% text "ruby" %}}The formatter class should live in the `features/support` directory. {{% /text %}}To use your custom formatter, run Cucumber using the `--format` flag:
+
+Cucumber implementations are extensible so that you can write and use your own formatter, or use a third-party one published by someone else. This involves creating a class that implements/extends the standard formatter interface.
+
+{{% text "javascript" %}}
+Detailed documentation around how to use and write custom formatters in cucumber-js is available here:
+
+* https://github.com/cucumber/cucumber-js/blob/master/docs/cli.md#formats
+* https://github.com/cucumber/cucumber-js/blob/master/docs/custom_formatters.md
+{{% /text %}}
+
+{{% text "ruby" %}}
+Once you add your formatter class in the `features/support` directory, you can reference it with the `--format` flag:
+
+```
+cucumber --format MyModule::CustomFormatter
+```
+{{% /text %}}
+
+{{% text "java,kotlin" %}}
+Once you add your formatter class, you can reference it with the `--format` flag:
+
 ```
 cucumber --format CustomFormatter
 ```
+{{% /text %}}
 
 ## Formatter API
-Cucumber uses an event-based API for its formatters. These formatters respond to several defined events, with
-event handlers defined in the formatter's constructor.
-{{% block "ruby" %}}
-A sample formatter could look like this:
-```ruby
-class CustomFormatter
-  attr_reader :io
 
-  def initialize(config)
-    @io = config.out_stream
-
-    # Using a block
-    config.on_event :test_step_started do |event|
-      io.puts 'Started test step'
-    end
-
-    # Passing in a method
-    config.on_event :test_step_finished &method(:print_finished)
-  end
-
-  def print_finished(event)
-    io.puts 'Finished test step'
-  end
-end
-```
-{{% /block %}}
-
-### Configuration object
-The formatter initializer is passed a {{% text "java,javascript,kotlin,dotnet" %}}Cucumber configuration{{% /text %}}{{% text "ruby" %}}`Cucumber::Configuration`{{% /text %}} object. This is the
-[configuration for the test run](https://docs.cucumber.io/cucumber/configuration/),
-including default configurations and [options](https://docs.cucumber.io/cucumber/api/) passed in at the command line.
-It can be useful to access these options, so that your formatter can modify its behavior in response to user directives.
-
-### Event objects
-Every time an event is fired, an event object is passed to the corresponding handler. Each event object belongs to
-a class corresponding to its name. {{% text "ruby" %}}For instance, the `gherkin_source_read` event creates a
-`Cucumber::Events::GherkinSourceRead` object.{{% /text %}} Each of these objects provides a different API to access relevant
-data such as Gherkin source, feature and step names, and passed/failed status of a step or test case. {{% text "ruby" %}}All events inherit the methods `#attributes`, `#event_id`, and `#to_h` from the parent class.{{% /text %}}
-
-**Note:** Following are the event objects for Cucumber Ruby; other programming languages might have slightly different events.
-
-#### gherkin_source_read
-The `gherkin_source_read` event is fired after the contents of a new feature file have been read. It has two
-attributes:
-* `path`: The file path of the feature file that has been read
-* `body`: The raw Gherkin contained in that file, as a string
-
-#### step_definition_registered
-The `step_definition_registered` event is fired after each step definition has been registered. It has one
-attribute:
-* `step_definition`: The `Cucumber::Glue::StepDefinition` object that has just been registered. This object responds
-  to the following instance methods:
-- `#backtrace_line`: The file, line, and step definition that will appear in a backtrace, as in:
-      `features/step_definitions/cuke_steps.rb:5:in "this step passes"`
-- `#expression`: The expression used in the step definition, as in `"I have {int} cukes in my belly"` (when a
-      Cucumber expression is used) or `/^I have (\d+) cukes in my belly$/` (when a regular expression is used)
-- `#file`: The file where the step definition occurs, as a string, as in `"features/step_definitions/cuke_steps.rb"`
-- `#file_colon_line`: The file and line where the step definition occurs, as a string, as in
-      `"features/step_definitions/cuke_steps.rb:5"`
-- `#location`: Alias of `#file_colon_line`
-- `#to_hash`: A hash of data about the step definition, such as `{:source=>{:type=>"cucumber expression", :expression=>"I fail"}, :regexp=>{:source=>"^I fail$", :flags=>""}}`
-
-#### test_run_started
-The `test_run_started` event is fired at the beginning of the test run. It has one attribute:
-* `test_cases`: The test cases included in the test run. This is an array of `Cucumber::Core::Test::Case` objects. Each
-  of these objects responds to the following instance methods:
-- `#all_locations`: Returns an array with the location of each element (feature, scenario, and step) in the feature
-      file for the test case.
-- `#all_source`: Returns an array of the features, scenarios, and steps in the test case, as strings, without the keywords
-- `#around_hooks`: Returns an array of the Around hooks associated with that test case
-- `#feature`: Returns the name of the feature for the test case
-- `#keyword`: Returns the Gherkin keyword associated with the test case (`"Feature"`, `"Scenario"`, etc.)
-- `#language`: Returns the language indicated for the test case, as a `Gherkin::Dialect` object
-- `#location`: Returns the location of the first scenario in the test case
-- `#name`: Returns the name of the feature for the test case
-- `#source`: Returns the names of the features and scenarios in the test case, as strings, without the keywords
-- `#step_count`: Returns the integer number of steps in the test case
-- `#tags`: Returns an array of tags for the test case
-- `#test_steps`: Returns an array of the steps in the test case, without the keywords
-
-#### test_run_finished
-The `test_run_finished` event is fired after the test run has finished. It has no additional attributes or methods
-defined beyond those defined on the base event class (i.e., `#attributes`, `#event_id` and `#to_h`), meaning you cannot
-access test cases, Gherkin source, etc. from the handler for this event. This event can be used, for example, to print
-the running time of the test suite.
-
-#### test_case_started
-The `test_case_started` event is fired when a `Cucumber::Core::Test::Case` is about to be executed. It has one attribute:
-* `test_case`: The `Cucumber::Core::Test::Case` object (described above) that is about to be executed.
-
-#### test_case_finished
-The `test_case_finished` event is fired when a `Cucumber::Core::Test::Case` has finished executing. It has two attributes:
-* `test_case`: The `Cucumber::Core::Test::Case` object (described above) that has just finished
-* `result`: The result (passed, failed, pending, skipped) of the test case
-
-#### step_activated
-The `step_activated` event is fired when a test step has been activated. It has two attributes:
-* `test_step`: The `Cucumber::Core::Test::Step` object (described above) that has been activated
-* `step_match`: A `Cucumber::StepMatch` object. This object responds to the following instance methods:
-- `#args`: The arguments passed to the step
-- `#backtrace_line`: The backtrace line from the step definition including the file, line, and step expression
-- `#format_args`: The text of the step
-- `#location`: The step definition file where the step is defined
-- `#step_arguments`: The arguments passed to the step
-- `#step_definition`: The `Cucumber::Glue::StepDefinition` object (described above) corresponding to the step
-- `#text_length`: The number of characters in the step text
-
-#### test_step_started
-The `test_step_started` event is fired just before each `Cucumber::Core::Test::Step` is started. It has one attribute:
-* `test_step`: The `Cucumber::Core::Test::Step` object that has just started. This object responds to the following
-  methods that may be useful for the purposes of your formatter:
-- `#action_location`: The feature file in which the step appears and the location of its scenario within that file,
-      in the form `features/file.feature:line`
-- `#location`: The feature file in which the step appears and the location of the step within that file, in the same
-      form as described under `#action_location`
-- `#source`: The Gherkin source of the feature file in which the step appears, without keywords
-- `#text`: The text of the step, without the Gherkin keyword
-
-#### test_step_finished
-The `test_step_finished` event is fired after each `Cucumber::Core::Test::Step` has finished running. It has two attributes:
-* `test_step`: The `Cucumber::Core::Test::Step` object (described above) that has just executed
-* `result` The result (passed, failed, pending, skipped) of the test case
+Cucumber uses an event-based API for its formatters. These formatters respond to several defined events, which are common across all official implementations under the [Cucumber Messages](https://github.com/cucumber/cucumber/tree/master/messages) standard.
 
 # Third-party plugins
 There are also many third-party plugins:
