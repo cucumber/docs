@@ -2,6 +2,8 @@
 
 This repository contains the source code for [https://cucumber.io/docs](https://cucumber.io/docs).
 
+If you want to read the docs, go there. ☝🏼
+
 ## Contributing Content
 
 For small edits, the recommended way to contribute is via GitHub.
