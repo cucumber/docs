@@ -2,13 +2,13 @@
 # yarn lockfile v1
 
 
-"@cucumber/gherkin@19.0.2":
-  "integrity" "sha512-ylhFABT04p5PIkc8bi1VBYnAaLvvoO5nGxHX9Zm8fZ3oHVTi52fE/zkDTdOZyO0uP2fjJmBP6cueL1rrYAzUfA=="
-  "resolved" "https://registry.npmjs.org/@cucumber/gherkin/-/gherkin-19.0.2.tgz"
-  "version" "19.0.2"
+"@cucumber/gherkin@19.0.3":
+  "integrity" "sha512-gWdMm8mfRk3P+VugJWvNALaQV5QnT+5RkqWy3tO+4NsMSQZPo5p4V4vXwriQZ/sZR1Wni5TDRztuRsKLgZ3XHA=="
+  "resolved" "https://registry.npmjs.org/@cucumber/gherkin/-/gherkin-19.0.3.tgz"
+  "version" "19.0.3"
   dependencies:
     "@cucumber/message-streams" "^2.0.0"
-    "@cucumber/messages" "^16.0.0"
+    "@cucumber/messages" "^16.0.1"
 
 "@cucumber/message-streams@^2.0.0":
   "integrity" "sha512-zbZY+vZCk99FZzsgkCrRdqpFizp+ksM7q2kJJbtjTcjN8T+2cnaLUmmFMNYzMvORx39dn4kdRJYaAQh+eachrg=="
@@ -17,10 +17,10 @@
   dependencies:
     "@cucumber/messages" "^16.0.0"
 
-"@cucumber/messages@^16.0.0":
-  "integrity" "sha512-sGYLfsR1uOZsDIjMJr89SUEvLJJgJ3uMr/9NzPBKbrL5pgoyz7xWRUj9sgk1U4+qXSflJC2C9QVTdrRedlk+Lw=="
-  "resolved" "https://registry.npmjs.org/@cucumber/messages/-/messages-16.0.0.tgz"
-  "version" "16.0.0"
+"@cucumber/messages@^16.0.0", "@cucumber/messages@^16.0.1":
+  "integrity" "sha512-80JcaAfQragFqR1rMhRwiqWL9HcR6Z4LDD2mfF0Lxg/lFkCNvmWa9Jl10NUNfFXYD555NKPzP/8xFo55abw8TQ=="
+  "resolved" "https://registry.npmjs.org/@cucumber/messages/-/messages-16.0.1.tgz"
+  "version" "16.0.1"
   dependencies:
     "@types/uuid" "8.3.0"
     "class-transformer" "0.4.0"
