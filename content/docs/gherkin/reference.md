@@ -480,6 +480,14 @@ Given the following users exist:
 ```
 Just like `Doc Strings`, `Data Tables` will be passed to the step definition as the last argument.
 
+### Table Cell Escaping
+
+If you want to use a newline character in a table cell, you can write this
+as `\n`. If you need a `|` as part of the cell, you can escape it as `\|`. And
+finally, if you need a `\`, you can escape that with `\\`.
+
+### Data Table API
+
 Cucumber provides a rich API for manipulating tables from within step definitions.
 See the [Data Table API reference](https://github.com/cucumber/cucumber/tree/master/datatable) reference for
 more details.
