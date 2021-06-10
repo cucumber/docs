@@ -33,6 +33,8 @@ We keep going until the group is satisfied that the scope of the story is clear,
 
 # More information
 
+Interested in seeing a demo of example mapping with SmartBear experts using Cucumber Studio? [Click Here](https://smartbear.com/resources/webinars/get-users-stories-into-shape-with-example-mapping/?utm_medium=cucumper-doc&utm_source=referral&utm_campaign=shape-example-mapping)
+
 For more details, see Matt Wynne's blog on [Example Mapping](https://cucumber.io/blog/2015/12/08/example-mapping-introduction).
 
 To get started yourself, see Steve Tooke's blog on [Your first Example Mapping session](https://cucumber.io/blog/2018/05/23/your-first-example-mapping-session).
