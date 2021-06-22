@@ -57,3 +57,12 @@ Click on the *Environment Variables* field.
 Enter the environment variable and its value into the dialog.
 
 ![Run/Debug Configuration](/img/environment-variables/idea/enter-environment-variable.png)
+
+### Other editors
+
+Check the documentation for your editor, or help us improving this documentation by editing this page (link at the bottom of the page).
+
+## Continuous Integration Servers
+
+Every Continuous Integration server has a different mechanism for defining environment variables.
+Please consult the documentation for your CI server about how to do this.
