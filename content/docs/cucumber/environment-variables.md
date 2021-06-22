@@ -21,6 +21,8 @@ For Windows users this means you should *not* add them via System/Control Panel 
 If you are using a terminal to run Cucumber, you should define environment variables in the
 same terminal.
 
+This also applies to terminals embedded in an editor such as Visual Studio Code or IntelliJ IDEA.
+
 ### Windows PowerShell
 
 ```shell
@@ -43,6 +45,8 @@ export CUCUMBER_PUBLISH_ENABLED=true
 
 If you are using an editor or IDE to run Cucumber via a menu or shortcut, you should
 define environment variables in the editor.
+
+If you are using a terminal embedded in the IDE, see the [Terminal](#terminal) section above.
 
 ### IntelliJ IDEA / WebStorm / RubyMine
 
