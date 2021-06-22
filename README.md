@@ -18,8 +18,8 @@ This involves getting the source code and building the documentation yourself.
 
 # Get the source code
 
-    git clone https://github.com/cucumber/docs.cucumber.io.git
-    cd docs.cucumber.io
+    git clone https://github.com/cucumber/docs
+    cd docs
 
 ### View the site
 
