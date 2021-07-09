@@ -7,14 +7,15 @@ Cucumber uses [environment variables](https://en.wikipedia.org/wiki/Environment_
 certain features, such as publishing [Cucumber Reports](https://reports.cucumber.io).
 
 There are many different ways to define environment variables, depending on your environment.
-This guide describes how to set the `CUCUMBER_PUBLISH_ENABLED` environment variable to `true`.
+This guide describes how to define the `CUCUMBER_PUBLISH_TOKEN` environment variable with
+value `some-secret-token`.
 
-For security reasons you should *not* define `CUCUMBER_*` environment variables globally.
+For security reasons you should *not* define environment variables containing secrets globally.
 
-For MacOS and Linux users this means you should *not* put them in `~/.bashrc`,
+For MacOS and Linux users this means you should *not* define them in `~/.bashrc`,
 `~/.bash_profile`, `~/.zshrc`, `/etc.profile` or similar.
 
-For Windows users this means you should *not* add them via System/Control Panel or `setx.exe`.
+For Windows users this means you should *not* define them via System/Control Panel or `setx.exe`.
 
 ## Terminal
 
@@ -26,19 +27,19 @@ This also applies to terminals embedded in an editor such as Visual Studio Code 
 ### Windows PowerShell
 
 ```shell
-$Env:CUCUMBER_PUBLISH_ENABLED = 'true'
+$Env:CUCUMBER_PUBLISH_TOKEN = 'some-secret-token'
 ```
 
 ### Windows Command Prompt
 
 ```shell
-set CUCUMBER_PUBLISH_ENABLED=true
+set CUCUMBER_PUBLISH_TOKEN=some-secret-token
 ```
 
 ### Bash / Zsh
 
 ```shell
-export CUCUMBER_PUBLISH_ENABLED=true
+export CUCUMBER_PUBLISH_TOKEN=some-secret-token
 ```
 
 ## Editor / IDE
