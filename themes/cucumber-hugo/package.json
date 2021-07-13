@@ -12,7 +12,7 @@
     "rimraf": "3.0.2"
   },
   "resolutions": {
-    "mem": "^8.0.0",
+    "mem": "^9.0.0",
     "lodash.mergewith": "^4.6.2"
   },
   "scripts": {
