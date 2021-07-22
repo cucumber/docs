@@ -30,6 +30,12 @@ See the [`Cucumber.tmbundle`](https://github.com/cucumber/cucumber-tmbundle) doc
 
 You can use it with a [Cucumber (Gherkin) plugin](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete).
 
+## Nova
+
+[Nova](https://nova.app) is a text editor for macOS.
+
+See the [Cucumber extension](https://extensions.panic.com/extensions/com.rpowell/com.rpowell.Cucumber/) for Gherkin language support.
+
 # IDEs
 
 * [Java IDEs](/docs/tools/java#ides)
