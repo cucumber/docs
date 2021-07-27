@@ -680,6 +680,25 @@ Tags can be placed above the following Gherkin elements:
 * `Scenario Outline`
 * `Examples`
 
+In `Scenario Outline`, you can use tags on different example like below:
+
+```gherkin
+Scenario Outline: Steps will run conditionally if tagged
+  Given user is logged in
+  When user clicks <link>
+  Then user will be logged out
+
+  @mobile
+  Examples: 
+  | link |
+  | logout link on mobile |
+
+  @desktop
+  Examples:
+  | link |
+  | logout link on desktop |
+```
+
 It is *not* possible to place tags above `Background` or steps (`Given`, `When`, `Then`, `And` and `But`).
 
 ## Tag Inheritance
