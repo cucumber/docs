@@ -690,13 +690,13 @@ Scenario Outline: Steps will run conditionally if tagged
 
   @mobile
   Examples: 
-  | link |
-  | logout link on mobile |
+    | link                  |
+    | logout link on mobile |
 
   @desktop
   Examples:
-  | link |
-  | logout link on desktop |
+    | link                   |
+    | logout link on desktop |
 ```
 
 It is *not* possible to place tags above `Background` or steps (`Given`, `When`, `Then`, `And` and `But`).
