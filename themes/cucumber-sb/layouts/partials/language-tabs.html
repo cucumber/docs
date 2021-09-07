@@ -2,7 +2,7 @@
   <ul>
     {{ range .Page.Params.polyglot }}
       <li data-language="{{ . }}">
-        <a>
+        <a title="{{ . }}">
           <figure class="image is-24x24">
             {{ readFile (printf "/docs/installation/%s.svg" .) | safeHTML }}
           </figure>
