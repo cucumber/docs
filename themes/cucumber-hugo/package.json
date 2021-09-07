@@ -11,10 +11,6 @@
     "postcss-cli": "8.3.1",
     "rimraf": "3.0.2"
   },
-  "resolutions": {
-    "mem": "^8.0.0",
-    "lodash.mergewith": "^4.6.2"
-  },
   "scripts": {
     "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix",
     "build-clean": "rimraf static/css/cucumber.css*",
