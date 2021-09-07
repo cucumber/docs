@@ -4,17 +4,13 @@
   "author": "Cucumber Ltd",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "10.2.6",
-    "bulma": "0.9.2",
-    "concurrently": "6.2.0",
-    "node-sass": "6.0.0",
+    "autoprefixer": "10.3.4",
+    "bulma": "0.9.3",
+    "concurrently": "6.2.1",
+    "node-sass": "6.0.1",
     "postcss-cli": "8.3.1",
     "rimraf": "3.0.2",
-    "yarn": "1.22.10"
-  },
-  "resolutions": {
-    "mem": "^8.0.0",
-    "lodash.mergewith": "^4.6.2"
+    "yarn": "1.22.11"
   },
   "scripts": {
     "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix",

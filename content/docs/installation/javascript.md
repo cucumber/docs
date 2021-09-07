@@ -13,7 +13,7 @@ Watch the Cucumber School video lesson on installing Cucumber.js [here](https://
 
 ----
 
-Cucumber.js is available as an [NPM](https://www.npmjs.com) module. It works with both [Node.js](https://nodejs.org/en/) and browsers.
+Cucumber.js is available as an [npm module](https://www.npmjs.com/package/@cucumber/cucumber). It works with both [Node.js](https://nodejs.org/en/) and browsers.
 
 # With Node.js
 
