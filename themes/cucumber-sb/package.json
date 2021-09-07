@@ -12,9 +12,6 @@
     "rimraf": "3.0.2",
     "yarn": "1.22.11"
   },
-  "resolutions": {
-    "lodash.mergewith": "^4.6.2"
-  },
   "scripts": {
     "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix",
     "build-clean": "rimraf static/css/cucumber.css*",
