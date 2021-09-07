@@ -104,7 +104,8 @@ Descriptions can be in the form of Markdown - formatters including the official 
 The (optional) `Rule` keyword has been part of Gherkin since v6. 
 
 {{% note "Cucumber Support for Rule"%}}
-Not all Cucumber implementations have finished implementing support for the `Rule` keyword - see [this issue](https://github.com/cucumber/cucumber/issues/869) for the latest status.
+The `Rule` keyword is still pretty new. It has been ported in a lot of Cucumber implementation already.
+Yet if you encounter issues, check the documentation of your Cucumber implementation to make sure it supports it.
 {{% /note %}}
 
 The purpose of the `Rule` keyword is to represent one *business rule* that should be implemented.
