@@ -425,7 +425,7 @@ end
 {{% block "javascript" %}}Cucumber.js does not support `Around` hooks.{{% /block %}}
 
 ## Step hooks
-{{% text "java,kotlin,scala" %}}
+{{% text "java,kotlin,scala,javascript" %}}
 Step hooks invoked before and after a step. The hooks have 'invoke around' semantics. Meaning that if a `BeforeStep`
 hook is executed the `AfterStep` hooks will also be executed regardless of the result of the step. If a step did not
 pass, the following step and its hooks will be skipped.
@@ -469,7 +469,17 @@ BeforeStep { scenario: Scenario =>
 ```
 {{% /text %}}
 
-{{% text "javascript" %}}Cucumber.js does not support `BeforeStep` hooks.{{% /text %}}
+{{% text "javascript" %}}
+```javascript
+BeforeStep(function({pickle, pickleStep, gherkinDocument, testCaseStartedId, testStepId}) {
+    // doSomething
+})
+
+BeforeStep({tags: "@foo"}, function() {
+    // apply this hook to only specific scenarios
+})
+```
+{{% /text %}}
 
 ### AfterStep
 
@@ -516,7 +526,13 @@ AfterStep { scenario: Scenario =>
 
 {{% /block %}}
 
-{{% block "javascript" %}}Cucumber.js does not support `AfterStep` hooks.{{% /block %}}
+{{% block "javascript" %}}
+```javascript
+AfterStep(function({pickle, pickleStep, gherkinDocument, result, testCaseStartedId, testStepId}) {
+    // doSomething
+})
+```
+{{% /block %}}
 
 ## Conditional hooks
 
