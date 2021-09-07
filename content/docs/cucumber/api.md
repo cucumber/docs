@@ -471,8 +471,12 @@ BeforeStep { scenario: Scenario =>
 
 {{% text "javascript" %}}
 ```javascript
-BeforeStep(function(scenario) {
+BeforeStep(function({pickle, pickleStep, gherkinDocument, testCaseStartedId, testStepId}) {
     // doSomething
+})
+
+BeforeStep({tags: "@foo"}, function() {
+    // apply this hook to only specific scenarios
 })
 ```
 {{% /text %}}
@@ -524,7 +528,7 @@ AfterStep { scenario: Scenario =>
 
 {{% block "javascript" %}}
 ```javascript
-AfterStep(function(scenario) {
+AfterStep(function({pickle, pickleStep, gherkinDocument, result, testCaseStartedId, testStepId}) {
     // doSomething
 })
 ```
