@@ -2,35 +2,35 @@
 # yarn lockfile v1
 
 
-"@cucumber/gherkin@19.0.3":
-  "integrity" "sha512-gWdMm8mfRk3P+VugJWvNALaQV5QnT+5RkqWy3tO+4NsMSQZPo5p4V4vXwriQZ/sZR1Wni5TDRztuRsKLgZ3XHA=="
-  "resolved" "https://registry.npmjs.org/@cucumber/gherkin/-/gherkin-19.0.3.tgz"
-  "version" "19.0.3"
+"@cucumber/gherkin@21.0.0":
+  "integrity" "sha512-S6YFmTg56iEn563ReePL6Sygb77vwYrGHEr7NwuLIgg20Hi1pp7P80BAYVYNRgU7nK9vG2II9O6kaZbiOXF/5g=="
+  "resolved" "https://registry.npmjs.org/@cucumber/gherkin/-/gherkin-21.0.0.tgz"
+  "version" "21.0.0"
   dependencies:
-    "@cucumber/message-streams" "^2.0.0"
-    "@cucumber/messages" "^16.0.1"
+    "@cucumber/message-streams" "^3.0.0"
+    "@cucumber/messages" "^17.1.0"
 
-"@cucumber/message-streams@^2.0.0":
-  "integrity" "sha512-zbZY+vZCk99FZzsgkCrRdqpFizp+ksM7q2kJJbtjTcjN8T+2cnaLUmmFMNYzMvORx39dn4kdRJYaAQh+eachrg=="
-  "resolved" "https://registry.npmjs.org/@cucumber/message-streams/-/message-streams-2.0.0.tgz"
-  "version" "2.0.0"
+"@cucumber/message-streams@^3.0.0":
+  "integrity" "sha512-ABx91nKUebV8mLmpf7BsB3bmQ57CDAfj2EIZswThz+nJHYPAFlZ1JewI6ykFsR9RzJ7/QhgQs0KHeQh7nH/u1Q=="
+  "resolved" "https://registry.npmjs.org/@cucumber/message-streams/-/message-streams-3.0.0.tgz"
+  "version" "3.0.0"
   dependencies:
-    "@cucumber/messages" "^16.0.0"
+    "@cucumber/messages" "^17.0.0"
 
-"@cucumber/messages@^16.0.0", "@cucumber/messages@^16.0.1":
-  "integrity" "sha512-80JcaAfQragFqR1rMhRwiqWL9HcR6Z4LDD2mfF0Lxg/lFkCNvmWa9Jl10NUNfFXYD555NKPzP/8xFo55abw8TQ=="
-  "resolved" "https://registry.npmjs.org/@cucumber/messages/-/messages-16.0.1.tgz"
-  "version" "16.0.1"
+"@cucumber/messages@^17.0.0", "@cucumber/messages@^17.1.0":
+  "integrity" "sha512-OA1uQDX16PjOpeTmMvAiCSjJbomgHYJ4HTVuekF4M8Ykh6mK+5oKn6uZaJTZ/xblEDKGqCfHalrg9yg8/nW41g=="
+  "resolved" "https://registry.npmjs.org/@cucumber/messages/-/messages-17.1.0.tgz"
+  "version" "17.1.0"
   dependencies:
-    "@types/uuid" "8.3.0"
+    "@types/uuid" "8.3.1"
     "class-transformer" "0.4.0"
     "reflect-metadata" "0.1.13"
     "uuid" "8.3.2"
 
-"@types/uuid@8.3.0":
-  "integrity" "sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ=="
-  "resolved" "https://registry.npmjs.org/@types/uuid/-/uuid-8.3.0.tgz"
-  "version" "8.3.0"
+"@types/uuid@8.3.1":
+  "integrity" "sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg=="
+  "resolved" "https://registry.npmjs.org/@types/uuid/-/uuid-8.3.1.tgz"
+  "version" "8.3.1"
 
 "class-transformer@0.4.0":
   "integrity" "sha512-ETWD/H2TbWbKEi7m9N4Km5+cw1hNcqJSxlSYhsLsNjQzWWiZIYA1zafxpK9PwVfaZ6AqR5rrjPVUBGESm5tQUA=="
