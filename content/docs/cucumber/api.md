@@ -227,7 +227,7 @@ Before { scenario: Scenario =>
 {{% block "javascript" %}}
 ```javascript
 // Import the Before function
-const { Before } = require('cucumber')
+const { Before } = require('@cucumber/cucumber')
 ```
 
 Synchronous style:
@@ -573,7 +573,7 @@ After (arrayOf("@browser and not @headless")) { scenario: Scenario ->
 {{% block "scala" %}}
 ```scala
 After("@browser and not @headless") { scenario: Scenario =>
-    
+
 }
 ```
 {{% /block %}}
@@ -597,55 +597,131 @@ See more documentation on [tags](#tags).
 ## Global hooks
 
 {{% block "ruby" %}}
-A global hook will run once before any scenario is run. Put the
-code at the top-level in your `env.rb` file (or any other file under
-`features/support` directory).
+Global hooks will run once before any scenario is run or after all scenario have
+been run. Put the code at the top-level in your `env.rb` file (or any other file
+under `features/support` directory).
 
-Use `Kernel#at_exit` for global teardown.
+### BeforeAll
 
-Example:
+`BeforeAll` run before any scenario is run.
+
+{{%block "ruby" %}}
+```ruby
+BeforeAll do
+  # Do something before any scehario is executed
+end
+```
 {{% /block %}}
-```ruby
-my_heavy_object = HeavyObject.new
-my_heavy_object.do_it
 
-at_exit do
-  my_heavy_object.undo_it
+{{%block "javascript" %}}
+```javascript
+const { BeforeAll } = require('@cucumber/cucumber');
+
+// Synchronous
+BeforeAll(function () {
+  // perform some shared setup
+});
+
+// Asynchronous Callback
+BeforeAll(function (callback) {
+  // perform some shared setup
+
+  // execute the callback (optionally passing an error when done)
+});
+```
+{{% /block %}}
+
+{{%block "java" %}}
+```java
+@BeforeAll
+public static void beforeAll() {
+    // Runs before all scenarios
+}
+```
+{{% /block %}}
+
+{{%block "kotlin" %}}
+```kotlin
+BeforeAll {
+    // doSomething
+}
+```
+{{% /block %}}
+
+{{%block "scala" %}}
+```scala
+BeforeAll {
+    // doSomething
+}
+```
+{{% /block %}}
+
+### AfterAll
+
+
+`BeforeAll` run after all scenarios have been executed.
+
+{{%block "ruby" %}}
+```ruby
+AFterAll do
+  # Do something after all sceharios have been executed
 end
 ```
+{{% /block %}}
 
-{{% block "java,kotlin,scala" %}}Cucumber-JVM does not support global hooks.{{% /block %}}
-{{% block "javascript" %}}Cucumber.js does not support global hooks.{{% /block %}}
+{{%block "javascript" %}}
+```javascript
+const { AfterAll } = require('@cucumber/cucumber');
 
-## Running a hook only once
+// Synchronous
+AfterAll(function () {
+  // perform some shared setup
+});
 
-{{% text "ruby" %}}
-If you have a hook you only want to run once, use a global variable:
+// Asynchronous Callback
+AfterAll(function (callback) {
+  // perform some shared setup
 
-
-```ruby
-Before do
-  $dunit ||= false  # have to define a variable before we can reference its value
-  return if $dunit  # bail if $dunit is true
-  the_slow_thing    # otherwise do it.
-  $dunit = true     # don't do it again.
-end
+  // execute the callback (optionally passing an error when done)
+});
 ```
-{{% /text %}}
+{{% /block %}}
 
-{{% block "java,kotlin,scala" %}}Cucumber-JVM does not support running a hook only once.{{% /block %}}
-{{% block "javascript" %}}Cucumber.js does not support running a hook only once.{{% /block %}}
+{{%block "java" %}}
+```java
+@AfterAll
+public static void afterAll() {
+    // Runs after all scenarios
+}
+```
+{{% /block %}}
 
-## AfterConfiguration
+{{%block "kotlin" %}}
+```kotlin
+AfterAll {
+    // doSomething
+}
+```
+{{% /block %}}
+
+{{%block "scala" %}}
+```scala
+AfterAll {
+    // doSomething
+}
+```
+{{% /block %}}
+
+## InstallPlugin
 
 {{% text "ruby" %}}
-You may also provide an `AfterConfiguration` hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`).
+You may also provide an `InstallPlugin` hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`), and a wrapper to some cucumber internals as a registry.
 
 Example:
 {{% /text %}}
 
 ```ruby
-AfterConfiguration do |config|
+InstallPlugin do |config, registry|
   puts "Features dwell in #{config.feature_dirs}"
 end
 ```
@@ -654,10 +730,18 @@ end
 This hook will run _only once_: after support has been loaded, and before any features are loaded.
 
 You can use this hook to extend Cucumber. For example you could affect how features are loaded, or register custom formatters programmatically.
+
+[cucumber-wire](https://github.com/cucumber/cucumber-ruby-wire) is a good example
+of how to use InstallPlugin and what a Cucumber plugin can do.
 {{% /text %}}
 
-{{% text "java,kotlin,scala" %}}Cucumber-JVM does not support `AfterConfiguration` hooks.{{% /text %}}
-{{% text "javascript" %}}Cucumber js does not support `AfterConfiguration` hooks.{{% /text %}}
+{{% text "java,kotlin,scala" %}}Cucumber-JVM does not support `InstallPlugin` hooks.{{% /text %}}
+{{% text "javascript" %}}Cucumber js does not support `InstallPlugin` hooks.{{% /text %}}
+
+## AfterConfiguration
+
+`AfterConfiguration` has been deprecated in favor of [`BeforeAll`](#beforeall) and
+[`InstallPlugin`](#installplugin) depending on your needs.
 
 # Tags
 
@@ -705,7 +789,7 @@ Scenario Outline: Steps will run conditionally if tagged
   Then user will be logged out
 
   @mobile
-  Examples: 
+  Examples:
     | link                  |
     | logout link on mobile |
 
@@ -991,10 +1075,10 @@ The **Command-Line Interface Runner (CLI Runner)** is an executable Java class t
 ```
 java io.cucumber.core.cli.Main
 ```
-Note that you will need to add the `cucumber-core` jar and all of its transitive dependencies to your classpath, in addition to the location of your compiled .class files. You can find these jars in [Maven Central](https://mvnrepository.com/repos/central). 
+Note that you will need to add the `cucumber-core` jar and all of its transitive dependencies to your classpath, in addition to the location of your compiled .class files. You can find these jars in [Maven Central](https://mvnrepository.com/repos/central).
 
 
-You will also need to provide the CLI with your step definitions via the `--glue` option followed by its package name, and the filepath of your feature file(s). 
+You will also need to provide the CLI with your step definitions via the `--glue` option followed by its package name, and the filepath of your feature file(s).
 
 For example:
 ```shell
@@ -1522,16 +1606,16 @@ mvn test -Dcucumber.filter.tags="@smoke"
 
 Supported properties are:
 ```
-cucumber.ansi-colors.disabled=  # true or false. default: false                     
-cucumber.execution.dry-run=     # true or false. default: false 
-cucumber.execution.limit=       # number of scenarios to execute (CLI only).  
+cucumber.ansi-colors.disabled=  # true or false. default: false
+cucumber.execution.dry-run=     # true or false. default: false
+cucumber.execution.limit=       # number of scenarios to execute (CLI only).
 cucumber.execution.order=       # lexical, reverse, random or random:[seed] (CLI only). default: lexical
 cucumber.execution.strict=      # true or false. default: true.
 cucumber.execution.wip=         # true or false. default: false.
-cucumber.features=              # comma separated paths to feature files. example: path/to/example.feature, path/to/other.feature  
+cucumber.features=              # comma separated paths to feature files. example: path/to/example.feature, path/to/other.feature
 cucumber.filter.name=           # regex. example: .*Hello.*
-cucumber.filter.tags=           # tag expression. example: @smoke and not @slow 
-cucumber.glue=                  # comma separated package names. example: com.example.glue  
+cucumber.filter.tags=           # tag expression. example: @smoke and not @slow
+cucumber.glue=                  # comma separated package names. example: com.example.glue
 cucumber.plugin=                # comma separated plugin strings. example: pretty, json:path/to/report.json
 cucumber.object-factory=        # object factory class name. example: com.example.MyObjectFactory
 cucumber.snippet-type=          # underscore or camelcase. default: underscore
