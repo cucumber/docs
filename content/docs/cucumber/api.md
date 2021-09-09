@@ -720,11 +720,13 @@ You may also provide an `InstallPlugin` hook that will be run after Cucumber has
 Example:
 {{% /text %}}
 
+{{% block "ruby" %}}
 ```ruby
 InstallPlugin do |config, registry|
   puts "Features dwell in #{config.feature_dirs}"
 end
 ```
+{{% /block %}}
 
 {{% text "ruby" %}}
 This hook will run _only once_: after support has been loaded, and before any features are loaded.
