@@ -596,7 +596,6 @@ See more documentation on [tags](#tags).
 
 ## Global hooks
 
-{{% block "ruby" %}}
 Global hooks will run once before any scenario is run or after all scenario have
 been run. Put the code at the top-level in your `env.rb` file (or any other file
 under `features/support` directory).
@@ -716,8 +715,6 @@ AfterAll {
 
 {{% text "ruby" %}}
 You may also provide an `InstallPlugin` hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`), and a wrapper to some cucumber internals as a registry.
-
-Example:
 {{% /text %}}
 
 {{% block "ruby" %}}
@@ -737,8 +734,8 @@ You can use this hook to extend Cucumber. For example you could affect how featu
 of how to use InstallPlugin and what a Cucumber plugin can do.
 {{% /text %}}
 
-{{% text "java,kotlin,scala" %}}Cucumber-JVM does not support `InstallPlugin` hooks.{{% /text %}}
-{{% text "javascript" %}}Cucumber js does not support `InstallPlugin` hooks.{{% /text %}}
+{{% text "java,kotlin,scala" %}}Cucumber-JVM does not support `InstallPlugin` hook.{{% /text %}}
+{{% text "javascript" %}}Cucumber js does not support `InstallPlugin` hook.{{% /text %}}
 
 ## AfterConfiguration
 
