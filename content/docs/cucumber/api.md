@@ -230,10 +230,8 @@ Before { scenario: Scenario =>
 const { Before } = require('@cucumber/cucumber')
 ```
 
-Synchronous style:
-
 ```javascript
-Before(function () {
+Before(async function () {
 })
 ```
 
@@ -241,23 +239,6 @@ Before(function () {
 ES6 arrow functions `() => {}` bind `this` to the current context, which prevents
 sharing state between hooks and step definitions.
 {{% /tip %}}
-
-Promise style:
-
-```javascript
-After(function () {
-  return somethingReturningPromise()
-});
-```
-
-Callback style:
-
-```javascript
-After(function (callback) {
-  somethingCallingCallback(callback)
-});
-```
-
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -370,7 +351,7 @@ After { scenario: Scenario =>
 {{% block "javascript" %}}
 
 ```javascript
-After(function (scenario) {
+After(async function (scenario) {
 })
 ```
 
@@ -471,11 +452,11 @@ BeforeStep { scenario: Scenario =>
 
 {{% text "javascript" %}}
 ```javascript
-BeforeStep(function({pickle, pickleStep, gherkinDocument, testCaseStartedId, testStepId}) {
+BeforeStep(async function({pickle, pickleStep, gherkinDocument, testCaseStartedId, testStepId}) {
     // doSomething
 })
 
-BeforeStep({tags: "@foo"}, function() {
+BeforeStep({tags: "@foo"}, async function() {
     // apply this hook to only specific scenarios
 })
 ```
@@ -528,7 +509,7 @@ AfterStep { scenario: Scenario =>
 
 {{% block "javascript" %}}
 ```javascript
-AfterStep(function({pickle, pickleStep, gherkinDocument, result, testCaseStartedId, testStepId}) {
+AfterStep(async function({pickle, pickleStep, gherkinDocument, result, testCaseStartedId, testStepId}) {
     // doSomething
 })
 ```
@@ -580,7 +561,7 @@ After("@browser and not @headless") { scenario: Scenario =>
 
 {{% block "javascript" %}}
 ```javascript
-Before({tags: '@browser and not @headless'}, function () {
+Before({tags: '@browser and not @headless'}, async function () {
 })
 ```
 {{% /block %}}
@@ -616,16 +597,8 @@ end
 ```javascript
 const { BeforeAll } = require('@cucumber/cucumber');
 
-// Synchronous
-BeforeAll(function () {
+BeforeAll(async function () {
   // perform some shared setup
-});
-
-// Asynchronous Callback
-BeforeAll(function (callback) {
-  // perform some shared setup
-
-  // execute the callback (optionally passing an error when done)
 });
 ```
 {{% /block %}}
@@ -672,16 +645,8 @@ end
 ```javascript
 const { AfterAll } = require('@cucumber/cucumber');
 
-// Synchronous
-AfterAll(function () {
+AfterAll(async function () {
   // perform some shared setup
-});
-
-// Asynchronous Callback
-AfterAll(function (callback) {
-  // perform some shared setup
-
-  // execute the callback (optionally passing an error when done)
 });
 ```
 {{% /block %}}
