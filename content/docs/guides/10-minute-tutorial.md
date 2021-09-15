@@ -21,6 +21,40 @@ In this quick tutorial you will learn how to:
 We'll use Cucumber to develop a small library that can figure out whether it's
 Friday yet.
 
+Please be aware that this tutorial assumes that you have a:
+
+{{% block "java" %}}
+
+* Basic understanding of the Java programming language
+* Basic understanding of the Gradle file
+
+{{% block %}}
+
+{{% block "kotlin" %}}
+
+* Basic understanding of the Kotlin programming language
+* Basic understanding of the Gradle file
+
+{{% block %}}
+
+{{% block "javascript" %}}
+
+* Basic understanding of the Javascript programming language
+
+{{% block %}}
+
+{{% block "ruby" %}}
+
+* Basic understanding of the Ruby programming language
+
+* Basic understanding of the Bundler tool and `Gemfile`
+
+{{% block %}}
+
+* Some experience using a terminal
+
+* Some experience using a text editor
+
 Before we begin, you will need the following:
 
 {{% block "java" %}}
