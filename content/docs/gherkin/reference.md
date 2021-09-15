@@ -490,7 +490,7 @@ finally, if you need a `\`, you can escape that with `\\`.
 ### Data Table API
 
 Cucumber provides a rich API for manipulating tables from within step definitions.
-See the [Data Table API reference](https://github.com/cucumber/cucumber/tree/master/datatable) reference for
+See the [Data Table API reference](https://github.com/cucumber/cucumber-jvm/tree/main/datatable) reference for
 more details.
 
 # Spoken Languages
