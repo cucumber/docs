@@ -630,12 +630,11 @@ BeforeAll {
 
 ### AfterAll
 
-
-`BeforeAll` run after all scenarios have been executed.
+`AfterAll` run after all scenarios have been executed.
 
 {{%block "ruby" %}}
 ```ruby
-AFterAll do
+AfterAll do
   # Do something after all sceharios have been executed
 end
 ```
@@ -699,8 +698,8 @@ You can use this hook to extend Cucumber. For example you could affect how featu
 of how to use InstallPlugin and what a Cucumber plugin can do.
 {{% /text %}}
 
-{{% text "java,kotlin,scala" %}}Cucumber-JVM does not support `InstallPlugin` hook.{{% /text %}}
-{{% text "javascript" %}}Cucumber js does not support `InstallPlugin` hook.{{% /text %}}
+{{% text "java,kotlin,scala" %}}Cucumber-JVM does not support the `InstallPlugin` hook.{{% /text %}}
+{{% text "javascript" %}}Cucumber js does not support the `InstallPlugin` hook.{{% /text %}}
 
 ## AfterConfiguration
 
