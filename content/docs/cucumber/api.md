@@ -699,7 +699,7 @@ of how to use InstallPlugin and what a Cucumber plugin can do.
 {{% /text %}}
 
 {{% text "java,kotlin,scala" %}}Cucumber-JVM does not support the `InstallPlugin` hook.{{% /text %}}
-{{% text "javascript" %}}Cucumber js does not support the `InstallPlugin` hook.{{% /text %}}
+{{% text "javascript" %}}Cucumber.js does not support the `InstallPlugin` hook.{{% /text %}}
 
 ## AfterConfiguration
 
