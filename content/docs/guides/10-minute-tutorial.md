@@ -28,20 +28,20 @@ Please be aware that this tutorial assumes that you have a:
 * Basic understanding of the Java programming language
 * Basic understanding of the Gradle file
 
-{{% block %}}
+{{% /block %}}
 
 {{% block "kotlin" %}}
 
 * Basic understanding of the Kotlin programming language
 * Basic understanding of the Gradle file
 
-{{% block %}}
+{{% /block %}}
 
 {{% block "javascript" %}}
 
 * Basic understanding of the Javascript programming language
 
-{{% block %}}
+{{% /block %}}
 
 {{% block "ruby" %}}
 
@@ -49,7 +49,7 @@ Please be aware that this tutorial assumes that you have a:
 
 * Basic understanding of the Bundler tool and `Gemfile`
 
-{{% block %}}
+{{% /block %}}
 
 * Some experience using a terminal
 
