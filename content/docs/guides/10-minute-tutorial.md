@@ -38,6 +38,7 @@ Please be aware that this tutorial assumes that you have a:
 * Basic understanding of the Ruby programming language
 * Basic understanding of the Bundler tool and `Gemfile`
 {{% /block %}}
+
 * Some experience using a terminal
 * Some experience using a text editor
 
