@@ -87,8 +87,7 @@ See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50).
 {{% text "javascript" %}} For an example of data tables in JavaScript, go
 [here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
 
-For more information, see [cucumber/datatable](https://github.com/cucumber/cucumber/tree/master/datatable). {{% text
-"java,kotlin" %}}In addition, see
+{{% text "java,kotlin" %}}In addition, see
 [cucumber-jvm data-tables](https://github.com/cucumber/cucumber-jvm/tree/main/java#data-tables){{% /text %}}
 
 # Steps
