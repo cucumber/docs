@@ -72,11 +72,11 @@ Feature: Subscribers see different sets of stock images based on their subscript
 Scenario: Free subscribers see only the free articles
   Given Free Frieda has a free subscription
   When Free Frieda logs in with her valid credentials
-  Then she sees a Free article on the home page
+  Then she sees a Free article
 
 Scenario: Subscriber with a paid subscription can access both free and paid articles
   Given Paid Patty has a basic-level paid subscription
   When Paid Patty logs in with her valid credentials
-  Then she sees a Free article and a Paid article on the home page
+  Then she sees a Free article and a Paid article
 ``` 
 With a declarative style, each step communicates an idea, but the exact values aren't specified. The details of *how* the user interacts with the system, such as which specific articles are free or paid, and the subscription level of different test users, are specified in the step definitions (the automation code that interacts with the system). The subscription packages could change in the future. The business could change what content is available to subscribers on free and paid plans, without having to change this scenario and other scenarios that use the same step definitions. If another subscription level is added later, it's easy to add a scenario for that. By avoiding terms like “click a button” that suggest implementation, the scenario is more resilient to implementation details of the UI. The intent of the scenario remains the same, even if the implementation changes later. In addition, having too many implementation details in a scenario, makes it harder to understand the intended behaviour it illustrates.
