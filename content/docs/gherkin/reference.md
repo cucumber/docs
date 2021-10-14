@@ -415,7 +415,8 @@ Scenario Outline: eating
 
 ### Examples
 
-A `Scenario Outline` must contain an `Examples` (or `Scenarios`) section. Its steps are interpreted as a template
+A `Scenario Outline` must contain one or more `Examples` (or `Scenarios`) section(s). Its steps are interpreted as a 
+template
 which is never directly run. Instead, the `Scenario Outline` is run *once for each row* in
 the `Examples` section beneath it (not counting the first header row).
 
