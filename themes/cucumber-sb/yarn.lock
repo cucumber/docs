@@ -1995,7 +1995,7 @@ yargs@^17.0.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-yarn@1.22.15:
-  version "1.22.15"
-  resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.15.tgz"
-  integrity sha512-AzoEDxj256BOS/jqDXA3pjyhmi4FRBBUMgYoTHI4EIt2EhREkvH0soPVEtnD+DQIJfU5R9bKhcZ1H9l8zPWeoA==
+yarn@1.22.16:
+  version "1.22.16"
+  resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.16.tgz"
+  integrity sha512-2B/Ml9jE9aTuC98ouzpN9M+e5FZGTU0ljdTKAlVokyuEqT6emFoVhgfThE0L8a90PaAlJw3s4CEcCJ9dSYH1Xg==
