@@ -67,10 +67,6 @@ There is also a "pretty" formatter available as an optional module [@cucumber/pr
 * `junit`
 {{% /text %}}
 
-{{% note "JSON formatter" %}}
-The built-in JSON formatter is deprecated and will be removed in a future release.
-{{% /note %}}
-
 # Custom formatters
 
 Cucumber implementations are extensible so that you can write and use your own formatter, or use a third-party one published by someone else. This involves creating a class that implements/extends the standard formatter interface.
