@@ -127,3 +127,13 @@ You can handle other behaviours, like *validating a web page, clicking a button,
 {{% text "java,kotlin" %}}We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.{{% /text %}}
 Also, using [Data Tables](/docs/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
 
+# Helper methods
+Always keep in mind that Cucumber is a DSL wrapper around the programming language whose full expressiveness
+remains available to you in the step definition files (*but not in feature files*).
+On the other hand, do not lose sight that every step called as such in a step definition file is first parsed by
+[Gherkin](/docs/gherkin/) and therefore must conform to the same syntax as used in feature files.
+
+In fact, it is recommended to refactor step definitions into helper methods for greater modularity and reuse.
+The method can reside in the same {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}} file as the step definition.
+
+This makes your project more understandable for people who join your project at a later date; which also makes your project easier to maintain.
