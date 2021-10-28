@@ -4,7 +4,7 @@
   "author": "Cucumber Ltd",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "10.3.7",
+    "autoprefixer": "10.4.0",
     "bulma": "0.9.3",
     "concurrently": "6.3.0",
     "node-sass": "6.0.1",
