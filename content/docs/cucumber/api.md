@@ -1389,7 +1389,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = {"@foo", "not @bar"})
+@CucumberOptions(tags = {"@foo and not @bar"})
 public class RunCucumberTest {
 }
 ```
@@ -1404,7 +1404,7 @@ import io.cucumber.junit.CucumberOptions
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = {"@foo", "not @bar"})
+@CucumberOptions(tags = {"@foo and not @bar"})
 class RunCucumberTest
 ```
 {{% /block %}}
@@ -1418,7 +1418,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(classOf[Cucumber])
-@CucumberOptions(tags = Seq("@foo", "not @bar"))
+@CucumberOptions(tags = Seq("@foo and not @bar"))
 public class RunCucumberTest {
 }
 ```
