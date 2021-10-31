@@ -472,6 +472,22 @@ This might be familiar for those used to writing with Markdown.
 Whilst all current versions of Cucumber support backticks as the delimiter, many tools like text editors don't (yet).
 {{% /note %}}
 
+It's possible to annotate the DocString with the type of content it contains. You specify the content type after the
+triple quote, as follows:
+
+```gherkin
+Given a blog post named "Random" with Markdown body
+  """markdown
+  Some Title, Eh?
+  ===============
+  Here is the first paragraph of my blog post. Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit.
+  """
+```
+
+{{% note "Tool support for content types"%}} Whilst all current versions of Cucumber support content types as the
+delimiter, many tools like text editors don't (yet). {{% /note %}}
+
 ## Data Tables
 
 `Data Tables` are handy for passing a list of values to a step definition:
