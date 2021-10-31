@@ -34,6 +34,9 @@ Feature: Guess the word
 The trailing portion (after the keyword) of each step is matched to
 a code block, called a [step definition](/docs/cucumber/step-definitions).
 
+Please note that some keywords *are* followed by a colon (`:`) and some *are not*. If you add a colon after a keyword
+that should not be followed by one, your test(s) will be ignored.
+
 # Keywords
 
 Each line that isn't a blank line has to start with a Gherkin *keyword*, followed by any text you like. The only exceptions are the feature and scenario descriptions.
