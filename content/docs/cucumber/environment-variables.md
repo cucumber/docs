@@ -24,16 +24,10 @@ same terminal.
 
 This also applies to terminals embedded in an editor such as Visual Studio Code or IntelliJ IDEA.
 
-### Windows PowerShell
+### Windows
 
 ```shell
-$Env:CUCUMBER_PUBLISH_TOKEN = 'some-secret-token'
-```
-
-### Windows Command Prompt
-
-```shell
-set CUCUMBER_PUBLISH_TOKEN=some-secret-token
+setx /M CUCUMBER_PUBLISH_TOKEN "some-secret-token"
 ```
 
 ### Bash / Zsh
