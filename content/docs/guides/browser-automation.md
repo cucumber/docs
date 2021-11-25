@@ -220,7 +220,7 @@ describe "google.com" do
   before { browser.goto "http://google.com" }
   browser.text_field(name: "q").set "watir"
   browser.button.click
-  browser.div(id: "resultStats").wait_until_present
+  browser.div(id: "resultStats").wait_until
   browser.title.should == "watir - Google Search"
   after { browser.close }
 end
