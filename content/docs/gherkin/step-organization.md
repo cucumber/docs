@@ -18,7 +18,7 @@ This will make your project more logical and easier to maintain.
 Be aware that, regardless of the directory structure employed, Cucumber effectively flattens the `features/` directory tree when running tests.
 This means that anything ending in {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}}{{% text "go" %}}`.go`{{% /text %}}
 inside the directory in which Cucumber is run is treated as a step definition. In the same directory, Cucumber will search for a `Feature` corresponding to that step definition.
-This is either the default case or the location specified with the {{% text "java,kotlin" %}}relevant{{% /text %}}{{% text "javascript" %}}relevant{{% /text %}}{{% text "ruby" %}}`-r`{{% /text %}}{{% text "go" %}}relevant{{% /go %}} option.
+This is either the default case or the location specified with the {{% text "java,kotlin" %}}relevant{{% /text %}}{{% text "javascript" %}}relevant{{% /text %}}{{% text "ruby" %}}`-r`{{% /text %}}{{% text "go" %}}relevant{{% /text %}} option.
 
 # Grouping step definitions
 Technically it doesn't matter how you name your step definition files, or which step definitions you put in a file.
