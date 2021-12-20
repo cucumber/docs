@@ -59,6 +59,8 @@ var showHideSelectors = [
   '.text-scala',
   '.language-ruby',
   '.text-ruby',
+  '.language-golang',
+  '.text-golang',
 ]
 
 function showOnly(language) {
