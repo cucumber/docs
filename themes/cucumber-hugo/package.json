@@ -6,7 +6,7 @@
   "devDependencies": {
     "autoprefixer": "10.4.1",
     "bulma": "0.9.3",
-    "concurrently": "6.5.1",
+    "concurrently": "7.0.0",
     "node-sass": "7.0.1",
     "postcss-cli": "9.1.0",
     "rimraf": "3.0.2"
