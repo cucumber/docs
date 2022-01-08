@@ -487,12 +487,12 @@ Feature: Let's write a lot of stuff to the DB
     Given I write to the DB
 ```
 
-### With JUnit and Spring
+### With JUnit 5 and Spring
 {{% block "java,kotlin" %}} 
-See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/main/examples/spring-txn) example in Cucumber-JVM for a minimal setup.
+See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/main/examples/spring-java-junit5) example in Cucumber-JVM for a minimal setup.
 {{% /block %}}
 
-{{% block "ruby,javascript" %}} JUnit and Spring are used with JVM languages. {{% /block %}}
+{{% block "ruby,javascript" %}} JUnit 5 and Spring are used with JVM languages. {{% /block %}}
 
 # Browser Automation and Transactions
 

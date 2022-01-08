@@ -104,7 +104,11 @@ repositories {
 
 You can now run Cucumber [from the command line](/docs/cucumber/api/#from-the-command-line) to execute by [adding a cucumber task](/docs/tools/java#gradle) to `build.gradle`.
 
-# JUnit-integration
+# JUnit 5 integration
+
+It is also possible to use [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine) to run your Cucumber test suite.
+
+# JUnit 4 integration
 
 It is also possible to use [cucumber-junit](/docs/cucumber/api/#junit) to run your Cucumber test suite.
 

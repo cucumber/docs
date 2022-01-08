@@ -77,10 +77,13 @@ For information on how to run the Cucumber CLI, see [From the command line](/doc
 For information about configuration options, see [Configuration](/docs/cucumber/configuration/).
 
 {{% block "java,kotlin" %}}
-When running Cucumber with JUnit, you can specify several options on how JUnit should run your tests.
-Check the section on [JUnit](https://docs.cucumber.io/cucumber/api/#junit) for more information.
+When using JUnit 5, reference the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine).
 
-For more details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/main/core/src/test/java/io/cucumber/core/options/CucumberOptions.java).
+When running Cucumber with JUnit 4, you can specify several options on how JUnit 4 should run your tests.
+Check the section on [JUnit](https://docs.cucumber.io/cucumber/api/#junit) for more information. For more
+details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/main/core/src/test/java/io/cucumber/core/options/CucumberOptions.java).
+
+
 {{% /block %}}
 
 ## Cucumber says my steps are undefined, but I have implemented step definitions!
