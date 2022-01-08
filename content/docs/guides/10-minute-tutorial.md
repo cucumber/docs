@@ -1512,7 +1512,7 @@ package hellocucumber;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class IsItFriday {
     static String isItFriday(String today) {
@@ -1549,8 +1549,7 @@ package hellocucumber
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.When
-import junit.framework.Assert.assertEquals
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 
