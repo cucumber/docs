@@ -776,7 +776,9 @@ Tags that are placed above a `Scenario Outline` will be inherited by `Examples`.
 You can tell Cucumber to only run scenarios with a particular tag:
 
 {{% block "java,kotlin,scala" %}}
-Using a JVM system property:
+For JUnit 5 see the [cucumber-junit-platform-engine documetation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#tags).
+
+For JUnit 4 and TestNG using a JVM system property:
 
 ```shell
 mvn test -Dcucumber.filter.tags="@smoke and @fast"
@@ -793,7 +795,7 @@ set CUCUMBER_FILTER_TAGS="@smoke and @fast"
 mvn test
 ```
 
-Or changing your JUnit runner class:
+Or changing your JUnit 4/TestNG  runner class:
 {{% /block %}}
 
 {{% block "java" %}}
