@@ -976,10 +976,10 @@ unspecified scenarios to manageable levels. Those following [Kanban](https://en.
 # Running Cucumber
 
 Cucumber is a
-{{% text "java,kotlin,scala" %}}JUnit extension.{{% /text %}}
+{{% text "java,kotlin,scala" %}}Java library with extensions for different tools and platforms.{{% /text %}}
 {{% text "javascript,ruby" %}}command line tool.{{% /text %}}
 It is launched by running
-{{% text "java,kotlin,scala" %}}JUnit from your build tool or your IDE.{{% /text %}}
+{{% text "java,kotlin,scala" %}}JUnit 4, JUnit 5, your build tool, your IDE or the CLI.{{% /text %}}
 {{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
 {{% text "ruby" %}}`cucumber` from the command line, or a build script.{{% /text %}}
 
