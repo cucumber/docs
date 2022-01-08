@@ -438,10 +438,10 @@ cucumber.object-factory=com.example.app.CustomObjectFactory
 
 {{% block "ruby,javascript" %}} Using the Cucumber object factory is specific to JVM languages. {{% /block %}}
 
-### Using the Cucumber object factory a test runner (JUnit/TestNG)
+### Using the Cucumber object factory with a test runner (JUnit 5/JUnit 4/TestNG)
 {{% block "java,kotlin" %}} 
-The Cucumber modules for [JUnit](/docs/cucumber/api/#junit) and [TestNG](/docs/cucumber/checking-assertions/#testng) allow to run Cucumber through a JUnit/TestNG test.
-The custom object factory can be configured using the `@CucumberOptions` annotation.
+The Cucumber modules for [JUnit 4](/docs/cucumber/api/#junit) and [TestNG](/docs/cucumber/checking-assertions/#testng) allow to run Cucumber through a JUnit/TestNG test.
+The custom object factory can be configured using the `@CucumberOptions` annotation. For JUnit 5 see the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine) documentation.
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Using the Cucumber object factory is specific to JVM languages. {{% /block %}}
