@@ -987,30 +987,21 @@ It is possible to [configure](/docs/cucumber/configuration) how Cucumber should 
 
 ## From the command line
 
-The most common option is to run Cucumber from the command line.
-
-By default, Cucumber will treat anything ending in
-{{% text "java" %}}`.java`{{% /text %}}
-{{% text "scala" %}}`.scala`{{% /text %}}
-{{% text "kotlin" %}}`.kt`{{% /text %}}
+{{% text "ruby,javascript" %}}The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in{{% /text %}}
 {{% text "javascript" %}}`.js`{{% /text %}}
 {{% text "ruby" %}}`.rb`{{% /text %}} under the root
-{{% text "java,kotlin,scala,javascript" %}}resource{{% /text %}}
 {{% text "ruby" %}}library{{% /text %}} directory as a step definition file.
-
-Thus, a step contained in
-{{% text "java" %}}`features/models/entities/step-definitions/anything.java`{{% /text %}}
-{{% text "kotlin" %}}`features/models/entities/step-definitions/anything.kt`{{% /text %}}
-{{% text "scala" %}}`features/models/entities/step-definitions/anything.scala`{{% /text %}}
+{{% text "ruby,javascript" %}}Thus, a step contained in {{% /text %}}
 {{% text "javascript" %}}`features/models/entities/step-definitions/anything.js`{{% /text %}}
 {{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
-can be used in a feature file contained in
-{{% text "java,kotlin,scala,javascript" %}}`features/views/entity-new`{{% /text %}}
+{{% block "ruby,javascript" %}}can be used in a feature file contained in{{% /text %}}
 {{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
+{{% text "ruby,javascript" %}}
 , provided that:
 
 - Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
 - explicitly required on the command line
+{{% /text %}}
 
 {{% block "ruby" %}}
 
@@ -1081,8 +1072,21 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 You can also run features using a [build tool](/docs/tools/general#build-tools) or an [IDE](/docs/tools/general#ides).
 
+## JUnit 5 
 
-## JUnit
+{{% block "java,kotlin,scala" %}}
+See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
+{{% /block %}}
+
+{{% block "ruby" %}}
+Ruby can't be run by JUnit 5.
+{{% /block %}}
+
+{{% block "javascript" %}}
+Javascript can't be run by JUnit 5.
+{{% /block %}}
+
+## JUnit 4
 
 {{% block "java,kotlin,scala" %}}
 To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency to your pom.
@@ -1555,7 +1559,7 @@ Note that options provided by `@CucumberOptions` take precedence over the
 properties file and CLI arguments take precedence over all.
 
 Note that the `cucumber-junit-platform-engine` is provided with properties
-by the Junit Platform rather then Cucumber. See
+by the Junit Platform rather than Cucumber. See
 [junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
 for more information.
 
