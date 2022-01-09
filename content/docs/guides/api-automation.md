@@ -24,13 +24,6 @@ You can use RestAssured in your step definitions to make API calls and verify re
 For more information see the [official website](http://rest-assured.io/).
 {{% /block %}}
 
-## Karate
-Karate is an API automation tool for Java.
-
-{{% block "java,kotlin" %}}
-For more information see the [Karate project on GitHub](https://github.com/intuit/karate).
-{{% /block %}}
-
 # API Automation Tools for JavaScript
 
 ## PactumJS

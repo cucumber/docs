@@ -10,14 +10,23 @@ weight: 1800
 {{% block "java,kotlin" %}}
 Cucumber-JVM allows parallel execution across multiple threads since [version 4.0.0.](https://cucumber.io/blog/announcing-cucumber-jvm-4-0-0/) There are several options to incorporate this built-in feature in a Cucumber project. You can do so using:
 
-- [JUnit](/docs/guides/parallel-execution/#junit)
+- [JUnit 5](/docs/guides/parallel-execution/#junit-5)
+- [JUnit 4](/docs/guides/parallel-execution/#junit-4)
 - [TestNG](/docs/guides/parallel-execution/#testng)
 - [CLI](/docs/guides/parallel-execution/#cli)
 
 For each of these options, this tutorial will look at the project setup, configuration settings and execution commands.
 {{% /block %}}
 
-# JUnit
+# JUnit 5
+{{% block "java,kotlin" %}}
+
+Cucumber Scenarios can be executed in parallel using the **JUnit Platform**.
+
+See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine) for details.
+{{% /block %}}
+
+# JUnit 4
 
 {{% block "java,kotlin" %}}
 Cucumber can be executed in parallel using **JUnit and Maven test execution plugins**. In JUnit the **feature files are run in parallel rather than scenarios**, which means **all the scenarios in a feature file will be executed by the same thread**. You can use either Maven Surefire or Failsafe plugin to execute the runners.

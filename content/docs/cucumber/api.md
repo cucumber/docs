@@ -776,7 +776,9 @@ Tags that are placed above a `Scenario Outline` will be inherited by `Examples`.
 You can tell Cucumber to only run scenarios with a particular tag:
 
 {{% block "java,kotlin,scala" %}}
-Using a JVM system property:
+For JUnit 5 see the [cucumber-junit-platform-engine documetation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#tags).
+
+For JUnit 4 and TestNG using a JVM system property:
 
 ```shell
 mvn test -Dcucumber.filter.tags="@smoke and @fast"
@@ -793,7 +795,7 @@ set CUCUMBER_FILTER_TAGS="@smoke and @fast"
 mvn test
 ```
 
-Or changing your JUnit runner class:
+Or changing your JUnit 4/TestNG  runner class:
 {{% /block %}}
 
 {{% block "java" %}}
@@ -976,10 +978,10 @@ unspecified scenarios to manageable levels. Those following [Kanban](https://en.
 # Running Cucumber
 
 Cucumber is a
-{{% text "java,kotlin,scala" %}}JUnit extension.{{% /text %}}
+{{% text "java,kotlin,scala" %}}Java library with extensions for different tools and platforms.{{% /text %}}
 {{% text "javascript,ruby" %}}command line tool.{{% /text %}}
 It is launched by running
-{{% text "java,kotlin,scala" %}}JUnit from your build tool or your IDE.{{% /text %}}
+{{% text "java,kotlin,scala" %}}JUnit 4, JUnit 5, your build tool, your IDE or the CLI.{{% /text %}}
 {{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
 {{% text "ruby" %}}`cucumber` from the command line, or a build script.{{% /text %}}
 
@@ -987,30 +989,21 @@ It is possible to [configure](/docs/cucumber/configuration) how Cucumber should 
 
 ## From the command line
 
-The most common option is to run Cucumber from the command line.
-
-By default, Cucumber will treat anything ending in
-{{% text "java" %}}`.java`{{% /text %}}
-{{% text "scala" %}}`.scala`{{% /text %}}
-{{% text "kotlin" %}}`.kt`{{% /text %}}
+{{% text "ruby,javascript" %}}The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in{{% /text %}}
 {{% text "javascript" %}}`.js`{{% /text %}}
 {{% text "ruby" %}}`.rb`{{% /text %}} under the root
-{{% text "java,kotlin,scala,javascript" %}}resource{{% /text %}}
 {{% text "ruby" %}}library{{% /text %}} directory as a step definition file.
-
-Thus, a step contained in
-{{% text "java" %}}`features/models/entities/step-definitions/anything.java`{{% /text %}}
-{{% text "kotlin" %}}`features/models/entities/step-definitions/anything.kt`{{% /text %}}
-{{% text "scala" %}}`features/models/entities/step-definitions/anything.scala`{{% /text %}}
+{{% text "ruby,javascript" %}}Thus, a step contained in {{% /text %}}
 {{% text "javascript" %}}`features/models/entities/step-definitions/anything.js`{{% /text %}}
 {{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
-can be used in a feature file contained in
-{{% text "java,kotlin,scala,javascript" %}}`features/views/entity-new`{{% /text %}}
+{{% block "ruby,javascript" %}}can be used in a feature file contained in{{% /text %}}
 {{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
+{{% text "ruby,javascript" %}}
 , provided that:
 
 - Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
 - explicitly required on the command line
+{{% /text %}}
 
 {{% block "ruby" %}}
 
@@ -1081,8 +1074,21 @@ Cucumber does not work when installed globally because cucumber needs to be requ
 
 You can also run features using a [build tool](/docs/tools/general#build-tools) or an [IDE](/docs/tools/general#ides).
 
+## JUnit 5 
 
-## JUnit
+{{% block "java,kotlin,scala" %}}
+See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
+{{% /block %}}
+
+{{% block "ruby" %}}
+Ruby can't be run by JUnit 5.
+{{% /block %}}
+
+{{% block "javascript" %}}
+Javascript can't be run by JUnit 5.
+{{% /block %}}
+
+## JUnit 4
 
 {{% block "java,kotlin,scala" %}}
 To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency to your pom.
@@ -1099,8 +1105,8 @@ To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency t
   [...]
 </dependencies>
 ```
-Cucumber is based on JUnit 4. If you're using JUnit 5, remember to include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
-
+Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine).
+Or include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
 
 Create an empty class that uses the Cucumber JUnit runner.
 
@@ -1555,7 +1561,7 @@ Note that options provided by `@CucumberOptions` take precedence over the
 properties file and CLI arguments take precedence over all.
 
 Note that the `cucumber-junit-platform-engine` is provided with properties
-by the Junit Platform rather then Cucumber. See
+by the Junit Platform rather than Cucumber. See
 [junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
 for more information.
 

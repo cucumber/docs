@@ -11,9 +11,18 @@ from a unit testing tool.
 
 # Java
 
-## JUnit
+## JUnit 5
 
-We recommend using [JUnit](https://junit.org/junit4/)'s `assert*` methods.
+When using the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine)
+you are free to use any assertion library of your choice. For example:
+
+ * [AssertJ](https://assertj.github.io/doc/)
+ * [Hamcrest](http://hamcrest.org/JavaHamcrest/)
+ * [JUnit Jupiter](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)
+
+## JUnit 4
+
+When using JUnit 4 to run Cucumber we recommend using [JUnit 4](https://junit.org/junit4/)'s `assert*` methods.
 
 If you are using Maven, add the following to your `pom.xml`:
 
@@ -34,12 +43,6 @@ If you are using Maven, add the following to your `pom.xml`:
 
 {{% note "Cucumber version"%}}
 Make sure to use the same version for `cucumber-junit` that you are using for `cucumber-java` or `cucumber-java8`.
-{{% /note %}}
-
-{{% note "JUnit 5"%}}
-JUnit 5 is not directly supported by Cucumber.
-
-If you wish to use JUnit 5 assertions, please add a runtime test dependency on the `junit-vintage-engine` artifact from the `org.junit.vintage` group.
 {{% /note %}}
 
 Below is an example using `assertEquals`:
