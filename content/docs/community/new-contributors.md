@@ -6,6 +6,8 @@ weight: 10
 
 Every Friday at 8am PST we host the new contributors ensemble. This is a space for people who are keen to contribute to open source to get together and support each other in making their first contributions. 🦄
 
+![New contributors ensemble](https://docs.cucumber.io/img/new-contributors-ensemble.png)
+
 The Cucumber team is committed to [tackling the structural sexism and racism](https://cucumber.io/blog/open-source/tackling-structural-racism-(and-sexism)-in-open-so/) in open source, and we host these sessions to provide a welcoming environment for people who have historically been under-represented in open source. ✊🏿🏳️‍🌈🏳️‍⚧️
 
 You can watch it live on https://twitch.tv/cucumberbdd or watch old sessions on our [YouTube channel](https://www.youtube.com/playlist?list=PLrQMyTCtW0DZolJHWBLELne1EF2gqMaHc).
