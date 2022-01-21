@@ -1339,49 +1339,6 @@ class RunCucumberTest {
 
 The default option for `monochrome` is `false`.
 
-**Skip undefined tests:**
-
-For example if you want to skip undefined steps from execution, you can specify it like this:
-
-```java
-package com.example;
-
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-@CucumberOptions(strict=false)
-public class RunCucumberTest {
-}
-```
-
-```kotlin
-package com.example
-
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
-
-@RunWith(Cucumber.class)
-@CucumberOptions(strict=false)
-class RunCucumberTest
-```
-
-```scala
-package com.example;
-
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
-
-@RunWith(Cucumber.class)
-@CucumberOptions(strict=false)
-class RunCucumberTest {
-}
-```
-The default option for `strict` is `true`.
-
 **Select scenarios using tags:**
 
 For example if you want to tell Cucumber to only run the scenarios specified with specific tags, you can specify it like this:
