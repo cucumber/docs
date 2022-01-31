@@ -289,7 +289,7 @@ To take a screenshot on failure, you can configure an [after hook](/docs/cucumbe
 
 {{% block "java,javascript,kotlin" %}}
 Below is an example of how to take a screenshot with
-[WebDriver](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/TakesScreenshot.html)
+[WebDriver](https://www.selenium.dev/documentation/webdriver/browser/windows/#takescreenshot)
 for failed scenarios and embed them in Cucumber's report.
 {{% /block %}}
 
