@@ -31,7 +31,7 @@ Free, open source, any platform </p>
 
 <div class="trio-desc">Our open source tool tests business-readable specifications against your code on any modern development stack. With over 30 million downloads, Cucumber Open is the world's #1 tool for Behaviour-Driven Development.</div>
 
-<div class="trio-link"><a class="btn btn-cucumber-outlined" href="https://cucumber.io/docs/installation/">View Docs</a></div>
+<div class="trio-link"><a class="btn btn-cucumber-outlined" href="/docs/installation/">View Docs</a></div>
 </div>
 
 <div class="col-12 col-md-4 trio-col active">
