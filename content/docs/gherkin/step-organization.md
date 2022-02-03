@@ -6,6 +6,7 @@ polyglot:
  - javascript
  - ruby
  - kotlin
+ - golang
 
 ---
 
@@ -15,16 +16,16 @@ This will make your project more logical and easier to maintain.
 
 # How Cucumber finds your features and step definitions
 Be aware that, regardless of the directory structure employed, Cucumber effectively flattens the `features/` directory tree when running tests.
-This means that anything ending in {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}}
+This means that anything ending in {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}}{{% text "golang" %}}`.go`{{% /text %}}
 inside the directory in which Cucumber is run is treated as a step definition. In the same directory, Cucumber will search for a `Feature` corresponding to that step definition.
-This is either the default case or the location specified with the {{% text "java,kotlin" %}}relevant{{% /text %}}{{% text "javascript" %}}relevant{{% /text %}}{{% text "ruby" %}}`-r`{{% /text %}} option.
+This is either the default case or the location specified with the {{% text "java,kotlin" %}}relevant{{% /text %}}{{% text "javascript" %}}relevant{{% /text %}}{{% text "ruby" %}}`-r`{{% /text %}}{{% text "golang" %}}relevant{{% /text %}} option.
 
 # Grouping step definitions
 Technically it doesn't matter how you name your step definition files, or which step definitions you put in a file.
 You *could* have one giant file containing all your step definitions. However, as the project grows, the file can become messy and hard to maintain.
-Instead, we recommend creating a separate{{% text "ruby" %}} `*_steps.rb`{{% /text %}}{{% text "java" %}} `StepDefinitions.java`{{% /text %}}{{% text "kotlin" %}} `StepDefinitions.kt`{{% /text %}}{{% text "javascript" %}} `*_steps.js`{{% /text %}} file for each domain concept.
+Instead, we recommend creating a separate{{% text "ruby" %}} `*_steps.rb`{{% /text %}}{{% text "java" %}} `StepDefinitions.java`{{% /text %}}{{% text "kotlin" %}} `StepDefinitions.kt`{{% /text %}}{{% text "javascript" %}} `*_steps.js`{{% /text %}}{{% text "golang" %}} `*_steps.go`{{% /text %}} file for each domain concept.
 
-A good rule of thumb is to have one file for each major {{% text "ruby" %}}model/database table.{{% /text %}}{{% text "java,kotlin" %}}domain object.{{% /text %}}{{% text "javascript" %}}domain object.{{% /text %}}
+A good rule of thumb is to have one file for each major {{% text "ruby" %}}model/database table.{{% /text %}}{{% text "java,kotlin" %}}domain object.{{% /text %}}{{% text "javascript" %}}domain object.{{% /text %}}{{% text "golang" %}}domain object.{{% /text %}}
 
 For example, in a Curriculum Vitae application, we might have:
 {{% block "ruby" %}}
@@ -51,8 +52,14 @@ For example, in a Curriculum Vitae application, we might have:
 - `experience_steps.js`
 - `authentication_steps.js`
 {{% /block %}}
+{{% block "golang" %}}
+- `employee_steps.go`
+- `education_steps.go`
+- `experience_steps.go`
+- `authentication_steps.go`
+{{% /block %}}
 
-The first three files would define all the `Given`, `When`, and `Then` step definitions related to creating, reading, updating, and deleting the various {{% text "ruby" %}}models.{{% /text %}}{{% text "java" %}}types of objects.{{% /text %}}{{% text "javascript" %}}types of objects.{{% /text %}}
+The first three files would define all the `Given`, `When`, and `Then` step definitions related to creating, reading, updating, and deleting the various {{% text "ruby" %}}models.{{% /text %}}{{% text "java,golang" %}}types of objects.{{% /text %}}{{% text "javascript" %}}types of objects.{{% /text %}}
 The last file would define step definitions related to logging in and out, and the different things a certain user is allowed to do in the system.
 
 If you follow this pattern, you also avoid the
@@ -112,6 +119,14 @@ fun `I want to open page`(webpage: String) {
 }
 ```
 
+```golang
+s.Step(`^I go to the "([^"]*)" page$`, goToPage)
+
+func goToPage(webpage string) error {
+ return webpageFactory.Open(webpage)
+}
+```
+
 Your step definitions are the glue to the actual code (in this example, a factory method to decide which page to open).
 They can also be used to hide implementation details by calling several reusable helper methods from one step
 definition.
@@ -124,7 +139,7 @@ This helps in a number of ways:
 
 You can handle other behaviours, like *validating a web page, clicking a button, etc.*, the same way.
 
-{{% text "java,kotlin" %}}We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.{{% /text %}}
+{{% text "java,kotlin,golang" %}}We suggest taking a look at the [Factory Design Pattern] (https://refactoring.guru/design-patterns/factory-method) as well.{{% /text %}}
 Also, using [Data Tables](/docs/cucumber/api/#data-tables) for providing inputs to steps helps increase maintainability and understandability.
 
 # Helper methods
@@ -134,6 +149,6 @@ On the other hand, do not lose sight that every step called as such in a step de
 [Gherkin](/docs/gherkin/) and therefore must conform to the same syntax as used in feature files.
 
 In fact, it is recommended to refactor step definitions into helper methods for greater modularity and reuse.
-The method can reside in the same {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}} file as the step definition.
+The method can reside in the same {{% text "java" %}}`.java`{{% /text %}}{{% text "kotlin" %}}`.kt`{{% /text %}}{{% text "javascript" %}}`.js`{{% /text %}}{{% text "ruby" %}}`.rb`{{% /text %}}{{% text "golang" %}}`.go`{{% /text %}} file as the step definition.
 
 This makes your project more understandable for people who join your project at a later date; which also makes your project easier to maintain.
