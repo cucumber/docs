@@ -9,15 +9,18 @@ Wherever you interact with the Cucumber Open community, always remember to respe
 
 # Slack
 
-To access our growing Slack community, you'll need to [register for an account](https://cucumberbdd-slack-invite.herokuapp.com/).
+To access our lively Slack community, you'll need to [register for an account](https://cucumberbdd-slack-invite.herokuapp.com/).
 
-Once you've received your invite, head over to [#intros](https://cucumberbdd.slack.com/messages/C5WD8SA21) to introduce yourself to the rest of the community, or [#help](https://cucumberbdd.slack.com/messages/C60TKS3SL/) if you need help urgently (or try the help channel for your programming language).
-Each channel has a topic, to help you pick the right channel to ask your question.
-If you're interested in becoming an open-source contributor, please go to [#the_greenhouse ](https://cucumberbdd.slack.com/messages/C60FTHJ22/). Or just wander around and make yourself at home!
+Once you've received your invite, head over to [#welcome](https://cucumberbdd.slack.com/messages/C5WD8SA21) to introduce yourself to the rest of the community, or [#help](https://cucumberbdd.slack.com/messages/C60TKS3SL/) if you need help using Cucumber.
 
-# Cucumber Community
-[Cucumber Community](https://community.smartbear.com/t5/Cucumber-Open/bd-p/CucumberOS) is a great place to get your questions answered, and to share your knowledge with others.
+If you're interested in becoming an [open-source contributor](https://cucumber.io/docs/community/new-contributors/), come and hang out in the [#new-contributors ](https://cucumberbdd.slack.com/archives/C028E2TBDJQ) channel.
 
-# Premium Support
+Or just wander around and make yourself at home!
 
-When you want guaranteed access to bug fixes and prompt, expert help, you need [premium support](mailto:sales@cucumber.io).
+# Stack Overflow
+
+Many people use the [`cucumber`](https://stackoverflow.com/questions/tagged/cucumber) and [`bdd`](https://stackoverflow.com/questions/tagged/bdd) tags on Stack Overflow to ask or answer questions about Cucumber.
+
+# SmartBear Community Forums
+
+The [Cucumber Forum](https://community.smartbear.com/t5/Cucumber-Open/bd-p/CucumberOS) on SmartBear's community forums is a good place to share your knowledge with others and hang out with other users from SmartBear's ecosystem.
