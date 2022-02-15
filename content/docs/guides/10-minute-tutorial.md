@@ -1497,9 +1497,9 @@ Feature: Is it Friday yet?
 
   Examples:
     | day            | answer |
-    | Friday         | TGIF   |
-    | Sunday         | Nope   |
-    | anything else! | Nope   |
+    | "Friday"         | TGIF   |
+    | "Sunday"         | Nope   |
+    | "anything else!" | Nope   |
 ```
 
 We need to replace the step definitions for `today is Sunday` and `today is Friday` with one step definition that takes the value of `<day>` as a String.
