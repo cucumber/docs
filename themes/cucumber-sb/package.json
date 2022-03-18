@@ -10,7 +10,7 @@
     "node-sass": "7.0.1",
     "postcss-cli": "9.1.0",
     "rimraf": "3.0.2",
-    "yarn": "1.22.17"
+    "yarn": "1.22.18"
   },
   "scripts": {
     "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix",
