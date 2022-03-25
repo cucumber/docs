@@ -13,8 +13,8 @@ Leaking state makes your scenarios brittle, and difficult to run in isolation.
 
 To prevent leaking state between scenarios:
 
-* Avoid using global or static variables.{{% block "java,kotlin" %}}
-* Be aware of how [cucumber parallel execution](/docs/guides/parallel-execution/) works, and access shared state via a ThreadLocal if parallel execution is enabled.{{% /block %}}
+* Avoid using global or static variables.
+{{% block "java,kotlin" %}}* Be aware of how [cucumber parallel execution](/docs/guides/parallel-execution/) works, and access shared state via a ThreadLocal if parallel execution is enabled.{{% /block %}}
 * Make sure you clean your database in a `Before` hook.
 * If you share a browser between scenarios, delete cookies in a `Before` hook.
 
