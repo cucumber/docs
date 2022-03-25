@@ -13,7 +13,7 @@ Leaking state makes your scenarios brittle, and difficult to run in isolation.
 
 To prevent leaking state between scenarios:
 
-* Avoid using global or static variables.{% block "java,kotlin" %}}
+* Avoid using global or static variables.{{% block "java,kotlin" %}}
 * Be aware of how [cucumber parallel execution](/docs/guides/parallel-execution/) works, and access shared state via a ThreadLocal if parallel execution is enabled.{{% /block %}}
 * Make sure you clean your database in a `Before` hook.
 * If you share a browser between scenarios, delete cookies in a `Before` hook.
@@ -28,7 +28,7 @@ It's possible to store object state in variables inside your step definitions.
 State can make your steps more tightly coupled and harder to reuse.
 {{% /note %}}
 {{% /block %}}
-{% block "java,kotlin" %}}
+{{% block "java,kotlin" %}}
 In the presence of [cucumber parallel execution](/docs/guides/parallel-execution/) it is advisable to share state via a ThreadLocal.{{% /block %}}
 
 ## World object
