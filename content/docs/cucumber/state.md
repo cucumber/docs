@@ -27,7 +27,6 @@ It's possible to store object state in variables inside your step definitions.
 {{% note "Be careful with state"%}}
 State can make your steps more tightly coupled and harder to reuse.
 {{% /note %}}
-{{% /block %}}
 {{% block "java,kotlin" %}}
 In the presence of [cucumber parallel execution](/docs/guides/parallel-execution/) it is advisable to share state via a ThreadLocal.{{% /block %}}
 
