@@ -126,7 +126,7 @@ information in the
 Cucumber will create a new instance of each of your glue code classes before each scenario.
 
 If all of your glue code classes have an empty constructor, you don’t need anything else.
-However, most projects will benefit from a dependency injection (DI) module to organize your code better and to share state between step definitions.
+However, most projects will benefit from a dependency injection (DI) module to organize your code better and to share state between step definitions (see word of caution below regarding spring and state).
 
 The available dependency injection modules are:
 
@@ -184,7 +184,7 @@ compile group: 'io.cucumber', name: 'cucumber-spring', version: '{{% version "cu
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/spring).
 
-Be aware that a single spring application context is used by all scenarios and so care must be taken to avoid a situation where the execution of one scenario might interfere with the execution of another concurrent scenario due to state held by objects in the spring application context.
+A word of caution: Be aware that a single spring application context is used by all scenarios and so care must be taken to avoid a situation where the execution of one scenario might interfere with the execution of another concurrent scenario due to state held by objects in the spring application context.
 
 {{% /block %}}
 
