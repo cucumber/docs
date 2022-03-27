@@ -35,7 +35,7 @@ State can make your steps more tightly coupled and harder to reuse.
 
 Cucumber on the JVM will create a new instance of each of your glue code classes before each scenario so variables on your steps will not leak state. 
 
-However, if spring is used then one should be aware that a single spring application context is used across all scenarios and as such the application context is effectively a global space through which features may interfere with each other. 
+However, if spring is used then one should be aware that a single spring application context is used across all scenarios and as such the application context is effectively a global space through which scenarios may interfere with each other. 
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} 
