@@ -8,13 +8,12 @@ polyglot:
 - kotlin
 ---
 
-It's important to prevent state created by one scenario from leaking into others.
-Leaking state makes your scenarios brittle, and difficult to run in isolation.
+Scenarios must be independent from each other so it is important that state must not be shared between scenarios.
+Accidentally leaking stste from one scenarios into others makes your scenarios brittle and also difficult to run in isolation.
 
 To prevent leaking state between scenarios:
 
 * Avoid using global or static variables.
-{{% block "java,kotlin" %}}* Be aware of how [cucumber parallel execution](/docs/guides/parallel-execution/) works, and access shared state via a ThreadLocal if parallel execution is enabled.{{% /block %}}
 * Make sure you clean your database in a `Before` hook.
 * If you share a browser between scenarios, delete cookies in a `Before` hook.
 
@@ -22,13 +21,11 @@ To prevent leaking state between scenarios:
 
 Within your scenarios, you might want to share state between steps.
 
-It's possible to store object state in variables inside your step definitions.
+It's possible to store state in variables inside your step definitions{{% block "java,kotlin" %}}, however because scenarios may be run in parallel then any shared steps will need to handle shared state in a thread-safe manner. Step authors should be aware of the mechanics of [cucumber parallel execution](/docs/guides/parallel-execution/) and choose an approach that ensures that steps accessing shared state within one scenario cannot interfere with state accessed concurrently by steps executing in a some other scenario. One obvious approach is to access state via a ThreadLocal, however other approaches to isolate state to a single scenario execution are possble{{% /block %}}.
 
 {{% note "Be careful with state"%}}
 State can make your steps more tightly coupled and harder to reuse.
 {{% /note %}}
-{{% block "java,kotlin" %}}
-In the presence of [cucumber parallel execution](/docs/guides/parallel-execution/) it is advisable to share state via a ThreadLocal.{{% /block %}}
 
 ## World object
 
