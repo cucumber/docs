@@ -31,7 +31,12 @@ It's possible to store state in variables inside your step definitions.
 State can make your steps more tightly coupled and harder to reuse.
 {{% /note %}}
 
-{{% block "java,kotlin" %}}Because scenarios on the JVM may be run in parallel within the same process then any steps will need to handle shared state in a thread-safe manner. Step authors should be aware of the mechanics of [cucumber parallel execution](/docs/guides/parallel-execution/) and choose an approach that ensures that steps accessing shared state within one scenario cannot interfere with state accessed concurrently by steps executing in a some other scenario. One obvious approach is to access state via a ThreadLocal, however other approaches to isolate state to a single scenario execution are possble.{{% /block %}}
+{{% block "java,kotlin" %}}Because scenarios on the JVM may be run in parallel within the same process then any steps will need to handle shared state in a thread-safe manner. 
+
+Cucumber on the JVM will create a new instance of each of your glue code classes before each scenario so variables on your steps will not leak state. 
+
+However, if spring is used then one should be aware that a single spring application context is used across all scenarios and as such the application context is effectively a global space through which features may interfere with each other. 
+{{% /block %}}
 
 {{% block "ruby,javascript" %}} 
 ## World object
@@ -178,6 +183,9 @@ compile group: 'io.cucumber', name: 'cucumber-spring', version: '{{% version "cu
 ```
 
 There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/spring).
+
+Be aware that a single spring application context is used by all scenarios and so care must be taken to avoid a situation where the execution of one scenario might interfere with the execution of another concurrent scenario due to state held by objects in the spring application context.
+
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Spring is a Dependency Injection framework for JVM languages. {{% /block %}}
