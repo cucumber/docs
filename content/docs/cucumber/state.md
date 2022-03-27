@@ -27,7 +27,7 @@ It's possible to store state in variables inside your step definitions.
 State can make your steps more tightly coupled and harder to reuse.
 {{% /note %}}
 
-{{% block "java,kotlin" %}}Because scenarios on the JVM may be run in parallel within the same process then any steps will need to handle shared state in a thread-safe manner. Step authors should be aware of the mechanics of [cucumber parallel execution](/docs/guides/parallel-execution/) and choose an approach that ensures that steps accessing shared state within one scenario cannot interfere with state accessed concurrently by steps executing in a some other scenario. One obvious approach is to access state via a ThreadLocal, however other approaches to isolate state to a single scenario execution are possble{{% /block %}}.
+{{% block "java,kotlin" %}}Because scenarios on the JVM may be run in parallel within the same process then any steps will need to handle shared state in a thread-safe manner. Step authors should be aware of the mechanics of [cucumber parallel execution](/docs/guides/parallel-execution/) and choose an approach that ensures that steps accessing shared state within one scenario cannot interfere with state accessed concurrently by steps executing in a some other scenario. One obvious approach is to access state via a ThreadLocal, however other approaches to isolate state to a single scenario execution are possble.{{% /block %}}
 
 ## World object
 
