@@ -33,7 +33,9 @@ State can make your steps more tightly coupled and harder to reuse.
 
 {{% block "java,kotlin" %}}Because scenarios on the JVM may be run in parallel within the same process then any steps will need to handle shared state in a thread-safe manner. Step authors should be aware of the mechanics of [cucumber parallel execution](/docs/guides/parallel-execution/) and choose an approach that ensures that steps accessing shared state within one scenario cannot interfere with state accessed concurrently by steps executing in a some other scenario. One obvious approach is to access state via a ThreadLocal, however other approaches to isolate state to a single scenario execution are possble.{{% /block %}}
 
+{{% block "ruby,javascript" %}} 
 ## World object
+{{% /block %}} 
 
 {{% block "ruby" %}}
 In Ruby, Cucumber runs scenarios in a `World`. By default, the `World` is an instance of `Object`.
@@ -111,9 +113,6 @@ to a lot of Rails' helper methods.
 information in the
 [cucumber-js documentation on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/world.md).
 {{% /block %}}
-
-{{% block "java,kotlin" %}} JVM languages do not know a "World" object, like Ruby and JavaScript. Instead, you'll need
-to use [Dependency Injection](#dependency-injection).{{% /block %}}
 
 ## Dependency Injection
 {{% block "java,kotlin" %}} If your programming language is a JVM language, you will be writing glue code
@@ -537,7 +536,7 @@ Cucumber::Rails::World.use_transactional_fixtures = false
 ```
 {{% /block %}}
 
-{{% block "java,kotlin,javascript" %}} Ruby tools provide specific ways to turn of transactions. {{% /block %}}
+{{% block "java,kotlin,javascript" %}} Ruby tools provide specific ways to turn off transactions. {{% /block %}}
 
 ## Cleaning Your Database
 {{% block "ruby" %}} If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), a good tool to deal with this is
