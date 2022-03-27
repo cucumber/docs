@@ -15,7 +15,7 @@ Don't do it.
 Scenarios must be independent from each other so it is important that state must not be shared between scenarios.
 Accidentally leaking state from one scenarios into others makes your scenarios brittle and also difficult to run in isolation.
 
-To prevent leaking state between scenarios:
+To prevent accidentally leaking state between scenarios:
 
 * Avoid using global or static variables.
 * Make sure you clean your database in a `Before` hook.
