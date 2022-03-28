@@ -126,7 +126,7 @@ information in the
 Cucumber will create a new instance of each of your glue code classes before each scenario.
 
 If all of your glue code classes have an empty constructor, you don’t need anything else.
-However, most projects will benefit from a dependency injection (DI) module to organize your code better and to share state between step definitions (see word of caution below regarding spring and state).
+However, most projects will benefit from a dependency injection (DI) module to organize your code better and to share state between step definitions.
 
 The available dependency injection modules are:
 
