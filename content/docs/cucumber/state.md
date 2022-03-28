@@ -35,7 +35,7 @@ State can make your steps more tightly coupled and harder to reuse.
 
 Cucumber on the JVM will create a new instance of each of your glue code classes before each scenario so variables on your steps will not leak state. 
 
-However, if spring is used then one should be aware that a single spring application context is used across all scenarios and as such the application context is effectively a global space through which scenarios may interfere with each other. 
+If spring is used then one must make sure that any beans used to share step state are annotated with `io.cucumber.spring.ScenarioScope` otherwise they will be spring singletons that persist across scenarios and leak state. 
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} 
@@ -182,9 +182,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-spring', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/spring).
-
-A word of caution: Be aware that a single spring application context is used by all scenarios and so care must be taken to avoid a situation where the execution of one scenario might interfere with the execution of another concurrent scenario due to state held by objects in the spring application context.
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/spring). Particular attention should be paid to the discussion on the use of the `io.cucumber.spring.ScenarioScope` annotation to ensure that state beans do not persist across scenarios and so do not leak state.
 
 {{% /block %}}
 
