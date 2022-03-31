@@ -1,3 +1,5 @@
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
+
 # Cucumber Documentation
 
 This repository contains the source code for [https://cucumber.io/docs](https://cucumber.io/docs).
