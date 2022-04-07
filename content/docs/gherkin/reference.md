@@ -93,6 +93,8 @@ The free format description for `Feature` ends when you start a line with the ke
 You can place [tags](/docs/cucumber/api/#tags) above `Feature` to group related features,
 independent of your file and directory structure.
 
+You can only have a single `Feature` in a `.feature` file.
+
 ## Descriptions
 
 Free-form descriptions (as described above for `Feature`) can also be placed underneath
