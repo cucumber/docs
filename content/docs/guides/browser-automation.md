@@ -148,7 +148,7 @@ Then('the page title should start with {string}', {timeout: 60 * 1000}, async fu
     expect(isTitleStartWithCheese).to.equal(true);
 });
 
-AfterAll('end', async function(){
+AfterAll(async function(){
     await driver.quit();
 });
 ```
