@@ -261,10 +261,10 @@ browserslist@^4.20.3:
     node-releases "^2.0.3"
     picocolors "^1.0.0"
 
-bulma@0.9.3:
-  version "0.9.3"
-  resolved "https://registry.npmjs.org/bulma/-/bulma-0.9.3.tgz"
-  integrity sha512-0d7GNW1PY4ud8TWxdNcP6Cc8Bu7MxcntD/RRLGWuiw/s0a9P+XlH/6QoOIrmbj6o8WWJzJYhytiu9nFjTszk1g==
+bulma@0.9.4:
+  version "0.9.4"
+  resolved "https://registry.npmjs.org/bulma/-/bulma-0.9.4.tgz"
+  integrity sha512-86FlT5+1GrsgKbPLRRY7cGDg8fsJiP/jzTqXXVqiUZZ2aZT8uemEOHlU1CDU+TxklPEZ11HZNNWclRBBecP4CQ==
 
 cacache@^15.2.0:
   version "15.3.0"
