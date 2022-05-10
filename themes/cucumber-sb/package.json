@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "10.4.7",
-    "bulma": "0.9.3",
+    "bulma": "0.9.4",
     "concurrently": "7.1.0",
     "node-sass": "7.0.1",
     "postcss-cli": "9.1.0",
