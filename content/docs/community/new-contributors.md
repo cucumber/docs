@@ -14,6 +14,8 @@ You can also read our manifesto:
 
 ![New contributors ensemble manifesto](https://cucumber.io/img/mob-manifesto-v3.png)
 
+## Would you like to join us?
+
 Everyone is welcome! If you'd like to join in, [sign up for the Community Slack](https://cucumberbdd-slack-invite.herokuapp.com/) and head over to the [#new-contributors](https://cucumberbdd.slack.com/archives/C028E2TBDJQ) channel and say hello. 
 
 If you're new to open source and feeling a bit nervous 😳, we understand! We recommend watching [this excellent guide](https://egghead.io/talks/git-how-to-make-your-first-open-source-contribution) to give you a grounding in some of the basic concepts. We want you to feel safe to make mistakes, and ask questions.
