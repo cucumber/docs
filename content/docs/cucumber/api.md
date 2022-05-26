@@ -130,11 +130,11 @@ When Cucumber finds a matching step definition it will execute it. If the block 
 
 #### Undefined
 
-When Cucumber can't find a matching step definition, the step gets marked as undefined (yellow), and all subsequent steps in the scenario are skipped. If you use `--strict`, this will cause Cucumber to exit with `1`.
+When Cucumber can't find a matching step definition, the step gets marked as undefined (yellow), and all subsequent steps in the scenario are skipped.
 
 #### Pending
 
-When a step definition's method or function invokes the `pending` method, the step is marked as pending (yellow, as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
+When a step definition's method or function invokes the `pending` method, the step is marked as pending (yellow, as with `undefined` ones), indicating that you have work to do.
 
 #### Failed Steps
 
@@ -1535,7 +1535,6 @@ cucumber.ansi-colors.disabled=  # true or false. default: false
 cucumber.execution.dry-run=     # true or false. default: false
 cucumber.execution.limit=       # number of scenarios to execute (CLI only).
 cucumber.execution.order=       # lexical, reverse, random or random:[seed] (CLI only). default: lexical
-cucumber.execution.strict=      # true or false. default: true.
 cucumber.execution.wip=         # true or false. default: false.
 cucumber.features=              # comma separated paths to feature files. example: path/to/example.feature, path/to/other.feature
 cucumber.filter.name=           # regex. example: .*Hello.*
