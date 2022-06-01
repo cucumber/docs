@@ -39,7 +39,7 @@ that should not be followed by one, your test(s) will be ignored.
 
 # Keywords
 
-Each line that isn't a blank line has to start with a Gherkin *keyword*, followed by any text you like. The only exceptions are the feature and scenario descriptions.
+Each line that isn't a blank line has to start with a Gherkin *keyword*, followed by any text you like. The only exceptions are the free-form descriptions placed underneath `Example`/`Scenario`, `Background`, `Scenario Outline` and `Rule` lines.
 
 The primary keywords are:
 
