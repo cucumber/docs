@@ -487,14 +487,8 @@ You should see something like the following:
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
-Running hellocucumber.RunCucumberTest
-No features found at [classpath:hellocucumber]
 
-0 Scenarios
-0 Steps
-0m0.004s
-
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.541 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 
 Results :
 
