@@ -302,34 +302,27 @@ As a soultion to this problem, [ package level functions](https://kotlinlang.org
 {{% /warn %}}
 
 ```kotlin
-class MyStepDefinitions  {
 
-    companion object {
+package io.cucumber.example
 
-        @JvmStatic
+import io.cucumber.java.AfterAll
+import io.cucumber.java.BeforeAll
 
-        @BeforeAll
+class MyStepDefinitions {
+    @BeforeAll
+    fun beforeAll() {
+        println("before all")
+    }
 
-        fun beforeAll() {
-
-            println("before all")
-
-        }
-
-        @JvmStatic
-
-        @AfterAll
-
-        fun afterAll() {
-
-            println("after all")
-
-
-        }
-
+    @AfterAll
+    fun afterAll() {
+        println("after all")
     }
 
     //some steps declaration
+
+}
+
 ```
 {{% /block %}}
 
