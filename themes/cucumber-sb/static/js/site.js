@@ -91,12 +91,56 @@ function showOnly(language) {
   }
 }
 
+function updateQueryParam(selectedLang){
+  let params = location.search.split("&")
+  if(params.length > 1){
+    params.forEach((element, index) => {
+      if(element.includes("lang")){
+        params[index] = 'lang=' + selectedLang
+      }
+    });
+    return location.search = params.join("&")
+  }else{
+    return location.search = 'lang=' + selectedLang
+  }
+}
+
+function getLangFromUrl(){
+  let params = location.search.split("&")
+  var lang  = ''
+  if(params[0].length > 1){
+    params.forEach((element, index) => {
+      if(element.includes("lang")){
+        lang =  params[index].split("=")[1]
+      }
+    });
+  }
+    return lang
+}
+
 // Activate
 
+var supportedLanguages = [
+  "java",
+  "javascript",
+  "ruby",
+  "kotlin",
+  "scala"
+]
+
 ready(function() {
+  var selectedLang = getLangFromUrl();
+  if(selectedLang != '' && selectedLang != null && supportedLanguages.includes(selectedLang)){
+    showOnly(selectedLang)
+  }else{
+    //setting default language
+    showOnly("java")
+  }
+
   each(document, '.tabs li', function(li) {
     var language = li.getAttribute('data-language')
     li.addEventListener('click', function () {
+      window.location.search = updateQueryParam(language);
       showOnly(language)
     })
   })
