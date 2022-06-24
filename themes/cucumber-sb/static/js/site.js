@@ -128,13 +128,19 @@ var supportedLanguages = [
   "scala"
 ]
 
+var defaulLanguage = 'java'
+
 ready(function() {
   var selectedLang = getLangFromUrl();
-  if(selectedLang != '' && selectedLang != null && supportedLanguages.includes(selectedLang)){
-    showOnly(selectedLang)
+  if((selectedLang == '' || selectedLang == null)){
+    if(localStorage.getItem('language') == ''){
+      showOnly(defaulLanguage)
+      localStorage.setItem('language', defaulLanguage)
+    }else{
+      showOnly(localStorage.getItem('language'))
+    }
   }else{
-    //setting default language
-    showOnly("java")
+    showOnly(selectedLang)
   }
 
   each(document, '.tabs li', function(li) {
