@@ -308,7 +308,6 @@ package io.cucumber.example
 import io.cucumber.java.AfterAll
 import io.cucumber.java.BeforeAll
 
-class MyStepDefinitions {
     @BeforeAll
     fun beforeAll() {
         println("before all")
@@ -321,7 +320,6 @@ class MyStepDefinitions {
 
     //some steps declaration
 
-}
 
 ```
 {{% /block %}}
