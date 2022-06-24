@@ -140,7 +140,16 @@ ready(function() {
       showOnly(localStorage.getItem('language'))
     }
   }else{
-    showOnly(selectedLang)
+    if(supportedLanguages.includes(selectedLang)){
+      showOnly(selectedLang)
+    }else{
+      if(localStorage.getItem('language') == ''){
+        showOnly(defaulLanguage)
+        localStorage.setItem('language', defaulLanguage)
+      }else{
+        showOnly(localStorage.getItem('language'))
+      }
+    }
   }
 
   each(document, '.tabs li', function(li) {
