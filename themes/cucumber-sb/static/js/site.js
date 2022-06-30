@@ -120,8 +120,8 @@ function getLangFromUrl(){
 
 function setDefaultLang(){
   if(!supportedLanguages.includes(localStorage.getItem('language'))){
-    showOnly(defaulLanguage)
-    localStorage.setItem('language', defaulLanguage)
+    showOnly(defaultLanguage)
+    localStorage.setItem('language', defaultLanguage)
   }else{
     showOnly(localStorage.getItem('language'))
   }
@@ -136,7 +136,7 @@ var supportedLanguages = [
   "scala"
 ]
 
-var defaulLanguage = 'java'
+var defaultLanguage = 'java'
 
 ready(function() {
   var selectedLang = getLangFromUrl();
