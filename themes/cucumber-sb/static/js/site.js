@@ -118,6 +118,14 @@ function getLangFromUrl(){
     return lang
 }
 
+function setDefaultLang(){
+  if(!supportedLanguages.includes(localStorage.getItem('language'))){
+    showOnly(defaulLanguage)
+    localStorage.setItem('language', defaulLanguage)
+  }else{
+    showOnly(localStorage.getItem('language'))
+  }
+}
 // Activate
 
 var supportedLanguages = [
@@ -133,22 +141,12 @@ var defaulLanguage = 'java'
 ready(function() {
   var selectedLang = getLangFromUrl();
   if((selectedLang == '' || selectedLang == null)){
-    if(localStorage.getItem('language') == ''){
-      showOnly(defaulLanguage)
-      localStorage.setItem('language', defaulLanguage)
-    }else{
-      showOnly(localStorage.getItem('language'))
-    }
+    setDefaultLang()
   }else{
     if(supportedLanguages.includes(selectedLang)){
       showOnly(selectedLang)
     }else{
-      if(localStorage.getItem('language') == ''){
-        showOnly(defaulLanguage)
-        localStorage.setItem('language', defaulLanguage)
-      }else{
-        showOnly(localStorage.getItem('language'))
-      }
+      setDefaultLang()
     }
   }
 
