@@ -285,6 +285,42 @@ Before(10) { scenario: Scenario ->
     // Do something before each scenario
 }
 ```
+{{% warn " Using Kotlin named objects or companion objects" %}}
+
+If @BeforeAll, @AfterAll etc are used in Kotlin named objects or companion objects an `io.cucumber.java.InvalidMethodSignatureException`
+
+will be thrown. As, Kotlin will create a class `MyStepDefinitions$Companion` which has non-static methods 
+
+- [ read more about it here](https://kotlinlang.org/docs/java-to-kotlin-interop.html#static-methods).
+
+The `@JvmStatic` annotation does not prevent this behaviour of Kotlin, it adds the static methods to `MyStepDefinitionsMethod` only. 
+
+Consequently, Cucumber will detect the static methods in `MyStepDefinitions` class, as well as the non-static methodss in `MyStepDefinitions$Companion` class and will complain about the second one.
+
+As a soultion to this problem, [ package level functions](https://kotlinlang.org/docs/java-to-kotlin-interop.html#package-level-functions) - this is, withouth companion objects. 
+
+{{% /warn %}}
+
+```kotlin
+
+package io.cucumber.example
+
+import io.cucumber.java.AfterAll
+import io.cucumber.java.BeforeAll
+
+@BeforeAll
+fun beforeAll() {
+   println("before all")
+}
+
+@AfterAll
+fun afterAll() {
+   println("after all")
+}
+
+
+```
+
 {{% /block %}}
 
 {{% block "scala" %}}
