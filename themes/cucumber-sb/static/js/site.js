@@ -118,10 +118,9 @@ function getLangFromUrl(){
     return lang
 }
 
-function setDefaultLang(){
+function showDefaultLang(){
   if(!supportedLanguages.includes(localStorage.getItem('language'))){
     showOnly(defaultLanguage)
-    localStorage.setItem('language', defaultLanguage)
   }else{
     showOnly(localStorage.getItem('language'))
   }
@@ -140,14 +139,10 @@ var defaultLanguage = 'java'
 
 ready(function() {
   var selectedLang = getLangFromUrl();
-  if((selectedLang == '' || selectedLang == null)){
-    setDefaultLang()
-  }else{
-    if(supportedLanguages.includes(selectedLang)){
-      showOnly(selectedLang)
+  if((selectedLang == '' || !supportedLanguages.includes(selectedLang))){
+    showDefaultLang()
     }else{
-      setDefaultLang()
-    }
+      showOnly(selectedLang)
   }
 
   each(document, '.tabs li', function(li) {
