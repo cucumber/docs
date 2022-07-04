@@ -122,25 +122,29 @@ function getLangFromUrl(){
 
 ready(function() {
   const supportedLanguages = [...document.querySelectorAll('.tabs li')].map((li) => li.getAttribute('data-language'))
-  const defaultLanguage = supportedLanguages[0]
-  const localLanguage = localStorage.getItem('language');
-  const selectedLanguage = getLangFromUrl();
 
-  if (supportedLanguages.includes(selectedLanguage)) {
-    showOnly(selectedLanguage)
-  } else if (supportedLanguages.includes(localLanguage)) {
-    showOnly(localLanguage)
-  } else {
-    showOnly(defaultLanguage)
+  if (supportedLanguages.length >= 1) {
+    const defaultLanguage = supportedLanguages[0]
+    const localLanguage = localStorage.getItem('language');
+    const selectedLanguage = getLangFromUrl();
+
+    if (supportedLanguages.includes(selectedLanguage)) {
+      showOnly(selectedLanguage)
+    } else if (supportedLanguages.includes(localLanguage)) {
+      showOnly(localLanguage)
+    } else {
+      showOnly(defaultLanguage)
+    }
+
+    each(document, '.tabs li', function(li) {
+      var language = li.getAttribute('data-language')
+      li.addEventListener('click', function () {
+        window.location.search = updateQueryParam(language);
+        showOnly(language)
+      })
+    })
   }
 
-  each(document, '.tabs li', function(li) {
-    var language = li.getAttribute('data-language')
-    li.addEventListener('click', function () {
-      window.location.search = updateQueryParam(language);
-      showOnly(language)
-    })
-  })
 
   each(document, '.panel.collapsible > a', function(a) {
     var targetSelector = a.getAttribute('data-target');
