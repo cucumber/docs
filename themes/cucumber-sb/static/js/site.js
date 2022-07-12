@@ -91,31 +91,9 @@ function showOnly(language) {
   }
 }
 
-function updateQueryParam(selectedLang){
-  let params = location.search.split("&")
-  if(params.length > 1){
-    params.forEach((element, index) => {
-      if(element.includes("lang")){
-        params[index] = 'lang=' + selectedLang
-      }
-    });
-    return location.search = params.join("&")
-  }else{
-    return location.search = 'lang=' + selectedLang
-  }
-}
-
-function getLangFromUrl(){
-  let params = location.search.split("&")
-  var lang  = ''
-  if(params[0].length > 1){
-    params.forEach((element, index) => {
-      if(element.includes("lang")){
-        lang =  params[index].split("=")[1]
-      }
-    });
-  }
-    return lang
+function updateQueryParam(url, language){
+  url.searchParams.set('lang', language);
+  window.history.pushState({}, '', url);
 }
 
 function showDefaultLang(){
@@ -128,25 +106,29 @@ function showDefaultLang(){
 // Activate
 
 ready(function() {
+  const url = new URL(window.location);
   const supportedLanguages = [...document.querySelectorAll('.tabs li')].map((li) => li.getAttribute('data-language'))
 
   if (supportedLanguages.length >= 1) {
     const defaultLanguage = supportedLanguages[0]
     const localLanguage = localStorage.getItem('language');
-    const selectedLanguage = getLangFromUrl();
+    const selectedLanguage = url.searchParams.get('lang');
 
     if (supportedLanguages.includes(selectedLanguage)) {
+      updateQueryParam(url, selectedLanguage)
       showOnly(selectedLanguage)
     } else if (supportedLanguages.includes(localLanguage)) {
+      updateQueryParam(url, localLanguage)
       showOnly(localLanguage)
     } else {
+      updateQueryParam(url, defaultLanguage)
       showOnly(defaultLanguage)
     }
 
     each(document, '.tabs li', function(li) {
       var language = li.getAttribute('data-language')
       li.addEventListener('click', function () {
-        window.location.search = updateQueryParam(language);
+        updateQueryParam(url, language)
         showOnly(language)
       })
     })
