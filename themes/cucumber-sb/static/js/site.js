@@ -127,31 +127,31 @@ function showDefaultLang(){
 }
 // Activate
 
-var supportedLanguages = [
-  "java",
-  "javascript",
-  "ruby",
-  "kotlin",
-  "scala"
-]
-
-var defaultLanguage = 'java'
-
 ready(function() {
-  var selectedLang = getLangFromUrl();
-  if((selectedLang == '' || !supportedLanguages.includes(selectedLang))){
-    showDefaultLang()
-    }else{
-      showOnly(selectedLang)
+  const supportedLanguages = [...document.querySelectorAll('.tabs li')].map((li) => li.getAttribute('data-language'))
+
+  if (supportedLanguages.length >= 1) {
+    const defaultLanguage = supportedLanguages[0]
+    const localLanguage = localStorage.getItem('language');
+    const selectedLanguage = getLangFromUrl();
+
+    if (supportedLanguages.includes(selectedLanguage)) {
+      showOnly(selectedLanguage)
+    } else if (supportedLanguages.includes(localLanguage)) {
+      showOnly(localLanguage)
+    } else {
+      showOnly(defaultLanguage)
+    }
+
+    each(document, '.tabs li', function(li) {
+      var language = li.getAttribute('data-language')
+      li.addEventListener('click', function () {
+        window.location.search = updateQueryParam(language);
+        showOnly(language)
+      })
+    })
   }
 
-  each(document, '.tabs li', function(li) {
-    var language = li.getAttribute('data-language')
-    li.addEventListener('click', function () {
-      window.location.search = updateQueryParam(language);
-      showOnly(language)
-    })
-  })
 
   each(document, '.panel.collapsible > a', function(a) {
     var targetSelector = a.getAttribute('data-target');
@@ -160,12 +160,6 @@ ready(function() {
       el.classList.toggle('collapsed');
     })
   })
-
-  var firstLi = document.querySelector('.tabs li')
-  if(firstLi) {
-    var language = localStorage.getItem('language') || firstLi.getAttribute('data-language')
-    showOnly(language)
-  }
 
   // Toggle navbar menu
   var burger = document.querySelector('.navbar-burger')
