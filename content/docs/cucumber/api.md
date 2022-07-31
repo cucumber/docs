@@ -88,7 +88,7 @@ See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50).
 [here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
 
 {{% text "java,kotlin" %}}In addition, see
-[cucumber-jvm data-tables](https://github.com/cucumber/cucumber-jvm/tree/main/java#data-tables){{% /text %}}
+[cucumber-jvm data-tables](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-java#data-tables){{% /text %}}
 
 # Steps
 
@@ -812,7 +812,7 @@ Tags that are placed above a `Scenario Outline` will be inherited by `Examples`.
 You can tell Cucumber to only run scenarios with a particular tag:
 
 {{% block "java,kotlin,scala" %}}
-For JUnit 5 see the [cucumber-junit-platform-engine documetation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#tags).
+For JUnit 5 see the [cucumber-junit-platform-engine documetation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#tags).
 
 For JUnit 4 and TestNG using a JVM system property:
 
@@ -1113,7 +1113,7 @@ You can also run features using a [build tool](/docs/tools/general#build-tools) 
 ## JUnit 5 
 
 {{% block "java,kotlin,scala" %}}
-See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
+See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options)
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -1141,7 +1141,7 @@ To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency t
   [...]
 </dependencies>
 ```
-Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine).
+Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine).
 Or include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
 
 Create an empty class that uses the Cucumber JUnit runner.
@@ -1555,7 +1555,7 @@ properties file and CLI arguments take precedence over all.
 
 Note that the `cucumber-junit-platform-engine` is provided with properties
 by the Junit Platform rather than Cucumber. See
-[junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
+[junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options)
 for more information.
 
 For example, if you are using Maven and want to run a subset of scenarios tagged

@@ -3,10 +3,10 @@
 # They can be referred to with the custom Hugo shortcode, e.g. {{% version "cucumberjvm" %}}
 #
 
-cucumberjvm: "7.0.0"
+cucumberjvm: "7.5.0"
 cucumberscala: "6.10.4"
 cucumberjs: "7.3.1"
 cucumberruby: "7.1.0"
 rspec: "3.10.0"
-testng: "7.4.0"
-junit: "5.8.1"
+testng: "7.6.1"
+junit: "5.9.0"
