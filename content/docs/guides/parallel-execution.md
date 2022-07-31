@@ -23,7 +23,7 @@ For each of these options, this tutorial will look at the project setup, configu
 
 Cucumber Scenarios can be executed in parallel using the **JUnit Platform**.
 
-See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine) for details.
+See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine) for details.
 {{% /block %}}
 
 # JUnit 4
@@ -302,7 +302,7 @@ If you have **multiple runners**, set the parallel configuration to `classes` to
 # CLI
 
 {{% block "java,kotlin" %}}
-The `Main class` in the `io.cucumber.core.cli package` is used to execute the feature files. You can run this class directly from the command line; in that case, there is no need to create any runner class. The usage options for this class are mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/v4.0.0/core/src/main/resources/cucumber/api/cli/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
+The `Main` class in the `io.cucumber.core.cli` package is used to execute the feature files. You can run this class directly from the command line; in that case, there is no need to create any runner class. The usage options for this class are mentioned [here](https://github.com/cucumber/cucumber-jvm/blob/main/cucumber-core/src/main/resources/io/cucumber/core/options/USAGE.txt). The `--threads` option needs to be set to a value **greater than 1** to run in parallel. When the parallel mode is used, the scenarios and rows in a scenario outline will be run in multiple threads.
 
 Follow the steps below to **execute the command from a terminal**.	
 

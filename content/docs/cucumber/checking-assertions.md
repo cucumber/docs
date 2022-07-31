@@ -13,7 +13,7 @@ from a unit testing tool.
 
 ## JUnit 5
 
-When using the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine)
+When using the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine)
 you are free to use any assertion library of your choice. For example:
 
  * [AssertJ](https://assertj.github.io/doc/)

@@ -106,7 +106,7 @@ You can now run Cucumber [from the command line](/docs/cucumber/api/#from-the-co
 
 # JUnit 5 integration
 
-It is also possible to use [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine) to run your Cucumber test suite.
+It is also possible to use [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine) to run your Cucumber test suite.
 
 # JUnit 4 integration
 

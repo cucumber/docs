@@ -77,11 +77,11 @@ For information on how to run the Cucumber CLI, see [From the command line](/doc
 For information about configuration options, see [Configuration](/docs/cucumber/configuration/).
 
 {{% block "java,kotlin" %}}
-When using JUnit 5, reference the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine).
+When using JUnit 5, reference the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine).
 
 When running Cucumber with JUnit 4, you can specify several options on how JUnit 4 should run your tests.
 Check the section on [JUnit](https://docs.cucumber.io/cucumber/api/#junit) for more information. For more
-details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/main/core/src/test/java/io/cucumber/core/options/CucumberOptions.java).
+details about the available CucumberOptions, check the [code](https://github.com/cucumber/cucumber-jvm/blob/main/cucumber-junit/src/main/java/io/cucumber/junit/CucumberOptions.java).
 
 
 {{% /block %}}
@@ -142,11 +142,11 @@ You can find the required dependencies [here](https://docs.cucumber.io/installat
 {{% /block %}}
 
 {{% block "java" %}}
-For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/main/examples/java8-calculator/src/test/java/io/cucumber/examples/java8/RpnCalculatorSteps.java).
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/main/examples/calculator-java8-cli/src/test/java/io/cucumber/examples/calculator/RpnCalculatorSteps.java).
 {{% /block %}}
 
 {{% block "kotlin" %}}
-For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/main/kotlin-java8/src/test/kotlin/io/cucumber/kotlin/LambdaStepDefinitions.kt).
+For an example on how to use them, see this [code example](https://github.com/cucumber/cucumber-jvm/blob/main/cucumber-kotlin-java8/src/test/kotlin/io/cucumber/kotlin/LambdaStepDefinitions.kt).
 {{% /block %}}
 
 ## How do I call other steps or scenarios?
@@ -254,7 +254,7 @@ multiple steps might match the same expression. Finally, this means that you can
 definitions, as that will lead to duplicates.
 
 # Does Cucumber-JVM support Kotlin?
-You can use [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) to write step definitions in Kotlin. Please have a look at the [Kotlin examples for cucumber-jvm](https://github.com/cucumber/cucumber-jvm/tree/master/kotlin-java8). 
+You can use [Cucumber-JVM](https://github.com/cucumber/cucumber-jvm) to write step definitions in Kotlin. Please have a look at the [Kotlin examples for cucumber-jvm](https://github.com/cucumber/cucumber-jvm/tree/master/cucumber-kotlin-java8). 
 At the moment it is not possible to generate step definitions in Kotlin. The reason for this is that there is no Kotlin Backend implemented. If this is something you'd like to work on, there is [a request for one](https://github.com/cucumber/cucumber-jvm/issues/1520). There is also a request for a [native Kotlin implementation of Cucumber](https://github.com/cucumber/cucumber/issues/331).
 
 # Cucumber can't find my step definitions in IntelliJ IDEA
