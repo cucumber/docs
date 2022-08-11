@@ -25,11 +25,9 @@ Please be aware that this tutorial assumes that you have a:
 
 {{% block "java" %}}
 * Basic understanding of the Java programming language
-* Basic understanding of the Gradle file
 {{% /block %}}
 {{% block "kotlin" %}}
 * Basic understanding of the Kotlin programming language
-* Basic understanding of the Gradle file
 {{% /block %}}
 {{% block "javascript" %}}
 * Basic understanding of the Javascript programming language
@@ -49,7 +47,6 @@ Before we begin, you will need the following:
 - [Java SE](https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
 - A build tool. You can choose between:
   - [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
-  - [Gradle](https://gradle.org/install/)
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
 - [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ)
@@ -106,11 +103,7 @@ Both of these commands should print a version number.
 # Create an empty Cucumber project
 
 {{% block "java,kotlin" %}}
-Decide whether you'd prefer to use Gradle or Maven.
-
-**With Maven**
-
-For Maven, we'll start by creating a new project directory with the `cucumber-archetype`
+We'll start by creating a new project directory with the `cucumber-archetype`
 Maven plugin. Open a terminal, go to the directory where you want to create your project,
 and run the following command:
 
@@ -142,44 +135,6 @@ cd hellocucumber
 Open the project in IntelliJ IDEA:
 
 * **File -> Open... -> (Select the pom.xml)**
-* Select **Open as Project**
-
-**With Gradle**
-
-One way to create this sample Cucumber project using Gradle is to convert the above generated Maven archetype into a Gradle project.
-
-Run the following command from the `hellocucumber` directory:
-
-```shell
-gradle init
-```
-Add following dependency configuration to your build.gradle file:
-```groovy
-configurations {
-    cucumberRuntime {
-        extendsFrom testImplementation
-    }
-}
-```
-Add the following Task to your `build.gradle` file:
-```groovy
-task cucumber() {
-    dependsOn assemble, testClasses
-    doLast {
-        javaexec {
-            main = "io.cucumber.core.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'hellocucumber', 'src/test/resources']
-        }
-    }
-}
-```
-Note that you also need to add the necessary dependencies/configurations to `build.gradle` depending on which version of Gradle you are using.
-See the [Build Tools](/docs/tools/java/#gradle) section. If you follow this guide be sure to set your `--glue` path to `hellocucumber` for this tutorial.
-
-If you have not already, open the project in IntelliJ IDEA:
-
-* **File -> Open... -> (Select build.gradle)**
 * Select **Open as Project**
 
 {{% /block %}}
@@ -453,14 +408,8 @@ You now have a small project with Cucumber installed.
 To make sure everything works together correctly, let's run Cucumber.
 
 {{% block "java,kotlin" %}}
-**Maven:**
 ```shell
 mvn test
-```
-
-**Gradle:**
-```shell
-gradle cucumber
 ```
 {{% /block %}}
 
@@ -575,15 +524,10 @@ The last three lines starting with `Given`, `When` and `Then` are the
 Now that we have a scenario, we can ask Cucumber to execute it.
 
 {{% block "java,kotlin" %}}
-**Maven:**
 ```shell
 mvn test
 ```
 
-**Gradle:**
-```shell
-gradle cucumber
-```
 {{% /block %}}
 
 {{% block "javascript" %}}
