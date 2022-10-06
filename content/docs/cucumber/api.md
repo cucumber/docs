@@ -623,7 +623,7 @@ under `features/support` directory).
 {{%block "ruby" %}}
 ```ruby
 BeforeAll do
-  # Do something before any scehario is executed
+  # Do something before any scenario is executed
 end
 ```
 {{% /block %}}
@@ -670,7 +670,7 @@ BeforeAll {
 {{%block "ruby" %}}
 ```ruby
 AfterAll do
-  # Do something after all sceharios have been executed
+  # Do something after all scenarios have been executed
 end
 ```
 {{% /block %}}
