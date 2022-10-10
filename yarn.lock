@@ -2,22 +2,22 @@
 # yarn lockfile v1
 
 
-"@cucumber/gherkin@24.0.0":
-  version "24.0.0"
-  resolved "https://registry.yarnpkg.com/@cucumber/gherkin/-/gherkin-24.0.0.tgz#b0d2ab328caa5357491f1117c31195d3e545da0c"
-  integrity sha512-b7OsnvX1B8myDAKMc+RAiUX9bzgtNdjGsiMj10O13xu2HBWIOQ19EqBJ4xLO5CFG/lGk1J/+L0lANQVowxLVBg==
+"@cucumber/gherkin@24.1.0":
+  version "24.1.0"
+  resolved "https://registry.yarnpkg.com/@cucumber/gherkin/-/gherkin-24.1.0.tgz#ca2dcbe11f5f7d7f30fd073280550bd6eca2363c"
+  integrity sha512-B48XrUod4y3SoXe6mv12q7U1zThUNSK3yHSm/hBJCJZ6RJUJhFk3FVMN/83qOEbsYZe6iG9v+4L1Myf8/q8C6g==
   dependencies:
-    "@cucumber/messages" "^19.0.0"
+    "@cucumber/messages" "^19.1.4"
 
-"@cucumber/messages@^19.0.0":
-  version "19.0.0"
-  resolved "https://registry.yarnpkg.com/@cucumber/messages/-/messages-19.0.0.tgz#3deac940b5f8ef2afc7ccc9a555a97b647a48de6"
-  integrity sha512-5kf5jTQZf3qI4vr7r/zs2UNg8e/v5wW698IAT+4htMQqBxZT5L0WSgbjz+2vXypHFwcEVIEfiwBaKG5ShthwFg==
+"@cucumber/messages@^19.1.4":
+  version "19.1.4"
+  resolved "https://registry.yarnpkg.com/@cucumber/messages/-/messages-19.1.4.tgz#5cefc47cac3004c0bc38d42933042ec248bb747c"
+  integrity sha512-Pksl0pnDz2l1+L5Ug85NlG6LWrrklN9qkMxN5Mv+1XZ3T6u580dnE6mVaxjJRdcOq4tR17Pc0RqIDZMyVY1FlA==
   dependencies:
     "@types/uuid" "8.3.4"
     class-transformer "0.5.1"
     reflect-metadata "0.1.13"
-    uuid "8.3.2"
+    uuid "9.0.0"
 
 "@types/uuid@8.3.4":
   version "8.3.4"
@@ -34,7 +34,7 @@ reflect-metadata@0.1.13:
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
   integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
-uuid@8.3.2:
-  version "8.3.2"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
-  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+uuid@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==

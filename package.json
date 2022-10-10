@@ -11,6 +11,6 @@
     "algolia": "atomic-algolia"
   },
   "dependencies": {
-    "@cucumber/gherkin": "24.0.0"
+    "@cucumber/gherkin": "24.1.0"
   }
 }
