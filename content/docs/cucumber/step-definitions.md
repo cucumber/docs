@@ -68,7 +68,7 @@ class StepDefinitions : En {
 
     init {
         Given("I have {int} cukes in my belly") { cukes: Int ->
-                prinln("Cukes: $cukes")
+                println("Cukes: $cukes")
         }
     }
 
@@ -87,7 +87,7 @@ class StepDefinitions : En {
 
     init {
         Given("I have {int} cukes in my belly") { cukes: Int ->
-                prinln("Cukes: $cukes")
+                println("Cukes: $cukes")
         }
     }
 
@@ -105,7 +105,7 @@ import io.cucumber.scala.{ScalaDsl, EN}
 class StepDefinitions extends ScalaDsl with EN {
 
     Given("I have {int} cukes in my belly") { cukes: Int =>
-        prinln(s"Cukes: $cukes")
+        println(s"Cukes: $cukes")
     }
 
 }
@@ -150,7 +150,7 @@ public void i_have_n_cukes_in_my_belly(int cukes) {
 {{% block "kotlin" %}}
 ```kotlin
 Given("I have {int} cukes in my belly") { cukes: Int ->
-        prinln("Cukes: $cukes")
+        println("Cukes: $cukes")
 }
 ```
 {{% /block %}}
@@ -158,7 +158,7 @@ Given("I have {int} cukes in my belly") { cukes: Int ->
 {{% block "scala" %}}
 ```scala
 Given("I have {int} cukes in my belly") { cukes: Int =>
-    prinln(s"Cukes: $cukes")
+    println(s"Cukes: $cukes")
 }
 ```
 {{% /block %}}
