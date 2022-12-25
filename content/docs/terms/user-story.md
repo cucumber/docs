@@ -3,7 +3,7 @@ title: User stories
 subtitle: Small increments of value used in planning agile developent work
 ---
 
-A User Story is small piece of valuable functionality used for planning and prioritising work on an agile team.
+A User Story is a small piece of valuable functionality used for planning and prioritising work on an agile team.
 
 # Futher reading
 
