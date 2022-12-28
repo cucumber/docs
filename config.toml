@@ -11,3 +11,6 @@ theme = "cucumber-sb"
 pygmentsUseClassic = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+
+[markup.goldmark.renderer]
+  unsafe = true
