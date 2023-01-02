@@ -4,13 +4,13 @@
   "author": "Cucumber Ltd",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "10.4.4",
-    "bulma": "0.9.3",
-    "concurrently": "7.0.0",
-    "node-sass": "7.0.1",
-    "postcss-cli": "9.1.0",
+    "autoprefixer": "10.4.13",
+    "bulma": "0.9.4",
+    "concurrently": "7.6.0",
+    "node-sass": "7.0.3",
+    "postcss-cli": "10.1.0",
     "rimraf": "3.0.2",
-    "yarn": "1.22.18"
+    "yarn": "1.22.19"
   },
   "scripts": {
     "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix",

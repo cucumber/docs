@@ -44,7 +44,7 @@ Imperative tests communicate details, and in some contexts this style of test is
 
 Here's an example of a feature in an imperative style:
 ```
-Feature: Subscribers see different sets of stock images based on their subscription level 
+Feature: Subscribers see different articles based on their subscription level 
 
 Scenario: Free subscribers see only the free articles
   Given users with a free subscription can access "FreeArticle1" but not "PaidArticle1" 
@@ -67,7 +67,7 @@ Each step is a precise instruction. The inputs and expected results are specifie
 A more declarative style hides the details of how the application's capabilities are implemented.
 
 ```
-Feature: Subscribers see different sets of stock images based on their subscription level
+Feature: Subscribers see different articles based on their subscription level
  
 Scenario: Free subscribers see only the free articles
   Given Free Frieda has a free subscription

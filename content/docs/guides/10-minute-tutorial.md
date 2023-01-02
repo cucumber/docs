@@ -25,11 +25,9 @@ Please be aware that this tutorial assumes that you have a:
 
 {{% block "java" %}}
 * Basic understanding of the Java programming language
-* Basic understanding of the Gradle file
 {{% /block %}}
 {{% block "kotlin" %}}
 * Basic understanding of the Kotlin programming language
-* Basic understanding of the Gradle file
 {{% /block %}}
 {{% block "javascript" %}}
 * Basic understanding of the Javascript programming language
@@ -49,7 +47,6 @@ Before we begin, you will need the following:
 - [Java SE](https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
 - A build tool. You can choose between:
   - [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
-  - [Gradle](https://gradle.org/install/)
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
 - [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ)
@@ -106,11 +103,7 @@ Both of these commands should print a version number.
 # Create an empty Cucumber project
 
 {{% block "java,kotlin" %}}
-Decide whether you'd prefer to use Gradle or Maven.
-
-**With Maven**
-
-For Maven, we'll start by creating a new project directory with the `cucumber-archetype`
+We'll start by creating a new project directory with the `cucumber-archetype`
 Maven plugin. Open a terminal, go to the directory where you want to create your project,
 and run the following command:
 
@@ -142,44 +135,6 @@ cd hellocucumber
 Open the project in IntelliJ IDEA:
 
 * **File -> Open... -> (Select the pom.xml)**
-* Select **Open as Project**
-
-**With Gradle**
-
-One way to create this sample Cucumber project using Gradle is to convert the above generated Maven archetype into a Gradle project.
-
-Run the following command from the `hellocucumber` directory:
-
-```shell
-gradle init
-```
-Add following dependency configuration to your build.gradle file:
-```groovy
-configurations {
-    cucumberRuntime {
-        extendsFrom testImplementation
-    }
-}
-```
-Add the following Task to your `build.gradle` file:
-```groovy
-task cucumber() {
-    dependsOn assemble, testClasses
-    doLast {
-        javaexec {
-            main = "io.cucumber.core.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'hellocucumber', 'src/test/resources']
-        }
-    }
-}
-```
-Note that you also need to add the necessary dependencies/configurations to `build.gradle` depending on which version of Gradle you are using.
-See the [Build Tools](/docs/tools/java/#gradle) section. If you follow this guide be sure to set your `--glue` path to `hellocucumber` for this tutorial.
-
-If you have not already, open the project in IntelliJ IDEA:
-
-* **File -> Open... -> (Select build.gradle)**
 * Select **Open as Project**
 
 {{% /block %}}
@@ -453,14 +408,8 @@ You now have a small project with Cucumber installed.
 To make sure everything works together correctly, let's run Cucumber.
 
 {{% block "java,kotlin" %}}
-**Maven:**
 ```shell
 mvn test
-```
-
-**Gradle:**
-```shell
-gradle cucumber
 ```
 {{% /block %}}
 
@@ -487,14 +436,8 @@ You should see something like the following:
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
-Running hellocucumber.RunCucumberTest
-No features found at [classpath:hellocucumber]
 
-0 Scenarios
-0 Steps
-0m0.004s
-
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.541 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 
 Results :
 
@@ -581,15 +524,10 @@ The last three lines starting with `Given`, `When` and `Then` are the
 Now that we have a scenario, we can ask Cucumber to execute it.
 
 {{% block "java,kotlin" %}}
-**Maven:**
 ```shell
 mvn test
 ```
 
-**Gradle:**
-```shell
-gradle cucumber
-```
 {{% /block %}}
 
 {{% block "javascript" %}}
@@ -615,36 +553,43 @@ steps.  It's also suggesting some snippets of code that we can use to
  T E S T S
 -------------------------------------------------------
 Running hellocucumber.RunCucumberTest
-Feature: Is it Friday yet?
-  Everybody wants to know when it's Friday
 
-  Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
-    Given today is Sunday              # null
-    When I ask whether it's Friday yet # null
-    Then I should be told "Nope"       # null
-
-Undefined scenarios:
-hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
-
-1 Scenarios (1 undefined)
-3 Steps (3 undefined)
-0m0.040s
-
-
-You can implement missing steps with the snippets below:
+Scenario: Sunday isn't Friday        # hellocucumber/is_it_friday_yet.feature:4
+  Given today is Sunday
+  When I ask whether it's Friday yet
+  Then I should be told "Nope"
+┌───────────────────────────────────────────────────────────────────────────────────┐
+│ Share your Cucumber Report with your team at https://reports.cucumber.io          │
+│ Activate publishing with one of the following:                                    │
+│                                                                                   │
+│ src/test/resources/cucumber.properties:          cucumber.publish.enabled=true    │
+│ src/test/resources/junit-platform.properties:    cucumber.publish.enabled=true    │
+│ Environment variable:                            CUCUMBER_PUBLISH_ENABLED=true    │
+│ JUnit:                                           @CucumberOptions(publish = true) │
+│                                                                                   │
+│ More information at https://cucumber.io/docs/cucumber/environment-variables/      │
+│                                                                                   │
+│ Disable this message with one of the following:                                   │
+│                                                                                   │
+│ src/test/resources/cucumber.properties:          cucumber.publish.quiet=true      │
+│ src/test/resources/junit-platform.properties:    cucumber.publish.quiet=true      │
+└───────────────────────────────────────────────────────────────────────────────────┘
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.15 s <<< FAILURE! - in hellocucumber.RunCucumberTest
+[ERROR] Is it Friday yet?.Sunday isn't Friday  Time elapsed: 0.062 s  <<< ERROR!
+io.cucumber.junit.platform.engine.UndefinedStepException: 
+The step 'today is Sunday' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
 
 @Given("today is Sunday")
-public void today_is_Sunday() {
+public void today_is_sunday() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
-
 @When("I ask whether it's Friday yet")
-public void i_ask_whether_it_s_Friday_yet() {
+public void i_ask_whether_it_s_friday_yet() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
-
 @Then("I should be told {string}")
 public void i_should_be_told(String string) {
     // Write code here that turns the phrase above into concrete actions
@@ -897,7 +842,7 @@ package hellocucumber;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class IsItFriday {
     static String isItFriday(String today) {

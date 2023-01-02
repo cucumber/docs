@@ -91,15 +91,49 @@ function showOnly(language) {
   }
 }
 
+function updateQueryParam(url, language){
+  url.searchParams.set('lang', language);
+  window.history.pushState({}, '', url);
+}
+
+function showDefaultLang(){
+  if(!supportedLanguages.includes(localStorage.getItem('language'))){
+    showOnly(defaultLanguage)
+  }else{
+    showOnly(localStorage.getItem('language'))
+  }
+}
 // Activate
 
 ready(function() {
-  each(document, '.tabs li', function(li) {
-    var language = li.getAttribute('data-language')
-    li.addEventListener('click', function () {
-      showOnly(language)
+  const url = new URL(window.location);
+  const supportedLanguages = [...document.querySelectorAll('.tabs li')].map((li) => li.getAttribute('data-language'))
+
+  if (supportedLanguages.length >= 1) {
+    const defaultLanguage = supportedLanguages[0]
+    const localLanguage = localStorage.getItem('language');
+    const selectedLanguage = url.searchParams.get('lang');
+
+    if (supportedLanguages.includes(selectedLanguage)) {
+      updateQueryParam(url, selectedLanguage)
+      showOnly(selectedLanguage)
+    } else if (supportedLanguages.includes(localLanguage)) {
+      updateQueryParam(url, localLanguage)
+      showOnly(localLanguage)
+    } else {
+      updateQueryParam(url, defaultLanguage)
+      showOnly(defaultLanguage)
+    }
+
+    each(document, '.tabs li', function(li) {
+      var language = li.getAttribute('data-language')
+      li.addEventListener('click', function () {
+        updateQueryParam(url, language)
+        showOnly(language)
+      })
     })
-  })
+  }
+
 
   each(document, '.panel.collapsible > a', function(a) {
     var targetSelector = a.getAttribute('data-target');
@@ -108,12 +142,6 @@ ready(function() {
       el.classList.toggle('collapsed');
     })
   })
-
-  var firstLi = document.querySelector('.tabs li')
-  if(firstLi) {
-    var language = localStorage.getItem('language') || firstLi.getAttribute('data-language')
-    showOnly(language)
-  }
 
   // Toggle navbar menu
   var burger = document.querySelector('.navbar-burger')

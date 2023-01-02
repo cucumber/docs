@@ -22,19 +22,7 @@ Make sure the Cucumber version is the same for all Cucumber dependencies.
 
 # Maven
 
-If you are going to use the lambda expressions API (Java 8) to write the step
-definitions, add the following dependency to your  `pom.xml`:
-
-```xml
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-java8</artifactId>
-    <version>{{% version "cucumberjvm" %}}</version>
-    <scope>test</scope>
-</dependency>
-```
-
-Otherwise, to write them using annotated methods, add the following dependency to your  `pom.xml`:
+Add the following dependency to your  `pom.xml`:
 
 ```xml
 <dependency>
@@ -49,22 +37,7 @@ You can now run Cucumber [from the command line](/docs/cucumber/api/#from-the-co
 
 # Gradle
 
-If you are using Gradle **4.10.3 or older**, and you are going to use the lambda expressions API (Java 8) to write the step
-definitions, add the following dependencies to `build.gradle`:
-
-
-```
-dependencies {
-    testCompile 'io.cucumber:cucumber-java8:{{% version "cucumberjvm" %}}'
-    testCompile 'io.cucumber:cucumber-junit:{{% version "cucumberjvm" %}}'
-}
-
-repositories {
-    mavenCentral()
-}
-```
-
-If you would prefer to write step definitions using annotated methods and you are using Gradle **4.10.3 or older**, add the following dependencies to `build.gradle`:
+If you are using Gradle **4.10.3 or older** add the following dependencies to `build.gradle`:
 
 ```
 dependencies {
@@ -77,19 +50,7 @@ repositories {
 }
 ```
 
-Similarly, if you want to use Gradle **5.0 or more recent**, and would like to use the lambda API, add the following block to `build.gradle`.
-```
-dependencies {
-    testImplementation 'io.cucumber:cucumber-java8:{{% version "cucumberjvm" %}}'
-    testImplementation 'io.cucumber:cucumber-junit:{{% version "cucumberjvm" %}}'
-}
-
-repositories {
-    mavenCentral()
-}
-```
-
-Otherwise, to write them using annotated methods, add the following dependencies to `build.gradle`:
+Similarly, if you want to use Gradle **5.0 or more recent** add the following dependencies to `build.gradle`:
 
 ```
 dependencies {
@@ -106,7 +67,7 @@ You can now run Cucumber [from the command line](/docs/cucumber/api/#from-the-co
 
 # JUnit 5 integration
 
-It is also possible to use [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine) to run your Cucumber test suite.
+It is also possible to use [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine) to run your Cucumber test suite.
 
 # JUnit 4 integration
 

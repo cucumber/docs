@@ -88,7 +88,7 @@ See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50).
 [here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
 
 {{% text "java,kotlin" %}}In addition, see
-[cucumber-jvm data-tables](https://github.com/cucumber/cucumber-jvm/tree/main/java#data-tables){{% /text %}}
+[cucumber-jvm data-tables](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-java#data-tables){{% /text %}}
 
 # Steps
 
@@ -130,11 +130,11 @@ When Cucumber finds a matching step definition it will execute it. If the block 
 
 #### Undefined
 
-When Cucumber can't find a matching step definition, the step gets marked as undefined (yellow), and all subsequent steps in the scenario are skipped. If you use `--strict`, this will cause Cucumber to exit with `1`.
+When Cucumber can't find a matching step definition, the step gets marked as undefined (yellow), and all subsequent steps in the scenario are skipped.
 
 #### Pending
 
-When a step definition's method or function invokes the `pending` method, the step is marked as pending (yellow, as with `undefined` ones), indicating that you have work to do. If you use `--strict`, this will cause Cucumber to exit with `1`.
+When a step definition's method or function invokes the `pending` method, the step is marked as pending (yellow, as with `undefined` ones), indicating that you have work to do.
 
 #### Failed Steps
 
@@ -285,6 +285,42 @@ Before(10) { scenario: Scenario ->
     // Do something before each scenario
 }
 ```
+{{% warn " Using Kotlin named objects or companion objects" %}}
+
+If @BeforeAll, @AfterAll etc are used in Kotlin named objects or companion objects an `io.cucumber.java.InvalidMethodSignatureException`
+
+will be thrown. As, Kotlin will create a class `MyStepDefinitions$Companion` which has non-static methods 
+
+- [ read more about it here](https://kotlinlang.org/docs/java-to-kotlin-interop.html#static-methods).
+
+The `@JvmStatic` annotation does not prevent this behaviour of Kotlin, it adds the static methods to `MyStepDefinitionsMethod` only. 
+
+Consequently, Cucumber will detect the static methods in `MyStepDefinitions` class, as well as the non-static methodss in `MyStepDefinitions$Companion` class and will complain about the second one.
+
+As a soultion to this problem, [ package level functions](https://kotlinlang.org/docs/java-to-kotlin-interop.html#package-level-functions) - this is, withouth companion objects. 
+
+{{% /warn %}}
+
+```kotlin
+
+package io.cucumber.example
+
+import io.cucumber.java.AfterAll
+import io.cucumber.java.BeforeAll
+
+@BeforeAll
+fun beforeAll() {
+   println("before all")
+}
+
+@AfterAll
+fun afterAll() {
+   println("after all")
+}
+
+
+```
+
 {{% /block %}}
 
 {{% block "scala" %}}
@@ -587,7 +623,7 @@ under `features/support` directory).
 {{%block "ruby" %}}
 ```ruby
 BeforeAll do
-  # Do something before any scehario is executed
+  # Do something before any scenario is executed
 end
 ```
 {{% /block %}}
@@ -634,7 +670,7 @@ BeforeAll {
 {{%block "ruby" %}}
 ```ruby
 AfterAll do
-  # Do something after all sceharios have been executed
+  # Do something after all scenarios have been executed
 end
 ```
 {{% /block %}}
@@ -776,7 +812,7 @@ Tags that are placed above a `Scenario Outline` will be inherited by `Examples`.
 You can tell Cucumber to only run scenarios with a particular tag:
 
 {{% block "java,kotlin,scala" %}}
-For JUnit 5 see the [cucumber-junit-platform-engine documetation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#tags).
+For JUnit 5 see the [cucumber-junit-platform-engine documetation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#tags).
 
 For JUnit 4 and TestNG using a JVM system property:
 
@@ -1077,7 +1113,7 @@ You can also run features using a [build tool](/docs/tools/general#build-tools) 
 ## JUnit 5 
 
 {{% block "java,kotlin,scala" %}}
-See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
+See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options)
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -1105,7 +1141,7 @@ To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency t
   [...]
 </dependencies>
 ```
-Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine).
+Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine).
 Or include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
 
 Create an empty class that uses the Cucumber JUnit runner.
@@ -1519,7 +1555,7 @@ properties file and CLI arguments take precedence over all.
 
 Note that the `cucumber-junit-platform-engine` is provided with properties
 by the Junit Platform rather than Cucumber. See
-[junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
+[junit-platform-engine Configuration Options](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options)
 for more information.
 
 For example, if you are using Maven and want to run a subset of scenarios tagged
@@ -1535,7 +1571,6 @@ cucumber.ansi-colors.disabled=  # true or false. default: false
 cucumber.execution.dry-run=     # true or false. default: false
 cucumber.execution.limit=       # number of scenarios to execute (CLI only).
 cucumber.execution.order=       # lexical, reverse, random or random:[seed] (CLI only). default: lexical
-cucumber.execution.strict=      # true or false. default: true.
 cucumber.execution.wip=         # true or false. default: false.
 cucumber.features=              # comma separated paths to feature files. example: path/to/example.feature, path/to/other.feature
 cucumber.filter.name=           # regex. example: .*Hello.*

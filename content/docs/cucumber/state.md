@@ -156,7 +156,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/picocontainer).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-picocontainer).
 For more information, please see [sharing state using PicoContainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
 {{% /block %}}
 
@@ -181,8 +181,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-spring', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/spring).
-
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-spring).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Spring is a Dependency Injection framework for JVM languages. {{% /block %}}
@@ -205,7 +204,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-guice', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/guice).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice).
 For more information, please see [sharing state using Guice](http://www.thinkcode.se/blog/2017/08/16/sharing-state-between-steps-in-cucumberjvm-using-guice).
 {{% /block %}}
 
@@ -229,7 +228,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-openejb', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/openejb).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-openejb).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} OpenEJB is a Dependency Injection framework for JVM languages. {{% /block %}}
@@ -252,7 +251,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-weld', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/weld).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-weld).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Weld is a Dependency Injection framework for JVM languages. {{% /block %}}
@@ -275,7 +274,7 @@ Or, if you are using Gradle, add:
 compile group: 'io.cucumber', name: 'cucumber-needle', version: '{{% version "cucumberjvm" %}}'
 ```
 
-There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/needle).
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-needle).
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Needle is a Dependency Injection framework for JVM languages. {{% /block %}}
@@ -451,7 +450,7 @@ cucumber.object-factory=com.example.app.CustomObjectFactory
 ### Using the Cucumber object factory with a test runner (JUnit 5/JUnit 4/TestNG)
 {{% block "java,kotlin" %}} 
 The Cucumber modules for [JUnit 4](/docs/cucumber/api/#junit) and [TestNG](/docs/cucumber/checking-assertions/#testng) allow to run Cucumber through a JUnit/TestNG test.
-The custom object factory can be configured using the `@CucumberOptions` annotation. For JUnit 5 see the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine) documentation.
+The custom object factory can be configured using the `@CucumberOptions` annotation. For JUnit 5 see the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine) documentation.
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Using the Cucumber object factory is specific to JVM languages. {{% /block %}}
@@ -499,7 +498,7 @@ Feature: Let's write a lot of stuff to the DB
 
 ### With JUnit 5 and Spring
 {{% block "java,kotlin" %}} 
-See the [`spring-txn`](https://github.com/cucumber/cucumber-jvm/tree/main/examples/spring-java-junit5) example in Cucumber-JVM for a minimal setup.
+See the [`spring-java-junit5`](https://github.com/cucumber/cucumber-jvm/tree/main/examples/spring-java-junit5) example in Cucumber-JVM for a minimal setup.
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} JUnit 5 and Spring are used with JVM languages. {{% /block %}}
