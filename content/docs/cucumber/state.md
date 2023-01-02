@@ -31,14 +31,13 @@ It's possible to store state in variables inside your step definitions.
 State can make your steps more tightly coupled and harder to reuse.
 {{% /note %}}
 
-{{% block "java,kotlin" %}}Because scenarios may be run in parallel within the same process then any steps  will need
-to handle shared state in a thread-safe manner, but in general Cucumber will create a new instance of each of your glue
-code classes before each scenario so your steps will not leak state.
+{{% block "java,kotlin" %}}Cucumber will create a new instance of each of your glue code classes before each scenario
+so your steps will not leak state.
 
 * Note: when using Spring there is [an annotation `ScenarioScope`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-spring#sharing-state)
   that may be used on any spring beans that have been employed to share step state; this annotation ensures that these
   beans do not persist across scenarios and so do not leak state.
-* Note: When using Guice there is [an annotation `ScenarioScoped`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice#using-scope-annotations)
+* Note: When using Guice there is [a scope 'ScenarioScope`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice#using-scope-annotations)
   that should always be used on step definition classes.
 {{% /block %}}
 
