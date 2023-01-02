@@ -2,11 +2,13 @@
 #
 # They can be referred to with the custom Hugo shortcode, e.g. {{% version "cucumberjvm" %}}
 #
+# The "renovate:" comments help Renovate understand what we are talking about and keep the versions up to date.
+# See https://docs.renovatebot.com/modules/manager/regex/
 
-cucumberjvm: "7.5.0"
-cucumberscala: "6.10.4"
-cucumberjs: "7.3.1"
-cucumberruby: "7.1.0"
-rspec: "3.10.0"
-testng: "7.6.1"
-junit: "5.9.0"
+cucumberjvm: "7.5.0" # renovate: datasource=maven depName=io.cucumber:cucumber-jvm
+cucumberscala: "6.10.4" # renovate: datasource=maven depName=io.cucumber:cucumber-jvm-scala
+cucumberjs: "7.3.1"  # renovate: datasource=npm depName=@cucumber/cucumber
+cucumberruby: "7.1.0" # renovate: datasource=rubygems depName=cucumber
+rspec: "3.10.0" # renovate: datasource=rubygems depName=rspec
+testng: "7.6.1" # renovate: datasource=maven depName=org.testng:testng
+junit: "5.9.0" # renovate: datasource=maven depName=org.junit:junit-bom

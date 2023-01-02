@@ -2,5 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>cucumber/renovate-config"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^data/versions.yaml"
+      ],
+      "matchStrings": [
+        ".*?:\\s+\"(?<currentValue>.*)\"\\s+#\\s+renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)\\n"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
   ]
 }
