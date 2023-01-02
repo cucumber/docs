@@ -39,8 +39,9 @@ so your steps will not leak state.
   beans do not persist across scenarios and so do not leak state.
 * Note: When using Guice there is [a scope 'ScenarioScope`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice#using-scope-annotations)
   that should always be used on step definition classes.
-{{% /block %}}
 
+See also [Dependency Injection](#dependency-injection).
+{{% /block %}}
 {{% block "ruby,javascript" %}} 
 ## World object
 {{% /block %}} 
