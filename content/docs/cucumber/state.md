@@ -8,10 +8,14 @@ polyglot:
 - kotlin
 ---
 
-It's important to prevent state created by one scenario from leaking into others.
-Leaking state makes your scenarios brittle, and difficult to run in isolation.
+# Sharing state between scenarios
 
-To prevent leaking state between scenarios:
+Don't do it.
+
+Scenarios must be independent from each other so it is important that state is not shared between scenarios.
+Accidentally leaking state from one scenario into others makes your scenarios brittle and also difficult to run in isolation.
+
+To prevent accidentally leaking state between scenarios:
 
 * Avoid using global or static variables.
 * Make sure you clean your database in a `Before` hook.
@@ -21,13 +25,26 @@ To prevent leaking state between scenarios:
 
 Within your scenarios, you might want to share state between steps.
 
-It's possible to store object state in variables inside your step definitions.
+It's possible to store state in variables inside your step definitions.
 
 {{% note "Be careful with state"%}}
 State can make your steps more tightly coupled and harder to reuse.
 {{% /note %}}
 
+{{% block "java,kotlin" %}}Cucumber will create a new instance of each of your glue code classes before each scenario
+so your steps will not leak state.
+
+* Note: when using Spring there is [an annotation `ScenarioScope`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-spring#sharing-state)
+  that may be used on any spring beans that have been employed to share step state; this annotation ensures that these
+  beans do not persist across scenarios and so do not leak state.
+* Note: When using Guice there is [a scope 'ScenarioScope`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice#using-scope-annotations)
+  that should always be used on step definition classes.
+
+See also [Dependency Injection](#dependency-injection).
+{{% /block %}}
+{{% block "ruby,javascript" %}} 
 ## World object
+{{% /block %}} 
 
 {{% block "ruby" %}}
 In Ruby, Cucumber runs scenarios in a `World`. By default, the `World` is an instance of `Object`.
@@ -105,9 +122,6 @@ to a lot of Rails' helper methods.
 information in the
 [cucumber-js documentation on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/world.md).
 {{% /block %}}
-
-{{% block "java,kotlin" %}} JVM languages do not know a "World" object, like Ruby and JavaScript. Instead, you'll need
-to use [Dependency Injection](#dependency-injection).{{% /block %}}
 
 ## Dependency Injection
 {{% block "java,kotlin" %}} If your programming language is a JVM language, you will be writing glue code
@@ -531,7 +545,7 @@ Cucumber::Rails::World.use_transactional_fixtures = false
 ```
 {{% /block %}}
 
-{{% block "java,kotlin,javascript" %}} Ruby tools provide specific ways to turn of transactions. {{% /block %}}
+{{% block "java,kotlin,javascript" %}} Ruby tools provide specific ways to turn off transactions. {{% /block %}}
 
 ## Cleaning Your Database
 {{% block "ruby" %}} If you're using [Ruby on Rails](/docs/tools/ruby#ruby-on-rails), a good tool to deal with this is
