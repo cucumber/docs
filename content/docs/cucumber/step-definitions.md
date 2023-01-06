@@ -139,7 +139,7 @@ Given('I have {int} cukes in my belly', function (cukes) {
 
 A step definition's *expression* can either be a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)
 or a [Cucumber Expression](/docs/cucumber/cucumber-expressions). The examples in this section use Cucumber Expressions. 
-If you prefer to use Regular Expressions, each *capture group* from the match will be passed as arguments to the step
+If you prefer to use Regular Expressions, each *{{% expression-parameter %}}* from the match will be passed as arguments to the step
 definition's {{% stepdef-body %}}.
 
 {{% block "java" %}}
@@ -185,7 +185,7 @@ Given(/I have {int} cukes in my belly/, function (cukes) {
 ```
 {{% /block %}}
 
-If the capture group expression is identical to one of the registered
+If the {{% expression-parameter %}} expression is identical to one of the registered
 [parameter types](/docs/cucumber/cucumber-expressions#parameter-types)'s `regexp`,
 the captured string will be transformed before it is passed to the
 step definition's {{% stepdef-body %}}. In the example above, the `cukes`
