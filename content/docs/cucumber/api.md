@@ -616,8 +616,11 @@ See more documentation on [tags](#tags).
 ## Global hooks
 
 Global hooks will run once before any scenario is run or after all scenario have
-been run. Put the code at the top-level in your `env.rb` file (or any other file
+been run.
+{{% block "ruby" %}}
+Put the code at the top-level in your `env.rb` file (or any other file
 under `features/support` directory).
+{{% /block %}}
 
 ### BeforeAll
 
@@ -719,26 +722,22 @@ AfterAll {
 
 ## InstallPlugin
 
-{{% text "ruby" %}}
-You may also provide an `InstallPlugin` hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`), and a wrapper to some cucumber internals as a registry.
-{{% /text %}}
-
 {{% block "ruby" %}}
+You may also provide an `InstallPlugin` hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`), and a wrapper to some cucumber internals as a registry.
+
 ```ruby
 InstallPlugin do |config, registry|
   puts "Features dwell in #{config.feature_dirs}"
 end
 ```
-{{% /block %}}
 
-{{% text "ruby" %}}
 This hook will run _only once_: after support has been loaded, and before any features are loaded.
 
 You can use this hook to extend Cucumber. For example, you could affect how features are loaded, or register custom formatters programmatically.
 
 [cucumber-wire](https://github.com/cucumber/cucumber-ruby-wire) is a good example
 of how to use InstallPlugin and what a Cucumber plugin can do.
-{{% /text %}}
+{{% /block %}}
 
 {{% text "java,kotlin,scala" %}}Cucumber-JVM does not support the `InstallPlugin` hook.{{% /text %}}
 {{% text "javascript" %}}Cucumber.js does not support the `InstallPlugin` hook.{{% /text %}}
@@ -880,7 +879,11 @@ cucumber --tags "@smoke and @fast"
 
 You can tell Cucumber to ignore scenarios with a particular tag:
 
+{{% block "java,kotlin,scala" %}}
+
 Using JUnit runner class:
+
+{{% /block %}}
 
 {{% block "java" %}}
  ```java
