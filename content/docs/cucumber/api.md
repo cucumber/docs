@@ -84,13 +84,14 @@ by Cucumber (using `DataTable.asList(String.class)`) before invoking the step de
 Short, Long and Double are also supported.{{% /text %}}
 
 {{% block "scala" %}}
+
 **Note:** For now, Cucumber Scala does not support using Scala collection types.
+
 See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50)
 
 {{% /block %}}
 
-{{% text "javascript" %}} For an example of data tables in JavaScript, go
-[here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
+{{% text "javascript" %}} For an example of data tables in JavaScript, go [here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
 
 {{% text "java,kotlin" %}}In addition, see
 [cucumber-jvm data-tables](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-java#data-tables){{% /text %}}
@@ -1078,6 +1079,7 @@ It is possible to [configure](/docs/cucumber/configuration) how Cucumber should 
 {{% block "ruby" %}}
 The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in `.rb` under the root library directory as a step definition file.
 Thus, a step contained in `features/models/entities/step_definitions/anything.rb` can be used in a feature file contained in `features/views/entity_new`, provided that:
+
 - Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
 - explicitly required on the command line
 {{% /block %}}
@@ -1085,6 +1087,7 @@ Thus, a step contained in `features/models/entities/step_definitions/anything.rb
 {{% block "javascript" %}}
 The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in`.js` under the root directory as a step definition file.
 Thus, a step contained in `features/models/entities/step-definitions/anything.js` can be used in a feature file, provided that:
+
 - Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
 - explicitly required on the command line
 {{% /block %}}
@@ -1159,7 +1162,7 @@ You can also run features using a [build tool](/docs/tools/general#build-tools) 
 ## JUnit 5 
 
 {{% block "java,kotlin,scala" %}}
-See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options)
+See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options) for more information.
 
 {{% /block %}}
 
