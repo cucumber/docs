@@ -159,6 +159,7 @@ Thread ID - 14 - Scenario 2 from scenarios feature file.
 {{% block "kotlin" %}}
 For Failsafe to find your step definitions, make sure they are in src/test/**java**.
 {{% /block %}}
+
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -363,12 +364,14 @@ For a **visual representation** of threads, add the **timeline report** using th
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 @CucumberOptions(plugin= {"timeline:<report folder>"})
 ```
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 @CucumberOptions(plugin = ["timeline:<report folder>"])
 ```

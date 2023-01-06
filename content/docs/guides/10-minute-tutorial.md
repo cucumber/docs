@@ -408,12 +408,14 @@ You now have a small project with Cucumber installed.
 To make sure everything works together correctly, let's run Cucumber.
 
 {{% block "java,kotlin" %}}
+
 ```shell
 mvn test
 ```
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 # Run via NPM
 npm test
@@ -424,6 +426,7 @@ npx cucumber-js
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 cucumber
 ```
@@ -432,6 +435,7 @@ cucumber
 You should see something like the following:
 
 {{% block "java,kotlin" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -451,6 +455,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 0 Scenarios
 0 steps
@@ -459,6 +464,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 0 scenarios
 0 steps
@@ -524,6 +530,7 @@ The last three lines starting with `Given`, `When` and `Then` are the
 Now that we have a scenario, we can ask Cucumber to execute it.
 
 {{% block "java,kotlin" %}}
+
 ```shell
 mvn test
 ```
@@ -531,6 +538,7 @@ mvn test
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 npm test
 ```
@@ -548,6 +556,7 @@ steps.  It's also suggesting some snippets of code that we can use to
 *define* these steps:
 
 {{% block "java,kotlin" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -599,6 +608,7 @@ public void i_should_be_told(String string) {
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 UUU
 
@@ -637,6 +647,7 @@ Warnings:
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -718,6 +729,7 @@ class StepDefs {
 Run Cucumber again. This time the output is a little different:
 
 {{% block "java" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -749,6 +761,7 @@ io.cucumber.java.PendingException: TODO: implement me
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -779,6 +792,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.351 sec
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 P--
 
@@ -797,6 +811,7 @@ Warnings:
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -836,6 +851,7 @@ which we believe is a great way to make your production code and tests more unde
 Change your step definition code to this:
 
 {{% block "java" %}}
+
 ```java
 package hellocucumber;
 
@@ -873,6 +889,7 @@ public class Stepdefs {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package hellocucumber
 
@@ -908,6 +925,7 @@ class StepDefs {
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 const assert = require('assert');
 const { Given, When, Then } = require('@cucumber/cucumber');
@@ -931,6 +949,7 @@ Then('I should be told {string}', function (expectedAnswer) {
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 module FridayStepHelper
   def is_it_friday(day)
@@ -956,6 +975,7 @@ end
 Run Cucumber again:
 
 {{% block "java" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -987,6 +1007,7 @@ hellocucumber/is_it_friday_yet.feature:4 # Sunday isn't Friday
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -1008,6 +1029,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 ..F
 
@@ -1026,6 +1048,7 @@ Failures:
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -1059,6 +1082,7 @@ That's progress! The first two steps are passing, but the last one is failing.
 Let's do the minimum we need to make the scenario pass. In this case, that means making our {{% stepdef-body %}} return `Nope`:
 
 {{% block "java" %}}
+
 ```java
 static String isItFriday(String today) {
     return "Nope";
@@ -1067,12 +1091,14 @@ static String isItFriday(String today) {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 fun isItFriday(today: String) = "Nope"
 ```
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 function isItFriday(today) {
   return 'Nope';
@@ -1080,6 +1106,7 @@ function isItFriday(today) {
 ```
 {{% /block %}}
 {{% block "ruby" %}}
+
 ```ruby
 def is_it_friday(day)
   'Nope'
@@ -1090,6 +1117,7 @@ end
 Run Cucumber again:
 
 {{% block "java,kotlin" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -1110,6 +1138,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 ...
 
@@ -1120,6 +1149,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -1159,6 +1189,7 @@ Feature: Is it Friday yet?
 We'll need to add a step definition to set `today` to "Friday":
 
 {{% block "java" %}}
+
 ```java
 @Given("today is Friday")
 public void today_is_Friday() {
@@ -1168,6 +1199,7 @@ public void today_is_Friday() {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 @Given("today is Friday")
 fun today_is_Friday() {
@@ -1177,6 +1209,7 @@ fun today_is_Friday() {
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 Given('today is Friday', function () {
   this.today = 'Friday';
@@ -1185,6 +1218,7 @@ Given('today is Friday', function () {
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 Given("today is Friday") do
   @today = 'Friday'
@@ -1196,6 +1230,7 @@ end
 When we run this test, it will fail.
 
 {{% block "java" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -1236,6 +1271,7 @@ org.junit.ComparisonFailure: expected:<[TGIF]> but was:<[Nope]>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 .....F
 
@@ -1259,6 +1295,7 @@ Failures:
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -1290,6 +1327,7 @@ cucumber features/is_it_friday_yet.feature:9 # Scenario: Friday is Friday
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```shell
 Running hellocucumber.RunCucumberTest
 Feature: Is it Friday yet?
@@ -1333,6 +1371,7 @@ That is because we haven't implemented the logic yet! Let's do that next.
 We should update our statement to actually evaluate whether or not `today` is equal to `"Friday"`.
 
 {{% block "java" %}}
+
 ```java
 static String isItFriday(String today) {
     return "Friday".equals(today) ? "TGIF" : "Nope";
@@ -1341,12 +1380,14 @@ static String isItFriday(String today) {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 ```
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 function isItFriday(today) {
   if (today === "Friday") {
@@ -1358,8 +1399,8 @@ function isItFriday(today) {
 ```
 {{% /block %}}
 
-{{% block "ruby" %}}
-```ruby
+{{% block "ruby" 
+ruby
 def is_it_friday(day)
   if day == 'Friday'
     'TGIF'
@@ -1373,6 +1414,7 @@ end
 Run Cucumber again:
 
 {{% block "java,kotlin" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -1398,6 +1440,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 ......
 2 scenarios (2 passed)
@@ -1407,6 +1450,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday
@@ -1451,6 +1495,7 @@ We need to replace the step definitions for `today is Sunday` and `today is Frid
 Update the {{% text "java" %}}`StepDefinitions.java`{{% /text %}}{{% text "javascript" %}}`stepdefs.js`{{% /text %}}{{% text "ruby" %}}`stepdefs.rb`{{% /text %}} file as follows:
 
 {{% block "java" %}}
+
 ```java
 package hellocucumber;
 
@@ -1488,13 +1533,14 @@ public class Stepdefs {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package hellocucumber
 
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.When
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 fun isItFriday(today: String) = if (today == "Friday") "TGIF" else "Nope"
 
@@ -1522,6 +1568,7 @@ class StepDefs {
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 const assert = require('assert');
 const { Given, When, Then } = require('@cucumber/cucumber');
@@ -1550,6 +1597,7 @@ Then('I should be told {string}', function (expectedAnswer) {
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 module FridayStepHelper
   def is_it_friday(day)
@@ -1580,6 +1628,7 @@ end
 Run Cucumber again:
 
 {{% block "java,kotlin" %}}
+
 ```shell
 -------------------------------------------------------
  T E S T S
@@ -1617,6 +1666,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 .........
 
@@ -1627,6 +1677,7 @@ Feature: Is it Friday yet?
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 Feature: Is it Friday yet?
   Everybody wants to know when it's Friday

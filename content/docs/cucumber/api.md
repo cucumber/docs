@@ -70,6 +70,7 @@ fun the_following_animals(animals: List<String>) {
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 Given("the following animals:") { animals: java.util.List[String] =>
 }
@@ -219,6 +220,7 @@ Before { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 Before { scenario: Scenario =>
     // doSomething
@@ -227,6 +229,7 @@ Before { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 // Import the Before function
 const { Before } = require('@cucumber/cucumber')
@@ -244,6 +247,7 @@ sharing state between hooks and step definitions.
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 Before do
   # Do something before each scenario
@@ -375,6 +379,7 @@ After { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 After { scenario: Scenario =>
     // doSomething
@@ -478,6 +483,7 @@ BeforeStep { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 BeforeStep { scenario: Scenario =>
     // doSomething
@@ -486,6 +492,7 @@ BeforeStep { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 BeforeStep(async function({pickle, pickleStep, gherkinDocument, testCaseStartedId, testStepId}) {
     // doSomething
@@ -500,6 +507,7 @@ BeforeStep({tags: "@foo"}, async function() {
 ### AfterStep
 
 {{% block "ruby" %}}
+
 ```ruby
 AfterStep do |scenario|
 end
@@ -536,6 +544,7 @@ AfterStep { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 AfterStep { scenario: Scenario =>
     // doSomething
@@ -545,6 +554,7 @@ AfterStep { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 AfterStep(async function({pickle, pickleStep, gherkinDocument, result, testCaseStartedId, testStepId}) {
     // doSomething
@@ -590,6 +600,7 @@ After (arrayOf("@browser and not @headless")) { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 After("@browser and not @headless") { scenario: Scenario =>
 
@@ -598,6 +609,7 @@ After("@browser and not @headless") { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 Before({tags: '@browser and not @headless'}, async function () {
 })
@@ -605,6 +617,7 @@ Before({tags: '@browser and not @headless'}, async function () {
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 Before('@browser and not @headless') do
 end
@@ -627,6 +640,7 @@ under `features/support` directory).
 `BeforeAll` run before any scenario is run.
 
 {{% block "ruby" %}}
+
 ```ruby
 BeforeAll do
   # Do something before any scenario is executed
@@ -635,6 +649,7 @@ end
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 const { BeforeAll } = require('@cucumber/cucumber');
 
@@ -656,6 +671,7 @@ public static void beforeAll() {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 BeforeAll {
     // doSomething
@@ -664,6 +680,7 @@ BeforeAll {
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 BeforeAll {
     // doSomething
@@ -676,6 +693,7 @@ BeforeAll {
 `AfterAll` run after all scenarios have been executed.
 
 {{% block "ruby" %}}
+
 ```ruby
 AfterAll do
   # Do something after all scenarios have been executed
@@ -684,6 +702,7 @@ end
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 const { AfterAll } = require('@cucumber/cucumber');
 
@@ -705,6 +724,7 @@ public static void afterAll() {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 AfterAll {
     // doSomething
@@ -713,6 +733,7 @@ AfterAll {
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 AfterAll {
     // doSomething
@@ -841,6 +862,7 @@ Or changing your JUnit 4/TestNG  runner class:
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 @CucumberOptions(tags = "@smoke and @fast")
 public class RunCucumberTest {}
@@ -848,6 +870,7 @@ public class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 @CucumberOptions(tags = "@smoke and @fast")
 class RunCucumberTest
@@ -855,6 +878,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 @CucumberOptions(tags = "@smoke and @fast")
 class RunCucumberTest {}
@@ -862,6 +886,7 @@ class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 # You can omit the quotes if the expression is a single tag
 ./node_modules/.bin/cucumber.js --tags "@smoke and @fast"
@@ -869,6 +894,7 @@ class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 # You can omit the quotes if the expression is a single tag
 cucumber --tags "@smoke and @fast"
@@ -907,6 +933,7 @@ class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 # You can omit the quotes if the expression is a single tag
 ./node_modules/.bin/cucumber.js --tags "not @smoke"
@@ -914,6 +941,7 @@ class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 # You can omit the quotes if the expression is a single tag
 cucumber --tags "not @smoke"
@@ -1204,6 +1232,7 @@ For example if you want to tell Cucumber to use the two formatter plugins `prett
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1219,6 +1248,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1233,6 +1263,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 
@@ -1253,6 +1284,7 @@ step definitions use the `summary` plugin, you can specify it like this:
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1268,6 +1300,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1282,6 +1315,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 
@@ -1306,6 +1340,7 @@ For example if you want to check whether all feature file steps have correspondi
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1321,6 +1356,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1335,6 +1371,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 
@@ -1418,6 +1455,7 @@ For example if you want to tell Cucumber to only run the scenarios specified wit
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1433,6 +1471,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1447,6 +1486,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 
@@ -1469,6 +1509,7 @@ For example if you are using Cucumber with a DI framework and want to use a cust
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1484,6 +1525,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1498,6 +1540,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 

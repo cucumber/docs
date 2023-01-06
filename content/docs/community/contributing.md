@@ -26,6 +26,7 @@ Before you file an [Issue on Github](https://github.com/cucumber/cucumber/issues
 This way you don't waste time by reporting a bug that has already been fixed.
 
 {{% text "ruby" %}}Try the latest released gem:{{% /text %}}
+
 ``` ruby
 gem update cucumber
 ```

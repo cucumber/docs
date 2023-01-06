@@ -30,6 +30,7 @@ Scenario: Some cukes
 The `I have 48 cukes in my belly` part of the step (the text following the `Given` keyword) will match the following step definition:
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 import io.cucumber.java.en.Given;
@@ -115,6 +116,7 @@ class StepDefinitions extends ScalaDsl with EN {
 
 
 {{% block "ruby" %}}
+
 ```ruby
 Given('I have {int} cukes in my belly') do |cukes|
   puts "Cukes: #{cukes}"
@@ -123,6 +125,7 @@ end
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 const { Given } = require('cucumber')
 
@@ -140,6 +143,7 @@ If you prefer to use Regular Expressions, each *capture group* from the match wi
 definition's {{% stepdef-body %}}.
 
 {{% block "java" %}}
+
 ```java
 @Given("I have {int} cukes in my belly")
 public void i_have_n_cukes_in_my_belly(int cukes) {
@@ -148,6 +152,7 @@ public void i_have_n_cukes_in_my_belly(int cukes) {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 Given("I have {int} cukes in my belly") { cukes: Int ->
         println("Cukes: $cukes")
@@ -156,6 +161,7 @@ Given("I have {int} cukes in my belly") { cukes: Int ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 Given("I have {int} cukes in my belly") { cukes: Int =>
     println(s"Cukes: $cukes")
@@ -164,6 +170,7 @@ Given("I have {int} cukes in my belly") { cukes: Int =>
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 Given(/I have {int} cukes in my belly/) do |cukes|
 end
@@ -171,6 +178,7 @@ end
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 Given(/I have {int} cukes in my belly/, function (cukes) {
 });
@@ -224,6 +232,7 @@ If you don't have a matching step definition, Cucumber will suggest the followin
 snippet:
 
 {{% block "java" %}}
+
 ```java
 @Given("I have {int} red balls")
 public void i_have_red_balls(int int1) {
@@ -232,6 +241,7 @@ public void i_have_red_balls(int int1) {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 @Given("I have {int} red balls") { balls: Int ->
 }
@@ -239,6 +249,7 @@ public void i_have_red_balls(int int1) {
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 Given("I have {int} red balls") { balls: Int =>
 }
@@ -246,6 +257,7 @@ Given("I have {int} red balls") { balls: Int =>
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 Given('I have {int} red balls') do |int1|
 end
@@ -253,6 +265,7 @@ end
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 Given("I have {int} red balls", function (int1) {
 });
@@ -264,6 +277,7 @@ if they match parts of your undefined step. If a [color](/docs/cucumber/cucumber
 parameter type exists, Cucumber would use that in the suggested expression:
 
 {{% block "java" %}}
+
 ```java
 @Given("I have {int} {color} balls")
 public void i_have_color_balls(int int1, Color color) {
@@ -272,6 +286,7 @@ public void i_have_color_balls(int int1, Color color) {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 @Given("I have {int} {color} balls") { balls: Int, color: Color ->
 }
@@ -279,6 +294,7 @@ public void i_have_color_balls(int int1, Color color) {
 {{% /block %}}}
 
 {{% block "scala" %}}
+
 ```scala
 Given("I have {int} {color} balls") { (balls: Int, color: Color) =>
 }
@@ -286,6 +302,7 @@ Given("I have {int} {color} balls") { (balls: Int, color: Color) =>
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 Given('I have {int} {color} balls') do |int1, color|
 end
@@ -293,6 +310,7 @@ end
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 Given("I have {int} {color} balls", function (int1, color) {
 });
