@@ -29,7 +29,6 @@ This conversion can be done either by Cucumber or manually.
 {{% text "java,kotlin" %}}Depending on the table shape as one of the following collections:{{% /text %}}
 
 ```java
-
 List<List<String>> table
 List<Map<String, String>> table
 Map<String, String> table
@@ -48,30 +47,35 @@ Given the following animals:
   | sheep |
 ```
 
-Declare the argument as a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}{{% text "ruby,javascript" %}}list of strings{{% /text %}}, but don't define any capture groups in the expression:
+Declare the argument as a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}{{% text "ruby,javascript" %}}list of strings{{% /text %}}, but don't define any {{% expression-parameter %}}s in the expression:
 
-{{% text "java" %}}
+{{% block "java" %}}
+Annotated method style:
+
 ```java
 @Given("the following animals:")
 public void the_following_animals(List<String> animals) {
 }
 ```
-{{% /text %}}
+{{% /block %}}
 
-{{% text "kotlin" %}}
+{{% block "kotlin" %}}
+Annotated method style:
+
 ```kotlin
 @Given("the following animals:")
 fun the_following_animals(animals: List<String>) {
 }
 ```
-{{% /text %}}
+{{% /block %}}
 
-{{% text "scala" %}}
+{{% block "scala" %}}
+
 ```scala
 Given("the following animals:") { animals: java.util.List[String] =>
 }
 ```
-{{% /text %}}
+{{% /block %}}
 
 In this case, the `DataTable` is automatically flattened to a {{% text "java,kotlin" %}}`List<String>`{{% /text %}}{{% text "scala" %}}`java.util.List[String]`{{% /text %}}{{% text "ruby,javascript" %}}array of strings{{% /text %}}
 by Cucumber (using `DataTable.asList(String.class)`) before invoking the step definition.
@@ -79,13 +83,15 @@ by Cucumber (using `DataTable.asList(String.class)`) before invoking the step de
 {{% text "java,kotlin" %}}Note: In addition to collections of String, Integer, Float, BigInteger and BigDecimal, Byte,
 Short, Long and Double are also supported.{{% /text %}}
 
-{{% text "scala" %}}
-**Note:** For now, Cucumber Scala does not support using Scala collection types.
-See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50).
-{{% /text %}}
+{{% block "scala" %}}
 
-{{% text "javascript" %}} For an example of data tables in JavaScript, go
-[here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
+**Note:** For now, Cucumber Scala does not support using Scala collection types.
+
+See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50)
+
+{{% /block %}}
+
+{{% text "javascript" %}} For an example of data tables in JavaScript, go [here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
 
 {{% text "java,kotlin" %}}In addition, see
 [cucumber-jvm data-tables](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-java#data-tables){{% /text %}}
@@ -107,14 +113,14 @@ Steps are declared in your {{% text "ruby" %}}`features/\*.feature`{{% /text %}}
 ## Matching steps
 
 1. Cucumber matches a step against a step definition's `Regexp`
-2. Cucumber gathers any capture groups or variables
-3. Cucumber passes them to the step definition's {{% text "ruby" %}}`Proc` (or “function”){{% /text %}}{{% text "javascript" %}}function{{% /text %}}{{% text "java,scala" %}}method{{% /text %}} and executes it
+2. Cucumber gathers any {{% expression-parameter %}}s or variables
+3. Cucumber passes them to the step definition's {{% stepdef-body %}} and executes it
 
 Recall that step definitions start with a [preposition](https://www.merriam-webster.com/dictionary/given) or an [adverb](https://www.merriam-webster.com/dictionary/when) (**`Given`**, **`When`**, **`Then`**, **`And`**, **`But`**).
 
 All step definitions are loaded (and defined) before Cucumber starts to execute the plain text in the feature file.
 
-Once execution begins, for each step, Cucumber will look for a registered step definition with a matching `Regexp`. If it finds one, it will execute it, passing all capture groups and variables from the Regexp as arguments to the method or function.
+Once execution begins, for each step, Cucumber will look for a registered step definition with a matching `Regexp`. If it finds one, it will execute it, passing all {{% expression-parameter %}}s and variables from the Regexp as arguments to the {{% stepdef-body %}}.
 
 The specific preposition/adverb used has **no** significance when Cucumber is registering or looking up step definitions.
 
@@ -134,17 +140,17 @@ When Cucumber can't find a matching step definition, the step gets marked as und
 
 #### Pending
 
-When a step definition's method or function invokes the `pending` method, the step is marked as pending (yellow, as with `undefined` ones), indicating that you have work to do.
+When a step definition's {{% stepdef-body %}} invokes the `pending` {{% stepdef-body %}}, the step is marked as pending (yellow, as with `undefined` ones), indicating that you have work to do.
 
 #### Failed Steps
 
-When a step definition's method or function is executed and raises an error, the step is marked as failed (red). What you return from a step definition has no significance whatsoever.
+When a step definition's {{% stepdef-body %}} is executed and raises an error, the step is marked as failed (red). What you return from a step definition has no significance whatsoever.
 
 Returning {{% text "ruby" %}}`nil`{{% /text %}}{{% text "java,kotlin,scala" %}}`null`{{% /text %}}{{% text "javascript" %}}`null`{{% /text %}} or `false` will **not** cause a step definition to fail.
 
 #### Skipped
 
-Steps that follow `undefined`, `pending`, or `failed` steps are never executed,  even if there is a matching step definition. These steps are marked as skipped (cyan).
+Steps that follow `undefined`, `pending`, or `failed` steps are never executed, even if there is a matching step definition. These steps are marked as skipped (cyan).
 
 #### Ambiguous
 
@@ -162,7 +168,7 @@ They are typically used for setup and teardown of the environment before and aft
 Where a hook is defined has no impact on what scenarios or steps it is run for.
 If you want more fine-grained control, you can use [conditional hooks](#conditional-hooks).
 
-{{% text "java" %}}
+{{% text "java,kotlin" %}}
 You can declare hooks in any class.
 {{% /text %}}
 
@@ -216,6 +222,7 @@ Before { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 Before { scenario: Scenario =>
     // doSomething
@@ -224,6 +231,7 @@ Before { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 // Import the Before function
 const { Before } = require('@cucumber/cucumber')
@@ -241,6 +249,7 @@ sharing state between hooks and step definitions.
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 Before do
   # Do something before each scenario
@@ -280,29 +289,28 @@ Before(10, () -> {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 Before(10) { scenario: Scenario ->
     // Do something before each scenario
 }
 ```
-{{% warn " Using Kotlin named objects or companion objects" %}}
+{{% warn "Using Kotlin named objects or companion objects" %}}
 
-If @BeforeAll, @AfterAll etc are used in Kotlin named objects or companion objects an `io.cucumber.java.InvalidMethodSignatureException`
+If @BeforeAll, @AfterAll etc. are used in Kotlin named objects or companion objects an `io.cucumber.java.InvalidMethodSignatureException`
+will be thrown, as Kotlin will create a class `MyStepDefinitions$Companion` which has non-static methods.
 
-will be thrown. As, Kotlin will create a class `MyStepDefinitions$Companion` which has non-static methods 
+- [read more about it here](https://kotlinlang.org/docs/java-to-kotlin-interop.html#static-methods).
 
-- [ read more about it here](https://kotlinlang.org/docs/java-to-kotlin-interop.html#static-methods).
+The `@JvmStatic` annotation does not prevent this behaviour of Kotlin; it adds the static methods to `MyStepDefinitionsMethod` only. 
 
-The `@JvmStatic` annotation does not prevent this behaviour of Kotlin, it adds the static methods to `MyStepDefinitionsMethod` only. 
+Consequently, Cucumber will detect the static methods in `MyStepDefinitions` class, as well as the non-static methods in `MyStepDefinitions$Companion` class and will complain about the second one.
 
-Consequently, Cucumber will detect the static methods in `MyStepDefinitions` class, as well as the non-static methodss in `MyStepDefinitions$Companion` class and will complain about the second one.
-
-As a soultion to this problem, [ package level functions](https://kotlinlang.org/docs/java-to-kotlin-interop.html#package-level-functions) - this is, withouth companion objects. 
+As a solution to this problem, use [ package level functions](https://kotlinlang.org/docs/java-to-kotlin-interop.html#package-level-functions) - this is, without companion objects. 
 
 {{% /warn %}}
 
 ```kotlin
-
 package io.cucumber.example
 
 import io.cucumber.java.AfterAll
@@ -317,13 +325,12 @@ fun beforeAll() {
 fun afterAll() {
    println("after all")
 }
-
-
 ```
 
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 Before(10) { scenario: Scenario =>
     // Do something before each scenario
@@ -332,10 +339,12 @@ Before(10) { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 `Before` hooks run in the **same order** in which they are declared.
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 `Before` hooks run in the **same order** in which they are declared.
 {{% /block %}}
 
@@ -344,7 +353,6 @@ Before(10) { scenario: Scenario =>
 `After` hooks run after the last step of each scenario, even when the step result is `failed`, `undefined`, `pending`, or `skipped`.
 
 {{% block "java" %}}
-
 Annotated method style:
 
 ```java
@@ -375,6 +383,7 @@ After { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 After { scenario: Scenario =>
     // doSomething
@@ -401,18 +410,15 @@ end
 
 {{% /block %}}
 
-The `scenario` parameter is optional. If you use it, you can inspect the status
-of the scenario.
+The `scenario` parameter is optional. If you use it, you can inspect the status of the scenario.
 
 For example, you can take a screenshot with
-{{% text "java,javascript,kotlin,scala" %}}[WebDriver](https://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}}
-for failed scenarios and embed them in Cucumber's report.
+{{% text "java,javascript,kotlin,scala" %}}[WebDriver](https://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}} for failed scenarios and embed them in Cucumber's report.
 
 See the [browser automation page](/docs/guides/browser-automation/#screenshot-on-failure) for an example on how to do so.
 
 {{% block "ruby" %}}
 Here is an example in which we exit at the first failure (which could be useful in some cases like [Continuous Integration](/docs/guides/continuous-integration), where fast feedback is important).
-{{% /block %}}
 
 ```ruby
 After do |s|
@@ -420,14 +426,15 @@ After do |s|
   Cucumber.wants_to_quit = true if s.failed?
 end
 ```
+{{% /block %}}
 
 ### Around
 
-{{% text "ruby" %}}
+{{% block "ruby" %}}
+
 `Around` hooks will run "around" a scenario. This can be used to wrap the execution of a scenario in a block. The `Around` hook receives a `Scenario` object and a block (`Proc`) object. The scenario will be executed when you invoke `block.call`.
 
 The following example will cause scenarios tagged with `@fast` to fail if the execution takes longer than 0.5 seconds:
-{{% /text %}}
 
 ```ruby
 Around('@fast') do |scenario, block|
@@ -436,13 +443,14 @@ Around('@fast') do |scenario, block|
   end
 end
 ```
+{{% /block %}}
 
 {{% block "java,kotlin,scala" %}}Cucumber-JVM does not support `Around` hooks.{{% /block %}}
 {{% block "javascript" %}}Cucumber.js does not support `Around` hooks.{{% /block %}}
 
 ## Step hooks
 {{% text "java,kotlin,scala,javascript" %}}
-Step hooks invoked before and after a step. The hooks have 'invoke around' semantics. Meaning that if a `BeforeStep`
+Step hooks are invoked before and after a step. The hooks have 'invoke around' semantics, meaning that if a `BeforeStep`
 hook is executed the `AfterStep` hooks will also be executed regardless of the result of the step. If a step did not
 pass, the following step and its hooks will be skipped.
 {{% /text %}}
@@ -451,7 +459,9 @@ pass, the following step and its hooks will be skipped.
 
 {{% text "ruby" %}}Cucumber-Ruby does not support `BeforeStep` hooks.{{% /text %}}
 
-{{% text "java" %}}
+{{% block "java" %}}
+Annotated method style:
+
 ```java
 @BeforeStep
 public void doSomethingBeforeStep(Scenario scenario){
@@ -465,9 +475,9 @@ BeforeStep((Scenario scenario) -> {
 
 });
 ```
-{{% /text %}}
+{{% /block %}}
 
-{{% text "kotlin" %}}
+{{% block "kotlin" %}}
 Lambda style:
 
 ```kotlin
@@ -475,17 +485,19 @@ BeforeStep { scenario: Scenario ->
     // doSomething
 }
 ```
-{{% /text %}}
+{{% /block %}}
 
-{{% text "scala" %}}
+{{% block "scala" %}}
+
 ```scala
 BeforeStep { scenario: Scenario =>
     // doSomething
 }
 ```
-{{% /text %}}
+{{% /block %}}
 
-{{% text "javascript" %}}
+{{% block "javascript" %}}
+
 ```javascript
 BeforeStep(async function({pickle, pickleStep, gherkinDocument, testCaseStartedId, testStepId}) {
     // doSomething
@@ -495,11 +507,12 @@ BeforeStep({tags: "@foo"}, async function() {
     // apply this hook to only specific scenarios
 })
 ```
-{{% /text %}}
+{{% /block %}}
 
 ### AfterStep
 
 {{% block "ruby" %}}
+
 ```ruby
 AfterStep do |scenario|
 end
@@ -507,6 +520,8 @@ end
 {{% /block %}}
 
 {{% block "java" %}}
+Annotated method style:
+
 ```java
 @AfterStep
 public void doSomethingAfterStep(Scenario scenario){
@@ -534,6 +549,7 @@ AfterStep { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 AfterStep { scenario: Scenario =>
     // doSomething
@@ -543,11 +559,13 @@ AfterStep { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 AfterStep(async function({pickle, pickleStep, gherkinDocument, result, testCaseStartedId, testStepId}) {
     // doSomething
 })
 ```
+
 {{% /block %}}
 
 ## Conditional hooks
@@ -587,6 +605,7 @@ After (arrayOf("@browser and not @headless")) { scenario: Scenario ->
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 After("@browser and not @headless") { scenario: Scenario =>
 
@@ -595,6 +614,7 @@ After("@browser and not @headless") { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```javascript
 Before({tags: '@browser and not @headless'}, async function () {
 })
@@ -602,6 +622,7 @@ Before({tags: '@browser and not @headless'}, async function () {
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```ruby
 Before('@browser and not @headless') do
 end
@@ -613,14 +634,18 @@ See more documentation on [tags](#tags).
 ## Global hooks
 
 Global hooks will run once before any scenario is run or after all scenario have
-been run. Put the code at the top-level in your `env.rb` file (or any other file
+been run.
+{{% block "ruby" %}}
+Put the code at the top-level in your `env.rb` file (or any other file
 under `features/support` directory).
+{{% /block %}}
 
 ### BeforeAll
 
 `BeforeAll` run before any scenario is run.
 
-{{%block "ruby" %}}
+{{% block "ruby" %}}
+
 ```ruby
 BeforeAll do
   # Do something before any scenario is executed
@@ -628,7 +653,8 @@ end
 ```
 {{% /block %}}
 
-{{%block "javascript" %}}
+{{% block "javascript" %}}
+
 ```javascript
 const { BeforeAll } = require('@cucumber/cucumber');
 
@@ -638,7 +664,9 @@ BeforeAll(async function () {
 ```
 {{% /block %}}
 
-{{%block "java" %}}
+{{% block "java" %}}
+Annotated method style:
+
 ```java
 @BeforeAll
 public static void beforeAll() {
@@ -647,7 +675,8 @@ public static void beforeAll() {
 ```
 {{% /block %}}
 
-{{%block "kotlin" %}}
+{{% block "kotlin" %}}
+
 ```kotlin
 BeforeAll {
     // doSomething
@@ -655,7 +684,8 @@ BeforeAll {
 ```
 {{% /block %}}
 
-{{%block "scala" %}}
+{{% block "scala" %}}
+
 ```scala
 BeforeAll {
     // doSomething
@@ -667,7 +697,8 @@ BeforeAll {
 
 `AfterAll` run after all scenarios have been executed.
 
-{{%block "ruby" %}}
+{{% block "ruby" %}}
+
 ```ruby
 AfterAll do
   # Do something after all scenarios have been executed
@@ -675,7 +706,8 @@ end
 ```
 {{% /block %}}
 
-{{%block "javascript" %}}
+{{% block "javascript" %}}
+
 ```javascript
 const { AfterAll } = require('@cucumber/cucumber');
 
@@ -685,7 +717,9 @@ AfterAll(async function () {
 ```
 {{% /block %}}
 
-{{%block "java" %}}
+{{% block "java" %}}
+Annotated method style:
+
 ```java
 @AfterAll
 public static void afterAll() {
@@ -694,7 +728,8 @@ public static void afterAll() {
 ```
 {{% /block %}}
 
-{{%block "kotlin" %}}
+{{% block "kotlin" %}}
+
 ```kotlin
 AfterAll {
     // doSomething
@@ -702,7 +737,8 @@ AfterAll {
 ```
 {{% /block %}}
 
-{{%block "scala" %}}
+{{% block "scala" %}}
+
 ```scala
 AfterAll {
     // doSomething
@@ -712,26 +748,22 @@ AfterAll {
 
 ## InstallPlugin
 
-{{% text "ruby" %}}
-You may also provide an `InstallPlugin` hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`), and a wrapper to some cucumber internals as a registry.
-{{% /text %}}
-
 {{% block "ruby" %}}
+You may also provide an `InstallPlugin` hook that will be run after Cucumber has been configured. The block you provide will be passed on to Cucumber's configuration (an instance of `Cucumber::Cli::Configuration`), and a wrapper to some cucumber internals as a registry.
+
 ```ruby
 InstallPlugin do |config, registry|
   puts "Features dwell in #{config.feature_dirs}"
 end
 ```
-{{% /block %}}
 
-{{% text "ruby" %}}
 This hook will run _only once_: after support has been loaded, and before any features are loaded.
 
-You can use this hook to extend Cucumber. For example you could affect how features are loaded, or register custom formatters programmatically.
+You can use this hook to extend Cucumber. For example, you could affect how features are loaded, or register custom formatters programmatically.
 
 [cucumber-wire](https://github.com/cucumber/cucumber-ruby-wire) is a good example
 of how to use InstallPlugin and what a Cucumber plugin can do.
-{{% /text %}}
+{{% /block %}}
 
 {{% text "java,kotlin,scala" %}}Cucumber-JVM does not support the `InstallPlugin` hook.{{% /text %}}
 {{% text "javascript" %}}Cucumber.js does not support the `InstallPlugin` hook.{{% /text %}}
@@ -812,7 +844,7 @@ Tags that are placed above a `Scenario Outline` will be inherited by `Examples`.
 You can tell Cucumber to only run scenarios with a particular tag:
 
 {{% block "java,kotlin,scala" %}}
-For JUnit 5 see the [cucumber-junit-platform-engine documetation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#tags).
+For JUnit 5 see the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#tags)
 
 For JUnit 4 and TestNG using a JVM system property:
 
@@ -835,6 +867,7 @@ Or changing your JUnit 4/TestNG  runner class:
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 @CucumberOptions(tags = "@smoke and @fast")
 public class RunCucumberTest {}
@@ -842,13 +875,15 @@ public class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 @CucumberOptions(tags = "@smoke and @fast")
-class RunCucumberTest {}
+class RunCucumberTest
 ```
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 @CucumberOptions(tags = "@smoke and @fast")
 class RunCucumberTest {}
@@ -856,6 +891,7 @@ class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 # You can omit the quotes if the expression is a single tag
 ./node_modules/.bin/cucumber.js --tags "@smoke and @fast"
@@ -863,6 +899,7 @@ class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 # You can omit the quotes if the expression is a single tag
 cucumber --tags "@smoke and @fast"
@@ -873,9 +910,14 @@ cucumber --tags "@smoke and @fast"
 
 You can tell Cucumber to ignore scenarios with a particular tag:
 
+{{% block "java,kotlin,scala" %}}
+
 Using JUnit runner class:
 
+{{% /block %}}
+
 {{% block "java" %}}
+
  ```java
 @CucumberOptions(tags = "not @smoke")
 public class RunCucumberTest {}
@@ -883,13 +925,15 @@ public class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
  ```kotlin
 @CucumberOptions(tags = "not @smoke")
-class RunCucumberTest {}
+class RunCucumberTest
 ```
 {{% /block %}}
 
 {{% block "scala" %}}
+
  ```scala
 @CucumberOptions(tags = "not @smoke")
 class RunCucumberTest {}
@@ -897,6 +941,7 @@ class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 ```shell
 # You can omit the quotes if the expression is a single tag
 ./node_modules/.bin/cucumber.js --tags "not @smoke"
@@ -904,6 +949,7 @@ class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 ```shell
 # You can omit the quotes if the expression is a single tag
 cucumber --tags "not @smoke"
@@ -917,12 +963,12 @@ Another way to run a subset of scenarios is to use the `file.feature:line` patte
 ### Tag expressions
 A tag expression is an *infix boolean expression*. Below are some examples:
 
-Expression           | Description
----------------------|---------------------------------------------------------:
-`@fast`              | Scenarios tagged with `@fast`
-`@wip and not @slow` | Scenarios tagged with `@wip` that aren't also tagged with `@slow`
-`@smoke and @fast`   | Scenarios tagged with both `@smoke` and `@fast`
-`@gui or @database`  | Scenarios tagged with either `@gui` or `@database`
+| Expression           |                                                       Description |
+|----------------------|------------------------------------------------------------------:|
+| `@fast`              |                                     Scenarios tagged with `@fast` |
+| `@wip and not @slow` | Scenarios tagged with `@wip` that aren't also tagged with `@slow` |
+| `@smoke and @fast`   |                   Scenarios tagged with both `@smoke` and `@fast` |
+| `@gui or @database`  |                Scenarios tagged with either `@gui` or `@database` |
 
 For even more advanced tag expressions you can use parenthesis for clarity, or
 to change operator precedence:
@@ -957,7 +1003,7 @@ Another creative way to use tags is to keep track of where in the development pr
 Feature: Index projects
 ```
 
-{{% text "ruby" %}}
+{{% block "ruby" %}}
 As distributed, Cucumber-Rails builds a Rake task that recognizes the *`@wip`* tag.
 However, any string may be used as a tag and any scenario or entire feature can have multiple tags associated with it.
 
@@ -986,7 +1032,7 @@ Using the default profile...
 ```
 
 Since version 0.6.0, one can no longer overcome this default setting by adding the `--tags=@wip` to the Cucumber argument
-list on the command line, because now all `--tags` options are ANDed together.  Thus the combination of `--tags @wip` **AND** `--tags ~@wip` fails everywhere.
+list on the command line, because now all `--tags` options are ANDed together.  Thus, the combination of `--tags @wip` **AND** `--tags ~@wip` fails everywhere.
 
 You either must create a special profile in `config/cucumber.yml` to deal with this, or alter the default profile to suit your needs.
 
@@ -1009,41 +1055,45 @@ the default profile, then instead of a warning the run will fail.
 Limiting the number of occurrences is commonly used in conjunction with the `@wip` tag to restrict the number of
 unspecified scenarios to manageable levels. Those following [Kanban](https://en.wikipedia.org/wiki/kanban) or
 [Lean Software Development](https://en.wikipedia.org/wiki/Lean_software_development) based methodologies will find this useful.
-{{% /text %}}
+{{% /block %}}
 
 # Running Cucumber
 
-Cucumber is a
-{{% text "java,kotlin,scala" %}}Java library with extensions for different tools and platforms.{{% /text %}}
-{{% text "javascript,ruby" %}}command line tool.{{% /text %}}
-It is launched by running
-{{% text "java,kotlin,scala" %}}JUnit 4, JUnit 5, your build tool, your IDE or the CLI.{{% /text %}}
-{{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
-{{% text "ruby" %}}`cucumber` from the command line, or a build script.{{% /text %}}
+{{% block "java,kotlin,scala" %}}
+Cucumber is a Java library with extensions for different tools and platforms.
+It is launched by running JUnit 4, JUnit 5, your build tool, your IDE or the CLI.
+{{% /block %}}
+
+{{% block "javascript" %}}
+Cucumber is a command line tool. It is launched by running `cucumber-js` from the command line, or a build script.
+{{% /block %}}
+
+{{% block "ruby" %}}
+Cucumber is a command line tool. It is launched by running `cucumber` from the command line, or a build script.
+{{% /block %}}
 
 It is possible to [configure](/docs/cucumber/configuration) how Cucumber should run features.
 
 ## From the command line
 
-{{% text "ruby,javascript" %}}The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in{{% /text %}}
-{{% text "javascript" %}}`.js`{{% /text %}}
-{{% text "ruby" %}}`.rb`{{% /text %}} under the root
-{{% text "ruby" %}}library{{% /text %}} directory as a step definition file.
-{{% text "ruby,javascript" %}}Thus, a step contained in {{% /text %}}
-{{% text "javascript" %}}`features/models/entities/step-definitions/anything.js`{{% /text %}}
-{{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
-{{% block "ruby,javascript" %}}can be used in a feature file contained in{{% /text %}}
-{{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
-{{% text "ruby,javascript" %}}
-, provided that:
+{{% block "ruby" %}}
+The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in `.rb` under the root library directory as a step definition file.
+Thus, a step contained in `features/models/entities/step_definitions/anything.rb` can be used in a feature file contained in `features/views/entity_new`, provided that:
 
 - Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
 - explicitly required on the command line
-{{% /text %}}
+{{% /block %}}
+
+{{% block "javascript" %}}
+The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in`.js` under the root directory as a step definition file.
+Thus, a step contained in `features/models/entities/step-definitions/anything.js` can be used in a feature file, provided that:
+
+- Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
+- explicitly required on the command line
+{{% /block %}}
 
 {{% block "ruby" %}}
-
-The following command will run the `authenticate_user` feature. Any feature in a sub-directory of `features/` directory must `require` features.
+The following command will run the `authenticate_user` feature. Any feature in a subdirectory of `features/` directory must `require` features.
 
 ```
 cucumber --require features features/authentication/authenticate_user.feature
@@ -1061,13 +1111,12 @@ cucumber
 {{% /block %}}
 
 {{% block "java,kotlin,scala" %}}
-The **Command-Line Interface Runner (CLI Runner)** is an executable Java class that can be run from the command-line.
+The *Command-Line Interface Runner (CLI Runner)* is an executable Java class that can be run from the command-line.
 
 ```
 java io.cucumber.core.cli.Main
 ```
 Note that you will need to add the `cucumber-core` jar and all of its transitive dependencies to your classpath, in addition to the location of your compiled .class files. You can find these jars in [Maven Central](https://mvnrepository.com/repos/central).
-
 
 You will also need to provide the CLI with your step definitions via the `--glue` option followed by its package name, and the filepath of your feature file(s).
 
@@ -1113,7 +1162,8 @@ You can also run features using a [build tool](/docs/tools/general#build-tools) 
 ## JUnit 5 
 
 {{% block "java,kotlin,scala" %}}
-See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options)
+See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options) for more information.
+
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -1141,8 +1191,7 @@ To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency t
   [...]
 </dependencies>
 ```
-Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine).
-Or include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
+Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine) or include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running)
 
 Create an empty class that uses the Cucumber JUnit runner.
 
@@ -1194,8 +1243,10 @@ The `@CucumberOptions` can be used to provide
 **Using plugins:**
 
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
+{{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1211,6 +1262,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1225,6 +1277,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 
@@ -1239,10 +1292,13 @@ class RunCucumberTest {
 ```
 {{% /block %}}
 
+{{% block "java,kotlin,scala" %}}
 For example if you want to tell Cucumber to print code snippets for missing
 step definitions use the `summary` plugin, you can specify it like this:
+{{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1258,6 +1314,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1272,6 +1329,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 
@@ -1285,12 +1343,17 @@ class RunCucumberTest {
 }
 ```
 {{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 The default option for `snippets` is `UNDERSCORE`. This settings can be used to
 specify the way code snippets will be created by Cucumber.
 
 **Performing a dry-run:**
 
 For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this:
+{{% /block %}}
+
+{{% block "java" %}}
 
 ```java
 package com.example;
@@ -1304,6 +1367,9 @@ import org.junit.runner.RunWith;
 public class RunCucumberTest {
 }
 ```
+{{% /block %}}
+
+{{% block "kotlin" %}}
 
 ```kotlin
 package com.example
@@ -1316,6 +1382,9 @@ import org.junit.runner.RunWith
 @CucumberOptions(dryRun=true)
 class RunCucumberTest
 ```
+{{% /block %}}
+
+{{% block "scala" %}}
 
 ```scala
 package com.example;
@@ -1329,11 +1398,17 @@ import org.junit.runner.RunWith;
 class RunCucumberTest {
 }
 ```
+{{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 The default option for `dryRun` is `false`.
 
 **Formatting console output:**
 
 For example if you want console output from Cucumber in a readable format, you can specify it like this:
+{{% /block %}}
+
+{{% block "java" %}}
 
 ```java
 package com.example;
@@ -1348,6 +1423,10 @@ public class RunCucumberTest {
 }
 ```
 
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1359,6 +1438,10 @@ import org.junit.runner.RunWith
 @CucumberOptions(monochrome=true)
 class RunCucumberTest
 ```
+
+{{% /block %}}
+
+{{% block "scala" %}}
 
 ```scala
 package com.example;
@@ -1372,6 +1455,10 @@ import org.junit.runner.RunWith;
 class RunCucumberTest {
 }
 ```
+
+{{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 
 The default option for `monochrome` is `false`.
 
@@ -1379,7 +1466,10 @@ The default option for `monochrome` is `false`.
 
 For example if you want to tell Cucumber to only run the scenarios specified with specific tags, you can specify it like this:
 
+{{% /block %}}
+
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1395,6 +1485,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1409,6 +1500,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 
@@ -1423,11 +1515,15 @@ public class RunCucumberTest {
 ```
 {{% /block %}}
 
+{{% block "java,kotlin,scala" %}}
+
 **Specify an object factory:**
 
 For example if you are using Cucumber with a DI framework and want to use a custom object factory, you can specify it like this:
+{{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -1443,6 +1539,7 @@ public class RunCucumberTest {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1457,6 +1554,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example;
 
@@ -1470,8 +1568,10 @@ public class RunCucumberTest {
 }
 ```
 {{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 The default option for `objectFactory` is to use the default object factory.
-Additional information about using custom object factories can be found [here](/docs/cucumber/state/#the-cucumber-object-factory).
+Additional information about using custom object factories can be found [here](/docs/cucumber/state/#the-cucumber-object-factory)
 
 There are additional options available in the `@CucumberOptions` annotation.
 
@@ -1479,16 +1579,16 @@ Usually, the test class will be empty. You can, however, specify several JUnit r
 
 {{% note "Supported JUnit annotations"%}}
 Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotations.
-These will executed before and after all scenarios. Using these is not recommended, as it limits the portability between different runners;
+These will be executed before and after all scenarios. Using them is not recommended, as it limits the portability between different runners;
 they may not execute correctly when using the commandline, [IntelliJ IDEA](https://www.jetbrains.com/help/idea/cucumber.html) or
-[Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse). Instead it is recommended to use Cucumbers `Before`
-and `After` [hooks](#hooks).
+[Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse) . Instead, it is recommended to use Cucumbers `Before` and `After` [hooks](#hooks).
 {{% /note %}}
 
 The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
 Listeners and Reporters can all be expected to work.
 
-For more information on JUnit, see the [JUnit web site](https://www.junit.org).
+For more information on JUnit, see the [JUnit website](https://www.junit.org)
+
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -1588,5 +1688,6 @@ You can also define common command-line options in a [`cucumber.yml`](/docs/cucu
 {{% /block %}}
 
 {{% block "javascript" %}}
-For more information on how to configure options, have a look at the [cucumber-js docs on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/cli.md).
+For more information on how to configure options, have a look at the [cucumber-js docs on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/cli.md)
+
 {{% /block %}}

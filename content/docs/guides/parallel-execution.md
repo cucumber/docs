@@ -8,7 +8,9 @@ polyglot:
 weight: 1800
 ---
 {{% block "java,kotlin" %}}
-Cucumber-JVM allows parallel execution across multiple threads since [version 4.0.0.](https://cucumber.io/blog/announcing-cucumber-jvm-4-0-0/) There are several options to incorporate this built-in feature in a Cucumber project. You can do so using:
+Cucumber-JVM allows parallel execution across multiple threads since [version 4.0.0.](https://cucumber.io/blog/announcing-cucumber-jvm-4-0-0/) 
+
+There are several options to incorporate this built-in feature in a Cucumber project. You can do so using:
 
 - [JUnit 5](/docs/guides/parallel-execution/#junit-5)
 - [JUnit 4](/docs/guides/parallel-execution/#junit-4)
@@ -59,6 +61,7 @@ Feature: Scenario Outlines feature file
 {{% /block %}}
 
 {{% block "java" %}}
+
 - Add the **step definition class** to the `parallel` package (same name as folder above for automatic pickup by runner) in `src/test/java` folder.
 
 ```java
@@ -79,6 +82,7 @@ public class StepDefs {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 - Add the **step definition class** to the `parallel` package (same name as folder above for automatic pickup by runner) in `src/test/kotlin` folder.
 
 ```kotlin
@@ -97,10 +101,12 @@ class StepDefs : En {
 {{% /block %}}
 
 {{% block "java" %}}
+
 - Add a cucumber **runner** using the `RunWith` annotation in the `parallel` package (same name as step definition package) in the `src/test/java` folder.
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 - Add a cucumber **runner** using the `RunWith` annotation in the `parallel` package (same name as step definition package) in the `src/test/kotlin` folder.
 {{% /block %}}
 
@@ -132,6 +138,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "java,kotlin" %}}
+
 - Add the **Surefire plugin configuration** to the `build` section to the `POM`.
 
 ```shell
@@ -159,6 +166,7 @@ Thread ID - 14 - Scenario 2 from scenarios feature file.
 {{% block "kotlin" %}}
 For Failsafe to find your step definitions, make sure they are in src/test/**java**.
 {{% /block %}}
+
 ```shell
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -217,6 +225,7 @@ Cucumber can be executed in parallel using **TestNG and Maven test execution plu
 {{% /block %}}
 
 {{% block "java" %}}
+
 - Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package (same name as step definition package) in `src/test/java` folder. Set the **parallel option value to true** for the DataProvider annotation.
 
 ```java
@@ -237,6 +246,7 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests{
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 - Add a cucumber **runner** by **extending** the `AbstractTestNGCucumberTests` class and **overriding the scenarios method** in the `parallel` package (same name as step definition package) in `src/test/kotlin` folder. Set the **parallel option value to true** for the DataProvider annotation.
 
 ```kotlin
@@ -256,6 +266,7 @@ class RunCucumberTest : AbstractTestNGCucumberTests() {
 {{% /block %}}
 
 {{% block "java,kotlin" %}}
+
 - Add the Maven **Surefire plugin configuration** to the `build` section of the `POM`.
 
 ```shell
@@ -312,6 +323,7 @@ Follow the steps below to **execute the command from a terminal**.
 {{% /block %}}
 
 {{% block "java" %}}
+
 - Compile the step definition class. Add the **path to the folder containing cucumber jars to the classpath** using the **-cp** option.
 
 ```shell
@@ -320,6 +332,7 @@ javac -cp .;<path to cucumber jar folder>/* ./parallel/StepDefs.java
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 - Compile the step definition class. Add **path to each of the downloaded cucumber jars to the classpath** using the **-cp** option.
 
 ```shell
@@ -328,6 +341,7 @@ kotlinc -cp .;<path to each cucumber jar> -jvm-target 1.8 ./parallel/StepDefs.kt
 {{% /block %}}
 
 {{% block "java,kotlin" %}}
+
 - Execute using the below command.
 {{% /block %}}
 
@@ -346,6 +360,7 @@ java -cp .;<path to cucumber jar folder>/*;<path to kotlin lib folder>/* io.cucu
 {{% /block %}}
 
 {{% block "java,kotlin" %}}
+
 - You should get a console output similar to below.
 
 ```shell
@@ -363,12 +378,14 @@ For a **visual representation** of threads, add the **timeline report** using th
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 @CucumberOptions(plugin= {"timeline:<report folder>"})
 ```
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 @CucumberOptions(plugin = ["timeline:<report folder>"])
 ```

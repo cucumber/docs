@@ -79,7 +79,7 @@ public class ExampleSteps {
 ```
 
 ```kotlin
-package com.example;
+package com.example
 
 import io.cucumber.java8.Scenario
 import io.cucumber.java8.En
@@ -98,7 +98,7 @@ class ExampleSteps: En {
         }
 
         When("I search for {string}") { query: String ->
-            val element: WebElement = driver.findElement(By.name("q"));
+            val element: WebElement = driver.findElement(By.name("q"))
             // Enter something to search for
             element.sendKeys(query)
             // Now submit the form. WebDriver will find the form for us from the element
@@ -395,12 +395,14 @@ public class WebDriverFactory {
 
 Then, define the `browser` property when you run Cucumber:
 {{% text "ruby" %}}
+
 ```
 browser=chrome cucumber
 ```
 {{% /text %}}
 
 {{% text "java,kotlin" %}}
+
 ```
 mvn test -Dbrowser=chrome
 ```
@@ -413,6 +415,7 @@ mvn test -Ddriver=chrome
 {{% /text %}}
 
 {{% text "javascript" %}}
+
 ```
 // TODO: How to pass arguments in JavaScript
 ```

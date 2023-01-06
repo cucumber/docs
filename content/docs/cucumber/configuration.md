@@ -27,6 +27,7 @@ For example, the following class registers a custom "Author" data table type:
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -137,7 +138,7 @@ public class StepDefinitions {
 {{% block "kotlin" %}}
 
 ```kotlin
-package com.example;
+package com.example
 
 import io.cucumber.java.ParameterType
 import io.cucumber.java.en.Given
@@ -220,7 +221,7 @@ public class StepsDefinitions {
 package com.example
 
 import com.fasterxml.jackson.core.JsonProcessingException
-import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.cucumber.java.DocStringType
 import io.cucumber.java.en.Given
@@ -320,8 +321,8 @@ public class LambdaStepDefinitions implements En {
 ```kotlin
 package com.example
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode
+import com.fasterxml.jackson.databind.ObjectMapper
 
 import io.cucumber.java8.En
 
@@ -387,6 +388,7 @@ public class StepDefinitions {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -412,6 +414,7 @@ class StepDefinitions {
 {{% /block %}}
 
 {{% block "scala" %}}
+
 ```scala
 package com.example
 
@@ -445,6 +448,7 @@ For lambda defined step definitions, there are `DefaultParameterTransformer`,
 {{% /block %}}
 
 {{% block "java" %}}
+
 ```java
 package com.example;
 
@@ -473,6 +477,7 @@ public class LambdaStepDefinitions implements En {
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
 ```kotlin
 import com.fasterxml.jackson.databind.ObjectMapper
 
@@ -523,6 +528,7 @@ end
 
 {{% block "java,kotlin,scala,ruby" %}}
 If you are using a type that has not yet been defined, you will get an error similar to:
+
 ```shell
 The parameter type "person" is not defined.
 ```
@@ -551,7 +557,7 @@ This is just a convention though; Cucumber will pick them up from any file{{% te
 # Profiles
 
 {{% block "java,kotlin,scala" %}}
-Cucumber profiles are not available on Cucumber-JVM.  However, it is possible to set configuration options using [Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html).
+Cucumber profiles are not available on Cucumber-JVM.  However, it is possible to set configuration options using [Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html)
 
 For instance, we can configure separate profiles for scenarios which are to be run in separate environments like so:
 
