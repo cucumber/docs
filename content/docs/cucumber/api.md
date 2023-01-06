@@ -83,10 +83,11 @@ by Cucumber (using `DataTable.asList(String.class)`) before invoking the step de
 {{% text "java,kotlin" %}}Note: In addition to collections of String, Integer, Float, BigInteger and BigDecimal, Byte,
 Short, Long and Double are also supported.{{% /text %}}
 
-{{% text "scala" %}}
+{{% block "scala" %}}
 **Note:** For now, Cucumber Scala does not support using Scala collection types.
-See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50).
-{{% /text %}}
+See [Github](https://github.com/cucumber/cucumber-jvm-scala/issues/50)
+
+{{% /block %}}
 
 {{% text "javascript" %}} For an example of data tables in JavaScript, go
 [here](https://github.com/cucumber/cucumber-js/blob/master/src/models/data_table.ts) {{% /text %}}
@@ -337,10 +338,12 @@ Before(10) { scenario: Scenario =>
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 `Before` hooks run in the **same order** in which they are declared.
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 `Before` hooks run in the **same order** in which they are declared.
 {{% /block %}}
 
@@ -427,6 +430,7 @@ end
 ### Around
 
 {{% block "ruby" %}}
+
 `Around` hooks will run "around" a scenario. This can be used to wrap the execution of a scenario in a block. The `Around` hook receives a `Scenario` object and a block (`Proc`) object. The scenario will be executed when you invoke `block.call`.
 
 The following example will cause scenarios tagged with `@fast` to fail if the execution takes longer than 0.5 seconds:
@@ -839,7 +843,7 @@ Tags that are placed above a `Scenario Outline` will be inherited by `Examples`.
 You can tell Cucumber to only run scenarios with a particular tag:
 
 {{% block "java,kotlin,scala" %}}
-For JUnit 5 see the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#tags).
+For JUnit 5 see the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#tags)
 
 For JUnit 4 and TestNG using a JVM system property:
 
@@ -912,6 +916,7 @@ Using JUnit runner class:
 {{% /block %}}
 
 {{% block "java" %}}
+
  ```java
 @CucumberOptions(tags = "not @smoke")
 public class RunCucumberTest {}
@@ -919,6 +924,7 @@ public class RunCucumberTest {}
 {{% /block %}}
 
 {{% block "kotlin" %}}
+
  ```kotlin
 @CucumberOptions(tags = "not @smoke")
 class RunCucumberTest
@@ -926,6 +932,7 @@ class RunCucumberTest
 {{% /block %}}
 
 {{% block "scala" %}}
+
  ```scala
 @CucumberOptions(tags = "not @smoke")
 class RunCucumberTest {}
@@ -1051,34 +1058,38 @@ unspecified scenarios to manageable levels. Those following [Kanban](https://en.
 
 # Running Cucumber
 
-Cucumber is a
-{{% text "java,kotlin,scala" %}}Java library with extensions for different tools and platforms.{{% /text %}}
-{{% text "javascript,ruby" %}}command line tool.{{% /text %}}
-It is launched by running
-{{% text "java,kotlin,scala" %}}JUnit 4, JUnit 5, your build tool, your IDE or the CLI.{{% /text %}}
-{{% text "javascript" %}}`cucumber-js` from the command line, or a build script.{{% /text %}}
-{{% text "ruby" %}}`cucumber` from the command line, or a build script.{{% /text %}}
+{{% block "java,kotlin,scala" %}}
+Cucumber is a Java library with extensions for different tools and platforms.
+It is launched by running JUnit 4, JUnit 5, your build tool, your IDE or the CLI.
+{{% /block %}}
+
+{{% block "javascript" %}}
+Cucumber is a command line tool. It is launched by running `cucumber-js` from the command line, or a build script.
+{{% /block %}}
+
+{{% block "ruby" %}}
+Cucumber is a command line tool. It is launched by running `cucumber` from the command line, or a build script.
+{{% /block %}}
 
 It is possible to [configure](/docs/cucumber/configuration) how Cucumber should run features.
 
 ## From the command line
 
-{{% text "ruby,javascript" %}}The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in{{% /text %}}
-{{% text "javascript" %}}`.js`{{% /text %}}
-{{% text "ruby" %}}`.rb`{{% /text %}} under the root
-{{% text "ruby" %}}library{{% /text %}} directory as a step definition file.
-{{% text "ruby,javascript" %}}Thus, a step contained in {{% /text %}}
-{{% text "javascript" %}}`features/models/entities/step-definitions/anything.js`{{% /text %}}
-{{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
-{{% block "ruby,javascript" %}}can be used in a feature file contained in{{% /text %}}
-{{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
-{{% text "ruby,javascript" %}}, provided that:
+{{% block "ruby" %}}
+The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in `.rb` under the root library directory as a step definition file.
+Thus, a step contained in `features/models/entities/step_definitions/anything.rb` can be used in a feature file contained in `features/views/entity_new`, provided that:
 - Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
 - explicitly required on the command line
-{{% /text %}}
+{{% /block %}}
+
+{{% block "javascript" %}}
+The most common option is to run Cucumber from the command line. By default, Cucumber will treat anything ending in`.js` under the root directory as a step definition file.
+Thus, a step contained in `features/models/entities/step-definitions/anything.js` can be used in a feature file, provided that:
+- Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
+- explicitly required on the command line
+{{% /block %}}
 
 {{% block "ruby" %}}
-
 The following command will run the `authenticate_user` feature. Any feature in a subdirectory of `features/` directory must `require` features.
 
 ```
@@ -1097,7 +1108,7 @@ cucumber
 {{% /block %}}
 
 {{% block "java,kotlin,scala" %}}
-The **Command-Line Interface Runner (CLI Runner)** is an executable Java class that can be run from the command-line.
+The *Command-Line Interface Runner (CLI Runner)* is an executable Java class that can be run from the command-line.
 
 ```
 java io.cucumber.core.cli.Main
@@ -1149,6 +1160,7 @@ You can also run features using a [build tool](/docs/tools/general#build-tools) 
 
 {{% block "java,kotlin,scala" %}}
 See the [cucumber-junit-platform-engine documentation](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine#configuration-options)
+
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -1176,8 +1188,7 @@ To use JUnit to execute cucumber scenarios add the `cucumber-junit` dependency t
   [...]
 </dependencies>
 ```
-Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine).
-Or include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running).
+Note that `cucumber-junit` is based on JUnit 4. If you're using JUnit 5, use the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine) or include `junit-vintage-engine` dependency, as well. For more information, please refer to [JUnit 5 documentation](https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4-running)
 
 Create an empty class that uses the Cucumber JUnit runner.
 
@@ -1557,7 +1568,7 @@ public class RunCucumberTest {
 
 {{% block "java,kotlin,scala" %}}
 The default option for `objectFactory` is to use the default object factory.
-Additional information about using custom object factories can be found [here](/docs/cucumber/state/#the-cucumber-object-factory).
+Additional information about using custom object factories can be found [here](/docs/cucumber/state/#the-cucumber-object-factory)
 
 There are additional options available in the `@CucumberOptions` annotation.
 
@@ -1567,13 +1578,14 @@ Usually, the test class will be empty. You can, however, specify several JUnit r
 Cucumber supports JUnits `@ClassRule`, `@BeforeClass` and `@AfterClass` annotations.
 These will be executed before and after all scenarios. Using them is not recommended, as it limits the portability between different runners;
 they may not execute correctly when using the commandline, [IntelliJ IDEA](https://www.jetbrains.com/help/idea/cucumber.html) or
-[Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse). Instead, it is recommended to use Cucumbers `Before` and `After` [hooks](#hooks).
+[Cucumber-Eclipse](https://github.com/cucumber/cucumber-eclipse) . Instead, it is recommended to use Cucumbers `Before` and `After` [hooks](#hooks).
 {{% /note %}}
 
 The Cucumber runner acts like a suite of a JUnit tests. As such other JUnit features such as Categories, Custom JUnit
 Listeners and Reporters can all be expected to work.
 
-For more information on JUnit, see the [JUnit web site](https://www.junit.org).
+For more information on JUnit, see the [JUnit website](https://www.junit.org)
+
 {{% /block %}}
 
 {{% block "ruby" %}}
@@ -1673,5 +1685,6 @@ You can also define common command-line options in a [`cucumber.yml`](/docs/cucu
 {{% /block %}}
 
 {{% block "javascript" %}}
-For more information on how to configure options, have a look at the [cucumber-js docs on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/cli.md).
+For more information on how to configure options, have a look at the [cucumber-js docs on GitHub](https://github.com/cucumber/cucumber-js/blob/master/docs/cli.md)
+
 {{% /block %}}

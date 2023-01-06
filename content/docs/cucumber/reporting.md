@@ -35,6 +35,7 @@ If you don't want to publish your reports to the [Cucumber Reports](https://repo
 generate local reports using one of the following built-in reporter plugins (also known as "formatters"):
 
 {{% block "java,kotlin" %}}
+
 * `message`
 * `progress`
 * `pretty`
@@ -46,6 +47,7 @@ generate local reports using one of the following built-in reporter plugins (als
 {{% /block %}}
 
 {{% block "javascript" %}}
+
 * `message`
 * `html`
 * `json`
@@ -58,6 +60,7 @@ There is also a "pretty" formatter available as an optional module [@cucumber/pr
 {{% /block %}}
 
 {{% block "ruby" %}}
+
 * `message`
 * `progress`
 * `pretty`
@@ -117,6 +120,6 @@ There are also many third-party plugins:
 * [cucumber_characteristics](https://github.com/singram/cucumber_characteristics) - Generates HTML/JSON reports on overall test timings, as well as timings and usage of Steps, Features, and Examples. Also lists unused and ambiguous (Cucumber 1.x) Steps. Compatible with Cucumber 1.x and 2.1+ and Ruby 1.9+.
 * [allure-cucumber](https://github.com/allure-framework/allure-cucumber) - [Allure](https://github.com/allure-framework) adaptor for Cucumber. This formatter generates the XML files for Allure reporting framework.
 * [Cluecumber](https://github.com/trivago/cluecumber-report-plugin) - Maven plugin for clear and concise Cucumber reporting.
-* [Cucelastic] (https://github.com/AshisRaj/cucelastic-maven-plugin) - Maven plugin to push test report data into Elastic Search to enable users to plugin UI agnostic tools like Kibana to visualize a dynamic and easy sharable report/dashboard with the possibility to filter and analyze the data, extend and share it across teams.
+* [Cucelastic](https://github.com/AshisRaj/cucelastic-maven-plugin) - Maven plugin to push test report data into Elastic Search to enable users to plugin UI agnostic tools like Kibana to visualize a dynamic and easy sharable report/dashboard with the possibility to filter and analyze the data, extend and share it across teams.
 * [cucumber-reporting-plugin](https://gitlab.com/jamietanna/cucumber-reporting-plugin) - A Cucumber plugin which produces pretty HTML reports using [cucumber-reporting](https://github.com/damianszczepanik/cucumber-reporting)
 * [Serenity/JS](https://serenity-js.org/handbook/integration/serenityjs-and-cucumber.html) - An acceptance testing and reporting framework with in-depth HTML reports, Screenplay Pattern APIs, and support for every single version of Cucumber.js
