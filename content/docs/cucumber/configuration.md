@@ -528,6 +528,7 @@ end
 
 {{% block "java,kotlin,scala,ruby" %}}
 If you are using a type that has not yet been defined, you will get an error similar to:
+
 ```shell
 The parameter type "person" is not defined.
 ```
@@ -556,7 +557,7 @@ This is just a convention though; Cucumber will pick them up from any file{{% te
 # Profiles
 
 {{% block "java,kotlin,scala" %}}
-Cucumber profiles are not available on Cucumber-JVM.  However, it is possible to set configuration options using [Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html).
+Cucumber profiles are not available on Cucumber-JVM.  However, it is possible to set configuration options using [Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html)
 
 For instance, we can configure separate profiles for scenarios which are to be run in separate environments like so:
 

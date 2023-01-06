@@ -24,6 +24,7 @@ Friday yet.
 Please be aware that this tutorial assumes that you have a:
 
 {{% block "java" %}}
+
 * Basic understanding of the Java programming language
 {{% /block %}}
 {{% block "kotlin" %}}
