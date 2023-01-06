@@ -1399,8 +1399,9 @@ function isItFriday(today) {
 ```
 {{% /block %}}
 
-{{% block "ruby" 
-ruby
+{{% block "ruby" %}}
+
+```ruby
 def is_it_friday(day)
   if day == 'Friday'
     'TGIF'
