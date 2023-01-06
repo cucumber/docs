@@ -623,7 +623,7 @@ under `features/support` directory).
 
 `BeforeAll` run before any scenario is run.
 
-{{%block "ruby" %}}
+{{% block "ruby" %}}
 ```ruby
 BeforeAll do
   # Do something before any scenario is executed
@@ -631,7 +631,7 @@ end
 ```
 {{% /block %}}
 
-{{%block "javascript" %}}
+{{% block "javascript" %}}
 ```javascript
 const { BeforeAll } = require('@cucumber/cucumber');
 
@@ -641,7 +641,7 @@ BeforeAll(async function () {
 ```
 {{% /block %}}
 
-{{%block "java" %}}
+{{% block "java" %}}
 Annotated method style:
 
 ```java
@@ -652,7 +652,7 @@ public static void beforeAll() {
 ```
 {{% /block %}}
 
-{{%block "kotlin" %}}
+{{% block "kotlin" %}}
 ```kotlin
 BeforeAll {
     // doSomething
@@ -660,7 +660,7 @@ BeforeAll {
 ```
 {{% /block %}}
 
-{{%block "scala" %}}
+{{% block "scala" %}}
 ```scala
 BeforeAll {
     // doSomething
@@ -672,7 +672,7 @@ BeforeAll {
 
 `AfterAll` run after all scenarios have been executed.
 
-{{%block "ruby" %}}
+{{% block "ruby" %}}
 ```ruby
 AfterAll do
   # Do something after all scenarios have been executed
@@ -680,7 +680,7 @@ end
 ```
 {{% /block %}}
 
-{{%block "javascript" %}}
+{{% block "javascript" %}}
 ```javascript
 const { AfterAll } = require('@cucumber/cucumber');
 
@@ -690,7 +690,7 @@ AfterAll(async function () {
 ```
 {{% /block %}}
 
-{{%block "java" %}}
+{{% block "java" %}}
 Annotated method style:
 
 ```java
@@ -701,7 +701,7 @@ public static void afterAll() {
 ```
 {{% /block %}}
 
-{{%block "kotlin" %}}
+{{% block "kotlin" %}}
 ```kotlin
 AfterAll {
     // doSomething
@@ -709,7 +709,7 @@ AfterAll {
 ```
 {{% /block %}}
 
-{{%block "scala" %}}
+{{% block "scala" %}}
 ```scala
 AfterAll {
     // doSomething
