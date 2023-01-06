@@ -11,13 +11,7 @@ polyglot:
 weight: 1
 ---
 
-A Step Definition is a
-{{% text "java" %}}Java method{{% /text %}}
-{{% text "kotlin" %}}Kotlin function{{% /text %}}
-{{% text "scala" %}}Scala function{{% /text %}}
-{{% text "javascript" %}}JavaScript function{{% /text %}}
-{{% text "ruby" %}}Ruby block{{% /text %}}
-with an [expression](#expressions) that links it to one or more [Gherkin steps](/docs/gherkin/reference#steps).
+A Step Definition is a {{% stepdef-body %}} with an [expression](#expressions) that links it to one or more [Gherkin steps](/docs/gherkin/reference#steps).
 When Cucumber executes a [Gherkin step](/docs/gherkin/reference#steps) in a scenario, it will look for a matching *step definition* to execute.
 
 To illustrate how this works, look at the following Gherkin Scenario:
@@ -139,7 +133,7 @@ Given('I have {int} cukes in my belly', function (cukes) {
 
 A step definition's *expression* can either be a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)
 or a [Cucumber Expression](/docs/cucumber/cucumber-expressions). The examples in this section use Cucumber Expressions. 
-If you prefer to use Regular Expressions, each *{{% expression-parameter %}}* from the match will be passed as arguments to the step
+If you prefer to use Regular Expressions, each {{% expression-parameter %}} from the match will be passed as arguments to the step
 definition's {{% stepdef-body %}}.
 
 {{% block "java" %}}
