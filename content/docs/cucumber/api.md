@@ -1225,11 +1225,11 @@ package.
 
 The `@CucumberOptions` can be used to provide
 [additional configuration](#list-configuration-options) to the runner.
+{{% /block %}}
 
 **Using plugins:**
 
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
-{{% /block %}}
 
 {{% block "java" %}}
 
@@ -1333,9 +1333,11 @@ class RunCucumberTest {
 {{% block "java,kotlin,scala" %}}
 The default option for `snippets` is `UNDERSCORE`. This settings can be used to
 specify the way code snippets will be created by Cucumber.
+{{% /block %}}
 
 **Performing a dry-run:**
 
+{{% block "java,kotlin,scala" %}}
 For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this:
 {{% /block %}}
 
@@ -1388,9 +1390,11 @@ class RunCucumberTest {
 
 {{% block "java,kotlin,scala" %}}
 The default option for `dryRun` is `false`.
+{{% /block %}}
 
 **Formatting console output:**
 
+{{% block "java,kotlin,scala" %}}
 For example if you want console output from Cucumber in a readable format, you can specify it like this:
 {{% /block %}}
 
@@ -1447,11 +1451,12 @@ class RunCucumberTest {
 {{% block "java,kotlin,scala" %}}
 
 The default option for `monochrome` is `false`.
+{{% /block %}}
 
 **Select scenarios using tags:**
 
+{{% block "java,kotlin,scala" %}}
 For example if you want to tell Cucumber to only run the scenarios specified with specific tags, you can specify it like this:
-
 {{% /block %}}
 
 {{% block "java" %}}
@@ -1501,10 +1506,9 @@ public class RunCucumberTest {
 ```
 {{% /block %}}
 
-{{% block "java,kotlin,scala" %}}
-
 **Specify an object factory:**
 
+{{% block "java,kotlin,scala" %}}
 For example if you are using Cucumber with a DI framework and want to use a custom object factory, you can specify it like this:
 {{% /block %}}
 
