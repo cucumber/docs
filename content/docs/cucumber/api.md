@@ -967,7 +967,7 @@ Another creative way to use tags is to keep track of where in the development pr
 Feature: Index projects
 ```
 
-{{% text "ruby" %}}
+{{% block "ruby" %}}
 As distributed, Cucumber-Rails builds a Rake task that recognizes the *`@wip`* tag.
 However, any string may be used as a tag and any scenario or entire feature can have multiple tags associated with it.
 
@@ -1019,7 +1019,7 @@ the default profile, then instead of a warning the run will fail.
 Limiting the number of occurrences is commonly used in conjunction with the `@wip` tag to restrict the number of
 unspecified scenarios to manageable levels. Those following [Kanban](https://en.wikipedia.org/wiki/kanban) or
 [Lean Software Development](https://en.wikipedia.org/wiki/Lean_software_development) based methodologies will find this useful.
-{{% /text %}}
+{{% /block %}}
 
 # Running Cucumber
 
@@ -1044,9 +1044,7 @@ It is possible to [configure](/docs/cucumber/configuration) how Cucumber should 
 {{% text "ruby" %}}`features/models/entities/step_definitions/anything.rb`{{% /text %}}
 {{% block "ruby,javascript" %}}can be used in a feature file contained in{{% /text %}}
 {{% text "ruby" %}}`features/views/entity_new`{{% /text %}}
-{{% text "ruby,javascript" %}}
-, provided that:
-
+{{% text "ruby,javascript" %}}, provided that:
 - Cucumber is invoked on a root directory common to both (`./features`, in this example); OR
 - explicitly required on the command line
 {{% /text %}}
@@ -1077,7 +1075,6 @@ The **Command-Line Interface Runner (CLI Runner)** is an executable Java class t
 java io.cucumber.core.cli.Main
 ```
 Note that you will need to add the `cucumber-core` jar and all of its transitive dependencies to your classpath, in addition to the location of your compiled .class files. You can find these jars in [Maven Central](https://mvnrepository.com/repos/central).
-
 
 You will also need to provide the CLI with your step definitions via the `--glue` option followed by its package name, and the filepath of your feature file(s).
 
@@ -1204,6 +1201,7 @@ The `@CucumberOptions` can be used to provide
 **Using plugins:**
 
 For example if you want to tell Cucumber to use the two formatter plugins `pretty` and `html`, you can specify it like this:
+{{% /block %}}
 
 {{% block "java" %}}
 ```java
@@ -1249,8 +1247,10 @@ class RunCucumberTest {
 ```
 {{% /block %}}
 
+{{% block "java,kotlin,scala" %}}
 For example if you want to tell Cucumber to print code snippets for missing
 step definitions use the `summary` plugin, you can specify it like this:
+{{% /block %}}
 
 {{% block "java" %}}
 ```java
@@ -1295,13 +1295,17 @@ class RunCucumberTest {
 }
 ```
 {{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 The default option for `snippets` is `UNDERSCORE`. This settings can be used to
 specify the way code snippets will be created by Cucumber.
 
 **Performing a dry-run:**
 
 For example if you want to check whether all feature file steps have corresponding step definitions, you can specify it like this:
+{{% /block %}}
 
+{{% block "java" %}}
 ```java
 package com.example;
 
@@ -1314,7 +1318,9 @@ import org.junit.runner.RunWith;
 public class RunCucumberTest {
 }
 ```
+{{% /block %}}
 
+{{% block "kotlin" %}}
 ```kotlin
 package com.example
 
@@ -1326,7 +1332,9 @@ import org.junit.runner.RunWith
 @CucumberOptions(dryRun=true)
 class RunCucumberTest
 ```
+{{% /block %}}
 
+{{% block "scala" %}}
 ```scala
 package com.example;
 
@@ -1339,11 +1347,17 @@ import org.junit.runner.RunWith;
 class RunCucumberTest {
 }
 ```
+{{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 The default option for `dryRun` is `false`.
 
 **Formatting console output:**
 
 For example if you want console output from Cucumber in a readable format, you can specify it like this:
+{{% /block %}}
+
+{{% block "java" %}}
 
 ```java
 package com.example;
@@ -1358,6 +1372,10 @@ public class RunCucumberTest {
 }
 ```
 
+{{% /block %}}
+
+{{% block "kotlin" %}}
+
 ```kotlin
 package com.example
 
@@ -1369,6 +1387,10 @@ import org.junit.runner.RunWith
 @CucumberOptions(monochrome=true)
 class RunCucumberTest
 ```
+
+{{% /block %}}
+
+{{% block "scala" %}}
 
 ```scala
 package com.example;
@@ -1382,12 +1404,18 @@ import org.junit.runner.RunWith;
 class RunCucumberTest {
 }
 ```
+
+{{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 
 The default option for `monochrome` is `false`.
 
 **Select scenarios using tags:**
 
 For example if you want to tell Cucumber to only run the scenarios specified with specific tags, you can specify it like this:
+
+{{% /block %}}
 
 {{% block "java" %}}
 ```java
@@ -1433,9 +1461,12 @@ public class RunCucumberTest {
 ```
 {{% /block %}}
 
+{{% block "java,kotlin,scala" %}}
+
 **Specify an object factory:**
 
 For example if you are using Cucumber with a DI framework and want to use a custom object factory, you can specify it like this:
+{{% /block %}}
 
 {{% block "java" %}}
 ```java
@@ -1480,6 +1511,8 @@ public class RunCucumberTest {
 }
 ```
 {{% /block %}}
+
+{{% block "java,kotlin,scala" %}}
 The default option for `objectFactory` is to use the default object factory.
 Additional information about using custom object factories can be found [here](/docs/cucumber/state/#the-cucumber-object-factory).
 
