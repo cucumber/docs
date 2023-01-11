@@ -62,6 +62,10 @@ number of scenarios.
 
 The `Feature` line names the feature. This should be a short label.
 
+`As a` describes the role of the people/users being served by the feature.
+
+`I want` is a one sentence explanation of what the Feature is expected to do.
+
 `In order to` presents the reason/justification for having the feature. In
 general, this should match to one of the project’s core purposes or “business
 values” such as:
@@ -73,11 +77,7 @@ values” such as:
 - Make the product remarkable
 - Provide more value to your customers
 
-`As a` describes the role of the people/users being served by the feature.
-
-`I want` is a one sentence explanation of what the Feature is expected to do.
-
-So, those three lines cover Why, Who, and What. Then, the document gets into the “How” with scenarios.
+So, those three lines cover Who, What and Why. Then, the document gets into the “How” with scenarios.
 
 # Scenarios
 
