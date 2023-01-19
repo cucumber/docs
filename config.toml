@@ -2,6 +2,8 @@ baseURL = "https://cucumber.io/"
 languageCode = "en-us"
 title = "Cucumber Documentation"
 theme = "cucumber-sb"
+enableInlineShortcodes = true
+
 
 [sitemap]
   changefreq = "monthly"
