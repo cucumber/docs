@@ -412,8 +412,7 @@ end
 
 The `scenario` parameter is optional. If you use it, you can inspect the status of the scenario.
 
-For example, you can take a screenshot with
-{{% text "java,javascript,kotlin,scala" %}}[WebDriver](https://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}} for failed scenarios and embed them in Cucumber's report.
+For example, you can take a screenshot with {{% text "java,javascript,kotlin,scala" %}}[WebDriver](https://www.seleniumhq.org/projects/webdriver/){{% /text %}}{{% text "ruby" %}}[Capybara](https://github.com/teamcapybara/capybara){{% /text %}} for failed scenarios and embed them in Cucumber's report.
 
 See the [browser automation page](/docs/guides/browser-automation/#screenshot-on-failure) for an example on how to do so.
 
