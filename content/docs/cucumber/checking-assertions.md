@@ -82,7 +82,7 @@ If you are using Maven, add the following to your `pom.xml`:
 ```
 
 TestNG assertions are similar JUnit.
-For a more extensive example of how to use TestNG with Cucumber, see the [java-calculator-testng example](https://github.com/cucumber/cucumber-jvm/tree/main/examples/java-calculator-testng).
+For a more extensive example of how to use TestNG with Cucumber, see the [calculator-java-testng example](https://github.com/cucumber/cucumber-jvm/tree/main/examples/calculator-java-testng).
 
 For more information on how to use TestNG assertions, see the [TestNG documentation](https://testng.org/doc/documentation-main.html#success-failure).
 
