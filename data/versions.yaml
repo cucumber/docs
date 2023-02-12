@@ -7,7 +7,7 @@
 
 cucumberjvm: "7.11.1" # renovate: datasource=maven depName=io.cucumber:cucumber-jvm
 cucumberscala: "6.10.4" # renovate: datasource=maven depName=io.cucumber:cucumber-jvm-scala
-cucumberjs: "8.11.0"  # renovate: datasource=npm depName=@cucumber/cucumber
+cucumberjs: "8.11.1"  # renovate: datasource=npm depName=@cucumber/cucumber
 cucumberruby: "8.0.0" # renovate: datasource=rubygems depName=cucumber
 rspec: "3.12.0" # renovate: datasource=rubygems depName=rspec
 testng: "7.7.1" # renovate: datasource=maven depName=org.testng:testng
