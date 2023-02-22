@@ -248,7 +248,7 @@ You should only verify an outcome that is observable for the user (or external s
 
 ### And, But
 
-If you have successive `Given`'s, `When`'s, or `Then`'s, you *could* write:
+If you have successive `Given`'s, or `Then`'s, you *could* write:
 
 ```gherkin
 Example: Multiple Givens
