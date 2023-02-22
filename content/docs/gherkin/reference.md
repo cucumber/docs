@@ -248,7 +248,7 @@ You should only verify an outcome that is observable for the user (or external s
 
 ### And, But
 
-If you have successive `Given`'s, or `Then`'s, you *could* write:
+If you have successive `Given`'s or `Then`'s, you *could* write:
 
 ```gherkin
 Example: Multiple Givens
@@ -260,7 +260,7 @@ Example: Multiple Givens
   Then I shouldn't see something else
 ```
 
-Or, you could make the example more fluidly structured by replacing the successive `Given`'s, `When`'s, or `Then`'s with `And`'s and `But`'s:
+Or, you could make the example more fluidly structured by replacing the successive `Given`'s or `Then`'s with `And`'s and `But`'s:
 
 ```gherkin
 Example: Multiple Givens
