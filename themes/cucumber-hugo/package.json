@@ -9,7 +9,7 @@
     "concurrently": "7.6.0",
     "node-sass": "7.0.3",
     "postcss-cli": "10.1.0",
-    "rimraf": "3.0.2"
+    "rimraf": "4.4.0"
   },
   "scripts": {
     "build": "yarn build-clean && yarn build-sass && yarn build-autoprefix",
