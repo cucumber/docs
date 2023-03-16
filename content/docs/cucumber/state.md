@@ -125,7 +125,7 @@ information in the
 
 ## Dependency Injection
 {{% block "java,kotlin" %}} If your programming language is a JVM language, you will be writing glue code
-( [step definitions](/docs/cucumber/step-definitions) and [hooks](/docs/cucumber/api/#hooks) ) in classes.
+([step definitions](/docs/cucumber/step-definitions) and [hooks](/docs/cucumber/api/#hooks)) in classes.
 
 Cucumber will create a new instance of each of your glue code classes before each scenario.
 
