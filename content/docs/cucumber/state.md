@@ -37,7 +37,7 @@ so your steps will not leak state.
 * Note: when using Spring there is [an annotation `ScenarioScope`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-spring#sharing-state)
   that may be used on any spring beans that have been employed to share step state; this annotation ensures that these
   beans do not persist across scenarios and so do not leak state.
-* Note: When using Guice there is [a scope 'ScenarioScope`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice#using-scope-annotations)
+* Note: When using Guice there is [a scope `ScenarioScoped`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice#using-scope-annotations)
   that should always be used on step definition classes.
 
 See also [Dependency Injection](#dependency-injection).
