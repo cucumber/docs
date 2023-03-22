@@ -99,7 +99,7 @@ cucumber --format CustomFormatter
 
 ## Formatter API
 
-Cucumber uses an event-based API for its formatters. These formatters respond to several defined events, which are common across all official implementations under the [Cucumber Messages](https://github.com/cucumber/cucumber/tree/master/messages) standard.
+Cucumber uses an event-based API for its formatters. These formatters respond to several defined events, which are common across all official implementations under the [Cucumber Messages](https://github.com/cucumber/messages) standard.
 
 # Third-party plugins
 There are also many third-party plugins:
