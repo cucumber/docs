@@ -5,7 +5,7 @@
 # The "renovate:" comments help Renovate understand what we are talking about and keep the versions up to date.
 # See https://docs.renovatebot.com/modules/manager/regex/
 
-cucumberjvm: "7.11.1" # renovate: datasource=maven depName=io.cucumber:cucumber-jvm
+cucumberjvm: "7.11.2" # renovate: datasource=maven depName=io.cucumber:cucumber-jvm
 cucumberscala: "6.10.4" # renovate: datasource=maven depName=io.cucumber:cucumber-jvm-scala
 cucumberjs: "9.0.1"  # renovate: datasource=npm depName=@cucumber/cucumber
 cucumberruby: "8.0.0" # renovate: datasource=rubygems depName=cucumber
