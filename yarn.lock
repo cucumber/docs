@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@cucumber/gherkin@26.0.3":
-  version "26.0.3"
-  resolved "https://registry.yarnpkg.com/@cucumber/gherkin/-/gherkin-26.0.3.tgz#6ffe37570c608caa329784161305056135a19c96"
-  integrity sha512-xwJHi//bLFEU1drIyw2yswwUHnnVWO4XcyVBbCTDs6DkSh262GkogFI/IWwChZqJfOXnPglzLGxR1DibcZsILA==
+"@cucumber/gherkin@26.1.0":
+  version "26.1.0"
+  resolved "https://registry.yarnpkg.com/@cucumber/gherkin/-/gherkin-26.1.0.tgz#a7e1726330f9e106e2765bac25a7cf8273e200fd"
+  integrity sha512-F1c8WfNmYrdrXzN2+5ao/Emc7rd1QnClVlyauqW9UEPe75mtZzsKJV7uSJLIV7lG998bOLc9xDd71/m3L/5hTQ==
   dependencies:
     "@cucumber/messages" "19.1.4 - 21"
 
