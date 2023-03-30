@@ -9,7 +9,7 @@ Wherever you interact with the Cucumber Open community, always remember to respe
 
 # Slack
 
-To access our lively Slack community, you'll need to [register for an account](https://cucumberbdd-slack-invite.herokuapp.com/).
+To access our lively Slack community, you'll need to [register for an account](https://communityinviter.com/apps/cucumberbdd/docs-page).
 
 Once you've received your invite, head over to [#welcome](https://cucumberbdd.slack.com/messages/C5WD8SA21) to introduce yourself to the rest of the community, or [#help](https://cucumberbdd.slack.com/messages/C60TKS3SL/) if you need help using Cucumber.
 
