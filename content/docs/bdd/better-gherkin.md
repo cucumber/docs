@@ -40,6 +40,8 @@ As a side benefit, in consequence your scenarios will be a lot shorter and much 
 
 One way to make scenarios easier to maintain and less brittle is to use a declarative style. Declarative style describes the behaviour of the application, rather than the implementation details. Declarative scenarios read better as "living documentation". A declarative style helps you focus on the value that the customer is getting, rather than the keystrokes they will use.
 
+## Imperative style
+
 Imperative tests communicate details, and in some contexts this style of test is appropriate. On the other hand, because they are so closely tied to the mechanics of the current UI, they often require more work to maintain. Any time the implementation changes, the tests need to be updated too.
 
 Here's an example of a feature in an imperative style:
@@ -64,6 +66,8 @@ Scenario: Subscriber with a paid subscription can access "FreeArticle1" and "Pai
 
 Each step is a precise instruction. The inputs and expected results are specified exactly. But it's easy to imagine changes to the application which would require changing these tests. The available options for free versus paid subscriptions can change. Even the means of logging in could change. What if, in the future, users log in with a voice interface or a thumbprint? 
 
+## Declarative style
+
 A more declarative style hides the details of how the application's capabilities are implemented.
 
 ```
@@ -80,3 +84,39 @@ Scenario: Subscriber with a paid subscription can access both free and paid arti
   Then she sees a Free article and a Paid article
 ``` 
 With a declarative style, each step communicates an idea, but the exact values aren't specified. The details of *how* the user interacts with the system, such as which specific articles are free or paid, and the subscription level of different test users, are specified in the step definitions (the automation code that interacts with the system). The subscription packages could change in the future. The business could change what content is available to subscribers on free and paid plans, without having to change this scenario and other scenarios that use the same step definitions. If another subscription level is added later, it's easy to add a scenario for that. By avoiding terms like “click a button” that suggest implementation, the scenario is more resilient to implementation details of the UI. The intent of the scenario remains the same, even if the implementation changes later. In addition, having too many implementation details in a scenario, makes it harder to understand the intended behaviour it illustrates.
+
+## A third style 
+
+There is a style that is intermediate between these two.   The exact values are specified in the scenario, but the way the user interacts with the system is not.  This style uses stepdef tables with domain terms as the column headers.   The step definitions can  be reused for mulitple scenarios with different data in the table.  In this example, the scenarios for free and paid subscribers use the same step defs.      
+
+```Gherkin 
+Scenario: Free subscribers see only the free articles
+Given articles are: 
+| Title           | For Subscription  |
+| Free Article 1  | Free              |
+| Paid Article 1  | Paid              |
+And user is logged in 
+| User Name               | Password          | Subscription  |
+| freeFrieda@example.com  | validPassword123  | Free          |
+When articles are displayed 
+Then articles displayed are 
+| Title           |
+| Free Article 1  | 
+
+Scenario: Subscriber with a paid subscription can access both free and paid articles
+Given articles are: 
+| Title           | For Subscription  |
+| Free Article 1  | Free              |
+| Paid Article 1  | Paid              |
+And user is logged in 
+| User Name               | Password          | Subscription  |
+| paidPattya@example.com  | validPassword123  | Paid          |
+When articles are displayed 
+Then articles displayed are 
+| Title           | 
+| Free Article 1  | 
+| Paid Article 1  | 
+```
+
+These scenarios could be executed in three ways - automated using the core components, automated using a UI automation framework, or manually executed.  The logic is checked with the first, the plumbing between the UI and the core is checked with the second, and the ease of use is checked with the third. 
+
