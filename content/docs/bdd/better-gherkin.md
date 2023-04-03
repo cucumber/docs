@@ -87,21 +87,21 @@ With a declarative style, each step communicates an idea, but the exact values a
 
 ## A third style 
 
-There is a style that is intermediate between these two.   The exact values are specified in the scenario, but the way the user interacts with the system is not.  This style uses stepdef tables with domain terms as the column headers.   The step definitions can  be reused for mulitple scenarios with different data in the table.  In this example, the scenarios for free and paid subscribers use the same step defs.      
+There is a style that is intermediate between these two. The exact values are specified in the scenario, but the way the user interacts with the system is not. This style uses data tables with domain terms as the column headers. The step definitions can be reused for multiple scenarios with different data in the table. In this example, the scenarios for free and paid subscribers use the same step definitions.
 
 ```Gherkin 
 Scenario: Free subscribers see only the free articles
-Given articles are: 
-| Title           | For Subscription  |
-| Free Article 1  | Free              |
-| Paid Article 1  | Paid              |
+  Given articles are: 
+  | Title           | For Subscription  |
+  | Free Article 1  | Free              |
+  | Paid Article 1  | Paid              |
 And user is logged in 
-| User Name               | Password          | Subscription  |
-| freeFrieda@example.com  | validPassword123  | Free          |
+  | User Name               | Password          | Subscription  |
+  | freeFrieda@example.com  | validPassword123  | Free          |
 When articles are displayed 
 Then articles displayed are 
-| Title           |
-| Free Article 1  | 
+  | Title           |
+  | Free Article 1  | 
 
 Scenario: Subscriber with a paid subscription can access both free and paid articles
 Given articles are: 
@@ -118,5 +118,5 @@ Then articles displayed are
 | Paid Article 1  | 
 ```
 
-These scenarios could be executed in three ways - automated using the core components, automated using a UI automation framework, or manually executed.  The logic is checked with the first, the plumbing between the UI and the core is checked with the second, and the ease of use is checked with the third. 
+These scenarios could be executed in three ways - automated using the core components, automated using a UI automation framework, or manually executed. The logic is checked with the first, the plumbing between the UI and the core is checked with the second, and the ease of use is checked with the third. 
 
