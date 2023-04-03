@@ -95,11 +95,11 @@ Scenario: Free subscribers see only the free articles
   | Title           | For Subscription  |
   | Free Article 1  | Free              |
   | Paid Article 1  | Paid              |
-And user is logged in 
+And user is logged in as:
   | User Name               | Password          | Subscription  |
   | freeFrieda@example.com  | validPassword123  | Free          |
 When articles are displayed 
-Then articles displayed are 
+Then articles displayed are:
   | Title           |
   | Free Article 1  | 
 
@@ -108,11 +108,11 @@ Given articles are:
 | Title           | For Subscription  |
 | Free Article 1  | Free              |
 | Paid Article 1  | Paid              |
-And user is logged in 
+And user is logged in as:
 | User Name               | Password          | Subscription  |
 | paidPattya@example.com  | validPassword123  | Paid          |
 When articles are displayed 
-Then articles displayed are 
+Then articles displayed are: 
 | Title           | 
 | Free Article 1  | 
 | Paid Article 1  | 
