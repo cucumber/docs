@@ -475,14 +475,14 @@ Cucumber emits events on an event bus in many cases, e.g.:
 {{% block "java,kotlin" %}}
 Each event has a UUID as unique identifier. The UUID generator can be configured using the `cucumber.uuid-generator` property:
 
-| UUID generator                                        | Features                                | Performance [Millions UUID/second] | Typical usage example                                                                                                                                                                                                                                                          | 
-|-------------------------------------------------------|-----------------------------------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `io.cucumber.core.eventbus.RandomUuidGenerator`       | Thread-safe, collision-free, multi-jvm  | ~1                                 | Reports may be generated on different JVMs at the same time. A typical example would be one suite that tests against Firefox and another against Safari. The exact browser is configured through a property. These are then executed concurrently on different Gitlab runners. |
-| `io.cucumber.core.eventbus.IncrementingUuidGenerator` | Thread-safe, collision-free, single-jvm | ~130                               | Reports are generated on a single JVM                                                                                                                                                                                                                                          |
+| UUID generator                                        | Features                                                                                                                                                                                                   | Performance [Millions UUID/second] | Typical usage example                                                                                                                                                                                                                                                          | 
+|-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `io.cucumber.core.eventbus.RandomUuidGenerator`       | <ul><li>Thread-safe<li>Collision-free in single-jvm/multi-jvm</ul>                                                                                                                                         | ~1                                 | Reports may be generated on different JVMs at the same time. A typical example would be one suite that tests against Firefox and another against Safari. The exact browser is configured through a property. These are then executed concurrently on different Gitlab runners. |
+| `io.cucumber.core.eventbus.IncrementingUuidGenerator` | <ul><li>Thread-safe<li>Collision-free in the same classloader<li>Almost collision-free in different classloaders / JVMs<li>UUIDs generated using the instances from the same classloader are sortable</ul> | ~130                               | For developers wanting high performance and accepting potential UUID collisions when running in different classloaders / JVMs setups.                                                                                                     |
 
 The performance gain on real project depend on the feature size.
 
-When not specified, the `RandomUuidGenerator` is used.
+When the generator is not specified, the `RandomUuidGenerator` is used.
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Using the Cucumber UUID generator configuration is specific to JVM languages. {{% /block %}}
@@ -494,10 +494,10 @@ When neither the `RandomUuidGenerator` nor the `IncrementingUuidGenerator` suits
 1. Creates a UUID class generator, e.g.:
 ```java
 package mypackage.mysubpackage;
-import io.cucumber.code.eventbus.UuidGenerator;
+import io.cucumber.core.eventbus.UuidGenerator;
 public class MyUuidGenerator implements UuidGenerator {
   @Override
-  public UUID get() {
+  public UUID generateId() {
       return ...
   }
 }
