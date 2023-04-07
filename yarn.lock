@@ -2,27 +2,27 @@
 # yarn lockfile v1
 
 
-"@cucumber/gherkin@26.1.0":
-  version "26.1.0"
-  resolved "https://registry.yarnpkg.com/@cucumber/gherkin/-/gherkin-26.1.0.tgz#a7e1726330f9e106e2765bac25a7cf8273e200fd"
-  integrity sha512-F1c8WfNmYrdrXzN2+5ao/Emc7rd1QnClVlyauqW9UEPe75mtZzsKJV7uSJLIV7lG998bOLc9xDd71/m3L/5hTQ==
+"@cucumber/gherkin@26.2.0":
+  version "26.2.0"
+  resolved "https://registry.yarnpkg.com/@cucumber/gherkin/-/gherkin-26.2.0.tgz#256129ef5e4d1cba87a673ce78d7296809d1e4c9"
+  integrity sha512-iRSiK8YAIHAmLrn/mUfpAx7OXZ7LyNlh1zT89RoziSVCbqSVDxJS6ckEzW8loxs+EEXl0dKPQOXiDmbHV+C/fA==
   dependencies:
-    "@cucumber/messages" "19.1.4 - 21"
+    "@cucumber/messages" ">=19.1.4 <=22"
 
-"@cucumber/messages@19.1.4 - 21":
-  version "21.0.1"
-  resolved "https://registry.yarnpkg.com/@cucumber/messages/-/messages-21.0.1.tgz#1468cef60d6da4d4f540a70ab1265f6540f44f51"
-  integrity sha512-pGR7iURM4SF9Qp1IIpNiVQ77J9kfxMkPOEbyy+zRmGABnWWCsqMpJdfHeh9Mb3VskemVw85++e15JT0PYdcR3g==
+"@cucumber/messages@>=19.1.4 <=22":
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/@cucumber/messages/-/messages-22.0.0.tgz#2d86974ebd73046f66d217334c2245365c7990d4"
+  integrity sha512-EuaUtYte9ilkxcKmfqGF9pJsHRUU0jwie5ukuZ/1NPTuHS1LxHPsGEODK17RPRbZHOFhqybNzG2rHAwThxEymg==
   dependencies:
-    "@types/uuid" "8.3.4"
+    "@types/uuid" "9.0.1"
     class-transformer "0.5.1"
     reflect-metadata "0.1.13"
     uuid "9.0.0"
 
-"@types/uuid@8.3.4":
-  version "8.3.4"
-  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
-  integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
+"@types/uuid@9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-9.0.1.tgz#98586dc36aee8dacc98cc396dbca8d0429647aa6"
+  integrity sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==
 
 class-transformer@0.5.1:
   version "0.5.1"
