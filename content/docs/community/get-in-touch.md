@@ -20,7 +20,3 @@ Or just wander around and make yourself at home!
 # Stack Overflow
 
 Many people use the [`cucumber`](https://stackoverflow.com/questions/tagged/cucumber) and [`bdd`](https://stackoverflow.com/questions/tagged/bdd) tags on Stack Overflow to ask or answer questions about Cucumber.
-
-# SmartBear Community Forums
-
-The [Cucumber Forum](https://community.smartbear.com/t5/Cucumber-Open/bd-p/CucumberOS) on SmartBear's community forums is a good place to share your knowledge with others and hang out with other users from SmartBear's ecosystem.
