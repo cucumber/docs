@@ -509,7 +509,7 @@ mypackage.mysubpackage.MyUuidGenerator
 
 This UUID generator will override the default `RandomUuidGenerator`. 
 
-When the `META-INF/services/...` file contains more than one UUID generator or when there are multiple `META-INF/services/...` on the classpath, the `uuid-generator` property must be configured to select the desired generator.
+When the `META-INF/services/...` file contains more than one UUID generator or when there are multiple `META-INF/services/...` on the classpath, the `cucumber.uuid-generator` property must be configured to select the desired generator.
 {{% /block %}}
 
 {{% block "ruby,javascript" %}} Using the Cucumber custom UUID generator is specific to JVM languages. {{% /block %}}
