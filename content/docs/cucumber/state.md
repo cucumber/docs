@@ -460,6 +460,60 @@ The custom object factory can be configured using the `@CucumberOptions` annotat
 
 {{% block "ruby,javascript" %}} Using the Cucumber object factory is specific to JVM languages. {{% /block %}}
 
+# The Event Bus
+{{% block "java,kotlin" %}}
+
+Cucumber emits events on an event bus in many cases, e.g.:
+- during the feature file parsing
+- when the test scenarios are executed
+
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Using the Cucumber Event Bus is specific to JVM languages. {{% /block %}}
+
+## Configuring the UUID generator
+{{% block "java,kotlin" %}}
+Each event has a UUID as unique identifier. The UUID generator can be configured using the `cucumber.uuid-generator` property:
+
+| UUID generator                                        | Features                                                                                                                                                                                                   | Performance [Millions UUID/second] | Typical usage example                                                                                                                                                                                                                                                          | 
+|-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `io.cucumber.core.eventbus.RandomUuidGenerator`       | <ul><li>Thread-safe<li>Collision-free in single-jvm/multi-jvm</ul>                                                                                                                                         | ~1                                 | Reports may be generated on different JVMs at the same time. A typical example would be one suite that tests against Firefox and another against Safari. The exact browser is configured through a property. These are then executed concurrently on different Gitlab runners. |
+| `io.cucumber.core.eventbus.IncrementingUuidGenerator` | <ul><li>Thread-safe<li>Collision-free in the same classloader<li>Almost collision-free in different classloaders / JVMs<li>UUIDs generated using the instances from the same classloader are sortable</ul> | ~130                               | For developers wanting high performance and accepting potential UUID collisions when running in different classloaders / JVMs setups.                                                                                                     |
+
+The performance gain on real project depend on the feature size.
+
+When the generator is not specified, the `RandomUuidGenerator` is used.
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Using the Cucumber UUID generator configuration is specific to JVM languages. {{% /block %}}
+
+## Defining your own UUID generator
+{{% block "java,kotlin" %}}
+When neither the `RandomUuidGenerator` nor the `IncrementingUuidGenerator` suits the project needs, a custom UUID generator can be defined. This is done using the following method:
+
+1. Creates a UUID class generator, e.g.:
+```java
+package mypackage.mysubpackage;
+import io.cucumber.core.eventbus.UuidGenerator;
+public class MyUuidGenerator implements UuidGenerator {
+  @Override
+  public UUID generateId() {
+      return ...
+  }
+}
+```
+2. Define the UUID generator as SPI using a file `META-INF/services/io.cucumber.code.eventbus.UuidGenerator` on the classpath (e.g. Maven `resources` directory) containing the generator class name:
+```java
+mypackage.mysubpackage.MyUuidGenerator
+```
+
+This UUID generator will override the default `RandomUuidGenerator`. 
+
+When the `META-INF/services/...` file contains more than one UUID generator or when there are multiple `META-INF/services/...` on the classpath, the `cucumber.uuid-generator` property must be configured to select the desired generator.
+{{% /block %}}
+
+{{% block "ruby,javascript" %}} Using the Cucumber custom UUID generator is specific to JVM languages. {{% /block %}}
+
 # Databases
 
 There are several options to remove state from your database, to prevent leaking state between scenarios.
