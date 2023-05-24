@@ -9,7 +9,7 @@
     "concurrently": "8.0.1",
     "node-sass": "8.0.0",
     "postcss-cli": "10.1.0",
-    "rimraf": "4.4.1",
+    "rimraf": "5.0.1",
     "yarn": "1.22.19"
   },
   "scripts": {
