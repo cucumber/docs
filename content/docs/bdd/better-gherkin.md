@@ -87,17 +87,30 @@ With a declarative style, each step communicates an idea, but the exact values a
 
 ## A third style 
 
-There is a style that is intermediate between these two. The exact values are specified in the scenario, but the way the user interacts with the system is not. This style uses data tables with domain terms as the column headers. The step definitions can be reused for multiple scenarios with different data in the table. In this example, the scenarios for free and paid subscribers use the same step definitions.
+There is a style that is intermediate between these two. The exact values are specified in the scenario, but the way the user interacts with the system is not. This style uses data tables with domain terms as the column headers. The step definitions can be reused for multiple scenarios with different data in the table. In this example, the scenarios for free and paid subscribers use the same step definitions.  The following example separates the login scenario from the display scenarios. 
 
 ```Gherkin 
+
+Scenario:  Logon 
+Given users are 
+  | User Name               | Password          | Subscription  |
+  | freeFrieda@example.com  | validPassword123  | Free          |
+  | paidPattya@example.com  | validPassword123  | Free          |
+When user logs in
+  | User Name  | freeFrieda@example.com |
+  | Password   | validPassword123       |
+Then user is logged in with 
+  | Subscription | 
+  | Free         |
+
 Scenario: Free subscribers see only the free articles
   Given articles are: 
   | Title           | For Subscription  |
   | Free Article 1  | Free              |
   | Paid Article 1  | Paid              |
 And user is logged in as:
-  | User Name               | Password          | Subscription  |
-  | freeFrieda@example.com  | validPassword123  | Free          |
+  | Subscription  |
+  | Free          |
 When articles are displayed 
 Then articles displayed are:
   | Title           |
@@ -105,18 +118,18 @@ Then articles displayed are:
 
 Scenario: Subscriber with a paid subscription can access both free and paid articles
 Given articles are: 
-| Title           | For Subscription  |
-| Free Article 1  | Free              |
-| Paid Article 1  | Paid              |
+  | Title           | For Subscription  |
+  | Free Article 1  | Free              |
+  | Paid Article 1  | Paid              |
 And user is logged in as:
-| User Name               | Password          | Subscription  |
-| paidPattya@example.com  | validPassword123  | Paid          |
+  | Subscription  |
+  | Paid          |
 When articles are displayed 
 Then articles displayed are: 
-| Title           | 
-| Free Article 1  | 
-| Paid Article 1  | 
+  | Title           | 
+  | Free Article 1  | 
+  | Paid Article 1  | 
 ```
 
-These scenarios could be executed in three ways - automated using the core components, automated using a UI automation framework, or manually executed. The logic is checked with the first, the plumbing between the UI and the core is checked with the second, and the ease of use is checked with the third. 
+The Given of the last two scenarios could be put into a Background scenario, if desired. These scenarios could be executed in three ways - automated using the core components, automated using a UI automation framework, or manually executed. The logic is checked with the first way, the plumbing between the UI and the core is checked with the second way, and the ease of use is checked with the third way. 
 
