@@ -92,40 +92,40 @@ There is a style that is intermediate between these two. The exact values are sp
 ```Gherkin 
 
 Scenario:  Logon 
-Given users are 
+Given the users are 
   | User Name               | Password          | Subscription  |
   | freeFrieda@example.com  | validPassword123  | Free          |
-  | paidPattya@example.com  | validPassword123  | Free          |
-When user logs in
+  | paidPattya@example.com  | validPassword456  | Free          |
+When a user logs in
   | User Name  | freeFrieda@example.com |
   | Password   | validPassword123       |
-Then user is logged in with 
+Then the user is logged in with 
   | Subscription | 
   | Free         |
 
 Scenario: Free subscribers see only the free articles
-  Given articles are: 
+Given the articles are: 
   | Title           | For Subscription  |
   | Free Article 1  | Free              |
   | Paid Article 1  | Paid              |
-And user is logged in as:
+And the user is logged in as:
   | Subscription  |
   | Free          |
-When articles are displayed 
-Then articles displayed are:
+When the articles are displayed 
+Then the displayed articles are:
   | Title           |
   | Free Article 1  | 
 
 Scenario: Subscriber with a paid subscription can access both free and paid articles
-Given articles are: 
+Given the articles are: 
   | Title           | For Subscription  |
   | Free Article 1  | Free              |
   | Paid Article 1  | Paid              |
-And user is logged in as:
+And the user is logged in as:
   | Subscription  |
   | Paid          |
-When articles are displayed 
-Then articles displayed are: 
+When the articles are displayed 
+Then the displayed articles are:
   | Title           | 
   | Free Article 1  | 
   | Paid Article 1  | 
