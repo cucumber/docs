@@ -127,7 +127,7 @@ information in the
 {{% block "java,kotlin" %}} If your programming language is a JVM language, you will be writing glue code
 ([step definitions](/docs/cucumber/step-definitions) and [hooks](/docs/cucumber/api/#hooks)) in classes.
 
-Cucumber will create a new instance of each of your glue code classes before each scenario.
+Cucumber will create a new instance of each of your glue code classes before each scenario. However, it does not generate instances of unused glue code classes. It's important to note that Cucumber's instance creation is triggered when a step definition of a glue code class is first referenced during scenario runtime. As a result, instances of all used glue code classes are not created eagerly at the start of the scenario. This dynamic instantiation optimizes resource usage by only creating instances of the necessary glue code classes, reducing memory overhead and improving performance.
 
 If all of your glue code classes have an empty constructor, you don’t need anything else.
 However, most projects will benefit from a dependency injection (DI) module to organize your code better and to share state between step definitions.
