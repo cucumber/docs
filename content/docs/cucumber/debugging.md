@@ -145,7 +145,7 @@ In order to debug your scenarios on the JVM, you can step through the the steps 
 
 For more details on how to set a breakpoint in your IDE, see:
 
-* [Breakpoints (IntelliJ)](https://www.jetbrains.com/help/idea/breakpoints.html)
+* [Breakpoints (IntelliJ IDEA)](https://www.jetbrains.com/help/idea/breakpoints.html)
 
 * [Debugging (Eclipse)](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
 {{% /block %}}
