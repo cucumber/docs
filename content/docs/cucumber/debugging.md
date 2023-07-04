@@ -132,7 +132,7 @@ By setting an environment variable, you can tell Cucumber to use various debuggi
 {{% /block %}}
 
 {{% block "java,kotlin,scala" %}}
-In order to debug your scenarios on the JVM, you can step through the the steps of each scenario in debug mode.
+In order to debug your scenarios on the JVM, you can step through the steps of each scenario in debug mode.
 
 1. Set a breakpoint on the part of the code you want to debug. This might be the line you are currently getting an Exception (see your stacktrace).
 
@@ -145,7 +145,7 @@ In order to debug your scenarios on the JVM, you can step through the the steps 
 
 For more details on how to set a breakpoint in your IDE, see:
 
-* [Breakpoints (IntelliJ)](https://www.jetbrains.com/help/idea/breakpoints.html)
+* [Breakpoints (IntelliJ IDEA)](https://www.jetbrains.com/help/idea/breakpoints.html)
 
 * [Debugging (Eclipse)](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
 {{% /block %}}
