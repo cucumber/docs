@@ -103,7 +103,9 @@ public void i_want_to_open_page(String webpage) {
 ```
 
 ```javascript
- //TODO
+ Given("I go to the {string} page", function (webpage) {
+   webpageFactory.openPage(webpage)
+}
 ```
 
 ```ruby
