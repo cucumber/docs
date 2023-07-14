@@ -190,7 +190,7 @@ rich meaningful test reports (or "living documentation") that report not only th
 test results, but also which features have been tested.
 
 A detailed tutorial on using Cucumber-JVM with Serenity can be found
-[here](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html), and more information on Serenity can be found on their [official website](http://serenity-bdd.info).
+[here](https://serenity-bdd.info/docs/articles/an-introduction-to-serenity-bdd-with-cucumber.html), and more information on Serenity can be found on their [official website](http://serenity-bdd.info).
 
 {{% /text %}}
 
