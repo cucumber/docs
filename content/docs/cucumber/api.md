@@ -969,6 +969,8 @@ A tag expression is an *infix boolean expression*. Below are some examples:
 | `@smoke and @fast`   |                   Scenarios tagged with both `@smoke` and `@fast` |
 | `@gui or @database`  |                Scenarios tagged with either `@gui` or `@database` |
 
+Note: Using a `,` to separate tags in expressions such as `@tag1,@tag2` will cause the entire expression to be parsed as a single tag, potentially leading to unintended outcomes. It's required to separate the tags with space or operators like `and` `or` and `not`.
+
 For even more advanced tag expressions you can use parenthesis for clarity, or
 to change operator precedence:
 
