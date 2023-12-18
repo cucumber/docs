@@ -1270,7 +1270,7 @@ import io.cucumber.junit.CucumberOptions
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "html:target/cucumber"})
+@CucumberOptions(plugin = {"pretty", "html:target/cucumber.html"})
 class RunCucumberTest
 ```
 {{% /block %}}
@@ -1285,7 +1285,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(classOf[Cucumber])
-@CucumberOptions(plugin = Seq("pretty", "html:target/cucumber"))
+@CucumberOptions(plugin = Seq("pretty", "html:target/cucumber.html"))
 class RunCucumberTest {
 }
 ```
