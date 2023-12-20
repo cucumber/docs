@@ -1,5 +1,5 @@
 ---
-title: Android™
+title: Android2023™
 subtitle: Java
 svg: installation/android.svg
 implementation: official
