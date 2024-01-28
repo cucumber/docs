@@ -55,6 +55,7 @@ generate local reports using one of the following built-in reporter plugins (als
 * `rerun`
 * `snippets`
 * `usage`
+* `junit`
 
 There is also a "pretty" formatter available as an optional module [@cucumber/pretty-formatter](https://www.npmjs.com/package/@cucumber/pretty-formatter).
 {{% /block %}}
