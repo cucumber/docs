@@ -27,5 +27,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          body: >
+            This is an automatically generated PR by the
+            `gherkin-i18n-table.yml` GitHub Action.
+            It has updated the `gherkin-i18n-table.html` file.
           commit-message: 'Update gherkin-i18n-table'
           title: 'Update gherkin-i18n-table'
