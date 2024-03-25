@@ -27,4 +27,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          commit-message: 'Update gherkin-i18n-table'
           title: 'Update gherkin-i18n-table'
