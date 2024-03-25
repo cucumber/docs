@@ -442,11 +442,16 @@ You should see something like the following:
  T E S T S
 -------------------------------------------------------
 
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+Scenario: The example                       # hellocucumber/example.feature:3
+  Given an example scenario                 # hellocucumber.StepDefinitions.anExampleScenario()
+  When all step definitions are implemented # hellocucumber.StepDefinitions.allStepDefinitionsAreImplemented()
+  Then the scenario passes                  # hellocucumber.StepDefinitions.theScenarioPasses()
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 Results :
 
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -473,7 +478,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 ```
 {{% /block %}}
 
-Cucumber's output is telling us that it didn't find anything to run.
+Cucumber's output tells us that it ran the example scenario.
 
 # Write a Scenario
 
