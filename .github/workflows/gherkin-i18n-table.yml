@@ -1,0 +1,35 @@
+name: 'Update gherkin-i18n-table'
+on:
+  schedule:
+    # https://crontab.guru/every-night-at-midnight
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push: # Temporary so we can test the action
+    branches:
+      - WikiRik/i18n-table-gha
+
+permissions:
+  contents: read
+
+jobs:
+  table_update:
+    permissions:
+      contents: write # for gr2m/create-or-update-pull-request-action to push local changes
+      pull-requests: write # for gr2m/create-or-update-pull-request-action to create a PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: yarn upgrade
+      - run: make layouts/shortcodes/gherkin-i18n-table.html 
+      - uses: gr2m/create-or-update-pull-request-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          body: >
+            This is an automatically generated PR by the
+            `gherkin-i18n-table.yml` GitHub Action.
+            It has updated the `gherkin-i18n-table.html` file.
+          commit-message: 'Update gherkin-i18n-table'
+          title: 'Update gherkin-i18n-table'
