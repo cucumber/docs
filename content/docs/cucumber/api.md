@@ -1306,7 +1306,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "summary"}, snippets = CAMELCASE)
+@CucumberOptions(plugin = {"pretty", "summary"}, snippets = SnippetType.CAMELCASE)
 public class RunCucumberTest {
 }
 ```
@@ -1477,7 +1477,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = {"@foo and not @bar"})
+@CucumberOptions(tags = "@foo and not @bar")
 public class RunCucumberTest {
 }
 ```
@@ -1493,7 +1493,7 @@ import io.cucumber.junit.CucumberOptions
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = {"@foo and not @bar"})
+@CucumberOptions(tags = "@foo and not @bar")
 class RunCucumberTest
 ```
 {{% /block %}}
