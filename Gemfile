@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'html-proofer', '5.0.8'
+gem 'html-proofer', '5.0.9'
 
