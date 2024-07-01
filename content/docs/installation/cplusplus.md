@@ -2,7 +2,7 @@
 title: Cucumber.cpp
 subtitle: C++
 svg: installation/cplusplus.svg
-implementation: unmaintained
+implementation: official
 weight: 1130
 ---
 
