@@ -273,10 +273,10 @@ browserslist@^4.23.0:
     node-releases "^2.0.14"
     update-browserslist-db "^1.0.13"
 
-bulma@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/bulma/-/bulma-1.0.1.tgz"
-  integrity sha512-+xv/BIAEQakHkR0QVz+s+RjNqfC53Mx9ZYexyaFNFo9wx5i76HXArNdwW7bccyJxa5mgV/T5DcVGqsAB19nBJQ==
+bulma@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/bulma/-/bulma-1.0.2.tgz"
+  integrity sha512-D7GnDuF6seb6HkcnRMM9E739QpEY9chDzzeFrHMyEns/EXyDJuQ0XA0KxbBl/B2NTsKSoDomW61jFGFaAxhK5A==
 
 cacache@^15.2.0:
   version "15.3.0"
