@@ -12,12 +12,12 @@ respect and uphold our [code of conduct](https://github.com/cucumber/cucumber/bl
 If you have questions about using Cucumber, or ideas for how we could improve
 it, head over to our [GitHub Discussions](https://github.com/orgs/cucumber/discussions) forum.
 
-# Slack
+# Discord
 
 If you're interested in becoming an
 [open-source contributor](https://cucumber.io/docs/community/new-contributors/),
-come and hang out in our Slack community. To join the Slack you'll need to
-[create an account](https://communityinviter.com/apps/cucumberbdd/docs-page).
+come and hang out in our Discord community. To join the Discord you
+[use this invite link](https://discord.gg/8YXBH8j74w).
 
 # Stack Overflow
 
