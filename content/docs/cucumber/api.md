@@ -1680,6 +1680,8 @@ cucumber.object-factory=        # object factory class name. example: com.exampl
 cucumber.snippet-type=          # underscore or camelcase. default: underscore
 ```
 
+Note that the filter options `cucumber.filter.name` and `cucumber.filter.tags` are combined using an `and` operation. In other words, both expressions need to match.
+
 {{% /block %}}
 
 {{% block "ruby" %}}
