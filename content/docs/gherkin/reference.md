@@ -427,6 +427,8 @@ The steps can use `<>` delimited *parameters* that reference headers in the exam
 Cucumber will replace these parameters with values from the table *before* it tries
 to match the step against a step definition.
 
+You can use parameters in `Scenario Outline` descriptions as well.
+
 You can also use parameters in [multiline step arguments](#step-arguments).
 
 # Step Arguments
