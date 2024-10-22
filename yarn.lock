@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@cucumber/gherkin@28.0.0":
-  version "28.0.0"
-  resolved "https://registry.yarnpkg.com/@cucumber/gherkin/-/gherkin-28.0.0.tgz#91246da622524807b21430c1692bedd319d3d4bb"
-  integrity sha512-Ee6zJQq0OmIUPdW0mSnsCsrWA2PZAELNDPICD2pLfs0Oz7RAPgj80UsD2UCtqyAhw2qAR62aqlktKUlai5zl/A==
+"@cucumber/gherkin@29.0.0":
+  version "29.0.0"
+  resolved "https://registry.yarnpkg.com/@cucumber/gherkin/-/gherkin-29.0.0.tgz#97e1dfa3873bfea38d5c4786e07b9ac547de1329"
+  integrity sha512-6t3V7fFsLlyhLSj4FS+fPz22pPVcFhFZ3QOP7otFYmkhZ4g1ierj5pf7fxJWvEsI555hGatg+Iql6cqK93RFUg==
   dependencies:
-    "@cucumber/messages" ">=19.1.4 <=24"
+    "@cucumber/messages" "<=25"
 
-"@cucumber/messages@>=19.1.4 <=24":
-  version "24.1.0"
-  resolved "https://registry.yarnpkg.com/@cucumber/messages/-/messages-24.1.0.tgz#a212c97b0548144c3ccfae021a96d6c56d3841d3"
-  integrity sha512-hxVHiBurORcobhVk80I9+JkaKaNXkW6YwGOEFIh/2aO+apAN+5XJgUUWjng9NwqaQrW1sCFuawLB1AuzmBaNdQ==
+"@cucumber/messages@<=25":
+  version "25.0.1"
+  resolved "https://registry.yarnpkg.com/@cucumber/messages/-/messages-25.0.1.tgz#551d416510e95c61ab970ee73fd7844a522ccbd5"
+  integrity sha512-RjjhmzcauX5eYfcKns5pgenefDJQcfXE3ZDrVWdUDGcoaoyFVDmj+ZzQZWRWqFrfMjP3lKHJss6LtvIP/z+h8g==
   dependencies:
     "@types/uuid" "9.0.8"
     class-transformer "0.5.1"
-    reflect-metadata "0.2.1"
+    reflect-metadata "0.2.2"
     uuid "9.0.1"
 
 "@types/uuid@9.0.8":
@@ -29,10 +29,10 @@ class-transformer@0.5.1:
   resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.5.1.tgz#24147d5dffd2a6cea930a3250a677addf96ab336"
   integrity sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==
 
-reflect-metadata@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.2.1.tgz#8d5513c0f5ef2b4b9c3865287f3c0940c1f67f74"
-  integrity sha512-i5lLI6iw9AU3Uu4szRNPPEkomnkjRTaVt9hy/bn5g/oSzekBSMeLZblcjP74AW0vBabqERLLIrz+gR8QYR54Tw==
+reflect-metadata@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.2.2.tgz#400c845b6cba87a21f2c65c4aeb158f4fa4d9c5b"
+  integrity sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==
 
 uuid@9.0.1:
   version "9.0.1"
