@@ -50,7 +50,7 @@ Before we begin, you will need the following:
   - [Maven](https://maven.apache.org/index.html) - version 3.3.1 or higher
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
-- [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ)
+- [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ IDEA)
    - [Cucumber Eclipse](https://cucumber.github.io/cucumber-eclipse/)
 
 {{% /block %}}
@@ -62,7 +62,7 @@ Before we begin, you will need the following:
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (which will be used in this tutorial)
    - [IntelliJ IDEA Cucumber for Java plugin](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
    - [IntelliJ IDEA Kotlin plugin](https://plugins.jetbrains.com/plugin/6954-kotlin)
-- [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ)
+- [Eclipse](https://www.eclipse.org/) (a good alternative if you don't use IntelliJ IDEA)
    - [Cucumber Eclipse](https://cucumber.github.io/cucumber-eclipse/)
    - [Kotlin Eclipse](https://github.com/JetBrains/kotlin-eclipse)
 
@@ -145,9 +145,9 @@ Open the project in IntelliJ IDEA:
 To use Kotlin, we need to add it to our project:
 
 * Add a directory named `kotlin` in your `src/test` directory and mark it as `Test Sources Root`.
-In IntelliJ, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
+In IntelliJ IDEA, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
 * Create the `hellocucumber` package inside the `kotlin` directory.
-* Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package. IntelliJ might tell you that Kotlin is not configured; click **"Configure"**.
+* Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package. IntelliJ IDEA might tell you that Kotlin is not configured; click **"Configure"**.
 Your `pom.xml` should now look like this:
 
 ```xml
@@ -291,7 +291,7 @@ Your `pom.xml` should now look like this:
 </project>
 ```
 * Copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
-If you are using IntelliJ, it will offer to translate the Java code to Kotlin code. Otherwise you'll have to write your own.
+If you are using IntelliJ IDEA, it will offer to translate the Java code to Kotlin code. Otherwise, you'll have to write your own.
 
 Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
@@ -690,7 +690,7 @@ Copy each of the three snippets for the undefined steps and paste them into
 
 {{% block "kotlin" %}}
 
-Unfortunately, Cucumber does not generate snippets in Kotlin. But fortunately IntelliJ can convert the Java code to Kotlin code for you. You might need to improve the translated code, to make it more idiomatic.
+Unfortunately, Cucumber does not generate snippets in Kotlin. But fortunately IDEA can convert the Java code to Kotlin code for you. You might need to improve the translated code, to make it more idiomatic.
 You might also need to add the following import statements (if you hadn't already).
 
 Your `StepDefs.kt` file should now look like this:

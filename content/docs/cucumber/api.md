@@ -1254,7 +1254,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "html:target/cucumber"})
+@CucumberOptions(plugin = {"pretty", "html:target/cucumber.html"})
 public class RunCucumberTest {
 }
 ```
@@ -1270,7 +1270,7 @@ import io.cucumber.junit.CucumberOptions
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "html:target/cucumber"})
+@CucumberOptions(plugin = {"pretty", "html:target/cucumber.html"})
 class RunCucumberTest
 ```
 {{% /block %}}
@@ -1285,7 +1285,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(classOf[Cucumber])
-@CucumberOptions(plugin = Seq("pretty", "html:target/cucumber"))
+@CucumberOptions(plugin = Seq("pretty", "html:target/cucumber.html"))
 class RunCucumberTest {
 }
 ```
@@ -1306,7 +1306,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "summary"}, snippets = CAMELCASE)
+@CucumberOptions(plugin = {"pretty", "summary"}, snippets = SnippetType.CAMELCASE)
 public class RunCucumberTest {
 }
 ```
@@ -1477,7 +1477,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = {"@foo and not @bar"})
+@CucumberOptions(tags = "@foo and not @bar")
 public class RunCucumberTest {
 }
 ```
@@ -1493,7 +1493,7 @@ import io.cucumber.junit.CucumberOptions
 import org.junit.runner.RunWith
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = {"@foo and not @bar"})
+@CucumberOptions(tags = "@foo and not @bar")
 class RunCucumberTest
 ```
 {{% /block %}}
@@ -1679,6 +1679,8 @@ cucumber.plugin=                # comma separated plugin strings. example: prett
 cucumber.object-factory=        # object factory class name. example: com.example.MyObjectFactory
 cucumber.snippet-type=          # underscore or camelcase. default: underscore
 ```
+
+Note that the filter options `cucumber.filter.name` and `cucumber.filter.tags` are combined using an `and` operation. In other words, both expressions need to match.
 
 {{% /block %}}
 

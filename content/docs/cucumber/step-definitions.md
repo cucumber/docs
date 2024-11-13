@@ -72,24 +72,6 @@ class StepDefinitions : En {
 
 {{% /block %}}
 
-{{% block "kotlin" %}}
-
-```kotlin
-package com.example
-import io.cucumber.java8.En
-
-class StepDefinitions : En {
-
-    init {
-        Given("I have {int} cukes in my belly") { cukes: Int ->
-                println("Cukes: $cukes")
-        }
-    }
-
-}
-```
-
-{{% /block %}}
 
 {{% block "scala" %}}
 
@@ -193,12 +175,13 @@ state in instance variables.
 
 {{% block "javascript" %}}
 {{% warn "No arrow functions" %}}
-Please note that if you use arrow functions, you won't be able to share state between steps!
+Please note that if you use arrow functions, you will have to create a variable representing state outside of the steps, in order to share state between steps!
 
 ```javascript
+let cukesState;
+
 Given('I have {int} cukes in my belly', cukes => {
-  // Don't do this. The value of "this" is the "global" object
-  this.cukes = cukes
+  cukesState = cukes
 })
 ```
 {{% /warn %}}

@@ -209,8 +209,6 @@ Examples:
 
 `When` steps are used to describe an event, or an *action*. This can be a person interacting with the system, or it can be an event triggered by another system.
 
-It's strongly recommended you only have a single `When` step per Scenario. If you feel compelled to add more, it's usually a sign that you should split the scenario up into multiple scenarios.
-
 Examples:
 
 - Guess a word
@@ -248,7 +246,7 @@ You should only verify an outcome that is observable for the user (or external s
 
 ### And, But
 
-If you have successive `Given`'s, `When`'s, or `Then`'s, you *could* write:
+If you have successive `Given`'s or `Then`'s, you *could* write:
 
 ```gherkin
 Example: Multiple Givens
@@ -260,7 +258,7 @@ Example: Multiple Givens
   Then I shouldn't see something else
 ```
 
-Or, you could make the example more fluidly structured by replacing the successive `Given`'s, `When`'s, or `Then`'s with `And`'s and `But`'s:
+Or, you could make the example more fluidly structured by replacing the successive `Given`'s or `Then`'s with `And`'s and `But`'s:
 
 ```gherkin
 Example: Multiple Givens
@@ -428,6 +426,8 @@ the `Examples` section beneath it (not counting the first header row).
 The steps can use `<>` delimited *parameters* that reference headers in the examples table.
 Cucumber will replace these parameters with values from the table *before* it tries
 to match the step against a step definition.
+
+You can use parameters in `Scenario Outline` descriptions as well.
 
 You can also use parameters in [multiline step arguments](#step-arguments).
 

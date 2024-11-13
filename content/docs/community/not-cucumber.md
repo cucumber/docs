@@ -16,25 +16,25 @@ If you cannot find the tool you are looking for, try the [related tools](/docs/t
 # IDE Plugins
 Note that if you are using a newer version of Cucumber, the plugin you are using might not have been updated yet.
 
-## IntelliJ
-{{% text "javascript,ruby" %}}IntelliJ is a Java IDE.{{% /text %}}
+## IntelliJ IDEA
+{{% text "javascript,ruby" %}}IntelliJ IDEA is a Java IDE.{{% /text %}}
 {{% block "java,kotlin" %}}
-The IntelliJ "Cucumber for Java" plugin is maintained by JetBrains, the creators of IntelliJ. Please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
+The IntelliJ IDEA "Cucumber for Java" plugin is maintained by JetBrains, the creators of IntelliJ IDEA. Please check [YouTrack](https://youtrack.jetbrains.com) to see if your issue has been reported yet (and vote for it!).
 If not, you can create an issue yourself.
 
-IntelliJ's support for Cucumber is via plugins. The plugin that you need to use depends upon what version of IntelliJ your are using, and what version of Cucumber your trying to use.
+IntelliJ IDEA's support for Cucumber is via plugins. The plugin that you need to use depends upon what version of IntelliJ IDEA you are using, and what version of Cucumber your trying to use.
 
-If you upgrade Cucumber or IntelliJ you might need to recreate your Run/Debug Configuration so the correct plugin is used. Right-Click on the feature file and select "Run 'Feature: ...'".
+If you upgrade Cucumber or IntelliJ IDEA you might need to recreate your Run/Debug Configuration so the correct plugin is used. Right-Click on the feature file and select "Run 'Feature: ...'".
 
-Configuration that you set via Maven/Gradle/Junit/TestNG is not imported into IntelliJ configuration so you might need to alter any of these values;
-Main class
-Glue
-Feature or folder path
-VM options
-Program arguments
-Working directory
-Environment variables
-Use classpath of module
+Configuration that you set via Maven/Gradle/Junit/TestNG is not imported into IntelliJ IDEA's configuration, so you might need to alter any of these values:
+* Main class
+* Glue
+* Feature or folder path
+* VM options
+* Program arguments
+* Working directory
+* Environment variables
+* Use classpath of module
 {{% /block %}}
 
 ## Eclipse

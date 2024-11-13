@@ -27,16 +27,16 @@ The more general contribution process is described in the [Cucumber Community Co
 
 It's great to get feedback on your writing. Start out with small changes, then wait for feedback from other contributors on the pull request.
 
-You can hop into the [Cucumber Slack](https://cucumber.io/support#slack) channel `#docs` to discuss or ask questions.
+You can hop into the [Cucumber Discord](https://cucumber.io/support#discord) to discuss or ask questions.
 
 # What to contribute
-A great way to start contributing is to answer a question on the [Cucumber Slack](https://cucumber.io/support#slack) or the [mailing list](https://groups.google.com/group/cukes).
+A great way to start contributing is to answer a question on the [Cucumber Discord](https://cucumber.io/support#discord) or the [GitHub Discussion Board](https://github.com/orgs/cucumber/discussions).
 You can add the answer to a question to the docs, if it is currently missing.
 
 You can also add the question to the [FAQ page](https://docs.cucumber.io/community/faq/), with a link to the relevant part of the documentation.
 
 Another option is to look for issues marked `Good first issue` and/or `Help wanted` in the [docs.cucumber.io project on GitHub](https://github.com/cucumber/docs.cucumber.io).
-If you have any questions about these issues, you can add comment on the issue itself or contact us on Slack.
+If you have any questions about these issues, you can add comment on the issue itself or contact us on Discord.
 
 ## General writing style
 In general, the documentation should be brief and to the point.
@@ -121,7 +121,7 @@ The following languages are currently supported:
 * Whenever possible, we prefer to have information for Java, JavaScript and Ruby.
   * If you're only familiar with one programming language, add an example for that language; someone
     else will fill the gaps for the other languages!
-  * You can ask for help with the other languages in the help channel for that language on Slack, or in your GitHub pull request / issue
+  * You can ask for help with the other languages in the help channel for that language on Discord, or in your GitHub pull request / issue
 
 ## Language-specific source code and paragraphs
 
