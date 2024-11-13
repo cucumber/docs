@@ -152,8 +152,8 @@ Your `pom.xml` should now look like this:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -162,25 +162,52 @@ Your `pom.xml` should now look like this:
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kotlin.version>1.8.10</kotlin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-bom</artifactId>
+                <version>7.11.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.9.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>2.3.1</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>2.3.1</version>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -198,6 +225,11 @@ Your `pom.xml` should now look like this:
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
@@ -231,7 +263,7 @@ Your `pom.xml` should now look like this:
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.11.0</version>
                 <executions>
                     <execution>
                         <id>compile</id>
@@ -252,16 +284,10 @@ Your `pom.xml` should now look like this:
                     <encoding>UTF-8</encoding>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <compilerArgument>-Werror</compilerArgument>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.2.71</kotlin.version>
-    </properties>
 </project>
 ```
 * Copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
@@ -271,12 +297,16 @@ Your `RunCucumberTest.kt` class should now look like this:
 ```kotlin
 package hellocucumber
 
-import io.cucumber.junit.CucumberOptions
-import io.cucumber.junit.Cucumber
-import org.junit.runner.RunWith
+import io.cucumber.junit.platform.engine.Constants
+import org.junit.platform.suite.api.ConfigurationParameter
+import org.junit.platform.suite.api.IncludeEngines
+import org.junit.platform.suite.api.SelectClasspathResource
+import org.junit.platform.suite.api.Suite
 
-@RunWith(Cucumber::class)
-@CucumberOptions(plugin = ["pretty"])
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("hellocucumber")
+@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty")
 class RunCucumberTest
 ```
 
@@ -284,32 +314,6 @@ class RunCucumberTest
 * Create a Kotlin class called `StepDefs` inside the `hellocucumber` package.
 * Copy the import statements from `StepDefinitions.java` to `StepDefs.kt`; you'll need them later.
 * Finally, delete the `StepDefinitions.java` class (or even the `java` directory).
-
-{{% /block %}}
-
-{{% block "kotlin" %}}
-
-To use Kotlin in our project, we need to take some extra steps:
-
-* Add a directory named `kotlin` in your `src/test` directory and mark it as `Test Sources Root`.
-In IntelliJ IDEA, you can do so by right-clicking on the `kotlin` directory and selecting **"Mark Directory as" > "Test Sources Root"**.
-* Create the `hellocucumber` package inside the `kotlin` directory.
-* Create a Kotlin class called `RunCucumberTest` inside the `hellocucumber` package and copy the annotations from the `RunCucumberTest.java` class to the `RunCucumberTest.kt` class.
-If you are using IntelliJ IDEA, it will offer to translate the Java code to Kotlin code. Otherwise, you'll have to write your own.
-
-Your `RunCucumberTest.kt` class should now look like this:
-```kotlin
-package hellocucumber
-
-import io.cucumber.junit.CucumberOptions
-import io.cucumber.junit.Cucumber
-import org.junit.runner.RunWith
-
-@RunWith(Cucumber::class)
-@CucumberOptions(plugin = ["pretty"])
-class RunCucumberTest
-```
-
 
 {{% /block %}}
 
