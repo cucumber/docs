@@ -11,4 +11,4 @@ cucumberjs: "11.1.1"  # renovate: datasource=npm depName=@cucumber/cucumber
 cucumberruby: "9.2.0" # renovate: datasource=rubygems depName=cucumber
 rspec: "3.13.0" # renovate: datasource=rubygems depName=rspec
 testng: "7.10.2" # renovate: datasource=maven depName=org.testng:testng
-junit: "5.11.3" # renovate: datasource=maven depName=org.junit:junit-bom
+junit: "5.11.4" # renovate: datasource=maven depName=org.junit:junit-bom
