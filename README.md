@@ -2,9 +2,7 @@
 
 # Cucumber Documentation
 
-This repository contains the source code for [https://cucumber.io/docs](https://cucumber.io/docs).
-
-If you want to read the docs, go there. ☝🏼
+🚨 This repository is archived. the Cucumber documentation is now at https://github.com/cucumber/website. 🚨
 
 ## Contributing Content
 
